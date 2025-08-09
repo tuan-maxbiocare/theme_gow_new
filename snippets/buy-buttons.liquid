@@ -358,6 +358,7 @@
           </span>
           {%- render 'loading-spinner' -%}
         </button>
+        <div class="wishlist-engine" data-product_id="{{ product.id }}" data-variant_id="{{ product.selected_or_first_available_variant.id }}" data-full_button="false" data-css="true"></div>
         {%- if show_dynamic_checkout -%}
           {{ form | payment_button }}
         {%- endif -%}

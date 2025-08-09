@@ -178,3 +178,80 @@
     </div>
   {%- endif -%}
 </media-gallery>
+{% comment %} <script>
+  // Chỉ khởi tạo media-gallery nếu là desktop
+  if (window.innerWidth >= 768 && !customElements.get('media-gallery')) {
+    customElements.define(
+      'media-gallery',
+      class MediaGallery extends HTMLElement {
+        constructor() {
+          super();
+          this.init();
+        }
+
+        init() {
+          this.thumbnails = this.querySelectorAll('.product__thumbs-item');
+          this.mainImages = this.querySelectorAll('.product__media-item');
+          this.prevButton = this.querySelector('.swiper-button-prev');
+          this.nextButton = this.querySelector('.swiper-button-next');
+          this.currentIndex = 0;
+
+          this.thumbnails.forEach((thumbnail) => {
+            thumbnail.addEventListener('mouseenter', this.handleThumbnailHover.bind(this));
+          });
+
+          if (this.prevButton && this.nextButton) {
+            this.prevButton.addEventListener('click', () => this.navigate('prev'));
+            this.nextButton.addEventListener('click', () => this.navigate('next'));
+          }
+
+          this.setActiveSlide(0);
+        }
+
+        handleThumbnailHover(event) {
+          const thumbnail = event.currentTarget;
+          const index = Array.from(this.thumbnails).indexOf(thumbnail);
+          this.setActiveSlide(index);
+        }
+
+        navigate(direction) {
+          const totalSlides = this.mainImages.length;
+          if (direction === 'prev') {
+            this.currentIndex = (this.currentIndex - 1 + totalSlides) % totalSlides;
+          } else {
+            this.currentIndex = (this.currentIndex + 1) % totalSlides;
+          }
+          this.setActiveSlide(this.currentIndex);
+        }
+
+        setActiveSlide(index) {
+          this.currentIndex = index;
+
+          this.thumbnails.forEach((thumb) => thumb.classList.remove('active'));
+          this.mainImages.forEach((image) => image.classList.remove('active'));
+
+          this.thumbnails[index]?.classList.add('active');
+          this.mainImages[index]?.classList.add('active');
+
+          // Không can thiệp Swiper ở đây nữa để tránh phá mobile swiper
+        }
+      }
+    );
+  }
+</script>
+
+
+<style>
+  @media (min-width: 768px) {
+    .product__media-item {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .product__media-item.active {
+      display: block;
+      opacity: 1;
+    }
+  }
+</style> {% endcomment %}

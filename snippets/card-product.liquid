@@ -100,7 +100,7 @@
   assign color_scheme_first = settings.color_schemes | first
   assign parent_color_scheme = parent_color_scheme | default: color_scheme_first
 
-  if color_inherit == nil
+  if color_inherit == null
     assign parent_background = parent_color_scheme.settings.background | downcase
     assign card_background = settings.pcard_color_scheme.settings.background | downcase
     assign color_inherit = false
@@ -108,6 +108,7 @@
       assign color_inherit = true
     endif
   endif
+
 -%}
 <div
   class="product-card product-card-style-{{ pcard_style }}{% if pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}{{ card_wrapper_class }}{% if list_on_mobile %} product-card-list-on-mobile{% endif %}{% if color_inherit %} color-inherit{% endif %}"
@@ -174,6 +175,24 @@
       </a>
       {%- render 'pcard-badges', product: product -%}
       {%- render 'pcard-flash-sale', product: product -%}
+      {% comment %}
+        {%- if product != blank -%}
+          {% render 'wishlist-button', product: product %}
+        {%- endif -%}
+      {% endcomment %}
+      <!-- Swym Wishlist Plus EPI Button with default first variant -->
+      {% comment %} <button
+        aria-label="Add to Wishlist"
+        data-with-epi="true"
+        class="swym-button swym-add-to-wishlist-view-product product_{{product.id}}"
+        data-swaction="addToWishlist"
+        data-product-id="{{product.id | json}}"
+        data-variant-id="{{product.variants[0].id}}"
+        data-product-url="{{ shop.url }}{{ product.url }}"
+      ></button> {% endcomment %}
+      <div class="wishlist-engine" data-product_id="{{  product.id }}" data-variant_id="{{ product.selected_or_first_available_variant.id }}" data-full_button="true" data-css="true"></div>
+      <!-- Swym Wishlist Plus EPI Button -->
+
       {%- if enable_quick_view -%}
         <button
           class="product-card__quickview btn btn--icon-circle {{ settings.quickview_button_style }} no-js-hidden"

@@ -72,7 +72,6 @@
         <div class="bg-overlay"></div>
       </picture>
     </motion-element>
-
     <div class="pr-img-card__contents z-1 flex flex-col">
       <div class="pr-img-card__contents-header rich-text shrink-0 rich-text--tight block">
         {% if subheading != blank %}
@@ -151,6 +150,7 @@
             </p>
             {% render 'price', product: product %}
           </div>
+
           {% if button_label != blank %}
             {% render 'button',
               button_style: button_style,

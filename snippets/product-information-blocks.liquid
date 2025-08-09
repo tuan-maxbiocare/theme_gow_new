@@ -2,6 +2,7 @@
   assign default_form_id = 'product-form-' | append: section.id
   assign product_form_id = product_form_id | default: default_form_id
 -%}
+<script src="{{ 'product-recommendations.js' | asset_url }}" defer="defer"></script>
 <div
   id="ProductInfo-{{ section.id }}"
   data-section="{{ section.id }}"
@@ -502,6 +503,14 @@
                 </div>
               {%- endif -%}
             </div>
+          </div>
+        {%- when 'related_products' -%}
+          <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
+            <product-recommendations
+              class="related-products"
+              data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ block.settings.products_to_show }}"
+            >
+            </product-recommendations>
           </div>
       {%- endcase -%}
     {%- endfor -%}
