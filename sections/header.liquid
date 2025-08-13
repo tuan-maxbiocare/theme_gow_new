@@ -3020,6 +3020,545 @@
           ]
         }
       ]
+    },
+    {
+      "type": "sidebar-custom",
+      "name": "Sidebar Custom",
+      "settings": [
+        {
+          "type": "text",
+          "label": "t:sections.header.blocks.all.menu_title.label",
+          "id": "menu_title"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.header.blocks.all.hightlight_link.header.content"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:general.colors.label"
+        },
+        {
+          "type": "checkbox",
+          "label": "t:sections.header.blocks.all.hightlight_link.enable.label",
+          "id": "enable_hl_link",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "hl_link_style",
+          "label": "t:sections.header.blocks.all.hightlight_link.style.label",
+          "options": [
+            {
+              "value": "text_color",
+              "label": "t:sections.header.blocks.all.hightlight_link.style.options__1.label"
+            },
+            {
+              "value": "star_twinkle",
+              "label": "t:sections.header.blocks.all.hightlight_link.style.options__2.label"
+            },
+            {
+              "value": "button",
+              "label": "t:sections.header.blocks.all.hightlight_link.style.options__3.label"
+            },
+            {
+              "value": "wave_underline",
+              "label": "t:sections.header.blocks.all.hightlight_link.style.options__4.label"
+            }
+          ],
+          "default": "text_color",
+          "visible_if": "{{ block.settings.enable_hl_link == true }}"
+        },
+        {
+          "type": "color",
+          "id": "hl_link_color",
+          "label": "t:sections.header.blocks.all.hightlight_link.color.label",
+          "info": "t:sections.header.blocks.all.hightlight_link.color.info",
+          "visible_if": "{{ block.settings.enable_hl_link == true and block.settings.hl_link_style != 'button' }}"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.header.blocks.sidebar.settings.header__right_sidebar.content"
+        },
+        {
+          "type": "range",
+          "id": "menu_columns",
+          "label": "t:sections.header.blocks.all.menu_columns.label",
+          "min": 2,
+          "max": 5,
+          "default": 4
+        },
+        {
+          "type": "checkbox",
+          "id": "show_collection_image",
+          "label": "t:sections.header.blocks.sidebar.settings.show_collection_image.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_image_of_first_product",
+          "label": "t:sections.header.blocks.sidebar.settings.show_image_of_first_product.label",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "image_ratio",
+          "label": "t:general.image_ratio.label",
+          "default": "adapt",
+          "options": [
+            {
+              "value": "adapt",
+              "label": "t:general.image_ratio.options__1.label"
+            },
+            {
+              "value": "1/1",
+              "label": "t:general.image_ratio.options__2.label"
+            },
+            {
+              "value": "3/4",
+              "label": "t:general.image_ratio.options__3.label"
+            },
+            {
+              "value": "4/3",
+              "label": "t:general.image_ratio.options__4.label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "health_supplement",
+      "name": "Health Mega menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title_child",
+          "label": "Menu title Child"
+        },
+        {
+          "type": "text",
+          "id": "heading-title",
+          "label": "Heading for tab section",
+          "default": "By User Group"
+        },
+        {
+          "type": "header",
+          "content": "Static Links"
+        },
+        {
+          "type": "text",
+          "id": "static_link_1_text",
+          "label": "Static Link 1 Text",
+          "default": "Women"
+        },
+        {
+          "type": "url",
+          "id": "static_link_1_url",
+          "label": "Static Link 1 URL"
+        },
+        {
+          "type": "text",
+          "id": "static_link_2_text",
+          "label": "Static Link 2 Text",
+          "default": "Children"
+        },
+        {
+          "type": "url",
+          "id": "static_link_2_url",
+          "label": "Static Link 2 URL"
+        },
+        {
+          "type": "text",
+          "id": "static_link_3_text",
+          "label": "Static Link 3 Text",
+          "default": "Men"
+        },
+        {
+          "type": "url",
+          "id": "static_link_3_url",
+          "label": "Static Link 3 URL"
+        },
+        {
+          "type": "text",
+          "id": "static_link_4_text",
+          "label": "Static Link 4 Text",
+          "default": "Family"
+        },
+        {
+          "type": "url",
+          "id": "static_link_4_url",
+          "label": "Family"
+        },
+        {
+          "type": "header",
+          "content": "Child Categories"
+        },
+        {
+          "type": "text",
+          "id": "heading-title-sub",
+          "label": "Heading for subcategory",
+          "default": "By Health Category"
+        },
+        {
+          "type": "link_list",
+          "id": "child_categories",
+          "label": "Child Category Links"
+        },
+        {
+          "type": "header",
+          "content": "Image & CTA"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_1",
+          "label": "Banner Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_2",
+          "label": "Banner Image 2"
+        }
+      ]
+    },
+    {
+      "type": "food_nutrition",
+      "name": "Food Mega menu",
+      "settings": [
+        {
+          "type": "header",
+          "content": "add first section"
+        },
+        {
+          "type": "text",
+          "id": "menu_title_child",
+          "label": "Main Menu Item"
+        },
+        {
+          "type": "text",
+          "id": "heading_title_1",
+          "label": "Heading for first collection",
+          "default": "Milk Formula"
+        },
+        {
+          "type": "product_list",
+          "id": "product_list_1",
+          "label": "t:general.products.label",
+          "limit": 6
+        },
+        {
+          "type": "header",
+          "content": "add second section"
+        },
+
+        {
+          "type": "text",
+          "id": "heading_title_2",
+          "label": "Heading for second collection",
+          "default": "Organic Food"
+        },
+        {
+          "type": "product_list",
+          "id": "product_list_2",
+          "label": "t:general.products.label",
+          "limit": 6
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link Button View More"
+        },
+
+        {
+          "type": "header",
+          "content": "Image & CTA"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_1",
+          "label": "Menu bg Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_2",
+          "label": "Menu bg Image"
+        }
+      ]
+    },
+
+    {
+      "type": "baby_custom",
+      "name": "Baby Care",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title_child",
+          "label": "Main Menu Item"
+        },
+        {
+          "type": "text",
+          "id": "heading-title",
+          "label": "Heading for tab section",
+          "default": "by Age"
+        },
+        {
+          "type": "header",
+          "content": "Static Links"
+        },
+        {
+          "type": "text",
+          "id": "static_link_1_text",
+          "label": "Static Link 1 Text",
+          "default": "0+ Month"
+        },
+        {
+          "type": "url",
+          "id": "static_link_1_url",
+          "label": "Static Link 1 URL"
+        },
+        {
+          "type": "text",
+          "id": "static_link_2_text",
+          "label": "Static Link 2 Text",
+          "default": "2+ YEARS"
+        },
+        {
+          "type": "url",
+          "id": "static_link_2_url",
+          "label": "Static Link 2 URL"
+        },
+        {
+          "type": "text",
+          "id": "static_link_3_text",
+          "label": "Static Link 3 Text",
+          "default": "3+ YEARS"
+        },
+        {
+          "type": "url",
+          "id": "static_link_3_url",
+          "label": "Static Link 3 URL"
+        },
+        {
+          "type": "header",
+          "content": "add collection list"
+        },
+        {
+          "type": "text",
+          "id": "heading-title-sub",
+          "label": "Heading for subcategory",
+          "default": "by Categoty"
+        },
+        {
+          "type": "url",
+          "id": "collection_1",
+          "label": "Add collection 1"
+        },
+        {
+          "type": "text",
+          "id": "collection_title_1",
+          "label": "Add collection Title 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image_1",
+          "label": "Add collection Image 1"
+        },
+
+        {
+          "type": "url",
+          "id": "collection_2",
+          "label": "Add collection 2"
+        },
+        {
+          "type": "text",
+          "id": "collection_title_2",
+          "label": "Add collection Title 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image_2",
+          "label": "Add collection image 2"
+        },
+
+        {
+          "type": "url",
+          "id": "collection_3",
+          "label": "Add collection 3"
+        },
+        {
+          "type": "text",
+          "id": "collection_title_3",
+          "label": "Add collection Title 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image_3",
+          "label": "Add collection image 3"
+        },
+
+        {
+          "type": "url",
+          "id": "collection_4",
+          "label": "Add collection 4"
+        },
+        {
+          "type": "text",
+          "id": "collection_title_4",
+          "label": "Add collection Title 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image_4",
+          "label": "Add collection image 4"
+        },
+        {
+          "type": "url",
+          "id": "collection_5",
+          "label": "Add collection 5"
+        },
+        {
+          "type": "text",
+          "id": "collection_title_5",
+          "label": "Add collection Title 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image_5",
+          "label": "Add collection image 5"
+        },
+        {
+          "type": "url",
+          "id": "collection_6",
+          "label": "Add collection 6"
+        },
+        {
+          "type": "text",
+          "id": "collection_title_6",
+          "label": "Add collection Title 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image_6",
+          "label": "Add collection image 6"
+        },
+
+        {
+          "type": "header",
+          "content": "Child Categories"
+        },
+        {
+          "type": "header",
+          "content": "Image & CTA"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_1",
+          "label": "Image Banner 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_2",
+          "label": "Image banner 2"
+        }
+      ]
+    },
+    {
+      "type": "other_custom",
+      "name": "Other",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title_child",
+          "label": "Main Menu Item"
+        },
+
+        {
+          "type": "link_list",
+          "id": "menu_links",
+          "label": "Select menu"
+        },
+        {
+          "type": "header",
+          "content": "Child Categories"
+        },
+        {
+          "type": "header",
+          "content": "Image & CTA"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_1",
+          "label": "Banner 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_2",
+          "label": "Banner 2"
+        }
+      ]
+    },
+    {
+      "type": "pet_custom",
+      "name": "Pet Care",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title_child",
+          "label": "Main Menu Item"
+        },
+        {
+          "type": "header",
+          "content": "add collection list"
+        },
+        {
+          "type": "url",
+          "id": "collection_1",
+          "label": "Add collection 1"
+        },
+        {
+          "type": "text",
+          "id": "collection_title_1",
+          "label": "Add collection Title 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image_1",
+          "label": "Add collection image 1"
+        },
+        {
+          "type": "url",
+          "id": "collection_2",
+          "label": "Add collection 2"
+        },
+        {
+          "type": "text",
+          "id": "collection_title_2",
+          "label": "Add collection Title 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_image_2",
+          "label": "Add collection image 2"
+        },
+        {
+          "type": "header",
+          "content": "Child Categories"
+        },
+        {
+          "type": "header",
+          "content": "Image & CTA"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_1",
+          "label": "Banner Image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "banner_image_2",
+          "label": "Banner Image 2"
+        }
+      ]
     }
   ],
   "enabled_on": {
