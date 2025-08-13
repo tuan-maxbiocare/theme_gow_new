@@ -232,13 +232,13 @@
       <ul class="pet-custom__list">
         <li class="hover-wrapper">
           <a href="{{ block.settings.collection_1 }}">
-            <img src="{{ block.settings.collection_image_1 }}" alt="Dog Icon" class="pet-custom__icon hover-scale-up">
+            <img src="{{ block.settings.collection_image_1 | image_url }}" alt="Dog Icon" class="pet-custom__icon hover-scale-up">
             <span class="underline-effect">{{ block.settings.collection_title_1 }}</span>
           </a>
         </li>
         <li class="hover-wrapper">
           <a href="{{ block.settings.collection_2 }}" class="pet-custom__link">
-            <img src="{{ block.settings.collection_image_2 }}" alt="Cat Icon" class="pet-custom__icon hover-scale-up">
+            <img src="{{ block.settings.collection_image_2 | image_url }}" alt="Cat Icon" class="pet-custom__icon hover-scale-up">
             <span class="underline-effect">{{ block.settings.collection_title_2 }}</span>
           </a>
         </li>

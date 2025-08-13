@@ -9,7 +9,7 @@
     width: 55%;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 25px;
   }
 
   .baby-custom-mega-menu__section {
@@ -56,10 +56,13 @@
     gap: 80px;
   }
 
-  .baby-custom-mega-menu__col {
-    list-style: none;
-    flex: 1;
-  }
+    .baby-custom-mega-menu__col {
+      columns: 2;
+      column-gap: 40px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
   .baby-custom-mega-menu__col li+li {
     margin-top: 18px;
@@ -208,41 +211,46 @@
         <ul class="baby-custom-mega-menu__col">
           <li class="hover-wrapper">
             <a href="{{ block.settings.collection_1 }}">
-              <img src="{{ block.settings.collection_image_1 }}">
+              <img src="{{ block.settings.collection_image_1 | image_url }}"
+                alt="{{ block.settings.collection_title_1 }}">
               <span class="link-text">{{ block.settings.collection_title_1 }}</span>
             </a>
           </li>
           <li class="hover-wrapper">
             <a href="{{ block.settings.collection_2 }}">
-              <img src="{{ block.settings.collection_image_2 }}">
+              <img src="{{ block.settings.collection_image_2 | image_url }}"
+                alt="{{ block.settings.collection_title_2 }}">
               <span class="link-text">{{ block.settings.collection_title_2 }}</span>
             </a>
           </li>
           <li class="hover-wrapper">
             <a href="{{ block.settings.collection_3 }}">
-              <img src="{{ block.settings.collection_image_3 }}">
+              <img src="{{ block.settings.collection_image_3 | image_url }}"
+                alt="{{ block.settings.collection_title_3 }}">
               <span class="link-text">{{ block.settings.collection_title_3 }}</span>
             </a>
           </li>
           <li class="hover-wrapper">
             <a href="{{ block.settings.collection_4 }}">
-              <img src="{{ block.settings.collection_image_4 }}">
+              <img src="{{ block.settings.collection_image_4 | image_url }}"
+                alt="{{ block.settings.collection_title_4 }}">
               <span class="link-text">{{ block.settings.collection_title_4 }}</span>
             </a>
           </li>
           <li class="hover-wrapper">
             <a href="{{ block.settings.collection_5 }}">
-              <img src="{{ block.settings.collection_image_5 }}">
+              <img src="{{ block.settings.collection_image_5 | image_url }}"
+                alt="{{ block.settings.collection_title_5 }}">
               <span class="link-text">{{ block.settings.collection_title_5 }}</span>
             </a>
           </li>
           <li class="hover-wrapper">
             <a href="{{ block.settings.collection_6 }}">
-              <img src="{{ block.settings.collection_image_6 }}">
+              <img src="{{ block.settings.collection_image_6 | image_url }}"
+                alt="{{ block.settings.collection_title_6 }}">
               <span class="link-text">{{ block.settings.collection_title_6 }}</span>
             </a>
           </li>
-
         </ul>
       </div>
     </div>
