@@ -247,6 +247,17 @@
           <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
             {%- render 'product-collapsible-tab', block: block, section_id: section.id -%}
           </div>
+        {%- when 'related_products' -%}
+        <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
+          <div>
+            <product-recommendations
+              class="related-products"
+              data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=6"
+            >
+            {%- render 'related-products-custom', section: block, section_id: section.id, recommendations: recommendations -%}
+            </product-recommendations>
+          </div>
+        </div>
         {%- when 'popup' -%}
           {%- liquid
             assign modal_id = 'PopupModal-' | append: block.id
