@@ -1,0 +1,47 @@
+<menu-sidebar
+  class="block menu-sidebar relative w-full mega-menu__item color-{{ block-sidebar-custom.settings.color_scheme }}"
+>
+  {%- for childlink in link.links -%}
+    <details class="menu-sidebar__item" open>
+      <summary
+        class="menu-sidebar__toggle blocks-radius-sm flex items-center justify-between{% if forloop.first %} is-visible{% endif %}"
+      >
+        <h6>{{ childlink.title | escape }}</h6>
+        {%- if childlink.links != blank -%}
+          {%- render 'icon-caret-right', size: 'small' -%}
+        {%- endif -%}
+      </summary>
+
+      {%- liquid
+        assign block_type = null
+        assign matched_block = null
+
+        for b in section.blocks
+          if b.settings.menu_title_child == childlink.title
+            assign block_type = b.type
+            assign matched_block = b
+            break
+          endif
+        endfor
+      -%}
+      {%- if block_type -%}
+        <div class="menu-sidebar__content no-empty">
+          {%- case block_type -%}
+            {%- when 'health_supplement' -%}
+              {% render 'menu-health-supplement-custom', block: matched_block %}
+            {%- when 'food_nutrition' -%}
+              {% render 'menu-food-nutrition-custom', block: matched_block %}
+            {%- when 'baby_custom' -%}
+              {% render 'baby-custom', block: matched_block %}
+            {%- when 'other_custom' -%}
+              {% render 'order-custom', block: matched_block %}
+            {%- when 'pet_custom' -%}
+              {% render 'pet-custom', block: matched_block %}
+            {%- else -%}
+              <p>No matching block for “{{ childlink.title }}”</p>
+          {%- endcase -%}
+        </div>
+      {%- endif -%}
+    </details>
+  {%- endfor -%}
+</menu-sidebar>

@@ -1,0 +1,17 @@
+<div class="mega-menu__inner-custom">
+  <div class="mega-menu__col-list">
+    <div class="mega-menu__columns">
+      <ul class="mega-menu__col">
+        {% for link in block.settings.menu_links.links %}
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="mega-menu__col-banner">
+    {% render 'banner-menu-custom' , image_1 : block.settings.banner_image_1, image_2 : block.settings.banner_image_2%}
+  </div>
+</div>

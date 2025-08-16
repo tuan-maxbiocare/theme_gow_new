@@ -91,7 +91,7 @@
     <div class="mega-menu__container color-{{ settings.overlay_color_scheme }}">
       <div class="page-width mega-menu__wrapper{{ mega_menu_wrapper_class }}">
         {%- if link.links != blank -%}
-          {%- if block.type != 'sidebar' -%}
+          {%- if block.type != 'sidebar' and block.type != 'sidebar-custom' -%}
             <div class="mega-menu__list">
               {%- for i in (1..menu_columns) -%}
                 {% assign column_index = forloop.index0 %}
@@ -130,7 +130,13 @@
               {%- endfor -%}
             </div>
           {%- else -%}
-            <style>
+
+          {%- if block.type == 'sidebar-custom' -%}
+
+            {% render 'sidebar-custom', link: link, blocks: blocks, block-sidebar-custom: block %}
+
+          {%- else -%}
+          <style>
               .menu-sidebar {
                 --f-columns-lg: {{ menu_columns }};
                 --f-column-gap-lg: 3rem;
@@ -212,6 +218,7 @@
                 </details>
               {%- endfor -%}
             </menu-sidebar>
+           {% endif %}
           {%- endif -%}
         {%- endif -%}
         {%- case block.type -%}
