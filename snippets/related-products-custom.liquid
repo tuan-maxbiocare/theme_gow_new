@@ -1,0 +1,113 @@
+<style>
+  .related-products-swiper-custom {
+    overflow: hidden;
+  }
+</style>
+{%- liquid
+  assign limit = section.settings.limit
+  assign columns_desktop = section.settings.columns
+  assign columns_mobile = section.settings.columns_mobile | plus: 0
+  assign enable_slider = section.settings.enable_slider
+  assign enable_swipe_mobile = false
+
+  assign columns_tablet = columns_desktop | minus: 1
+  if columns_desktop < 3 or request.design_mode
+    assign columns_tablet = columns_desktop
+  endif
+
+  assign navigation_position = section.settings.navigation_position
+  assign pagination_type = 'progressbar'
+-%}
+{%- capture image_sizes -%}
+(max-width: 767px) calc((100vw - 30px) / {{ columns_mobile }}),
+(max-width: 1023px) calc((100vw - 30px) / {{ columns_tablet }}),
+{{ settings.page_width | divided_by: columns_desktop }}px
+{%- endcapture -%}
+<script src="{{ 'product-recommendations.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-slider.js' | asset_url }}" defer="defer"></script>
+
+{% style %}
+  .section-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --f-columns-mobile: {{ columns_mobile }};
+    --f-columns-md: {{ columns_tablet }};
+    --f-columns-lg: {{ columns_desktop }};
+  }
+{% endstyle %}
+
+{% render 'divider',
+  show_divider: section.settings.show_section_divider,
+  divider_width: section.settings.divider_width
+%}
+
+<div class="product-card"></div>
+
+{%- if recommendations.performed and recommendations.products_count > 0 -%}
+  {%- liquid
+    assign products_to_display = recommendations.products_count
+    if products_to_display > limit
+      assign products_to_display = limit
+    endif
+
+    if section.settings.swipe_on_mobile and products_to_display > columns_mobile
+      assign enable_swipe_mobile = true
+    endif
+  -%}
+  {% render 'section-heading', section_settings: section.settings %}
+  <product-slider
+    class="block{% if navigation_position == 'middle' %} swiper-show-nav-on-hover relative{% endif %}"
+    data-section-id="{{ section.id }}"
+    data-enable-slider="{{ enable_slider }}"
+    data-items="{{ columns_desktop }}"
+    data-tablet-items="{{ columns_tablet }}"
+    data-total-items="{{ products_to_display }}"
+    data-pagination-type="{{ pagination_type }}"
+  >
+    <div
+      class="products-grid-wrap{% if enable_slider %} swiper swiper-equal-height overflow-visible{% endif %}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ columns_mobile }}-cols{% endif %} related-products-swiper-custom"
+      id="product-list-{{ section.id }}"
+    >
+      <div class="products-grid f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_slider %} swiper-wrapper{% endif %}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
+        {%- for recommendation in recommendations.products -%}
+          <div class="f-column swiper-slide">
+            {% render 'card-product',
+              product: recommendation,
+              parent_color_scheme: section.settings.color_scheme,
+              image_sizes: image_sizes,
+              image_ratio: section.settings.pcard_image_ratio,
+              section_index: section.index,
+              index: forloop.index
+            %}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    {%- if enable_slider -%}
+      <div class="swiper-controls{% if navigation_position == 'bottom' %} swiper-controls--grouped{% elsif navigation_position == 'middle' %} swiper-controls--nav-floating{% endif %} swiper-controls--pagination-{{ pagination_type }} hidden {% if products_to_display > columns_tablet %} md:flex{% endif %}{% if products_to_display > columns_desktop %} lg:flex{% else %} lg:hidden{% endif %}">
+        <button
+          class="swiper-button swiper-button-prev btn{% if navigation_position == 'middle' %} swiper-button--drop-shadow{% endif %}"
+          name="previous"
+          aria-label="{{ 'general.slider.previous_slide' | t }}"
+        >
+          <span class="btn__text"> {% render 'icon-caret-left' %}</span>
+        </button>
+        {% if navigation_position == 'bottom' %}<div class="swiper-pagination"></div>{% endif %}
+        <button
+          class="swiper-button swiper-button-next btn{% if navigation_position == 'middle' %} swiper-button--drop-shadow{% endif %}"
+          name="next"
+          aria-label="{{ 'general.slider.next_slide' | t }}"
+        >
+          <span class="btn__text"> {% render 'icon-caret-right' %}</span>
+        </button>
+      </div>
+    {%- endif -%}
+    {%- if pagination_type == 'progressbar' and enable_swipe_mobile and section.settings.show_progress_bar -%}
+      <scroll-progress-bar class="md:hidden" target="product-list-{{ section.id }}">
+        <div class="progress-container">
+          <div class="progress-bar no-empty"></div>
+        </div>
+      </scroll-progress-bar>
+    {%- endif -%}
+  </product-slider>
+{%- endif -%}
