@@ -1,0 +1,40 @@
+/* card-product.liquid */
+.product-card-custom {
+    background: #fff;
+    border: 1px solid {{ settings.border_product_card_custom}};
+    border-radius: 12px;
+    padding: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.product-card-custom:hover {
+    border-color: {{ settings.border_product_card_custom}};
+    box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.18),
+        0 0 12px rgba(28, 167, 88, 0.4);
+}
+
+
+
+.product-card__title .reversed-link__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    line-height: 1.4em;
+    min-height: calc(1.4em * 2);
+    max-height: calc(1.4em * 2);
+}
+
+
+/* price.liquid */
+.f-price__regular-custom {
+    font-size: {{ settings.pcard_title_font_size }}rem;
+}
+
+.f-price-item--sale {
+    font-size: {{ settings.f_price_item_sale}}rem;
+}

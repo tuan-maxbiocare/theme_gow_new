@@ -2882,7 +2882,7 @@ input:is([type=radio])::after {
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  font-size: calc(var(--font-body-size) * 0.8);
+  font-size: calc(var(--font-body-size) * 1.2);
   font-family: var(--font-pcard-badge-family);
   font-weight: var(--font-pcard-badge-weight);
   font-style: var(--font-pcard-badge-style);
