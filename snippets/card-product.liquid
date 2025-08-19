@@ -278,10 +278,7 @@
           class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
         >
           <div class="btn__text flex gap-1 items-center">
-            <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
-              {%- render 'icon-cart', name: settings.cart_icon -%}
-            </span>
-            <span class="product-card__atc-text product-card__action-text">
+            <span class="">
               {%- if use_short_text_for_atc_button -%}
                 {{- 'products.product.choose_options_short' | t -}}
               {%- else -%}
@@ -320,9 +317,9 @@
           class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
         >
           <div class="btn__text flex gap-1 items-center">
-            <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
-              {%- render 'icon-cart', name: settings.cart_icon -%}
-            </span>
+            {% comment %} <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
+              {%- render 'icon-cart', name: settings.cart_icon -%} ggggggg
+            </span> {% endcomment %}
             <span class="product-card__atc-text product-card__action-text">
               {%- if variant.available -%}
                 {%- if use_short_text_for_atc_button -%}

@@ -4,18 +4,12 @@
     border: 1px solid {{ settings.border_product_card_custom}};
     border-radius: 12px;
     padding: 16px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: border-color 0.4s ease;
 }
 
 .product-card-custom:hover {
-    border-color: {{ settings.border_product_card_custom}};
-    box-shadow:
-        0 6px 20px rgba(0, 0, 0, 0.18),
-        0 0 12px rgba(28, 167, 88, 0.4);
+    border-color: {{ settings.border_product_card_custom_hover }};
 }
-
-
 
 .product-card__title .reversed-link__text {
     display: -webkit-box;
@@ -29,6 +23,19 @@
     max-height: calc(1.4em * 2);
 }
 
+
+@media (max-width: 767.98px) {
+  .product-card__action-button {
+    padding: 0;
+    width: 100% !important;
+    line-height: 1;
+     border-radius: 6px;
+  }
+   .product-card__action-text {
+    position: relative;
+    max-width: 100%;
+  }
+}
 
 /* price.liquid */
 .f-price__regular-custom {

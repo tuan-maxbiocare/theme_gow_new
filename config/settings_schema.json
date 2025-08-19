@@ -1388,7 +1388,13 @@
         "type": "color",
         "id": "border_product_card_custom",
         "label": "Product Card Border Color",
-        "default": "#198544"
+        "default": "#0000FF"
+      },
+      {
+        "type": "color",
+        "id": "border_product_card_custom_hover",
+        "label": "Product Card Shadow Color",
+        "default": "#FF0000"
       }
     ]
   },
