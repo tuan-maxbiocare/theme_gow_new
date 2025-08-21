@@ -115,9 +115,18 @@
   <div class="product-card__wrapper h-full">
     <div class="product-card__image-wrapper{% if second_image == blank %} product-card__image-wrapper--main-only{% endif %} {% if list_on_mobile %}desktop-{% endif %}color-{{ settings.pcard_overlay_color_scheme }} bg-none">
       <a href="{{ product.url }}" aria-label="{{ product.title | escape }}" tabindex="-1">
-        <motion-element data-motion="zoom-out-sm" class="block">
+        <motion-element data-motion="zoom-out-sm" class="block" style="background: #ffffff;">
           {%- if featured_media -%}
             {%- unless first_media_type == 'video' or first_media_type == 'external_video' -%}
+              {% assign first_image_widths = image_widths | append: ', ' | append: featured_media.width %}
+              {% assign border_radius = settings.pcard_image_radius | default: 0 %}
+              {% assign bg_color = settings.pcard_image_bg | default: '#ffffff' %}
+              {% assign image_style = 'border-radius: '
+                | append: border_radius
+                | append: 'px; background-color: '
+                | append: bg_color
+                | append: ';'
+              %}
               <div
                 class="media-wrapper product-card__image product-card__image--main"
                 style="--aspect-ratio: {{ image_ratio }}"
@@ -132,7 +141,8 @@
                     class: 'motion-reduce',
                     widths: first_image_widths,
                     sizes: image_sizes,
-                    is: 'image-lazy'
+                    is: 'image-lazy',
+                    style: image_style
                 }}
               </div>
               {%- unless second_image == blank -%}
@@ -253,12 +263,9 @@
         <span class="btn__text flex gap-1 items-center">{{- 'products.product.view_details' | t -}}</span>
       </a>
     </div>
-  </div>
-  {%- if settings.pcard_choose_options_actions == 'open_popup' or enable_quick_view -%}
-    {% render 'quick-view-modal', modal_id: quick_view_modal_id, product: product %}
-  {%- endif -%}
 
-  {%- if enable_quick_add -%}
+
+      {%- if enable_quick_add -%}
     {%- liquid
       assign product_form_id = 'quick-add-' | append: section.id | append: product.id
       assign qty_rules = false
@@ -267,7 +274,7 @@
       endif
     -%}
     {%- if product.variants.size > 1 or qty_rules -%}
-      <div>
+      <div class="button-add-cart-custom">
         <{{ atc_button_tag }}
           {% if settings.pcard_choose_options_actions == 'product_page' %}
             href="{{- product_url -}}"
@@ -292,7 +299,7 @@
       {%- form 'product',
         product,
         id: product_form_id,
-        class: '',
+        class: 'button-add-cart-custom',
         novalidate: 'novalidate',
         data-type: 'add-to-cart-form',
         is: 'product-form'
@@ -337,4 +344,10 @@
       {%- endform -%}
     {%- endif -%}
   {%- endif -%}
+
+  </div>
+  {%- if settings.pcard_choose_options_actions == 'open_popup' or enable_quick_view -%}
+    {% render 'quick-view-modal', modal_id: quick_view_modal_id, product: product %}
+  {%- endif -%}
+
 </div>
