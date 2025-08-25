@@ -514,6 +514,68 @@
               {%- endif -%}
             </div>
           </div>
+        {%- when 'text_with_buttons' -%}
+          <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
+            <div class="text-buttons-wrapper" style="display: flex;">
+              {%- if block.settings.heading != blank -%}
+                <h2 class="{{ block.settings.heading_size }} text-{{ block.settings.text_alignment }}">
+                  {{ block.settings.heading }}
+                </h2>
+              {%- endif -%}
+
+              {%- if block.settings.text != blank -%}
+                <div class="text-content rte text-{{ block.settings.text_alignment }}">
+                  {{ block.settings.text }}
+                </div>
+              {%- endif -%}
+              <div class="buttons-wrapper flex gap-3" style="margin-top: -5px; padding: 0px 16px 0px 16px;">
+                <a
+                  target="_blank"
+                  href="{{ block.settings.twitter_url }}?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: url }}"
+                  data-tooltip
+                >
+                  <span class="tooltip pointer-events-none">
+                    {{ block.settings.share_twitter_tooltip }}
+                  </span>
+                  <span class="btn btn--icon btn--icon-pill">
+                    {% if block.settings.share_twitter_icon != blank %}
+                      <img
+                        src="{{ block.settings.share_twitter_icon | img_url: '32x32' }}"
+                        alt="Twitter"
+                        loading="lazy"
+                        width="40px"
+                        height="40px"
+                      >
+                    {% else %}
+                      {% render 'icon-twitter', size: 'large' %}
+                    {% endif %}
+                  </span>
+                </a>
+                <a
+                  target="_blank"
+                  href="{{ block.settings.facebook_url }}?u={{ shop.url | append: url }}"
+                  data-tooltip
+                >
+                  <span class="tooltip pointer-events-none">
+                    {{ block.settings.share_facebook_tooltip }}
+                  </span>
+                  <span class="btn btn--icon btn--icon-pill">
+                    {% if block.settings.share_facebook_icon != blank %}
+                      <img
+                        src="{{ block.settings.share_facebook_icon | img_url: '32x32' }}"
+                        alt="Twitter"
+                        loading="lazy"
+                        width="40px"
+                        height="40px"
+                      >
+                    {% else %}
+                      {% render 'icon-twitter', size: 'large' %}
+                    {% endif %}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
       {%- endcase -%}
     {%- endfor -%}
   </div>
@@ -535,3 +597,34 @@
     </div>
   {%- endif -%}
 </div>
+<style>
+  .btn--icon-pill {
+    border-radius: 50px;
+    padding: 0 32px;
+    
+  }
+  .product__blocks .btn--icon.btn--icon-pill,
+  .product__blocks .btn--icon.btn--icon-pill:hover,
+  .product__blocks .btn--icon.btn--icon-pill:focus,
+  .product__blocks .btn--icon.btn--icon-pill:active {
+    background-color: transparent !important;
+    color: currentColor !important;
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    --color-button: transparent !important;
+    --color-button-text: currentColor !important;
+    --color-button-hover: transparent !important;
+  }
+  @media (max-width: 768px) {
+  .text-buttons-wrapper {
+    flex-direction: column; /* text ở trên, nút ở dưới */
+    align-items: flex-start;
+  }
+
+  .buttons-wrapper {
+    margin-top: 10px !important; /* tạo khoảng cách với text */
+    padding: 0 !important;
+  }
+}
+</style>

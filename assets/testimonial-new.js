@@ -110,10 +110,11 @@ if (!customElements.get('testimonials-component')) {
             },
           }
         };
-      } else if (this.layout === 'standard' || this.layout === 'card') {
-        slideToMethod = 'slideToLoop';
+      } 
+      else {
+       slideToMethod = 'slideToLoop';
         this.settings = {
-          centeredSlides: true,
+          centeredSlides: false,
           spaceBetween: spaceBetweenMobile,
           pagination: {
             el: this.section.querySelector(this.selectors.pagination),
@@ -123,30 +124,19 @@ if (!customElements.get('testimonials-component')) {
           loop: true,
           breakpoints: {
             768: {
-              slidesPerView: 2,
+              slidesPerView: 3,
               spaceBetween: spaceBetween
             },
             1280: {
-              slidesPerView: Math.max(2, this.getSlidesPerViewCentered(this.laptopItems)),
+              slidesPerView: Math.max(3, this.getSlidesPerViewCentered(this.laptopItems)),
               spaceBetween: spaceBetween
             },
             1440: {
-              slidesPerView: Math.max(2, this.getSlidesPerViewCentered(this.items)),
+              slidesPerView: Math.max(3, this.getSlidesPerViewCentered(this.items)),
               spaceBetween: spaceBetween
             },
           }
         };
-      }
-      else {
-        additionModules.push(FoxTheme.Swiper.Mousewheel);
-        this.settings = {
-          mousewheel: {
-            enabled: true,
-            forceToAxis: true,
-            thresholdDelta: 10,
-            thresholdTime: 100
-          }
-        }
       }
 
       if (typeof this.sliderInstance !== 'object') {

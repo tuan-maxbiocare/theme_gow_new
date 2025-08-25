@@ -264,8 +264,7 @@
       </a>
     </div>
 
-
-      {%- if enable_quick_add -%}
+    {%- if enable_quick_add -%}
     {%- liquid
       assign product_form_id = 'quick-add-' | append: section.id | append: product.id
       assign qty_rules = false
@@ -285,7 +284,7 @@
           class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
         >
           <div class="btn__text flex gap-1 items-center">
-            <span class="">
+              <span class="">
               {%- if use_short_text_for_atc_button -%}
                 {{- 'products.product.choose_options_short' | t -}}
               {%- else -%}
@@ -325,7 +324,7 @@
         >
           <div class="btn__text flex gap-1 items-center">
             {% comment %} <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
-              {%- render 'icon-cart', name: settings.cart_icon -%} ggggggg
+              {%- render 'icon-cart', name: settings.cart_icon -%}
             </span> {% endcomment %}
             <span class="product-card__atc-text product-card__action-text">
               {%- if variant.available -%}
@@ -344,10 +343,8 @@
       {%- endform -%}
     {%- endif -%}
   {%- endif -%}
-
   </div>
   {%- if settings.pcard_choose_options_actions == 'open_popup' or enable_quick_view -%}
     {% render 'quick-view-modal', modal_id: quick_view_modal_id, product: product %}
   {%- endif -%}
-
 </div>

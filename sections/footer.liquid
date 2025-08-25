@@ -18,6 +18,51 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 </style>
+{% style %}
+@media (min-width: 1024px) {
+  .footer__bottom-row-new {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .footer__bottom-row-item {
+    display: flex;
+    align-items: center;
+  }
+
+  .footer__bottom-row-item--left {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .footer__bottom-row-item--right {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  /* Khi payment ở right và social ở left */
+  .footer__bottom-row-item--right:first-child {
+    grid-column: 3;
+    order: 2;
+  }
+
+  .footer__bottom-row-item--left:last-child {
+    grid-column: 1;
+    order: 1;
+  }
+}
+@media (max-width: 676px) {
+  .footer__payment {
+    margin-bottom: 30px;
+  }
+   .footer__Social{
+    margin-bottom: 30px;
+   }
+}
+{% endstyle %}
 <footer class="footer color-{{ section.settings.color_scheme }} section-{{ section.id }}">
   {% render 'divider',
     show_divider: section.settings.show_section_divider,
@@ -252,8 +297,8 @@
         endif
       %}
       {% if enable_country_selector or enable_language_selector or show_social or section.settings.payment_enable %}
-        <div class="footer__bottom-row flex justify-between items-end">
-          <div class="grid gap-5">
+        <div class="footer__bottom-row-new">
+          <div class="footer__bottom-row-item footer__bottom-row-item--{{ section.settings.payment_position }}">
             <div class="footer__localization relative z-2 flex items-center">
               {%- if enable_country_selector -%}
                 {% render 'country-selector', position: 'up', plain: true, form_id: section.id %}
@@ -263,29 +308,100 @@
                 {% render 'language-selector', position: 'up', plain: true, form_id: section.id %}
               {%- endif -%}
             </div>
+            {% comment %}
+              {%- if section.settings.payment_enable -%}
+                <div class="footer__payment">
+                  <span class="visually-hidden">{{ 'general.payment.methods' | t }}</span>
+                  <ul class="list list-payment" role="list">
+                    {%- for type in shop.enabled_payment_types -%}
+                      <li class="list-payment__item">
+                        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </div>
+              {%- endif -%}
+            {% endcomment %}
 
             {%- if section.settings.payment_enable -%}
               <div class="footer__payment">
                 <span class="visually-hidden">{{ 'general.payment.methods' | t }}</span>
                 <ul class="list list-payment" role="list">
-                  {%- for type in shop.enabled_payment_types -%}
-                    <li class="list-payment__item">
-                      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                    </li>
-                  {%- endfor -%}
+                  {% if shop.enabled_payment_types.size > 0 %}
+                    {%- for type in shop.enabled_payment_types -%}
+                      <li class="list-payment__item">
+                        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                      </li>
+                    {%- endfor -%}
+                  {% else %}
+                    {% assign fake_payment_types = 'visa,master,american_express,paypal' | split: ',' %}
+                    {% for type in fake_payment_types %}
+                      <li class="list-payment__item">
+                        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                      </li>
+                    {% endfor %}
+                  {% endif %}
                 </ul>
               </div>
             {%- endif -%}
           </div>
 
           {%- if show_social -%}
-            {%- liquid
-              assign button_style = 'btn btn--icon-circle ' | append: section.settings.social_button_style
-            -%}
-            {%- render 'social-icons', class: 'footer__list-social', item_class: button_style, size: 'large' -%}
+            <div class="footer__Social footer__bottom-row-item--{{ section.settings.social_position }}">
+              {%- liquid
+                assign button_style = 'btn btn--icon-circle ' | append: section.settings.social_button_style
+              -%}
+              {%- render 'social-icons', class: 'footer__list-social', item_class: button_style, size: 'large' -%}
+            </div>
           {%- endif -%}
         </div>
       {% endif %}
+
+      {% comment %}
+        {% if enable_country_selector or enable_language_selector or show_social or section.settings.payment_enable %}
+          <div class="footer__bottom-row flex justify-between items-end">
+            <div class="grid gap-5">
+              <div class="footer__localization relative z-2 flex items-center">
+                {%- if enable_country_selector -%}
+                  {% render 'country-selector', position: 'up', plain: true, form_id: section.id %}
+                {%- endif -%}
+
+                {%- if enable_language_selector -%}
+                  {% render 'language-selector', position: 'up', plain: true, form_id: section.id %}
+                {%- endif -%}
+              </div>
+              {%- if section.settings.payment_enable -%}
+                <div class="footer__payment">
+                  <span class="visually-hidden">{{ 'general.payment.methods' | t }}</span>
+                  <ul class="list list-payment" role="list">
+                    {% if shop.enabled_payment_types.size > 0 %}
+                      {%- for type in shop.enabled_payment_types -%}
+                        <li class="list-payment__item">
+                          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                        </li>
+                      {%- endfor -%}
+                    {% else %}
+                      {% assign fake_payment_types = 'visa,master,american_express,paypal' | split: ',' %}
+                      {% for type in fake_payment_types %}
+                        <li class="list-payment__item">
+                          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                        </li>
+                      {% endfor %}
+                    {% endif %}
+                  </ul>
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- if show_social -%}
+              {%- liquid
+                assign button_style = 'btn btn--icon-circle ' | append: section.settings.social_button_style
+              -%}
+              {%- render 'social-icons', class: 'footer__list-social', item_class: button_style, size: 'large' -%}
+            {%- endif -%}
+          </div>
+        {% endif %}
+      {% endcomment %}
       <div class="footer__bottom-row flex justify-between items-center">
         <div class="footer__copyright">
           <p class="footer__copyright-content">
@@ -1116,6 +1232,50 @@
       "max": 100,
       "step": 2,
       "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Bottom row layout"
+    },
+    {
+      "type": "select",
+      "id": "payment_position",
+      "label": "Payment position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        /* {
+          "value": "center",
+          "label": "Center"
+        }, */
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "social_position",
+      "label": "Social icons position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        /* {
+          "value": "center",
+          "label": "Center"
+        }, */
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
     }
   ],
   "default": {

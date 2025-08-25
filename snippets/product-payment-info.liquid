@@ -11,14 +11,36 @@
         %}
       </div>
     {%- endif -%}
+    {% comment %}
+      {%- if block.settings.show_payment_icons -%}
+        <span class="visually-hidden">{{ 'general.payment.methods' | t }}</span>
+        <ul class="list flex flex-wrap" role="list">
+          {%- for type in shop.enabled_payment_types -%}
+            <li class="flex items-center">
+              {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    {% endcomment %}
+     {% comment %} show payment icons giả định bao giờ có setup lấy của setup {% endcomment %}
     {%- if block.settings.show_payment_icons -%}
       <span class="visually-hidden">{{ 'general.payment.methods' | t }}</span>
       <ul class="list flex flex-wrap" role="list">
-        {%- for type in shop.enabled_payment_types -%}
-          <li class="flex items-center">
-            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-          </li>
-        {%- endfor -%}
+        {% if shop.enabled_payment_types.size > 0 %}
+          {%- for type in shop.enabled_payment_types -%}
+            <li class="flex items-center">
+              {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+            </li>
+          {%- endfor -%}
+        {% else %}
+          {% assign fake_payment_types = 'visa,master,american_express,paypal' | split: ',' %}
+          {% for type in fake_payment_types %}
+            <li class="flex items-center">
+              {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+            </li>
+          {% endfor %}
+        {% endif %}
       </ul>
     {%- endif -%}
     {%- if block.settings.description != blank -%}

@@ -2561,7 +2561,7 @@ shopify-accelerated-checkout {
 }
 .form-error ul {
   color: #c4301c;
-  font-size: calc(var(--font-body-size) * 0.8);
+  font-size: calc(var(--font-body-size) * 1.2);
   line-height: 2.2rem;
   padding-inline-start: 2.4rem;
 }
@@ -2882,7 +2882,7 @@ input:is([type=radio])::after {
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  font-size: calc(var(--font-body-size) * 1.2);
+  font-size: calc(var(--font-body-size) * 0.8);
   font-family: var(--font-pcard-badge-family);
   font-weight: var(--font-pcard-badge-weight);
   font-style: var(--font-pcard-badge-style);
