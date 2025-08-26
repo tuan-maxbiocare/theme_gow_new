@@ -42,10 +42,26 @@
 }
 
 /* price.liquid */
-.f-price__regular-custom {
+.product-card-custom .f-price__regular-custom {
     font-size: 2.5rem;
 }
 
-.f-price-item--sale {
+.product-card-custom .f-price-item--sale {
     font-size: 2.5rem;
+}
+
+
+
+/* menu-food-product-card */
+.menu-food-product-card .f-price-item--sale {
+    font-size: 1.8rem !important;
+}
+
+
+.menu-food-product-card .f-price__regular-custom {
+    font-size: 1.8rem !important;
+}
+
+.menu-food-product-card .f-price-item--regular-compare-at-price{
+    font-size: 1rem;
 }

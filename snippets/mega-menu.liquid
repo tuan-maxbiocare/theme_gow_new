@@ -35,6 +35,11 @@
     --promotion-columns: {{ promotion_columns }};
   }
 {% endstyle %}
+<style>
+  .mega-menu__column-logo-brand-custom {
+    align-items: center;
+  }
+</style>
 <details
   id="Mega-menu-item-{{ block.id }}"
   is="details-mega"
@@ -92,133 +97,190 @@
       <div class="page-width mega-menu__wrapper{{ mega_menu_wrapper_class }}">
         {%- if link.links != blank -%}
           {%- if block.type != 'sidebar' and block.type != 'sidebar-custom' -%}
-            <div class="mega-menu__list">
-              {%- for i in (1..menu_columns) -%}
-                {% assign column_index = forloop.index0 %}
-                <div class="mega-menu__column flex flex-col gap-8">
-                  {%- for childlink in link.links -%}
-                    {%- liquid
-                      assign item_index = forloop.index0
-                      assign current_column = item_index | modulo: menu_columns
-                    -%}
-                    {%- if current_column == column_index -%}
-                      <div class="mega-menu__item">
-                        {%- if show_menu_column_divider -%}
-                          <div class="mega-menu__item-wrapper">
-                        {%- endif -%}
-                        <a href="{{ childlink.url }}" class="h6 mega-menu__link mega-menu__link--top font-heading">
-                          {{- childlink.title | escape -}}
-                        </a>
-                        {%- if childlink.links != blank -%}
-                          <ul class="mega-menu__item-child text-subtext">
-                            {%- for grandchildlink in childlink.links -%}
-                              <li class="reversed-link">
-                                <a href="{{ grandchildlink.url }}" class="block mega-menu__link">
-                                  <span class="reversed-link__text">{{- grandchildlink.title | escape -}}</span>
-                                </a>
-                              </li>
-                            {%- endfor -%}
-                          </ul>
-                        {%- endif -%}
-                        {%- if show_menu_column_divider -%}
-                          </div>
-                        {%- endif -%}
-                      </div>
-                    {%- endif -%}
-                  {%- endfor -%}
-                </div>
-              {%- endfor -%}
-            </div>
-          {%- else -%}
+            {% if block.type == 'logo-brand' %}
+              <div class="mega-menu__list">
+                {%- for i in (1..menu_columns) -%}
+                  {% assign column_index = forloop.index0 %}
+                  <div class="mega-menu__column flex flex-col gap-8 mega-menu__column-logo-brand-custom">
+                    {%- for childlink in link.links -%}
+                      {%- liquid
+                        assign item_index = forloop.index0
+                        assign current_column = item_index | modulo: menu_columns
+                      -%}
+                      {%- if current_column == column_index -%}
+                        {% capture setting_id %}logo_image_{{ forloop.index }}{% endcapture %}
+                        {% assign image = block.settings[setting_id] %}
 
-          {%- if block.type == 'sidebar-custom' -%}
-
-            {% render 'sidebar-custom', link: link, blocks: blocks, block-sidebar-custom: block %}
-
-          {%- else -%}
-          <style>
-              .menu-sidebar {
-                --f-columns-lg: {{ menu_columns }};
-                --f-column-gap-lg: 3rem;
-                --f-row-gap-lg: 3rem;
-              }
-            </style>
-            <menu-sidebar class="block menu-sidebar relative w-full mega-menu__item">
-              {%- for childlink in link.links -%}
-                <details
-                  class="menu-sidebar__item"
-                  open
-                >
-                  <summary class="menu-sidebar__toggle blocks-radius-sm flex items-center justify-between{% if forloop.first %} is-visible{% endif %}">
-                    <h6>{{ childlink.title | escape }}</h6>
-                    {%- if childlink.links != blank -%}
-                      {%- render 'icon-caret-right', size: 'small' -%}
-                    {%- endif -%}
-                  </summary>
-                  {%- if childlink.links != blank -%}
-                    <div class="menu-sidebar__content no-empty">
-                      <ul class="f-grid">
-                        {%- for grandchildlink in childlink.links -%}
-                          {%- liquid
-                            assign is_collection_link = false
-                            if grandchildlink.type == 'collection_link' and block.settings.show_collection_image
-                              assign is_collection_link = true
-                              assign collection_object = grandchildlink.object
-                              assign collection_image = collection_object.featured_image
-                            endif
-
-                            if collection_object.metafields.foxtheme.collection_megamenu_image.value
-                              assign collection_image = collection_object.metafields.foxtheme.collection_megamenu_image.value
-                            endif
-
-                            if block.settings.show_image_of_first_product
-                              assign collection_image = collections[grandchildlink.object.handle].all_products.first
-                            endif
-
-                            assign image_ratio = block.settings.image_ratio
-                            if image_ratio == 'adapt'
-                              if collection_object.metafields.foxtheme.collection_megamenu_image.value
-                                assign image_ratio = collection_image.aspect_ratio
-                              else
-                                assign image_ratio = collection_image.featured_image.aspect_ratio
-                              endif
-                            endif
-                          -%}
-                          <li class="">
-                            <a href="{{ grandchildlink.url }}" class="grid gap-3 hover-wrapper reversed-link">
-                              {%- if is_collection_link and collection_image != blank -%}
-                                <div class="overflow-hidden blocks-radius-md">
-                                  <motion-element data-motion="zoom-out-sm" class="block">
-                                    <div class="media-wrapper" style="--aspect-ratio: {{ image_ratio }};">
-                                      {{
-                                        collection_image
-                                        | image_url: width: collection_image.featured_image.width
-                                        | image_tag:
-                                          loading: 'lazy',
-                                          class: 'motion-reduce hover-scale-up',
-                                          widths: first_image_widths,
-                                          sizes: image_sizes,
-                                          is: 'image-lazy'
-                                      }}
-                                    </div>
-                                  </motion-element>
-                                </div>
-                              {%- endif -%}
-                              <p class="block m-0">
-                                <span class="reversed-link__text">{{ grandchildlink.title | escape }}</span>
-                              </p>
+                        {% if image != blank %}
+                          <div class="hover-wrapper">
+                            <a href="{{ childlink.url }}" class="pet-custom__link">
+                              <img
+                                src="{{ image | image_url: width: 200 }}"
+                                alt="{{ childlink.title | escape }}"
+                                width="200"
+                                height="200"
+                                class="hover-scale-up"
+                              >
                             </a>
-                          </li>
-                        {%- endfor -%}
-                      </ul>
-                    </div>
-                  {%- else -%}
-                    <div class="menu-sidebar__content no-empty"></div>
-                  {%- endif -%}
-                </details>
-              {%- endfor -%}
-            </menu-sidebar>
-           {% endif %}
+                          </div>
+                        {% endif %}
+
+                        <div class="mega-menu__item">
+                          {%- if show_menu_column_divider -%}
+                            <div class="mega-menu__item-wrapper">
+                          {%- endif -%}
+                          <a href="{{ childlink.url }}" class="h6 mega-menu__link mega-menu__link--top font-heading">
+                            {{- childlink.title | escape -}}
+                          </a>
+                          {%- if childlink.links != blank -%}
+                            <ul class="mega-menu__item-child text-subtext">
+                              {%- for grandchildlink in childlink.links -%}
+                                <li class="reversed-link">
+                                  <a href="{{ grandchildlink.url }}" class="block mega-menu__link">
+                                    <span class="reversed-link__text">{{- grandchildlink.title | escape -}}</span>
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {%- endif -%}
+                          {%- if show_menu_column_divider -%}
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                {%- endfor -%}
+              </div>
+
+            {% else %}
+              <div class="mega-menu__list">
+                {%- for i in (1..menu_columns) -%}
+                  {% assign column_index = forloop.index0 %}
+                  <div class="mega-menu__column flex flex-col gap-8">
+                    {%- for childlink in link.links -%}
+                      {%- liquid
+                        assign item_index = forloop.index0
+                        assign current_column = item_index | modulo: menu_columns
+                      -%}
+                      {%- if current_column == column_index -%}
+                        <div class="mega-menu__item">
+                          {%- if show_menu_column_divider -%}
+                            <div class="mega-menu__item-wrapper">
+                          {%- endif -%}
+                          <a href="{{ childlink.url }}" class="h6 mega-menu__link mega-menu__link--top font-heading">
+                            {{- childlink.title | escape -}}
+                          </a>
+                          {%- if childlink.links != blank -%}
+                            <ul class="mega-menu__item-child text-subtext">
+                              {%- for grandchildlink in childlink.links -%}
+                                <li class="reversed-link">
+                                  <a href="{{ grandchildlink.url }}" class="block mega-menu__link">
+                                    <span class="reversed-link__text">{{- grandchildlink.title | escape -}}</span>
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {%- endif -%}
+                          {%- if show_menu_column_divider -%}
+                            </div>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                {%- endfor -%}
+              </div>
+            {% endif %}
+
+          {%- else -%}
+            {%- if block.type == 'sidebar-custom' -%}
+              {% render 'sidebar-custom', link: link, blocks: blocks, block-sidebar-custom: block %}
+
+            {%- else -%}
+              <style>
+                .menu-sidebar {
+                  --f-columns-lg: {{ menu_columns }};
+                  --f-column-gap-lg: 3rem;
+                  --f-row-gap-lg: 3rem;
+                }
+              </style>
+              <menu-sidebar class="block menu-sidebar relative w-full mega-menu__item">
+                {%- for childlink in link.links -%}
+                  <details
+                    class="menu-sidebar__item"
+                    open
+                  >
+                    <summary class="menu-sidebar__toggle blocks-radius-sm flex items-center justify-between{% if forloop.first %} is-visible{% endif %}">
+                      <h6>{{ childlink.title | escape }}</h6>
+                      {%- if childlink.links != blank -%}
+                        {%- render 'icon-caret-right', size: 'small' -%}
+                      {%- endif -%}
+                    </summary>
+                    {%- if childlink.links != blank -%}
+                      <div class="menu-sidebar__content no-empty">
+                        <ul class="f-grid">
+                          {%- for grandchildlink in childlink.links -%}
+                            {%- liquid
+                              assign is_collection_link = false
+                              if grandchildlink.type == 'collection_link' and block.settings.show_collection_image
+                                assign is_collection_link = true
+                                assign collection_object = grandchildlink.object
+                                assign collection_image = collection_object.featured_image
+                              endif
+
+                              if collection_object.metafields.foxtheme.collection_megamenu_image.value
+                                assign collection_image = collection_object.metafields.foxtheme.collection_megamenu_image.value
+                              endif
+
+                              if block.settings.show_image_of_first_product
+                                assign collection_image = collections[grandchildlink.object.handle].all_products.first
+                              endif
+
+                              assign image_ratio = block.settings.image_ratio
+                              if image_ratio == 'adapt'
+                                if collection_object.metafields.foxtheme.collection_megamenu_image.value
+                                  assign image_ratio = collection_image.aspect_ratio
+                                else
+                                  assign image_ratio = collection_image.featured_image.aspect_ratio
+                                endif
+                              endif
+                            -%}
+                            <li class="">
+                              <a href="{{ grandchildlink.url }}" class="grid gap-3 hover-wrapper reversed-link">
+                                {%- if is_collection_link and collection_image != blank -%}
+                                  <div class="overflow-hidden blocks-radius-md">
+                                    <motion-element data-motion="zoom-out-sm" class="block">
+                                      <div class="media-wrapper" style="--aspect-ratio: {{ image_ratio }};">
+                                        {{
+                                          collection_image
+                                          | image_url: width: collection_image.featured_image.width
+                                          | image_tag:
+                                            loading: 'lazy',
+                                            class: 'motion-reduce hover-scale-up',
+                                            widths: first_image_widths,
+                                            sizes: image_sizes,
+                                            is: 'image-lazy'
+                                        }}
+                                      </div>
+                                    </motion-element>
+                                  </div>
+                                {%- endif -%}
+                                <p class="block m-0">
+                                  <span class="reversed-link__text">{{ grandchildlink.title | escape }}</span>
+                                </p>
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      </div>
+                    {%- else -%}
+                      <div class="menu-sidebar__content no-empty"></div>
+                    {%- endif -%}
+                  </details>
+                {%- endfor -%}
+              </menu-sidebar>
+            {% endif %}
           {%- endif -%}
         {%- endif -%}
         {%- case block.type -%}
