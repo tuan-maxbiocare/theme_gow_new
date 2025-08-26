@@ -28,10 +28,10 @@
   }
 
   .mega-menu__tags {
-    margin-right: 30px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 18px;
+    margin-right: 30px;
   }
 
   .mega-menu__tag {
@@ -44,9 +44,9 @@
     border: 1px solid #e0e6eb;
     border-radius: 999px;
     text-decoration: none;
-    transition: all 0.3s ease;
     text-align: center;
     white-space: nowrap;
+    transition: all 0.3s ease;
   }
 
   .mega-menu__tag:hover {
@@ -55,6 +55,7 @@
     border-color: black;
     box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
   }
+
 
   .mega-menu__columns {
     display: flex;
@@ -98,7 +99,8 @@
   }
 
   .mega-menu__col-banner {
-    width: 50%;
+    height: 100%;
+    width: auto;
     align-items: center;
     justify-content: center;
   }
@@ -125,11 +127,6 @@
       align-items: center;
     }
 
-    .mega-menu__col-list,
-    .mega-menu__col-banner {
-      width: 100%;
-    }
-
     .mega-menu__columns {
       flex-direction: column;
       gap: 40px;
@@ -138,7 +135,7 @@
 </style>
 
 <div class="mega-menu__inner-custom">
-  <div class="mega-menu__col-list">
+  <div class="mega-menu__col-list mega-menu-custom-left">
     <div class="mega-menu__section">
       <h3 class="mega-menu__title">{{ block.settings.heading-title }}</h3>
       <div class="mega-menu__tags">
@@ -181,6 +178,6 @@
   </div>
 
   <div class="mega-menu__col-banner">
-    {% render 'banner-menu-custom' , image_1 : block.settings.banner_image_1, image_2 : block.settings.banner_image_2%}
+    {% render 'banner-menu-custom' , image_1 : block.settings.banner_image_1%}
   </div>
 </div>

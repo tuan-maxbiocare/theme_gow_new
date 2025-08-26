@@ -14,17 +14,6 @@
     </div>
 </div>
 
-<div class="swiper-slide " role="group" data-index="1" data-type="default" data-color-scheme="color-default">
-    <div class="slide__item-wrap h-full ">
-        <div class="slide__media blocks-radius ">
-            <motion-element class="block h-full" data-motion="zoom-out-sm">
-                <img src="{{ image_2 | img_url: 'master' }}" alt="Slide 2" class="" loading="lazy"
-                    fetchpriority="low" />
-            </motion-element>
-        </div>
-    </div>
-</div>
-
 {%- endcapture -%}
 
 <multicolumn-slider class="">
@@ -32,17 +21,6 @@
         style="--swiper-autoplay-delay: 5000ms;">
         <div class="swiper-wrapper h-full ">
             {{ column_html }}
-        </div>
-        <div
-            class="swiper-controls swiper-controls--float-bottom swiper-controls--grouped swiper-controls--pagination-bullets bg-none justify-center color-default">
-            <button class="swiper-button swiper-button-prev swiper-button--blank" name="previous"
-                aria-label="Previous slide">
-                ←
-            </button>
-            <div class="swiper-pagination"></div>
-            <button class="swiper-button swiper-button-next swiper-button--blank" name="next" aria-label="Next slide">
-                →
-            </button>
         </div>
     </div>
 </multicolumn-slider>

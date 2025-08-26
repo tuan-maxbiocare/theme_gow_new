@@ -84,7 +84,7 @@
     </span>
     {%- unless target.price_varies == false and target.compare_at_price_varies %}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-      <span class="f-price-item f-price-item--regular">
+      <span class="f-price-item f-price-item--regular f-price-item--regular-compare-at-price">
         <s>
           {% if settings.currency_code_enabled %}
             {{ compare_at_price | money_with_currency }}
