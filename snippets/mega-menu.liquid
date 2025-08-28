@@ -39,6 +39,15 @@
   .mega-menu__column-logo-brand-custom {
     align-items: center;
   }
+  .mega-menu__column-logo-brand-custom .hover-wrapper {
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #E6E6E6;
+  }
+
+  .mega-menu__list .mega-menu__column {
+    border: none;
+  }
 </style>
 <details
   id="Mega-menu-item-{{ block.id }}"
@@ -101,7 +110,7 @@
               <div class="mega-menu__list">
                 {%- for i in (1..menu_columns) -%}
                   {% assign column_index = forloop.index0 %}
-                  <div class="mega-menu__column flex flex-col gap-8 mega-menu__column-logo-brand-custom">
+                  <div class="mega-menu__column flex flex-col gap-3 mega-menu__column-logo-brand-custom">
                     {%- for childlink in link.links -%}
                       {%- liquid
                         assign item_index = forloop.index0
@@ -157,7 +166,7 @@
               <div class="mega-menu__list">
                 {%- for i in (1..menu_columns) -%}
                   {% assign column_index = forloop.index0 %}
-                  <div class="mega-menu__column flex flex-col gap-8">
+                  <div class="mega-menu__column flex flex-col gap-3">
                     {%- for childlink in link.links -%}
                       {%- liquid
                         assign item_index = forloop.index0
