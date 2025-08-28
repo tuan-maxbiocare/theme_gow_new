@@ -109,6 +109,19 @@
     endif
   endif
 -%}
+
+<style>
+.product-card__title-menu-custom {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  min-width: 0;
+  font-size:15px;
+}
+
+</style>
 <div
   class="product-card product-card-style-{{ pcard_style }}{% if pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}{{ card_wrapper_class }}{% if list_on_mobile %} product-card-list-on-mobile{% endif %}{% if color_inherit %} color-inherit{% endif %} product-card-custom"
 >
@@ -237,14 +250,14 @@
           </a>
         </p>
       {%- endif -%}
-      <h3 class="product-card__title text-pcard-title">
+      <span class="">
         <a
-          class="reversed-link block {% if settings.pcard_title_line_limit != 'none' %} text-limit-{{ settings.pcard_title_line_limit }}{% endif %}"
+          class="reversed-link block {% if settings.pcard_title_line_limit != 'none' %} text-limit-1{% endif %}m"
           href="{{ product.url }}"
         >
-          <span class="reversed-link__text">{{- product.title -}}</span>
+          <span class="reversed-link__text product-card__title-menu-custom">{{- product.title -}}</span>
         </a>
-      </h3>
+      </span>
       {% comment %} {%- if show_price -%}
         {% render 'price', product: product, alignment: settings.pcard_content_alignment %}
       {%- endif -%}
