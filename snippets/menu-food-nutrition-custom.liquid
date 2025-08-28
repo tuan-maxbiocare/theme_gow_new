@@ -170,7 +170,7 @@
                     class="swiper-slide promotion-item promotion-item--product menu-food-product-card"
                     style="--index: {{ forloop.index }};"
                   >
-                    {%- render 'card-product',
+                    {%- render 'card-product-menu-custom',
                       product: product,
                       parent_color_scheme: settings.overlay_color_scheme,
                       use_short_text_for_atc_button: true,
@@ -214,7 +214,7 @@
       <div style="display: flex; justify-content: space-between;align-items:center; padding-bottom:8px">
         <h3 class="menu-food-nutrition-custom__title">{{ block.settings.heading_title_2 }}</h3>
         <div>
-          <button type="button" class="btn--primary btn btn--secondary btn--small product-card__btn">
+          <button type="button" class="btn--plain">
             <a href="{{ block.settings.button_link }}" class="btn__text">
               <span class="btn__text">View more</span>
             </a>
@@ -247,7 +247,7 @@
                     class="swiper-slide promotion-item promotion-item--product menu-food-product-card"
                     style="--index: {{ forloop.index }};"
                   >
-                    {%- render 'card-product',
+                    {%- render 'card-product-menu-custom',
                       product: product,
                       parent_color_scheme: settings.overlay_color_scheme,
                       use_short_text_for_atc_button: true,

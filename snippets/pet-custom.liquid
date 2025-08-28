@@ -24,7 +24,7 @@
 
   .pet-custom__section:last-child {
     border-bottom: none;
-    padding-bottom: 0;
+    /* padding-bottom: 0; */
   }
 
   .pet-custom__title {
@@ -61,7 +61,7 @@
   }
 
   .pet-custom__icon {
-    width: 80px;
+    width: 65px;
     object-fit: contain;
   }
 
@@ -155,31 +155,57 @@
 
   .underline-effect {
     color: black;
-    position: relative;
+    /* position: relative;
     display: inline-block;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease; */
   }
 
   .underline-effect::after {
-    content: '';
+    /* content: '';
     position: absolute;
     left: 0;
     bottom: -2px;
     width: 0%;
-    height: 2px;
+    height: 2px; */
     background-color: black;
-    transition: width 0.3s ease;
+    /* transition: width 0.3s ease; */
   }
 
-  .pet-custom__link:hover .underline-effect::after {
+  /* .pet-custom__link:hover .underline-effect::after {
     width: 100%;
-  }
+  } */
+
+  .mega-menu__inner-custom_pet .btn--icon-circle {
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+   }
+
+   .pet-custom-mega-menu__col {
+    width: 80%;
+   }
+
+     .mega-menu__inner-custom_pet a .link-text {
+     flex: 1;
+     min-width: 0;
+     position: relative;
+     display: inline-block;
+   }
+
+      .pet-custom-mega-menu__col {
+     flex: 1;
+     columns: 1;
+     column-gap: 80px;
+     list-style: none;
+     padding: 0;
+     margin: 0;
+   }
 </style>
 
 <div class="pet-custom__inner mega-menu__inner-custom_pet">
   <div class="pet-custom__col-list mega-menu-custom-left">
     <div class="pet-custom__section">
-      <ul class="pet-custom__list">
+      <ul class="pet-custom__list pet-custom-mega-menu__col">
         <li class="hover-wrapper">
           <a href="{{ block.settings.collection_1 }}" class="pet-custom__link">
             <img
@@ -187,9 +213,19 @@
               alt="Cat Icon"
               class="pet-custom__icon hover-scale-up"
             >
-            <span class="underline-effect">{{ block.settings.collection_title_1 }}</span>
+            <span class="underline-effect link-text">{{ block.settings.collection_title_1 }}</span>
+
+            <button
+              class="collection-card__btn btn btn--icon-circle btn--icon focus-none "
+              tabindex="-1"
+            >
+              <span class="btn__text flex">
+                {% render 'icon-caret-right', size: 'extra-small' %}
+              </span>
+            </button>
           </a>
         </li>
+
         <li class="hover-wrapper">
           <a href="{{ block.settings.collection_2 }}" class="pet-custom__link">
             <img
@@ -197,13 +233,21 @@
               alt="Cat Icon"
               class="pet-custom__icon hover-scale-up"
             >
-            <span class="underline-effect">{{ block.settings.collection_title_2 }}</span>
+            <span class="underline-effect link-text">{{ block.settings.collection_title_2 }}</span>
+
+            <button
+              class="collection-card__btn btn btn--icon-circle btn--icon focus-none"
+              tabindex="-1"
+            >
+              <span class="btn__text flex">
+                {% render 'icon-caret-right', size: 'extra-small' %}
+              </span>
+            </button>
           </a>
         </li>
       </ul>
     </div>
   </div>
-
   <!-- Column 2: Image Section -->
   <div class="mega-menu__col-banner height_banner_pet">
     {% render 'banner-menu-custom', block: block %}
