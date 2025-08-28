@@ -1,12 +1,17 @@
 <style>
-  .pet-custom__inner {
-    max-width: 2000px !important;
-    display: flex;
-    align-items: flex-start;
+        .mega-menu__inner-custom_pet {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: {{ block.settings.percent-menu-left }}% calc(100% - {{ block.settings.percent-menu-left }}%);
   }
 
+        .height_banner_pet {
+    {% if block.settings.height-banner-menu %}
+      height: {{ block.settings.height-banner-menu }}px;
+    {% endif %}
+  }
   .pet-custom__col-list {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -147,60 +152,6 @@
     height: 12px;
   }
 
-  @media (max-width: 1024px) {
-    .pet-custom__inner {
-      flex-direction: column;
-      gap: 40px;
-    }
-
-    .pet-custom__col-list,
-    .pet-custom__col-images {
-      width: 100%;
-    }
-
-    .pet-custom__col-images {
-      height: 300px;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .pet-custom__col-images {
-      height: 250px;
-    }
-
-    .pet-custom__product-section {
-      width: 100%;
-      height: auto;
-      top: auto;
-      bottom: 0;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 16px;
-      padding: 16px;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(3px);
-      border-radius: 0 0 8px 8px;
-    }
-
-    .pet-custom__product-img {
-      width: 60px;
-      height: 90px;
-      margin: 0;
-    }
-
-    .pet-custom__product-text {
-      font-size: 12px;
-      margin: 0;
-      flex: 1;
-      color: #ffffff;
-    }
-
-    .pet-custom__buy-button {
-      padding: 8px 12px;
-      font-size: 11px;
-    }
-  }
 
   .underline-effect {
     color: black;
@@ -225,19 +176,27 @@
   }
 </style>
 
-<div class="pet-custom__inner">
+<div class="pet-custom__inner mega-menu__inner-custom_pet">
   <div class="pet-custom__col-list mega-menu-custom-left">
     <div class="pet-custom__section">
       <ul class="pet-custom__list">
         <li class="hover-wrapper">
           <a href="{{ block.settings.collection_1 }}" class="pet-custom__link">
-            <img src="{{ block.settings.collection_image_1 | image_url }}" alt="Cat Icon" class="pet-custom__icon hover-scale-up">
+            <img
+              src="{{ block.settings.collection_image_1 | image_url }}"
+              alt="Cat Icon"
+              class="pet-custom__icon hover-scale-up"
+            >
             <span class="underline-effect">{{ block.settings.collection_title_1 }}</span>
           </a>
         </li>
         <li class="hover-wrapper">
           <a href="{{ block.settings.collection_2 }}" class="pet-custom__link">
-            <img src="{{ block.settings.collection_image_2 | image_url }}" alt="Cat Icon" class="pet-custom__icon hover-scale-up">
+            <img
+              src="{{ block.settings.collection_image_2 | image_url }}"
+              alt="Cat Icon"
+              class="pet-custom__icon hover-scale-up"
+            >
             <span class="underline-effect">{{ block.settings.collection_title_2 }}</span>
           </a>
         </li>
@@ -246,7 +205,7 @@
   </div>
 
   <!-- Column 2: Image Section -->
-  <div class="mega-menu__col-banner">
-    {% render 'banner-menu-custom' , image_1 : block.settings.banner_image_1%}
+  <div class="mega-menu__col-banner height_banner_pet">
+    {% render 'banner-menu-custom', block: block %}
   </div>
 </div>

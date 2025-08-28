@@ -1,17 +1,29 @@
-<div class="mega-menu__inner-custom">
+<style>
+      .mega-menu__inner-custom_orther {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: {{ block.settings.percent-menu-left }}% calc(100% - {{ block.settings.percent-menu-left }}%);
+  }
+      .height-menu-orther {
+    {% if block.settings.height-banner-menu %}
+      height: {{ block.settings.height-banner-menu }}px;
+    {% endif %}
+  }
+</style>
+<div class="mega-menu__inner-custom_orther">
   <div class="mega-menu__col-list mega-menu-custom-left">
     <div class="mega-menu__columns">
       <ul class="mega-menu__col">
         {% for link in block.settings.menu_links.links %}
-        <li>
-          <a href="{{ link.url }}">{{ link.title }}</a>
-        </li>
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
         {% endfor %}
       </ul>
     </div>
   </div>
 
-  <div class="mega-menu__col-banner">
-    {% render 'banner-menu-custom' , image_1 : block.settings.banner_image_1%}
+  <div class="mega-menu__col-banner height-menu-orther">
+    {% render 'banner-menu-custom', block: block %}
   </div>
 </div>

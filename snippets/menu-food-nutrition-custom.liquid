@@ -1,10 +1,11 @@
-{{ 'section-slider-with-multicolumn.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'slider-with-multicolumn.js' | asset_url }}" defer="defer"></script>
-<!-- snippets/mega-menu.liquid -->
-
 <style>
+  .mega-menu__inner-custom_food {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: {{ block.settings.percent-menu-left }}% calc(100% - {{ block.settings.percent-menu-left }}%);
+  }
   .menu-food-nutrition-custom__menu {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -19,7 +20,6 @@
 
   .menu-food-nutrition-custom__title {
     font-size: 18px;
-    font-weight: 700;
     text-transform: uppercase;
     position: relative;
     padding-bottom: 8px;
@@ -109,10 +109,14 @@
   }
 
   .mega-menu__col-banner {
-    height: 100%;
-    width: auto;
     align-items: center;
     justify-content: center;
+
+  }
+  .height-banner-food {
+    {% if block.settings.height-banner-menu %}
+      height: {{ block.settings.height-banner-menu }}px;
+    {% endif %}
   }
 
   .promo-banner-wrapper {
@@ -129,145 +133,162 @@
     display: block;
     border-radius: 16px;
   }
-
-  @media (max-width: 1024px) {
-    .mega-menu__inner-custom {
-      flex-direction: column;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .mega-menu__columns {
-      flex-direction: column;
-      gap: 40px;
-    }
-  }
 </style>
 
 {% assign product_list_1 = block.settings.product_list_1 %}
 {% assign product_list_2 = block.settings.product_list_2 %}
 {% assign is_carousel = true %}
 
-<div class="mega-menu__inner-custom">
-  <div class="menu-food-nutrition-custom__menu mega-menu-custom-left">
+<div class="mega-menu__inner-custom_food">
+  <div
+    class="menu-food-nutrition-custom__menu mega-menu-custom-left"
+    style="width: 92%; padding-right:20px; padding-left:20px"
+  >
     <div class="menu-food-nutrition-custom__col">
-      <div class="menu-food-nutrition-custom__title">{{ block.settings.heading_title_1 }}</div>
-      <div style="width: 90%; padding-right:20px; padding-left:20px" open>
+      <h3 class="menu-food-nutrition-custom__title">{{ block.settings.heading_title_1 }}</h3>
+      <div open>
         {%- if product_list_1 != blank -%}
-        <menu-product-list class="block w-full" data-columns="4" data-calc-button-position="true">
-          {%- if heading != blank -%}
-          <div class="mega-menu__product-list--header flex items-center justify-between promotion-item--product"
-            style="--index: 1;">
-            <h2 class="h6 promotion-item">{{ heading | escape }}</h2>
-          </div>
-          {%- endif -%}
-          <div class="relative swiper-show-nav-on-hover">
-            {%- if is_carousel -%}
-            <div class="swiper swiper-equal-height">
+          <menu-product-list class="block w-full" data-columns="4" data-calc-button-position="true">
+            {%- if heading != blank -%}
+              <div
+                class="mega-menu__product-list--header flex items-center justify-between promotion-item--product"
+                style="--index: 1;"
+              >
+                <h2 class="h6 promotion-item">{{ heading | escape }}</h2>
+              </div>
+            {%- endif -%}
+            <div class="relative swiper-show-nav-on-hover">
+              {%- if is_carousel -%}
+                <div class="swiper swiper-equal-height">
               {%- endif -%}
-              <div style="width: 400px;"
-                class="{% if is_carousel %}swiper-wrapper{% else %}mega-menu__promotions-grid{% endif %}">
+              <div
+                style="width: 400px;"
+                class="{% if is_carousel %}swiper-wrapper{% else %}mega-menu__promotions-grid{% endif %}"
+              >
                 {%- for product in product_list_1 -%}
-                <div class="swiper-slide promotion-item promotion-item--product menu-food-product-card" style="--index: {{ forloop.index }};">
-                  {%- render 'card-product',
-                  product: product,
-                  parent_color_scheme: settings.overlay_color_scheme,
-                  use_short_text_for_atc_button: true,
-                  show_vendor: block.settings.show_product_vendor,
-                  show_type: block.settings.show_product_type,
-                  enable_quick_view: false,
-                  enable_quick_add: false,
-                  quick_view_suffix: 'megamenu-desktop'
-                  -%}
-                </div>
+                  <div
+                    class="swiper-slide promotion-item promotion-item--product menu-food-product-card"
+                    style="--index: {{ forloop.index }};"
+                  >
+                    {%- render 'card-product',
+                      product: product,
+                      parent_color_scheme: settings.overlay_color_scheme,
+                      use_short_text_for_atc_button: true,
+                      show_vendor: block.settings.show_product_vendor,
+                      show_type: block.settings.show_product_type,
+                      enable_quick_view: false,
+                      enable_quick_add: false,
+                      quick_view_suffix: 'megamenu-desktop'
+                    -%}
+                  </div>
                 {%- endfor -%}
               </div>
               {%- if is_carousel -%}
-            </div>
-            {%- endif -%}
-            {%- if is_carousel -%}
-            <div class="swiper-controls swiper-controls--nav-floating tutuutut">
-              <button class="btn swiper-button-prev swiper-button swiper-button--drop-shadow" name="previous"
-                aria-label="{{ 'general.slider.previous_slide' | t }}">
-                <span class="btn__text">{%- render 'icon-slider-prev', size: 'small' -%}</span>
-              </button>
-              <button class="btn swiper-button-next swiper-button swiper-button--drop-shadow" name="next"
-                aria-label="{{ 'general.slider.next_slide' | t }}">
-                <span class="btn__text">{%- render 'icon-slider-next', size: 'small' -%}</span>
-              </button>
-            </div>
-            {%- endif -%}
-          </div>
-        </menu-product-list>
-        {%- endif -%}
-      </div>
-    </div>
-
-    <div class="menu-food-nutrition-custom__col">
-      <div class="menu-food-nutrition-custom__title">{{ block.settings.heading_title_2 }}</div>
-
-      <div style="width: 90%; padding-right:20px; padding-left:20px" open>
-        {%- if product_list_2 != blank -%}
-        <menu-product-list class="block w-full" data-columns="4" data-calc-button-position="true">
-          {%- if heading != blank -%}
-          <div class="mega-menu__product-list--header flex items-center justify-between promotion-item--product"
-            style="--index: 1;">
-            <h2 class="h6 promotion-item">{{ heading | escape }}</h2>
-          </div>
-          {%- endif -%}
-
-          <div class="relative swiper-show-nav-on-hover">
-            {%- if is_carousel -%}
-            <div class="swiper swiper-equal-height">
+                </div>
               {%- endif -%}
-              <div style="width: 400px;"
-                class="{% if is_carousel %}swiper-wrapper{% else %}mega-menu__promotions-grid{% endif %}">
-                {%- for product in product_list_2 -%}
-                <div class="swiper-slide promotion-item promotion-item--product menu-food-product-card" style="--index: {{ forloop.index }};">
-                  {%- render 'card-product',
-                  product: product,
-                  parent_color_scheme: settings.overlay_color_scheme,
-                  use_short_text_for_atc_button: true,
-                  show_vendor: block.settings.show_product_vendor,
-                  show_type: block.settings.show_product_type,
-                  enable_quick_view: false,
-                  enable_quick_add: false,
-                  quick_view_suffix: 'megamenu-desktop'
-                  -%}
-                </div>
-                {%- endfor -%}
-              </div>
               {%- if is_carousel -%}
+                <div class="swiper-controls swiper-controls--nav-floating tutuutut">
+                  <button
+                    class="btn swiper-button-prev swiper-button swiper-button--drop-shadow"
+                    name="previous"
+                    aria-label="{{ 'general.slider.previous_slide' | t }}"
+                  >
+                    <span class="btn__text">{%- render 'icon-slider-prev', size: 'small' -%}</span>
+                  </button>
+                  <button
+                    class="btn swiper-button-next swiper-button swiper-button--drop-shadow"
+                    name="next"
+                    aria-label="{{ 'general.slider.next_slide' | t }}"
+                  >
+                    <span class="btn__text">{%- render 'icon-slider-next', size: 'small' -%}</span>
+                  </button>
+                </div>
+              {%- endif -%}
             </div>
-            {%- endif -%}
-            {%- if is_carousel -%}
-            <div style="display: block;" class="swiper-controls swiper-controls--nav-floating tuantuan">
-              <button class="btn swiper-button-prev swiper-button swiper-button--drop-shadow" name="previous"
-                aria-label="{{ 'general.slider.previous_slide' | t }}">
-                <span class="btn__text">{%- render 'icon-slider-prev', size: 'small' -%}</span>
-              </button>
-              <button class="btn swiper-button-next swiper-button swiper-button--drop-shadow" name="next"
-                aria-label="{{ 'general.slider.next_slide' | t }}">
-                <span class="btn__text">{%- render 'icon-slider-next', size: 'small' -%}</span>
-              </button>
-            </div>
-            {%- endif -%}
-          </div>
-        </menu-product-list>
+          </menu-product-list>
         {%- endif -%}
       </div>
     </div>
 
     <div class="menu-food-nutrition-custom__col">
-        <button type="button" class="btn btn--primary">
-          <a href="{{ block.settings.button_link }}" class="btn__text">
-            <span class="btn__text">View more</span>
-          </a>
-        </button>
+      <div style="display: flex; justify-content: space-between;align-items:center; padding-bottom:8px">
+        <h3 class="menu-food-nutrition-custom__title">{{ block.settings.heading_title_2 }}</h3>
+        <div>
+          <button type="button" class="btn--primary btn btn--secondary btn--small product-card__btn">
+            <a href="{{ block.settings.button_link }}" class="btn__text">
+              <span class="btn__text">View more</span>
+            </a>
+          </button>
+        </div>
+      </div>
+
+      <div open>
+        {%- if product_list_2 != blank -%}
+          <menu-product-list class="block w-full" data-columns="4" data-calc-button-position="true">
+            {%- if heading != blank -%}
+              <div
+                class="mega-menu__product-list--header flex items-center justify-between promotion-item--product"
+                style="--index: 1;"
+              >
+                <h2 class="h6 promotion-item">{{ heading | escape }}</h2>
+              </div>
+            {%- endif -%}
+
+            <div class="relative swiper-show-nav-on-hover">
+              {%- if is_carousel -%}
+                <div class="swiper swiper-equal-height">
+              {%- endif -%}
+              <div
+                style="width: 400px;"
+                class="{% if is_carousel %}swiper-wrapper{% else %}mega-menu__promotions-grid{% endif %}"
+              >
+                {%- for product in product_list_2 -%}
+                  <div
+                    class="swiper-slide promotion-item promotion-item--product menu-food-product-card"
+                    style="--index: {{ forloop.index }};"
+                  >
+                    {%- render 'card-product',
+                      product: product,
+                      parent_color_scheme: settings.overlay_color_scheme,
+                      use_short_text_for_atc_button: true,
+                      show_vendor: block.settings.show_product_vendor,
+                      show_type: block.settings.show_product_type,
+                      enable_quick_view: false,
+                      enable_quick_add: false,
+                      quick_view_suffix: 'megamenu-desktop'
+                    -%}
+                  </div>
+                {%- endfor -%}
+              </div>
+              {%- if is_carousel -%}
+                </div>
+              {%- endif -%}
+              {%- if is_carousel -%}
+                <div style="display: block;" class="swiper-controls swiper-controls--nav-floating tuantuan">
+                  <button
+                    class="btn swiper-button-prev swiper-button swiper-button--drop-shadow"
+                    name="previous"
+                    aria-label="{{ 'general.slider.previous_slide' | t }}"
+                  >
+                    <span class="btn__text">{%- render 'icon-slider-prev', size: 'small' -%}</span>
+                  </button>
+                  <button
+                    class="btn swiper-button-next swiper-button swiper-button--drop-shadow"
+                    name="next"
+                    aria-label="{{ 'general.slider.next_slide' | t }}"
+                  >
+                    <span class="btn__text">{%- render 'icon-slider-next', size: 'small' -%}</span>
+                  </button>
+                </div>
+              {%- endif -%}
+            </div>
+          </menu-product-list>
+        {%- endif -%}
+      </div>
     </div>
   </div>
 
-  <div class="mega-menu__col-banner">
-    {% render 'banner-menu-custom' , image_1 : block.settings.banner_image_1%}
+  <div class="mega-menu__col-banner height-banner-food">
+    {% render 'banner-menu-custom', block: block %}
   </div>
 </div>
