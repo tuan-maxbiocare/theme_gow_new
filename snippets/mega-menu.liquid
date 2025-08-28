@@ -48,6 +48,15 @@
   .mega-menu__list .mega-menu__column {
     border: none;
   }
+  .mega-menu__promotions .f-price__regular-custom {
+    font-size: 1.8rem;
+  }
+  .mega-menu__promotions .f-price-item--sale-custom {
+    font-size: 1.8rem;
+  }
+  .mega-menu__promotions .f-price-item--regular-compare-at-price {
+    font-size: 1.5rem;
+  }
 </style>
 <details
   id="Mega-menu-item-{{ block.id }}"
@@ -123,39 +132,16 @@
                         {% if image != blank %}
                           <div class="hover-wrapper">
                             <a href="{{ childlink.url }}" class="pet-custom__link">
-                              <img
+                              <img style="height:80px"
                                 src="{{ image | image_url: width: 200 }}"
                                 alt="{{ childlink.title | escape }}"
-                                width="200"
-                                height="200"
+                                width="250"
+                                height="250"
                                 class="hover-scale-up"
                               >
                             </a>
                           </div>
                         {% endif %}
-
-                        <div class="mega-menu__item">
-                          {%- if show_menu_column_divider -%}
-                            <div class="mega-menu__item-wrapper">
-                          {%- endif -%}
-                          <a href="{{ childlink.url }}" class="h6 mega-menu__link mega-menu__link--top font-heading">
-                            {{- childlink.title | escape -}}
-                          </a>
-                          {%- if childlink.links != blank -%}
-                            <ul class="mega-menu__item-child text-subtext">
-                              {%- for grandchildlink in childlink.links -%}
-                                <li class="reversed-link">
-                                  <a href="{{ grandchildlink.url }}" class="block mega-menu__link">
-                                    <span class="reversed-link__text">{{- grandchildlink.title | escape -}}</span>
-                                  </a>
-                                </li>
-                              {%- endfor -%}
-                            </ul>
-                          {%- endif -%}
-                          {%- if show_menu_column_divider -%}
-                            </div>
-                          {%- endif -%}
-                        </div>
                       {%- endif -%}
                     {%- endfor -%}
                   </div>
