@@ -3,12 +3,13 @@
     padding-inline-start: 0rem;
     padding-block-start: 0rem;
     padding-block-end: 0rem;
-    margin-inline-start: 0rem;
+    margin-inline-start: 3rem;
   }
   .mega-menu-custom-left {
     padding-block-start: 2rem;
     padding-block-end: 4rem;
     margin-inline-start: 3rem;
+    padding: 30px;
   }
 </style>
 
@@ -18,7 +19,7 @@
   {%- for childlink in link.links -%}
     <details class="menu-sidebar__item" open>
       <summary
-        class="menu-sidebar__toggle blocks-radius-sm flex items-center justify-between{% if forloop.first %} is-visible{% endif %}"
+        class="menu-sidebar__toggle blocks-radius-sm flex items-center justify-end gap-1{% if forloop.first %} is-visible{% endif %}"
       >
         <h6>{{ childlink.title | escape }}</h6>
         {%- if childlink.links != blank -%}

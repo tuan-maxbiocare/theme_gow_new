@@ -1,26 +1,17 @@
-{%- capture column_html -%}
-
-<div class="swiper-slide  " role="group" data-index="0" data-type="default" data-color-scheme="color-default">
-    <div class="slide__item-wrap h-full ">
-        <div class="slide__media blocks-radius ">
-            <motion-element class="block h-full " data-motion="zoom-out-sm">
-
-                <img src="{{ image_1 | img_url: 'master' }}" alt="Slide 1" class="" loading="eager"
-                    fetchpriority="high" />
-                <div class="bg-overlay" style="--color-overlay-alpha: 0.2;"></div>
-
-            </motion-element>
-        </div>
-    </div>
-</div>
-
-{%- endcapture -%}
-
-<multicolumn-slider class="">
-    <div class="swiper hover-wrapper" aria-live="polite" aria-atomic="true" data-enable-slider="true"
-        style="--swiper-autoplay-delay: 5000ms;">
-        <div class="swiper-wrapper h-full ">
-            {{ column_html }}
-        </div>
-    </div>
-</multicolumn-slider>
+{% render 'card-image-with-product-for-menu-custom',
+      color_scheme: block.settings.color_scheme,
+      image: block.settings.image,
+      image_ratio: block.settings.image_ratio,
+      heading: block.settings.heading,
+      highlight_style: block.settings.highlight_style,
+      highlight_font_style: block.settings.highlight_font_style,
+      highlight_style_color: block.settings.highlight_style_color,
+      highlight_text_color: block.settings.highlight_text_color,
+      heading_size: block.settings.heading_size,
+      subheading: block.settings.subheading,
+      description: block.settings.description,
+      button_label: block.settings.button_label,
+      button_style: block.settings.button_style,
+      button_icon: block.settings.button_icon,
+      product: block.settings.product
+    %}
