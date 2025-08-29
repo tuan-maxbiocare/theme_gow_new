@@ -16,6 +16,13 @@
   %}
 {% endcomment %}
 
+<style>
+  .product-card-title-card-with-product {
+    min-height:min-content;
+    max-height: max-content;
+  }
+  
+</style>
 {%- liquid
   assign image_ratio = image_ratio
   if image_ratio == 'adapt'
@@ -146,7 +153,7 @@
             </div>
           </div>
           <div class="product-card__info flex-1">
-            <p class="product-card__title text-pcard-title text-limit-1-line m-0">
+            <p class="product-card__title text-pcard-title text-limit-1-line m-0 product-card-title-card-with-product">
               {{- product.title -}}
             </p>
             {% render 'price', product: product %}
@@ -171,7 +178,7 @@
             </div>
           </div>
           <div class="product-card__info flex-1">
-            <p class="product-card__title text-pcard-title text-limit-1-line m-0">
+            <p class="product-card__title text-pcard-title text-limit-1-line m-0 product-card-title-card-with-product">
               {{- 'onboarding.product_title' | t -}}
             </p>
             {% render 'price' %}
