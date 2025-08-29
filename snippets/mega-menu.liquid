@@ -36,6 +36,9 @@
   }
 {% endstyle %}
 <style>
+  .mega-menu__wrapper .mega-menu__promotions .text-pcard-title {
+    font-size: 15px;
+  }
   .mega-menu__column-logo-brand-custom {
     align-items: center;
   }
@@ -130,8 +133,8 @@
                         {% assign image = block.settings[setting_id] %}
 
                         {% if image != blank %}
-                          <div class="hover-wrapper">
-                            <a href="{{ childlink.url }}" class="pet-custom__link">
+                          <div class="hover-wrapper pet-custom__link">
+                            <a href="{{ childlink.url }}">
                               <img style="height:80px"
                                 src="{{ image | image_url: width: 200 }}"
                                 alt="{{ childlink.title | escape }}"
