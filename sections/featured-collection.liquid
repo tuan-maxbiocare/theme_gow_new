@@ -130,6 +130,7 @@ calc(100vw / {{ columns_desktop }})
                 class="tabs-nav__inner flex flex-wrap md:justify-{{ header_alignment | replace: 'left','end' | replace: 'right','start' }} swipe-mobile__inner"
                 role="tablist"
               >
+                
                 {%- for block in section.blocks -%}
                   {%- liquid
                     assign collection = block.settings.collection

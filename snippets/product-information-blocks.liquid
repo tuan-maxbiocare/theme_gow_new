@@ -248,16 +248,20 @@
             {%- render 'product-collapsible-tab', block: block, section_id: section.id -%}
           </div>
         {%- when 'related_products' -%}
-        <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
-          <div>
-            <product-recommendations
-              class="related-products"
-              data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=6"
-            >
-            {%- render 'related-products-custom', section: block, section_id: section.id, recommendations: recommendations -%}
-            </product-recommendations>
+          <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
+            <div>
+              <product-recommendations
+                class="related-products"
+                data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=6"
+              >
+                {%- render 'related-products-custom',
+                  section: block,
+                  section_id: section.id,
+                  recommendations: recommendations
+                -%}
+              </product-recommendations>
+            </div>
           </div>
-        </div>
         {%- when 'popup' -%}
           {%- liquid
             assign modal_id = 'PopupModal-' | append: block.id
@@ -528,7 +532,7 @@
                   {{ block.settings.text }}
                 </div>
               {%- endif -%}
-              <div class="buttons-wrapper flex gap-3" style="margin-top: -5px; padding: 0px 16px 0px 16px;">
+              <div class="buttons-wrapper">
                 <a
                   target="_blank"
                   href="{{ block.settings.twitter_url }}?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: url }}"
@@ -540,11 +544,11 @@
                   <span class="btn btn--icon btn--icon-pill">
                     {% if block.settings.share_twitter_icon != blank %}
                       <img
-                        src="{{ block.settings.share_twitter_icon | img_url: '32x32' }}"
+                        src="{{ block.settings.share_twitter_icon | img_url: '128x128' }}"
                         alt="Twitter"
                         loading="lazy"
-                        width="40px"
-                        height="40px"
+                        width="{{ block.settings.share_icon_size }}px"
+                        height="{{ block.settings.share_icon_size }}px"
                       >
                     {% else %}
                       {% render 'icon-twitter', size: 'large' %}
@@ -562,11 +566,11 @@
                   <span class="btn btn--icon btn--icon-pill">
                     {% if block.settings.share_facebook_icon != blank %}
                       <img
-                        src="{{ block.settings.share_facebook_icon | img_url: '32x32' }}"
+                        src="{{ block.settings.share_facebook_icon | img_url: '128x128' }}"
                         alt="Twitter"
                         loading="lazy"
-                        width="40px"
-                        height="40px"
+                        width="{{ block.settings.share_icon_size }}px"
+                        height="{{ block.settings.share_icon_size }}px"
                       >
                     {% else %}
                       {% render 'icon-twitter', size: 'large' %}
@@ -598,11 +602,34 @@
   {%- endif -%}
 </div>
 <style>
-  .btn--icon-pill {
-    border-radius: 50px;
-    padding: 0 32px;
-    
+  .text-buttons-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
   }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    width: 59%;
+  }
+  .buttons-wrapper a {
+    flex: 1;
+    max-width: 100%;
+    text-decoration: none;
+  }
+  .buttons-wrapper .btn {
+    display: flex;
+    align-items: center
+    justify-content: center;
+    width: 100%;
+  }
+  .buttons-wrapper img{
+    object-fit: contain; 
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: crisp-edges;
+  }
+  /* Override tất cả các trạng thái với specificity cao hơn */
   .product__blocks .btn--icon.btn--icon-pill,
   .product__blocks .btn--icon.btn--icon-pill:hover,
   .product__blocks .btn--icon.btn--icon-pill:focus,
@@ -616,15 +643,4 @@
     --color-button-text: currentColor !important;
     --color-button-hover: transparent !important;
   }
-  @media (max-width: 768px) {
-  .text-buttons-wrapper {
-    flex-direction: column; /* text ở trên, nút ở dưới */
-    align-items: flex-start;
-  }
-
-  .buttons-wrapper {
-    margin-top: 10px !important; /* tạo khoảng cách với text */
-    padding: 0 !important;
-  }
-}
 </style>

@@ -13,6 +13,12 @@
   --col-gap-x: 2rem;
   vertical-align: top;
 }
+.comparison-table__content {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem 2.5rem;
+}
 @media (max-width: 767.98px) {
   .comparison-table__content .comparison-table__product {
     padding-bottom: 1.2rem;
