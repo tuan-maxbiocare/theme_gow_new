@@ -133,6 +133,17 @@
     display: block;
     border-radius: 16px;
   }
+
+  .menu-food-nutrition-custom__menu .product-card-custom {
+    padding: 10px;
+  }
+  .menu-food-nutrition-custom__menu .product-card__info {
+    padding-top : 8px;
+  }
+  .menu-food-nutrition-custom__menu .product-card__info .product-card__title-menu-custom {
+    font-size: 11px;
+  }
+
 </style>
 
 {% assign product_list_1 = block.settings.product_list_1 %}
@@ -165,7 +176,9 @@
                 style="width: 400px;"
                 class="{% if is_carousel %}swiper-wrapper{% else %}mega-menu__promotions-grid{% endif %}"
               >
+                {% assign titles_array = block.settings.custom_titles_list_1 | newline_to_br | split: '<br />' %}
                 {%- for product in product_list_1 -%}
+                  {%- assign custom_title = titles_array[forloop.index0] | strip -%}
                   <div
                     class="swiper-slide promotion-item promotion-item--product menu-food-product-card"
                     style="--index: {{ forloop.index }};"
@@ -178,7 +191,8 @@
                       show_type: block.settings.show_product_type,
                       enable_quick_view: false,
                       enable_quick_add: false,
-                      quick_view_suffix: 'megamenu-desktop'
+                      quick_view_suffix: 'megamenu-desktop',
+                      custom_title : custom_title
                     -%}
                   </div>
                 {%- endfor -%}
@@ -242,7 +256,9 @@
                 style="width: 400px;"
                 class="{% if is_carousel %}swiper-wrapper{% else %}mega-menu__promotions-grid{% endif %}"
               >
+              {% assign titles_array = block.settings.custom_titles_list_2 | newline_to_br | split: '<br />' %}
                 {%- for product in product_list_2 -%}
+                  {%- assign custom_title = titles_array[forloop.index0] | strip -%}
                   <div
                     class="swiper-slide promotion-item promotion-item--product menu-food-product-card"
                     style="--index: {{ forloop.index }};"
@@ -255,7 +271,8 @@
                       show_type: block.settings.show_product_type,
                       enable_quick_view: false,
                       enable_quick_add: false,
-                      quick_view_suffix: 'megamenu-desktop'
+                      quick_view_suffix: 'megamenu-desktop',
+                      custom_title : custom_title
                     -%}
                   </div>
                 {%- endfor -%}
