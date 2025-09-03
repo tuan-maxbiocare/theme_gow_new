@@ -166,8 +166,8 @@
                           {%- if show_menu_column_divider -%}
                             <div class="mega-menu__item-wrapper">
                           {%- endif -%}
-                          <a href="{{ childlink.url }}" class="h6 mega-menu__link mega-menu__link--top font-heading">
-                            {{- childlink.title | escape -}}
+                          <a href="{{ childlink.url }}" class="h6 mega-menu__link mega-menu__link--top font-heading reversed-link block">
+                            <span class="reversed-link__text">{{- childlink.title | escape -}}</span>
                           </a>
                           {%- if childlink.links != blank -%}
                             <ul class="mega-menu__item-child text-subtext">

@@ -249,7 +249,11 @@
           class="reversed-link block {% if settings.pcard_title_line_limit != 'none' %} text-limit-1{% endif %}m"
           href="{{ product.url }}"
         >
+        {% if custom_title %}
+          <span class="reversed-link__text product-card__title product-card__title-menu-custom">{{ custom_title }}</span>
+          {% else %}
           <span class="reversed-link__text product-card__title product-card__title-menu-custom">{{- product.title -}}</span>
+        {% endif %}
         </a>
       </span>
       {% comment %} {%- if show_price -%}
