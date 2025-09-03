@@ -112,12 +112,6 @@
 
 <style>
 .product-card__title-menu-custom {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 100%;
-  min-width: 0;
   font-size:15px;
 }
 
@@ -195,7 +189,7 @@
           {%- endif -%}
         </motion-element>
       </a>
-      {%- render 'pcard-badges', product: product -%}
+      {% comment %} {%- render 'pcard-badges', product: product -%} {% endcomment %}
       {%- render 'pcard-flash-sale', product: product -%}
       {%- if enable_quick_view -%}
         <button
@@ -255,7 +249,7 @@
           class="reversed-link block {% if settings.pcard_title_line_limit != 'none' %} text-limit-1{% endif %}m"
           href="{{ product.url }}"
         >
-          <span class="reversed-link__text product-card__title-menu-custom">{{- product.title -}}</span>
+          <span class="reversed-link__text product-card__title product-card__title-menu-custom">{{- product.title -}}</span>
         </a>
       </span>
       {% comment %} {%- if show_price -%}
