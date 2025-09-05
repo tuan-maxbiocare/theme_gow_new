@@ -293,8 +293,10 @@
                 <script src="{{ 'collection-item-slider.js' | asset_url }}" defer="defer"></script>
                 <div class="collecion-list__sliders block w-full" data>
                   {%- if block.settings.collection_list != blank -%}
+                    {% assign titles_array = block.settings.custom_titles_collection | newline_to_br | split: '<br />' %}
                     {%- for collection in block.settings.collection_list -%}
-                      {%- render 'collection-item-slider', collection: collection, block: block -%}
+                      {%- assign custom_title = titles_array[forloop.index0] | strip -%}
+                      {%- render 'collection-item-slider', collection: collection, block: block, custom_title: custom_title -%}
                     {% endfor %}
                   {%- else -%}
                     {%- render 'collection-item-slider', block: block -%}
@@ -4146,6 +4148,11 @@
           "id": "collection_list",
           "label": "t:sections.collection-list.name",
           "limit": 3
+        },
+        {
+          "type": "textarea",
+          "id": "custom_titles_collection",
+          "label": "Custom titles (one per line, same order as collections)"
         },
         {
           "type": "header",

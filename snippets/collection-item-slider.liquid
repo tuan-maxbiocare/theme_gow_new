@@ -46,7 +46,11 @@
       class="flex items-center justify-end gap-2 slider-controls--grouped-mobile"
       data-motion="fade-up"
     >
-      <h2 class="h2 flex-grow">{{ collection_title }}</h2>
+      {% if custom_title %}
+        <h2 class="h2 flex-grow">{{ custom_title }}</h2>
+      {% else %}
+        <h2 class="h2 flex-grow">{{ collection_title }}</h2>
+      {% endif %}
       {%- if enable_slider or enable_slider_mobile -%}
         <div class="slider-controls--group{% if enable_slider_desktop == true and enable_slider_mobile == false %} hidden md:block{% elsif enable_slider_desktop == false and enable_slider_mobile == true %} md:hidden{% endif %}">
           <div class="swiper-controls swiper-controls--grouped swiper-controls--pagination-{{ pagination_type }} hidden md:flex">
