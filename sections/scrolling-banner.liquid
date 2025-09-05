@@ -25,6 +25,17 @@
   endcase
 %}
 
+<style>
+.content-overlay {
+  padding: 0;
+}
+.scrolling-banner-css-custom {
+  max-width: {{ settings.page_width }}px;
+  width: 100%;
+  margin: 0 auto;
+}
+</style>
+
 <div class="section section-{{ section.id }} scrolling-banner scrolling-banner--{{ slide_height }}">
   <div class="section__container page-width page-width--{{ container }}">
     <scrolling-banner
@@ -142,7 +153,7 @@
               endif
             -%}
             <div
-              class="slide__content content-overlay content-overlay--{{ content_position }} content-overlay--{{ content_position_mobile }}-mobile flex flex-col focus-none color-{{ block.settings.color_scheme }}"
+              class="slide__content content-overlay content-overlay--{{ content_position }} content-overlay--{{ content_position_mobile }}-mobile flex flex-col focus-none color-{{ block.settings.color_scheme }} scrolling-banner-css-custom"
               tabindex="-1"
             >
               <div
