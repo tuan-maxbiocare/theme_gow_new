@@ -54,7 +54,7 @@ if (!customElements.get('product-slider')) {
         } else {
           const currentItems = FoxTheme.config.mqlTablet ? this.tabletItems : this.items;
 
-          if (this.totalItems > currentItems) {
+          if (this.totalItems >= currentItems) {
             this.initSlider();
           } else {
             this.destroySlider();
