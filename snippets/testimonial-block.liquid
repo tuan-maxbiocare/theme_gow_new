@@ -1,6 +1,7 @@
 {{ 'component-testimonial.css' | asset_url | stylesheet_tag }}
 {{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'testimonial-new.js' | asset_url }}" defer="defer"></script>
+
 {% liquid
   assign columns_mobile_int = section.settings.columns_mobile_testimonial | plus: 0
   assign enable_swipe_mobile = false

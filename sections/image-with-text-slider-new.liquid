@@ -39,9 +39,9 @@
     .rich-text__text {
       line-height: 15px;
     }
-    .swiper-slide {
-      height: 250px; /* chiều cao cố định */
-    }
+    /* .swiper-slide {
+      height: 250px;
+    } */
     .swiper-slide .image-slider__content-wrapper {
       display: flex;
       align-items: center;
@@ -198,8 +198,9 @@
                         style="
                           font-size: {{ block.settings.subheading_font_size }}px;
                           background: {{ block.settings.subheading_bg }};
+                          border: 2px solid {{ block.settings.subheading_border_color }};
                           padding: 6px 36px;
-                          border-radius: 12px;
+                          border-radius: 20px;
                         "
                       >
                         {{- block.settings.subheading -}}
@@ -620,6 +621,12 @@
           "id": "subheading_bg",
           "label": "Subheading background",
           "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "subheading_border_color",
+          "label": "Subheading border color",
+          "default": "#ffffff"
         },
         {
           "type": "range",

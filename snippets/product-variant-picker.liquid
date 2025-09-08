@@ -9,6 +9,34 @@
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
+{% style %}
+  .product-form__input--button-square input[type="radio"] + label {
+    border-radius: 10px;
+    border: 1px solid {{ block.settings.variant_button_border_color }};
+    background: transparent;   /* bỏ nền mặc định */
+    color: {{ block.settings.variant_button_text_color }};
+  }
+
+  /* Không fill nền khi hover */
+  .product-form__input--button-square input[type="radio"] + label:hover {
+    background: transparent !important;
+    color: {{ block.settings.variant_button_checked_text_color }};
+    border: 1px solid {{ block.settings.variant_button_checked_border_color}};
+  }
+
+  /* Trạng thái đã chọn: không nền, chỉ đậm border để phân biệt */
+  .product-form__input--button-square input[type="radio"]:checked + label {
+    background: transparent !important;  /* fix bị nền đen */
+    color: {{ block.settings.variant_button_checked_text_color}};
+    border: 1px solid {{ block.settings.variant_button_checked_border_color}};
+  }
+
+  /* Khi nút đang chọn mà hover cũng không đổi */
+  .product-form__input--button-square input[type="radio"]:checked + label:hover {
+    background: transparent !important;
+    color: {{ block.settings.variant_button_checked_text_color }};
+  }
+{% endstyle %}
 {%- unless product.has_only_default_variant -%}
   {% liquid
     assign size_option_name = block.settings.size_title | downcase
