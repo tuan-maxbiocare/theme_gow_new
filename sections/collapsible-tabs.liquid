@@ -152,7 +152,12 @@
                             {% if block.settings.icon_text != 'none' %}
                               {% render 'icons', icon: block.settings.icon_text, size: item_icon_size %}
                             {%- endif -%}
-                            <h2 class="{{ item_trigger_class }} inline-richtext">{{ block.settings.text }}</h2>
+                            <h2
+                              class="inline-richtext"
+                              style="font-size: {{ block.settings.heading_font_size }}px; font-weight: {{ block.settings.heading_font_weight }};"
+                            >
+                              {{ block.settings.text }}
+                            </h2>
                           </div>
                         </summary>
                       </details>
@@ -1114,6 +1119,48 @@
           "id": "text_background_color",
           "label": "Color Background",
           "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "heading_font_size",
+          "label": "Font size",
+          "min": 12,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "default": 18
+        },
+        {
+          "type": "select",
+          "id": "heading_font_weight",
+          "label": "Font weight",
+          "default": "400",
+          "options": [
+            {
+              "value": "300",
+              "label": "Light"
+            },
+            {
+              "value": "400",
+              "label": "Normal"
+            },
+            {
+              "value": "500",
+              "label": "Medium"
+            },
+            {
+              "value": "600",
+              "label": "Semibold"
+            },
+            {
+              "value": "700",
+              "label": "Bold"
+            },
+            {
+              "value": "800",
+              "label": "Extra Bold"
+            }
+          ]
         }
       ]
     },

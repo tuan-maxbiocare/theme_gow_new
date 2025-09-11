@@ -21,20 +21,18 @@
 
 {% style %}
   .section-{{ section.id }} {
-    --section-padding-top: {{ section.settings.padding_top }}px;
-    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     --f-columns-mobile: {{ columns_mobile_int }};
     --f-columns-md: {{ columns_tablet }};
     --f-columns-lg: {{ columns_desktop }};
   }
 {% endstyle %}
 
-{% render 'divider',
+{% comment %} {% render 'divider',
   show_divider: section.settings.show_section_divider,
   divider_width: section.settings.divider_width
-%}
-<div class="section section-{{ section.id }} section--padding multicolumn color-{{ section.settings.color_scheme }}">
-  <div class="section__container page-width page-width--{{ section.settings.container }}">
+%} {% endcomment %}
+<div class="section section-{{ section.id }} multicolumn color-{{ section.settings.color_scheme }}">
+  <div class="section__container">
     {% render 'section-heading',
       section_settings: section.settings,
       button_label: section.settings.button_label,
@@ -80,7 +78,10 @@
           >
             {%- if section.settings.show_image -%}
               {% assign alt = block.settings.image.alt | default: block.settings.title | escape %}
-              <div class="multicolumn-card__image hover-wrapper blocks-radius">
+              <div
+                class="multicolumn-card__image hover-wrapper blocks-radius"
+                style="max-width: {{ block.settings.image_max_width }}px;"
+              >
                 <motion-element
                   class="block w-full h-full"
                   data-motion="zoom-out-sm"

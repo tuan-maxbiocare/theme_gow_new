@@ -308,7 +308,7 @@
 
               {%- when 'collapsible' -%}
                 <div
-                  class="accordion-item accordion-{{ section.settings.item_style_collapsible }}{% if section.settings.item_style_collapsible == 'card' %} blocks-radius{% endif %}"
+                  class="accordion-item accordion-{{ section.settings.item_style }}{% if section.settings.item_style == 'card' %} blocks-radius{% endif %}"
                   {{ block.shopify_attributes }}
                 >
                   {% render 'heading-new',
@@ -1052,6 +1052,22 @@
       "content": "t:sections.collapsible-tabs.settings.header__collapsible_tab.content"
     },
     {
+      "type": "select",
+      "id": "item_style",
+      "label": "t:sections.collapsible-tabs.settings.item_style.label",
+      "default": "standard",
+      "options": [
+        {
+          "value": "standard",
+          "label": "t:sections.collapsible-tabs.settings.item_style.options__1.label"
+        },
+        {
+          "value": "card",
+          "label": "t:sections.collapsible-tabs.settings.item_style.options__2.label"
+        }
+      ]
+    },
+    {
       "type": "color_scheme",
       "id": "item_color_scheme_collapsible",
       "label": "t:general.colors.label",
@@ -1498,7 +1514,7 @@
       "type": "range",
       "id": "columns_desktop",
       "min": 2,
-      "max": 5,
+      "max": 4,
       "step": 1,
       "default": 3,
       "label": "t:general.grid.columns_desktop.label"
@@ -4149,7 +4165,7 @@
           "label": "t:sections.collection-list.name",
           "limit": 3
         },
-        {
+         {
           "type": "textarea",
           "id": "custom_titles_collection",
           "label": "Custom titles (one per line, same order as collections)"
@@ -4451,7 +4467,7 @@
             }
           ]
         },
-
+        /* 1 */
         { "type": "header", "content": "column 1" },
         {
           "type": "select",
@@ -4491,7 +4507,7 @@
         { "type": "text", "id": "bio_1", "label": "t:general.testimonial.author.bio.label" },
         { "type": "header", "content": "t:general.product.label" },
         { "type": "product", "id": "product_1", "label": "t:general.product.label" },
-
+        /* 2 */
         { "type": "header", "content": "column 2" },
         {
           "type": "select",
@@ -4531,7 +4547,7 @@
         { "type": "text", "id": "bio_2", "label": "t:general.testimonial.author.bio.label" },
         { "type": "header", "content": "t:general.product.label" },
         { "type": "product", "id": "product_2", "label": "t:general.product.label" },
-
+        /* 3 */
         { "type": "header", "content": "column 3" },
         {
           "type": "select",
@@ -4571,7 +4587,7 @@
         { "type": "text", "id": "bio_3", "label": "t:general.testimonial.author.bio.label" },
         { "type": "header", "content": "t:general.product.label" },
         { "type": "product", "id": "product_3", "label": "t:general.product.label" },
-
+        /* 4 */
         { "type": "header", "content": "column 4" },
         {
           "type": "select",
@@ -4610,7 +4626,87 @@
         },
         { "type": "text", "id": "bio_4", "label": "t:general.testimonial.author.bio.label" },
         { "type": "header", "content": "t:general.product.label" },
-        { "type": "product", "id": "product_4", "label": "t:general.product.label" }
+        { "type": "product", "id": "product_4", "label": "t:general.product.label" },
+        /* 5 */
+        { "type": "header", "content": "column 5" },
+        {
+          "type": "select",
+          "id": "icon_5",
+          "label": "t:general.testimonial.icon.label",
+          "options": [
+            { "value": "none", "label": "t:general.testimonial.icon.options__none.label" },
+            { "value": "1-star", "label": "t:general.testimonial.icon.options__1.label" },
+            { "value": "2-stars", "label": "t:general.testimonial.icon.options__2.label" },
+            { "value": "3-stars", "label": "t:general.testimonial.icon.options__3.label" },
+            { "value": "4-stars", "label": "t:general.testimonial.icon.options__4.label" },
+            { "value": "5-stars", "label": "t:general.testimonial.icon.options__5.label" }
+          ]
+        },
+        { "type": "image_picker", "id": "image_5", "label": "t:general.image.label" },
+        {
+          "type": "inline_richtext",
+          "id": "heading_5",
+          "default": "Testimonials",
+          "label": "t:general.heading.label",
+          "visible_if": "{{ section.settings.layout == 'card' }}"
+        },
+        {
+          "type": "richtext",
+          "id": "text_5",
+          "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+          "label": "t:general.content.label"
+        },
+        { "type": "header", "content": "t:general.testimonial.author.content" },
+        { "type": "image_picker", "id": "avatar_5", "label": "t:general.testimonial.author.avatar.label" },
+        {
+          "type": "text",
+          "id": "author_5",
+          "default": "Author's name",
+          "label": "t:general.testimonial.author.name.label"
+        },
+        { "type": "text", "id": "bio_5", "label": "t:general.testimonial.author.bio.label" },
+        { "type": "header", "content": "t:general.product.label" },
+        { "type": "product", "id": "product_5", "label": "t:general.product.label" },
+        /* 6 */
+        { "type": "header", "content": "column 6" },
+        {
+          "type": "select",
+          "id": "icon_6",
+          "label": "t:general.testimonial.icon.label",
+          "options": [
+            { "value": "none", "label": "t:general.testimonial.icon.options__none.label" },
+            { "value": "1-star", "label": "t:general.testimonial.icon.options__1.label" },
+            { "value": "2-stars", "label": "t:general.testimonial.icon.options__2.label" },
+            { "value": "3-stars", "label": "t:general.testimonial.icon.options__3.label" },
+            { "value": "4-stars", "label": "t:general.testimonial.icon.options__4.label" },
+            { "value": "5-stars", "label": "t:general.testimonial.icon.options__5.label" }
+          ]
+        },
+        { "type": "image_picker", "id": "image_6", "label": "t:general.image.label" },
+        {
+          "type": "inline_richtext",
+          "id": "heading_6",
+          "default": "Testimonials",
+          "label": "t:general.heading.label",
+          "visible_if": "{{ section.settings.layout == 'card' }}"
+        },
+        {
+          "type": "richtext",
+          "id": "text_6",
+          "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+          "label": "t:general.content.label"
+        },
+        { "type": "header", "content": "t:general.testimonial.author.content" },
+        { "type": "image_picker", "id": "avatar_6", "label": "t:general.testimonial.author.avatar.label" },
+        {
+          "type": "text",
+          "id": "author_6",
+          "default": "Author's name",
+          "label": "t:general.testimonial.author.name.label"
+        },
+        { "type": "text", "id": "bio_6", "label": "t:general.testimonial.author.bio.label" },
+        { "type": "header", "content": "t:general.product.label" },
+        { "type": "product", "id": "product_6", "label": "t:general.product.label" }
       ]
     }
   ],

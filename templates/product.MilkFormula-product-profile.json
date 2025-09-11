@@ -1,1 +1,1345 @@
-{"sections":{"breadcrumbs":{"type":"breadcrumbs","custom_css":["@media (min-width: 1280px) {.breadcrumbs {padding-inline: 5rem; }}"],"settings":{"container":"fixed","text_alignment":"start","padding_top":16,"padding_bottom":20}},"main":{"type":"main-product","blocks":{"badges":{"type":"badges","settings":{"show_soldout_badge":true,"show_sale_badge":true,"sale_badge_type":"percentage"}},"title":{"type":"title","settings":{"heading_size":"h1"}},"meta":{"type":"meta","settings":{"link_color":"#1ca758","show_vendor":true,"show_product_type":true,"show_sku":false,"show_barcode":false}},"price":{"type":"price","settings":{}},"icon_with_text":{"type":"icon-with-text","settings":{"layout":"horizontal","title_font":"body-bolder","title_size":"text-base","icon_1":"check","heading_1":"Modern","icon_2":"check","heading_2":"Eco-certified","icon_3":"check","heading_3":"Warranty"}},"inventory":{"type":"inventory","disabled":true,"settings":{"text_style":"body","inventory_threshold":10,"show_inventory_quantity":true}},"promotion_alert_L7ipQp":{"type":"promotion_alert","settings":{"text_color":"#1ca758","icon":"lightning","heading":"Limited time offer","description":"<p>Get $20 off when you spend $1,000 or more! <a href=\"\/collections\/all\" title=\"All products\">Shop now<\/a><\/p>"}},"timer_3EBk7V":{"type":"timer","settings":{"text_color":"#c4301c","type":"evergreen","duration":"every_month","time":"2025\/08\/20 03:45 PM","text":"Sales end in"}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","swatch_type":"shopify_swatch","swatch_style":"square","swatch_size":32,"button_style":"normal","size_title":"Size","size_chart_from_page":""}},"buy_buttons":{"type":"buy_buttons","settings":{"show_quantity_selector":true,"show_dynamic_checkout":true,"show_gift_card_recipient":true}},"text_with_buttons_Bg4Rt4":{"type":"text_with_buttons","settings":{"heading":"Also available on","heading_size":"h4","share_twitter_icon":"shopify:\/\/shop_images\/chemist-warehouse-logo-1914FA0C63-seeklogo.com.png","share_twitter_tooltip":"Chemist Warehouse","share_facebook_icon":"shopify:\/\/shop_images\/Amazon_logo_svg.png","share_facebook_tooltip":"Amazon","twitter_url":"{{ product.metafields.custom.accordoin_forth_heading.value }}","facebook_url":"{{ product.metafields.custom.accordoin_fifth_heading.value }}","share_icon_size":60}},"icon_with_text_BYzRHc":{"type":"icon-with-text","settings":{"layout":"vertical","title_font":"body","title_size":"text-base","icon_1":"truck","heading_1":"<strong>Free delivery | <\/strong>Fast and Free delivery for all orders​","icon_2":"lightning","heading_2":"<strong>Fast Dispatch​ |<\/strong> Leaves warehouse in <strong>1-2 business days<\/strong>​","icon_3":"star-four","heading_3":""}},"complementary":{"type":"complementary","settings":{"block_heading":"Perfect Match With","heading_size":"h4","show_below_product_media":false,"make_collapsible_row":false,"icon":"tag","product_list_limit":6,"layout":"grid","columns":3,"image_ratio":"1\/1","enable_quick_add":true}},"related_products_3AFFGE":{"type":"related_products","settings":{"container":"fixed","color_scheme":"scheme-1","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"You may also like","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","limit":4,"columns":3,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"navigation_position":"bottom","pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed","show_below_product_media":true}},"divider_pPz3Kw":{"type":"divider","settings":{"show_below_product_media":false}},"social_sharing":{"type":"social_sharing","settings":{}},"sticky_atc_bar_7HgNgP":{"type":"sticky-atc-bar","settings":{"visibility":"all","style":"standard","container":"full","show_atc_button":true,"show_dynamic_checkout_buttons":true,"show_quantity":true}},"divider_3mNceA":{"type":"divider","settings":{"show_below_product_media":false}},"payment_info_RpxAmm":{"type":"payment_info","settings":{"color_scheme":"scheme-1","heading":"Payment & Security","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h5","description":"<p>Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.<\/p>","show_payment_icons":true,"show_below_product_media":false}}},"block_order":["badges","title","meta","price","icon_with_text","inventory","promotion_alert_L7ipQp","timer_3EBk7V","variant_picker","buy_buttons","text_with_buttons_Bg4Rt4","icon_with_text_BYzRHc","complementary","related_products_3AFFGE","divider_pPz3Kw","social_sharing","sticky_atc_bar_7HgNgP","divider_3mNceA","payment_info_RpxAmm"],"custom_css":["@media (min-width: 1024px) {.product__info-wrapper {border: 1px solid #e5e7eb; background: #ffffff; border-radius: 12px; padding: 2.5rem 2.5rem; }}",".btn--icon-pill,.btn--icon.btn--icon-pill {border: 1px solid #e5e7eb;}",".btn--icon-circle {border: 1px solid #e5e7eb;}"],"settings":{"color_scheme":"scheme-3","use_color_scheme_in_container":false,"enable_sticky_info":true,"media_size":"large","gallery_layout":"carousel","mobile_thumbnails":"show","show_image_border":true,"enable_image_zoom":true,"enable_video_looping":true,"padding_top":60,"padding_bottom":60}},"collapsible_tabs_dmW488":{"type":"collapsible-tabs","blocks":{"collapsible_item_GnTiFN":{"type":"collapsible_item","settings":{"icon":"none","heading":"Product Details","content":"{{ product.metafields.custom.details | metafield_tag }}","custom_liquid":"","page":"","open":false,"use_subtext_color":false}}},"block_order":["collapsible_item_GnTiFN"],"name":"t:sections.collapsible-tabs.name","settings":{"container":"fixed","color_scheme":"","header_layout":"vertical","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","column_gap":"large","row_gap":"inherit","item_style":"card","item_color_scheme":"scheme-11","item_heading_font":"heading","item_heading_size":"h3","item_icon_size":"extra-large","padding_top":50,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"scrolling_promotion_ezWyBd":{"type":"scrolling-promotion","blocks":{"text_T3HTEY":{"type":"text","settings":{"text_link":"","text":"Fast Delivery","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_8F8R4r":{"type":"text","settings":{"text_link":"","text":"30 Days Free Returns","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_QzYxkL":{"type":"text","settings":{"text_link":"","text":"Secure Payment","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_LwRXc6":{"type":"text","settings":{"text_link":"","text":"Fast Delivery","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_QHhYBn":{"type":"text","settings":{"text_link":"","text":"30 Days Free Returns","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_fqHW8t":{"type":"text","settings":{"text_link":"","text":"Secure Payment","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}}},"block_order":["text_T3HTEY","text_8F8R4r","text_QzYxkL","text_LwRXc6","text_QHhYBn","text_fqHW8t"],"settings":{"color_scheme":"scheme-inverse","direction":"left","pause_on_hover":true,"speed":0.2,"h_spacing":80,"show_section_divider":false,"padding_top":16,"padding_bottom":16}},"collapsible_tabs_P7yCyE":{"type":"collapsible-tabs","blocks":{"image_card_DBttEw":{"type":"image_card","settings":{"color_scheme":"scheme-13","desktop_image_position":"left","image_width":60,"alignment":"center","image":"shopify:\/\/shop_images\/le_banner_test_eczema.webp","image_ratio":"4\/3","image_overlay_opacity":0,"content_position":"bottom-left","content_alignment":"left","content_spacing":"medium","content_gap":"fitted","card_link":"","subheading":"","subheading_style":"thick-border","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"","button_style":"btn--primary","button_icon":"none","order_first":true}},"heading_64Jay8":{"type":"heading","settings":{"sub_heading":"","heading":"Benefits​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2"}},"text_GjLqWe":{"type":"text","settings":{"text":"{{ product.metafields.custom.accordoin_second_heading.value }}","icon_text":"check","text_style":"card","text_background_color":"#f9f9f9"}},"text_JcizgF":{"type":"text","settings":{"text":"{{ product.metafields.custom.accordoin_second_heading.value }}","icon_text":"check","text_style":"card","text_background_color":"#f9f9f9"}},"text_Vkfi9N":{"type":"text","settings":{"text":"{{ product.metafields.custom.accordoin_one_heading.value }}","icon_text":"check","text_style":"card","text_background_color":"#f9f9f9"}},"text_RNLnwg":{"type":"text","settings":{"text":"{{ product.metafields.custom.richcontent_benefits_1line_4.value }}","icon_text":"check","text_style":"card","text_background_color":"#f9f9f9"}}},"block_order":["image_card_DBttEw","heading_64Jay8","text_GjLqWe","text_JcizgF","text_Vkfi9N","text_RNLnwg"],"name":"t:sections.collapsible-tabs.name","settings":{"container":"fixed","color_scheme":"","header_layout":"vertical","section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"Supports toddlers’ immunity with","heading":"<strong>Lactoferrin and​ Wellmune® Beta-Glucan​<\/strong>","highlight_style":"none","highlight_font_style":"normal","highlight_style_color":"#1ca758","highlight_text_color":"#1ca758","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","column_gap":"large","row_gap":"inherit","item_style":"card","item_color_scheme":"scheme-14","item_heading_font":"heading","item_heading_size":"h5","item_icon_size":"extra-large","padding_top":100,"padding_bottom":60,"show_section_divider":false,"divider_width":"fixed"}},"rich_text_PanGQV":{"type":"rich-text","blocks":{"heading_iAyUem":{"type":"heading","settings":{"heading":"Loved by bubs, trusted by parents​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2"}}},"block_order":["heading_iAyUem"],"name":"t:sections.rich-text.name","settings":{"container":"fixed","color_scheme":"","use_color_scheme_in_container":false,"content_spacing":"standard","content_alignment":"center","padding_top":50,"padding_bottom":0,"show_section_divider":false,"divider_width":"fixed"}},"1755357815bccb6e75":{"type":"apps","blocks":{"vibe_instagram_feed_slideshow_nFkVez":{"type":"shopify:\/\/apps\/vibe-instagram-feed\/blocks\/slideshow\/a89f8a1d-e2e4-49c3-8d2c-363211f74779","settings":{"instagram_feed_id":"689b08300b1727bb337b4b3d","post_click_action":"popup","items_per_show_lg":"4","items_per_show_xs":"1","item_spacing_lg":30,"item_spacing_xs":10,"item_cta":"See more","item_product_cta":"Shop this look","item_ratio":"4\/5","blocktitle":"","heading_lg":26,"heading_xs":26,"description":"","description_lg":16,"description_xs":16,"text_alignment":"center","spacing_text_vs_posts_lg":24,"spacing_text_vs_posts_xs":24,"top_padding_lg":30,"bottom_padding_lg":60,"top_padding_xs":0,"bottom_padding_xs":0,"custom_css":""}}},"block_order":["vibe_instagram_feed_slideshow_nFkVez"],"custom_css":[".vibe-slide {border-radius: 12px;}"],"settings":{"include_margins":true,"padding_top":0,"padding_bottom":0}},"lookbook_banner_LPdhNx":{"type":"lookbook-banner","blocks":{"hotspot_KayY7P":{"type":"hotspot","settings":{"image":"shopify:\/\/shop_images\/Salvarity_honey_1000x1000_9971c594-904d-435e-9631-a9dad6ca31a5.webp","heading":"<strong>Cognitive & Brain Health<\/strong>​","description":"<p>Enhance memory, learning, concentration, and coordination with <strong>DHA, EPA, ARA, Lutein, Choline, Magnesium<\/strong>, and <strong>Vitamins A & E<\/strong>,...​<\/p>","top":45,"left":30,"top_mobile":45,"left_mobile":30}}},"block_order":["hotspot_KayY7P"],"name":"t:sections.banner-with-hotspots.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"","heading":"Our unique Opti-5 system supports 5 most important health areas​","highlight_style":"hand_drawn_circle","highlight_font_style":"normal","highlight_style_color":"#57b845","highlight_text_color":"#57b845","heading_size":"h2","description":"","description_size":"text-lg","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","image":"shopify:\/\/shop_images\/LEN2_3_test.webp","icon_style":"dot","icon_color":"light","card_color_scheme":"scheme-7","show_section_divider":false,"divider_width":"fixed","padding_top":50,"padding_bottom":50}},"image_with_text_wFtGX6":{"type":"image-with-text","blocks":{"badge_eCffqH":{"type":"badge","settings":{"color_scheme":"scheme-6","text":"image with text - spinning text -","position_mobile":"right"}},"subheading_LQeCEY":{"type":"subheading","settings":{"subheading":"Add a tagline"}},"heading_gP4tNn":{"type":"heading","settings":{"heading":"Australian Grass-fed cow’s milk ​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2"}},"text_fDmTfc":{"type":"text","settings":{"text":"<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>","subtext_color":true}}},"block_order":["badge_eCffqH","subheading_LQeCEY","heading_gP4tNn","text_fDmTfc"],"name":"t:sections.image-with-text.name","settings":{"container":"fixed","color_scheme":"scheme-11","image":"shopify:\/\/shop_images\/GoWshop_cowmilk_d2e9328f-6317-452d-a858-b7e78f2be1cf.webp","image_position":"right","image_width":60,"desktop_content_position":"center","desktop_content_alignment":"left","mobile_content_alignment":"inherit","show_section_divider":false,"divider_width":"fixed","padding_top":50,"padding_bottom":50}},"collapsible_tabs_W9T4Cf":{"type":"collapsible-tabs","blocks":{"collapsible_item_3KeDE8":{"type":"collapsible_item","settings":{"icon":"leaf","heading":"FULL INGREDIENTS LIST","content":"<p>Cyclopentasiloxane & Dimethiconol, Cyclohexasiloxane & Cyclopentasiloxane, Capric\/Caprylic Triglyceride, Tocopherol, Carthamus tinctorius Seed Oil, Avena sativa Kernel Oil, Argania spinosa Kernel Oil, Prunus armeniaca Kernel Oil, Vitis vinifera Seed Oil, Parfum.<\/p><ul><li><strong>Safflower oil<\/strong> – high in linoleic acid, which nourishes scalp and hair follicles (Skolnik, 1977)<\/li><li><strong>Argan oil<\/strong> – shown to protect hair like a barrier from free radical damage (Shafiri, 2023)<\/li><li><strong>Apricot seed oil<\/strong> – a natural source of sterols and squalene that support delicate skin’s natural oil production (Rudzinska, 2017)<\/li><li><strong>Grape seed oil<\/strong> – antioxidant, antibacterial, helps reduce irritation (Khanna, 2002) and very good at restoring hair smoothness (Demir, 2023)<\/li><li><strong>Tocopherols<\/strong> – natural plant forms of vitamin E that protect against free-radical damage, which occurs in dry or inflamed skin (Michalak, 2022)<\/li><\/ul><p><em>The composition of our products may be updated periodically. For the most current ingredient information, we advise checking the ingredient list on the product packaging that you receive, which will always reflect the latest updates.<\/em><\/p>","custom_liquid":"","page":"","open":false,"use_subtext_color":false}}},"block_order":["collapsible_item_3KeDE8"],"disabled":true,"name":"t:sections.collapsible-tabs.name","settings":{"container":"fixed","color_scheme":"scheme-11","header_layout":"vertical","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"INGREDIENTS","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","column_gap":"large","row_gap":"inherit","item_style":"standard","item_color_scheme":"","item_heading_font":"heading","item_heading_size":"h4","item_icon_size":"extra-large","padding_top":50,"padding_bottom":30,"show_section_divider":false,"divider_width":"fixed"}},"tabs_content_RkDDtF":{"type":"tabs-content","blocks":{"image_with_text_qVGB9J":{"type":"image_with_text","settings":{"navigation_title":"Ingredients","image":"shopify:\/\/shop_images\/LEN2_test.webp","desktop_image_position":"left","image_aspect_ratio":"adapt","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","subheading":"","description":"<p><strong>Ingredients:<\/strong> Skim Milk Solids, Lactose, Vegetable Oil Blend (Soy, Palm Olein, High Oleic Sunflower, Coconut), Galactooligosaccharides (GOS) containing Lactose, Whey Protein Concentrate, Demineralised Whey Powder, Docosahexaenoic Acid (DHA) Powder from Fish Oil, Emulsifier (Soy Lecithin), Choline Chloride, Taurine, L-Carnitine, Wellmune® (containing 75% of Beta-glucan)*, Lactoferrin, Lutein.<\/p><p><strong>Minerals:<\/strong> Potassium Chloride, Magnesium Chloride, Ferrous Sulphate, Calcium Carbonate, Di-Potassium Hydrogen Orthophosphate, Calcium Hydrogen Orthophosphate, Sodium Chloride, Tri-Potassium Citrate, Tri-Sodium Citrate, Zinc Sulphate, Copper Sulphate, Manganese Sulphate, Potassium Iodide, Sodium Selenite.<\/p><p><strong>Vitamins:<\/strong> Ascorbic Acid, DL-alpha-Tocopheryl Acetate, Riboflavin-5’-Phosphate Sodium, Vitamin A Acetate, Niacinamide, Cholecalciferol, Calcium Pantothenate, Cyanocobalamin, Phytonadione, Thiamine Hydrochloride, Pyridoxine Hydrochloride, Folic Acid, D-Biotin, Beta Carotene.<\/p><p>Protein source: from cow’s milk. Contains Milk, Soy and Fish.<br\/>*Wellmune® is a registered trademark of Kerry Group<\/p>","description_size":"text-base","enable_collapsible":true,"collapsible_heading":"Collapsible row","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":"","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none"}},"image_with_text_VGmPKf":{"type":"image_with_text","settings":{"navigation_title":"Nutritional Values","image":"shopify:\/\/shop_images\/LEN2_test.webp","desktop_image_position":"right","image_aspect_ratio":"adapt","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","subheading":"","description":"<p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands<\/p><h2>How to prepare<\/h2><ul><li>Wash your hands, bottle, cap and teat before use.<\/li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.<\/li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.<\/li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.<\/li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.<\/li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.<\/li><li>Test temperature of the dissolved formula on wrist. Feed immediately.<\/li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.<\/li><\/ul>","description_size":"text-base","enable_collapsible":true,"collapsible_heading":"Collapsible row","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":"","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none"}},"image_with_text_arXxcz":{"type":"image_with_text","settings":{"navigation_title":"Instructions for Use","image":"shopify:\/\/shop_images\/LEN2_test.webp","desktop_image_position":"left","image_aspect_ratio":"adapt","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","subheading":"","description":"<p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands<\/p><h2>How to prepare<\/h2><ul><li>Wash your hands, bottle, cap and teat before use.<\/li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.<\/li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.<\/li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.<\/li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.<\/li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.<\/li><li>Test temperature of the dissolved formula on wrist. Feed immediately.<\/li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.<\/li><\/ul>","description_size":"text-base","enable_collapsible":true,"collapsible_heading":"Collapsible row","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":"","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none"}},"tab_7hKyyb":{"type":"tab","settings":{"navigation_title":"Storage","tab_content":"<p>Fill in the text content of the collapsible item here. You can provide details and explanation for the question here.<\/p>","custom_liquid":"","tab_page":"","enable_collapsible_tab":true,"collapsible_heading":"Collapsible row","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":""}}},"block_order":["image_with_text_qVGB9J","image_with_text_VGmPKf","image_with_text_arXxcz","tab_7hKyyb"],"name":"t:sections.tabs-content.name","settings":{"container":"fixed","color_scheme":"scheme-1","navigation_style":"buttons","navigation_alignment":"center","padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed","show_pagination":false,"enable_collapsible_all":false,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Multicolumn","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","content_alignment":"left","show_col_count":false,"show_image":true,"columns_desktop":4,"column_gap":"large","row_gap":"inherit","columns_mobile":"1","swipe_on_mobile":true}},"image_with_text_overlay_JWywAY":{"type":"image-with-text-overlay","disabled":true,"name":"t:sections.image-with-text-overlay.name","settings":{"container":"fixed","image":"shopify:\/\/shop_images\/LEN2_test.webp","desktop_height":"adapt","overlay_opacity":0,"enable_parallax":false,"parallax_direction":"vertical","color_scheme":"","content_position":"middle-left","content_alignment":"left","mobile_height":"auto","padding_top":50,"padding_bottom":50,"enable_preload_image":false}},"collapsible_tabs_VF6jhd":{"type":"collapsible-tabs","blocks":{"image_card_rTNXXm":{"type":"image_card","settings":{"color_scheme":"scheme-1","desktop_image_position":"right","image_width":70,"alignment":"start","image":"shopify:\/\/shop_images\/LEN2_test.webp","image_ratio":"adapt","image_overlay_opacity":0,"content_position":"top-center","content_alignment":"center","content_spacing":"medium","content_gap":"fitted","card_link":"","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"","button_style":"btn--primary","button_icon":"none","order_first":false}},"collapsible_item_AqU9Xq":{"type":"collapsible_item","settings":{"icon":"none","heading":"Ingredients​","content":"<p><strong>Ingredients:<\/strong> Skim Milk Solids, Lactose, Vegetable Oil Blend (Soy, Palm Olein, High Oleic Sunflower, Coconut), Galactooligosaccharides (GOS) containing Lactose, Whey Protein Concentrate, Demineralised Whey Powder, Docosahexaenoic Acid (DHA) Powder from Fish Oil, Emulsifier (Soy Lecithin), Choline Chloride, Taurine, L-Carnitine, Wellmune® (containing 75% of Beta-glucan)*, Lactoferrin, Lutein.<\/p><p><strong>Minerals:<\/strong> Potassium Chloride, Magnesium Chloride, Ferrous Sulphate, Calcium Carbonate, Di-Potassium Hydrogen Orthophosphate, Calcium Hydrogen Orthophosphate, Sodium Chloride, Tri-Potassium Citrate, Tri-Sodium Citrate, Zinc Sulphate, Copper Sulphate, Manganese Sulphate, Potassium Iodide, Sodium Selenite.<\/p><p><strong>Vitamins:<\/strong> Ascorbic Acid, DL-alpha-Tocopheryl Acetate, Riboflavin-5’-Phosphate Sodium, Vitamin A Acetate, Niacinamide, Cholecalciferol, Calcium Pantothenate, Cyanocobalamin, Phytonadione, Thiamine Hydrochloride, Pyridoxine Hydrochloride, Folic Acid, D-Biotin, Beta Carotene.<\/p><p>Protein source: from cow’s milk. Contains Milk, Soy and Fish.<br\/>*Wellmune® is a registered trademark of Kerry Group<\/p>","custom_liquid":"","page":"","open":false,"use_subtext_color":false}},"collapsible_item_bFJ3yp":{"type":"collapsible_item","settings":{"icon":"none","heading":"Nutritional Values​","content":"<p>Fill in the text content of the collapsible item here. You can provide details and explanation for the question here.<\/p>","custom_liquid":"","page":"","open":false,"use_subtext_color":false}},"collapsible_item_aEXhWV":{"type":"collapsible_item","settings":{"icon":"none","heading":"Instructions for use ​","content":"<h2>Feeding Guide<\/h2><p>Age of infantCooled boiled waterNumber of scoopsNumber of feeds per day1-3 years150mL33<\/p><p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands<\/p><h2>How to prepare<\/h2><ul><li>Wash your hands, bottle, cap and teat before use.<\/li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.<\/li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.<\/li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.<\/li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.<\/li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.<\/li><li>Test temperature of the dissolved formula on wrist. Feed immediately.<\/li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.<\/li><\/ul>","custom_liquid":"","page":"","open":false,"use_subtext_color":false}},"collapsible_item_GXaPtX":{"type":"collapsible_item","settings":{"icon":"none","heading":"Storage","content":"<p>Fill in the text content of the collapsible item here. You can provide details and explanation for the question here.<\/p>","custom_liquid":"","page":"","open":false,"use_subtext_color":false}}},"block_order":["image_card_rTNXXm","collapsible_item_AqU9Xq","collapsible_item_bFJ3yp","collapsible_item_aEXhWV","collapsible_item_GXaPtX"],"disabled":true,"name":"t:sections.collapsible-tabs.name","settings":{"container":"fixed","color_scheme":"scheme-7","header_layout":"vertical","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Collapsible tabs","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","column_gap":"large","row_gap":"inherit","item_style":"card","item_color_scheme":"","item_heading_font":"heading","item_heading_size":"h4","item_icon_size":"extra-large","padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"favorite_products_V7Bxdk":{"type":"favorite-products","blocks":{"product_KxeKUL":{"type":"product","settings":{"color_scheme":"scheme-1","product":"","image":"shopify:\/\/shop_images\/Salvarity_Formulation-ethos_1000x1000_0947cd90-ff05-4bec-8c61-f15646c220f4.webp","text":"<p>Sal-3™ Blend<\/p>","text_size":"h1","author":"","bio":"Combines Sage Leaf, Salicylic Acid & Rosemary - ​Helps to reduce clogged pores - Controls germs and reduces irritation in acne-prone skin"}},"product_PtRQmT":{"type":"product","settings":{"color_scheme":"scheme-12","product":"","image":"shopify:\/\/shop_images\/Salvarity_honey_1000x1000_9971c594-904d-435e-9631-a9dad6ca31a5.webp","text":"<p>MBc Herbal Honey​<\/p>","text_size":"h1","author":"","bio":"Natural anti-bacterial, antioxidant and soothing activity​"}},"product_mK3rGT":{"type":"product","settings":{"color_scheme":"","product":"","image":"shopify:\/\/shop_images\/Salvarity_Product-profile-images_5_1000x1000_61f5e5ae-f888-454d-a4ef-60ddb97b392c.webp","text":"<p>Zinc PCA<\/p>","text_size":"h1","author":"","bio":"Helps balance sebum - Calms acne-prone skin​"}},"product_dUe4ey":{"type":"product","settings":{"color_scheme":"scheme-inverse","product":"","image":"shopify:\/\/shop_images\/Salvarity_Clean-swap-list_red-01.svg","text":"<p>Clean Swap List<\/p>","text_size":"h1","author":"","bio":"We swap out the following “16 usual suspects” for safer, cleaner and more sustainable alternatives in all Salvarity products."}}},"block_order":["product_KxeKUL","product_PtRQmT","product_mK3rGT","product_dUe4ey"],"disabled":true,"custom_css":[".card-wrapper,.product-card-wrapper,.product-card {display: none !important;}"],"name":"t:sections.favorite-products.name","settings":{"color_scheme":"scheme-1","layout":"content-right","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","slide_height":"medium","pcard_style":"boxed","pcard_image_ratio":"","show_section_divider":false,"divider_width":"fixed"}},"comparison_table_tMhaRU":{"type":"comparison-table","blocks":{"heading_ix6xjY":{"type":"heading","settings":{"icon-1":"chat","title-1":"Stage","icon-2":"chat","title-2":"Age","icon-3":"chat","title-3":"No added sugar","icon-4":"chat","title-4":"Premium Ingredients","icon-5":"chat","title-5":"Supports Visual Function","icon-6":"chat","title-6":"","icon-7":"chat","title-7":"","icon-8":"chat","title-8":"","icon-9":"chat","title-9":"","icon-10":"chat","title-10":""}},"content_myg8tk":{"type":"content","settings":{"product":"little-etoile-nutrition-premium-infant-formula-stage-1-0-6-months","text-1":"","text-2":"","text-3":"","text-4":"","text-5":"","text-6":"","text-7":"","text-8":"","text-9":"","text-10":""}},"content_ayLk3c":{"type":"content","settings":{"product":"little-etoile-nutrition-premium-follow-on-formula-stage-2-6-12-months","text-1":"<p>Hecht and Colin describe employing a process similar<\/p>","text-2":"<p>44mm or 40mm<\/p>","text-3":"<p>Up to 18 hours<\/p>","text-4":"<p>S8 SiP<\/p>","text-5":"<p>Up to 1,000 nits<\/p>","text-6":"","text-7":"","text-8":"","text-9":"","text-10":""}},"content_GKebBz":{"type":"content","settings":{"product":"little-etoile-premium-toddler-formula-stage-3-1-3-years","text-1":"<p>Inspired to create a chair where the back and arms are moulded<\/p>","text-2":"<p>46mm or 42mm<\/p>","text-3":"<p>Up to 18 hours<\/p>","text-4":"<p>S10 SiP<\/p>","text-5":"<p>Up to 2,000 nits<\/p>","text-6":"","text-7":"","text-8":"","text-9":"","text-10":""}},"content_mpRGrW":{"type":"content","settings":{"product":"little-etoile-optimum-growing-up-formula-stage-4-2-6-years","text-1":"<p>Inspired to create a chair where the back and arms are moulded<\/p>","text-2":"<p>49mm<\/p>","text-3":"<p>Up to 36 hours<\/p>","text-4":"<p>S9 SiP<\/p>","text-5":"<p>Up to 3,000 nits<\/p>","text-6":"","text-7":"","text-8":"","text-9":"","text-10":""}}},"block_order":["heading_ix6xjY","content_myg8tk","content_ayLk3c","content_GKebBz","content_mpRGrW"],"name":"t:sections.comparison-table.name","settings":{"container":"fixed","color_scheme":"scheme-11","header_layout":"horizontal","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","icon_size":28,"text_line_limit":"2-lines","show_view_more_button":false,"show_section_divider":false,"divider_width":"fixed","padding_top":50,"padding_bottom":50}},"recently_viewed_products_jqebfK":{"type":"recently-viewed-products","name":"t:sections.recently-viewed-products.name","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Recently viewed products","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","limit":12,"columns":5,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"navigation_position":"bottom","pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}}},"order":["breadcrumbs","main","collapsible_tabs_dmW488","scrolling_promotion_ezWyBd","collapsible_tabs_P7yCyE","rich_text_PanGQV","1755357815bccb6e75","lookbook_banner_LPdhNx","image_with_text_wFtGX6","collapsible_tabs_W9T4Cf","tabs_content_RkDDtF","image_with_text_overlay_JWywAY","collapsible_tabs_VF6jhd","favorite_products_V7Bxdk","comparison_table_tMhaRU","recently_viewed_products_jqebfK"]}
+{
+    "sections": {
+        "breadcrumbs": {
+            "type": "breadcrumbs",
+            "custom_css": [
+                "@media (min-width: 1280px) {.breadcrumbs {padding-inline: 5rem; }}"
+            ],
+            "settings": {
+                "container": "fixed",
+                "text_alignment": "start",
+                "padding_top": 16,
+                "padding_bottom": 20
+            }
+        },
+        "main": {
+            "type": "main-product",
+            "blocks": {
+                "badges": {
+                    "type": "badges",
+                    "settings": {
+                        "show_soldout_badge": true,
+                        "show_sale_badge": true,
+                        "sale_badge_type": "percentage"
+                    }
+                },
+                "title": {
+                    "type": "title",
+                    "settings": {
+                        "heading_size": "h1"
+                    }
+                },
+                "meta": {
+                    "type": "meta",
+                    "settings": {
+                        "link_color": "#1ca758",
+                        "show_vendor": true,
+                        "show_product_type": true,
+                        "show_sku": false,
+                        "show_barcode": false
+                    }
+                },
+                "price": {
+                    "type": "price",
+                    "settings": {}
+                },
+                "icon_with_text": {
+                    "type": "icon-with-text",
+                    "settings": {
+                        "layout": "horizontal",
+                        "title_font": "body-bolder",
+                        "title_size": "text-base",
+                        "icon_1": "check",
+                        "heading_1": "Modern",
+                        "icon_2": "check",
+                        "heading_2": "Eco-certified",
+                        "icon_3": "check",
+                        "heading_3": "Warranty"
+                    }
+                },
+                "variant_picker": {
+                    "type": "variant_picker",
+                    "settings": {
+                        "picker_type": "button",
+                        "swatch_type": "shopify_swatch",
+                        "swatch_style": "square",
+                        "swatch_size": 32,
+                        "button_style": "square",
+                        "size_title": "Size",
+                        "size_chart_from_page": "",
+                        "variant_button_border_color": "#e5e7eb",
+                        "variant_button_text_color": "#111111",
+                        "variant_button_checked_border_color": "#1ca758",
+                        "variant_button_checked_text_color": "#1ca758"
+                    }
+                },
+                "buy_buttons": {
+                    "type": "buy_buttons",
+                    "settings": {
+                        "show_quantity_selector": true,
+                        "show_dynamic_checkout": true,
+                        "show_gift_card_recipient": true
+                    }
+                },
+                "inventory": {
+                    "type": "inventory",
+                    "settings": {
+                        "text_style": "body",
+                        "inventory_threshold": 10,
+                        "show_inventory_quantity": true
+                    }
+                },
+                "promotion_alert_L7ipQp": {
+                    "type": "promotion_alert",
+                    "disabled": true,
+                    "settings": {
+                        "text_color": "#1ca758",
+                        "icon": "lightning",
+                        "heading": "Limited time offer",
+                        "description": "<p>Get $20 off when you spend $1,000 or more! <a href=\"\/collections\/all\" title=\"All products\">Shop now<\/a><\/p>"
+                    }
+                },
+                "timer_3EBk7V": {
+                    "type": "timer",
+                    "disabled": true,
+                    "settings": {
+                        "text_color": "#c4301c",
+                        "type": "evergreen",
+                        "duration": "every_month",
+                        "time": "2025\/08\/20 03:45 PM",
+                        "text": "Sales end in"
+                    }
+                },
+                "text_with_buttons_Bg4Rt4": {
+                    "type": "text_with_buttons",
+                    "settings": {
+                        "heading": "Also available on",
+                        "heading_size": "h4",
+                        "share_twitter_icon": "shopify:\/\/shop_images\/chemist-warehouse-logo-1914FA0C63-seeklogo.com.png",
+                        "share_twitter_tooltip": "Chemist Warehouse",
+                        "share_facebook_icon": "shopify:\/\/shop_images\/Amazon_logo_svg.png",
+                        "share_facebook_tooltip": "Amazon",
+                        "twitter_url": "{{ product.metafields.custom.accordoin_forth_heading.value }}",
+                        "facebook_url": "{{ product.metafields.custom.accordoin_fifth_heading.value }}",
+                        "share_icon_size": 60
+                    }
+                },
+                "icon_with_text_BYzRHc": {
+                    "type": "icon-with-text",
+                    "settings": {
+                        "layout": "vertical",
+                        "title_font": "body",
+                        "title_size": "text-base",
+                        "icon_1": "truck",
+                        "heading_1": "<strong>Free delivery | <\/strong>Fast and Free delivery for all orders​",
+                        "icon_2": "lightning",
+                        "heading_2": "<strong>Fast Dispatch​ |<\/strong> Leaves warehouse in <strong>1-2 business days<\/strong>​",
+                        "icon_3": "star-four",
+                        "heading_3": ""
+                    }
+                },
+                "complementary": {
+                    "type": "complementary",
+                    "settings": {
+                        "block_heading": "Perfect Match With",
+                        "heading_size": "h4",
+                        "show_below_product_media": false,
+                        "make_collapsible_row": false,
+                        "icon": "tag",
+                        "product_list_limit": 6,
+                        "layout": "grid",
+                        "columns": 3,
+                        "image_ratio": "1\/1",
+                        "enable_quick_add": true
+                    }
+                },
+                "related_products_3AFFGE": {
+                    "type": "related_products",
+                    "settings": {
+                        "container": "fixed",
+                        "color_scheme": "scheme-1",
+                        "section_header_alignment": "left",
+                        "section_header_alignment_mobile": "inherit",
+                        "subheading": "",
+                        "heading": "You may also like",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "h2",
+                        "description": "",
+                        "limit": 3,
+                        "columns": 3,
+                        "column_gap": "extra-small",
+                        "row_gap": "inherit",
+                        "enable_slider": true,
+                        "navigation_position": "bottom",
+                        "pcard_image_ratio": "",
+                        "columns_mobile": "2",
+                        "swipe_on_mobile": true,
+                        "show_progress_bar": true,
+                        "padding_top": 50,
+                        "padding_bottom": 50,
+                        "show_section_divider": false,
+                        "divider_width": "fixed",
+                        "show_below_product_media": true
+                    }
+                },
+                "divider_pPz3Kw": {
+                    "type": "divider",
+                    "settings": {
+                        "show_below_product_media": false
+                    }
+                },
+                "social_sharing": {
+                    "type": "social_sharing",
+                    "settings": {}
+                },
+                "sticky_atc_bar_7HgNgP": {
+                    "type": "sticky-atc-bar",
+                    "settings": {
+                        "visibility": "all",
+                        "style": "standard",
+                        "container": "full",
+                        "show_atc_button": true,
+                        "show_dynamic_checkout_buttons": true,
+                        "show_quantity": true
+                    }
+                },
+                "divider_3mNceA": {
+                    "type": "divider",
+                    "settings": {
+                        "show_below_product_media": false
+                    }
+                },
+                "payment_info_RpxAmm": {
+                    "type": "payment_info",
+                    "settings": {
+                        "color_scheme": "scheme-1",
+                        "heading": "Payment & Security",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "h5",
+                        "description": "<p>Your payment information is processed securely. We do not store credit card details nor have access to your credit card information.<\/p>",
+                        "show_payment_icons": true,
+                        "show_below_product_media": false
+                    }
+                }
+            },
+            "block_order": [
+                "badges",
+                "title",
+                "meta",
+                "price",
+                "icon_with_text",
+                "variant_picker",
+                "buy_buttons",
+                "inventory",
+                "promotion_alert_L7ipQp",
+                "timer_3EBk7V",
+                "text_with_buttons_Bg4Rt4",
+                "icon_with_text_BYzRHc",
+                "complementary",
+                "related_products_3AFFGE",
+                "divider_pPz3Kw",
+                "social_sharing",
+                "sticky_atc_bar_7HgNgP",
+                "divider_3mNceA",
+                "payment_info_RpxAmm"
+            ],
+            "custom_css": [
+                "@media (min-width: 1024px) {.product__info-wrapper {border: 1px solid #e5e7eb; background: #ffffff; border-radius: 12px; padding: 2.5rem 2.5rem; }}",
+                ".btn--icon-pill,.btn--icon.btn--icon-pill {border: 1px solid #e5e7eb;}",
+                ".btn--icon-circle {border: 1px solid #e5e7eb;}"
+            ],
+            "settings": {
+                "color_scheme": "scheme-3",
+                "use_color_scheme_in_container": false,
+                "enable_sticky_info": true,
+                "media_size": "large",
+                "gallery_layout": "carousel",
+                "mobile_thumbnails": "show",
+                "show_image_border": true,
+                "enable_image_zoom": true,
+                "enable_video_looping": true,
+                "padding_top": 60,
+                "padding_bottom": 100
+            }
+        },
+        "collapsible_tabs_dmW488": {
+            "type": "collapsible-tabs",
+            "blocks": {
+                "collapsible_item_GnTiFN": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "none",
+                        "heading": "Product Details",
+                        "content": "{{ product.metafields.custom.details | metafield_tag }}",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": true,
+                        "use_subtext_color": false
+                    }
+                }
+            },
+            "block_order": [
+                "collapsible_item_GnTiFN"
+            ],
+            "disabled": true,
+            "name": "t:sections.collapsible-tabs.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "",
+                "header_layout": "vertical",
+                "section_header_alignment": "left",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "",
+                "highlight_style": "none",
+                "highlight_font_style": "italic",
+                "highlight_style_color": "",
+                "highlight_text_color": "",
+                "heading_size": "h1",
+                "description": "",
+                "text_size": "text-base",
+                "button_label": "",
+                "button_link": "",
+                "button_style": "btn--primary",
+                "button_icon": "none",
+                "column_gap": "large",
+                "row_gap": "inherit",
+                "item_style": "card",
+                "item_color_scheme": "scheme-11",
+                "item_heading_font": "heading",
+                "item_heading_size": "h3",
+                "item_icon_size": "extra-large",
+                "padding_top": 50,
+                "padding_bottom": 50,
+                "show_section_divider": false,
+                "divider_width": "fixed"
+            }
+        },
+        "scrolling_promotion_ezWyBd": {
+            "type": "scrolling-promotion",
+            "blocks": {
+                "text_T3HTEY": {
+                    "type": "text",
+                    "settings": {
+                        "text_link": "",
+                        "text": "Fast Delivery",
+                        "text_size": "h4",
+                        "text_opacity": 100,
+                        "use_custom_color": false,
+                        "custom_color": "#000000"
+                    }
+                },
+                "text_8F8R4r": {
+                    "type": "text",
+                    "settings": {
+                        "text_link": "",
+                        "text": "30 Days Free Returns",
+                        "text_size": "h4",
+                        "text_opacity": 100,
+                        "use_custom_color": false,
+                        "custom_color": "#000000"
+                    }
+                },
+                "text_QzYxkL": {
+                    "type": "text",
+                    "settings": {
+                        "text_link": "",
+                        "text": "Secure Payment",
+                        "text_size": "h4",
+                        "text_opacity": 100,
+                        "use_custom_color": false,
+                        "custom_color": "#000000"
+                    }
+                },
+                "text_LwRXc6": {
+                    "type": "text",
+                    "settings": {
+                        "text_link": "",
+                        "text": "Fast Delivery",
+                        "text_size": "h4",
+                        "text_opacity": 100,
+                        "use_custom_color": false,
+                        "custom_color": "#000000"
+                    }
+                },
+                "text_QHhYBn": {
+                    "type": "text",
+                    "settings": {
+                        "text_link": "",
+                        "text": "30 Days Free Returns",
+                        "text_size": "h4",
+                        "text_opacity": 100,
+                        "use_custom_color": false,
+                        "custom_color": "#000000"
+                    }
+                },
+                "text_fqHW8t": {
+                    "type": "text",
+                    "settings": {
+                        "text_link": "",
+                        "text": "Secure Payment",
+                        "text_size": "h4",
+                        "text_opacity": 100,
+                        "use_custom_color": false,
+                        "custom_color": "#000000"
+                    }
+                }
+            },
+            "block_order": [
+                "text_T3HTEY",
+                "text_8F8R4r",
+                "text_QzYxkL",
+                "text_LwRXc6",
+                "text_QHhYBn",
+                "text_fqHW8t"
+            ],
+            "disabled": true,
+            "settings": {
+                "color_scheme": "scheme-inverse",
+                "direction": "left",
+                "pause_on_hover": true,
+                "speed": 0.2,
+                "h_spacing": 80,
+                "show_section_divider": false,
+                "padding_top": 16,
+                "padding_bottom": 16
+            }
+        },
+        "tabs_content_RkDDtF": {
+            "type": "tabs-content",
+            "blocks": {
+                "tab_YzXeFJ": {
+                    "type": "tab",
+                    "settings": {
+                        "navigation_title": "Product Details",
+                        "tab_content": "<p><\/p>{{ product.metafields.custom.details | metafield_tag }}",
+                        "custom_liquid": "",
+                        "tab_page": "",
+                        "enable_collapsible_tab": false,
+                        "collapsible_heading": "Collapsible row",
+                        "collapsible_heading_size": "h4",
+                        "icon": "check",
+                        "page": "",
+                        "default_open": false,
+                        "table_html": ""
+                    }
+                },
+                "image_with_text_qVGB9J": {
+                    "type": "image_with_text",
+                    "settings": {
+                        "navigation_title": "Ingredients",
+                        "image": "shopify:\/\/shop_images\/LEN2_test.webp",
+                        "desktop_image_position": "left",
+                        "image_aspect_ratio": "adapt",
+                        "heading": "",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "hd2",
+                        "subheading": "",
+                        "description": "<p><strong>Ingredients:<\/strong> Skim Milk Solids, Lactose, Vegetable Oil Blend (Soy, Palm Olein, High Oleic Sunflower, Coconut), Galactooligosaccharides (GOS) containing Lactose, Whey Protein Concentrate, Demineralised Whey Powder, Docosahexaenoic Acid (DHA) Powder from Fish Oil, Emulsifier (Soy Lecithin), Choline Chloride, Taurine, L-Carnitine, Wellmune® (containing 75% of Beta-glucan)*, Lactoferrin, Lutein.<\/p><p><strong>Minerals:<\/strong> Potassium Chloride, Magnesium Chloride, Ferrous Sulphate, Calcium Carbonate, Di-Potassium Hydrogen Orthophosphate, Calcium Hydrogen Orthophosphate, Sodium Chloride, Tri-Potassium Citrate, Tri-Sodium Citrate, Zinc Sulphate, Copper Sulphate, Manganese Sulphate, Potassium Iodide, Sodium Selenite.<\/p><p><strong>Vitamins:<\/strong> Ascorbic Acid, DL-alpha-Tocopheryl Acetate, Riboflavin-5’-Phosphate Sodium, Vitamin A Acetate, Niacinamide, Cholecalciferol, Calcium Pantothenate, Cyanocobalamin, Phytonadione, Thiamine Hydrochloride, Pyridoxine Hydrochloride, Folic Acid, D-Biotin, Beta Carotene.<\/p><p>Protein source: from cow’s milk. Contains Milk, Soy and Fish.<br\/>*Wellmune® is a registered trademark of Kerry Group<\/p>",
+                        "description_size": "text-base",
+                        "enable_collapsible": true,
+                        "collapsible_heading": "Collapsible row",
+                        "collapsible_heading_size": "h4",
+                        "icon": "check",
+                        "page": "",
+                        "default_open": false,
+                        "table_html": "",
+                        "button_label": "",
+                        "button_link": "",
+                        "button_style": "btn--primary",
+                        "button_icon": "none"
+                    }
+                },
+                "image_with_text_VGmPKf": {
+                    "type": "image_with_text",
+                    "settings": {
+                        "navigation_title": "Nutritional Values",
+                        "image": "shopify:\/\/shop_images\/LEN2_test.webp",
+                        "desktop_image_position": "right",
+                        "image_aspect_ratio": "adapt",
+                        "heading": "",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "hd2",
+                        "subheading": "",
+                        "description": "<p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands<\/p><h2>How to prepare<\/h2><ul><li>Wash your hands, bottle, cap and teat before use.<\/li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.<\/li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.<\/li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.<\/li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.<\/li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.<\/li><li>Test temperature of the dissolved formula on wrist. Feed immediately.<\/li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.<\/li><\/ul>",
+                        "description_size": "text-base",
+                        "enable_collapsible": true,
+                        "collapsible_heading": "Collapsible row",
+                        "collapsible_heading_size": "h4",
+                        "icon": "check",
+                        "page": "",
+                        "default_open": false,
+                        "table_html": "",
+                        "button_label": "",
+                        "button_link": "",
+                        "button_style": "btn--primary",
+                        "button_icon": "none"
+                    }
+                },
+                "image_with_text_arXxcz": {
+                    "type": "image_with_text",
+                    "settings": {
+                        "navigation_title": "Instructions for Use",
+                        "image": "shopify:\/\/shop_images\/LEN2_test.webp",
+                        "desktop_image_position": "left",
+                        "image_aspect_ratio": "adapt",
+                        "heading": "",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "hd2",
+                        "subheading": "",
+                        "description": "<p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands<\/p><h2>How to prepare<\/h2><ul><li>Wash your hands, bottle, cap and teat before use.<\/li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.<\/li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.<\/li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.<\/li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.<\/li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.<\/li><li>Test temperature of the dissolved formula on wrist. Feed immediately.<\/li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.<\/li><\/ul>",
+                        "description_size": "text-base",
+                        "enable_collapsible": true,
+                        "collapsible_heading": "Collapsible row",
+                        "collapsible_heading_size": "h4",
+                        "icon": "check",
+                        "page": "",
+                        "default_open": false,
+                        "table_html": "",
+                        "button_label": "",
+                        "button_link": "",
+                        "button_style": "btn--primary",
+                        "button_icon": "none"
+                    }
+                },
+                "tab_7hKyyb": {
+                    "type": "tab",
+                    "settings": {
+                        "navigation_title": "Storage",
+                        "tab_content": "<p>Fill in the text content of the collapsible item here. You can provide details and explanation for the question here.<\/p>",
+                        "custom_liquid": "",
+                        "tab_page": "",
+                        "enable_collapsible_tab": true,
+                        "collapsible_heading": "Collapsible row",
+                        "collapsible_heading_size": "h4",
+                        "icon": "check",
+                        "page": "",
+                        "default_open": false,
+                        "table_html": ""
+                    }
+                }
+            },
+            "block_order": [
+                "tab_YzXeFJ",
+                "image_with_text_qVGB9J",
+                "image_with_text_VGmPKf",
+                "image_with_text_arXxcz",
+                "tab_7hKyyb"
+            ],
+            "name": "t:sections.tabs-content.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "scheme-1",
+                "navigation_style": "headings",
+                "navigation_alignment": "center",
+                "navigation_font_size": 24,
+                "padding_top": 100,
+                "padding_bottom": 100,
+                "show_section_divider": false,
+                "divider_width": "fixed",
+                "show_pagination": false,
+                "enable_collapsible_all": false,
+                "section_header_alignment": "left",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "Multicolumn",
+                "highlight_style": "none",
+                "highlight_font_style": "italic",
+                "highlight_style_color": "",
+                "highlight_text_color": "",
+                "heading_size": "h1",
+                "description": "",
+                "text_size": "text-base",
+                "button_label": "",
+                "button_link": "",
+                "button_style": "btn--underline",
+                "button_icon": "none",
+                "content_alignment": "left",
+                "show_col_count": false,
+                "show_image": true,
+                "columns_desktop": 4,
+                "column_gap": "large",
+                "row_gap": "inherit",
+                "columns_mobile": "1",
+                "swipe_on_mobile": true
+            }
+        },
+        "1755357815bccb6e75": {
+            "type": "apps",
+            "blocks": {
+                "vibe_instagram_feed_slideshow_nFkVez": {
+                    "type": "shopify:\/\/apps\/vibe-instagram-feed\/blocks\/slideshow\/a89f8a1d-e2e4-49c3-8d2c-363211f74779",
+                    "settings": {
+                        "instagram_feed_id": "689b08300b1727bb337b4b3d",
+                        "post_click_action": "popup",
+                        "items_per_show_lg": "4",
+                        "items_per_show_xs": "1",
+                        "item_spacing_lg": 30,
+                        "item_spacing_xs": 10,
+                        "item_cta": "See more",
+                        "item_product_cta": "Shop this look",
+                        "item_ratio": "4\/5",
+                        "blocktitle": "",
+                        "heading_lg": 26,
+                        "heading_xs": 26,
+                        "description": "",
+                        "description_lg": 16,
+                        "description_xs": 16,
+                        "text_alignment": "center",
+                        "spacing_text_vs_posts_lg": 24,
+                        "spacing_text_vs_posts_xs": 24,
+                        "top_padding_lg": 30,
+                        "bottom_padding_lg": 60,
+                        "top_padding_xs": 0,
+                        "bottom_padding_xs": 0,
+                        "custom_css": ""
+                    }
+                }
+            },
+            "block_order": [
+                "vibe_instagram_feed_slideshow_nFkVez"
+            ],
+            "custom_css": [
+                ".vibe-slide {border-radius: 12px;}"
+            ],
+            "settings": {
+                "include_margins": true,
+                "padding_top": 0,
+                "padding_bottom": 0
+            }
+        },
+        "collapsible_tabs_P7yCyE": {
+            "type": "collapsible-tabs",
+            "blocks": {
+                "image_card_DBttEw": {
+                    "type": "image_card",
+                    "settings": {
+                        "color_scheme": "scheme-13",
+                        "desktop_image_position": "left",
+                        "image_width": 50,
+                        "alignment": "center",
+                        "image": "{{ product.metafields.custom.richcontent_benefit_image.value }}",
+                        "image_ratio": "1\/1",
+                        "image_overlay_opacity": 0,
+                        "content_position": "bottom-left",
+                        "content_alignment": "left",
+                        "content_spacing": "medium",
+                        "content_gap": "fitted",
+                        "card_link": "",
+                        "subheading": "",
+                        "subheading_style": "thick-border",
+                        "heading": "",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "h1",
+                        "heading_size_mobile": "inherit",
+                        "heading_size_custom": 18,
+                        "description": "",
+                        "button_label": "",
+                        "button_style": "btn--primary",
+                        "button_icon": "none",
+                        "order_first": true
+                    }
+                },
+                "heading_64Jay8": {
+                    "type": "heading",
+                    "settings": {
+                        "sub_heading": "",
+                        "heading": "​Supports toddlers’ immunity with <em>Lactoferrin and​ Wellmune® Beta-Glucan​<\/em>",
+                        "highlight_style": "none",
+                        "highlight_font_style": "normal",
+                        "highlight_style_color": "#1ca758",
+                        "highlight_text_color": "",
+                        "heading_size": "h2"
+                    }
+                },
+                "text_GjLqWe": {
+                    "type": "text",
+                    "settings": {
+                        "text": "{{ product.metafields.custom.accordoin_second_heading.value }}",
+                        "icon_text": "none",
+                        "text_style": "card",
+                        "text_background_color": "#f9f9f9"
+                    }
+                },
+                "text_JcizgF": {
+                    "type": "text",
+                    "settings": {
+                        "text": "{{ product.metafields.custom.accordoin_second_heading.value }}",
+                        "icon_text": "none",
+                        "text_style": "card",
+                        "text_background_color": "#f9f9f9"
+                    }
+                },
+                "text_Vkfi9N": {
+                    "type": "text",
+                    "settings": {
+                        "text": "{{ product.metafields.custom.accordoin_one_heading.value }}",
+                        "icon_text": "none",
+                        "text_style": "card",
+                        "text_background_color": "#f9f9f9"
+                    }
+                },
+                "text_RNLnwg": {
+                    "type": "text",
+                    "settings": {
+                        "text": "",
+                        "icon_text": "none",
+                        "text_style": "card",
+                        "text_background_color": "#f9f9f9"
+                    }
+                }
+            },
+            "block_order": [
+                "image_card_DBttEw",
+                "heading_64Jay8",
+                "text_GjLqWe",
+                "text_JcizgF",
+                "text_Vkfi9N",
+                "text_RNLnwg"
+            ],
+            "name": "t:sections.collapsible-tabs.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "",
+                "header_layout": "vertical",
+                "section_header_alignment": "center",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "",
+                "highlight_style": "none",
+                "highlight_font_style": "normal",
+                "highlight_style_color": "#1ca758",
+                "highlight_text_color": "#1ca758",
+                "heading_size": "h1",
+                "description": "",
+                "text_size": "text-base",
+                "button_label": "",
+                "button_link": "",
+                "button_style": "btn--primary",
+                "button_icon": "none",
+                "column_gap": "large",
+                "row_gap": "inherit",
+                "item_style": "card",
+                "item_color_scheme": "scheme-14",
+                "item_heading_font": "heading",
+                "item_heading_size": "h5",
+                "item_icon_size": "extra-large",
+                "padding_top": 60,
+                "padding_bottom": 100,
+                "show_section_divider": false,
+                "divider_width": "fixed"
+            }
+        },
+        "rich_text_PanGQV": {
+            "type": "rich-text",
+            "blocks": {
+                "heading_iAyUem": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "Loved by bubs, trusted by parents​",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "h2"
+                    }
+                }
+            },
+            "block_order": [
+                "heading_iAyUem"
+            ],
+            "disabled": true,
+            "name": "t:sections.rich-text.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "",
+                "use_color_scheme_in_container": false,
+                "content_spacing": "standard",
+                "content_alignment": "center",
+                "padding_top": 50,
+                "padding_bottom": 0,
+                "show_section_divider": false,
+                "divider_width": "fixed"
+            }
+        },
+        "lookbook_banner_LPdhNx": {
+            "type": "lookbook-banner",
+            "blocks": {
+                "hotspot_KayY7P": {
+                    "type": "hotspot",
+                    "settings": {
+                        "image": "shopify:\/\/shop_images\/Salvarity_honey_1000x1000_9971c594-904d-435e-9631-a9dad6ca31a5.webp",
+                        "heading": "<strong>Cognitive & Brain Health<\/strong>​",
+                        "description": "<p>Enhance memory, learning, concentration, and coordination with <strong>DHA, EPA, ARA, Lutein, Choline, Magnesium<\/strong>, and <strong>Vitamins A & E<\/strong>,...​<\/p>",
+                        "top": 45,
+                        "left": 30,
+                        "top_mobile": 45,
+                        "left_mobile": 30
+                    }
+                }
+            },
+            "block_order": [
+                "hotspot_KayY7P"
+            ],
+            "name": "t:sections.banner-with-hotspots.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "scheme-1",
+                "section_header_alignment": "center",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "",
+                "highlight_style": "hand_drawn_circle",
+                "highlight_font_style": "normal",
+                "highlight_style_color": "#57b845",
+                "highlight_text_color": "#57b845",
+                "heading_size": "h2",
+                "description": "",
+                "description_size": "text-lg",
+                "button_label": "",
+                "button_link": "",
+                "button_style": "btn--underline",
+                "button_icon": "none",
+                "image": "shopify:\/\/shop_images\/LEN2_3_test.webp",
+                "icon_style": "dot",
+                "icon_color": "light",
+                "card_color_scheme": "scheme-7",
+                "show_section_divider": false,
+                "divider_width": "fixed",
+                "padding_top": 0,
+                "padding_bottom": 0
+            }
+        },
+        "image_with_text_wFtGX6": {
+            "type": "image-with-text",
+            "blocks": {
+                "badge_eCffqH": {
+                    "type": "badge",
+                    "settings": {
+                        "color_scheme": "scheme-6",
+                        "text": "image with text - spinning text -",
+                        "position_mobile": "right"
+                    }
+                },
+                "subheading_LQeCEY": {
+                    "type": "subheading",
+                    "settings": {
+                        "subheading": "Add a tagline"
+                    }
+                },
+                "heading_gP4tNn": {
+                    "type": "heading",
+                    "settings": {
+                        "heading": "Australian Grass-fed cow’s milk ​",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "h2"
+                    }
+                },
+                "text_fDmTfc": {
+                    "type": "text",
+                    "settings": {
+                        "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+                        "subtext_color": true
+                    }
+                }
+            },
+            "block_order": [
+                "badge_eCffqH",
+                "subheading_LQeCEY",
+                "heading_gP4tNn",
+                "text_fDmTfc"
+            ],
+            "name": "t:sections.image-with-text.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "scheme-11",
+                "image": "shopify:\/\/shop_images\/GoWshop_cowmilk_d2e9328f-6317-452d-a858-b7e78f2be1cf.webp",
+                "image_position": "right",
+                "image_width": 60,
+                "desktop_content_position": "center",
+                "desktop_content_alignment": "left",
+                "mobile_content_alignment": "inherit",
+                "show_section_divider": false,
+                "divider_width": "fixed",
+                "padding_top": 100,
+                "padding_bottom": 120
+            }
+        },
+        "collapsible_tabs_W9T4Cf": {
+            "type": "collapsible-tabs",
+            "blocks": {
+                "collapsible_item_3KeDE8": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "leaf",
+                        "heading": "FULL INGREDIENTS LIST",
+                        "content": "<p>Cyclopentasiloxane & Dimethiconol, Cyclohexasiloxane & Cyclopentasiloxane, Capric\/Caprylic Triglyceride, Tocopherol, Carthamus tinctorius Seed Oil, Avena sativa Kernel Oil, Argania spinosa Kernel Oil, Prunus armeniaca Kernel Oil, Vitis vinifera Seed Oil, Parfum.<\/p><ul><li><strong>Safflower oil<\/strong> – high in linoleic acid, which nourishes scalp and hair follicles (Skolnik, 1977)<\/li><li><strong>Argan oil<\/strong> – shown to protect hair like a barrier from free radical damage (Shafiri, 2023)<\/li><li><strong>Apricot seed oil<\/strong> – a natural source of sterols and squalene that support delicate skin’s natural oil production (Rudzinska, 2017)<\/li><li><strong>Grape seed oil<\/strong> – antioxidant, antibacterial, helps reduce irritation (Khanna, 2002) and very good at restoring hair smoothness (Demir, 2023)<\/li><li><strong>Tocopherols<\/strong> – natural plant forms of vitamin E that protect against free-radical damage, which occurs in dry or inflamed skin (Michalak, 2022)<\/li><\/ul><p><em>The composition of our products may be updated periodically. For the most current ingredient information, we advise checking the ingredient list on the product packaging that you receive, which will always reflect the latest updates.<\/em><\/p>",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": false,
+                        "use_subtext_color": false
+                    }
+                }
+            },
+            "block_order": [
+                "collapsible_item_3KeDE8"
+            ],
+            "disabled": true,
+            "name": "t:sections.collapsible-tabs.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "scheme-11",
+                "header_layout": "vertical",
+                "section_header_alignment": "left",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "INGREDIENTS",
+                "highlight_style": "none",
+                "highlight_font_style": "italic",
+                "highlight_style_color": "",
+                "highlight_text_color": "",
+                "heading_size": "h1",
+                "description": "",
+                "text_size": "text-base",
+                "button_label": "",
+                "button_link": "",
+                "button_style": "btn--primary",
+                "button_icon": "none",
+                "column_gap": "large",
+                "row_gap": "inherit",
+                "item_style": "standard",
+                "item_color_scheme": "",
+                "item_heading_font": "heading",
+                "item_heading_size": "h4",
+                "item_icon_size": "extra-large",
+                "padding_top": 50,
+                "padding_bottom": 30,
+                "show_section_divider": false,
+                "divider_width": "fixed"
+            }
+        },
+        "image_with_text_overlay_JWywAY": {
+            "type": "image-with-text-overlay",
+            "disabled": true,
+            "name": "t:sections.image-with-text-overlay.name",
+            "settings": {
+                "container": "fixed",
+                "image": "shopify:\/\/shop_images\/LEN2_test.webp",
+                "desktop_height": "adapt",
+                "overlay_opacity": 0,
+                "enable_parallax": false,
+                "parallax_direction": "vertical",
+                "color_scheme": "",
+                "content_position": "middle-left",
+                "content_alignment": "left",
+                "mobile_height": "auto",
+                "padding_top": 50,
+                "padding_bottom": 50,
+                "enable_preload_image": false
+            }
+        },
+        "collapsible_tabs_VF6jhd": {
+            "type": "collapsible-tabs",
+            "blocks": {
+                "image_card_rTNXXm": {
+                    "type": "image_card",
+                    "settings": {
+                        "color_scheme": "scheme-1",
+                        "desktop_image_position": "right",
+                        "image_width": 70,
+                        "alignment": "start",
+                        "image": "shopify:\/\/shop_images\/LEN2_test.webp",
+                        "image_ratio": "adapt",
+                        "image_overlay_opacity": 0,
+                        "content_position": "top-center",
+                        "content_alignment": "center",
+                        "content_spacing": "medium",
+                        "content_gap": "fitted",
+                        "card_link": "",
+                        "subheading": "",
+                        "subheading_style": "",
+                        "heading": "",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "h1",
+                        "heading_size_mobile": "inherit",
+                        "heading_size_custom": 18,
+                        "description": "",
+                        "button_label": "",
+                        "button_style": "btn--primary",
+                        "button_icon": "none",
+                        "order_first": false
+                    }
+                },
+                "collapsible_item_AqU9Xq": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "none",
+                        "heading": "Ingredients​",
+                        "content": "<p><strong>Ingredients:<\/strong> Skim Milk Solids, Lactose, Vegetable Oil Blend (Soy, Palm Olein, High Oleic Sunflower, Coconut), Galactooligosaccharides (GOS) containing Lactose, Whey Protein Concentrate, Demineralised Whey Powder, Docosahexaenoic Acid (DHA) Powder from Fish Oil, Emulsifier (Soy Lecithin), Choline Chloride, Taurine, L-Carnitine, Wellmune® (containing 75% of Beta-glucan)*, Lactoferrin, Lutein.<\/p><p><strong>Minerals:<\/strong> Potassium Chloride, Magnesium Chloride, Ferrous Sulphate, Calcium Carbonate, Di-Potassium Hydrogen Orthophosphate, Calcium Hydrogen Orthophosphate, Sodium Chloride, Tri-Potassium Citrate, Tri-Sodium Citrate, Zinc Sulphate, Copper Sulphate, Manganese Sulphate, Potassium Iodide, Sodium Selenite.<\/p><p><strong>Vitamins:<\/strong> Ascorbic Acid, DL-alpha-Tocopheryl Acetate, Riboflavin-5’-Phosphate Sodium, Vitamin A Acetate, Niacinamide, Cholecalciferol, Calcium Pantothenate, Cyanocobalamin, Phytonadione, Thiamine Hydrochloride, Pyridoxine Hydrochloride, Folic Acid, D-Biotin, Beta Carotene.<\/p><p>Protein source: from cow’s milk. Contains Milk, Soy and Fish.<br\/>*Wellmune® is a registered trademark of Kerry Group<\/p>",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": false,
+                        "use_subtext_color": false
+                    }
+                },
+                "collapsible_item_bFJ3yp": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "none",
+                        "heading": "Nutritional Values​",
+                        "content": "<p>Fill in the text content of the collapsible item here. You can provide details and explanation for the question here.<\/p>",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": false,
+                        "use_subtext_color": false
+                    }
+                },
+                "collapsible_item_aEXhWV": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "none",
+                        "heading": "Instructions for use ​",
+                        "content": "<h2>Feeding Guide<\/h2><p>Age of infantCooled boiled waterNumber of scoopsNumber of feeds per day1-3 years150mL33<\/p><p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands<\/p><h2>How to prepare<\/h2><ul><li>Wash your hands, bottle, cap and teat before use.<\/li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.<\/li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.<\/li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.<\/li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.<\/li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.<\/li><li>Test temperature of the dissolved formula on wrist. Feed immediately.<\/li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.<\/li><\/ul>",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": false,
+                        "use_subtext_color": false
+                    }
+                },
+                "collapsible_item_GXaPtX": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "none",
+                        "heading": "Storage",
+                        "content": "<p>Fill in the text content of the collapsible item here. You can provide details and explanation for the question here.<\/p>",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": false,
+                        "use_subtext_color": false
+                    }
+                }
+            },
+            "block_order": [
+                "image_card_rTNXXm",
+                "collapsible_item_AqU9Xq",
+                "collapsible_item_bFJ3yp",
+                "collapsible_item_aEXhWV",
+                "collapsible_item_GXaPtX"
+            ],
+            "disabled": true,
+            "name": "t:sections.collapsible-tabs.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "scheme-7",
+                "header_layout": "vertical",
+                "section_header_alignment": "left",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "Collapsible tabs",
+                "highlight_style": "none",
+                "highlight_font_style": "italic",
+                "highlight_style_color": "",
+                "highlight_text_color": "",
+                "heading_size": "h1",
+                "description": "",
+                "text_size": "text-base",
+                "button_label": "",
+                "button_link": "",
+                "button_style": "btn--primary",
+                "button_icon": "none",
+                "column_gap": "large",
+                "row_gap": "inherit",
+                "item_style": "card",
+                "item_color_scheme": "",
+                "item_heading_font": "heading",
+                "item_heading_size": "h4",
+                "item_icon_size": "extra-large",
+                "padding_top": 50,
+                "padding_bottom": 50,
+                "show_section_divider": false,
+                "divider_width": "fixed"
+            }
+        },
+        "favorite_products_V7Bxdk": {
+            "type": "favorite-products",
+            "blocks": {
+                "product_KxeKUL": {
+                    "type": "product",
+                    "settings": {
+                        "color_scheme": "scheme-1",
+                        "product": "",
+                        "image": "shopify:\/\/shop_images\/Salvarity_Formulation-ethos_1000x1000_0947cd90-ff05-4bec-8c61-f15646c220f4.webp",
+                        "text": "<p>Sal-3™ Blend<\/p>",
+                        "text_size": "h1",
+                        "author": "",
+                        "bio": "Combines Sage Leaf, Salicylic Acid & Rosemary - ​Helps to reduce clogged pores - Controls germs and reduces irritation in acne-prone skin"
+                    }
+                },
+                "product_PtRQmT": {
+                    "type": "product",
+                    "settings": {
+                        "color_scheme": "scheme-12",
+                        "product": "",
+                        "image": "shopify:\/\/shop_images\/Salvarity_honey_1000x1000_9971c594-904d-435e-9631-a9dad6ca31a5.webp",
+                        "text": "<p>MBc Herbal Honey​<\/p>",
+                        "text_size": "h1",
+                        "author": "",
+                        "bio": "Natural anti-bacterial, antioxidant and soothing activity​"
+                    }
+                },
+                "product_mK3rGT": {
+                    "type": "product",
+                    "settings": {
+                        "color_scheme": "",
+                        "product": "",
+                        "image": "shopify:\/\/shop_images\/Salvarity_Product-profile-images_5_1000x1000_61f5e5ae-f888-454d-a4ef-60ddb97b392c.webp",
+                        "text": "<p>Zinc PCA<\/p>",
+                        "text_size": "h1",
+                        "author": "",
+                        "bio": "Helps balance sebum - Calms acne-prone skin​"
+                    }
+                },
+                "product_dUe4ey": {
+                    "type": "product",
+                    "settings": {
+                        "color_scheme": "scheme-inverse",
+                        "product": "",
+                        "image": "shopify:\/\/shop_images\/Salvarity_Clean-swap-list_red-01.svg",
+                        "text": "<p>Clean Swap List<\/p>",
+                        "text_size": "h1",
+                        "author": "",
+                        "bio": "We swap out the following “16 usual suspects” for safer, cleaner and more sustainable alternatives in all Salvarity products."
+                    }
+                }
+            },
+            "block_order": [
+                "product_KxeKUL",
+                "product_PtRQmT",
+                "product_mK3rGT",
+                "product_dUe4ey"
+            ],
+            "disabled": true,
+            "custom_css": [
+                ".card-wrapper,.product-card-wrapper,.product-card {display: none !important;}"
+            ],
+            "name": "t:sections.favorite-products.name",
+            "settings": {
+                "color_scheme": "scheme-1",
+                "layout": "content-right",
+                "heading": "",
+                "highlight_style": "none",
+                "highlight_font_style": "italic",
+                "highlight_style_color": "",
+                "highlight_text_color": "",
+                "slide_height": "medium",
+                "pcard_style": "boxed",
+                "pcard_image_ratio": "",
+                "show_section_divider": false,
+                "divider_width": "fixed"
+            }
+        },
+        "comparison_table_tMhaRU": {
+            "type": "comparison-table",
+            "blocks": {
+                "heading_ix6xjY": {
+                    "type": "heading",
+                    "settings": {
+                        "icon-1": "chat",
+                        "title-1": "Stage",
+                        "icon-2": "chat",
+                        "title-2": "Age",
+                        "icon-3": "chat",
+                        "title-3": "No added sugar",
+                        "icon-4": "chat",
+                        "title-4": "Premium Ingredients",
+                        "icon-5": "chat",
+                        "title-5": "Supports Visual Function",
+                        "icon-6": "chat",
+                        "title-6": "",
+                        "icon-7": "chat",
+                        "title-7": "",
+                        "icon-8": "chat",
+                        "title-8": "",
+                        "icon-9": "chat",
+                        "title-9": "",
+                        "icon-10": "chat",
+                        "title-10": ""
+                    }
+                },
+                "content_myg8tk": {
+                    "type": "content",
+                    "settings": {
+                        "product": "little-etoile-nutrition-premium-infant-formula-stage-1-0-6-months",
+                        "text-1": "",
+                        "text-2": "",
+                        "text-3": "",
+                        "text-4": "",
+                        "text-5": "",
+                        "text-6": "",
+                        "text-7": "",
+                        "text-8": "",
+                        "text-9": "",
+                        "text-10": ""
+                    }
+                },
+                "content_ayLk3c": {
+                    "type": "content",
+                    "settings": {
+                        "product": "little-etoile-nutrition-premium-follow-on-formula-stage-2-6-12-months",
+                        "text-1": "<p>Hecht and Colin describe employing a process similar<\/p>",
+                        "text-2": "<p>44mm or 40mm<\/p>",
+                        "text-3": "<p>Up to 18 hours<\/p>",
+                        "text-4": "<p>S8 SiP<\/p>",
+                        "text-5": "<p>Up to 1,000 nits<\/p>",
+                        "text-6": "",
+                        "text-7": "",
+                        "text-8": "",
+                        "text-9": "",
+                        "text-10": ""
+                    }
+                },
+                "content_GKebBz": {
+                    "type": "content",
+                    "settings": {
+                        "product": "little-etoile-premium-toddler-formula-stage-3-1-3-years",
+                        "text-1": "<p>Inspired to create a chair where the back and arms are moulded<\/p>",
+                        "text-2": "<p>46mm or 42mm<\/p>",
+                        "text-3": "<p>Up to 18 hours<\/p>",
+                        "text-4": "<p>S10 SiP<\/p>",
+                        "text-5": "<p>Up to 2,000 nits<\/p>",
+                        "text-6": "",
+                        "text-7": "",
+                        "text-8": "",
+                        "text-9": "",
+                        "text-10": ""
+                    }
+                },
+                "content_mpRGrW": {
+                    "type": "content",
+                    "settings": {
+                        "product": "little-etoile-optimum-growing-up-formula-stage-4-2-6-years",
+                        "text-1": "<p>Inspired to create a chair where the back and arms are moulded<\/p>",
+                        "text-2": "<p>49mm<\/p>",
+                        "text-3": "<p>Up to 36 hours<\/p>",
+                        "text-4": "<p>S9 SiP<\/p>",
+                        "text-5": "<p>Up to 3,000 nits<\/p>",
+                        "text-6": "",
+                        "text-7": "",
+                        "text-8": "",
+                        "text-9": "",
+                        "text-10": ""
+                    }
+                }
+            },
+            "block_order": [
+                "heading_ix6xjY",
+                "content_myg8tk",
+                "content_ayLk3c",
+                "content_GKebBz",
+                "content_mpRGrW"
+            ],
+            "name": "t:sections.comparison-table.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "scheme-1",
+                "header_layout": "horizontal",
+                "section_header_alignment": "left",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "",
+                "highlight_style": "none",
+                "highlight_font_style": "italic",
+                "highlight_style_color": "",
+                "highlight_text_color": "",
+                "heading_size": "h2",
+                "description": "",
+                "text_size": "text-base",
+                "button_label": "",
+                "button_link": "",
+                "button_style": "btn--primary",
+                "button_icon": "none",
+                "icon_size": 28,
+                "text_line_limit": "2-lines",
+                "show_view_more_button": false,
+                "show_section_divider": false,
+                "divider_width": "fixed",
+                "padding_top": 120,
+                "padding_bottom": 50
+            }
+        },
+        "recently_viewed_products_jqebfK": {
+            "type": "recently-viewed-products",
+            "name": "t:sections.recently-viewed-products.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "",
+                "section_header_alignment": "left",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "Recently viewed products",
+                "highlight_style": "none",
+                "highlight_font_style": "italic",
+                "highlight_style_color": "",
+                "highlight_text_color": "",
+                "heading_size": "h2",
+                "description": "",
+                "limit": 12,
+                "columns": 5,
+                "column_gap": "extra-small",
+                "row_gap": "inherit",
+                "enable_slider": true,
+                "content_overflow": false,
+                "navigation_position": "bottom",
+                "pcard_image_ratio": "",
+                "columns_mobile": "2",
+                "swipe_on_mobile": true,
+                "padding_top": 50,
+                "padding_bottom": 100,
+                "show_section_divider": false,
+                "divider_width": "fixed"
+            }
+        }
+    },
+    "order": [
+        "breadcrumbs",
+        "main",
+        "collapsible_tabs_dmW488",
+        "scrolling_promotion_ezWyBd",
+        "tabs_content_RkDDtF",
+        "1755357815bccb6e75",
+        "collapsible_tabs_P7yCyE",
+        "rich_text_PanGQV",
+        "lookbook_banner_LPdhNx",
+        "image_with_text_wFtGX6",
+        "collapsible_tabs_W9T4Cf",
+        "image_with_text_overlay_JWywAY",
+        "collapsible_tabs_VF6jhd",
+        "favorite_products_V7Bxdk",
+        "comparison_table_tMhaRU",
+        "recently_viewed_products_jqebfK"
+    ]
+}

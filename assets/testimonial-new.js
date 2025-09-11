@@ -110,9 +110,9 @@ if (!customElements.get('testimonials-component')) {
             },
           }
         };
-      } 
+      }
       else {
-       slideToMethod = 'slideToLoop';
+        slideToMethod = 'slideToLoop';
         this.settings = {
           centeredSlides: false,
           spaceBetween: spaceBetweenMobile,
@@ -124,21 +124,20 @@ if (!customElements.get('testimonials-component')) {
           loop: true,
           breakpoints: {
             768: {
-              slidesPerView: 3,
+              slidesPerView: this.tabletItems,
               spaceBetween: spaceBetween
             },
             1280: {
-              slidesPerView: Math.max(3, this.getSlidesPerViewCentered(this.laptopItems)),
+              slidesPerView: this.laptopItems,
               spaceBetween: spaceBetween
             },
             1440: {
-              slidesPerView: Math.max(3, this.getSlidesPerViewCentered(this.items)),
+              slidesPerView: this.items,
               spaceBetween: spaceBetween
             },
           }
         };
       }
-
       if (typeof this.sliderInstance !== 'object') {
         this.classList.add(this.classes.swiper);
         this.sliderWrapper.classList.remove(this.classes.grid);

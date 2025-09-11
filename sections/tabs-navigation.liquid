@@ -15,9 +15,106 @@
       justify-content: {{ section.settings.item_alignment | replace: 'left', 'flex-start' | replace: 'right', 'flex-end' }};
     }
      .button-item__inner.active {
-      background-color: #000; /* nền đen */
-      color: #fff; /* chữ trắng */
-      text-decoration: none;
+      background-color: #000; 
+      color: #000; 
+      text-decoration: underline;
+    }
+    .section-{{ section.id }} .button-item__inner.active .button-item__icon {
+      background-color: #000;
+      border-color: #000;
+    }
+
+    .section-{{ section.id }} .button-item__inner.active .button-item__icon svg {
+      color: #fff;
+    }
+    
+    .section-{{ section.id }} .button-item__text{
+      font-size: 20px;  /* cỡ chữ */
+    }
+    .section-{{ section.id }} .button-item__inner {
+      border: none !important;   /* Xóa viền */
+      box-shadow: none !important; /* Nếu có đổ bóng thì bỏ luôn */
+      
+    }
+    /* Hover mới */
+    .section-{{ section.id }} .button-item__inner:hover .button-item__text {
+      text-decoration: underline;   /* gạch chân chữ */
+      color: #000;  /* đổi màu chữ sang xanh lá, bạn đổi tùy ý */
+    }
+
+    .section-{{ section.id }} .button-item__inner:hover .button-item__icon {
+      color: #000;  /* đổi màu icon sang xanh lá, bạn đổi tùy ý */
+      fill: #000;   /* nếu icon dạng SVG thì fill mới ăn */
+    }
+    /* Bỏ pseudo-element hiệu ứng mặc định */
+    .section-{{ section.id }} .button-item__inner::before,
+    .section-{{ section.id }} .button-item__inner::after {
+      content: none !important;
+      display: none !important;
+    }
+
+    /* Reset style mặc định */
+    .section-{{ section.id }} .button-item__inner {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      transition: none !important;  /* bỏ animation */
+    }
+    .section-{{ section.id }} .button-list__item:not(:last-child) {
+      position: relative;
+    }
+
+    .section-{{ section.id }} .button-list__item:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 30px;        /* chiều cao gạch */
+      background-color: #ddd; /* màu gạch xám nhạt */
+    }
+    .section-{{ section.id }} .button-item__icon {
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #e5e7eb;
+      overflow: hidden; /* để pseudo-element không tràn ra ngoài */
+      transition: border-color 0.3s ease;
+
+    }
+    .section-{{ section.id }} .button-item__icon::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0%;
+      height: 100%;
+      background: #000; /* màu fill */
+      transition: width 0.4s ease;
+      z-index: 0;
+    }
+    .section-{{ section.id }} .button-item__icon svg {
+      width: 10px;   /* kích thước icon */
+      height: 18px;
+      position: relative;
+      z-index: 1;
+      color: #333;
+      transition: color 0.3s ease;
+    }
+
+    /* Hover button hoặc hover icon → fill icon */
+    .section-{{ section.id }} .button-item__inner:hover .button-item__icon::before,
+    .section-{{ section.id }} .button-item__icon:hover::before {
+      width: 100%;
+    }
+    .section-{{ section.id }} .button-item__inner:hover .button-item__icon svg,
+    .section-{{ section.id }} .button-item__icon:hover svg {
+      color: #fff;
+    }
+    .section-{{ section.id }} .button-item__inner:hover .button-item__icon,
+    .section-{{ section.id }} .button-item__icon:hover {
+      border-color: #000;
     }
     @media (max-width: 767px) {
     /* Container giữ logo + button ngang */
@@ -146,17 +243,17 @@
                             alt: alt
                         }}
                       </picture>
-                    {%- elsif block.settings.icon != 'none' -%}
-                      <span class="button-item__icon flex shrink-0 rounded">
-                        {% render 'icons', icon: block.settings.icon %}
-                      </span>
                     {%- endif -%}
-
                     {%- if block.settings.button_label != blank -%}
                       <span class="button-item__text flex-1{% unless section.settings.item_button_font == 'button' %} font-{{ section.settings.item_button_font }}{% endunless %}">
                         {{- block.settings.button_label -}}
                       </span>
                     {%- endif -%}
+                    {% if block.settings.icon != 'none' %}
+                      <span class="button-item__icon flex shrink-0 rounded">
+                        {% render 'icons', icon: block.settings.icon %}
+                      </span>
+                    {% endif %}
                   </span>
                 </{{ tag }}>
               </div>
@@ -688,6 +785,10 @@
             {
               "value": "leaf",
               "label": "t:general.icon.options__35.label"
+            },
+            {
+              "value": "arrow-right",
+              "label": "Arrow Right"
             }
           ],
           "default": "check"

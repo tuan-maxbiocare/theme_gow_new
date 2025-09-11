@@ -110,32 +110,6 @@ if (!customElements.get('testimonials-component')) {
             },
           }
         };
-      } else if (this.layout === 'standard' || this.layout === 'card') {
-        slideToMethod = 'slideToLoop';
-        this.settings = {
-          centeredSlides: true,
-          spaceBetween: spaceBetweenMobile,
-          pagination: {
-            el: this.section.querySelector(this.selectors.pagination),
-            clickable: true,
-            type: this.paginationType
-          },
-          loop: true,
-          breakpoints: {
-            768: {
-              slidesPerView: 2,
-              spaceBetween: spaceBetween
-            },
-            1280: {
-              slidesPerView: Math.max(2, this.getSlidesPerViewCentered(this.laptopItems)),
-              spaceBetween: spaceBetween
-            },
-            1440: {
-              slidesPerView: Math.max(2, this.getSlidesPerViewCentered(this.items)),
-              spaceBetween: spaceBetween
-            },
-          }
-        };
       }
       else {
         additionModules.push(FoxTheme.Swiper.Mousewheel);

@@ -1,6 +1,7 @@
 {{ 'component-testimonial.css' | asset_url | stylesheet_tag }}
 {{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'testimonial-new.js' | asset_url }}" defer="defer"></script>
+
 {% liquid
   assign columns_mobile_int = section.settings.columns_mobile_testimonial | plus: 0
   assign enable_swipe_mobile = false
@@ -159,47 +160,53 @@
         id="testimonials-{{ section.id }}"
       >
         <div class="testimonials__items f-grid f-grid--gap-{{ section.settings.column_gap_testimonial }} f-grid--row-gap-{{ section.settings.row_gap_testimonial }}{% if enable_slider %} swiper-wrapper{% endif %}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
-          {%- for i in (1..section.settings.columns_desktop) -%}
-            <div
-              class="f-column{% if enable_slider %} swiper-slide{% endif %}"
-              {{ block.shopify_attributes }}
-              data-index="{{ forloop.index0 }}"
-            >
-              {% case layout %}
-                {% when 'focused' %}
-                  {% render 'testimonial-1-new',
-                    card_text_size: section.settings.card_text_size,
-                    block: block,
-                    section: section,
-                    color_scheme: section.settings.card_color_scheme,
-                    has_bg: card_has_bg,
-                    image_ratio: section.settings.card_image_ratio,
-                    index: forloop.index
-                  %}
-                {% when 'card' %}
-                  {% render 'testimonial-3-new',
-                    block: block,
-                    section_color_scheme: section.settings.color_scheme,
-                    card_text_size: section.settings.card_text_size,
-                    card_trigger_behavior: section.settings.card_trigger_behavior,
-                    color_scheme: section.settings.card_color_scheme,
-                    content_color_scheme: section.settings.card_content_color_scheme,
-                    heading_size: section.settings.card_heading_size,
-                    image_ratio: section.settings.card_image_ratio,
-                    index: forloop.index
-                  %}
-                {% else %}
-                  {% render 'testimonial-2-new',
-                    card_text_size: section.settings.card_text_size,
-                    block: block,
-                    section: section,
-                    color_scheme: section.settings.card_color_scheme,
-                    has_bg: card_has_bg,
-                    image_ratio: section.settings.card_image_ratio,
-                    index: forloop.index
-                  %}
-              {% endcase %}
-            </div>
+          {%- for i in (1..6) -%}
+            {%- assign current_index = i -%}
+            {%- assign text_field = 'text_' | append: current_index -%}
+            {%- assign author_field = 'author_' | append: current_index -%}
+
+            {%- if block.settings[text_field] != blank or block.settings[author_field] != blank -%}
+              <div
+                class="f-column{% if enable_slider %} swiper-slide{% endif %}"
+                {{ block.shopify_attributes }}
+                data-index="{{ forloop.index0 }}"
+              >
+                {% case layout %}
+                  {% when 'focused' %}
+                    {% render 'testimonial-1-new',
+                      card_text_size: section.settings.card_text_size,
+                      block: block,
+                      section: section,
+                      color_scheme: section.settings.card_color_scheme,
+                      has_bg: card_has_bg,
+                      image_ratio: section.settings.card_image_ratio,
+                      index: current_index
+                    %}
+                  {% when 'card' %}
+                    {% render 'testimonial-3-new',
+                      block: block,
+                      section_color_scheme: section.settings.color_scheme,
+                      card_text_size: section.settings.card_text_size,
+                      card_trigger_behavior: section.settings.card_trigger_behavior,
+                      color_scheme: section.settings.card_color_scheme,
+                      content_color_scheme: section.settings.card_content_color_scheme,
+                      heading_size: section.settings.card_heading_size,
+                      image_ratio: section.settings.card_image_ratio,
+                      index: current_index
+                    %}
+                  {% else %}
+                    {% render 'testimonial-2-new',
+                      card_text_size: section.settings.card_text_size,
+                      block: block,
+                      section: section,
+                      color_scheme: section.settings.card_color_scheme,
+                      has_bg: card_has_bg,
+                      image_ratio: section.settings.card_image_ratio,
+                      index: current_index
+                    %}
+                {% endcase %}
+              </div>
+            {%- endif -%}
           {%- endfor -%}
         </div>
       </testimonials-component>

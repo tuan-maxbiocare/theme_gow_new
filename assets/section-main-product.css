@@ -262,9 +262,9 @@ product-info.use-color-scheme-in-container > .product {
   transform: rotate(180deg);
 }
 
-.product__payment-info {
+/* .product__payment-info {
   padding: 2.4rem;
-}
+} */
 .product__payment-info .list {
   gap: 1rem;
 }

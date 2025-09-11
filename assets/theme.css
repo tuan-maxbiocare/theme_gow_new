@@ -1226,7 +1226,9 @@ hr {
   opacity: 0;
 }
 .media-wrapper.loaded {
-  background-color: transparent;
+  background-color: transparent; 
+
+  
 }
 
 /* Video element */

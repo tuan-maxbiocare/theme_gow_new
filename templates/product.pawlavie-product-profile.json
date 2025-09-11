@@ -48,11 +48,11 @@
                         "title_font": "body-bolder",
                         "title_size": "text-base",
                         "icon_1": "check",
-                        "heading_1": "Instantly smooths, conditions and detangles hair",
+                        "heading_1": "{{ product.metafields.custom.accordoin_seventh_heading.value }}",
                         "icon_2": "check",
-                        "heading_2": "Safety tested on sensitive skin ​",
+                        "heading_2": "{{ product.metafields.custom.accordoin_eight_heading.value }}",
                         "icon_3": "check",
-                        "heading_3": "Blends of 4 botanical oils ​"
+                        "heading_3": "{{ product.metafields.custom.accordoin_third_heading.value }}"
                     }
                 },
                 "variant_picker": {
@@ -175,6 +175,7 @@
                 "payment_info_FifMfH": {
                     "type": "payment_info",
                     "settings": {
+                        "color_scheme": "scheme-1",
                         "heading": "Payment & Security",
                         "highlight_style": "none",
                         "highlight_font_style": "italic",
@@ -212,9 +213,9 @@
                         "highlight_text_color": "",
                         "heading_size": "h3",
                         "description": "",
-                        "limit": 3,
+                        "limit": 5,
                         "columns": 3,
-                        "column_gap": "medium",
+                        "column_gap": "extra-small",
                         "row_gap": "inherit",
                         "enable_slider": true,
                         "navigation_position": "bottom",
@@ -271,10 +272,200 @@
                 "padding_bottom": 100
             }
         },
-        "collapsible_tabs_aeeHNb": {
+        "collapsible_tabs_pjBWtA": {
             "type": "collapsible-tabs",
             "blocks": {
-                "image_card_fQnTMJ": {
+                "collapsible_item_C4Jx7p": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "none",
+                        "heading": "Product Details",
+                        "content": "{{ product.metafields.custom.details | metafield_tag }}",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": true,
+                        "use_subtext_color": false
+                    }
+                }
+            },
+            "block_order": [
+                "collapsible_item_C4Jx7p"
+            ],
+            "name": "t:sections.collapsible-tabs.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "",
+                "header_layout": "vertical",
+                "section_header_alignment": "left",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "",
+                "highlight_style": "none",
+                "highlight_font_style": "italic",
+                "highlight_style_color": "",
+                "highlight_text_color": "",
+                "heading_size": "h1",
+                "description": "",
+                "text_size": "text-base",
+                "button_label": "",
+                "button_link": "",
+                "button_style": "btn--primary",
+                "button_icon": "none",
+                "column_gap": "large",
+                "row_gap": "inherit",
+                "item_style": "card",
+                "item_color_scheme": "scheme-11",
+                "item_heading_font": "heading",
+                "item_heading_size": "h3",
+                "item_icon_size": "extra-large",
+                "padding_top": 100,
+                "padding_bottom": 100,
+                "show_section_divider": false,
+                "divider_width": "fixed"
+            }
+        },
+        "collapsible_tabs_hQ8yQz": {
+            "type": "collapsible-tabs",
+            "blocks": {
+                "image_card_ypmLhW": {
+                    "type": "image_card",
+                    "settings": {
+                        "color_scheme": "scheme-13",
+                        "desktop_image_position": "left",
+                        "image_width": 50,
+                        "alignment": "center",
+                        "image": "shopify:\/\/shop_images\/le_banner_test_eczema.webp",
+                        "image_ratio": "adapt",
+                        "image_overlay_opacity": 0,
+                        "content_position": "bottom-left",
+                        "content_alignment": "left",
+                        "content_spacing": "medium",
+                        "content_gap": "fitted",
+                        "card_link": "",
+                        "subheading": "with GOS, Wellmune ® Beta-Glucan, Vitamin B,..",
+                        "subheading_style": "thick-border",
+                        "heading": "<strong>Gentle on tummies<\/strong>",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "h1",
+                        "heading_size_mobile": "inherit",
+                        "heading_size_custom": 18,
+                        "description": "",
+                        "button_label": "",
+                        "button_style": "btn--primary",
+                        "button_icon": "none",
+                        "order_first": true
+                    }
+                },
+                "heading_qwXTGt": {
+                    "type": "heading",
+                    "settings": {
+                        "sub_heading": "",
+                        "heading": "Benefits​",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "h2"
+                    }
+                },
+                "collapsible_item_GeUWFk": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "check",
+                        "heading": "PROTECT",
+                        "content": "<p>Apply before entering the water for hair & skin protection.​<\/p>",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": true,
+                        "use_subtext_color": false
+                    }
+                },
+                "collapsible_item_gLGikq": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "check",
+                        "heading": "NOURISH",
+                        "content": "<p>Restores the protective oils and prevents excessive drying.​<\/p>",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": true,
+                        "use_subtext_color": false
+                    }
+                },
+                "collapsible_item_NfxQjW": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "check",
+                        "heading": "RECOVER",
+                        "content": "<p>Returns hair to a healthier state, allowing for easier combing & detangling.​<\/p>",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": true,
+                        "use_subtext_color": false
+                    }
+                },
+                "collapsible_item_7CncBK": {
+                    "type": "collapsible_item",
+                    "settings": {
+                        "icon": "check",
+                        "heading": "REFRESH",
+                        "content": "<p>Light, hypoallergenic fragrance to maintain fresh smelling hair.​<\/p>",
+                        "custom_liquid": "",
+                        "page": "",
+                        "open": true,
+                        "use_subtext_color": false
+                    }
+                }
+            },
+            "block_order": [
+                "image_card_ypmLhW",
+                "heading_qwXTGt",
+                "collapsible_item_GeUWFk",
+                "collapsible_item_gLGikq",
+                "collapsible_item_NfxQjW",
+                "collapsible_item_7CncBK"
+            ],
+            "disabled": true,
+            "name": "t:sections.collapsible-tabs.name",
+            "settings": {
+                "container": "fixed",
+                "color_scheme": "",
+                "header_layout": "vertical",
+                "section_header_alignment": "center",
+                "section_header_alignment_mobile": "inherit",
+                "subheading": "",
+                "heading": "Lightweight, <em>Non-Greasy<\/em> ​4-in-1 Formula",
+                "highlight_style": "none",
+                "highlight_font_style": "normal",
+                "highlight_style_color": "#1ca758",
+                "highlight_text_color": "#1ca758",
+                "heading_size": "h1",
+                "description": "",
+                "text_size": "text-base",
+                "button_label": "",
+                "button_link": "",
+                "button_style": "btn--primary",
+                "button_icon": "none",
+                "column_gap": "large",
+                "row_gap": "inherit",
+                "item_style": "card",
+                "item_color_scheme": "scheme-14",
+                "item_heading_font": "heading",
+                "item_heading_size": "h4",
+                "item_icon_size": "extra-large",
+                "padding_top": 100,
+                "padding_bottom": 60,
+                "show_section_divider": false,
+                "divider_width": "fixed"
+            }
+        },
+        "collapsible_tabs_V9RmNX": {
+            "type": "collapsible-tabs",
+            "blocks": {
+                "image_card_MmY78E": {
                     "type": "image_card",
                     "settings": {
                         "color_scheme": "scheme-13",
@@ -306,11 +497,11 @@
                         "order_first": true
                     }
                 },
-                "heading_LjiBBJ": {
+                "heading_TfpU3f": {
                     "type": "heading",
                     "settings": {
                         "sub_heading": "",
-                        "heading": "{{ product.metafields.custom.richcontent_benefits_heading.value }}",
+                        "heading": "​Lightweight, Non-Greasy ​4-in-1 Formula",
                         "highlight_style": "none",
                         "highlight_font_style": "italic",
                         "highlight_style_color": "",
@@ -318,58 +509,50 @@
                         "heading_size": "h2"
                     }
                 },
-                "text_KUxap4": {
-                    "type": "text",
-                    "settings": {
-                        "text": "{{ product.metafields.custom.accordoin_ninth_heading.value }}",
-                        "icon_text": "check",
-                        "text_style": "card",
-                        "text_background_color": "#f9f9f9",
-                        "heading_font_size": 18,
-                        "heading_font_weight": "400"
-                    }
-                },
-                "text_QP7XDt": {
+                "text_KdNciP": {
                     "type": "text",
                     "settings": {
                         "text": "{{ product.metafields.custom.accordoin_second_heading.value }}",
-                        "icon_text": "check",
+                        "icon_text": "none",
                         "text_style": "card",
-                        "text_background_color": "#f9f9f9",
-                        "heading_font_size": 18,
-                        "heading_font_weight": "400"
+                        "text_background_color": "#f9f9f9"
                     }
                 },
-                "text_nGpCRV": {
+                "text_thaT7B": {
+                    "type": "text",
+                    "settings": {
+                        "text": "{{ product.metafields.custom.accordoin_second_heading.value }}",
+                        "icon_text": "none",
+                        "text_style": "card",
+                        "text_background_color": "#f9f9f9"
+                    }
+                },
+                "text_qek4HE": {
                     "type": "text",
                     "settings": {
                         "text": "{{ product.metafields.custom.accordoin_one_heading.value }}",
-                        "icon_text": "check",
+                        "icon_text": "none",
                         "text_style": "card",
-                        "text_background_color": "#f9f9f9",
-                        "heading_font_size": 18,
-                        "heading_font_weight": "400"
+                        "text_background_color": "#f9f9f9"
                     }
                 },
-                "text_rRWEXG": {
+                "text_Q9LFzk": {
                     "type": "text",
                     "settings": {
                         "text": "",
-                        "icon_text": "check",
+                        "icon_text": "none",
                         "text_style": "card",
-                        "text_background_color": "#f9f9f9",
-                        "heading_font_size": 18,
-                        "heading_font_weight": "400"
+                        "text_background_color": "#f9f9f9"
                     }
                 }
             },
             "block_order": [
-                "image_card_fQnTMJ",
-                "heading_LjiBBJ",
-                "text_KUxap4",
-                "text_QP7XDt",
-                "text_nGpCRV",
-                "text_rRWEXG"
+                "image_card_MmY78E",
+                "heading_TfpU3f",
+                "text_KdNciP",
+                "text_thaT7B",
+                "text_qek4HE",
+                "text_Q9LFzk"
             ],
             "name": "t:sections.collapsible-tabs.name",
             "settings": {
@@ -397,9 +580,9 @@
                 "item_color_scheme": "scheme-14",
                 "item_heading_font": "heading",
                 "item_heading_size": "h5",
-                "item_icon_size": "medium",
-                "padding_top": 100,
-                "padding_bottom": 40,
+                "item_icon_size": "extra-large",
+                "padding_top": 0,
+                "padding_bottom": 60,
                 "show_section_divider": false,
                 "divider_width": "fixed"
             }
@@ -448,100 +631,70 @@
                 "padding_bottom": 0
             }
         },
-        "multicolumn_PTt3fg": {
-            "type": "multicolumn",
+        "image_comparison_mXzKha": {
+            "type": "image-comparison",
             "blocks": {
-                "column_zza88q": {
-                    "type": "column",
+                "image_MBVVqD": {
+                    "type": "image",
                     "settings": {
-                        "image": "shopify:\/\/shop_images\/Salvarity_Squalane_1000x1000_2093d6e4-2b30-415a-a7d1-c13a98f25d45.webp",
-                        "title": "86%",
-                        "highlight_style": "none",
-                        "highlight_font_style": "italic",
-                        "highlight_style_color": "",
-                        "highlight_text_color": "",
-                        "heading_size": "h1",
-                        "text": "<p>REDUCED INFLAMMATION<br\/><em>Biotechnology Laboratory Testing<\/em><\/p>",
-                        "text_size": "text-base",
-                        "button_label": "",
-                        "button_link": "",
-                        "button_style": "btn--underline",
-                        "button_icon": "none"
+                        "image": "shopify:\/\/shop_images\/Sage_Before_test.webp",
+                        "heading": "Before",
+                        "color_scheme": ""
                     }
                 },
-                "column_Ft7g9f": {
-                    "type": "column",
+                "image_dMaaRd": {
+                    "type": "image",
                     "settings": {
-                        "image": "shopify:\/\/shop_images\/Salvarity_Squalane_1000x1000_2093d6e4-2b30-415a-a7d1-c13a98f25d45.webp",
-                        "title": "86%",
-                        "highlight_style": "none",
-                        "highlight_font_style": "italic",
-                        "highlight_style_color": "",
-                        "highlight_text_color": "",
-                        "heading_size": "h1",
-                        "text": "<p>REDUCED INFLAMMATION<br\/><em>Biotechnology Laboratory Testing<\/em><\/p>",
-                        "text_size": "text-base",
-                        "button_label": "",
-                        "button_link": "",
-                        "button_style": "btn--underline",
-                        "button_icon": "none"
+                        "image": "shopify:\/\/shop_images\/Sage_After_test.webp",
+                        "heading": "After 2 months",
+                        "color_scheme": ""
                     }
                 },
-                "column_HgKRnn": {
-                    "type": "column",
+                "text_NTGHpE": {
+                    "type": "text",
                     "settings": {
-                        "image": "shopify:\/\/shop_images\/Salvarity_Squalane_1000x1000_2093d6e4-2b30-415a-a7d1-c13a98f25d45.webp",
-                        "title": "86%",
-                        "highlight_style": "none",
-                        "highlight_font_style": "italic",
-                        "highlight_style_color": "",
-                        "highlight_text_color": "",
-                        "heading_size": "h1",
-                        "text": "<p>REDUCED INFLAMMATION<br\/><em>Biotechnology Laboratory Testing<\/em><\/p>",
-                        "text_size": "text-base",
-                        "button_label": "",
-                        "button_link": "",
-                        "button_style": "btn--underline",
-                        "button_icon": "none"
+                        "text_alignment": "left",
+                        "text_alignment_mobile": "inherit",
+                        "heading": "Visible results",
+                        "heading_color": "rgba(0,0,0,0)",
+                        "heading_size": "h3",
+                        "description": "<p>Unretouched image<\/p>",
+                        "text_size": "text-base"
                     }
                 }
             },
             "block_order": [
-                "column_zza88q",
-                "column_Ft7g9f",
-                "column_HgKRnn"
+                "image_MBVVqD",
+                "image_dMaaRd",
+                "text_NTGHpE"
             ],
-            "name": "t:sections.multicolumn.name",
+            "name": "t:sections.image-comparison.name",
             "settings": {
                 "container": "fixed",
-                "color_scheme": "",
+                "color_scheme": "scheme-1",
                 "section_header_alignment": "left",
                 "section_header_alignment_mobile": "inherit",
                 "subheading": "",
-                "heading": "Skin-Credible Evidence​",
-                "highlight_style": "none",
-                "highlight_font_style": "italic",
-                "highlight_style_color": "",
+                "heading": "Experience the <em>difference<\/em>",
+                "highlight_style": "thick_underline",
+                "highlight_font_style": "normal",
+                "highlight_style_color": "#ffffff",
                 "highlight_text_color": "",
-                "heading_size": "h1",
+                "heading_size": "hd2",
                 "description": "",
-                "text_size": "text-base",
+                "description_size": "text-base",
                 "button_label": "",
                 "button_link": "",
-                "button_style": "btn--underline",
+                "button_style": "btn--primary",
                 "button_icon": "none",
-                "content_alignment": "center",
-                "show_col_count": false,
-                "show_image": true,
-                "columns_desktop": 3,
-                "column_gap": "extra-large",
-                "row_gap": "inherit",
-                "columns_mobile": "1",
-                "swipe_on_mobile": true,
-                "show_section_divider": false,
-                "divider_width": "fixed",
+                "direction": "horizontal",
+                "image_height": "small",
+                "image_heading_style": "badge",
+                "product": "{{ product }}",
                 "padding_top": 50,
-                "padding_bottom": 50
+                "padding_bottom": 100,
+                "show_section_divider": false,
+                "divider_width": "fixed"
             }
         },
         "custom_content_Fa6mpH": {
@@ -590,19 +743,7 @@
                         "text_4": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
                         "author_4": "Apricot Seed Oil",
                         "bio_4": "",
-                        "product_4": "",
-                        "icon_5": "none",
-                        "heading_5": "Testimonials",
-                        "text_5": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-                        "author_5": "Author's name",
-                        "bio_5": "",
-                        "product_5": "",
-                        "icon_6": "none",
-                        "heading_6": "Testimonials",
-                        "text_6": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
-                        "author_6": "Author's name",
-                        "bio_6": "",
-                        "product_6": ""
+                        "product_4": ""
                     }
                 }
             },
@@ -656,7 +797,7 @@
                 "section_header_alignment_testimonial": "left",
                 "section_header_alignment_mobile_testimonial": "inherit",
                 "subheading_testimonial": "",
-                "heading_testimonial": "| The Good Stuff Explained",
+                "heading_testimonial": "| HERO NATURAL INGREDIENTS",
                 "highlight_style_testimonial": "none",
                 "highlight_font_style_testimonial": "italic",
                 "highlight_style_color_testimonial": "",
@@ -681,6 +822,48 @@
                 "columns_mobile_testimonial": "1",
                 "swipe_on_mobile_testimonial": true,
                 "show_progress_bar": true
+            }
+        },
+        "scrolling_banner_tynppr": {
+            "type": "scrolling-banner",
+            "blocks": {
+                "slide_bYT7KE": {
+                    "type": "slide",
+                    "settings": {
+                        "color_scheme": "scheme-1",
+                        "background": "shopify:\/\/shop_images\/GoWshop_megamenu_5.webp",
+                        "image_overlay_opacity": 0,
+                        "content_position": "middle-center",
+                        "text_alignment": "center",
+                        "subheading": "",
+                        "title": "",
+                        "highlight_style": "none",
+                        "highlight_font_style": "italic",
+                        "highlight_style_color": "",
+                        "highlight_text_color": "",
+                        "heading_size": "hd1",
+                        "description": "",
+                        "description_size": "text-base",
+                        "button_label": "",
+                        "button_link": "",
+                        "button_style": "btn--primary",
+                        "button_icon": "none",
+                        "product_color_scheme": "",
+                        "product": ""
+                    }
+                }
+            },
+            "block_order": [
+                "slide_bYT7KE"
+            ],
+            "name": "t:sections.scrolling-banner.name",
+            "settings": {
+                "container": "fixed",
+                "slide_height": "medium",
+                "content_position_mobile": "top-center",
+                "text_alignment_mobile": "center",
+                "enable_zoom": true,
+                "enable_parallax": true
             }
         },
         "collapsible_tabs_6he4e4": {
@@ -735,31 +918,31 @@
                     "settings": {
                         "icon": "none",
                         "heading": "01",
-                        "content": "<p>Warm between fingertips, and gently massage moisturiser onto cleansed face, neck and décolletage. Avoiding the immediate eye area.​<\/p>",
+                        "content": "<p><strong>Dispense 1-2 drops of Hair Oil <\/strong>into your palm, rub hands together, and apply to the tips of dry hair.<br\/>Avoid using too much to prevent greasiness.<\/p>",
                         "custom_liquid": "",
                         "page": "",
                         "open": true,
                         "use_subtext_color": false
                     }
                 },
-                "collapsible_item_ggabwB": {
+                "collapsible_item_jyrxJL": {
                     "type": "collapsible_item",
                     "settings": {
                         "icon": "none",
                         "heading": "02",
-                        "content": "<p><strong>Use in the morning and at night for optimal results.<\/strong><\/p>",
+                        "content": "<p>Squeeze the tube and apply sparingly to the paw and nose of your pet, as required.<\/p>",
                         "custom_liquid": "",
                         "page": "",
                         "open": true,
                         "use_subtext_color": false
                     }
                 },
-                "collapsible_item_69wJX7": {
+                "collapsible_item_mgTpqn": {
                     "type": "collapsible_item",
                     "settings": {
                         "icon": "none",
-                        "heading": "02",
-                        "content": "<p>Some skin types may experience mild tingling. You may use every other day until your skin adjusts.<\/p>",
+                        "heading": "03",
+                        "content": "<p>Squeeze the tube and apply sparingly to the paw and nose of your pet, as required.<\/p>",
                         "custom_liquid": "",
                         "page": "",
                         "open": true,
@@ -771,8 +954,8 @@
                 "image_card_M36Wk3",
                 "heading_KddwdH",
                 "collapsible_item_Q6YM4t",
-                "collapsible_item_ggabwB",
-                "collapsible_item_69wJX7"
+                "collapsible_item_jyrxJL",
+                "collapsible_item_mgTpqn"
             ],
             "name": "t:sections.collapsible-tabs.name",
             "settings": {
@@ -805,239 +988,6 @@
                 "padding_bottom": 50,
                 "show_section_divider": false,
                 "divider_width": "fixed"
-            }
-        },
-        "custom_content_Nqmncw": {
-            "type": "custom-content",
-            "blocks": {
-                "lookbook_card_hotspot_7yQNQg": {
-                    "type": "lookbook_card_hotspot",
-                    "settings": {
-                        "icon_style": "dot",
-                        "icon_color": "light",
-                        "image": "shopify:\/\/shop_images\/Salvarity_Our-skincare-cheat-code_1_2400x1350_43cd387b-78c6-4a1b-b26b-1564b894be71.webp",
-                        "image_ratio": "adapt",
-                        "product_1": "hydra-purify-facial-cleanser",
-                        "top_1": 30,
-                        "left_1": 18,
-                        "product_2": "primed-ready-mattifying-serum",
-                        "top_2": 55,
-                        "left_2": 31,
-                        "product_3": "back-to-basics-mattifying-moisturizer",
-                        "top_3": 70,
-                        "left_3": 57,
-                        "product_4": "back-in-balance-clarifying-moisturizer",
-                        "top_4": 60,
-                        "left_4": 80,
-                        "width": "100%",
-                        "alignment": "center",
-                        "block_custom_class": ""
-                    }
-                }
-            },
-            "block_order": [
-                "lookbook_card_hotspot_7yQNQg"
-            ],
-            "name": "t:sections.custom-content.name",
-            "settings": {
-                "container": "fixed",
-                "color_scheme": "",
-                "enable_sticky_column": false,
-                "section_header_alignment": "left",
-                "section_header_alignment_mobile": "inherit",
-                "subheading": "",
-                "heading": "​",
-                "highlight_style": "none",
-                "highlight_font_style": "italic",
-                "highlight_style_color": "",
-                "highlight_text_color": "",
-                "heading_size": "h2",
-                "description": "",
-                "text_size": "text-base",
-                "column_gap": "medium",
-                "row_gap": "large",
-                "swipe_on_mobile": false,
-                "columns_mobile": "1",
-                "padding_top": 0,
-                "padding_bottom": 50,
-                "show_section_divider": false,
-                "divider_width": "fixed",
-                "header_alignment_collapsible": "left",
-                "section_header_alignment_mobile_collapsible": "inherit",
-                "subheading_collapsible": "",
-                "heading_collapsible": "Collapsible tabs",
-                "highlight_style_collapsible": "none",
-                "highlight_font_style_collapsible": "italic",
-                "highlight_style_color_collapsible": "",
-                "highlight_text_color_collapsible": "",
-                "heading_size_collapsible": "h1",
-                "description_collapsible": "",
-                "text_size_collapsible": "text-base",
-                "button_label_collapsible": "",
-                "button_link_collapsible": "",
-                "button_style_collapsible": "btn--primary",
-                "button_icon_collapsible": "none",
-                "item_color_scheme_collapsible": "",
-                "item_heading_font_collapsible": "heading",
-                "item_heading_size_collapsible": "h4",
-                "item_icon_size_collapsible": "extra-large",
-                "section_header_alignment_testimonial": "center",
-                "section_header_alignment_mobile_testimonial": "inherit",
-                "subheading_testimonial": "",
-                "heading_testimonial": "Testimonials",
-                "highlight_style_testimonial": "none",
-                "highlight_font_style_testimonial": "italic",
-                "highlight_style_color_testimonial": "",
-                "highlight_text_color_testimonial": "",
-                "heading_size_testimonial": "h1",
-                "description_testimonial": "",
-                "text_size_testimonial": "text-base",
-                "layout": "focused",
-                "card_color_scheme": "",
-                "card_content_color_scheme": "",
-                "card_image_ratio": "adapt",
-                "card_heading_size": "h4",
-                "card_text_size": "h1",
-                "author_info_layout": "vertical",
-                "card_trigger_behavior": "click",
-                "show_image": true,
-                "show_author_image": true,
-                "columns_desktop": 3,
-                "column_gap_testimonial": "medium",
-                "row_gap_testimonial": "medium",
-                "enable_slider_testimonial": true,
-                "columns_mobile_testimonial": "1",
-                "swipe_on_mobile_testimonial": true,
-                "show_progress_bar": true
-            }
-        },
-        "comparison_table_GCbt4n": {
-            "type": "comparison-table",
-            "blocks": {
-                "heading_B6DrQ3": {
-                    "type": "heading",
-                    "settings": {
-                        "icon-1": "chat",
-                        "title-1": "Stage",
-                        "icon-2": "chat",
-                        "title-2": "Age",
-                        "icon-3": "chat",
-                        "title-3": "No added sugar",
-                        "icon-4": "chat",
-                        "title-4": "Premium Ingredients",
-                        "icon-5": "chat",
-                        "title-5": "Supports Visual Function",
-                        "icon-6": "chat",
-                        "title-6": "",
-                        "icon-7": "chat",
-                        "title-7": "",
-                        "icon-8": "chat",
-                        "title-8": "",
-                        "icon-9": "chat",
-                        "title-9": "",
-                        "icon-10": "chat",
-                        "title-10": ""
-                    }
-                },
-                "content_PmJXzE": {
-                    "type": "content",
-                    "settings": {
-                        "product": "little-etoile-nutrition-premium-infant-formula-stage-1-0-6-months",
-                        "text-1": "",
-                        "text-2": "",
-                        "text-3": "",
-                        "text-4": "",
-                        "text-5": "",
-                        "text-6": "",
-                        "text-7": "",
-                        "text-8": "",
-                        "text-9": "",
-                        "text-10": ""
-                    }
-                },
-                "content_gfFe44": {
-                    "type": "content",
-                    "settings": {
-                        "product": "little-etoile-nutrition-premium-follow-on-formula-stage-2-6-12-months",
-                        "text-1": "<p>Hecht and Colin describe employing a process similar<\/p>",
-                        "text-2": "<p>44mm or 40mm<\/p>",
-                        "text-3": "<p>Up to 18 hours<\/p>",
-                        "text-4": "<p>S8 SiP<\/p>",
-                        "text-5": "<p>Up to 1,000 nits<\/p>",
-                        "text-6": "",
-                        "text-7": "",
-                        "text-8": "",
-                        "text-9": "",
-                        "text-10": ""
-                    }
-                },
-                "content_fBVVMJ": {
-                    "type": "content",
-                    "settings": {
-                        "product": "little-etoile-premium-toddler-formula-stage-3-1-3-years",
-                        "text-1": "<p>Inspired to create a chair where the back and arms are moulded<\/p>",
-                        "text-2": "<p>46mm or 42mm<\/p>",
-                        "text-3": "<p>Up to 18 hours<\/p>",
-                        "text-4": "<p>S10 SiP<\/p>",
-                        "text-5": "<p>Up to 2,000 nits<\/p>",
-                        "text-6": "",
-                        "text-7": "",
-                        "text-8": "",
-                        "text-9": "",
-                        "text-10": ""
-                    }
-                },
-                "content_C3CEyF": {
-                    "type": "content",
-                    "settings": {
-                        "product": "little-etoile-optimum-growing-up-formula-stage-4-2-6-years",
-                        "text-1": "<p>Inspired to create a chair where the back and arms are moulded<\/p>",
-                        "text-2": "<p>49mm<\/p>",
-                        "text-3": "<p>Up to 36 hours<\/p>",
-                        "text-4": "<p>S9 SiP<\/p>",
-                        "text-5": "<p>Up to 3,000 nits<\/p>",
-                        "text-6": "",
-                        "text-7": "",
-                        "text-8": "",
-                        "text-9": "",
-                        "text-10": ""
-                    }
-                }
-            },
-            "block_order": [
-                "heading_B6DrQ3",
-                "content_PmJXzE",
-                "content_gfFe44",
-                "content_fBVVMJ",
-                "content_C3CEyF"
-            ],
-            "name": "t:sections.comparison-table.name",
-            "settings": {
-                "container": "fixed",
-                "color_scheme": "scheme-1",
-                "header_layout": "horizontal",
-                "section_header_alignment": "left",
-                "section_header_alignment_mobile": "inherit",
-                "subheading": "",
-                "heading": "<strong>Pick your Favorite<\/strong>​",
-                "highlight_style": "none",
-                "highlight_font_style": "italic",
-                "highlight_style_color": "",
-                "highlight_text_color": "",
-                "heading_size": "h2",
-                "description": "",
-                "text_size": "text-base",
-                "button_label": "",
-                "button_link": "",
-                "button_style": "btn--primary",
-                "button_icon": "none",
-                "icon_size": 28,
-                "text_line_limit": "2-lines",
-                "show_view_more_button": false,
-                "show_section_divider": false,
-                "divider_width": "fixed",
-                "padding_top": 50,
-                "padding_bottom": 50
             }
         },
         "recently_viewed_products_NhQ4UA": {
@@ -1172,13 +1122,14 @@
     "order": [
         "breadcrumbs",
         "main",
-        "collapsible_tabs_aeeHNb",
+        "collapsible_tabs_pjBWtA",
+        "collapsible_tabs_hQ8yQz",
+        "collapsible_tabs_V9RmNX",
         "1754989570fc06767f",
-        "multicolumn_PTt3fg",
+        "image_comparison_mXzKha",
         "custom_content_Fa6mpH",
+        "scrolling_banner_tynppr",
         "collapsible_tabs_6he4e4",
-        "custom_content_Nqmncw",
-        "comparison_table_GCbt4n",
         "recently_viewed_products_NhQ4UA",
         "multiple_product_bundles_4rYPjP"
     ]

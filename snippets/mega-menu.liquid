@@ -43,9 +43,7 @@
     align-items: center;
   }
   .mega-menu__column-logo-brand-custom .hover-wrapper {
-    border-radius: 10px;
-    padding: 15px;
-    border: 1px solid #E6E6E6;
+
   }
 
   .mega-menu__list .mega-menu__column {
@@ -133,13 +131,11 @@
                         {% assign image = block.settings[setting_id] %}
 
                         {% if image != blank %}
-                           <div class="hover-wrapper pet-custom__link">
+                          <div class="hover-wrapper"> 
                             <a href="{{ childlink.url }}">
-                              <img style="height:80px"
+                              <img width="100%" height="auto"
                                 src="{{ image | image_url: width: 200 }}"
                                 alt="{{ childlink.title | escape }}"
-                                width="250"
-                                height="250"
                                 class="hover-scale-up"
                               >
                             </a>
