@@ -307,60 +307,7 @@
                 {% render 'testimonial-block', block: block, section: section %}
 
               {%- when 'collapsible' -%}
-                <div
-                  class="accordion-item accordion-{{ section.settings.item_style }}{% if section.settings.item_style == 'card' %} blocks-radius{% endif %}"
-                  {{ block.shopify_attributes }}
-                >
-                  {% render 'heading-new',
-                    subheading: section.settings.subheading_collapsible,
-                    heading: section.settings.heading_collapsible,
-                    heading_size: section.settings.heading_size_collapsible,
-                    description: section.settings.description_collapsible,
-                    description_size: section.settings.text_size_collapsible,
-                    highlight_style: section.settings.highlight_style_collapsible,
-                    highlight_font_style: section.settings.highlight_font_style_collapsible,
-                    highlight_style_color: section.settings.highlight_style_color_collapsible,
-                    highlight_text_color: section.settings.highlight_text_color_collapsible,
-                    header_alignment: section.settings.header_alignment_collapsible,
-                    header_alignment_mobile: section.settings.section_header_alignment_mobile_collapsible,
-                    header_layout: section.settings.header_layout_collapsible,
-                    button_visible: true,
-                    button_label: section.settings.button_label_collapsible,
-                    button_link: section.settings.button_link_collapsible,
-                    button_style: section.settings.button_style_collapsible,
-                    button_icon: section.settings.button_icon_collapsible
-                  %}
-                  <details
-                    class="accordion-details"
-                    is="accordion-group"
-                    {% if block.settings.open %}
-                      open
-                      aria-expanded="true"
-                    {% else %}
-                      aria-expanded="false"
-                    {% endif %}
-                  >
-                    <summary class="accordion-details__summary flex items-center justify-between focus-inset gap-2">
-                      <div class="flex items-center gap-2">
-                        {% if block.settings.icon != 'none' %}
-                          {% render 'icons',
-                            icon: block.settings.icon,
-                            size: section.settings.item_icon_size_collapsible
-                          %}
-                        {%- endif -%}
-                        <h2 class="font-{{ section.settings.item_heading_font_collapsible }} {{ section.settings.item_heading_size_collapsible }} inline-richtext">
-                          {{ block.settings.heading }}
-                        </h2>
-                      </div>
-                      {%- render 'icon-plus-toggle' -%}
-                    </summary>
-                    <div class="accordion-details__content rte{% if block.settings.use_subtext_color %} text-subtext{% endif %}">
-                      {{ block.settings.content }}
-                      {{ block.settings.custom_liquid }}
-                      {{ block.settings.page.content }}
-                    </div>
-                  </details>
-                </div>
+                {%- render 'collapsible-tabs-block', section: section, block: block -%}
             {%- endcase -%}
           </div>
         </div>

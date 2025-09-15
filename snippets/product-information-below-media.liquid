@@ -1,4 +1,4 @@
-<div class="product__blocks-below-media product__blocks accordion-parent">
+<div class="product__blocks-below-media hidden md:block product__blocks accordion-parent">
   {%- for block in section.blocks -%}
     {%- liquid
       unless block.settings.show_below_product_media
@@ -7,11 +7,6 @@
 
       assign block_classes = 'product__block product__block--' | append: block.type
     -%}
-    {% comment %}
-      mai sửa ở đây unless block.settings.show_below_product_media
-        continue
-      endunless
-    {% endcomment %}
     {%- case block.type -%}
       {%- when 'divider' -%}
         <div class="{{ block_classes }}" {{ block.shopify_attributes }}>

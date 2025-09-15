@@ -1,0 +1,99 @@
+{%- liquid
+  assign header_layout = section.settings.header_layout
+  assign button_style = section.settings.button_style
+  assign button_label = section.settings.button_label
+  assign button_link = section.settings.button_link
+  assign button_icon = section.settings.button_icon
+
+  assign section_css_class = ''
+  assign col_alignment_class = ''
+  assign col_content_width = 100
+
+  assign side_button = true
+
+  if header_layout == 'standing-column'
+    assign header_layout = 'vertical'
+    assign side_button = false
+  endif
+
+  assign image_block = section.blocks | where: 'type', 'image_card' | first
+  if image_block
+    assign section_css_class = section_css_class | append: ' collapsible-tabs__has-image'
+    assign section_css_class = section_css_class | append: ' collapsible-tabs__image-position-' | append: image_block.settings.image_position | default: 'left'
+
+    assign image_vertical_alignment = image_block.settings.alignment | default: 'center'
+    assign col_alignment_class = col_alignment_class | append: ' justify-' | append: image_vertical_alignment
+
+    assign col_image_width = image_block.settings.image_width
+    assign col_content_width = col_content_width | minus: col_image_width
+  endif
+
+  assign item_font_family = section.settings.item_heading_font_collapsible | default: 'body'
+  assign item_heading_size = section.settings.item_heading_size_collapsible | default: 'h6'
+  assign item_trigger_class = ' font-' | append: item_font_family | append: ' ' | append: item_heading_size
+  assign item_icon_size = section.settings.item_icon_size_collapsible | default: 'extra-large'
+-%}
+{{ 'section-collapsible-tabs.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'collapsible-tabs.js' | asset_url }}" defer="defer"></script>
+
+<div
+  class="section section-{{ section.id }} section--collapsible-tabs section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }}{{ section_css_class }}"
+  data-id="{{ section.id }}"
+>
+  {% render 'heading-new',
+    subheading: section.settings.subheading_collapsible,
+    heading: section.settings.heading_collapsible,
+    heading_size: section.settings.heading_size_collapsible,
+    description: section.settings.description_collapsible,
+    description_size: section.settings.text_size_collapsible,
+    highlight_style: section.settings.highlight_style_collapsible,
+    highlight_font_style: section.settings.highlight_font_style_collapsible,
+    highlight_style_color: section.settings.highlight_style_color_collapsible,
+    highlight_text_color: section.settings.highlight_text_color_collapsible,
+    header_alignment: section.settings.header_alignment_collapsible,
+    header_alignment_mobile: section.settings.section_header_alignment_mobile_collapsible,
+    header_layout: section.settings.header_layout_collapsible,
+    button_visible: true,
+    button_label: section.settings.button_label_collapsible,
+    button_link: section.settings.button_link_collapsible,
+    button_style: section.settings.button_style_collapsible,
+    button_icon: section.settings.button_icon_collapsible
+  %}
+  
+    <collapsible-tabs
+      class="block w-full accordion-parent"
+      data-color-scheme="color-{{ section.settings.item_color_scheme_collapsible }}"
+    >
+      <div
+        class="accordion-item accordion-{{ section.settings.item_style }}{% if section.settings.item_style == 'card' %} blocks-radius{% endif %}"
+        {{ block.shopify_attributes }}
+      >
+        <details
+          class="accordion-details"
+          is="accordion-group"
+          {% if block.settings.open %}
+            open
+            aria-expanded="true"
+          {% else %}
+            aria-expanded="false"
+          {% endif %}
+        >
+          <summary class="accordion-details__summary flex items-center justify-between focus-inset gap-2">
+            <div class="flex items-center gap-2">
+              {% if block.settings.icon != 'none' %}
+                {% render 'icons', icon: block.settings.icon, size: item_icon_size %}
+              {%- endif -%}
+              <h2 class="{{ item_trigger_class }} inline-richtext">{{ block.settings.heading }}</h2>
+            </div>
+            {%- render 'icon-plus-toggle' -%}
+          </summary>
+          <div class="accordion-details__content rte{% if block.settings.use_subtext_color %} text-subtext{% endif %}">
+            {{ block.settings.content }}
+            {{ block.settings.custom_liquid }}
+            {{ block.settings.page.content }}
+          </div>
+        </details>
+      </div>
+    </collapsible-tabs>
+  </div>
+
