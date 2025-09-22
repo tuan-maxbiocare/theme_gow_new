@@ -139,29 +139,31 @@
                       </details>
                     </div>
                   {%- when 'text' -%}
-                    <div
-                      class="accordion-item accordion-{{ block.settings.text_style }}{% if block.settings.text_style == 'card' %} blocks-radius{% endif %}"
-                      {{ block.shopify_attributes }}
-                      style="background-color: {{ block.settings.text_background_color }};"
-                    >
-                      <details
-                        class="accordion-details"
+                    {% if block.settings.text != blank %}
+                      <div
+                        class="accordion-item accordion-{{ block.settings.text_style }}{% if block.settings.text_style == 'card' %} blocks-radius{% endif %}"
+                        {{ block.shopify_attributes }}
+                        style="background-color: {{ block.settings.text_background_color }};"
                       >
-                        <summary class="accordion-details__summary flex items-center justify-between focus-inset gap-2">
-                          <div class="flex gap-2">
-                            {% if block.settings.icon_text != 'none' %}
-                              {% render 'icons', icon: block.settings.icon_text, size: item_icon_size %}
-                            {%- endif -%}
-                            <h2
-                              class="inline-richtext"
-                              style="font-size: {{ block.settings.heading_font_size }}px; font-weight: {{ block.settings.heading_font_weight }};"
-                            >
-                              {{ block.settings.text }}
-                            </h2>
-                          </div>
-                        </summary>
-                      </details>
-                    </div>
+                        <details
+                          class="accordion-details"
+                        >
+                          <summary class="accordion-details__summary flex items-center justify-between focus-inset gap-2">
+                            <div class="flex gap-2">
+                              {% if block.settings.icon_text != 'none' %}
+                                {% render 'icons', icon: block.settings.icon_text, size: item_icon_size %}
+                              {%- endif -%}
+                              <h2
+                                class="inline-richtext"
+                                style="font-size: {{ block.settings.heading_font_size }}px; font-weight: {{ block.settings.heading_font_weight }};"
+                              >
+                                {{ block.settings.text }}
+                              </h2>
+                            </div>
+                          </summary>
+                        </details>
+                      </div>
+                    {% endif %}
                   {%- when 'heading' -%}
                     {%- if block.settings.sub_heading != blank or block.settings.heading != blank -%}
                       <div class="block-heading rich-text" {{ block.shopify_attributes }}>

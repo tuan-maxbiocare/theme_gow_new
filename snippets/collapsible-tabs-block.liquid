@@ -32,6 +32,11 @@
   assign item_heading_size = section.settings.item_heading_size_collapsible | default: 'h6'
   assign item_trigger_class = ' font-' | append: item_font_family | append: ' ' | append: item_heading_size
   assign item_icon_size = section.settings.item_icon_size_collapsible | default: 'extra-large'
+
+  assign has_content = false
+  if block.settings.content != blank or block.settings.custom_liquid != blank or block.settings.page.content != blank
+    assign has_content = true
+  endif
 -%}
 {{ 'section-collapsible-tabs.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'collapsible-tabs.js' | asset_url }}" defer="defer"></script>
@@ -59,7 +64,7 @@
     button_style: section.settings.button_style_collapsible,
     button_icon: section.settings.button_icon_collapsible
   %}
-  
+  {% if has_content %}
     <collapsible-tabs
       class="block w-full accordion-parent"
       data-color-scheme="color-{{ section.settings.item_color_scheme_collapsible }}"
@@ -89,11 +94,13 @@
           </summary>
           <div class="accordion-details__content rte{% if block.settings.use_subtext_color %} text-subtext{% endif %}">
             {{ block.settings.content }}
+            {{ content_html }}
             {{ block.settings.custom_liquid }}
             {{ block.settings.page.content }}
           </div>
         </details>
       </div>
     </collapsible-tabs>
+  {% endif %}
   </div>
 

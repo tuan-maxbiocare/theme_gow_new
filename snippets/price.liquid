@@ -35,7 +35,8 @@
       endfor
     endunless
   endif
-
+  assign price_size = block.settings.price_size | default: '16px'
+  assign price_color = block.settings.price_color
   assign available = target.available | default: false
   assign money_price = price | money
   assign money_price_min = price_min | money
@@ -58,6 +59,7 @@
     {%- if compare_at_price > price %} f-price--on-sale {% endif -%}
     {%- if target.price_varies == false and target.compare_at_price_varies %} f-price--no-compare{% endif -%}
   "
+  {% if price_color %}style="color: {{ price_color }};"{% endif %}
 >
   {%- comment -%}
     Explanation of description list:
@@ -72,7 +74,7 @@
       </span>
     {%- else -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-      <span class="f-price-item f-price-item--regular">
+      <span class="f-price-item f-price-item--regular"{% if price_size %}style="font-size: {{ price_size }}px;"{% endif %}>
         {{ money_price }}
       </span>
     {%- endif -%}
@@ -82,7 +84,7 @@
     {{ 'products.product.price.sale_price' | t }}
   </span>
 
-  <span class="f-price-item f-price-item--sale f-price-item--sale-custom">
+  <span class="f-price-item f-price-item--sale f-price-item--sale-custom"{% if price_size %}style="font-size: {{ price_size }}px;"{% endif %}>
     {{ money_price }}
   </span>
 

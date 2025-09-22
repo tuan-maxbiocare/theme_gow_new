@@ -1,5 +1,5 @@
 {%- if block.settings.heading != blank or block.settings.description != blank or block.settings.show_payment_icons -%}
-  <div class="product__payment-info flex flex-col gap-4 blocks-radius">{% comment %} setting color for payment color-{{ block.settings.color_scheme }} {% endcomment %}
+  <div class="product__payment-info flex md:flex-row flex-col gap-4 blocks-radius">{% comment %} setting color for payment color-{{ block.settings.color_scheme }} {% endcomment %}
     {%- if block.settings.heading != blank -%}
       <div class="product__promotion-alert-heading {{ block.settings.heading_size }}">
         {% render 'highlight-text',

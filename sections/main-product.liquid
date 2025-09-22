@@ -29,6 +29,7 @@
 
   assign product_form_id = 'product-form-' | append: section.id
 -%}
+{{ 'component-card-img-with-product.css' | asset_url | stylesheet_tag }}
 {%- style -%}
   .section-{{ section.id }}{
     --section-padding-top: {{ section.settings.padding_top }}px;
@@ -738,7 +739,25 @@
     {
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "range",
+          "id": "price_size",
+          "label": "Price font size",
+          "min": 12,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "default": 16
+        },
+        {
+          "type": "color",
+          "id": "price_color",
+          "label": "Price color",
+          "default": "#000000"
+        }
+      ]
     },
     {
       "type": "meta",

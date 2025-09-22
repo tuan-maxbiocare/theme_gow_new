@@ -46,6 +46,14 @@
 %}
 
 {% comment %} add file js css cho pagination {% endcomment %}
+<style>
+@media (min-width: 1024px) {
+  .tabs-content_tabs__panel-custom {
+    margin: auto;
+    width: {{ section.settings.content_width }}%;
+  }
+}
+</style>
 <script src="{{ 'tabs-component.js' | asset_url }}" defer="defer"></script>
 
 <div
@@ -90,225 +98,231 @@
             </div>
           </div>
         </div>
-        <div class="tabs__panel">
-          {%- liquid
-            assign tab_index = 0
-          -%}
-          {%- for block in section.blocks -%}
+        <div class="tabs-content_tabs__panel-custom">
+          <div class="tabs__panel">
             {%- liquid
-              if block.type == 'sidebar'
-                continue
-              endif
+              assign tab_index = 0
             -%}
-            <div
-              class="tabs__content"
-              id="tab-{{ block.id }}"
-              data-index="{{ tab_index }}"
-              role="tabpanel"
-              {% unless tab_index == 0 %}
-                hidden
-              {% endunless %}
-            >
-              {%- case block.type -%}
-                {%- when 'image_with_text' -%}
-                  {%- liquid
-                    assign image_position = block.settings.desktop_image_position
+            {%- for block in section.blocks -%}
+              {%- liquid
+                if block.type == 'sidebar'
+                  continue
+                endif
+              -%}
+              <div
+                class="tabs__content"
+                id="tab-{{ block.id }}"
+                data-index="{{ tab_index }}"
+                role="tabpanel"
+                {% unless tab_index == 0 %}
+                  hidden
+                {% endunless %}
+              >
+                {%- case block.type -%}
+                  {%- when 'image_with_text' -%}
+                    {%- liquid
+                      assign image_position = block.settings.desktop_image_position
 
-                    assign aspect_ratio = block.settings.image_aspect_ratio | default: '1/1'
-                    if aspect_ratio == 'adapt'
-                      if block.settings.image != blank
-                        assign aspect_ratio = block.settings.image.aspect_ratio
-                      else
-                        assign aspect_ratio = '1/1'
+                      assign aspect_ratio = block.settings.image_aspect_ratio | default: '1/1'
+                      if aspect_ratio == 'adapt'
+                        if block.settings.image != blank
+                          assign aspect_ratio = block.settings.image.aspect_ratio
+                        else
+                          assign aspect_ratio = '1/1'
+                        endif
                       endif
-                    endif
 
-                    assign loading = 'lazy'
-                    assign fetchpriority = 'low'
-                    if section.index < 2 and tab_index == 0
-                      assign loading = 'eager'
-                      assign fetchpriority = 'high'
-                    endif
-                    assign motion_delay = 50
-                  -%}
-                  {% capture sizes %}
+                      assign loading = 'lazy'
+                      assign fetchpriority = 'low'
+                      if section.index < 2 and tab_index == 0
+                        assign loading = 'eager'
+                        assign fetchpriority = 'high'
+                      endif
+                      assign motion_delay = 50
+                    -%}
+                    {% capture sizes %}
                   (min-width: 768px) calc(min({{ settings.page_width }}px, 100vw) / 2), calc(100vw - 3rem)
                   {% endcapture %}
-                  <div
-                    class="image-with-text__wrapper image-with-text--image-{{ image_position }} flex flex-col md:flex-row gap-y-6"
-                    style="--image-width: 50%; gap: 30px"
-                  >
                     <div
-                      class="image-with-text__media self-start{% if image_position == 'right' %} md:order-last{% endif %}"
+                      class="image-with-text__wrapper image-with-text--image-{{ image_position }} flex flex-col md:flex-row gap-y-6"
+                      style="--image-width: 50%; gap: 30px"
                     >
-                      <div class="block overlow-hidden blocks-radius">
-                        <motion-element
-                          data-motion="zoom-out"
-                          data-motion-delay="{{ motion_delay }}"
-                          class="block media-wrapper hover-wrapper blocks-radius{% if block.settings.image == blank %} bg-none{% endif %}"
-                          style="--aspect-ratio: {{ aspect_ratio }};"
-                        >
-                          {%- if block.settings.image != blank -%}
+                      <div
+                        class="image-with-text__media self-start{% if image_position == 'right' %} md:order-last{% endif %}"
+                      >
+                        <div class="block overlow-hidden blocks-radius">
+                          <motion-element
+                            data-motion="zoom-out"
+                            data-motion-delay="{{ motion_delay }}"
+                            class="block media-wrapper hover-wrapper blocks-radius{% if block.settings.image == blank %} bg-none{% endif %}"
+                            style="--aspect-ratio: {{ aspect_ratio }};"
+                          >
+                            {%- if block.settings.image != blank -%}
+                              {{
+                                block.settings.image
+                                | image_url: width: block.settings.image.width
+                                | image_tag:
+                                  loading: loading,
+                                  fetchpriority: fetchpriority,
+                                  class: 'motion-reduce hover-scale-up',
+                                  widths: '375, 550, 670, 750, 1100, 1340, 1500, 1780, 2000, 3000, 3840',
+                                  sizes: sizes,
+                                  is: 'image-lazy'
+                              }}
+                            {%- else -%}
+                              {{ 'image' | placeholder_svg_tag: 'placeholder-svg w-full h-full hover-scale-up' }}
+                            {%- endif -%}
+                          </motion-element>
+                          {%- assign motion_delay = motion_delay | plus: 50 -%}
+                        </div>
+                      </div>
+                      <div
+                        class="image-with-text__inner flex-1 md:flex"
+                        style="
+                          border: 1px solid #e5e7eb;
+                          background: #ffffff;
+                          border-radius: 12px;
+                          padding: 3.5rem 3.5rem;
+                        "
+                      >
+                        <div class="image-with-text__content w-full rich-text md:text-left text-left">
+                          {%- if block.settings.subheading != blank -%}
+                            <motion-element
+                              data-motion="fade-up"
+                              data-motion-delay="{{ motion_delay }}"
+                              class="block rich-text__subheading text-subheading"
+                            >
+                              {{ block.settings.subheading }}
+                            </motion-element>
+                            {%- assign motion_delay = motion_delay | plus: 50 -%}
+                          {%- endif -%}
+                          {%- if block.settings.heading != blank -%}
+                            <h2 class="rich-text__heading inline-richtext {{ block.settings.heading_size }}">
+                              <motion-element
+                                class="block"
+                                data-motion="fade-up"
+                                data-motion-delay="{{ motion_delay }}"
+                              >
+                                {% render 'highlight-text',
+                                  hl_text: block.settings.heading,
+                                  hl_style: block.settings.highlight_style,
+                                  hl_font_style: block.settings.highlight_font_style,
+                                  hl_style_color: block.settings.highlight_style_color,
+                                  hl_text_color: block.settings.highlight_text_color
+                                %}
+                              </motion-element>
+                            </h2>
+                            {%- assign motion_delay = motion_delay | plus: 50 -%}
+                          {%- endif -%}
+                          {%- if block.settings.description != blank -%}
+                            <motion-element
+                              data-motion="fade-up"
+                              data-motion-delay="{{ motion_delay }}"
+                              class="block rich-text__text text-subtext rte {{ block.settings.description_size }}"
+                            >
+                              {{ block.settings.description }}
+                            </motion-element>
+                            {%- assign motion_delay = motion_delay | plus: 50 -%}
+                          {%- endif -%}
+
+                          {%- if block.settings.enable_collapsible != blank
+                            and section.settings.enable_collapsible_all
+                          -%}
+                            <motion-element
+                              data-motion="fade-up"
+                              data-motion-delay="{{ motion_delay }}"
+                              class="block rich-text__table"
+                            >
+                              {% if block.settings.enable_collapsible %}
+                                {% render 'collapsible-tab-table',
+                                  block: block,
+                                  section_id: section.id,
+                                  collapsible_heading: block.settings.collapsible_heading,
+                                  collapsible_heading_size: block.settings.collapsible_heading_size
+                                %}
+                              {% endif %}
+                            </motion-element>
+                            {%- assign motion_delay = motion_delay | plus: 50 -%}
+                          {%- endif -%}
+
+                          {%- if block.settings.button_label != blank -%}
+                            <motion-element
+                              data-motion="fade-up"
+                              data-motion-delay="{{ motion_delay }}"
+                              class="block rich-text__button"
+                            >
+                              {% render 'button',
+                                button_style: block.settings.button_style,
+                                button_link: block.settings.button_link,
+                                button_label: block.settings.button_label,
+                                button_icon: block.settings.button_icon
+                              %}
+                            </motion-element>
+                            {%- assign motion_delay = motion_delay | plus: 50 -%}
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  {%- when 'tab' -%}
+                    <div class="page__content rte text-subtext">
+                      {{ block.settings.tab_content }}
+                      {{ block.settings.custom_liquid }}
+                      {{ block.settings.page.content }}
+
+                      {% if block.settings.enable_collapsible_tab %}
+                        {% render 'collapsible-tab-table', block: block, section_id: section.id %}
+                      {% endif %}
+                    </div>
+                    {% comment %} image gallery {% endcomment %}
+                  {%- when 'images' -%}
+                    <div class="image-gallery">
+                      {%- if block.settings.image != blank -%}
+                        <div class="f-column">
+                          <motion-element class="block media-wrapper" data-motion="zoom-out-sm">
+                            {%- liquid
+                              assign image = block.settings.image
+                              assign alt_text = image.alt | default: shop.name | escape
+                            -%}
                             {{
-                              block.settings.image
-                              | image_url: width: block.settings.image.width
+                              image
+                              | image_url: width: 1500
                               | image_tag:
                                 loading: loading,
                                 fetchpriority: fetchpriority,
-                                class: 'motion-reduce hover-scale-up',
-                                widths: '375, 550, 670, 750, 1100, 1340, 1500, 1780, 2000, 3000, 3840',
-                                sizes: sizes,
-                                is: 'image-lazy'
+                                class: 'motion-reduce',
+                                widths: '375, 550, 750, 1100, 1500',
+                                sizes: '(min-width: 750px) 1100px, calc(100vw - 30px)',
+                                is: 'image-lazy',
+                                alt: alt_text,
+                                style: 'border-radius: 12px; height: 100%; width: 100%; object-fit: cover;'
                             }}
-                          {%- else -%}
-                            {{ 'image' | placeholder_svg_tag: 'placeholder-svg w-full h-full hover-scale-up' }}
-                          {%- endif -%}
-                        </motion-element>
-                        {%- assign motion_delay = motion_delay | plus: 50 -%}
-                      </div>
+                          </motion-element>
+                        </div>
+                      {%- endif -%}
                     </div>
-                    <div
-                      class="image-with-text__inner flex-1 md:flex"
-                      style="
-                        border: 1px solid #e5e7eb;
-                        background: #ffffff;
-                        border-radius: 12px;
-                        padding: 3.5rem 3.5rem;
-                      "
+                  {%- when 'multicolumn' -%}
+                    <div class="multicolumn grid grid-cols-{{ section.settings.columns_desktop }} gap-{{ section.settings.column_gap }}">
+                      {% render 'multicolumn-block', block: block, section: section %}
+                    </div>
+                {%- endcase -%}
+                {%- if section.settings.show_pagination -%}
+                  <div class="custom-pagination-wrapper">
+                    <button
+                      class="custom-arrow custom-arrow-prev"
                     >
-                      <div class="image-with-text__content w-full rich-text md:text-left text-left">
-                        {%- if block.settings.subheading != blank -%}
-                          <motion-element
-                            data-motion="fade-up"
-                            data-motion-delay="{{ motion_delay }}"
-                            class="block rich-text__subheading text-subheading"
-                          >
-                            {{ block.settings.subheading }}
-                          </motion-element>
-                          {%- assign motion_delay = motion_delay | plus: 50 -%}
-                        {%- endif -%}
-                        {%- if block.settings.heading != blank -%}
-                          <h2 class="rich-text__heading inline-richtext {{ block.settings.heading_size }}">
-                            <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
-                              {% render 'highlight-text',
-                                hl_text: block.settings.heading,
-                                hl_style: block.settings.highlight_style,
-                                hl_font_style: block.settings.highlight_font_style,
-                                hl_style_color: block.settings.highlight_style_color,
-                                hl_text_color: block.settings.highlight_text_color
-                              %}
-                            </motion-element>
-                          </h2>
-                          {%- assign motion_delay = motion_delay | plus: 50 -%}
-                        {%- endif -%}
-                        {%- if block.settings.description != blank -%}
-                          <motion-element
-                            data-motion="fade-up"
-                            data-motion-delay="{{ motion_delay }}"
-                            class="block rich-text__text text-subtext rte {{ block.settings.description_size }}"
-                          >
-                            {{ block.settings.description }}
-                          </motion-element>
-                          {%- assign motion_delay = motion_delay | plus: 50 -%}
-                        {%- endif -%}
-
-                        {%- if block.settings.enable_collapsible != blank
-                          and section.settings.enable_collapsible_all
-                        -%}
-                          <motion-element
-                            data-motion="fade-up"
-                            data-motion-delay="{{ motion_delay }}"
-                            class="block rich-text__table"
-                          >
-                            {% if block.settings.enable_collapsible %}
-                              {% render 'collapsible-tab-table',
-                                block: block,
-                                section_id: section.id,
-                                collapsible_heading: block.settings.collapsible_heading,
-                                collapsible_heading_size: block.settings.collapsible_heading_size
-                              %}
-                            {% endif %}
-                          </motion-element>
-                          {%- assign motion_delay = motion_delay | plus: 50 -%}
-                        {%- endif -%}
-
-                        {%- if block.settings.button_label != blank -%}
-                          <motion-element
-                            data-motion="fade-up"
-                            data-motion-delay="{{ motion_delay }}"
-                            class="block rich-text__button"
-                          >
-                            {% render 'button',
-                              button_style: block.settings.button_style,
-                              button_link: block.settings.button_link,
-                              button_label: block.settings.button_label,
-                              button_icon: block.settings.button_icon
-                            %}
-                          </motion-element>
-                          {%- assign motion_delay = motion_delay | plus: 50 -%}
-                        {% endif %}
-                      </div>
-                    </div>
+                      {% render 'icon-caret-left' %}
+                    </button>
+                    <button
+                      class="custom-arrow custom-arrow-next"
+                    >
+                      {% render 'icon-caret-right' %}
+                    </button>
                   </div>
-                {%- when 'tab' -%}
-                  <div class="page__content rte text-subtext">
-                    {{ block.settings.tab_content }}
-                    {{ block.settings.custom_liquid }}
-                    {{ block.settings.page.content }}
-
-                    {% if block.settings.enable_collapsible_tab %}
-                      {% render 'collapsible-tab-table', block: block, section_id: section.id %}
-                    {% endif %}
-                  </div>
-                  {% comment %} image gallery {% endcomment %}
-                {%- when 'images' -%}
-                  <div class="image-gallery">
-                    {%- if block.settings.image != blank -%}
-                      <div class="f-column">
-                        <motion-element class="block media-wrapper" data-motion="zoom-out-sm">
-                          {%- liquid
-                            assign image = block.settings.image
-                            assign alt_text = image.alt | default: shop.name | escape
-                          -%}
-                          {{
-                            image
-                            | image_url: width: 1500
-                            | image_tag:
-                              loading: loading,
-                              fetchpriority: fetchpriority,
-                              class: 'motion-reduce',
-                              widths: '375, 550, 750, 1100, 1500',
-                              sizes: '(min-width: 750px) 1100px, calc(100vw - 30px)',
-                              is: 'image-lazy',
-                              alt: alt_text,
-                              style: 'border-radius: 12px; height: 100%; width: 100%; object-fit: cover;'
-                          }}
-                        </motion-element>
-                      </div>
-                    {%- endif -%}
-                  </div>
-                {%- when 'multicolumn' -%}
-                  <div class="multicolumn grid grid-cols-{{ section.settings.columns_desktop }} gap-{{ section.settings.column_gap }}">
-                    {% render 'multicolumn-block', block: block, section: section %}
-                  </div>
-              {%- endcase -%}
-              {%- if section.settings.show_pagination -%}
-                <div class="custom-pagination-wrapper">
-                  <button
-                    class="custom-arrow custom-arrow-prev"
-                  >
-                    {% render 'icon-caret-left' %}
-                  </button>
-                  <button
-                    class="custom-arrow custom-arrow-next"
-                  >
-                    {% render 'icon-caret-right' %}
-                  </button>
-                </div>
-              {%- endif -%}
-            </div>
-            {%- assign tab_index = tab_index | plus: 1 -%}
-          {%- endfor -%}
+                {%- endif -%}
+              </div>
+              {%- assign tab_index = tab_index | plus: 1 -%}
+            {%- endfor -%}
+          </div>
         </div>
       </tabs-component>
       {%- if sidebar != blank -%}
@@ -424,6 +438,16 @@
       "max": 100,
       "step": 2,
       "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "content width %",
+      "default": 80,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%"
     },
     {
       "type": "header",

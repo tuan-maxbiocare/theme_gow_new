@@ -14,13 +14,14 @@
     endif
   endif
 -%}
-{% assign entry_metaobjects = metaobjects.product_details_section[section.settings.tab_content_html] %}
+{% assign entry_metaobjects = metaobjects.richcontent_ingredients[section.settings.tab_content_html] %}
+{%- assign content_html = entry_metaobjects['full_ingredients_html'] -%}
 {% render 'divider',
   show_divider: section.settings.show_section_divider,
   divider_width: section.settings.divider_width
 %}
 <div
-  class="section section-{{ section.id }} section--padding section--custom-content page-width page-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }} {{ section.index }}"
+  class="section section-{{ section.id }} section--padding section--custom-content page-width page-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }} {{ section.index }} section-ingredients"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >
@@ -308,8 +309,6 @@
                 {% render 'testimonial-block', block: block, section: section %}
 
               {%- when 'collapsible' -%}
-                {% assign key = 'product_detail_rich_text_' | append: forloop.index %}
-                {% assign content_html = entry_metaobjects[key] %}
                 {%- render 'collapsible-tabs-block', section: section, block: block, content_html: content_html -%}
             {%- endcase -%}
           </div>
@@ -320,7 +319,7 @@
 </div>
 {% schema %}
 {
-  "name": "Custom content Custom",
+  "name": "t:sections.custom-content.name",
   "disabled_on": {
     "groups": ["header", "footer", "custom.overlay"]
   },
@@ -330,11 +329,11 @@
       "type": "header",
       "content": "t:general.general.name"
     },
-     {
+    {
       "type": "metaobject",
       "id": "tab_content_html",
-      "label": "Product details section",
-      "metaobject_type": "product_details_section"
+      "label": "Ingredients HTML",
+      "metaobject_type": "richcontent_ingredients"
     },
     {
       "type": "select",
@@ -4668,7 +4667,7 @@
   ],
   "presets": [
     {
-      "name": "Custom content custom",
+      "name": "Section Ingredients",
       "blocks": [
         {
           "type": "image"

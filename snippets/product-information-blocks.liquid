@@ -90,7 +90,10 @@
                 product: product,
                 use_variant: true,
                 show_sale_badge: false,
-                price_class: 'f-price--large'
+                price_class: 'f-price--large',
+                price_size: block.settings.price_size,
+                price_color: block.settings.price_color,
+                block: block
               -%}
             </div>
             {%- if product.quantity_price_breaks_configured? -%}

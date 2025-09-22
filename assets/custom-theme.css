@@ -1,7 +1,7 @@
 /* card-product.liquid */
 .product-card-custom {
     background: #fff;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #dddddd;
     border-radius: 12px;
     padding: 16px;
     transition: border-color 0.4s ease;
@@ -69,4 +69,21 @@
 /* .menu-sidebar */
 .menu-sidebar {
     --toggle-width: 28rem;
+}
+
+/* custom section-ingredients */
+.section-ingredients .testimonial__inner {
+    display: flex;
+    align-items: center;
+}
+
+/* section-quick-comparison-table */
+.quick-comparison-table th,
+.quick-comparison-table td {
+  padding: 10px !important;
+}
+
+.quick-comparison-table th:first-child,
+.quick-comparison-table td:first-child {
+  width: 24rem !important;
 }
