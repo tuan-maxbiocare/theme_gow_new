@@ -34,7 +34,7 @@
   assign item_icon_size = section.settings.item_icon_size_collapsible | default: 'extra-large'
 
   assign has_content = false
-  if block.settings.content != blank or block.settings.custom_liquid != blank or block.settings.page.content != blank
+  if block.settings.content != blank or block.settings.custom_liquid != blank or block.settings.page.content != blank or content_html != blank
     assign has_content = true
   endif
 -%}
