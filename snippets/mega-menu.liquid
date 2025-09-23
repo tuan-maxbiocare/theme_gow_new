@@ -58,6 +58,39 @@
   .mega-menu__promotions .f-price-item--regular-compare-at-price {
     font-size: 1.5rem;
   }
+  .menu-logo-brand .hover-wrapper {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .menu-logo-brand .hover-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .menu-logo-brand .hover-wrapper .banner-img-default {
+    position: relative;
+    z-index: 1;
+  }
+
+  .menu-logo-brand .hover-wrapper .banner-img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+  }
+
+  .menu-logo-brand .hover-wrapper:hover .banner-img-default {
+    opacity: 0;
+  }
+
+  .menu-logo-brand .hover-wrapper:hover .banner-img-hover {
+    opacity: 1;
+  }
 </style>
 <details
   id="Mega-menu-item-{{ block.id }}"
@@ -117,7 +150,7 @@
         {%- if link.links != blank -%}
           {%- if block.type != 'sidebar' and block.type != 'sidebar-custom' -%}
             {% if block.type == 'logo-brand' %}
-              <div class="mega-menu__list">
+              <div class="mega-menu__list menu-logo-brand">
                 {%- for i in (1..menu_columns) -%}
                   {% assign column_index = forloop.index0 %}
                   <div class="mega-menu__column flex flex-col gap-3 mega-menu__column-logo-brand-custom">
@@ -128,18 +161,25 @@
                       -%}
                       {%- if current_column == column_index -%}
                         {% capture setting_id %}logo_image_{{ forloop.index }}{% endcapture %}
+                        {% capture hover_setting_id %}logo_image_hover_{{ forloop.index }}{% endcapture %}
                         {% assign image = block.settings[setting_id] %}
+                        {% assign image_hover = block.settings[hover_setting_id] %}
 
                         {% if image != blank %}
-                          <div class="hover-wrapper"> 
-                            <a href="{{ childlink.url }}">
+                          <a href="{{ childlink.url }}" class="hover-wrapper">
+                            <img width="100%" height="auto"
+                              src="{{ image | image_url: width: 200 }}"
+                              alt="{{ childlink.title | escape }}"
+                              class="banner-img-default"
+                            >
+                            {% if image_hover != blank %}
                               <img width="100%" height="auto"
-                                src="{{ image | image_url: width: 200 }}"
+                                src="{{ image_hover | image_url: width: 200 }}"
                                 alt="{{ childlink.title | escape }}"
-                                class="hover-scale-up"
+                                class="banner-img-hover"
                               >
-                            </a>
-                          </div>
+                            {% endif %}
+                          </a>
                         {% endif %}
                       {%- endif -%}
                     {%- endfor -%}
