@@ -185,6 +185,39 @@
                   {{ block.settings.text }}
                 </motion-element>
                 {%- assign motion_delay = motion_delay | plus: 50 -%}
+
+              {%- when 'content_custom' -%}
+                <motion-element
+                  class="block rich-text__text rte{% if block.settings.subtext_color %} text-subtext{% endif %}"
+                  data-motion="fade-up"
+                  data-motion-delay="{{ motion_delay }}"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.text_custom_1 }}
+                </motion-element>
+
+                {% if block.settings.image_custom != blank %}
+                  {{
+                    block.settings.image_custom
+                    | image_url: width: 600
+                    | image_tag:
+                      loading: 'lazy',
+                      class: 'mx-auto',
+                      widths: '165, 360, 535, 750, 940, 1100',
+                      is: 'image-lazy'
+                  }}
+                {% endif %}
+
+                <motion-element
+                  class="block rich-text__text rte{% if block.settings.subtext_color %} text-subtext{% endif %}"
+                  data-motion="fade-up"
+                  data-motion-delay="{{ motion_delay }}"
+                  {{ block.shopify_attributes }}
+                >
+                  {{ block.settings.text_custom_2 }}
+                </motion-element>
+                {%- assign motion_delay = motion_delay | plus: 50 -%}
+
               {%- when 'icon_with_text' -%}
                 {%- if block.settings.heading != blank or block.settings.text != blank -%}
                   <motion-element
@@ -607,6 +640,32 @@
         }
       ]
     },
+
+    {
+      "type": "content_custom",
+      "name": "Content Custom With Image",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_custom_1",
+          "default": "<p>text custom 1</p>",
+          "label": "Text custom 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_custom",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "text_custom_2",
+          "default": "<p>text custom 2</p>",
+          "label": "Text custom 2"
+        }
+      ]
+    },
+
     {
       "type": "icon_with_text",
       "name": "t:sections.image-with-text.blocks.icon_with_text.name",
