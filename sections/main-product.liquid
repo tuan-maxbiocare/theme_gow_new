@@ -29,7 +29,6 @@
 
   assign product_form_id = 'product-form-' | append: section.id
 -%}
-{{ 'component-card-img-with-product.css' | asset_url | stylesheet_tag }}
 {%- style -%}
   .section-{{ section.id }}{
     --section-padding-top: {{ section.settings.padding_top }}px;
