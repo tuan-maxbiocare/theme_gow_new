@@ -71,13 +71,12 @@
       <div class="products-grid f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_slider %} swiper-wrapper{% endif %}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
         {%- for recommendation in recommendations.products -%}
           <div class="f-column swiper-slide">
-            {% render 'card-product',
+            {% render 'card-product-placeholder-for-related-custom',
               product: recommendation,
-              parent_color_scheme: section.settings.color_scheme,
-              image_sizes: image_sizes,
               image_ratio: section.settings.pcard_image_ratio,
-              section_index: section.index,
-              index: forloop.index
+              pcard_style: 'standard',
+              parent_color_scheme: section.settings.color_scheme,
+              horizontal_layout: true
             %}
           </div>
         {%- endfor -%}
