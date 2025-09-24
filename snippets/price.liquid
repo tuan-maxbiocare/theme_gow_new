@@ -35,7 +35,12 @@
       endfor
     endunless
   endif
-  assign price_size = block.settings.price_size | default: '16px'
+  assign price_size = block.settings.price_size | default: '16'
+  
+  if price_size_section
+    assign price_size = price_size_section
+  endif
+
   assign price_color = block.settings.price_color
   assign available = target.available | default: false
   assign money_price = price | money
