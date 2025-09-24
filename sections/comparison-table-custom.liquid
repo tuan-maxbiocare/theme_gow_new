@@ -20,8 +20,19 @@
   show_divider: section.settings.show_section_divider,
   divider_width: section.settings.divider_width
 -%}
+<style>
+  .comparison-table-custom .rte {
+    text-align: center;
+  }
+  .comparison-table-custom .comparison-table__content {
+    padding: 0;
+  }
+  .comparison-table-custom .blocks-radius {
+    text-align: center;
+  }
+</style>
 <div
-  class="section section--padding page-width page-width--{{ section.settings.container }}  section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }}"
+  class="section section--padding page-width page-width--{{ section.settings.container }}  section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }} comparison-table-custom"
   style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <comparison-table class="block comparison-table quick-comparison-table-container">
@@ -41,45 +52,103 @@
       <table class="quick-comparison-table text-subtext">
         {% comment %} Row with Product Images {% endcomment %}
         <tr>
+          {% assign product_show_compare = 0 %}
           <td class="td-label text-body"></td>
           {% for block in content_block %}
             {% assign product = block.settings.product %}
-            {% assign featured_media = product.featured_media %}
-            <td class="comparison-table__product">
-              <div class="product-featured-image relative">
-                <div class="media-wrapper hover-wrapper blocks-radius" style="--aspect-ratio: 1;">
-                  {% if featured_media %}
-                    {{
-                      featured_media
-                      | image_url: width: featured_media.width
-                      | image_tag:
-                        loading: 'lazy',
-                        fetchpriority: 'low',
-                        class: 'motion-reduce hover-scale-up',
-                        widths: '170, 340',
-                        sizes: '170px',
-                        is: 'image-lazy'
-                    }}
-                  {% else %}
-                    {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg w-full h-full hover-scale-up' }}
-                  {% endif %}
+            {% if product != blank %}
+              {% assign product_show_compare = product_show_compare | plus: 1 %}
+              {% assign featured_media = product.featured_media %}
+              <td class="comparison-table__product">
+                <div class="product-featured-image relative">
+                  <div class="media-wrapper hover-wrapper blocks-radius">
+                    {% if featured_media %}
+                      {{
+                        featured_media
+                        | image_url: width: featured_media.width
+                        | image_tag:
+                          loading: 'lazy',
+                          fetchpriority: 'low',
+                          class: 'motion-reduce hover-scale-up custom-image-size',
+                          widths: '170, 340',
+                          sizes: '170px',
+                          is: 'image-lazy'
+                      }}
+                    {% else %}
+                      {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg w-full h-full hover-scale-up' }}
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="comparison-table__col-info text-center">
+                  <h3 class="text-pcard-title">
+                    <a class="reversed-link block" href="{{ product.url }}">
+                      {% if product != blank %}
+                        <span class="reversed-link__text">{{ product.title }}</span>
+                      {% else %}
+                        <span class="reversed-link__text">{{- 'onboarding.product_title' | t -}}</span>
+                      {% endif %}
+                    </a>
+                  </h3>
+                  <a href="{{ product.url }}" class="btn btn--primary btn--small">
+                    <span class="btn__text flex gap-1 items-center">View</span>
+                  </a>
+                </div>
+              </td>
+            {% endif %}
+          {% endfor %}
+        </tr>
+
+        <style>
+          .comparison-table-custom .custom-image-size {
+            {% if product_show_compare == 2 %}
+              width: 50%;
+            {% elsif product_show_compare == 3 %}
+              width: 70%;
+            {% endif %}
+          }
+        </style>
+
+        <tr>
+          <td class="td-label text-body">
+            <div
+              class="comparison-table-card comparison-table-card--image-icon flex items-center gap-x-3 h-full"
+              style="--img-max: {{ section.settings.icon_size }}px;"
+              {{ heading_block.shopify_attributes }}
+            >
+              <div class="comparison-table-card__image shrink-0 hidden md:block">
+                <motion-element
+                  class="block w-full h-full"
+                  data-motion="zoom-out-sm"
+                  style="--aspect-ratio: 1/1;"
+                >
+                    <picture class="card-media__media media-wrapper">
+                      <img 
+                        width="auto" height="auto"
+                        src="https://cdn.shopify.com/s/files/1/0767/7139/3751/files/GoWshop_miniicon.svg?v=1758161303" 
+                        alt="GoWshop mini icon" 
+                        loading="lazy" 
+                        class="motion-reduce absolute inset-0 w-full h-full">
+                    </picture>
+                </motion-element>
+              </div>
+
+              <div class="comparison-table__info rich-text rich-text--tight flex-1">
+                <div class="multicolumn-card__title rich-text__heading text-body">
+                  <span class="label ml-2">Price</span>
                 </div>
               </div>
-              <div class="comparison-table__col-info text-center">
-                <h3 class="text-pcard-title">
-                  <a class="reversed-link block" href="{{ product.url }}">
-                    {% if product != blank %}
-                      <span class="reversed-link__text">{{ product.title }}</span>
-                    {% else %}
-                      <span class="reversed-link__text">{{- 'onboarding.product_title' | t -}}</span>
-                    {% endif %}
-                  </a>
-                </h3>
-                <a href="{{ product.url }}" class="btn btn--primary btn--small">
-                  <span class="btn__text flex gap-1 items-center">{{- 'products.product.shop' | t -}}</span>
-                </a>
-              </div>
-            </td>
+            </div>
+          </td>
+
+          {% for block in content_block %}
+            {% assign product = block.settings.product %}
+            {% if product != blank %}
+              <td>
+                <div class="rte text-limit-{{ section.settings.text_line_limit }}">
+                  {% render 'price', product: product %}
+                </div>
+              </td>
+            {% endif %}
           {% endfor %}
         </tr>
 
@@ -146,7 +215,7 @@
 
               {% comment %} Content Columns - Parse rich text content {% endcomment %}
               {% for block in content_block %}
-                {% assign rich_text_content = block.settings.text-1 %}
+                {% assign rich_text_content = block.settings['text-1'] %}
                 {% if rich_text_content != blank %}
                   {% assign text_parts = rich_text_content | split: '||' %}
                   {% comment %} Get the part corresponding to current row (i-1 because i starts from 1) {% endcomment %}
@@ -177,16 +246,12 @@
                     {%- endif -%}
                   </td>
                 {% else %}
-                  <td></td>
+                  {% comment %} <td></td> {% endcomment %}
                 {% endif %}
               {% endfor %}
-
             </tr>
           {% endif %}
         {% endfor %}
-
-
-        
       </table>
     </div>
   </comparison-table>
@@ -2195,7 +2260,7 @@
       "blocks": [
         {
           "type": "heading"
-        },
+        }
       ]
     }
   ]
