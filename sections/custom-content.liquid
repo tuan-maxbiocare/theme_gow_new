@@ -19,8 +19,17 @@
   show_divider: section.settings.show_section_divider,
   divider_width: section.settings.divider_width
 %}
+
+{% capture show_section %}
+  {% render 'check-product-visibility',
+    product: product,
+    product_list: section.settings.product_list,
+    template_product: section.settings.template_product %}
+{% endcapture %}
+
+
 <div
-  class="section section-{{ section.id }} section--padding section--custom-content page-width page-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }} {{ section.index }}"
+  class="section section-{{ section.id }} section--padding section--custom-content page-width page-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }} {{ section.index }} {% if show_section contains 'hide' %} hide-section-product-profile {% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >
@@ -336,6 +345,29 @@
       "label": "Product details section",
       "metaobject_type": "product_details_section"
     },
+
+
+    {
+      "type": "header",
+      "content": "Show section template product"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Show  section in product"
+    },
+    {
+      "type": "richtext",
+      "id": "template_product",
+      "label": "Show section in product template Enter templates (separate with ||)"
+    },
+
+    {
+      "type": "header",
+      "content": "Config section"
+    },
+
+
     {
       "type": "select",
       "id": "container",

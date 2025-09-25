@@ -15,308 +15,315 @@
   endif
 -%}
 {% assign entry_metaobjects = metaobjects.richcontent_ingredients[section.settings.tab_content_html] %}
-{%- assign content_html = entry_metaobjects['full_ingredients_html'] -%}
+{%- assign content_html = entry_metaobjects.full_ingredients_html -%}
 {% render 'divider',
   show_divider: section.settings.show_section_divider,
   divider_width: section.settings.divider_width
 %}
-<div
-  class="section section-{{ section.id }} section--padding section--custom-content page-width page-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }} {{ section.index }} section-ingredients"
-  style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
-  data-id="{{ section.id }}"
->
-  {% render 'section-heading', section_settings: section.settings %}
-  <div class="section__content f-grid--gap-{{ section.settings.column_gap }}{% if swipe_on_tablet %} swipe-tablet{% endif %}{% if swipe_on_mobile %} swipe-mobile swipe-mobile--{{ section.settings.columns_mobile }}-cols{% endif %}">
-    <div class="f-flex f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if swipe_on_tablet %} swipe-tablet__inner{% endif %}{% if swipe_on_mobile %} swipe-mobile__inner{% endif %}">
-      {%- for block in section.blocks -%}
-        {%- liquid
-          assign vertical_alignment = block.settings.alignment
-          case block.settings.width
-            when '16%'
-              assign block_width = 'w-full md:w-1/2 lg:w-2/12'
-            when '20%'
-              assign block_width = 'w-full md:w-1/2 lg:w-1/5'
-            when '25%'
-              assign block_width = 'w-full md:w-1/2 lg:w-1/4'
-            when '33%'
-              assign block_width = 'w-full md:w-1/2 lg:w-1/3'
-            when '41%'
-              assign block_width = 'w-full md:w-1/2 lg:w-5/12'
-            when '50%'
-              assign block_width = 'w-full md:w-1/2 lg:w-1/2'
-            when '58%'
-              assign block_width = 'w-full md:w-1/2 lg:w-7/12'
-            when '66%'
-              assign block_width = 'w-full md:w-1/2 lg:w-8/12'
-            when '75%'
-              assign block_width = 'w-full md:w-1/2 lg:w-9/12'
-            when '80%'
-              assign block_width = 'w-full md:w-1/2 lg:w-4/5'
-            when '83%'
-              assign block_width = 'w-full md:w-1/2 lg:w-10/12'
-            else
-              assign block_width = 'w-full'
-          endcase
-        -%}
-        <div
-          id="block-{{ block.id }}"
-          class="f-column relative custom-content-block--{{ block.type }} md:flex items-{{ vertical_alignment | default: 'center' }} {{ block_width }} {{ block.settings.block_custom_class }}"
-          data-block-type="{{ block.type }}"
-          {{ block.shopify_attributes }}
-        >
-          <div class="custom__block custom__block--{{ block.type }} w-full text-{{ block.settings.content_alignment }}{% if enable_sticky_column %} sticky-element{% endif %}">
-            {%- case block.type -%}
-              {%- when 'text' -%}
-                {%- assign motion_delay = 50 -%}
-                <div class="rich-text">
-                  {%- if block.settings.subheading != blank -%}
-                    <motion-element
-                      data-motion="fade-up"
-                      data-motion-delay="{{ motion_delay }}"
-                      class="block rich-text__subheading text-subheading"
-                    >
-                      {{ block.settings.subheading }}
-                    </motion-element>
-                    {%- assign motion_delay = motion_delay | plus: 50 -%}
-                  {%- endif -%}
-                  {%- if block.settings.heading != blank -%}
-                    <h2 class="rich-text__heading inline-richtext {{ block.settings.heading_size }}">
-                      <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
-                        {% render 'highlight-text',
-                          hl_text: block.settings.heading,
-                          hl_style: block.settings.highlight_style,
-                          hl_font_style: block.settings.highlight_font_style,
-                          hl_style_color: block.settings.highlight_style_color,
-                          hl_text_color: block.settings.highlight_text_color
+
+{% if product.metafields.custom.custom_section_ingredients %}
+  <div
+    class="section section-{{ section.id }} section--padding section--custom-content page-width page-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }} {{ section.index }} section-ingredients"
+    style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+    data-id="{{ section.id }}"
+  >
+    {% render 'section-heading', section_settings: section.settings %}
+    <div class="section__content f-grid--gap-{{ section.settings.column_gap }}{% if swipe_on_tablet %} swipe-tablet{% endif %}{% if swipe_on_mobile %} swipe-mobile swipe-mobile--{{ section.settings.columns_mobile }}-cols{% endif %}">
+      <div class="f-flex f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if swipe_on_tablet %} swipe-tablet__inner{% endif %}{% if swipe_on_mobile %} swipe-mobile__inner{% endif %}">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign vertical_alignment = block.settings.alignment
+            case block.settings.width
+              when '16%'
+                assign block_width = 'w-full md:w-1/2 lg:w-2/12'
+              when '20%'
+                assign block_width = 'w-full md:w-1/2 lg:w-1/5'
+              when '25%'
+                assign block_width = 'w-full md:w-1/2 lg:w-1/4'
+              when '33%'
+                assign block_width = 'w-full md:w-1/2 lg:w-1/3'
+              when '41%'
+                assign block_width = 'w-full md:w-1/2 lg:w-5/12'
+              when '50%'
+                assign block_width = 'w-full md:w-1/2 lg:w-1/2'
+              when '58%'
+                assign block_width = 'w-full md:w-1/2 lg:w-7/12'
+              when '66%'
+                assign block_width = 'w-full md:w-1/2 lg:w-8/12'
+              when '75%'
+                assign block_width = 'w-full md:w-1/2 lg:w-9/12'
+              when '80%'
+                assign block_width = 'w-full md:w-1/2 lg:w-4/5'
+              when '83%'
+                assign block_width = 'w-full md:w-1/2 lg:w-10/12'
+              else
+                assign block_width = 'w-full'
+            endcase
+          -%}
+          <div
+            id="block-{{ block.id }}"
+            class="f-column relative custom-content-block--{{ block.type }} md:flex items-{{ vertical_alignment | default: 'center' }} {{ block_width }} {{ block.settings.block_custom_class }}"
+            data-block-type="{{ block.type }}"
+            {{ block.shopify_attributes }}
+          >
+            <div class="custom__block custom__block--{{ block.type }} w-full text-{{ block.settings.content_alignment }}{% if enable_sticky_column %} sticky-element{% endif %}">
+              {%- case block.type -%}
+                {%- when 'text' -%}
+                  {%- assign motion_delay = 50 -%}
+                  <div class="rich-text">
+                    {%- if block.settings.subheading != blank -%}
+                      <motion-element
+                        data-motion="fade-up"
+                        data-motion-delay="{{ motion_delay }}"
+                        class="block rich-text__subheading text-subheading"
+                      >
+                        {{ block.settings.subheading }}
+                      </motion-element>
+                      {%- assign motion_delay = motion_delay | plus: 50 -%}
+                    {%- endif -%}
+                    {%- if block.settings.heading != blank -%}
+                      <h2 class="rich-text__heading inline-richtext {{ block.settings.heading_size }}">
+                        <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
+                          {% render 'highlight-text',
+                            hl_text: block.settings.heading,
+                            hl_style: block.settings.highlight_style,
+                            hl_font_style: block.settings.highlight_font_style,
+                            hl_style_color: block.settings.highlight_style_color,
+                            hl_text_color: block.settings.highlight_text_color
+                          %}
+                        </motion-element>
+                      </h2>
+                      {%- assign motion_delay = motion_delay | plus: 50 -%}
+                    {%- endif -%}
+                    {%- if block.settings.description != blank -%}
+                      <motion-element
+                        data-motion="fade-up"
+                        data-motion-delay="{{ motion_delay }}"
+                        class="block rich-text__text rte {{ block.settings.text_size }}"
+                      >
+                        {{ block.settings.description }}
+                      </motion-element>
+                      {%- assign motion_delay = motion_delay | plus: 50 -%}
+                    {%- endif -%}
+                    {%- if block.settings.button_label != blank -%}
+                      <motion-element
+                        data-motion="fade-up"
+                        data-motion-delay="{{ motion_delay }}"
+                        class="block rich-text__button"
+                      >
+                        {% render 'button',
+                          button_style: block.settings.button_style,
+                          button_link: block.settings.button_link,
+                          button_label: block.settings.button_label,
+                          button_icon: block.settings.button_icon
                         %}
                       </motion-element>
-                    </h2>
-                    {%- assign motion_delay = motion_delay | plus: 50 -%}
-                  {%- endif -%}
-                  {%- if block.settings.description != blank -%}
-                    <motion-element
-                      data-motion="fade-up"
-                      data-motion-delay="{{ motion_delay }}"
-                      class="block rich-text__text rte {{ block.settings.text_size }}"
-                    >
-                      {{ block.settings.description }}
-                    </motion-element>
-                    {%- assign motion_delay = motion_delay | plus: 50 -%}
-                  {%- endif -%}
-                  {%- if block.settings.button_label != blank -%}
-                    <motion-element
-                      data-motion="fade-up"
-                      data-motion-delay="{{ motion_delay }}"
-                      class="block rich-text__button"
-                    >
-                      {% render 'button',
-                        button_style: block.settings.button_style,
-                        button_link: block.settings.button_link,
-                        button_label: block.settings.button_label,
-                        button_icon: block.settings.button_icon
-                      %}
-                    </motion-element>
-                  {% endif %}
-                </div>
-              {%- when 'image' -%}
-                {%- liquid
-                  assign image = block.settings.image
-                  if image != blank
-                    assign image_ratio = image.aspect_ratio
-                  else
-                    assign image_ratio = '1'
-                  endif
-
-                  assign alt = image.alt | default: shop.name | escape
-                  assign loading = 'lazy'
-                  assign fetchpriority = 'low'
-                  if section.index < 2
-                    assign loading = 'eager'
-                    assign fetchpriority = 'high'
-                  endif
-                -%}
-                <div
-                  class="media-wrapper blocks-radius{% if image == blank %} bg-none{% endif %}"
-                  style="--aspect-ratio: {{ image_ratio }};"
-                >
-                  <motion-element class="block" data-motion="zoom-out-sm">
-                    {%- if image != blank -%}
-                      {{
-                        image
-                        | image_url: width: 1500
-                        | image_tag:
-                          loading: loading,
-                          fetchpriority: fetchpriority,
-                          class: 'motion-reduce',
-                          widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
-                          is: 'image-lazy',
-                          alt: alt
-                      }}
-                    {%- else -%}
-                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                    {%- endif -%}
-                  </motion-element>
-                </div>
-              {%- when 'image_card' -%}
-                {% render 'card-image',
-                  parent_color_scheme: section.settings.color_scheme,
-                  color_scheme: block.settings.color_scheme,
-                  color_scheme_mobile: block.settings.color_scheme_mobile,
-                  link: block.settings.card_link,
-                  image: block.settings.image,
-                  image_ratio: block.settings.image_ratio,
-                  image_overlay_opacity: block.settings.image_overlay_opacity,
-                  image_mobile: block.settings.image_mobile,
-                  heading: block.settings.heading,
-                  highlight_style: block.settings.highlight_style,
-                  highlight_font_style: block.settings.highlight_font_style,
-                  highlight_style_color: block.settings.highlight_style_color,
-                  highlight_text_color: block.settings.highlight_text_color,
-                  heading_size: block.settings.heading_size,
-                  subheading: block.settings.subheading,
-                  subheading_style: block.settings.subheading_style,
-                  description: block.settings.description,
-                  button_label: block.settings.button_label,
-                  button_style: block.settings.button_style,
-                  button_icon: block.settings.button_icon,
-                  rich_text_size: block.settings.content_gap,
-                  content_spacing: block.settings.content_spacing,
-                  content_position: block.settings.content_position,
-                  content_alignment: block.settings.content_alignment,
-                  content_alignment_mobile: block.settings.content_alignment_mobile,
-                  show_text_below: block.settings.show_text_below,
-                  show_badge: block.settings.show_badge,
-                  badge_size: 'medium',
-                  badge_shape: block.settings.badge_shape,
-                  badge_position: block.settings.badge_position,
-                  badge_main_text: block.settings.badge_text,
-                  badge_main_text_size: 'h3',
-                  badge_subtext: block.settings.badge_subtext,
-                  badge_subtext_size: 'h6',
-                  badge_color_scheme: block.settings.badge_color_scheme,
-                  enable_preload_image: block.settings.enable_preload_image,
-                  section_index: section.index,
-                  forloop_index: forloop.index,
-                  heading_size_custom: block.settings.heading_size_custom,
-                  heading_size_mobile: block.settings.heading_size_mobile
-                %}
-              {%- when 'image_card_with_product' -%}
-                {{ 'component-card-img-with-product.css' | asset_url | stylesheet_tag }}
-                {% render 'card-image-with-product',
-                  color_scheme: block.settings.color_scheme,
-                  image: block.settings.image,
-                  image_ratio: block.settings.image_ratio,
-                  heading: block.settings.heading,
-                  highlight_style: block.settings.highlight_style,
-                  highlight_font_style: block.settings.highlight_font_style,
-                  highlight_style_color: block.settings.highlight_style_color,
-                  highlight_text_color: block.settings.highlight_text_color,
-                  heading_size: block.settings.heading_size,
-                  subheading: block.settings.subheading,
-                  description: block.settings.description,
-                  button_label: block.settings.button_label,
-                  button_style: block.settings.button_style,
-                  button_icon: block.settings.button_icon,
-                  product: block.settings.product
-                %}
-              {%- when 'lookbook_card_hotspot' -%}
-                {{ 'component-lookbook-card.css' | asset_url | stylesheet_tag }}
-                <script src="{{ 'lookbook-icon.js' | asset_url }}" defer="defer"></script>
-                {% render 'lookbook-card-hotspot',
-                  block: block,
-                  image: block.settings.image,
-                  image_ratio: block.settings.image_ratio,
-                  icon_style: block.settings.icon_style,
-                  icon_color: block.settings.icon_color
-                %}
-              {%- when 'video' -%}
-                {%- liquid
-                  assign poster = section.settings.video.preview_image | default: section.settings.cover_image
-
-                  if block.settings.video_ratio == 'adapt'
-                    if poster != null
-                      assign video_ratio = poster.aspect_ratio
-                    else
-                      assign video_ratio = '16/9'
-                    endif
-                  else
-                    assign video_ratio = block.settings.video_ratio
-                  endif
-                -%}
-                <div
-                  class="media media--adapt blocks-radius"
-                  style="--media-ratio: {{ video_ratio }};"
-                >
-                  {%- render 'video',
-                    video: block.settings.video,
-                    video_url: block.settings.video_url,
-                    muted: block.settings.enable_video_autoplay,
-                    autoplay: block.settings.enable_video_autoplay,
-                    controls: true,
-                    loop: block.settings.enable_video_looping,
-                    description: block.settings.description,
-                    cover_image: block.settings.cover_image,
-                    show_play_button: true
-                  -%}
-                </div>
-              {%- when 'lookbook_card' -%}
-                {{ 'component-lookbook-card-modal.css' | asset_url | stylesheet_tag }}
-                <script src="{{ 'lookbook-card.js' | asset_url }}" defer="defer"></script>
-                {% liquid
-                  assign video = block.settings.video
-                  assign image = block.settings.image
-                  assign image_ratio = block.settings.image_ratio | default: '1/1'
-                  if image_ratio == 'adapt'
-                    if video != blank
-                      assign image_ratio = video.aspect_ratio
-                    elsif image != blank
+                    {% endif %}
+                  </div>
+                {%- when 'image' -%}
+                  {%- liquid
+                    assign image = block.settings.image
+                    if image != blank
                       assign image_ratio = image.aspect_ratio
                     else
-                      assign image_ratio = '1/1'
+                      assign image_ratio = '1'
                     endif
-                  endif
-                %}
-                {% render 'lookbook-card',
-                  block_id: block.id,
-                  product_list: block.settings.product_list,
-                  image_ratio: image_ratio,
-                  pcard_image_ratio: block.settings.pcard_image_ratio,
-                  image: block.settings.image,
-                  video: block.settings.video,
-                  heading: block.settings.heading,
-                  highlight_style: block.settings.highlight_style,
-                  highlight_font_style: block.settings.highlight_font_style,
-                  highlight_style_color: block.settings.highlight_style_color,
-                  highlight_text_color: block.settings.highlight_text_color,
-                  heading_size: block.settings.heading_size
-                %}
-              {%- when 'collections' -%}
-                {{ 'component-collection-item-slider.css' | asset_url | stylesheet_tag }}
-                <script src="{{ 'collection-item-slider.js' | asset_url }}" defer="defer"></script>
-                <div class="collecion-list__sliders block w-full" data>
-                  {%- if block.settings.collection_list != blank -%}
-                    {% assign titles_array = block.settings.custom_titles_collection | split: '||' %}
-                    {%- for collection in block.settings.collection_list -%}
-                      {%- assign custom_title = titles_array[forloop.index0] | strip -%}
-                      {%- render 'collection-item-slider', collection: collection, block: block, custom_title: custom_title -%}
-                    {% endfor %}
-                  {%- else -%}
-                    {%- render 'collection-item-slider', block: block -%}
-                  {%- endif -%}
-                </div>
-              {% when 'testimonial' %}
-                
-                {% render 'testimonial-block', block: block, section: section %}
 
-              {%- when 'collapsible' -%}
-                {%- render 'collapsible-tabs-block', section: section, block: block, content_html: content_html -%}
-            {%- endcase -%}
+                    assign alt = image.alt | default: shop.name | escape
+                    assign loading = 'lazy'
+                    assign fetchpriority = 'low'
+                    if section.index < 2
+                      assign loading = 'eager'
+                      assign fetchpriority = 'high'
+                    endif
+                  -%}
+                  <div
+                    class="media-wrapper blocks-radius{% if image == blank %} bg-none{% endif %}"
+                    style="--aspect-ratio: {{ image_ratio }};"
+                  >
+                    <motion-element class="block" data-motion="zoom-out-sm">
+                      {%- if image != blank -%}
+                        {{
+                          image
+                          | image_url: width: 1500
+                          | image_tag:
+                            loading: loading,
+                            fetchpriority: fetchpriority,
+                            class: 'motion-reduce',
+                            widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+                            is: 'image-lazy',
+                            alt: alt
+                        }}
+                      {%- else -%}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {%- endif -%}
+                    </motion-element>
+                  </div>
+                {%- when 'image_card' -%}
+                  {% render 'card-image',
+                    parent_color_scheme: section.settings.color_scheme,
+                    color_scheme: block.settings.color_scheme,
+                    color_scheme_mobile: block.settings.color_scheme_mobile,
+                    link: block.settings.card_link,
+                    image: block.settings.image,
+                    image_ratio: block.settings.image_ratio,
+                    image_overlay_opacity: block.settings.image_overlay_opacity,
+                    image_mobile: block.settings.image_mobile,
+                    heading: block.settings.heading,
+                    highlight_style: block.settings.highlight_style,
+                    highlight_font_style: block.settings.highlight_font_style,
+                    highlight_style_color: block.settings.highlight_style_color,
+                    highlight_text_color: block.settings.highlight_text_color,
+                    heading_size: block.settings.heading_size,
+                    subheading: block.settings.subheading,
+                    subheading_style: block.settings.subheading_style,
+                    description: block.settings.description,
+                    button_label: block.settings.button_label,
+                    button_style: block.settings.button_style,
+                    button_icon: block.settings.button_icon,
+                    rich_text_size: block.settings.content_gap,
+                    content_spacing: block.settings.content_spacing,
+                    content_position: block.settings.content_position,
+                    content_alignment: block.settings.content_alignment,
+                    content_alignment_mobile: block.settings.content_alignment_mobile,
+                    show_text_below: block.settings.show_text_below,
+                    show_badge: block.settings.show_badge,
+                    badge_size: 'medium',
+                    badge_shape: block.settings.badge_shape,
+                    badge_position: block.settings.badge_position,
+                    badge_main_text: block.settings.badge_text,
+                    badge_main_text_size: 'h3',
+                    badge_subtext: block.settings.badge_subtext,
+                    badge_subtext_size: 'h6',
+                    badge_color_scheme: block.settings.badge_color_scheme,
+                    enable_preload_image: block.settings.enable_preload_image,
+                    section_index: section.index,
+                    forloop_index: forloop.index,
+                    heading_size_custom: block.settings.heading_size_custom,
+                    heading_size_mobile: block.settings.heading_size_mobile
+                  %}
+                {%- when 'image_card_with_product' -%}
+                  {{ 'component-card-img-with-product.css' | asset_url | stylesheet_tag }}
+                  {% render 'card-image-with-product',
+                    color_scheme: block.settings.color_scheme,
+                    image: block.settings.image,
+                    image_ratio: block.settings.image_ratio,
+                    heading: block.settings.heading,
+                    highlight_style: block.settings.highlight_style,
+                    highlight_font_style: block.settings.highlight_font_style,
+                    highlight_style_color: block.settings.highlight_style_color,
+                    highlight_text_color: block.settings.highlight_text_color,
+                    heading_size: block.settings.heading_size,
+                    subheading: block.settings.subheading,
+                    description: block.settings.description,
+                    button_label: block.settings.button_label,
+                    button_style: block.settings.button_style,
+                    button_icon: block.settings.button_icon,
+                    product: block.settings.product
+                  %}
+                {%- when 'lookbook_card_hotspot' -%}
+                  {{ 'component-lookbook-card.css' | asset_url | stylesheet_tag }}
+                  <script src="{{ 'lookbook-icon.js' | asset_url }}" defer="defer"></script>
+                  {% render 'lookbook-card-hotspot',
+                    block: block,
+                    image: block.settings.image,
+                    image_ratio: block.settings.image_ratio,
+                    icon_style: block.settings.icon_style,
+                    icon_color: block.settings.icon_color
+                  %}
+                {%- when 'video' -%}
+                  {%- liquid
+                    assign poster = section.settings.video.preview_image | default: section.settings.cover_image
+
+                    if block.settings.video_ratio == 'adapt'
+                      if poster != null
+                        assign video_ratio = poster.aspect_ratio
+                      else
+                        assign video_ratio = '16/9'
+                      endif
+                    else
+                      assign video_ratio = block.settings.video_ratio
+                    endif
+                  -%}
+                  <div
+                    class="media media--adapt blocks-radius"
+                    style="--media-ratio: {{ video_ratio }};"
+                  >
+                    {%- render 'video',
+                      video: block.settings.video,
+                      video_url: block.settings.video_url,
+                      muted: block.settings.enable_video_autoplay,
+                      autoplay: block.settings.enable_video_autoplay,
+                      controls: true,
+                      loop: block.settings.enable_video_looping,
+                      description: block.settings.description,
+                      cover_image: block.settings.cover_image,
+                      show_play_button: true
+                    -%}
+                  </div>
+                {%- when 'lookbook_card' -%}
+                  {{ 'component-lookbook-card-modal.css' | asset_url | stylesheet_tag }}
+                  <script src="{{ 'lookbook-card.js' | asset_url }}" defer="defer"></script>
+                  {% liquid
+                    assign video = block.settings.video
+                    assign image = block.settings.image
+                    assign image_ratio = block.settings.image_ratio | default: '1/1'
+                    if image_ratio == 'adapt'
+                      if video != blank
+                        assign image_ratio = video.aspect_ratio
+                      elsif image != blank
+                        assign image_ratio = image.aspect_ratio
+                      else
+                        assign image_ratio = '1/1'
+                      endif
+                    endif
+                  %}
+                  {% render 'lookbook-card',
+                    block_id: block.id,
+                    product_list: block.settings.product_list,
+                    image_ratio: image_ratio,
+                    pcard_image_ratio: block.settings.pcard_image_ratio,
+                    image: block.settings.image,
+                    video: block.settings.video,
+                    heading: block.settings.heading,
+                    highlight_style: block.settings.highlight_style,
+                    highlight_font_style: block.settings.highlight_font_style,
+                    highlight_style_color: block.settings.highlight_style_color,
+                    highlight_text_color: block.settings.highlight_text_color,
+                    heading_size: block.settings.heading_size
+                  %}
+                {%- when 'collections' -%}
+                  {{ 'component-collection-item-slider.css' | asset_url | stylesheet_tag }}
+                  <script src="{{ 'collection-item-slider.js' | asset_url }}" defer="defer"></script>
+                  <div class="collecion-list__sliders block w-full" data>
+                    {%- if block.settings.collection_list != blank -%}
+                      {% assign titles_array = block.settings.custom_titles_collection | split: '||' %}
+                      {%- for collection in block.settings.collection_list -%}
+                        {%- assign custom_title = titles_array[forloop.index0] | strip -%}
+                        {%- render 'collection-item-slider',
+                          collection: collection,
+                          block: block,
+                          custom_title: custom_title
+                        -%}
+                      {% endfor %}
+                    {%- else -%}
+                      {%- render 'collection-item-slider', block: block -%}
+                    {%- endif -%}
+                  </div>
+                {% when 'testimonial' %}
+                  {% render 'testimonial-block', block: block, section: section %}
+
+                {%- when 'collapsible' -%}
+                  {%- render 'collapsible-tabs-block', section: section, block: block, content_html: content_html -%}
+              {%- endcase -%}
+            </div>
           </div>
-        </div>
-      {%- endfor -%}
+        {%- endfor -%}
+      </div>
     </div>
   </div>
-</div>
+{% endif %}
+
 {% schema %}
 {
   "name": "t:sections.custom-content.name",
@@ -1792,7 +1799,7 @@
           ],
           "default": "50%"
         },
-         {
+        {
           "type": "select",
           "id": "alignment",
           "label": "t:general.vertical_alignment.label",
@@ -4120,7 +4127,7 @@
           "label": "t:sections.collection-list.name",
           "limit": 3
         },
-         {
+        {
           "type": "textarea",
           "id": "custom_titles_collection",
           "label": "Custom titles (separate tabs with ||, new line with <br>)"
@@ -4402,7 +4409,7 @@
           ],
           "default": "50%"
         },
-         {
+        {
           "type": "select",
           "id": "alignment",
           "label": "t:general.vertical_alignment.label",

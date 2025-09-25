@@ -58,9 +58,16 @@
   {%- endif -%}
 {%- endstyle -%}
 
+{% capture show_section %}
+  {% render 'check-product-visibility',
+    product: product,
+    product_list: section.settings.product_list,
+    template_product: section.settings.template_product %}
+{% endcapture %}
+
 <div
   id="section-{{ section.id }}"
-  class="section section--padding image-with-text image-with-text--image-{{ image_position }}{% if badge_block != blank %} image-with-text--show-badge{% endif %} color-{{ section.settings.color_scheme }}"
+  class="section section--padding image-with-text image-with-text--image-{{ image_position }}{% if badge_block != blank %} image-with-text--show-badge{% endif %} color-{{ section.settings.color_scheme }} {% if show_section contains 'hide' %} hide-section-product-profile {% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div class="section__container page-width page-width--{{ section.settings.container }}">
@@ -217,7 +224,7 @@
                   {{ block.settings.text_custom_2 }}
                 </motion-element>
                 {%- assign motion_delay = motion_delay | plus: 50 -%}
-                
+
               {%- when 'icon_with_text' -%}
                 {%- if block.settings.heading != blank or block.settings.text != blank -%}
                   <motion-element
@@ -298,6 +305,26 @@
     {
       "type": "header",
       "content": "t:general.general.name"
+    },
+
+    {
+      "type": "header",
+      "content": "Show section template product"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Show  section in product"
+    },
+    {
+      "type": "richtext",
+      "id": "template_product",
+      "label": "Show section in product template Enter templates (separate with ||)"
+    },
+
+    {
+      "type": "header",
+      "content": "Config section"
     },
     {
       "type": "select",
