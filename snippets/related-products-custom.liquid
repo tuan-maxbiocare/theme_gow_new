@@ -79,6 +79,14 @@
               parent_color_scheme: section.settings.color_scheme,
               horizontal_layout: true
             %}
+            {% comment %} {% render 'card-product',
+              product: recommendation,
+              parent_color_scheme: section.settings.color_scheme,
+              image_sizes: image_sizes,
+              image_ratio: section.settings.pcard_image_ratio,
+              section_index: section.index,
+              index: forloop.index
+            %} {% endcomment %}
           </div>
           {% endunless %}
         {%- endfor -%}

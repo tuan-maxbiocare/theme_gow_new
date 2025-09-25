@@ -77,13 +77,59 @@
     align-items: center;
 }
 
-/* section-quick-comparison-table */
-.quick-comparison-table th,
-.quick-comparison-table td {
-  padding: 10px !important;
-}
-
 .quick-comparison-table th:first-child,
 .quick-comparison-table td:first-child {
   width: 24rem !important;
+}
+
+
+
+/* table */
+
+.gowTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  color: #222;
+}
+.accordion-details:has(.gowTable) .accordion-details__summary {
+  border: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+.gowTable th.gowTable-title {
+  font-weight: 700; /* ghi đè */
+  font-size: 18px;
+  font-family: 'Anek Tamil', sans-serif;
+}
+
+.gowTable th {
+  text-align: left;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.gowTable td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.gowTable tr:last-child td {
+  border-bottom: none;
+}
+
+.gowTable i {
+  font-style: italic;
+  color: #444;
+}
+
+.accordion__content small {
+  display: block;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #555;
 }

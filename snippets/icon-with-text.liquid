@@ -27,9 +27,11 @@
   else
     assign heading_css_class = heading_css_class | append: ' font-heading'
   endif
+  assign icon_color = block.settings.icon_color | default: '#000000'
 -%}
 <ul
   class="list-unstyled icon-with-text icon-with-text--{{ layout }} {{ class }}"
+  style="color: {{ icon_color }};"
 >
   {%- if heading_1 != blank -%}
     <li class="icon-with-text__item">

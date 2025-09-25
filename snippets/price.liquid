@@ -35,7 +35,7 @@
       endfor
     endunless
   endif
-  assign price_size = block.settings.price_size | default: '16'
+  assign price_size = block.settings.price_size | default: '16px'
   
   if price_size_section
     assign price_size = price_size_section
