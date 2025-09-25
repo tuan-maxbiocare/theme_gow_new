@@ -295,7 +295,7 @@
                 <script src="{{ 'collection-item-slider.js' | asset_url }}" defer="defer"></script>
                 <div class="collecion-list__sliders block w-full" data>
                   {%- if block.settings.collection_list != blank -%}
-                   {% assign titles_array = block.settings.custom_titles_collection | split: '||' %}
+                    {% assign titles_array = block.settings.custom_titles_collection | split: '||' %}
                     {%- for collection in block.settings.collection_list -%}
                       {%- assign custom_title = titles_array[forloop.index0] | strip -%}
                       {%- render 'collection-item-slider', collection: collection, block: block, custom_title: custom_title -%}

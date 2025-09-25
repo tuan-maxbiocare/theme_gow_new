@@ -467,7 +467,9 @@
               icon_2: block.settings.icon_2,
               heading_3: block.settings.heading_3,
               image_3: block.settings.image_3,
-              icon_3: block.settings.icon_3
+              icon_3: block.settings.icon_3,
+              icon_color: block.settings.icon_color,
+              block: block
             %}
           </div>
         {%- when 'grid-icon-box' -%}
@@ -583,6 +585,49 @@
               </div>
             </div>
           </div>
+        {%- when 'payment_social' -%}
+          <div class="{{ block_classes }} payment-social-wrapper" {{ block.shopify_attributes }}>
+            <div class="payment-social-container flex flex-col gap-6 md:flex-row md:justify-between md:items-center">
+              <div class="social-sharing flex items-center gap-4">
+                {% render 'social-sharing', url: product.url, share_image: product.featured_media.preview_image %}
+              </div>
+              <div class="product__payment-info flex md:flex-row flex-col gap-4">
+                <span class="visually-hidden">{{ 'general.payment.methods' | t }}</span>
+                <ul class="list flex flex-wrap" role="list">
+                  {% if shop.enabled_payment_types.size > 0 %}
+                    {%- for type in shop.enabled_payment_types -%}
+                      <li class="flex items-center">
+                        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                      </li>
+                    {%- endfor -%}
+                  {% else %}
+                    {% assign fake_payment_types = 'visa,master,american_express,paypal' | split: ',' %}
+                    {% for type in fake_payment_types %}
+                      <li class="flex items-center">
+                        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                      </li>
+                    {% endfor %}
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {%- when 'custom_image' -%}
+          <div class="{{ block_classes }} custom-image-block" {{ block.shopify_attributes }}>
+            {%- if block.settings.custom_image != blank -%}
+              <div class="custom-image-wrapper">
+                {{
+                  block.settings.custom_image
+                  | image_url: width: 600
+                  | image_tag:
+                    loading: 'lazy',
+                    width: block.settings.image_width,
+                    height: 'auto',
+                    style: 'max-width: 100%; display: inline-block;'
+                }}
+              </div>
+            {%- endif -%}
+          </div>
       {%- endcase -%}
     {%- endfor -%}
   </div>
@@ -632,7 +677,7 @@
     image-rendering: -webkit-optimize-contrast; 
     image-rendering: crisp-edges;
   }
-  /* Override tất cả các trạng thái với specificity cao hơn */
+
   .product__blocks .btn--icon.btn--icon-pill,
   .product__blocks .btn--icon.btn--icon-pill:hover,
   .product__blocks .btn--icon.btn--icon-pill:focus,

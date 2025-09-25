@@ -93,7 +93,7 @@
               </h4>
               <div class="swipe-mobile swipe-mobile--2-cols">
                 <div class="f-grid f-grid--gap-{{ settings.search_products_column_gap }} f-grid--row-gap-{{ settings.search_products_row_gap }} swipe-mobile__inner">
-                  {%- for product in settings.products_recommendations -%}
+                 {%- for product in settings.products_recommendations -%}
                     {% unless product.vendor == "Chemist Warehouse" or product.title contains "CW -" %}
                     {%- render 'card-product',
                       product: product,

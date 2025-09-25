@@ -191,7 +191,7 @@ calc(100vw / {{ columns_desktop }})
         data-limit-message="{{ 'sections.products-bundle-selection.limit_message' | t: maximum: discount_max_items }}"
         data-duplicate-message="{{ 'sections.products-bundle-selection.duplicate_message' | t }}"
       >
-      {% unless product.vendor == "Chemist Warehouse" or product.title contains "CW -" %}
+        {% unless product.vendor == "Chemist Warehouse" or product.title contains "CW -" %}
         <div class="bundle-layout gap-5">
           <!-- Products Grid Column -->
           <div class="bundle-layout__products">

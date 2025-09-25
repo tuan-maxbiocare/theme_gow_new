@@ -170,6 +170,32 @@
       ]
     },
     {
+      "type": "custom_image",
+      "name": "Custom Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 100,
+          "max": 500,
+          "step": 10,
+          "unit": "px",
+          "label": "Image width",
+          "default": 300
+        }
+      ]
+    },
+    {
+      "type": "payment_social",
+      "name": "Payment & Social",
+      "settings": []
+    },
+    {
       "type": "text_with_buttons",
       "name": "Text with Buttons",
       "settings": [
@@ -1605,9 +1631,19 @@
             {
               "value": "text-base",
               "label": "t:general.text_size.options__base.label"
+            },
+            {
+              "value": "text-sm",
+              "label": "text"
             }
           ],
           "default": "h5"
+        },
+        {
+          "type": "color",
+          "id": "icon_color",
+          "label": "Color",
+          "default": "#000000"
         },
         {
           "type": "header",

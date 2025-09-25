@@ -217,7 +217,7 @@
                   {{ block.settings.text_custom_2 }}
                 </motion-element>
                 {%- assign motion_delay = motion_delay | plus: 50 -%}
-
+                
               {%- when 'icon_with_text' -%}
                 {%- if block.settings.heading != blank or block.settings.text != blank -%}
                   <motion-element
@@ -640,7 +640,6 @@
         }
       ]
     },
-
     {
       "type": "content_custom",
       "name": "Content Custom With Image",
@@ -665,7 +664,6 @@
         }
       ]
     },
-
     {
       "type": "icon_with_text",
       "name": "t:sections.image-with-text.blocks.icon_with_text.name",
