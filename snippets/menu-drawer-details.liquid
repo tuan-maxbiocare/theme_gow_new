@@ -300,6 +300,7 @@
                     style="--f-columns-md: 3; --f-column-gap: 1.2rem; --f-row-gap: 2rem;"
                   >
                     {%- for product in product_list -%}
+                      {% unless product.vendor == "Chemist Warehouse" or product.title contains "CW -" %}
                       <div
                         class="promotion-item promotion-item--product"
                         style="--index: {{ forloop.index }};"
@@ -315,6 +316,7 @@
                           quick_view_suffix: 'megamenu-mobile'
                         -%}
                       </div>
+                      {% endunless %}
                     {%- endfor -%}
                   </div>
                 </div>

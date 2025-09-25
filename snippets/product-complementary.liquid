@@ -65,6 +65,7 @@
             >
               {%- if is_list_layout -%}
                 {%- for product in recommendations.products -%}
+                  {% unless product.vendor == "Chemist Warehouse" or product.title contains "CW -" %}
                   <div class="f-column swiper-slide">
                     {% render 'card-product-horizontal',
                       section_index: 1,
@@ -79,6 +80,7 @@
                       button_type: 'text'
                     %}
                   </div>
+                  {% endunless %}
                 {%- endfor -%}
               {%- else -%}
                 {%- for product in recommendations.products -%}

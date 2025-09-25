@@ -70,6 +70,7 @@
     >
       <div class="products-grid f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_slider %} swiper-wrapper{% endif %}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
         {%- for recommendation in recommendations.products -%}
+          {% unless recommendation.vendor == "Chemist Warehouse" or recommendation.title contains "CW -" %}
           <div class="f-column swiper-slide">
             {% render 'card-product-placeholder-for-related-custom',
               product: recommendation,
@@ -79,6 +80,7 @@
               horizontal_layout: true
             %}
           </div>
+          {% endunless %}
         {%- endfor -%}
       </div>
     </div>
