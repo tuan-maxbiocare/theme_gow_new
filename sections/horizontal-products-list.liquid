@@ -68,27 +68,29 @@
           <div class="read-more__content horizontal-products-list__wrapper">
             <div class="horizontal-products-list__items products-list f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}">
               {%- for product in collection.products limit: products_to_display -%}
-                <div class="f-column">
-                  {%- render 'card-product-horizontal',
-                    product: product,
-                    parent_color_scheme: section.settings.color_scheme,
-                    button_type: section.settings.pcard_button_type,
-                    title_line_limit: section.settings.pcard_title_line_limit,
-                    section_index: section.index,
-                    index: forloop.index
-                  -%}
-                </div>
-              {%- else -%}
-                {%- for i in (1..products_to_display) -%}
+                {% unless product.vendor == 'Chemist Warehouse' or product.title contains 'CW -' %}
                   <div class="f-column">
-                    {% render 'card-product-placeholder',
-                      image_ratio: section.settings.pcard_image_ratio,
-                      pcard_style: 'standard',
+                    {%- render 'card-product-horizontal',
+                      product: product,
                       parent_color_scheme: section.settings.color_scheme,
-                      horizontal_layout: true
-                    %}
+                      button_type: section.settings.pcard_button_type,
+                      title_line_limit: section.settings.pcard_title_line_limit,
+                      section_index: section.index,
+                      index: forloop.index
+                    -%}
                   </div>
-                {%- endfor -%}
+                {%- else -%}
+                  {%- for i in (1..products_to_display) -%}
+                    <div class="f-column">
+                      {% render 'card-product-placeholder',
+                        image_ratio: section.settings.pcard_image_ratio,
+                        pcard_style: 'standard',
+                        parent_color_scheme: section.settings.color_scheme,
+                        horizontal_layout: true
+                      %}
+                    </div>
+                  {%- endfor -%}
+                {% endunless %}
               {%- endfor -%}
             </div>
           </div>

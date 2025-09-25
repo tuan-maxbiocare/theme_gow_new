@@ -50,6 +50,7 @@
           <div class="{% if is_carousel %}swiper-wrapper{% else %}f-grid{% endif %}{% unless is_list_layout %} swipe-mobile__inner{% endunless %} cart-drawer-products-recommendation__wrapper f-grid--gap-extra-small">
             {%- if is_list_layout -%}
               {%- for recommendation in products_recommendations -%}
+                {% unless recommendation.vendor == "Chemist Warehouse" or recommendation.title contains "CW -" %}
                 <div class="f-column swiper-slide">
                   {% render 'card-product-horizontal',
                     product: recommendation,
@@ -58,9 +59,11 @@
                     button_type: 'text'
                   %}
                 </div>
+                {% endunless %}
               {%- endfor -%}
             {%- else -%}
               {%- for recommendation in products_recommendations -%}
+                {% unless recommendation.vendor == "Chemist Warehouse" or recommendation.title contains "CW -" %}
                 <div class="swiper-slide">
                   {%- comment -%}
                     image_size = modal_width - modal_gap - grid_gap = 500 - 6rem - 2rem = 42rem
@@ -72,6 +75,7 @@
                     image_sizes: '(max-width: 767px) 42vw, calc(42rem / 3)'
                   -%}
                 </div>
+                 {% endunless %}
               {%- endfor -%}
             {%- endif -%}
           </div>

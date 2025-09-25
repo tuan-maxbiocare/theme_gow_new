@@ -222,6 +222,7 @@ calc(100vw / {{ columns_desktop }})
               >
                 <div class="featured-collection__items products-list f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
                   {%- for product in collection.products limit: products_to_display -%}
+                    {% unless product.vendor == "Chemist Warehouse" or product.title contains "CW -" %}
                     <div class="f-column">
                       {%- render 'card-product-with-selection',
                         product: product,
@@ -243,6 +244,7 @@ calc(100vw / {{ columns_desktop }})
                         %}
                       </div>
                     {%- endfor -%}
+                    {% endunless %}
                   {%- endfor -%}
                 </div>
               </featured-collection>

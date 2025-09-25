@@ -445,6 +445,7 @@
                     {%- endif -%}
                     <div class="{% if is_carousel %}swiper-wrapper{% else %}mega-menu__promotions-grid{% endif %}">
                       {%- for product in product_list -%}
+                        {% unless product.vendor == "Chemist Warehouse" or product.title contains "CW -" %}
                         <div
                           class="swiper-slide promotion-item promotion-item--product"
                           style="--index: {{ forloop.index }};"
@@ -460,6 +461,7 @@
                             quick_view_suffix: 'megamenu-desktop'
                           -%}
                         </div>
+                        {% endunless %}
                       {%- endfor -%}
                     </div>
                     {%- if is_carousel -%}

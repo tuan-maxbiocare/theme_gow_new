@@ -81,6 +81,7 @@
         style="--f-columns-mobile: {{ columns_mobile }};--f-columns-md: {{ columns_tablet }};--f-columns-xl: {{ columns_desktop }};"
       >
         {%- for product in collection.products limit: products_to_display -%}
+          {% unless product.vendor == "Chemist Warehouse" or product.title contains "CW -" %}
           <div class="f-column swiper-slide">
             {% render 'card-product',
               product: product,
@@ -97,6 +98,7 @@
               {% render 'card-product-placeholder', image_ratio: block.settings.pcard_image_ratio %}
             </div>
           {%- endfor -%}
+          {% endunless %}
         {%- endfor -%}
       </div>
     </div>

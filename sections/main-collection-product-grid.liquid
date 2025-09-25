@@ -172,6 +172,7 @@
               assign current_position = 1
             -%}
             {%- for product in collection.products -%}
+              {% unless product.vendor == 'Chemist Warehouse' or product.title contains 'CW -' %}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'image_card' and block.settings.image_position == current_position -%}
                   <div class="f-column image-column">
@@ -254,6 +255,7 @@
                   {% assign current_position = current_position | plus: 1 %}
                 {%- endif -%}
               {%- endfor -%}
+              {% endunless %}
             {%- endfor -%}
           </div>
           {%- liquid

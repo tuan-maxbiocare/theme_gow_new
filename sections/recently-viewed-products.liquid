@@ -44,7 +44,7 @@
   {%- for parsed_term in parsed_terms -%}
     {%- assign id = parsed_term | split: 'id:' | last | times: 1 -%}
     {%- for product in search.results -%}
-      {%- if product.id == id -%}
+      {%- if product.id == id and product.vendor != "Chemist Warehouse" -%}
         {%- assign products_to_display  = products_to_display | plus: 1 -%}
         <div class="f-column swiper-slide {{ search.results.count }}">
           {% render 'card-product',
