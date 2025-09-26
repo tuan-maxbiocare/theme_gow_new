@@ -1,6 +1,23 @@
 {%- liquid
   assign selected_variant = product.selected_or_first_available_variant
 
+  # Common inventory logic function
+  assign variant_in_stock = true
+  assign button_disabled = false
+  assign button_text = 'products.product.add_to_cart_short' | t
+  
+  if selected_variant.inventory_management == 'shopify' and selected_variant.inventory_quantity <= 0
+    assign variant_in_stock = false
+  endif
+  
+  if variant_in_stock == false and selected_variant.inventory_policy != 'continue'
+    assign button_disabled = true
+    assign variant_in_stock = false
+    assign button_text = 'products.product.sold_out' | t
+  elsif variant_in_stock == false and selected_variant.inventory_policy == 'continue'
+    assign button_text = 'products.product.pre_order' | t
+  endif
+
   assign show_color_swatches = settings.pcard_enable_color_swatches
 
   if show_vendor == null
@@ -315,19 +332,34 @@
                   {{- option.id -}}{%- unless forloop.last -%},{%- endunless -%}
                 {%- endfor -%}
               {%- endcapture -%}
+              {%- liquid
+                assign option_variant_in_stock = true
+                assign option_text = ''
+                assign option_disabled = false
+                
+                if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0
+                  assign option_variant_in_stock = false
+                endif
+                
+                if option_variant_in_stock == false and variant.inventory_policy != 'continue'
+                  assign option_disabled = true
+                  assign option_text = ' - Sold out'
+                elsif option_variant_in_stock == false and variant.inventory_policy == 'continue'
+                  assign option_text = ' - Pre-order'
+                endif
+              -%}
               <option
                 {% if variant.id == selected_variant.id or number_variants == 1 %}
                   selected="selected"
                 {% endif %}
-                {% if variant.available == false %}
+                {% if option_disabled %}
                   disabled="disabled"
                 {% endif %}
                 value="{{ variant.id }}"
                 data-price="{{ variant.price }}"
                 data-options-id="{{ option_ids }}"
               >
-                {{ variant.title }}
-                {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif -%}
+                {{ variant.title }}{{ option_text }}
               </option>
             {%- endfor -%}
           </select>
@@ -338,16 +370,10 @@
             type="submit"
             name="add"
             class="product-form__submit btn btn--secondary w-full"
-            {% if selected_variant.available == false %}
-              disabled
-            {% endif %}
+            {% if button_disabled %}disabled{% endif %}
           >
             <span class="btn__text">
-              {%- if selected_variant.available -%}
-                {{ 'products.product.add_to_cart_short' | t }}
-              {%- else -%}
-                {{ 'products.product.sold_out' | t }}
-              {%- endif -%}
+              {{- button_text -}}
             </span>
           </button>
         </div>

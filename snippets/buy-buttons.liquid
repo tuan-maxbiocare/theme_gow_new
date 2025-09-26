@@ -336,21 +336,39 @@
             </quantity-input>
           </div>
         {%- endif -%}
+
+        {%- liquid
+          assign variant = product.selected_or_first_available_variant
+          assign button_disabled = false
+          assign variant_in_stock = true
+          
+          if variant == nil
+            assign button_disabled = true
+          else
+            if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0
+              assign variant_in_stock = false
+            endif
+            if variant_in_stock == false and variant.inventory_policy != 'continue'
+              assign button_disabled = true
+            endif
+            if quantity_rule_soldout
+              assign button_disabled = true
+            endif
+          endif
+        -%}
         <button
           id="ProductSubmitButton-{{ section_id }}"
           type="submit"
           name="add"
           class="product-form__submit btn{% if show_dynamic_checkout %} btn--secondary{% else %} btn--primary{% endif %}"
-          {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == nil %}
-            disabled
-          {% endif %}
+          {% if button_disabled %}disabled{% endif %}
         >
           <span class="btn__text">
-            {%- if product.selected_or_first_available_variant == nil -%}
+            {%- if variant == nil -%}
               {{ 'products.product.unavailable' | t }}
-            {%- elsif product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-            -%}
+            {%- elsif variant_in_stock == false and variant.inventory_policy == 'continue' -%}
+              {{ 'products.product.pre_order' | t }}
+            {%- elsif variant_in_stock == false or quantity_rule_soldout -%}
               {{ 'products.product.sold_out' | t }}
             {%- else -%}
               {{ 'products.product.add_to_cart' | t }}
@@ -358,6 +376,7 @@
           </span>
           {%- render 'loading-spinner' -%}
         </button>
+
         {%- if show_dynamic_checkout -%}
           {{ form | payment_button }}
         {%- endif -%}
