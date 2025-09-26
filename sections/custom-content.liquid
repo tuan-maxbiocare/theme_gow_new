@@ -317,6 +317,13 @@
                 {% render 'testimonial-block', block: block, section: section %}
 
               {%- when 'collapsible' -%}
+                {% unless block.settings.heading != blank %}
+                  <style>
+                    #block-{{ block.id }} {
+                      display: none !important;
+                    }
+                  </style>
+                {% endunless %}
                 {% assign key = 'product_detail_rich_text_' | append: forloop.index %}
                 {% assign content_html = entry_metaobjects[key] %}
                 {%- render 'collapsible-tabs-block', section: section, block: block, content_html: content_html -%}
