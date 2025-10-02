@@ -9,6 +9,59 @@
   Usage:
   {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
 {% endcomment %}
+{% style %}
+  .product-form__input--button-square input[type="radio"] + label {
+    border-radius: 10px;
+    border: 1px solid {{ block.settings.variant_button_border_color }};
+    background: transparent;   /* bỏ nền mặc định */
+    color: {{ block.settings.variant_button_text_color }};
+  }
+
+  /* Không fill nền khi hover */
+  .product-form__input--button-square input[type="radio"] + label:hover {
+    background: transparent !important;
+    color: {{ block.settings.variant_button_checked_text_color }};
+    border: 1px solid {{ block.settings.variant_button_checked_border_color}};
+  }
+
+  /* Trạng thái đã chọn: không nền, chỉ đậm border để phân biệt */
+  .product-form__input--button-square input[type="radio"]:checked + label {
+    background: transparent !important;  /* fix bị nền đen */
+    color: {{ block.settings.variant_button_checked_text_color}};
+    border: 1px solid {{ block.settings.variant_button_checked_border_color}};
+  }
+
+  /* Khi nút đang chọn mà hover cũng không đổi */
+  .product-form__input--button-square input[type="radio"]:checked + label:hover {
+    background: transparent !important;
+    color: {{ block.settings.variant_button_checked_text_color }};
+  }
+
+
+      /* trạng thái disable */
+  .product-form__input--button-square input[type="radio"]:disabled + label,
+  .product-form__input--button-square input[type="radio"].disabled + label {
+      border: 1px solid rgba(var(--color-foreground), 0.2);
+      color: rgba(var(--color-foreground), 0.4);
+      background: transparent;
+      cursor: not-allowed;
+      pointer-events: none;
+  }
+  .product-form__input--button-square input[type="radio"]:disabled + label:hover,
+  .product-form__input--button-square input[type="radio"].disabled + label:hover {
+      background: transparent !important;
+      border: 1px solid rgba(var(--color-foreground), 0.2);
+      color: rgba(var(--color-foreground), 0.4);
+  }
+  .product-form__input--button-square input[type="radio"]:disabled:checked + label,
+  .product-form__input--button-square input[type="radio"].disabled:checked + label {
+      color: rgba(var(--color-foreground), 0.4);
+      border: 1px solid rgba(var(--color-foreground), 0.2);
+      z-index: 0;
+      background: linear-gradient(to bottom left, transparent calc(50% - var(--variant-pills-border-width)), var(--color-foreground-lighten-19) 50%, transparent calc(50% + var(--variant-pills-border-width))) no-repeat !important;
+  }
+    
+{% endstyle %}
 {%- unless product.has_only_default_variant -%}
   {% liquid
     assign size_option_name = block.settings.size_title | downcase

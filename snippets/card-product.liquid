@@ -1,5 +1,15 @@
 {%- liquid
-  assign variant = product.selected_or_first_available_variant
+  assign variant = ''
+  for v in product.variants
+    if v.available and v.price > 0
+      assign variant = v
+      break
+    endif
+  endfor
+
+  if variant == ''
+    assign variant = product.selected_or_first_available_variant
+  endif
 
   assign show_color_swatches = settings.pcard_enable_color_swatches
 
@@ -100,7 +110,7 @@
   assign color_scheme_first = settings.color_schemes | first
   assign parent_color_scheme = parent_color_scheme | default: color_scheme_first
 
-  if color_inherit == nil
+  if color_inherit == null
     assign parent_background = parent_color_scheme.settings.background | downcase
     assign card_background = settings.pcard_color_scheme.settings.background | downcase
     assign color_inherit = false
@@ -110,14 +120,23 @@
   endif
 -%}
 <div
-  class="product-card product-card-style-{{ pcard_style }}{% if pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}{{ card_wrapper_class }}{% if list_on_mobile %} product-card-list-on-mobile{% endif %}{% if color_inherit %} color-inherit{% endif %}"
+  class="product-card product-card-style-{{ pcard_style }}{% if pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}{{ card_wrapper_class }}{% if list_on_mobile %} product-card-list-on-mobile{% endif %}{% if color_inherit %} color-inherit{% endif %} product-card-custom"
 >
   <div class="product-card__wrapper h-full">
     <div class="product-card__image-wrapper{% if second_image == blank %} product-card__image-wrapper--main-only{% endif %} {% if list_on_mobile %}desktop-{% endif %}color-{{ settings.pcard_overlay_color_scheme }} bg-none">
       <a href="{{ product.url }}" aria-label="{{ product.title | escape }}" tabindex="-1">
-        <motion-element data-motion="zoom-out-sm" class="block">
+        <motion-element data-motion="zoom-out-sm" class="block" style="background: #ffffff;">
           {%- if featured_media -%}
             {%- unless first_media_type == 'video' or first_media_type == 'external_video' -%}
+              {% assign first_image_widths = image_widths | append: ', ' | append: featured_media.width %}
+              {% assign border_radius = settings.pcard_image_radius | default: 0 %}
+              {% assign bg_color = settings.pcard_image_bg | default: '#ffffff' %}
+              {% assign image_style = 'border-radius: '
+                | append: border_radius
+                | append: 'px; background-color: '
+                | append: bg_color
+                | append: ';'
+              %}
               <div
                 class="media-wrapper product-card__image product-card__image--main"
                 style="--aspect-ratio: {{ image_ratio }}"
@@ -132,7 +151,8 @@
                     class: 'motion-reduce',
                     widths: first_image_widths,
                     sizes: image_sizes,
-                    is: 'image-lazy'
+                    is: 'image-lazy',
+                    style: image_style
                 }}
               </div>
               {%- unless second_image == blank -%}
@@ -183,88 +203,6 @@
         >
           <span class="btn__text flex gap-1 items-center">{%- render 'icon-search', size: 'large' -%}</span>
         </button>
-      {%- endif -%}
-      {%- if enable_quick_add -%}
-        {%- liquid
-          assign product_form_id = 'quick-add-' | append: section.id | append: product.id
-          assign qty_rules = false
-          if variant.quantity_rule.min > 1 or variant.quantity_rule.max != null or variant.quantity_rule.increment > 1
-            assign qty_rules = true
-          endif
-        -%}
-        {%- if product.variants.size > 1 or qty_rules -%}
-          <div class="product-card__actions product-card__main-actions{% unless settings.pcard_choose_options_actions == 'product_page' %} no-js-hidden{% endunless %}">
-            <{{ atc_button_tag }}
-              {% if settings.pcard_choose_options_actions == 'product_page' %}
-                href="{{- product_url -}}"
-              {% else %}
-                aria-controls="{{ quick_view_modal_id }}"
-                aria-haspopup="dialog"
-              {% endif %}
-              class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
-            >
-              <div class="btn__text flex gap-1 items-center">
-                <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
-                  {%- render 'icon-cart', name: settings.cart_icon -%}
-                </span>
-                <span class="product-card__atc-text product-card__action-text">
-                  {%- if use_short_text_for_atc_button -%}
-                    {{- 'products.product.choose_options_short' | t -}}
-                  {%- else -%}
-                    {{- 'products.product.choose_options' | t -}}
-                  {%- endif -%}
-                </span>
-              </div>
-            </{{ atc_button_tag }}>
-          </div>
-        {%- else -%}
-          {%- form 'product',
-            product,
-            id: product_form_id,
-            class: 'product-card__actions product-card__main-actions',
-            novalidate: 'novalidate',
-            data-type: 'add-to-cart-form',
-            is: 'product-form'
-          -%}
-            <input
-              type="hidden"
-              name="id"
-              value="{{- variant.id -}}"
-              class="product-variant-id"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
-            >
-            <button
-              id="{{ product_form_id }}-submit"
-              type="submit"
-              name="add"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
-              aria-label="{{ 'products.product.add_to_cart' | t }}"
-              class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
-            >
-              <div class="btn__text flex gap-1 items-center">
-                <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
-                  {%- render 'icon-cart', name: settings.cart_icon -%}
-                </span>
-                <span class="product-card__atc-text product-card__action-text">
-                  {%- if variant.available -%}
-                    {%- if use_short_text_for_atc_button -%}
-                      {{- 'products.product.add_to_cart_short' | t -}}
-                    {%- else -%}
-                      {{- 'products.product.add_to_cart' | t -}}
-                    {%- endif -%}
-                  {%- else -%}
-                    {{- 'products.product.sold_out' | t -}}
-                  {%- endif -%}
-                </span>
-              </div>
-              {% render 'loading-spinner' %}
-            </button>
-          {%- endform -%}
-        {%- endif -%}
       {%- endif -%}
       {%- if enable_compare_checkbox -%}
         <compare-checkbox class="product-card__compare hidden">
@@ -318,7 +256,12 @@
         </a>
       </h3>
       {%- if show_price -%}
-        {% render 'price', product: product, alignment: settings.pcard_content_alignment %}
+        {% render 'price',
+          product: product,
+          use_variant: true,
+          variant: variant,
+          alignment: settings.pcard_content_alignment
+        %}
       {%- endif -%}
       {%- if show_color_swatches -%}
         {%- render 'pcard-color-swatch',
@@ -331,82 +274,90 @@
       {%- endif -%}
     </div>
     <div class="product-card__list-actions hidden gap-3 flex-col">
-      {%- if enable_quick_add -%}
-        {%- liquid
-          assign product_form_id = 'list-view-quick-add-' | append: section.id | append: product.id
-          assign qty_rules = false
-          if variant.quantity_rule.min > 1 or variant.quantity_rule.max != null or variant.quantity_rule.increment > 1
-            assign qty_rules = true
-          endif
-        -%}
-        {%- if product.variants.size > 1 or qty_rules -%}
-          <div class="product-card__list-actions-main">
-            <{{ atc_button_tag }}
-              {% if settings.pcard_choose_options_actions == 'product_page' %}
-                href="{{- product_url -}}"
-              {% else %}
-                aria-controls="{{ quick_view_modal_id }}"
-                aria-haspopup="dialog"
-              {% endif %}
-              class="product-card__list-atc btn btn--primary"
-            >
-              <span class="btn__text flex gap-1 items-center">
-                {%- if use_short_text_for_atc_button -%}
-                  {{- 'products.product.choose_options_short' | t -}}
-                {%- else -%}
-                  {{- 'products.product.choose_options' | t -}}
-                {%- endif -%}
-              </span>
-            </{{ atc_button_tag }}>
-          </div>
-        {%- else -%}
-          {%- form 'product',
-            product,
-            id: product_form_id,
-            class: 'product-card__list-actions-main',
-            novalidate: 'novalidate',
-            data-type: 'add-to-cart-form',
-            is: 'product-form'
-          -%}
-            <input
-              type="hidden"
-              name="id"
-              value="{{- variant.id -}}"
-              class="product-variant-id"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
-            >
-            <button
-              id="{{ product_form_id }}-submit"
-              type="submit"
-              name="add"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
-              aria-label="{{ 'products.product.add_to_cart' | t }}"
-              class="product-card__list-atc btn btn--primary w-full"
-            >
-              <span class="btn__text flex gap-1 items-center">
-                {%- if variant.available -%}
-                  {%- if use_short_text_for_atc_button -%}
-                    {{- 'products.product.add_to_cart_short' | t -}}
-                  {%- else -%}
-                    {{- 'products.product.add_to_cart' | t -}}
-                  {%- endif -%}
-                {%- else -%}
-                  {{- 'products.product.sold_out' | t -}}
-                {%- endif -%}
-              </span>
-              {% render 'loading-spinner' %}
-            </button>
-          {%- endform -%}
-        {%- endif -%}
-      {%- endif -%}
       <a href="{{- product_url -}}" class="btn btn--secondary">
         <span class="btn__text flex gap-1 items-center">{{- 'products.product.view_details' | t -}}</span>
       </a>
     </div>
+
+    {%- if enable_quick_add -%}
+    {%- liquid
+      assign product_form_id = 'quick-add-' | append: section.id | append: product.id
+      assign qty_rules = false
+      if variant.quantity_rule.min > 1 or variant.quantity_rule.max != null or variant.quantity_rule.increment > 1
+        assign qty_rules = true
+      endif
+    -%}
+    {%- if product.variants.size > 1 or qty_rules -%}
+      <div class="button-add-cart-custom">
+        <{{ atc_button_tag }}
+          {% if settings.pcard_choose_options_actions == 'product_page' %}
+            href="{{- product_url -}}"
+          {% else %}
+            aria-controls="{{ quick_view_modal_id }}"
+            aria-haspopup="dialog"
+          {% endif %}
+          class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
+        >
+          <div class="btn__text flex gap-1 items-center">
+              <span class="">
+              {%- if use_short_text_for_atc_button -%}
+                {{- 'products.product.choose_options_short' | t -}}
+              {%- else -%}
+                {{- 'products.product.choose_options' | t -}}
+              {%- endif -%}
+            </span>
+          </div>
+        </{{ atc_button_tag }}>
+      </div>
+    {%- else -%}
+      {%- form 'product',
+        product,
+        id: product_form_id,
+        class: 'button-add-cart-custom',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form',
+        is: 'product-form'
+      -%}
+        <input
+          type="hidden"
+          name="id"
+          value="{{- variant.id -}}"
+          class="product-variant-id"
+          {% if variant.available == false %}
+            disabled
+          {% endif %}
+        >
+        <button
+          id="{{ product_form_id }}-submit"
+          type="submit"
+          name="add"
+          {% if variant.available == false %}
+            disabled
+          {% endif %}
+          aria-label="{{ 'products.product.add_to_cart' | t }}"
+          class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
+        >
+          <div class="btn__text flex gap-1 items-center">
+            {% comment %} <span class="product-card__atc-icon product-card__action-icon inline-flex md:hidden">
+              {%- render 'icon-cart', name: settings.cart_icon -%}
+            </span> {% endcomment %}
+            <span class="product-card__atc-text product-card__action-text">
+              {%- if variant.available -%}
+                {%- if use_short_text_for_atc_button -%}
+                  {{- 'products.product.add_to_cart_short' | t -}}
+                {%- else -%}
+                  {{- 'products.product.add_to_cart' | t -}}
+                {%- endif -%}
+              {%- else -%}
+                {{- 'products.product.sold_out' | t -}}
+              {%- endif -%}
+            </span>
+          </div>
+          {% render 'loading-spinner' %}
+        </button>
+      {%- endform -%}
+    {%- endif -%}
+  {%- endif -%}
   </div>
   {%- if settings.pcard_choose_options_actions == 'open_popup' or enable_quick_view -%}
     {% render 'quick-view-modal', modal_id: quick_view_modal_id, product: product %}

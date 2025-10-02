@@ -178,7 +178,7 @@
                   {{ block.shopify_attributes }}
                   data-index="{{ forloop.index0 }}"
                 >
-                  {%- if card_product != blank -%}
+                  {%- if card_product != blank and card_product.vendor != "Chemist Warehouse"-%}
                     <product-bundle-variant-selector
                       class="products-bundle__product product-bundle-card block h-full"
                       data-product-handle="{{ card_product.handle }}"

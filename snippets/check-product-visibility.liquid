@@ -1,0 +1,31 @@
+{%- comment -%}
+  Check logic show/hide section for product page
+  Input:
+  - product: object (current product)
+  - product_list: array (from schema setting: product_list)
+  - template_product: string (templates separated by ||)
+  Output:
+  - "show" or "hide"
+{%- endcomment -%}
+
+{%- assign selected_products = product_list | map: 'id' -%}
+{%- assign selected_templates = template_product | strip_html | split: '||' -%}
+
+{%- assign product_match = false -%}
+{%- assign template_match = false -%}
+
+{%- if selected_products contains product.id -%}
+  {%- assign product_match = true -%}
+{%- endif -%}
+
+{%- if selected_templates contains product.template_suffix -%}
+  {%- assign template_match = true -%}
+{%- endif -%}
+
+{%- if template_match and product_match -%}
+  show
+{%- elsif template_match and product_match == false -%}
+  hide
+{%- else -%}
+  show
+{%- endif -%}

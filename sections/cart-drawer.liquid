@@ -14,7 +14,13 @@
   {%- if linklists['gift-wrapping'].links != blank and linklists['gift-wrapping'].links.first.type == 'product_link' -%}
     <script src="{{ 'gift-wrapping.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
-
+{% style %}
+@media (max-width: 678px) {
+  #CartDrawer .cart-drawer__addons .btn:not(.btn--plain,.btn--underline,.btn--link,.btn--inherit) .btn__text {
+    font-size: 12px;
+  }
+}
+{% endstyle %}
   <cart-drawer
     id="CartDrawer"
     class="drawer cart-drawer drawer--right"
@@ -519,14 +525,16 @@
           class="drawer__footer cart-drawer__footer grid gap-3{% if cart == empty %} hidden{% endif %}"
         >
           <div class="drawer__footer-head grid gap-4">
-            {%- render 'gift-wrapping',
-              section_id: section.id,
-              gift_wrapping: gift_wrapping,
-              gift_wrap_id: gift_wrap_id,
-              gift_wraps_in_cart: gift_wraps_in_cart,
-              items_in_cart: items_in_cart,
-              class: 'text-sm'
-            -%}
+            {% if section.settings.enable_gift_wrapping %}
+              {%- render 'gift-wrapping',
+                section_id: section.id,
+                gift_wrapping: gift_wrapping,
+                gift_wrap_id: gift_wrap_id,
+                gift_wraps_in_cart: gift_wraps_in_cart,
+                items_in_cart: items_in_cart,
+                class: 'text-sm'
+              -%}
+            {% endif %}
             {%- if section.settings.show_cart_note or section.settings.show_shipping_rates_calculator -%}
               <div class="flex gap-2 cart-drawer__addons">
                 {%- if section.settings.show_cart_note -%}
@@ -874,6 +882,12 @@
     {
       "type": "header",
       "content": "t:general.general.name"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gift_wrapping",
+      "label": "Show gift wrapping option",
+      "default": false
     },
     {
       "type": "checkbox",

@@ -94,7 +94,7 @@
   .quick-comparison-table tr[data-compare-key=info]:first-child td:before {
     top: 1.6rem;
   }
-  .quick-comparison-table .product-featured-image {
+  /* .quick-comparison-table .product-featured-image {
     margin-inline: 1.5rem;
-  }
+  } */
 }

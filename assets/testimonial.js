@@ -84,7 +84,7 @@ if (!customElements.get('testimonials-component')) {
         threshold: 2,
       };
 
-      if ( this.layout === 'focused' ) {
+      if (this.layout === 'focused') {
         slideToMethod = 'slideToLoop';
         this.settings = {
           centeredSlides: true,
@@ -110,13 +110,14 @@ if (!customElements.get('testimonials-component')) {
             },
           }
         };
-      } else {
+      }
+      else {
         additionModules.push(FoxTheme.Swiper.Mousewheel);
         this.settings = {
           mousewheel: {
             enabled: true,
             forceToAxis: true,
-            thresholdDelta: 10, 
+            thresholdDelta: 10,
             thresholdTime: 100
           }
         }
@@ -126,7 +127,7 @@ if (!customElements.get('testimonials-component')) {
         this.classList.add(this.classes.swiper);
         this.sliderWrapper.classList.remove(this.classes.grid);
         this.sliderWrapper.classList.add(this.classes.swiperWrapper);
-        this.sliderInstance = new window.FoxTheme.Carousel(this, {...this.defaultOptions,...this.settings}, additionModules);
+        this.sliderInstance = new window.FoxTheme.Carousel(this, { ...this.defaultOptions, ...this.settings }, additionModules);
         this.sliderInstance.init();
 
         const focusableElements = FoxTheme.a11y.getFocusableElements(this);
@@ -199,7 +200,7 @@ if (!customElements.get('testimonial-layered')) {
     set open(value) {
       if (value !== this._open) {
         this._open = value;
-  
+
         if (value) {
           this.setAttribute('open', '');
         } else {
@@ -207,7 +208,7 @@ if (!customElements.get('testimonial-layered')) {
         }
       }
     }
-  
+
     get open() {
       return this._open;
     }
@@ -255,9 +256,9 @@ if (!customElements.get('testimonial-layered')) {
     }
 
     toggleColor() {
-      const {colorScheme, contentColorScheme} = this.dataset;
+      const { colorScheme, contentColorScheme } = this.dataset;
       this.testimonialInner.classList.toggle(contentColorScheme, this.open);
-      this.testimonialInner.classList.toggle(colorScheme, !this.open );
+      this.testimonialInner.classList.toggle(colorScheme, !this.open);
     }
 
     toggleContentOverflow() {

@@ -5,8 +5,14 @@
   if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
     assign enable_swipe_mobile = true
   endif
+  assign visible_blocks = 0
+  for block in section.blocks
+    if block.settings.image != blank or block.settings.title != blank or block.settings.text != blank
+      assign visible_blocks = visible_blocks | plus: 1
+    endif
+  endfor
 
-  assign columns_desktop = section.settings.columns_desktop
+  assign columns_desktop = section.settings.columns_desktop | at_most: visible_blocks
   assign columns_tablet = columns_desktop
   if columns_desktop > 3
     assign columns_tablet = columns_desktop | divided_by: 2.0 | ceil
@@ -26,6 +32,10 @@
     --f-columns-mobile: {{ columns_mobile_int }};
     --f-columns-md: {{ columns_tablet }};
     --f-columns-lg: {{ columns_desktop }};
+  }
+  .section-{{ section.id }} .multicolumn__items {
+    width: {{ section.settings.content_width }}%;
+    margin: auto;
   }
 {% endstyle %}
 
@@ -47,71 +57,79 @@
     <div class="section__content block f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ section.settings.columns_mobile }}-cols{% endif %}">
       <div class="multicolumn__items f-grid{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
         {%- for block in section.blocks -%}
-          <div
-            class="f-column relative multicolumn-card multicolumn-card--layout-top multicolumn-card--image-full text-{{ section.settings.content_alignment }} color-scheme-inherit"
-            {{ block.shopify_attributes }}
-          >
-            {%- if section.settings.show_image -%}
-              {% assign alt = block.settings.image.alt | default: block.settings.title | escape %}
-              <div class="multicolumn-card__image hover-wrapper blocks-radius">
-                <motion-element
-                  class="block w-full h-full"
-                  data-motion="zoom-out-sm"
-                >
-                  <picture class="card-media__media media-wrapper{% if block.settings.image == blank %} bg-none{% endif %}" style="--aspect-ratio: {{ block.settings.image.aspect_ratio | default: 1 }};">
-                    {%- if block.settings.image != blank -%}
-                    {{
-                      block.settings.image
-                      | image_url: width: 1100
-                      | image_tag:
-                        loading: 'lazy',
-                        class: 'motion-reduce absolute hover-scale-up inset-0 w-full h-full',
-                        widths: '165, 360, 535, 750, 940, 1100',
-                        is: 'image-lazy',
-                        alt: alt
-                      }}
-                    {%- else -%}
-                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-                    {%- endif -%}
-                  </picture>
-                </motion-element>
-              </div>
-            {%- endif -%}
-            <div class="multicolumn-card__info rich-text rich-text--tight">
-              {%- if section.settings.show_col_count == true -%}
-                <div class="multicolumn-card__count rich-text__subheading f-grid items-center gap-x-3 h6">
-                  {{ forloop.index | append: '.' }}
+          {%- if block.settings.image != blank
+            or block.settings.title != blank
+            or block.settings.text != blank
+          -%}
+            <div
+              class="f-column relative multicolumn-card multicolumn-card--layout-top multicolumn-card--image-full text-{{ section.settings.content_alignment }} color-scheme-inherit"
+              {{ block.shopify_attributes }}
+            >
+              {%- if section.settings.show_image -%}
+                {% assign alt = block.settings.image.alt | default: block.settings.title | escape %}
+                <div class="multicolumn-card__image hover-wrapper blocks-radius">
+                  <motion-element
+                    class="block w-full h-full"
+                    data-motion="zoom-out-sm"
+                  >
+                    <picture
+                      class="card-media__media media-wrapper{% if block.settings.image == blank %} bg-none{% endif %}"
+                      style="--aspect-ratio: {{ block.settings.image.aspect_ratio | default: 1 }};"
+                    >
+                      {%- if block.settings.image != blank -%}
+                        {{
+                          block.settings.image
+                          | image_url: width: 1100
+                          | image_tag:
+                            loading: 'lazy',
+                            class: 'motion-reduce absolute hover-scale-up inset-0 w-full h-full',
+                            widths: '165, 360, 535, 750, 940, 1100',
+                            is: 'image-lazy',
+                            alt: alt
+                        }}
+                      {%- else -%}
+                        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                      {%- endif -%}
+                    </picture>
+                  </motion-element>
                 </div>
               {%- endif -%}
+              <div class="multicolumn-card__info rich-text rich-text--tight">
+                {%- if section.settings.show_col_count == true -%}
+                  <div class="multicolumn-card__count rich-text__subheading f-grid items-center gap-x-3 h6">
+                    {{ forloop.index | append: '.' }}
+                  </div>
+                {%- endif -%}
 
-              {%- if block.settings.title != blank -%}
-                <h3 class="multicolumn-card__title rich-text__heading {{ block.settings.heading_size }}">
-                  {% render 'highlight-text',
-                    hl_text: block.settings.title,
-                    hl_style: block.settings.highlight_style,
-                    hl_font_style: block.settings.highlight_font_style,
-                    hl_style_color: block.settings.highlight_style_color,
-                    hl_text_color: block.settings.highlight_text_color
+                {%- if block.settings.title != blank -%}
+                  <h3 class="multicolumn-card__title rich-text__heading {{ block.settings.heading_size }}">
+                    {% render 'highlight-text',
+                      hl_text: block.settings.title,
+                      hl_style: block.settings.highlight_style,
+                      hl_font_style: block.settings.highlight_font_style,
+                      hl_style_color: block.settings.highlight_style_color,
+                      hl_text_color: block.settings.highlight_text_color
+                    %}
+                  </h3>
+                {%- endif -%}
+
+                {%- if block.settings.text != blank -%}
+                  <div class="multicolumn-card__text rich-text__text rte {{ block.settings.text_size }} text-subtext">
+                    {{ block.settings.text }}
+                  </div>
+                {%- endif -%}
+
+                {%- if block.settings.button_label != blank -%}
+                  {% render 'button',
+                    button_style: block.settings.button_style,
+                    button_link: block.settings.button_link,
+                    button_label: block.settings.button_label,
+                    button_icon: block.settings.button_icon
                   %}
-                </h3>
-              {%- endif -%}
-
-              {%- if block.settings.text != blank -%}
-                <div class="multicolumn-card__text rich-text__text rte {{ block.settings.text_size }} text-subtext">
-                  {{ block.settings.text }}
-                </div>
-              {%- endif -%}
-
-              {%- if block.settings.button_label != blank -%}
-                {% render 'button',
-                  button_style: block.settings.button_style,
-                  button_link: block.settings.button_link,
-                  button_label: block.settings.button_label,
-                  button_icon: block.settings.button_icon
-                %}
-              {%- endif -%}
+                {%- endif -%}
+              </div>
             </div>
-          </div>
+          {%- endif -%}
         {%- endfor -%}
       </div>
     </div>
@@ -151,6 +169,20 @@
       "id": "color_scheme",
       "label": "t:general.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Content width"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Content width",
+      "default": 100
     },
     {
       "type": "header",

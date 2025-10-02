@@ -102,6 +102,13 @@
     gap: 0 var(--tab-spacing-mobile);
     padding-inline: 1.5rem;
   }
+  .tabs__nav-js button .tabs__tab-name,
+  .tabs__nav-js button .btn__text {
+    font-size: calc(var(--navigation-font-size) * 0.6);
+  }
+  .section-tabs-content {
+    padding: 2rem;
+  }
 }
 @media (min-width: 768px) {
   .help-sidebar__wrapper > .tabs {

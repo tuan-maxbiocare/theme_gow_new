@@ -59,7 +59,7 @@
   style="--media-item-gap: {{ media_item_gap }}px; --media-item-gap-mobile: {{ media_item_gap_mobile }}px"
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
-  <div class="product__media-gallery-viewer-wrap relative{{ slider_css_class }}">
+  <div class="product__media-gallery-viewer-wrap bg-white relative{{ slider_css_class }} {% if section.settings.show_image_border %}blocks-radius{% endif %}">
     <div
       id="GalleryViewer-{{ section.id }}"
       class="product__media-gallery-viewer blocks-radius swiper"
@@ -178,3 +178,107 @@
     </div>
   {%- endif -%}
 </media-gallery>
+{% comment %} lương thêm js và css cho chức năng hover  {% endcomment %}
+{% comment %} <script>
+if (!customElements.get('media-gallery')) {
+  customElements.define('media-gallery', class MediaGallery extends HTMLElement {
+    constructor() {
+      super();
+      this.init();
+    }
+ 
+    init() {
+      // Get elements
+      this.thumbnails = this.querySelectorAll('.product__thumbs-item');
+      this.mainImages = this.querySelectorAll('.product__media-item');
+      this.prevButton = this.querySelector('.swiper-button-prev');
+      this.nextButton = this.querySelector('.swiper-button-next');
+ 
+      // Current slide index
+      this.currentIndex = 0;
+ 
+      // Add hover event listeners
+      this.thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('mouseenter', this.handleThumbnailHover.bind(this));
+      });
+ 
+      // Add navigation listeners
+      if (this.prevButton && this.nextButton) {
+        this.prevButton.addEventListener('click', () => this.navigate('prev'));
+        this.nextButton.addEventListener('click', () => this.navigate('next'));
+      }
+ 
+      // Set first image as active by default
+      this.setActiveSlide(0);
+    }
+ 
+    handleThumbnailHover(event) {
+      const thumbnail = event.currentTarget;
+      const index = Array.from(this.thumbnails).indexOf(thumbnail);
+      this.setActiveSlide(index);
+    }
+ 
+    navigate(direction) {
+      const totalSlides = this.mainImages.length;
+      if (direction === 'prev') {
+        this.currentIndex = (this.currentIndex - 1 + totalSlides) % totalSlides;
+      } else {
+        this.currentIndex = (this.currentIndex + 1) % totalSlides;
+      }
+      this.setActiveSlide(this.currentIndex);
+    }
+ 
+    setActiveSlide(index) {
+      this.currentIndex = index;
+ 
+      // Remove active class from all elements
+      this.thumbnails.forEach(thumb => thumb.classList.remove('active'));
+      this.mainImages.forEach(image => image.classList.remove('active'));
+ 
+      // Add active class to current elements
+      this.thumbnails[index]?.classList.add('active');
+      this.mainImages[index]?.classList.add('active');
+ 
+      // Update swiper slide position if needed
+      const swiperWrapper = this.querySelector('.swiper-wrapper');
+      if (swiperWrapper) {
+        const slideWidth = this.mainImages[0]?.offsetWidth || 0;
+        swiperWrapper.style.transform = `translateX(-${slideWidth * index}px)`;
+      }
+    }
+  });
+}
+</script>
+ 
+<style>
+.product__media-item {
+  display: none;
+  opacity: 0;
+}
+ 
+.product__media-item.active {
+  display: block;
+  opacity: 1;
+}
+{% comment %}  
+.product__thumbs-item {
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+ 
+.product__thumbs-item.active,
+.product__thumbs-item:hover {
+  border-color: var(--color-primary, #000);
+}
+ 
+.swiper-button-prev,
+.swiper-button-next {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+ 
+.swiper-wrapper {
+  transition: transform 0.3s ease-in-out;
+} {% endcomment %}
+</style> {% endcomment %}

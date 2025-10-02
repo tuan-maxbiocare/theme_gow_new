@@ -20,6 +20,29 @@
         <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
           {%- render 'product-collapsible-tab', block: block, section_id: section.id -%}
         </div>
+      {%- when 'related_products' -%}
+        <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
+          <div
+            class="GOW-new-related-product"
+            style="
+              border: 1px solid #e5e7eb;
+              background: #ffffff;
+              border-radius: 12px;
+              padding: 2.5rem 2.5rem;
+            "
+          >
+            <product-recommendations
+              class="related-products"
+              data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ block.settings.limit }}"
+            >
+              {%- render 'related-products-custom',
+                section: block,
+                section_id: section.id,
+                recommendations: recommendations
+              -%}
+            </product-recommendations>
+          </div>
+        </div>
       {%- when 'complementary' -%}
         <div
           class="{{ block_classes }} product__block--{{ block.type }}-{% if block.settings.make_collapsible_row %}collapsible{% else %}inline{% endif %}{% if block.settings.block_heading != blank %} has-heading{% endif %}"

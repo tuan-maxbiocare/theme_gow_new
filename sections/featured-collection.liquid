@@ -130,6 +130,7 @@ calc(100vw / {{ columns_desktop }})
                 class="tabs-nav__inner flex flex-wrap md:justify-{{ header_alignment | replace: 'left','end' | replace: 'right','start' }} swipe-mobile__inner"
                 role="tablist"
               >
+                
                 {%- for block in section.blocks -%}
                   {%- liquid
                     assign collection = block.settings.collection
@@ -253,25 +254,27 @@ calc(100vw / {{ columns_desktop }})
                   </div>
                 {% endif %}
                 {%- for product in collection.products limit: products_to_display -%}
-                  <div class="f-column{% if enable_slider %} swiper-slide{% endif %}">
-                    {%- render 'card-product',
-                      product: product,
-                      parent_color_scheme: section.settings.color_scheme,
-                      image_sizes: image_sizes,
-                      image_ratio: section.settings.pcard_image_ratio,
-                      section_index: section.index,
-                      index: forloop.index
-                    -%}
-                  </div>
-                {%- else -%}
-                  {%- for i in (1..products_to_display) -%}
+                  {% unless product.vendor == 'Chemist Warehouse' or product.title contains 'CW -' %}
                     <div class="f-column{% if enable_slider %} swiper-slide{% endif %}">
-                      {% render 'card-product-placeholder',
+                      {%- render 'card-product',
+                        product: product,
+                        parent_color_scheme: section.settings.color_scheme,
+                        image_sizes: image_sizes,
                         image_ratio: section.settings.pcard_image_ratio,
-                        parent_color_scheme: section.settings.color_scheme
-                      %}
+                        section_index: section.index,
+                        index: forloop.index
+                      -%}
                     </div>
-                  {%- endfor -%}
+                  {%- else -%}
+                    {%- for i in (1..products_to_display) -%}
+                      <div class="f-column{% if enable_slider %} swiper-slide{% endif %}">
+                        {% render 'card-product-placeholder',
+                          image_ratio: section.settings.pcard_image_ratio,
+                          parent_color_scheme: section.settings.color_scheme
+                        %}
+                      </div>
+                    {%- endfor -%}
+                  {% endunless %}
                 {%- endfor -%}
               </div>
             </featured-collection>

@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{ 'section-sticky-atc-bar-minimalist.css' | asset_url }}">
     <script src="{{ 'sticky-atc-bar-minimalist.js' | asset_url }}" defer="defer"></script>
     <sticky-atc-bar-minimalist
-      class="sticky-atc-bar blocks-radius items-center justify-between gap-2{{ wrap_class }}"
+      class="sticky-atc-bar blocks-radius items-center justify-between gap-2{{ wrap_class }} color-{{ section.settings.color_scheme }}"
       data-product-id="{{ product.id }}"
       data-section="{{ section.id }}"
     >
@@ -78,7 +78,7 @@
     -%}
     <link rel="stylesheet" href="{{ 'section-sticky-atc-bar.css' | asset_url }}">
     <script src="{{ 'sticky-atc-bar.js' | asset_url }}" defer="defer"></script>
-    <div class="sticky-atc-bar{{ wrap_class }}{% if show_dynamic_checkout_buttons %} sticky-atc-bar--with-dynamic-buttons{% endif %} page-width page-width--{{ block.settings.container }}">
+    <div class="sticky-atc-bar{{ wrap_class }}{% if show_dynamic_checkout_buttons %} sticky-atc-bar--with-dynamic-buttons{% endif %} page-width page-width--{{ block.settings.container }} color-{{ section.settings.color_scheme }}">
       <sticky-atc-bar
         class="sticky-atc-bar__inner flex items-center justify-between"
         data-product-id="{{ product.id }}"

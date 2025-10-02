@@ -1,0 +1,243 @@
+{{ 'component-testimonial.css' | asset_url | stylesheet_tag }}
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'testimonial-new.js' | asset_url }}" defer="defer"></script>
+
+{% liquid
+  assign columns_mobile_int = section.settings.columns_mobile_testimonial | plus: 0
+  assign enable_swipe_mobile = false
+  if section.settings.swipe_on_mobile_testimonial and section.blocks.size > columns_mobile_int
+    assign enable_swipe_mobile = true
+  endif
+
+  assign columns_desktop = section.settings.columns_desktop
+  assign columns_latop = columns_desktop
+  assign columns_tablet = 2
+  if columns_desktop > 3
+    assign columns_latop = columns_desktop | divided_by: 2.0 | ceil
+  endif
+
+  if section.blocks.size < 2
+    assign columns_desktop = 1
+    assign columns_latop = 1
+    assign columns_tablet = 1
+  endif
+
+  assign enable_slider = section.settings.enable_slider_testimonial
+
+  assign has_richtext = false
+  if section.settings.heading_testimonial != blank or section.settings.description_testimonial != blank or section.settings.subheading_testimonial != blank
+    assign has_richtext = true
+  endif
+
+  assign header_empty = true
+  if has_richtext or enable_slider
+    assign header_empty = false
+  endif
+
+  assign header_alignment = section.settings.section_header_alignment_testimonial
+  assign header_alignment_mobile = section.settings.section_header_alignment_mobile_testimonial
+  if header_alignment_mobile == 'inherit'
+    assign header_alignment_mobile = header_alignment
+  endif
+
+  assign layout = section.settings.layout
+
+  assign card_has_bg = false
+  if section.settings.color_scheme != section.settings.card_color_scheme
+    assign card_has_bg = true
+  endif
+
+  assign motion_delay = 50
+
+  assign is_control_on_header = true
+  if layout == 'focused'
+    assign is_control_on_header = false
+  endif
+%}
+
+{% style %}
+  .section-{{ section.id }} {
+    --section-padding-top: {{ section.settings.padding_top_testimonial }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom_testimonial }}px;
+    --f-columns-mobile: {{ columns_mobile_int }};
+    --f-columns-md: {{ columns_tablet }};
+    --f-columns-xl: {{ columns_desktop }};
+  }
+  @media (min-width: 768px) {
+    .section-{{ section.id }}.testimonials--layout-focused .page-width--full {
+      --page-padding: 0;
+    }
+  }
+{% endstyle %}
+
+{% render 'divider',
+  show_divider: section.settings.show_section_divider_testimonial,
+  divider_width: section.settings.divider_width_testimonial
+%}
+
+<div class="section section-{{ section.id }} section--padding testimonials testimonials--layout-{{ layout }}{% if enable_slider %} testimonials--slider{% endif %} color-{{ section.settings.color_scheme }}">
+  <div class="section__container">
+    {%- unless header_empty -%}
+      <div class="section__header s__header rich-text rich-text--tight md:text-{{ header_alignment }} text-{{ header_alignment_mobile }} flex flex-col items-{{ header_alignment_mobile | replace: 'left', 'start' | replace: 'right', 'end' }} md:items-center{% unless header_alignment == 'center' %} md:flex-row{{ header_alignment | replace: 'left','' | replace: 'right','-reverse' }} gap-x-4{% endunless %}">
+        {% if has_richtext %}
+          <div class="section__header--text s__header--text rich-text rich-text--tight flex-1">
+            {% if section.settings.subheading_testimonial != blank %}
+              <motion-element
+                class="section__subheading text-subheading rich-text__subheading block"
+                data-motion="fade-up"
+                data-motion-delay="{{ motion_delay }}"
+              >
+                {{- section.settings.subheading_testimonial -}}
+              </motion-element>
+              {%- assign motion_delay = motion_delay | plus: 50 -%}
+            {% endif %}
+            {% if section.settings.heading_testimonial != blank %}
+              <h2 class="rich-text__heading inline-richtext {{ section.settings.heading_size_testimonial }}">
+                <motion-element data-motion="fade-up" data-motion-delay="{{ motion_delay }}" class="block">
+                  {% render 'highlight-text',
+                    hl_text: section.settings.heading_testimonial,
+                    hl_style: section.settings.highlight_style_testimonial,
+                    hl_font_style: section.settings.highlight_font_style_testimonial,
+                    hl_style_color: section.settings.highlight_style_color_testimonial,
+                    hl_text_color: section.settings.highlight_text_color_testimonial
+                  %}
+                </motion-element>
+              </h2>
+              {%- assign motion_delay = motion_delay | plus: 50 -%}
+            {% endif %}
+            {% if section.settings.description_testimonial != blank %}
+              <motion-element
+                data-motion="fade-up"
+                data-motion-delay="{{ motion_delay }}"
+                class="block rich-text__text rte {{ section.settings.text_size_testimonial }} text-subtext"
+              >
+                {{- section.settings.description_testimonial -}}
+              </motion-element>
+              {%- assign motion_delay = motion_delay | plus: 50 -%}
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% if enable_slider and is_control_on_header %}
+          <motion-element
+            data-motion="fade-up"
+            data-motion-delay="{{ motion_delay }}"
+            class="swiper-controls swiper-controls--grouped{% if enable_swipe_mobile %} hidden md:inline-flex{% endif %}{% unless header_alignment == 'center' %} !md:mt-0{% endunless %}"
+          >
+            <button
+              type="button"
+              class="swiper-button swiper-button-prev btn"
+              name="previous"
+              aria-label="{{ 'general.slider.previous_slide' | t }}"
+            >
+              <span class="btn__text"> {% render 'icon-caret-left' %}</span>
+            </button>
+            <button
+              type="button"
+              class="swiper-button swiper-button-next btn"
+              name="next"
+              aria-label="{{ 'general.slider.next_slide' | t }}"
+            >
+              <span class="btn__text"> {% render 'icon-caret-right' %}</span>
+            </button>
+          </motion-element>
+        {% endif %}
+      </div>
+    {%- endunless -%}
+    <div class="section__content relative{% if enable_slider and layout == 'focused' %} swiper-show-nav-on-hover{% endif %}">
+      <testimonials-component
+        class="testimonials__wrapper block{% if enable_slider %} swiper{% endif %}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ section.settings.columns_mobile_testimonial }}-cols{% endif %}"
+        data-section-id="{{ section.id }}"
+        data-layout="{{ layout }}"
+        data-swipe-mobile="{{ enable_swipe_mobile }}"
+        {% if enable_slider %}
+          data-enable-slider="true"
+          data-items="{{ columns_desktop }}"
+          data-laptop-items="{{ columns_latop }}"
+          data-tablet-items="{{ columns_tablet }}"
+          data-pagination-type="fraction"
+        {% endif %}
+        id="testimonials-{{ section.id }}"
+      >
+        <div class="testimonials__items f-grid f-grid--gap-{{ section.settings.column_gap_testimonial }} f-grid--row-gap-{{ section.settings.row_gap_testimonial }}{% if enable_slider %} swiper-wrapper{% endif %}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
+          {%- for i in (1..6) -%}
+            {%- assign current_index = i -%}
+            {%- assign text_field = 'text_' | append: current_index -%}
+            {%- assign author_field = 'author_' | append: current_index -%}
+
+            {%- if block.settings[text_field] != blank or block.settings[author_field] != blank -%}
+              <div
+                class="f-column{% if enable_slider %} swiper-slide{% endif %}"
+                {{ block.shopify_attributes }}
+                data-index="{{ forloop.index0 }}"
+              >
+                {% case layout %}
+                  {% when 'focused' %}
+                    {% render 'testimonial-1-new',
+                      card_text_size: section.settings.card_text_size,
+                      block: block,
+                      section: section,
+                      color_scheme: section.settings.card_color_scheme,
+                      has_bg: card_has_bg,
+                      image_ratio: section.settings.card_image_ratio,
+                      index: current_index
+                    %}
+                  {% when 'card' %}
+                    {% render 'testimonial-3-new',
+                      block: block,
+                      section_color_scheme: section.settings.color_scheme,
+                      card_text_size: section.settings.card_text_size,
+                      card_trigger_behavior: section.settings.card_trigger_behavior,
+                      color_scheme: section.settings.card_color_scheme,
+                      content_color_scheme: section.settings.card_content_color_scheme,
+                      heading_size: section.settings.card_heading_size,
+                      image_ratio: section.settings.card_image_ratio,
+                      index: current_index
+                    %}
+                  {% else %}
+                    {% render 'testimonial-2-new',
+                      card_text_size: section.settings.card_text_size,
+                      block: block,
+                      section: section,
+                      color_scheme: section.settings.card_color_scheme,
+                      has_bg: card_has_bg,
+                      image_ratio: section.settings.card_image_ratio,
+                      index: current_index
+                    %}
+                {% endcase %}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </testimonials-component>
+      {%- if enable_slider and layout == 'focused' -%}
+        <div class="swiper-controls swiper-controls--nav-floating swiper-controls--grouped-mobile swiper-controls--pagination-bullets justify-center bg-none color-{{ section.settings.color_scheme }}{% if enable_swipe_mobile %} hidden md:inline-flex{% endif %}">
+          <button
+            type="button"
+            class="swiper-button swiper-button--blank-mobile swiper-button-prev btn"
+            name="previous"
+            aria-label="{{ 'general.slider.previous_slide' | t }}"
+          >
+            <span class="btn__text"> {% render 'icon-caret-left' %}</span>
+          </button>
+          <div class="swiper-pagination swiper-pagination-bullets-animate flex md:hidden"></div>
+          <button
+            type="button"
+            class="swiper-button swiper-button--blank-mobile swiper-button-next btn shrink-0"
+            name="next"
+            aria-label="{{ 'general.slider.next_slide' | t }}"
+          >
+            <span class="btn__text"> {% render 'icon-caret-right' %}</span>
+          </button>
+        </div>
+      {%- endif -%}
+      {% if enable_swipe_mobile and layout != 'card' and section.settings.show_progress_bar %}
+        <scroll-progress-bar class="md:hidden" target="testimonials-{{ section.id }}">
+          <div class="progress-container">
+            <div class="progress-bar no-empty"></div>
+          </div>
+        </scroll-progress-bar>
+      {% endif %}
+    </div>
+  </div>
+</div>

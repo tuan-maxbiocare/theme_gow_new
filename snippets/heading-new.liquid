@@ -1,0 +1,98 @@
+{% comment %}
+  Renders a section heading
+
+  Accepts:
+  - heading: {String} Main heading text
+  - heading_size: {String} Heading size (h1, h2, h3...)
+  - subheading: {String} Subheading text
+  - subheading_size: {String} Subheading size
+  - description: {String} Description text
+  - description_size: {String} Tailwind text class
+  - text_color: {String} Color class for description
+  - highlight_style: {String} Highlight style for heading
+  - highlight_font_style: {String} Highlight font style
+  - highlight_style_color: {String} Highlight style color
+  - highlight_text_color: {String} Highlight text color
+  - header_alignment: {String} Alignment desktop
+  - header_alignment_mobile: {String} Alignment mobile
+  - header_layout: {String} Header layout (vertical/horizontal)
+  - spacing: {String} Spacing bottom
+  - button_visible: {Boolean} Show button
+  - button_hide_on_mobile: {Boolean} Hide button on mobile
+  - button_label: {String} Button label
+  - button_link: {String} Button link
+  - button_style: {String} Button style
+  - button_icon: {String} Button icon
+  - custom_css_class: {String} Custom class
+{% endcomment %}
+
+{%- if heading != blank or subheading != blank or description != blank -%}
+  {%- liquid
+    assign header_alignment = header_alignment | default: 'center'
+    assign header_alignment_mobile = header_alignment_mobile | default: header_alignment
+    assign description_size = description_size | default: 'text-base'
+    assign text_color = text_color | default: 'text-subtext'
+    assign header_layout = header_layout | default: 'vertical'
+    assign header_class = 'section__header--' | append: header_layout
+    assign custom_css_class = custom_css_class | prepend: ' ' | default: ''
+    assign side_button = side_button | default: true
+    assign motion_delay = motion_delay | default: 50
+  -%}
+
+  <div class="section__header s__header {{ header_class }} spacing--{{ spacing | default: 'normal' }} rich-text rich-text--tight md:text-{{ header_alignment }} text-{{ header_alignment_mobile }}{% if side_button %} flex{% else %} block{% endif %} flex-col items-{{ header_alignment_mobile | replace: 'left', 'start' | replace: 'right', 'end' }} md:items-center{% unless header_alignment == 'center' %} md:flex-row{{ header_alignment | replace: 'left','' | replace: 'right','-reverse' }} gap-x-4{% endunless %}{{ custom_css_class }}">
+    
+    <div class="section__header--text s__header--text rich-text rich-text--tight flex-1">
+      {%- if subheading != blank -%}
+        <motion-element
+          class="section__subheading text-subheading rich-text__subheading block{% if subheading_size %} {{ subheading_size }}{% endif %}"
+          data-motion="fade-up"
+          data-motion-delay="{{ motion_delay }}"
+        >
+          {{ subheading }}
+        </motion-element>
+        {%- assign motion_delay = motion_delay | plus: 50 -%}
+      {%- endif -%}
+
+      {%- if heading != blank -%}
+        <h2 class="section__heading rich-text__heading{% if heading_size %} {{ heading_size }}{% endif %}">
+          <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
+            {% render 'highlight-text',
+              hl_text: heading,
+              hl_style: highlight_style,
+              hl_font_style: highlight_font_style,
+              hl_style_color: highlight_style_color,
+              hl_text_color: highlight_text_color
+            %}
+          </motion-element>
+        </h2>
+        {%- assign motion_delay = motion_delay | plus: 50 -%}
+      {%- endif -%}
+
+      {%- if description != blank -%}
+        <motion-element
+          class="section__description rich-text__text block rte {{ description_size }} {{ text_color }}"
+          data-motion="fade-up"
+          data-motion-delay="{{ motion_delay }}"
+        >
+          {{ description }}
+        </motion-element>
+        {%- assign motion_delay = motion_delay | plus: 50 -%}
+      {%- endif -%}
+    </div>
+
+    {%- if button_visible and button_label != blank -%}
+      <motion-element
+        class="section__header--buttons s__header--buttons rich-text__button{% if button_hide_on_mobile %} hidden md:block{% else %} block{% endif %}{% if header_alignment != 'center' and side_button %} !md:mt-0{% endif %}"
+        data-motion="fade-up"
+        data-motion-delay="{{ motion_delay }}"
+      >
+        {% render 'button',
+          button_style: button_style,
+          button_link: button_link,
+          button_label: button_label,
+          button_icon: button_icon
+        %}
+      </motion-element>
+    {%- endif -%}
+  </div>
+{%- endif -%}

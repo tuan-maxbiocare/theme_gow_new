@@ -1,0 +1,69 @@
+{% liquid
+  if image_ratio == blank or image_ratio == 'adapt'
+    assign image_ratio = '1/1'
+  endif
+
+  assign pcard_color_scheme = pcard_color_scheme | default: settings.pcard_color_scheme
+
+  assign current = current | default: 1
+  if horizontal_layout
+    assign custom_class = custom_class | append: ' product-card--horizontal color-' | append: pcard_color_scheme
+  endif
+
+  if pcard_style == null
+    assign pcard_style = settings.pcard_style
+  endif
+
+  assign color_scheme_first = settings.color_schemes | first
+  assign parent_color_scheme = parent_color_scheme | default: color_scheme_first
+
+  if color_inherit == null
+    assign parent_background = parent_color_scheme.settings.background | downcase
+    assign card_background = settings.pcard_color_scheme.settings.background | downcase
+    assign color_inherit = false
+    if parent_background == card_background
+      assign color_inherit = true
+    endif
+  endif
+
+  if pcard_style == 'boxed'
+    assign color_inherit = false
+  endif
+  assign featured_media = product.featured_media
+%}
+<style>
+  .card-product-placeholder-custom .f-price-item--regular-compare-at-price {
+    font-size: 13px !important;
+  }
+</style>
+<a href="{{ product.url }}">
+  <div class="product-card product-card-style-{{ pcard_style }}{% if pcard_style == 'card' %} color-{{ pcard_color_scheme }}{% endif %} {{ custom_class }}{% if color_inherit %} color-inherit{% endif %} card-product-placeholder-custom">
+    <div class="product-card__wrapper{% if horizontal_layout %} flex items-center gap-x-3{% endif %}">
+      <div
+        class="product-card__image-wrapper"
+        style="--aspect-ratio: {{ image_ratio }}; background-color: {{  settings.pcard_image_bg }}"
+      >
+      {% if featured_media %}
+        {{
+          featured_media
+          | image_url: width: featured_media.width
+          | image_tag:
+            loading: loading,
+            fetchpriority: fetchpriority,
+            class: 'motion-reduce',
+            widths: first_image_widths,
+            sizes: image_sizes,
+            is: 'image-lazy',
+            style: image_style
+        }}
+      {% endif %}
+      </div>
+      <div class="product-card__info{% if horizontal_layout %} flex-1 text-left{% endif %}">
+        <h3 style="display: -webkit-box; font-size: 16px" class="product-card__title text-pcard-title">
+          {{ product.title }}
+        </h3>
+        {% render 'price', product: product, price_size_section: 18 %}
+      </div>
+    </div>
+  </div>
+</a>

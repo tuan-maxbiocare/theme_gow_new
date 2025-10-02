@@ -1,0 +1,157 @@
+{{ 'component-multicolumn-card.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
+  assign enable_swipe_mobile = false
+  if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
+    assign enable_swipe_mobile = true
+  endif
+
+  assign columns_desktop = section.settings.columns_desktop
+  assign columns_tablet = columns_desktop
+  if columns_desktop > 3
+    assign columns_tablet = columns_desktop | divided_by: 2.0 | ceil
+  endif
+
+  assign header_alignment = section.settings.section_header_alignment
+  assign header_alignment_mobile = section.settings.section_header_alignment_mobile
+  if header_alignment_mobile == 'inherit'
+    assign header_alignment_mobile = header_alignment
+  endif
+-%}
+
+{% style %}
+  .section-{{ section.id }} {
+    --f-columns-mobile: {{ columns_mobile_int }};
+    --f-columns-md: {{ columns_tablet }};
+    --f-columns-lg: {{ columns_desktop }};
+  }
+  .section-{{ section.id }} .multicolumn-card__image{
+    max-width: var(--max-width);
+  }
+  @media (max-width: 767.98px) {
+  .section-{{ section.id }} .multicolumn-card__image {
+    max-width: 100px; 
+  }
+{% endstyle %}
+
+{% comment %} {% render 'divider',
+  show_divider: section.settings.show_section_divider,
+  divider_width: section.settings.divider_width
+%} {% endcomment %}
+<div class="section section-{{ section.id }} multicolumn color-{{ section.settings.color_scheme }}">
+  <div class="section__container">
+    {% render 'section-heading',
+      section_settings: section.settings,
+      button_label: section.settings.button_label,
+      button_link: section.settings.button_link,
+      button_style: section.settings.button_style,
+      button_icon: section.settings.button_icon,
+      button_visible: true
+    %}
+    <div class="section__content block f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ section.settings.columns_mobile }}-cols{% endif %}">
+      <div class="multicolumn__items f-grid{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
+        {%- for i in (1..section.settings.columns_desktop) -%}
+          {% capture image_key %}image_{{ i }}{% endcapture %}
+          {% capture title_key %}title_{{ i }}{% endcapture %}
+          {% capture text_key %}text_{{ i }}{% endcapture %}
+          {% capture button_key %}button_label_{{ i }}{% endcapture %}
+          {% capture highlight_style_key %}highlight_style_{{ i }}{% endcapture %}
+          {% capture highlight_font_style_key %}highlight_font_style_{{ i }}{% endcapture %}
+          {% capture highlight_style_color_key %}highlight_style_color_{{ i }}{% endcapture %}
+          {% capture highlight_text_color_key %}highlight_text_color_{{ i }}{% endcapture %}
+          {% capture heading_size_key %}heading_size_{{ i }}{% endcapture %}
+          {% capture text_size_key %}text_size_{{ i }}{% endcapture %}
+          {% capture button_style_key %}button_style_{{ i }}{% endcapture %}
+          {% capture button_link_key %}button_link_{{ i }}{% endcapture %}
+          {% capture button_icon_key %}button_icon_{{ i }}{% endcapture %}
+
+          {% assign current_image = block.settings[image_key] %}
+          {% assign current_title = block.settings[title_key] %}
+          {% assign current_text = block.settings[text_key] %}
+          {% assign current_button = block.settings[button_key] %}
+          {% assign current_highlight_style = block.settings[highlight_style_key] %}
+          {% assign current_highlight_font_style = block.settings[highlight_font_style_key] %}
+          {% assign current_highlight_style_color = block.settings[highlight_style_color_key] %}
+          {% assign current_highlight_text_color = block.settings[highlight_text_color_key] %}
+          {% assign current_heading_size = block.settings[heading_size_key] %}
+          {% assign current_text_size = block.settings[text_size_key] %}
+          {% assign current_button_style = block.settings[button_style_key] %}
+          {% assign current_button_link = block.settings[button_link_key] %}
+          {% assign current_button_icon = block.settings[button_icon_key] %}
+
+          <div
+            class="f-column relative multicolumn-card multicolumn-card--layout-top multicolumn-card--image-full text-{{ section.settings.content_alignment }} color-scheme-inherit"
+            {{ block.shopify_attributes }}
+          >
+            {%- if section.settings.show_image -%}
+              {% assign alt = block.settings.image.alt | default: block.settings.title | escape %}
+              <div
+                class="multicolumn-card__image hover-wrapper blocks-radius"
+                style="--max-width: {{ block.settings.image_max_width }}px;"
+              >
+                <motion-element
+                  class="block w-full h-full"
+                  data-motion="zoom-out-sm"
+                >
+                  <picture
+                    class="card-media__media media-wrapper{% if block.settings.image == blank %} bg-none{% endif %}"
+                    style="--aspect-ratio: {{ block.settings.image.aspect_ratio | default: 1 }};"
+                  >
+                    {%- if current_image != blank -%}
+                      {{
+                        current_image
+                        | image_url: width: 1100
+                        | image_tag:
+                          loading: 'lazy',
+                          class: 'motion-reduce absolute hover-scale-up inset-0 w-full h-full',
+                          widths: '165, 360, 535, 750, 940, 1100',
+                          is: 'image-lazy',
+                          alt: alt
+                      }}
+                    {%- else -%}
+                      {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                    {%- endif -%}
+                  </picture>
+                </motion-element>
+              </div>
+            {%- endif -%}
+            <div class="multicolumn-card__info rich-text rich-text--tight">
+              {%- if section.settings.show_col_count == true -%}
+                <div class="multicolumn-card__count rich-text__subheading f-grid items-center gap-x-3 h6">
+                  {{ forloop.index | append: '.' }}
+                </div>
+              {%- endif -%}
+
+              {%- if current_title != blank -%}
+                <h3 class="multicolumn-card__title rich-text__heading {{ current_heading_size }}">
+                  {% render 'highlight-text',
+                    hl_text: current_title,
+                    hl_style: current_highlight_style,
+                    hl_font_style: current_highlight_font_style,
+                    hl_style_color: current_highlight_style_color,
+                    hl_text_color: current_highlight_text_color
+                  %}
+                </h3>
+              {%- endif -%}
+
+              {%- if current_text != blank -%}
+                <div class="multicolumn-card__text rich-text__text rte {{ current_text_size }} text-subtext">
+                  {{ current_text }}
+                </div>
+              {%- endif -%}
+
+              {%- if current_button != blank -%}
+                {% render 'button',
+                  button_style: current_button_style,
+                  button_link: current_button_link,
+                  button_label: current_button,
+                  button_icon: current_button_icon
+                %}
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>

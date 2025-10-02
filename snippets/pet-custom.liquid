@@ -1,0 +1,264 @@
+<style>
+        .mega-menu__inner-custom_pet {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: {{ block.settings.percent-menu-left }}% calc(100% - {{ block.settings.percent-menu-left }}%);
+  }
+
+        .height_banner_pet {
+    {% if block.settings.height-banner-menu %}
+      height: {{ block.settings.height-banner-menu }}px;
+    {% endif %}
+  }
+  .pet-custom__col-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .pet-custom__section {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e0e6eb;
+  }
+
+  .pet-custom__section:last-child {
+    border-bottom: none;
+    /* padding-bottom: 0; */
+  }
+
+  .pet-custom__title {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: #2a3d45;
+  }
+
+  .pet-custom__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .pet-custom__list li {
+    margin-bottom: 12px;
+  }
+
+  .pet-custom__link {
+    font-size: 15px;
+    text-decoration: none;
+    color: #4a5a64;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pet-custom__link {
+    transition: background-color 0.3s ease;
+  }
+
+
+  .pet-custom__link:hover {
+    background-color: #f0f0f0;
+     border-radius: 10px;
+  }
+
+  .pet-custom__icon {
+    width: 65px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .pet-custom__col-images {
+    width: 70%;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .pet-custom__intro-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .pet-custom__bg-overlay {
+    display: block !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    z-index: 1;
+    border-radius: 0 8px 8px 0;
+    pointer-events: none;
+  }
+
+  .pet-custom__product-section {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 2;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background: transparent;
+  }
+
+  .pet-custom__product-img {
+    width: 80px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+
+  .pet-custom__product-text {
+    color: black;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+
+  .pet-custom__buy-button {
+    background: white;
+    color: #2a3d45;
+    border: 1px solid #dee2e6;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .pet-custom__buy-button:hover {
+    background: #f8f9fa;
+    transform: translateY(-1px);
+  }
+
+  .pet-custom__arrow {
+    width: 12px;
+    height: 12px;
+  }
+
+
+  .underline-effect {
+    color: black;
+    /* position: relative;
+    display: inline-block;
+    transition: color 0.3s ease; */
+  }
+
+  .underline-effect::after {
+    /* content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 2px; */
+    background-color: black;
+    /* transition: width 0.3s ease; */
+  }
+
+  /* .pet-custom__link:hover .underline-effect::after {
+    width: 100%;
+  } */
+
+  .mega-menu__inner-custom_pet .btn--icon-circle {
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+   }
+
+   .pet-custom-mega-menu__col {
+    width: 80%;
+   }
+
+     .mega-menu__inner-custom_pet a .link-text {
+     flex: 1;
+     min-width: 0;
+     position: relative;
+     display: inline-block;
+   }
+
+      .pet-custom-mega-menu__col {
+     flex: 1;
+     columns: 1;
+     column-gap: 80px;
+     list-style: none;
+     padding: 0;
+     margin: 0;
+   }
+   .mega-menu__inner-custom_pet .pet-custom__link {
+    border-radius: 10px;
+   }
+</style>
+
+<div class="pet-custom__inner mega-menu__inner-custom_pet">
+  <div class="pet-custom__col-list mega-menu-custom-left">
+    <div class="pet-custom__section">
+      <ul class="pet-custom__list pet-custom-mega-menu__col">
+        <li class="hover-wrapper">
+          <a href="{{ block.settings.collection_1 }}" class="pet-custom__link">
+            <img
+              src="{{ block.settings.collection_image_1 | image_url }}"
+              alt="Cat Icon"
+              class="pet-custom__icon hover-scale-up"
+            >
+            <span class="underline-effect link-text">{{ block.settings.collection_title_1 }}</span>
+
+            <button
+              class="collection-card__btn btn btn--icon-circle btn--icon focus-none "
+              tabindex="-1"
+            >
+              <span class="btn__text flex">
+                {% render 'icon-caret-right', size: 'extra-small' %}
+              </span>
+            </button>
+          </a>
+        </li>
+
+        <li class="hover-wrapper">
+          <a href="{{ block.settings.collection_2 }}" class="pet-custom__link">
+            <img
+              src="{{ block.settings.collection_image_2 | image_url }}"
+              alt="Cat Icon"
+              class="pet-custom__icon hover-scale-up"
+            >
+            <span class="underline-effect link-text">{{ block.settings.collection_title_2 }}</span>
+
+            <button
+              class="collection-card__btn btn btn--icon-circle btn--icon focus-none"
+              tabindex="-1"
+            >
+              <span class="btn__text flex">
+                {% render 'icon-caret-right', size: 'extra-small' %}
+              </span>
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- Column 2: Image Section -->
+  <div class="mega-menu__col-banner height_banner_pet">
+    {% render 'banner-menu-custom', block: block %}
+  </div>
+</div>

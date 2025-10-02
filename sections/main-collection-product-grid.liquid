@@ -24,6 +24,7 @@
   assign block_size = section.blocks.size
   assign products_to_display = section.settings.products_per_page | minus: block_size
 -%}
+{%- comment -%} valid count will be recomputed per page inside paginate {%- endcomment -%}
 {%- capture image_sizes -%}
 (max-width: 767px) calc((100vw - 38px) / {{ columns_mobile }}),
 (max-width: 1279px) calc((100vw - 90px) / {{ columns_tablet }}),
@@ -42,6 +43,18 @@
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   {%- paginate collection.products by products_to_display -%}
+    {%- liquid
+      assign valid_product_count = 0
+      assign valid_product_handles = ''
+      for p in collection.products
+        unless p.vendor == 'Chemist Warehouse' or p.title contains 'CW -'
+          assign valid_product_count = valid_product_count | plus: 1
+          assign valid_product_handles = valid_product_handles | append: p.handle | append: '|'
+        endunless
+      endfor
+      assign valid_product_handle_list = valid_product_handles | split: '|'
+      assign valid_product_handle_list = valid_product_handle_list | compact
+    -%}
     {%- if show_toolbar and collection.all_products_count > 0 -%}
       <div class="sticky-element grid gap-5 z-9" style="--sticky-offset: 0px;">
         <div class="collection__toolbar flex flex-wrap items-end md:items-center justify-between gap-x-2">
@@ -51,11 +64,11 @@
               <p id="ProductCount" class="m-0 text-subtext" role="status">
                 {%- liquid
                   if collection.results_count
-                    echo 'products.facets.filters_selected' | t: terms: collection.terms, count: collection.results_count
+                    echo 'products.facets.filters_selected' | t: terms: collection.terms, count: valid_product_count
                   elsif collection.products_count == collection.all_products_count
-                    echo 'products.facets.product_count_simple' | t: count: collection.products_count
+                    echo 'products.facets.product_count_simple' | t: count: valid_product_count
                   else
-                    echo 'products.facets.product_count' | t: product_count: collection.products_count, count: collection.all_products_count
+                    echo 'products.facets.product_count' | t: product_count: valid_product_count, count: collection.all_products_count
                   endif
                 -%}
               </p>
@@ -135,7 +148,7 @@
       {%- endif -%}
       <div class="flex flex-col flex-grow" id="ProductGridWrapper">
         <div id="ProductGridContainer">
-          {%- if collection.products.size == 0 -%}
+          {%- if valid_product_count == 0 -%}
             <div class="empty-state flex flex-col items-center justify-center gap-6 text-center">
               {%- if collection.all_products_count > 0 -%}
                 <div class="gap-3 flex flex-col items-center justify-center text-center">
@@ -171,7 +184,8 @@
             {%- liquid
               assign current_position = 1
             -%}
-            {%- for product in collection.products -%}
+            {%- for handle in valid_product_handle_list -%}
+              {%- assign product = all_products[handle] -%}
               {%- for block in section.blocks -%}
                 {%- if block.type == 'image_card' and block.settings.image_position == current_position -%}
                   <div class="f-column image-column">

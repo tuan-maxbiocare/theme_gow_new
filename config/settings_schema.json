@@ -411,8 +411,8 @@
       {
         "type": "range",
         "id": "heading_mobile_scale",
-        "min": 70,
-        "max": 120,
+        "min": 40,
+        "max": 100,
         "step": 1,
         "unit": "%",
         "label": "t:settings_schema.typography.settings.heading_scale.mobile.label",
@@ -1014,9 +1014,37 @@
           {
             "label": "t:settings_schema.layout.settings.corner_radius.options__4.label",
             "value": "round"
+          },
+          {
+            "label": "Circle",
+            "value": "circle"
           }
         ],
         "default": "round"
+      },
+      {
+        "type": "select",
+        "id": "badges_position",
+        "label": "Badge Position",
+        "options": [
+          {
+            "value": "top-left",
+            "label": "Top Left"
+          },
+          {
+            "value": "top-right",
+            "label": "Top Right"
+          },
+          {
+            "value": "bottom-left",
+            "label": "Bottom Left"
+          },
+          {
+            "value": "bottom-right",
+            "label": "Bottom Right"
+          }
+        ],
+        "default": "bottom-right"
       }
     ]
   },
@@ -1365,6 +1393,65 @@
         "id": "pcard_mobile_hide_quick_add",
         "label": "t:settings_schema.product_cards.settings.mobile_hide_quick_add.label",
         "default": false
+      },
+      {
+        "type": "header",
+        "content": "Product Image Style"
+      },
+      {
+        "type": "range",
+        "id": "pcard_image_radius",
+        "min": 0,
+        "max": 50,
+        "step": 1,
+        "unit": "px",
+        "label": "Image border radius",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "pcard_image_bg",
+        "label": "Image background color",
+        "default": "#f5f5f5"
+      },
+      {
+        "type": "range",
+        "id": "pcard_title_font_size",
+        "label": "Font size Price (rem)",
+        "min": 1,
+        "max": 10,
+        "step": 0.1,
+        "default": 3.5
+      },
+      {
+        "type": "range",
+        "id": "f_price_item_sale",
+        "label": "Font size Sale (rem)",
+        "min": 1,
+        "max": 10,
+        "step": 0.1,
+        "default": 3.5
+      },
+      {
+        "type": "range",
+        "id": "f_add_to_card",
+        "label": "Font size Add to Card (rem)",
+        "min": 1,
+        "max": 10,
+        "step": 0.1,
+        "default": 2
+      },
+      {
+        "type": "color",
+        "id": "border_product_card_custom",
+        "label": "Product Card Border Color",
+        "default": "#0000FF"
+      },
+      {
+        "type": "color",
+        "id": "border_product_card_custom_hover",
+        "label": "Product Card Shadow Color",
+        "default": "#FF0000"
       }
     ]
   },

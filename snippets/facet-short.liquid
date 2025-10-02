@@ -3,7 +3,7 @@
   :</label
 >
 <div class="select w-auto facet-short flex items-center gap-2 flex-grow">
-  {%- assign sort_by = results.sort_by | default: results.default_sort_by -%}
+  {%- assign sort_by = results.sort_by -%}
   <select
     name="sort_by"
     class="form-control form-control--select"

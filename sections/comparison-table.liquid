@@ -41,7 +41,7 @@
       <table class="quick-comparison-table text-subtext">
         {% comment %} Row with Product Images {% endcomment %}
         <tr>
-          <td class="td-label background-1 text-body"></td>
+          <td class="td-label text-body"></td>
           {% for block in content_block %}
             {% assign product = block.settings.product %}
             {% assign featured_media = product.featured_media %}
@@ -102,7 +102,7 @@
               {% assign icon = heading_block.settings[icon_key] %}
               {% assign image = heading_block.settings[image_key] %}
 
-              <td class="td-label background-1 text-body">
+              <td class="td-label text-body">
                 {% if title != blank %}
                   <div
                     class="comparison-table-card comparison-table-card--image-icon flex items-center gap-x-3 h-full"

@@ -10,7 +10,41 @@
   - paginate: {Object}
   - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
 {% endcomment %}
+ {% comment %} fix hover button load more {% endcomment %}
+{% style %}  
+  .btn--primary {
+  --color-border: var(--color-button);
+  background: rgb(var(--color-button));
+  color: rgb(var(--color-button-text));
+  position: relative;
+  z-index: 1;
+}
 
+.btn--primary::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(var(--color-button-text));
+  transition: width var(--animation-button);
+  z-index: -1;
+}
+
+.btn--primary:hover {
+  color: rgb(var(--color-button)) !important;
+}
+
+.btn--primary:hover::before {
+  width: 100%;
+}
+
+.btn--primary .btn__text {
+  position: relative;
+  z-index: 2; /* Ensure text stays above background animation */
+}
+{% endstyle %}
 {%- if paginate.parts.size > 0 -%}
   <nav
     class="pagination{% unless type == 'number' %} text-center{% endunless %}"

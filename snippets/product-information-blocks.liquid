@@ -90,7 +90,10 @@
                 product: product,
                 use_variant: true,
                 show_sale_badge: false,
-                price_class: 'f-price--large'
+                price_class: 'f-price--large',
+                price_size: block.settings.price_size,
+                price_color: block.settings.price_color,
+                block: block
               -%}
             </div>
             {%- if product.quantity_price_breaks_configured? -%}
@@ -98,14 +101,15 @@
                 <span>{{ 'products.product.volume_pricing.note' | t }}</span>
               </div>
             {%- endif -%}
-            <div class="product__tax text-sm text-subtext rte">
+            {% comment %} task delete text below price {% endcomment %}
+            {% comment %} <div class="product__tax text-sm text-subtext rte">
               {%- if cart.taxes_included -%}
                 {{ 'products.product.include_taxes' | t }}
               {%- endif -%}
               {%- if shop.shipping_policy.body != blank -%}
                 {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
               {%- endif -%}
-            </div>
+            </div> {% endcomment %}
             {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
             {%- form 'product', product, id: product_form_installment_id, class: 'installment' -%}
               <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
@@ -189,7 +193,7 @@
                   id="Vendor-{{ section.id }}"
                   role="status"
                 >
-                  <span>{{ 'products.product.vendor' | t }}:</span>
+                  <span>Brand:</span>
                   <a
                     href="{{ product.vendor | url_for_vendor }}"
                     class="btn--link font-body-bolder text-body"
@@ -246,6 +250,21 @@
         {%- when 'collapsible_tab' -%}
           <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
             {%- render 'product-collapsible-tab', block: block, section_id: section.id -%}
+          </div>
+        {%- when 'related_products' -%}
+          <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
+            <div>
+              <product-recommendations
+                class="related-products"
+                data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=6"
+              >
+                {%- render 'related-products-custom',
+                  section: block,
+                  section_id: section.id,
+                  recommendations: recommendations
+                -%}
+              </product-recommendations>
+            </div>
           </div>
         {%- when 'popup' -%}
           {%- liquid
@@ -437,20 +456,44 @@
             class="{{ block_classes }} product__block--{{ block.type }}-{{ block.settings.layout }}"
             {{ block.shopify_attributes }}
           >
-            {% render 'icon-with-text',
-              layout: block.settings.layout,
-              title_size: block.settings.title_size,
-              title_font: block.settings.title_font,
-              heading_1: block.settings.heading_1,
-              image_1: block.settings.image_1,
-              icon_1: block.settings.icon_1,
-              heading_2: block.settings.heading_2,
-              image_2: block.settings.image_2,
-              icon_2: block.settings.icon_2,
-              heading_3: block.settings.heading_3,
-              image_3: block.settings.image_3,
-              icon_3: block.settings.icon_3
-            %}
+            {%- assign benefits_obj = product.metafields.custom.section_benefits.value -%}
+
+            {% if block.settings.use_metafields %}
+              {%-
+                render 'icon-with-text',
+                layout: block.settings.layout,
+                title_size: block.settings.title_size,
+                title_font: block.settings.title_font,
+                heading_1: benefits_obj.short_benefit_1 | default: block.settings.heading_1,
+                image_1: block.settings.image_1,
+                icon_1: block.settings.icon_1,
+                heading_2: benefits_obj.short_benefit_2 | default: block.settings.heading_2,
+                image_2: block.settings.image_2,
+                icon_2: block.settings.icon_2,
+                heading_3: benefits_obj.short_benefit_3 | default: block.settings.heading_3,
+                image_3: block.settings.image_3,
+                icon_3: block.settings.icon_3,
+                icon_color: block.settings.icon_color,
+                block: block
+              %}
+            {% else %}
+              {%- render 'icon-with-text',
+                layout: block.settings.layout,
+                title_size: block.settings.title_size,
+                title_font: block.settings.title_font,
+                heading_1: block.settings.heading_1,
+                image_1: block.settings.image_1,
+                icon_1: block.settings.icon_1,
+                heading_2: block.settings.heading_2,
+                image_2: block.settings.image_2,
+                icon_2: block.settings.icon_2,
+                heading_3: block.settings.heading_3,
+                image_3: block.settings.image_3,
+                icon_3: block.settings.icon_3,
+                icon_color: block.settings.icon_color,
+                block: block
+              %}
+            {% endif %}
           </div>
         {%- when 'grid-icon-box' -%}
           <div
@@ -503,6 +546,126 @@
               {%- endif -%}
             </div>
           </div>
+        {%- when 'text_with_buttons' -%}
+          <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
+            <div class="text-buttons-wrapper" style="display: flex;">
+              {%- if block.settings.heading != blank -%}
+                <h2 class="{{ block.settings.heading_size }} text-{{ block.settings.text_alignment }}">
+                  {{ block.settings.heading }}
+                </h2>
+              {%- endif -%}
+
+              {%- if block.settings.text != blank -%}
+                <div class="text-content rte text-{{ block.settings.text_alignment }}">
+                  {{ block.settings.text }}
+                </div>
+              {%- endif -%}
+              <div class="buttons-wrapper">
+                <a
+                  target="_blank"
+                  href="{{ block.settings.twitter_url }}?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: url }}"
+                  data-tooltip
+                >
+                  <span class="tooltip pointer-events-none">
+                    {{ block.settings.share_twitter_tooltip }}
+                  </span>
+                  <span class="btn btn--icon btn--icon-pill">
+                    {% if block.settings.share_twitter_icon != blank %}
+                      <img
+                        src="{{ block.settings.share_twitter_icon | img_url: '128x128' }}"
+                        alt="Twitter"
+                        loading="lazy"
+                        width="{{ block.settings.share_icon_size }}px"
+                        height="{{ block.settings.share_icon_size }}px"
+                      >
+                    {% else %}
+                      {% render 'icon-twitter', size: 'large' %}
+                    {% endif %}
+                  </span>
+                </a>
+                <a
+                  target="_blank"
+                  href="{{ block.settings.facebook_url }}?u={{ shop.url | append: url }}"
+                  data-tooltip
+                >
+                  <span class="tooltip pointer-events-none">
+                    {{ block.settings.share_facebook_tooltip }}
+                  </span>
+                  <span class="btn btn--icon btn--icon-pill">
+                    {% if block.settings.share_facebook_icon != blank %}
+                      <img
+                        src="{{ block.settings.share_facebook_icon | img_url: '128x128' }}"
+                        alt="Twitter"
+                        loading="lazy"
+                        width="{{ block.settings.share_icon_size }}px"
+                        height="{{ block.settings.share_icon_size }}px"
+                      >
+                    {% else %}
+                      {% render 'icon-twitter', size: 'large' %}
+                    {% endif %}
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        {%- when 'payment_social' -%}
+          <div class="{{ block_classes }} payment-social-wrapper" {{ block.shopify_attributes }}>
+            <div class="payment-social-container flex flex-col gap-6 md:flex-row md:justify-between md:items-center">
+              <div class="social-sharing flex items-center gap-4">
+                {% render 'social-sharing', url: product.url, share_image: product.featured_media.preview_image %}
+              </div>
+              <div class="product__payment-info flex md:flex-row flex-col gap-4">
+                <span class="visually-hidden">{{ 'general.payment.methods' | t }}</span>
+                <ul class="list flex flex-wrap" role="list">
+                  {% if shop.enabled_payment_types.size > 0 %}
+                    {%- for type in shop.enabled_payment_types -%}
+                      <li class="flex items-center">
+                        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                      </li>
+                    {%- endfor -%}
+                  {% else %}
+                    {% assign fake_payment_types = 'visa,master,american_express,paypal' | split: ',' %}
+                    {% for type in fake_payment_types %}
+                      <li class="flex items-center">
+                        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                      </li>
+                    {% endfor %}
+                  {% endif %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        {%- when 'custom_image' -%}
+          <div class="{{ block_classes }} custom-image-block" {{ block.shopify_attributes }}>
+            {% assign benefits_obj = product.metafields.custom.section_benefits.value %}
+            {% if benefits_obj != blank and benefits_obj.selling_points_with_icon_image != blank %}
+              <div class="custom-image-wrapper">
+                {{
+                  benefits_obj.selling_points_with_icon_image
+                  | image_url: width: block.settings.image_width
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '200,250, 300, 350, 400,450, 500',
+                    sizes: '(max-width: 768px) 100vw, 50vw',
+                    class: 'custom-image',
+                    quality: '100'
+                }}
+              </div>
+            {% elsif block.settings.custom_image != blank %}
+              <div class="custom-image-wrapper">
+                {{
+                  block.settings.custom_image
+                  | image_url: width: block.settings.image_width
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '200,250, 300, 350, 400,450, 500',
+                    sizes: '(max-width: 768px) 100vw, 50vw',
+                    class: 'custom-image',
+                    quality: '100'
+                }}
+              </div>
+            {% endif %}
+          </div>
       {%- endcase -%}
     {%- endfor -%}
   </div>
@@ -524,3 +687,46 @@
     </div>
   {%- endif -%}
 </div>
+<style>
+  .text-buttons-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    width: 59%;
+  }
+  .buttons-wrapper a {
+    flex: 1;
+    max-width: 100%;
+    text-decoration: none;
+  }
+  .buttons-wrapper .btn {
+    display: flex;
+    align-items: center
+    justify-content: center;
+    width: 100%;
+  }
+  .buttons-wrapper img{
+    object-fit: contain; 
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: crisp-edges;
+  }
+
+  .product__blocks .btn--icon.btn--icon-pill,
+  .product__blocks .btn--icon.btn--icon-pill:hover,
+  .product__blocks .btn--icon.btn--icon-pill:focus,
+  .product__blocks .btn--icon.btn--icon-pill:active {
+    background-color: transparent !important;
+    color: currentColor !important;
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    --color-button: transparent !important;
+    --color-button-text: currentColor !important;
+    --color-button-hover: transparent !important;
+  }
+</style>

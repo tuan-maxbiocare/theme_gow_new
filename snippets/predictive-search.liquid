@@ -9,9 +9,56 @@
     assign shop_types = shop_types | slice: 1, shop_types.size
   endif
 -%}
+{% style %}
+  @media (max-width: 767px) {
+    .search__input {
+      border-radius: 10px;
+      height: 40px;
+    }
+
+    .search__field {
+      min-height: 40px;
+    }
+
+    .search__field-icon {
+      height: 40px;
+    }
+    .header__search {
+      padding-block-start: 1rem;
+    }
+  }
+  @media (min-width: 1536px) {
+    .predictive-search-custom .f-grid-column-suggest-custom {
+      --f-grid-columns: 4;
+    }
+
+    .predictive-search-custom .f-grid-column-search-custom {
+      --f-grid-columns: 3;
+    }
+  }
+
+  @media (max-width: 1536px) {
+    .predictive-search-custom .swipe-mobile--2-cols {
+      --column-width-mobile: 60vw;
+    }
+    .predictive-search-custom .f-grid-column-suggest-custom {
+      --f-grid-columns: 1;
+    }
+    .predictive-search-custom .f-grid-column-search-custom {
+      --f-grid-columns: 1;
+    }
+  }
+  .predictive-search-custom .f-price-item--sale-custom { 
+    font-size: 18px;
+  }
+{% endstyle %}
 {{ settings.form_field }}
 {{ settings.background }}
-<predictive-search class="block w-full search__form" data-search-recommendation-empty="{{ search_recommendation_empty }}" data-results-limit="{{ settings.number_results_to_show }}">
+<predictive-search
+  class="block w-full search__form predictive-search-custom"
+  data-search-recommendation-empty="{{ search_recommendation_empty }}"
+  data-results-limit="{{ settings.number_results_to_show }}"
+>
   <div class="flex flex-col w-full h-full">
     <form
       action="{{ routes.search_url }}"
@@ -92,18 +139,30 @@
                 {{- 'templates.search.most_searched_products' | t -}}
               </h4>
               <div class="swipe-mobile swipe-mobile--2-cols">
-                <div class="f-grid f-grid--gap-{{ settings.search_products_column_gap }} f-grid--row-gap-{{ settings.search_products_row_gap }} swipe-mobile__inner">
-                  {%- for product in settings.products_recommendations -%}
-                    {%- render 'card-product',
-                      product: product,
-                      section: section,
-                      parent_color_scheme: settings.overlay_color_scheme,
-                      use_short_text_for_atc_button: true,
-                      show_vendor: settings.predictive_search_show_vendor,
-                      show_type: settings.predictive_search_show_type,
-                      show_price: settings.predictive_search_show_price,
-                      quick_view_suffix: 'search__recommendations'
-                    -%}
+                <div class="f-grid f-grid-column-suggest-custom f-grid--gap-{{ settings.search_products_column_gap }} f-grid--row-gap-{{ settings.search_products_row_gap }} swipe-mobile__inner">
+                  {%- for product in settings.products_recommendations limit: 4 -%}
+                    {% unless product.vendor == 'Chemist Warehouse' or product.title contains 'CW -' %}
+                      {% render 'card-product-placeholder-for-related-custom',
+                        product: product,
+                        image_ratio: section.settings.pcard_image_ratio,
+                        pcard_style: 'standard',
+                        parent_color_scheme: settings.overlay_color_scheme,
+                        horizontal_layout: true
+                      %}
+
+                      {% comment %}
+                        {%- render 'card-product',
+                          product: product,
+                          section: section,
+                          parent_color_scheme: settings.overlay_color_scheme,
+                          use_short_text_for_atc_button: true,
+                          show_vendor: settings.predictive_search_show_vendor,
+                          show_type: settings.predictive_search_show_type,
+                          show_price: settings.predictive_search_show_price,
+                          quick_view_suffix: 'search__recommendations'
+                        -%}
+                      {% endcomment %}
+                    {% endunless %}
                   {%- endfor -%}
                 </div>
               </div>
@@ -145,53 +204,6 @@
               or predictive_search.resources.pages.size > 0
             -%}
               <div class="flex w-full flex-col gap-y-6 md:flex-row">
-                <div class="flex flex-col flex-grow search__box-products order-last md:order-first">
-                  {%- if predictive_search.resources.products.size > 0 -%}
-                    <div class="flex flex-col gap-5 lg:gap-6 predictive-search-result search__box-item predictive-search-result--products">
-                      <h4 class="h4 predictive-search-result__heading">
-                        {{- 'templates.search.products' | t -}}
-                      </h4>
-
-                      <div class="swipe-mobile swipe-mobile--2-cols">
-                        <div
-                          id="predictive-search-results-products-list"
-                          class="f-grid f-grid--gap-{{ settings.search_products_column_gap }} f-grid--row-gap-{{ settings.search_products_row_gap }} swipe-mobile__inner"
-                        >
-                          {%- for product in predictive_search.resources.products -%}
-                            {%- render 'card-product',
-                              product: product,
-                              section: section,
-                              parent_color_scheme: settings.overlay_color_scheme,
-                              use_short_text_for_atc_button: true,
-                              show_vendor: settings.predictive_search_show_vendor,
-                              show_type: settings.predictive_search_show_type,
-                              show_price: settings.predictive_search_show_price
-                            -%}
-                          {%- endfor -%}
-                        </div>
-                      </div>
-
-                      <div class="search__results-all block">
-                        {%- assign search_term = predictive_search.terms
-                          | split: 'AND'
-                          | last
-                          | strip
-                          | replace: '%20', ' '
-                        -%}
-                        <button
-                          type="submit"
-                          class="btn btn--primary"
-                          form="PredictiveSearch-{{ section.id }}"
-                        >
-                          <span class="btn__text flex items-center gap-2">
-                            {{ 'templates.search.search_for' | t: terms: search_term }}
-                            {%- render 'icon-arrow-right', size: 'extra-medium' -%}
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  {%- endif -%}
-                </div>
                 <div class="search__box-others flex flex-col gap-6 lg:gap-8{% if predictive_search.resources.products.size == 0 %} no-products{% endif %}">
                   {%- if predictive_search.resources.queries.size > 0 -%}
                     <div class="grid gap-3 predictive-search-result search__box-item predictive-search-result--queries">
@@ -296,6 +308,66 @@
                           </li>
                         {%- endfor -%}
                       </ul>
+                    </div>
+                  {%- endif -%}
+                </div>
+                {% comment %} lương chuyển menu lên trên thay css order-last {% endcomment %}
+                <div class="flex flex-col flex-grow search__box-products order-first md:order-last">
+                  {%- if predictive_search.resources.products.size > 0 -%}
+                    <div class="flex flex-col gap-5 lg:gap-6 predictive-search-result search__box-item predictive-search-result--products">
+                      <h4 class="h4 predictive-search-result__heading">
+                        {{- 'templates.search.products' | t -}}
+                      </h4>
+
+                      <div class="swipe-mobile swipe-mobile--2-cols">
+                        <div
+                          id="predictive-search-results-products-list"
+                          class="f-grid f-grid-column-search-custom f-grid--gap-{{ settings.search_products_column_gap }} f-grid--row-gap-{{ settings.search_products_row_gap }} swipe-mobile__inner"
+                        >
+                          {%- for product in predictive_search.resources.products limit: 3 -%}
+                            {% unless product.vendor == 'Chemist Warehouse' or product.title contains 'CW -' %}
+                              {% render 'card-product-placeholder-for-related-custom',
+                                product: product,
+                                image_ratio: section.settings.pcard_image_ratio,
+                                pcard_style: 'standard',
+                                parent_color_scheme: settings.overlay_color_scheme,
+                                horizontal_layout: true
+                              %}
+
+                              {% comment %}
+                                {%- render 'card-product',
+                                  product: product,
+                                  section: section,
+                                  parent_color_scheme: settings.overlay_color_scheme,
+                                  use_short_text_for_atc_button: true,
+                                  show_vendor: settings.predictive_search_show_vendor,
+                                  show_type: settings.predictive_search_show_type,
+                                  show_price: settings.predictive_search_show_price
+                                -%}
+                              {% endcomment %}
+                            {% endunless %}
+                          {%- endfor -%}
+                        </div>
+                      </div>
+
+                      <div class="search__results-all block">
+                        {%- assign search_term = predictive_search.terms
+                          | split: 'AND'
+                          | last
+                          | strip
+                          | replace: '%20', ' '
+                        -%}
+                        <button
+                          type="submit"
+                          class="btn btn--primary"
+                          form="PredictiveSearch-{{ section.id }}"
+                        >
+                          <span class="btn__text flex items-center gap-2">
+                            {{ 'templates.search.search_for' | t: terms: search_term }}
+                            {%- render 'icon-arrow-right', size: 'extra-medium' -%}
+                          </span>
+                        </button>
+                      </div>
                     </div>
                   {%- endif -%}
                 </div>

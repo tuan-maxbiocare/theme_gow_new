@@ -32,14 +32,18 @@
 }
 @media (max-width: 767.98px) {
   .pr-img-card__contents {
-    gap: 1.6rem;
+    gap: 0;
   }
   .pr-img-card__contents-header {
     padding-inline: 1.2rem;
   }
   .pr-img-card__product {
-    padding: 1.2rem;
+    background-color: #B3B3B3;
+    padding: 1rem;
   }
+  .f-price{
+      margin-top: -5px;
+    }
   .pr-img-card__product .product-card__image {
     width: 5rem;
   }

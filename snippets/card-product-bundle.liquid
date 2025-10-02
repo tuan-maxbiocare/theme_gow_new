@@ -103,9 +103,18 @@
   <div class="product-card__wrapper h-full">
     <div class="product-card__image-wrapper{% if second_image == blank %} product-card__image-wrapper--main-only{% endif %} {% if list_on_mobile %}desktop-{% endif %}color-{{ settings.pcard_overlay_color_scheme }} bg-none">
       <a href="{{ product.url }}" aria-label="{{ product.title | escape }}" tabindex="-1">
-        <motion-element data-motion="zoom-out-sm" class="block">
+        <motion-element data-motion="zoom-out-sm" class="block" style="padding: 0.9rem; background: #ffffff;">
           {%- if featured_media -%}
             {%- unless first_media_type == 'video' or first_media_type == 'external_video' -%}
+              {% assign first_image_widths = image_widths | append: ', ' | append: featured_media.width %}
+              {% assign border_radius = settings.pcard_image_radius | default: 0 %}
+              {% assign bg_color = settings.pcard_image_bg | default: '#ffffff' %}
+              {% assign image_style = 'border-radius: '
+                | append: border_radius
+                | append: 'px; background-color: '
+                | append: bg_color
+                | append: ';'
+              %}
               <div
                 class="media-wrapper product-card__image product-card__image--main"
                 style="--aspect-ratio: {{ image_ratio }}"
@@ -120,7 +129,8 @@
                     class: 'motion-reduce',
                     widths: first_image_widths,
                     sizes: image_sizes,
-                    is: 'image-lazy'
+                    is: 'image-lazy',
+                    style: image_style
                 }}
               </div>
               {%- unless second_image == blank -%}
