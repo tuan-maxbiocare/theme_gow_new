@@ -93,7 +93,7 @@
         "collection_wReVLc": {
           "type": "collection",
           "settings": {
-            "collection": "milk-formula",
+            "collection": "formula-milk",
             "title": ""
           }
         },
@@ -822,7 +822,7 @@
         "collection_iXWp3b": {
           "type": "collection",
           "settings": {
-            "collection": "milk-formula",
+            "collection": "formula-milk",
             "title": "",
             "show_banner": true,
             "color_scheme": "scheme-inverse",

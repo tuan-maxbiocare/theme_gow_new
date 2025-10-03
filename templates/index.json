@@ -401,7 +401,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Beauty & Topical Care",
-            "button_link": "shopify://collections/beauty-topical-care",
+            "button_link": "shopify://collections/beauty-products",
             "icon": "none"
           }
         },
@@ -540,7 +540,7 @@
         "featured_collection_f6JVDP": {
           "type": "featured_collection",
           "settings": {
-            "collection": "pregnancy-breastfeeding",
+            "collection": "pregnancy-and-breastfeeding-supplements",
             "image": "shopify://shop_images/GoWshop_pregnantwoman_2000x2000_b3c1f5e8-6c6d-47ae-a8e0-ff757666da6a.webp",
             "title": ""
           }
@@ -556,7 +556,7 @@
         "featured_collection_E64fLt": {
           "type": "featured_collection",
           "settings": {
-            "collection": "beauty-topical-care",
+            "collection": "beauty-products",
             "image": "shopify://shop_images/Garden-of-Wellness-Nourishing-Body-Oil-Sage-Clarity-800x799-4.webp",
             "title": ""
           }
@@ -695,11 +695,11 @@
         "collection_9TDV6Y": {
           "type": "collection",
           "settings": {
-            "collection": "beauty-topical-care",
+            "collection": "beauty-products",
             "title": "",
             "show_banner": true,
             "color_scheme": "scheme-inverse",
-            "card_link": "shopify://collections/beauty-topical-care",
+            "card_link": "shopify://collections/beauty-products",
             "banner_image": "shopify://shop_images/Garden-of-Wellness-Nourishing-Body-Oil-Sage-Clarity-800x799-4.webp",
             "image_overlay_opacity": 10,
             "content_position": "bottom-center",

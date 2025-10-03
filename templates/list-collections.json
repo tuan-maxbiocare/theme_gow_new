@@ -55,7 +55,7 @@
         "featured_collection_KdFqFq": {
           "type": "featured_collection",
           "settings": {
-            "collection": "for-children",
+            "collection": "kids-supplements",
             "title": "for children"
           }
         },
@@ -77,14 +77,14 @@
         "featured_collection_at4gCr": {
           "type": "featured_collection",
           "settings": {
-            "collection": "for-men",
+            "collection": "mens-supplements",
             "title": "for Men"
           }
         },
         "featured_collection_F69pQy": {
           "type": "featured_collection",
           "settings": {
-            "collection": "for-women",
+            "collection": "women-supplements",
             "title": "for Women"
           }
         },
