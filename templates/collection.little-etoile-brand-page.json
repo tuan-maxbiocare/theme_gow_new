@@ -80,7 +80,7 @@
         "menu_3": "asdasd",
         "url_menu_3": "shopify://products/salvarity-aquashine-gentle-facial-cleanser",
         "menu_4": "asdsad",
-        "url_menu_4": "shopify://products/back-in-balance-clarifying-moisturizer",
+        "url_menu_4": "shopify://products/salvarity-back-in-balance-clarifying-moisturiser",
         "menu_5": "",
         "url_menu_5": "",
         "menu_6": "213123asd",
@@ -107,7 +107,7 @@
         "collection_RK4Hxx": {
           "type": "collection",
           "settings": {
-            "collection": "baby-care",
+            "collection": "baby-care-products",
             "title": ""
           }
         }
@@ -182,7 +182,7 @@
             "text": "<p>Crafted with care and intention, this piece blends modern aesthetics with timeless comfort—perfect for any season.</p>",
             "text_size": "text-base",
             "button_label": "Explore Now",
-            "button_link": "shopify://collections/baby-care",
+            "button_link": "shopify://collections/baby-care-products",
             "button_style": "btn--plain",
             "button_icon": "caret-right"
           }
@@ -1032,7 +1032,7 @@
         "collection_NnG8b6": {
           "type": "collection",
           "settings": {
-            "collection": "eczema-prone-skin-care",
+            "collection": "eczema-skin-care",
             "title": "ECZEMA-PRONE COLLECTION​",
             "text": "",
             "button_label": "Button label",
@@ -1192,7 +1192,7 @@
           "type": "collections",
           "settings": {
             "collection_list": [
-              "eczema-prone-skin-care"
+              "eczema-skin-care"
             ],
             "product_limit": 2,
             "columns_desktop": 2,

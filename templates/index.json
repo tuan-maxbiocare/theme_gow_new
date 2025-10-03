@@ -162,7 +162,7 @@
             "content_alignment": "left",
             "content_spacing": "medium",
             "content_gap": "fitted",
-            "card_link": "shopify://collections/health-supplement",
+            "card_link": "shopify://collections/health-supplements",
             "subheading": "",
             "subheading_style": "thick-border",
             "heading": "",
@@ -369,7 +369,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Health Supplement",
-            "button_link": "shopify://collections/health-supplement",
+            "button_link": "shopify://collections/health-supplements",
             "icon": "none"
           }
         },
@@ -377,7 +377,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Food & Nutrition",
-            "button_link": "shopify://collections/food-nutrition",
+            "button_link": "shopify://collections/food-and-nutrition",
             "icon": "none"
           }
         },
@@ -393,7 +393,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Baby Care",
-            "button_link": "shopify://collections/baby-care",
+            "button_link": "shopify://collections/baby-care-products",
             "icon": "none"
           }
         },
@@ -524,7 +524,7 @@
         "featured_collection_qWzrwb": {
           "type": "featured_collection",
           "settings": {
-            "collection": "health-supplement",
+            "collection": "health-supplements",
             "image": "shopify://shop_images/GoWshop_health-supplement_2000x2000_fbf6ff38-a74d-4b92-921e-3e795cc66545.webp",
             "title": ""
           }
@@ -532,7 +532,7 @@
         "featured_collection_4edxVP": {
           "type": "featured_collection",
           "settings": {
-            "collection": "food-nutrition",
+            "collection": "food-and-nutrition",
             "image": "shopify://shop_images/Little-Etoile-Organic-Creamy-Risotto-Vegetables-Brown-Rice-with-DHA-_-6_-Months-120g-800x800-4.webp",
             "title": ""
           }
@@ -548,7 +548,7 @@
         "featured_collection_cAMnBV": {
           "type": "featured_collection",
           "settings": {
-            "collection": "baby-care",
+            "collection": "baby-care-products",
             "image": "shopify://shop_images/GoWshop_Kidwithhisfather.webp",
             "title": ""
           }
@@ -623,11 +623,11 @@
         "collection_RTmMGB": {
           "type": "collection",
           "settings": {
-            "collection": "food-nutrition",
+            "collection": "food-and-nutrition",
             "title": "Baby nutrition​",
             "show_banner": true,
             "color_scheme": "scheme-inverse",
-            "card_link": "shopify://collections/food-nutrition",
+            "card_link": "shopify://collections/food-and-nutrition",
             "banner_image": "shopify://shop_images/Little-Etoile-Organic-Sweet-Potato-Pumpkin-Corn-_-6_-Months-120g-800x800-6.webp",
             "image_overlay_opacity": 16,
             "content_position": "bottom-center",
@@ -839,11 +839,11 @@
         "collection_NLirnd": {
           "type": "collection",
           "settings": {
-            "collection": "health-supplement",
+            "collection": "health-supplements",
             "title": "",
             "show_banner": true,
             "color_scheme": "scheme-inverse",
-            "card_link": "shopify://collections/health-supplement",
+            "card_link": "shopify://collections/health-supplements",
             "banner_image": "shopify://shop_images/GoWshop_health-supplement_2000x2000_fbf6ff38-a74d-4b92-921e-3e795cc66545.webp",
             "image_overlay_opacity": 16,
             "content_position": "bottom-center",
