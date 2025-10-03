@@ -112,7 +112,7 @@
         "featured_collection_Pa8kFP": {
           "type": "featured_collection",
           "settings": {
-            "collection": "beauty-topical-care",
+            "collection": "beauty-products",
             "title": "Beauty & Topical Care"
           }
         },
@@ -141,7 +141,7 @@
         "featured_collection_cQ9zAr": {
           "type": "featured_collection",
           "settings": {
-            "collection": "brain-cardiovascular-health",
+            "collection": "brain-health-supplements",
             "title": "Brain & Cardiovascular Health"
           }
         },
@@ -289,7 +289,7 @@
         "featured_collection_zgWR6H": {
           "type": "featured_collection",
           "settings": {
-            "collection": "eye-health",
+            "collection": "eye-supplements",
             "title": "Eye Health"
           }
         },
@@ -472,7 +472,7 @@
         "collection_r8U9QF": {
           "type": "collection",
           "settings": {
-            "collection": "brain-cardiovascular-health",
+            "collection": "brain-health-supplements",
             "title": "New Arrivals",
             "show_banner": false,
             "color_scheme": "",
