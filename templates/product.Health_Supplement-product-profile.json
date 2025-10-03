@@ -1,1 +1,1370 @@
-{"sections":{"breadcrumbs":{"type":"breadcrumbs","custom_css":[".section-breadcrumb {background-color: #f9fafb;}"],"settings":{"container":"fixed","text_alignment":"start","padding_top":16,"padding_bottom":20}},"main":{"type":"main-product","blocks":{"badges":{"type":"badges","settings":{"show_soldout_badge":true,"show_sale_badge":true,"sale_badge_type":"percentage"}},"title":{"type":"title","settings":{"heading_size":"h1"}},"klaviyo_reviews_average_rating_8Ngrzx":{"type":"shopify:\/\/apps\/klaviyo-reviews\/blocks\/average-rating\/db20e365-d984-4ac4-9655-e1588d951ca9","settings":{"product":"{{product}}"}},"meta":{"type":"meta","settings":{"link_color":"#1ca758","show_vendor":true,"show_product_type":true,"show_sku":false,"show_barcode":false}},"price":{"type":"price","settings":{"price_size":32,"price_color":"#1ca758"}},"icon_with_text":{"type":"icon-with-text","settings":{"use_metafields":true,"layout":"vertical","title_font":"body-bolder","title_size":"text-sm","icon_color":"#4d4d4d","icon_1":"check","heading_1":"{{ product.metafields.custom.section_benefits.value.short_benefit_1.value }}","icon_2":"check","heading_2":"{{ product.metafields.custom.section_benefits.value.short_benefit_2.value }}","icon_3":"check","heading_3":"{{ product.metafields.custom.section_benefits.value.short_benefit_3.value }}"}},"variant_picker":{"type":"variant_picker","settings":{"picker_type":"button","swatch_type":"shopify_swatch","swatch_style":"square","swatch_size":32,"button_style":"square","size_title":"Size","size_chart_from_page":"","variant_button_border_color":"#e5e7eb","variant_button_text_color":"#111111","variant_button_checked_border_color":"#1ca758","variant_button_checked_text_color":"#1ca758"}},"buy_buttons":{"type":"buy_buttons","settings":{"show_quantity_selector":false,"show_dynamic_checkout":false,"show_gift_card_recipient":true}},"promotion_alert_ehRPKj":{"type":"promotion_alert","disabled":true,"settings":{"text_color":"#049b6e","icon":"lightning","heading":"Limited time offer","description":"<p>Don’t miss out on this limited-time advantage crafted for you<\/p>"}},"timer_aDbfnn":{"type":"timer","disabled":true,"settings":{"text_color":"#c4301c","type":"evergreen","duration":"every_month","time":"2025\/08\/20 03:45 PM","text":"Sales end in"}},"text_with_buttons_XHBwiU":{"type":"text_with_buttons","disabled":true,"settings":{"heading":"Also available on","heading_size":"h4","share_twitter_icon":"shopify:\/\/shop_images\/chemist-warehouse-logo-1914FA0C63-seeklogo.com.png","share_twitter_tooltip":"Chemist Warehouse","share_facebook_icon":"shopify:\/\/shop_images\/Amazon_logo_svg.png","share_facebook_tooltip":"Amazon","twitter_url":"","facebook_url":"","share_icon_size":60}},"icon_with_text_BVwRJy":{"type":"icon-with-text","settings":{"use_metafields":false,"layout":"vertical","title_font":"body","title_size":"text-base","icon_color":"#000000","icon_1":"truck","heading_1":"<strong>Free delivery | <\/strong>Fast and Free delivery for all orders​","icon_2":"lightning","heading_2":"<strong>Fast Dispatch​ |<\/strong> Leaves warehouse in <strong>1-2 business days<\/strong>​","icon_3":"star-four","heading_3":""}},"promotion_alert_L7ipQp":{"type":"promotion_alert","disabled":true,"settings":{"text_color":"#4d4d4d","icon":"bell-ringing","heading":"Always read the label and follow the directions for use.","description":"<p>Always read the label and follow the directions for use. Please refer to any health and product warnings below.<\/p>"}},"complementary":{"type":"complementary","settings":{"block_heading":"Perfect Match With","heading_size":"h4","show_below_product_media":false,"make_collapsible_row":false,"icon":"tag","product_list_limit":6,"layout":"grid","columns":3,"image_ratio":"1\/1","enable_quick_add":true}},"divider_pPz3Kw":{"type":"divider","settings":{"show_below_product_media":false}},"related_products_RnXhN3":{"type":"related_products","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"You may also like","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","limit":6,"columns":3,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"navigation_position":"bottom","pcard_image_ratio":"","columns_mobile":"1","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed","show_below_product_media":true}},"payment_info_zWDL49":{"type":"payment_info","disabled":true,"settings":{"heading":"Payment & Security","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h5","description":"","show_payment_icons":true,"show_below_product_media":false}},"sticky_atc_bar_7HgNgP":{"type":"sticky-atc-bar","settings":{"visibility":"all","style":"standard","container":"fixed","show_atc_button":true,"show_dynamic_checkout_buttons":false,"show_quantity":false}},"divider_3mNceA":{"type":"divider","disabled":true,"settings":{"show_below_product_media":false}},"social_sharing":{"type":"social_sharing","disabled":true,"settings":{}},"payment_social_bRhfxU":{"type":"payment_social","settings":{}}},"block_order":["badges","title","klaviyo_reviews_average_rating_8Ngrzx","meta","price","icon_with_text","variant_picker","buy_buttons","promotion_alert_ehRPKj","timer_aDbfnn","text_with_buttons_XHBwiU","icon_with_text_BVwRJy","promotion_alert_L7ipQp","complementary","divider_pPz3Kw","related_products_RnXhN3","payment_info_zWDL49","sticky_atc_bar_7HgNgP","divider_3mNceA","social_sharing","payment_social_bRhfxU"],"custom_css":["@media (min-width: 1024px) {.product__info-wrapper {border: 1px solid #e5e7eb; background: #ffffff; border-radius: 12px; padding: 2.5rem 2.5rem; }}",".btn--icon-pill,.btn--icon.btn--icon-pill {border: 1px solid #e5e7eb;}",".btn--icon-circle {border: 1px solid #e5e7eb;}"],"settings":{"color_scheme":"scheme-3","use_color_scheme_in_container":false,"enable_sticky_info":true,"media_size":"large","gallery_layout":"vertical-carousel","mobile_thumbnails":"show","show_image_border":true,"enable_image_zoom":true,"enable_video_looping":true,"padding_top":0,"padding_bottom":100}},"custom_content_WW3MYD":{"type":"custom-content","blocks":{"collapsible_PpPtjH":{"type":"collapsible","settings":{"icon":"none","width":"100%","alignment":"start","heading":"{{ product.metafields.custom.section_product_details.value.product_details_1_heading.value }}","content":"{{ product.description }}","custom_liquid":"","page":"","open":true,"use_subtext_color":false}}},"block_order":["collapsible_PpPtjH"],"name":"t:sections.custom-content.name","settings":{"tab_content_html":"","product_list":[],"template_product":"","container":"fixed","color_scheme":"scheme-1","enable_sticky_column":false,"section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"medium","row_gap":"large","swipe_on_mobile":false,"columns_mobile":"1","padding_top":100,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed","header_alignment_collapsible":"left","section_header_alignment_mobile_collapsible":"inherit","subheading_collapsible":"","heading_collapsible":"","highlight_style_collapsible":"none","highlight_font_style_collapsible":"italic","highlight_style_color_collapsible":"","highlight_text_color_collapsible":"","heading_size_collapsible":"h1","description_collapsible":"","text_size_collapsible":"text-base","button_label_collapsible":"","button_link_collapsible":"","button_style_collapsible":"btn--primary","button_icon_collapsible":"none","item_style":"card","item_color_scheme_collapsible":"scheme-11","item_heading_font_collapsible":"heading","item_heading_size_collapsible":"h4","item_icon_size_collapsible":"extra-large","section_header_alignment_testimonial":"center","section_header_alignment_mobile_testimonial":"inherit","subheading_testimonial":"","heading_testimonial":"Testimonials","highlight_style_testimonial":"none","highlight_font_style_testimonial":"italic","highlight_style_color_testimonial":"","highlight_text_color_testimonial":"","heading_size_testimonial":"h1","description_testimonial":"","text_size_testimonial":"text-base","layout":"focused","card_color_scheme":"scheme-11","card_content_color_scheme":"","card_image_ratio":"adapt","card_heading_size":"h4","card_text_size":"h1","author_info_layout":"vertical","card_trigger_behavior":"click","show_image":true,"show_author_image":true,"columns_desktop":3,"column_gap_testimonial":"medium","row_gap_testimonial":"medium","enable_slider_testimonial":true,"columns_mobile_testimonial":"1","swipe_on_mobile_testimonial":true,"show_progress_bar":true}},"collapsible_tabs_BYP3VQ":{"type":"collapsible-tabs","blocks":{"image_card_BdxPWc":{"type":"image_card","settings":{"color_scheme":"scheme-13","desktop_image_position":"left","image_width":50,"alignment":"center","image":"{{ product.metafields.custom.section_benefits.value.benefit_image.value }}","image_ratio":"1\/1","image_overlay_opacity":0,"content_position":"bottom-left","content_alignment":"left","content_spacing":"medium","content_gap":"fitted","card_link":"","subheading":"","subheading_style":"thick-border","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"","button_style":"btn--primary","button_icon":"none","order_first":true}},"heading_fmBLHt":{"type":"heading","settings":{"sub_heading":"","heading":"{{ product.metafields.custom.section_benefits.value.benefit_big_heading.value }}","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1"}},"text_xPBxNB":{"type":"text","settings":{"text":"{{ product.metafields.custom.section_benefits.value.benefit_heading_1.value }}","icon_text":"check","text_style":"card","text_background_color":"#f9f9f9","heading_font_size":18,"heading_font_weight":"400"}},"text_NhXJMz":{"type":"text","settings":{"text":"{{ product.metafields.custom.section_benefits.value.benefit_heading_2.value }}","icon_text":"check","text_style":"card","text_background_color":"#f9f9f9","heading_font_size":18,"heading_font_weight":"400"}},"text_mp8fak":{"type":"text","settings":{"text":"{{ product.metafields.custom.section_benefits.value.benefit_heading_3.value }}","icon_text":"check","text_style":"card","text_background_color":"#f9f9f9","heading_font_size":18,"heading_font_weight":"400"}},"text_mLfNFt":{"type":"text","settings":{"text":"{{ product.metafields.custom.section_benefits.value.benefit_heading_4.value }}","icon_text":"check","text_style":"card","text_background_color":"#f9f9f9","heading_font_size":18,"heading_font_weight":"400"}}},"block_order":["image_card_BdxPWc","heading_fmBLHt","text_xPBxNB","text_NhXJMz","text_mp8fak","text_mLfNFt"],"name":"t:sections.collapsible-tabs.name","settings":{"product_list":[],"template_product":"","container":"fixed","color_scheme":"","header_layout":"vertical","section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"normal","highlight_style_color":"#1ca758","highlight_text_color":"#1ca758","heading_size":"hd2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","column_gap":"large","row_gap":"inherit","item_style":"card","item_color_scheme":"scheme-14","item_heading_font":"heading","item_heading_size":"h5","item_icon_size":"medium","padding_top":50,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"custom_content_gePjib":{"type":"custom-content","blocks":{"collapsible_47QgPT":{"type":"collapsible","settings":{"icon":"none","width":"33%","alignment":"start","heading":"Full Ingredients list","content":"{{ product.metafields.custom.custom_section_ingredients.value.full_ingredients_rich_text | metafield_tag }}","custom_liquid":"","page":"","open":false,"use_subtext_color":false}},"testimonial_JijKaV":{"type":"testimonial","settings":{"width":"66%","alignment":"start","icon_1":"none","image_1":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1.value }}","heading_1":"Testimonials","text_1":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1_rich_text | metafield_tag }}","author_1":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1_heading.value }}","bio_1":"","product_1":"","icon_2":"none","image_2":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2_image.value }}","heading_2":"Testimonials","text_2":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2_rich_text | metafield_tag }}","author_2":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3.value }}","bio_2":"","product_2":"","icon_3":"none","image_3":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3_image.value }}","heading_3":"Testimonials","text_3":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3_rich_text | metafield_tag }}","author_3":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3.value }}","bio_3":"","product_3":"","icon_4":"none","image_4":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4_image.value }}","heading_4":"Testimonials","text_4":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4_rich_text | metafield_tag }}","author_4":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4.value }}","bio_4":"","product_4":"","icon_5":"none","image_5":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_5_image.value }}","heading_5":"Testimonials","text_5":"{{ metaobjects.richcontent_ingredients.hair_oil_ingredients_section.highlight_ingredient_5_rich_text | metafield_tag }}","author_5":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_5.value }}","bio_5":"","product_5":"","icon_6":"none","image_6":"{{ metaobjects.richcontent_ingredients.hair_oil_ingredients_section.highlight_ingredient_6_image.value }}","heading_6":"Testimonials","text_6":"{{ metaobjects.richcontent_ingredients.hair_oil_ingredients_section.highlight_ingredient_6_rich_text | metafield_tag }}","author_6":"{{ metaobjects.richcontent_ingredients.hair_oil_ingredients_section.highlight_ingredient_6.value }}","bio_6":"","product_6":""}}},"block_order":["collapsible_47QgPT","testimonial_JijKaV"],"disabled":true,"name":"t:sections.custom-content.name","settings":{"tab_content_html":"","product_list":[],"template_product":"","container":"fixed","color_scheme":"scheme-11","enable_sticky_column":false,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"medium","row_gap":"large","swipe_on_mobile":false,"columns_mobile":"1","padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed","header_alignment_collapsible":"left","section_header_alignment_mobile_collapsible":"inherit","subheading_collapsible":"","heading_collapsible":"INGREDIENTS","highlight_style_collapsible":"none","highlight_font_style_collapsible":"italic","highlight_style_color_collapsible":"","highlight_text_color_collapsible":"","heading_size_collapsible":"h1","description_collapsible":"","text_size_collapsible":"text-base","button_label_collapsible":"","button_link_collapsible":"","button_style_collapsible":"btn--primary","button_icon_collapsible":"none","item_style":"card","item_color_scheme_collapsible":"scheme-1","item_heading_font_collapsible":"heading","item_heading_size_collapsible":"h4","item_icon_size_collapsible":"extra-large","section_header_alignment_testimonial":"right","section_header_alignment_mobile_testimonial":"inherit","subheading_testimonial":"","heading_testimonial":"","highlight_style_testimonial":"none","highlight_font_style_testimonial":"italic","highlight_style_color_testimonial":"","highlight_text_color_testimonial":"","heading_size_testimonial":"h3","description_testimonial":"","text_size_testimonial":"text-sm","layout":"standard","card_color_scheme":"","card_content_color_scheme":"","card_image_ratio":"adapt","card_heading_size":"h4","card_text_size":"text-base","author_info_layout":"vertical","card_trigger_behavior":"click","show_image":true,"show_author_image":false,"columns_desktop":2,"column_gap_testimonial":"medium","row_gap_testimonial":"medium","enable_slider_testimonial":true,"columns_mobile_testimonial":"1","swipe_on_mobile_testimonial":true,"show_progress_bar":true}},"section_ingredients_RUkB8L":{"type":"section-Ingredients","blocks":{"collapsible_e9qTf8":{"type":"collapsible","settings":{"icon":"none","width":"33%","alignment":"start","heading":"Full Ingredients list","content":"<p>                  <\/p>","custom_liquid":"","page":"","open":false,"use_subtext_color":false}},"testimonial_7gYLg6":{"type":"testimonial","settings":{"width":"66%","alignment":"start","icon_1":"none","image_1":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1.value }}","heading_1":"Testimonials","text_1":"<p>{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1_rich_text | metafield_tag }}<\/p>","avatar_1":"shopify:\/\/shop_images\/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp","author_1":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1_heading.value }}","bio_1":"","product_1":"","icon_2":"none","image_2":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2_image.value }}","heading_2":"Testimonials","text_2":"<p>{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2_rich_text | metafield_tag }}<\/p>","avatar_2":"shopify:\/\/shop_images\/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp","author_2":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2.value }}","bio_2":"","product_2":"","icon_3":"none","image_3":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3_image.value }}","heading_3":"Testimonials","text_3":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3_rich_text | metafield_tag }}","avatar_3":"shopify:\/\/shop_images\/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp","author_3":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3.value }}","bio_3":"","product_3":"","icon_4":"none","image_4":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4_image.value }}","heading_4":"Testimonials","text_4":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4_rich_text | metafield_tag }}","avatar_4":"shopify:\/\/shop_images\/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp","author_4":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4.value }}","bio_4":"","product_4":"","icon_5":"none","image_5":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_5_image.value }}","heading_5":"Testimonials","text_5":"","avatar_5":"shopify:\/\/shop_images\/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp","author_5":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_5.value }}","bio_5":"","product_5":"","icon_6":"none","image_6":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_6_image.value }}","heading_6":"Testimonials","text_6":"","author_6":"{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_6.value }}","bio_6":"","product_6":""}}},"block_order":["collapsible_e9qTf8","testimonial_7gYLg6"],"name":"Section Ingredients","settings":{"tab_content_html":"{{ product.metafields.custom.custom_section_ingredients.value }}","container":"fixed","color_scheme":"scheme-11","enable_sticky_column":false,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"medium","row_gap":"large","swipe_on_mobile":false,"columns_mobile":"1","padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed","header_alignment_collapsible":"left","section_header_alignment_mobile_collapsible":"inherit","subheading_collapsible":"","heading_collapsible":"INGREDIENTS","highlight_style_collapsible":"none","highlight_font_style_collapsible":"italic","highlight_style_color_collapsible":"","highlight_text_color_collapsible":"","heading_size_collapsible":"h1","description_collapsible":"","text_size_collapsible":"text-base","button_label_collapsible":"","button_link_collapsible":"","button_style_collapsible":"btn--primary","button_icon_collapsible":"none","item_style":"card","item_color_scheme_collapsible":"scheme-1","item_heading_font_collapsible":"heading","item_heading_size_collapsible":"h4","item_icon_size_collapsible":"extra-large","section_header_alignment_testimonial":"right","section_header_alignment_mobile_testimonial":"inherit","subheading_testimonial":"","heading_testimonial":"","highlight_style_testimonial":"none","highlight_font_style_testimonial":"italic","highlight_style_color_testimonial":"","highlight_text_color_testimonial":"","heading_size_testimonial":"h1","description_testimonial":"","text_size_testimonial":"text-sm","layout":"standard","card_color_scheme":"","card_content_color_scheme":"","card_image_ratio":"adapt","card_heading_size":"h4","card_text_size":"text-base","author_info_layout":"vertical","card_trigger_behavior":"click","show_image":true,"show_author_image":false,"columns_desktop":2,"column_gap_testimonial":"medium","row_gap_testimonial":"medium","enable_slider_testimonial":true,"columns_mobile_testimonial":"1","swipe_on_mobile_testimonial":true,"show_progress_bar":true}},"image_with_text_3VQ6He":{"type":"image-with-text","blocks":{"badge_ddAtpx":{"type":"badge","settings":{"color_scheme":"scheme-6","text":"Fucoidan - Fucoidan - Fucoidan -","image":"shopify:\/\/shop_images\/milkicon.webp","position_mobile":"right"}},"heading_pYCPxK":{"type":"heading","settings":{"heading":"What is Fucoidan?​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2"}},"text_dGfCih":{"type":"text","settings":{"text":"<p>Fucoidan is a type of dietary fibre​ extracted from marine seaweed.​​​​<\/p><p>Fucoidan from Undaria pinnatifida has been shown clinically to support immune system health.*<\/p>","subtext_color":true}},"button_w8w7Wj":{"type":"button","settings":{"button_label":"For more information​","button_link":"https:\/\/www.marinova.com.au\/immune-modulation","button_style":"btn--secondary","button_icon":"none"}}},"block_order":["badge_ddAtpx","heading_pYCPxK","text_dGfCih","button_w8w7Wj"],"name":"What is Fucoidan","settings":{"product_list":["maxucosa"],"template_product":"<p>Health_Supplement-product-profile<\/p>","container":"fixed","color_scheme":"scheme-1","image":"shopify:\/\/shop_images\/GoWshop_fucoidan_1000x750_c4b3fe8a-da2d-4ed9-b246-8a0c428d9816.webp","image_position":"right","image_width":50,"desktop_content_position":"center","desktop_content_alignment":"left","mobile_content_alignment":"inherit","show_section_divider":false,"divider_width":"fixed","padding_top":100,"padding_bottom":100}},"custom_content_g8NVwM":{"type":"custom-content","blocks":{"video_RhgncQ":{"type":"video","settings":{"video_url":"https:\/\/www.youtube.com\/watch?v=UPwTiWc-z9w&t=4s","cover_image":"shopify:\/\/shop_images\/GoWshop_fucoidan_1000x1000_2d0f44f8-0ec5-47d3-9e86-0c583fcfc1cb.webp","video_ratio":"16\/9","description":"","enable_video_autoplay":true,"enable_video_looping":true,"width":"50%","alignment":"center","block_custom_class":""}},"text_6J4x4N":{"type":"text","name":"Video section","settings":{"content_alignment":"left","subheading":"","heading":"Maritech®* certified organic fucoidan with global regulatory acceptance​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"<p>The fucoidan extract used in <strong>Maxucosa<\/strong> is from <strong>Australian Undaria<\/strong>, which follows a strict organic certification process for clean and traceable origins. <br\/><br\/><strong>Marinova<\/strong> use a unique, water-based extraction process without harsh chemicals to preserve the fucoidan's integrity.​<\/p><p>*Maritech® is a registered trademark of Marinova Pty Ltd​<\/p>","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","width":"50%","alignment":"center","block_custom_class":""}}},"block_order":["video_RhgncQ","text_6J4x4N"],"name":"Custom content custom","settings":{"tab_content_html":"","product_list":["maxucosa"],"template_product":"<p>Health_Supplement-product-profile<\/p>","container":"fixed","color_scheme":"scheme-3","enable_sticky_column":false,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"large","row_gap":"large","swipe_on_mobile":false,"columns_mobile":"1","padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed","header_alignment_collapsible":"left","section_header_alignment_mobile_collapsible":"inherit","subheading_collapsible":"","heading_collapsible":"Collapsible tabs","highlight_style_collapsible":"none","highlight_font_style_collapsible":"italic","highlight_style_color_collapsible":"","highlight_text_color_collapsible":"","heading_size_collapsible":"h1","description_collapsible":"","text_size_collapsible":"text-base","button_label_collapsible":"","button_link_collapsible":"","button_style_collapsible":"btn--primary","button_icon_collapsible":"none","item_style":"standard","item_color_scheme_collapsible":"","item_heading_font_collapsible":"heading","item_heading_size_collapsible":"h4","item_icon_size_collapsible":"extra-large","section_header_alignment_testimonial":"center","section_header_alignment_mobile_testimonial":"inherit","subheading_testimonial":"","heading_testimonial":"Testimonials","highlight_style_testimonial":"none","highlight_font_style_testimonial":"italic","highlight_style_color_testimonial":"","highlight_text_color_testimonial":"","heading_size_testimonial":"h1","description_testimonial":"","text_size_testimonial":"text-base","layout":"focused","card_color_scheme":"","card_content_color_scheme":"","card_image_ratio":"adapt","card_heading_size":"h4","card_text_size":"h1","author_info_layout":"vertical","card_trigger_behavior":"click","show_image":true,"show_author_image":true,"columns_desktop":3,"column_gap_testimonial":"medium","row_gap_testimonial":"medium","enable_slider_testimonial":true,"columns_mobile_testimonial":"1","swipe_on_mobile_testimonial":true,"show_progress_bar":true}},"multicolumn_icon_fc73BH":{"type":"multicolumn-icon","blocks":{"column_TtYCcJ":{"type":"column","settings":{"icon":"chat","image":"shopify:\/\/shop_images\/GoWshop_MBC_icon1.webp","max_width":100,"max_width_mb":100,"image_link":"","title":"Australian Made​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h5","heading_font":"heading","text":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}},"column_iLNyyF":{"type":"column","settings":{"icon":"chat","image":"shopify:\/\/shop_images\/GoWshop_MBC_icon2.webp","max_width":100,"max_width_mb":100,"image_link":"","title":"Trusted Brand Globally","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h5","heading_font":"heading","text":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}},"column_8UpkVd":{"type":"column","settings":{"icon":"chat","image":"shopify:\/\/shop_images\/GoWshop_MBC_icon3.webp","max_width":100,"max_width_mb":100,"image_link":"","title":"Pharmaceutical Grade Natural Ingredients","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h5","heading_font":"heading","text":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}},"column_7Gy6ki":{"type":"column","settings":{"icon":"chat","image":"shopify:\/\/shop_images\/GoWshop_MBC_icon4.webp","max_width":100,"max_width_mb":100,"image_link":"","title":"Ethical & Sustainable","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h5","heading_font":"heading","text":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}}},"block_order":["column_TtYCcJ","column_iLNyyF","column_8UpkVd","column_7Gy6ki"],"settings":{"container":"fixed","color_scheme":"scheme-12","header_layout":"standing-column","section_header_alignment":"left","image_margin_left":20,"section_header_alignment_mobile":"center","subheading":"","heading":"Why MAX BIOCARE?","highlight_style":"hand_drawn_circle","highlight_font_style":"normal","highlight_style_color":"#1ca758","highlight_text_color":"rgba(0,0,0,0)","heading_size":"h2","description":"<p>Max Biocare has been a trusted Australian brand for over 225+years, creating quality, natural health solutions for the wholefamily. We have always invested into research and innovation,ensuring our products deliver what we claim. Our commitmentto leaving a legacy for future generations inspires oursustainability framework.​<\/p>","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","enable_sticky":false,"card_color_scheme":"scheme-12","content_alignment":"center","image_position":"top","icon_color":"#84e797","columns_desktop":4,"column_gap":"large","row_gap":"inherit","show_divider_col":false,"columns_mobile":"2","swipe_on_mobile":false,"show_section_divider":false,"divider_width":"fixed","padding_top":80,"padding_bottom":80}},"custom_content_FYrdyy":{"type":"custom-content","blocks":{"collapsible_BT9BW4":{"type":"collapsible","settings":{"icon":"none","width":"50%","alignment":"center","heading":"","content":"","custom_liquid":"","page":"","open":false,"use_subtext_color":false}},"collapsible_QCqwQj":{"type":"collapsible","settings":{"icon":"none","width":"50%","alignment":"start","heading":"{{ product.metafields.custom.section_product_details.value.product_details_2_heading.value }}","content":"{{ product.metafields.custom.section_product_details.value.product_detail_rich_2_text | metafield_tag }}","custom_liquid":"","page":"","open":false,"use_subtext_color":false}},"collapsible_NnGiqy":{"type":"collapsible","settings":{"icon":"none","width":"50%","alignment":"start","heading":"{{ product.metafields.custom.section_product_details.value.product_details_3_heading.value }}","content":"{{ product.metafields.custom.section_product_details.value.product_detail_rich_3_text | metafield_tag }}","custom_liquid":"","page":"","open":false,"use_subtext_color":false}},"collapsible_zzGgck":{"type":"collapsible","settings":{"icon":"none","width":"50%","alignment":"start","heading":"{{ product.metafields.custom.section_product_details.value.product_details_4_heading.value }}","content":"{{ product.metafields.custom.section_product_details.value.product_detail_rich_4_text | metafield_tag }}","custom_liquid":"","page":"","open":false,"use_subtext_color":false}},"collapsible_iKE6wL":{"type":"collapsible","settings":{"icon":"none","width":"50%","alignment":"center","heading":"{{ product.metafields.custom.section_product_details.value.product_details_5_heading.value }}","content":"{{ product.metafields.custom.section_product_details.value.product_detail_rich_5_text | metafield_tag }}","custom_liquid":"","page":"","open":false,"use_subtext_color":false}}},"block_order":["collapsible_BT9BW4","collapsible_QCqwQj","collapsible_NnGiqy","collapsible_zzGgck","collapsible_iKE6wL"],"name":"t:sections.custom-content.name","settings":{"tab_content_html":"{{ product.metafields.custom.section_product_details.value }}","product_list":[],"template_product":"","container":"fixed","color_scheme":"scheme-1","enable_sticky_column":false,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"small","row_gap":"inherit","swipe_on_mobile":false,"columns_mobile":"1","padding_top":100,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed","header_alignment_collapsible":"left","section_header_alignment_mobile_collapsible":"inherit","subheading_collapsible":"","heading_collapsible":"","highlight_style_collapsible":"none","highlight_font_style_collapsible":"italic","highlight_style_color_collapsible":"","highlight_text_color_collapsible":"","heading_size_collapsible":"h1","description_collapsible":"","text_size_collapsible":"text-base","button_label_collapsible":"","button_link_collapsible":"","button_style_collapsible":"btn--primary","button_icon_collapsible":"none","item_style":"card","item_color_scheme_collapsible":"scheme-11","item_heading_font_collapsible":"heading","item_heading_size_collapsible":"h4","item_icon_size_collapsible":"extra-large","section_header_alignment_testimonial":"center","section_header_alignment_mobile_testimonial":"inherit","subheading_testimonial":"","heading_testimonial":"Testimonials","highlight_style_testimonial":"none","highlight_font_style_testimonial":"italic","highlight_style_color_testimonial":"","highlight_text_color_testimonial":"","heading_size_testimonial":"h1","description_testimonial":"","text_size_testimonial":"text-base","layout":"focused","card_color_scheme":"scheme-11","card_content_color_scheme":"","card_image_ratio":"adapt","card_heading_size":"h4","card_text_size":"h1","author_info_layout":"vertical","card_trigger_behavior":"click","show_image":true,"show_author_image":true,"columns_desktop":3,"column_gap_testimonial":"medium","row_gap_testimonial":"inherit","enable_slider_testimonial":true,"columns_mobile_testimonial":"1","swipe_on_mobile_testimonial":true,"show_progress_bar":true}},"recently_viewed_products_jqebfK":{"type":"recently-viewed-products","name":"t:sections.recently-viewed-products.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Recently viewed products","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","limit":12,"columns":5,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"padding_top":50,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}}},"order":["breadcrumbs","main","custom_content_WW3MYD","collapsible_tabs_BYP3VQ","custom_content_gePjib","section_ingredients_RUkB8L","image_with_text_3VQ6He","custom_content_g8NVwM","multicolumn_icon_fc73BH","custom_content_FYrdyy","recently_viewed_products_jqebfK"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs": {
+      "type": "breadcrumbs",
+      "custom_css": [
+        ".section-breadcrumb {background-color: #f9fafb;}"
+      ],
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "start",
+        "padding_top": 16,
+        "padding_bottom": 20
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "badges": {
+          "type": "badges",
+          "settings": {
+            "show_soldout_badge": true,
+            "show_sale_badge": true,
+            "sale_badge_type": "percentage"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "klaviyo_reviews_average_rating_8Ngrzx": {
+          "type": "shopify://apps/klaviyo-reviews/blocks/average-rating/db20e365-d984-4ac4-9655-e1588d951ca9",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "meta": {
+          "type": "meta",
+          "settings": {
+            "link_color": "#1ca758",
+            "show_vendor": true,
+            "show_product_type": true,
+            "show_sku": false,
+            "show_barcode": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "price_size": 32,
+            "price_color": "#1ca758"
+          }
+        },
+        "icon_with_text": {
+          "type": "icon-with-text",
+          "settings": {
+            "use_metafields": true,
+            "layout": "vertical",
+            "title_font": "body-bolder",
+            "title_size": "text-sm",
+            "icon_color": "#4d4d4d",
+            "icon_1": "check",
+            "heading_1": "{{ product.metafields.custom.section_benefits.value.short_benefit_1.value }}",
+            "icon_2": "check",
+            "heading_2": "{{ product.metafields.custom.section_benefits.value.short_benefit_2.value }}",
+            "icon_3": "check",
+            "heading_3": "{{ product.metafields.custom.section_benefits.value.short_benefit_3.value }}"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_type": "shopify_swatch",
+            "swatch_style": "square",
+            "swatch_size": 32,
+            "button_style": "square",
+            "size_title": "Size",
+            "size_chart_from_page": "",
+            "variant_button_border_color": "#e5e7eb",
+            "variant_button_text_color": "#111111",
+            "variant_button_checked_border_color": "#1ca758",
+            "variant_button_checked_text_color": "#1ca758"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
+          }
+        },
+        "promotion_alert_ehRPKj": {
+          "type": "promotion_alert",
+          "disabled": true,
+          "settings": {
+            "text_color": "#049b6e",
+            "icon": "lightning",
+            "heading": "Limited time offer",
+            "description": "<p>Don’t miss out on this limited-time advantage crafted for you</p>"
+          }
+        },
+        "timer_aDbfnn": {
+          "type": "timer",
+          "disabled": true,
+          "settings": {
+            "text_color": "#c4301c",
+            "type": "evergreen",
+            "duration": "every_month",
+            "time": "2025/08/20 03:45 PM",
+            "text": "Sales end in"
+          }
+        },
+        "text_with_buttons_XHBwiU": {
+          "type": "text_with_buttons",
+          "disabled": true,
+          "settings": {
+            "heading": "Also available on",
+            "heading_size": "h4",
+            "share_twitter_icon": "shopify://shop_images/chemist-warehouse-logo-1914FA0C63-seeklogo.com.png",
+            "share_twitter_tooltip": "Chemist Warehouse",
+            "share_facebook_icon": "shopify://shop_images/Amazon_logo_svg.png",
+            "share_facebook_tooltip": "Amazon",
+            "twitter_url": "",
+            "facebook_url": "",
+            "share_icon_size": 60
+          }
+        },
+        "icon_with_text_BVwRJy": {
+          "type": "icon-with-text",
+          "settings": {
+            "use_metafields": false,
+            "layout": "vertical",
+            "title_font": "body",
+            "title_size": "text-base",
+            "icon_color": "#000000",
+            "icon_1": "truck",
+            "heading_1": "<strong>Free delivery | </strong>Fast and Free delivery for all orders​",
+            "icon_2": "lightning",
+            "heading_2": "<strong>Fast Dispatch​ |</strong> Leaves warehouse in <strong>1-2 business days</strong>​",
+            "icon_3": "star-four",
+            "heading_3": ""
+          }
+        },
+        "promotion_alert_L7ipQp": {
+          "type": "promotion_alert",
+          "disabled": true,
+          "settings": {
+            "text_color": "#4d4d4d",
+            "icon": "bell-ringing",
+            "heading": "Always read the label and follow the directions for use.",
+            "description": "<p>Always read the label and follow the directions for use. Please refer to any health and product warnings below.</p>"
+          }
+        },
+        "complementary": {
+          "type": "complementary",
+          "settings": {
+            "block_heading": "Perfect Match With",
+            "heading_size": "h4",
+            "show_below_product_media": false,
+            "make_collapsible_row": false,
+            "icon": "tag",
+            "product_list_limit": 6,
+            "layout": "grid",
+            "columns": 3,
+            "image_ratio": "1/1",
+            "enable_quick_add": true
+          }
+        },
+        "divider_pPz3Kw": {
+          "type": "divider",
+          "settings": {
+            "show_below_product_media": false
+          }
+        },
+        "related_products_RnXhN3": {
+          "type": "related_products",
+          "settings": {
+            "container": "fixed",
+            "color_scheme": "",
+            "section_header_alignment": "left",
+            "section_header_alignment_mobile": "inherit",
+            "subheading": "",
+            "heading": "You may also like",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "description": "",
+            "limit": 6,
+            "columns": 3,
+            "column_gap": "extra-small",
+            "row_gap": "inherit",
+            "enable_slider": true,
+            "navigation_position": "bottom",
+            "pcard_image_ratio": "",
+            "columns_mobile": "1",
+            "swipe_on_mobile": true,
+            "show_progress_bar": true,
+            "padding_top": 50,
+            "padding_bottom": 50,
+            "show_section_divider": false,
+            "divider_width": "fixed",
+            "show_below_product_media": true
+          }
+        },
+        "payment_info_zWDL49": {
+          "type": "payment_info",
+          "disabled": true,
+          "settings": {
+            "heading": "Payment & Security",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h5",
+            "description": "",
+            "show_payment_icons": true,
+            "show_below_product_media": false
+          }
+        },
+        "sticky_atc_bar_7HgNgP": {
+          "type": "sticky-atc-bar",
+          "settings": {
+            "visibility": "all",
+            "style": "standard",
+            "container": "fixed",
+            "show_atc_button": true,
+            "show_dynamic_checkout_buttons": false,
+            "show_quantity": false
+          }
+        },
+        "divider_3mNceA": {
+          "type": "divider",
+          "disabled": true,
+          "settings": {
+            "show_below_product_media": false
+          }
+        },
+        "social_sharing": {
+          "type": "social_sharing",
+          "disabled": true,
+          "settings": {}
+        },
+        "payment_social_bRhfxU": {
+          "type": "payment_social",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "badges",
+        "title",
+        "klaviyo_reviews_average_rating_8Ngrzx",
+        "meta",
+        "price",
+        "icon_with_text",
+        "variant_picker",
+        "buy_buttons",
+        "promotion_alert_ehRPKj",
+        "timer_aDbfnn",
+        "text_with_buttons_XHBwiU",
+        "icon_with_text_BVwRJy",
+        "promotion_alert_L7ipQp",
+        "complementary",
+        "divider_pPz3Kw",
+        "related_products_RnXhN3",
+        "payment_info_zWDL49",
+        "sticky_atc_bar_7HgNgP",
+        "divider_3mNceA",
+        "social_sharing",
+        "payment_social_bRhfxU"
+      ],
+      "custom_css": [
+        "@media (min-width: 1024px) {.product__info-wrapper {border: 1px solid #e5e7eb; background: #ffffff; border-radius: 12px; padding: 2.5rem 2.5rem; }}",
+        ".btn--icon-pill,.btn--icon.btn--icon-pill {border: 1px solid #e5e7eb;}",
+        ".btn--icon-circle {border: 1px solid #e5e7eb;}"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "use_color_scheme_in_container": false,
+        "enable_sticky_info": true,
+        "media_size": "large",
+        "gallery_layout": "vertical-carousel",
+        "mobile_thumbnails": "show",
+        "show_image_border": true,
+        "enable_image_zoom": true,
+        "enable_video_looping": true,
+        "padding_top": 0,
+        "padding_bottom": 100
+      }
+    },
+    "custom_content_WW3MYD": {
+      "type": "custom-content",
+      "blocks": {
+        "collapsible_PpPtjH": {
+          "type": "collapsible",
+          "settings": {
+            "icon": "none",
+            "width": "100%",
+            "alignment": "start",
+            "heading": "{{ product.metafields.custom.section_product_details.value.product_details_1_heading.value }}",
+            "content": "{{ product.description }}",
+            "custom_liquid": "",
+            "page": "",
+            "open": true,
+            "use_subtext_color": false
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_PpPtjH"
+      ],
+      "name": "t:sections.custom-content.name",
+      "settings": {
+        "tab_content_html": "",
+        "product_list": [],
+        "template_product": "",
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "enable_sticky_column": false,
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "medium",
+        "row_gap": "large",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "header_alignment_collapsible": "left",
+        "section_header_alignment_mobile_collapsible": "inherit",
+        "subheading_collapsible": "",
+        "heading_collapsible": "",
+        "highlight_style_collapsible": "none",
+        "highlight_font_style_collapsible": "italic",
+        "highlight_style_color_collapsible": "",
+        "highlight_text_color_collapsible": "",
+        "heading_size_collapsible": "h1",
+        "description_collapsible": "",
+        "text_size_collapsible": "text-base",
+        "button_label_collapsible": "",
+        "button_link_collapsible": "",
+        "button_style_collapsible": "btn--primary",
+        "button_icon_collapsible": "none",
+        "item_style": "card",
+        "item_color_scheme_collapsible": "scheme-11",
+        "item_heading_font_collapsible": "heading",
+        "item_heading_size_collapsible": "h4",
+        "item_icon_size_collapsible": "extra-large",
+        "section_header_alignment_testimonial": "center",
+        "section_header_alignment_mobile_testimonial": "inherit",
+        "subheading_testimonial": "",
+        "heading_testimonial": "Testimonials",
+        "highlight_style_testimonial": "none",
+        "highlight_font_style_testimonial": "italic",
+        "highlight_style_color_testimonial": "",
+        "highlight_text_color_testimonial": "",
+        "heading_size_testimonial": "h1",
+        "description_testimonial": "",
+        "text_size_testimonial": "text-base",
+        "layout": "focused",
+        "card_color_scheme": "scheme-11",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "h1",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": true,
+        "columns_desktop": 3,
+        "column_gap_testimonial": "medium",
+        "row_gap_testimonial": "medium",
+        "enable_slider_testimonial": true,
+        "columns_mobile_testimonial": "1",
+        "swipe_on_mobile_testimonial": true,
+        "show_progress_bar": true
+      }
+    },
+    "collapsible_tabs_BYP3VQ": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "image_card_BdxPWc": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "desktop_image_position": "left",
+            "image_width": 50,
+            "alignment": "center",
+            "image": "{{ product.metafields.custom.section_benefits.value.benefit_image.value }}",
+            "image_ratio": "1/1",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "",
+            "subheading": "",
+            "subheading_style": "thick-border",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "order_first": true
+          }
+        },
+        "heading_fmBLHt": {
+          "type": "heading",
+          "settings": {
+            "sub_heading": "",
+            "heading": "{{ product.metafields.custom.section_benefits.value.benefit_big_heading.value }}",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_xPBxNB": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.section_benefits.value.benefit_heading_1.value }}",
+            "icon_text": "check",
+            "text_style": "card",
+            "text_background_color": "#f9f9f9",
+            "heading_font_size": 18,
+            "heading_font_weight": "400"
+          }
+        },
+        "text_NhXJMz": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.section_benefits.value.benefit_heading_2.value }}",
+            "icon_text": "check",
+            "text_style": "card",
+            "text_background_color": "#f9f9f9",
+            "heading_font_size": 18,
+            "heading_font_weight": "400"
+          }
+        },
+        "text_mp8fak": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.section_benefits.value.benefit_heading_3.value }}",
+            "icon_text": "check",
+            "text_style": "card",
+            "text_background_color": "#f9f9f9",
+            "heading_font_size": 18,
+            "heading_font_weight": "400"
+          }
+        },
+        "text_mLfNFt": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.metafields.custom.section_benefits.value.benefit_heading_4.value }}",
+            "icon_text": "check",
+            "text_style": "card",
+            "text_background_color": "#f9f9f9",
+            "heading_font_size": 18,
+            "heading_font_weight": "400"
+          }
+        }
+      },
+      "block_order": [
+        "image_card_BdxPWc",
+        "heading_fmBLHt",
+        "text_xPBxNB",
+        "text_NhXJMz",
+        "text_mp8fak",
+        "text_mLfNFt"
+      ],
+      "name": "t:sections.collapsible-tabs.name",
+      "settings": {
+        "product_list": [],
+        "template_product": "",
+        "container": "fixed",
+        "color_scheme": "",
+        "header_layout": "vertical",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "normal",
+        "highlight_style_color": "#1ca758",
+        "highlight_text_color": "#1ca758",
+        "heading_size": "hd2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--primary",
+        "button_icon": "none",
+        "column_gap": "large",
+        "row_gap": "inherit",
+        "item_style": "card",
+        "item_color_scheme": "scheme-14",
+        "item_heading_font": "heading",
+        "item_heading_size": "h5",
+        "item_icon_size": "medium",
+        "padding_top": 50,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "custom_content_gePjib": {
+      "type": "custom-content",
+      "blocks": {
+        "collapsible_47QgPT": {
+          "type": "collapsible",
+          "settings": {
+            "icon": "none",
+            "width": "33%",
+            "alignment": "start",
+            "heading": "Full Ingredients list",
+            "content": "{{ product.metafields.custom.custom_section_ingredients.value.full_ingredients_rich_text | metafield_tag }}",
+            "custom_liquid": "",
+            "page": "",
+            "open": false,
+            "use_subtext_color": false
+          }
+        },
+        "testimonial_JijKaV": {
+          "type": "testimonial",
+          "settings": {
+            "width": "66%",
+            "alignment": "start",
+            "icon_1": "none",
+            "image_1": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1.value }}",
+            "heading_1": "Testimonials",
+            "text_1": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1_rich_text | metafield_tag }}",
+            "author_1": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1_heading.value }}",
+            "bio_1": "",
+            "product_1": "",
+            "icon_2": "none",
+            "image_2": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2_image.value }}",
+            "heading_2": "Testimonials",
+            "text_2": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2_rich_text | metafield_tag }}",
+            "author_2": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3.value }}",
+            "bio_2": "",
+            "product_2": "",
+            "icon_3": "none",
+            "image_3": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3_image.value }}",
+            "heading_3": "Testimonials",
+            "text_3": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3_rich_text | metafield_tag }}",
+            "author_3": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3.value }}",
+            "bio_3": "",
+            "product_3": "",
+            "icon_4": "none",
+            "image_4": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4_image.value }}",
+            "heading_4": "Testimonials",
+            "text_4": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4_rich_text | metafield_tag }}",
+            "author_4": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4.value }}",
+            "bio_4": "",
+            "product_4": "",
+            "icon_5": "none",
+            "image_5": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_5_image.value }}",
+            "heading_5": "Testimonials",
+            "text_5": "{{ metaobjects.richcontent_ingredients.hair_oil_ingredients_section.highlight_ingredient_5_rich_text | metafield_tag }}",
+            "author_5": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_5.value }}",
+            "bio_5": "",
+            "product_5": "",
+            "icon_6": "none",
+            "image_6": "{{ metaobjects.richcontent_ingredients.hair_oil_ingredients_section.highlight_ingredient_6_image.value }}",
+            "heading_6": "Testimonials",
+            "text_6": "{{ metaobjects.richcontent_ingredients.hair_oil_ingredients_section.highlight_ingredient_6_rich_text | metafield_tag }}",
+            "author_6": "{{ metaobjects.richcontent_ingredients.hair_oil_ingredients_section.highlight_ingredient_6.value }}",
+            "bio_6": "",
+            "product_6": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_47QgPT",
+        "testimonial_JijKaV"
+      ],
+      "disabled": true,
+      "name": "t:sections.custom-content.name",
+      "settings": {
+        "tab_content_html": "",
+        "product_list": [],
+        "template_product": "",
+        "container": "fixed",
+        "color_scheme": "scheme-11",
+        "enable_sticky_column": false,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "medium",
+        "row_gap": "large",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "header_alignment_collapsible": "left",
+        "section_header_alignment_mobile_collapsible": "inherit",
+        "subheading_collapsible": "",
+        "heading_collapsible": "INGREDIENTS",
+        "highlight_style_collapsible": "none",
+        "highlight_font_style_collapsible": "italic",
+        "highlight_style_color_collapsible": "",
+        "highlight_text_color_collapsible": "",
+        "heading_size_collapsible": "h1",
+        "description_collapsible": "",
+        "text_size_collapsible": "text-base",
+        "button_label_collapsible": "",
+        "button_link_collapsible": "",
+        "button_style_collapsible": "btn--primary",
+        "button_icon_collapsible": "none",
+        "item_style": "card",
+        "item_color_scheme_collapsible": "scheme-1",
+        "item_heading_font_collapsible": "heading",
+        "item_heading_size_collapsible": "h4",
+        "item_icon_size_collapsible": "extra-large",
+        "section_header_alignment_testimonial": "right",
+        "section_header_alignment_mobile_testimonial": "inherit",
+        "subheading_testimonial": "",
+        "heading_testimonial": "",
+        "highlight_style_testimonial": "none",
+        "highlight_font_style_testimonial": "italic",
+        "highlight_style_color_testimonial": "",
+        "highlight_text_color_testimonial": "",
+        "heading_size_testimonial": "h3",
+        "description_testimonial": "",
+        "text_size_testimonial": "text-sm",
+        "layout": "standard",
+        "card_color_scheme": "",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "text-base",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": false,
+        "columns_desktop": 2,
+        "column_gap_testimonial": "medium",
+        "row_gap_testimonial": "medium",
+        "enable_slider_testimonial": true,
+        "columns_mobile_testimonial": "1",
+        "swipe_on_mobile_testimonial": true,
+        "show_progress_bar": true
+      }
+    },
+    "section_ingredients_RUkB8L": {
+      "type": "section-Ingredients",
+      "blocks": {
+        "collapsible_e9qTf8": {
+          "type": "collapsible",
+          "settings": {
+            "icon": "none",
+            "width": "33%",
+            "alignment": "start",
+            "heading": "Full Ingredients list",
+            "content": "<p>                  </p>",
+            "custom_liquid": "",
+            "page": "",
+            "open": false,
+            "use_subtext_color": false
+          }
+        },
+        "testimonial_7gYLg6": {
+          "type": "testimonial",
+          "settings": {
+            "width": "66%",
+            "alignment": "start",
+            "icon_1": "none",
+            "image_1": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1.value }}",
+            "heading_1": "Testimonials",
+            "text_1": "<p>{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1_rich_text | metafield_tag }}</p>",
+            "avatar_1": "shopify://shop_images/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp",
+            "author_1": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_1_heading.value }}",
+            "bio_1": "",
+            "product_1": "",
+            "icon_2": "none",
+            "image_2": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2_image.value }}",
+            "heading_2": "Testimonials",
+            "text_2": "<p>{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2_rich_text | metafield_tag }}</p>",
+            "avatar_2": "shopify://shop_images/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp",
+            "author_2": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_2.value }}",
+            "bio_2": "",
+            "product_2": "",
+            "icon_3": "none",
+            "image_3": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3_image.value }}",
+            "heading_3": "Testimonials",
+            "text_3": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3_rich_text | metafield_tag }}",
+            "avatar_3": "shopify://shop_images/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp",
+            "author_3": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_3.value }}",
+            "bio_3": "",
+            "product_3": "",
+            "icon_4": "none",
+            "image_4": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4_image.value }}",
+            "heading_4": "Testimonials",
+            "text_4": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4_rich_text | metafield_tag }}",
+            "avatar_4": "shopify://shop_images/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp",
+            "author_4": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_4.value }}",
+            "bio_4": "",
+            "product_4": "",
+            "icon_5": "none",
+            "image_5": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_5_image.value }}",
+            "heading_5": "Testimonials",
+            "text_5": "",
+            "avatar_5": "shopify://shop_images/GoWshop_icon_916bd38b-e399-4378-96f5-cc71471c3be1.webp",
+            "author_5": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_5.value }}",
+            "bio_5": "",
+            "product_5": "",
+            "icon_6": "none",
+            "image_6": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_6_image.value }}",
+            "heading_6": "Testimonials",
+            "text_6": "",
+            "author_6": "{{ product.metafields.custom.custom_section_ingredients.value.highlight_ingredient_6.value }}",
+            "bio_6": "",
+            "product_6": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_e9qTf8",
+        "testimonial_7gYLg6"
+      ],
+      "name": "Section Ingredients",
+      "settings": {
+        "tab_content_html": "{{ product.metafields.custom.custom_section_ingredients.value }}",
+        "container": "fixed",
+        "color_scheme": "scheme-11",
+        "enable_sticky_column": false,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "medium",
+        "row_gap": "large",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "header_alignment_collapsible": "left",
+        "section_header_alignment_mobile_collapsible": "inherit",
+        "subheading_collapsible": "",
+        "heading_collapsible": "INGREDIENTS",
+        "highlight_style_collapsible": "none",
+        "highlight_font_style_collapsible": "italic",
+        "highlight_style_color_collapsible": "",
+        "highlight_text_color_collapsible": "",
+        "heading_size_collapsible": "h1",
+        "description_collapsible": "",
+        "text_size_collapsible": "text-base",
+        "button_label_collapsible": "",
+        "button_link_collapsible": "",
+        "button_style_collapsible": "btn--primary",
+        "button_icon_collapsible": "none",
+        "item_style": "card",
+        "item_color_scheme_collapsible": "scheme-1",
+        "item_heading_font_collapsible": "heading",
+        "item_heading_size_collapsible": "h4",
+        "item_icon_size_collapsible": "extra-large",
+        "section_header_alignment_testimonial": "right",
+        "section_header_alignment_mobile_testimonial": "inherit",
+        "subheading_testimonial": "",
+        "heading_testimonial": "",
+        "highlight_style_testimonial": "none",
+        "highlight_font_style_testimonial": "italic",
+        "highlight_style_color_testimonial": "",
+        "highlight_text_color_testimonial": "",
+        "heading_size_testimonial": "h1",
+        "description_testimonial": "",
+        "text_size_testimonial": "text-sm",
+        "layout": "standard",
+        "card_color_scheme": "",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "text-base",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": false,
+        "columns_desktop": 2,
+        "column_gap_testimonial": "medium",
+        "row_gap_testimonial": "medium",
+        "enable_slider_testimonial": true,
+        "columns_mobile_testimonial": "1",
+        "swipe_on_mobile_testimonial": true,
+        "show_progress_bar": true
+      }
+    },
+    "image_with_text_3VQ6He": {
+      "type": "image-with-text",
+      "blocks": {
+        "badge_ddAtpx": {
+          "type": "badge",
+          "settings": {
+            "color_scheme": "scheme-6",
+            "text": "Fucoidan - Fucoidan - Fucoidan -",
+            "image": "shopify://shop_images/milkicon.webp",
+            "position_mobile": "right"
+          }
+        },
+        "heading_pYCPxK": {
+          "type": "heading",
+          "settings": {
+            "heading": "What is Fucoidan?​",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2"
+          }
+        },
+        "text_dGfCih": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Fucoidan is a type of dietary fibre​ extracted from marine seaweed.​​​​</p><p>Fucoidan from Undaria pinnatifida has been shown clinically to support immune system health.*</p>",
+            "subtext_color": true
+          }
+        },
+        "button_w8w7Wj": {
+          "type": "button",
+          "settings": {
+            "button_label": "For more information​",
+            "button_link": "https://www.marinova.com.au/immune-modulation",
+            "button_style": "btn--secondary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "badge_ddAtpx",
+        "heading_pYCPxK",
+        "text_dGfCih",
+        "button_w8w7Wj"
+      ],
+      "name": "What is Fucoidan",
+      "settings": {
+        "product_list": [
+          "max-biocare-maxucosa"
+        ],
+        "template_product": "<p>Health_Supplement-product-profile</p>",
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "image": "shopify://shop_images/GoWshop_fucoidan_1000x750_c4b3fe8a-da2d-4ed9-b246-8a0c428d9816.webp",
+        "image_position": "right",
+        "image_width": 50,
+        "desktop_content_position": "center",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "inherit",
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "custom_content_g8NVwM": {
+      "type": "custom-content",
+      "blocks": {
+        "video_RhgncQ": {
+          "type": "video",
+          "settings": {
+            "video_url": "https://www.youtube.com/watch?v=UPwTiWc-z9w&t=4s",
+            "cover_image": "shopify://shop_images/GoWshop_fucoidan_1000x1000_2d0f44f8-0ec5-47d3-9e86-0c583fcfc1cb.webp",
+            "video_ratio": "16/9",
+            "description": "",
+            "enable_video_autoplay": true,
+            "enable_video_looping": true,
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "text_6J4x4N": {
+          "type": "text",
+          "name": "Video section",
+          "settings": {
+            "content_alignment": "left",
+            "subheading": "",
+            "heading": "Maritech®* certified organic fucoidan with global regulatory acceptance​",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "description": "<p>The fucoidan extract used in <strong>Maxucosa</strong> is from <strong>Australian Undaria</strong>, which follows a strict organic certification process for clean and traceable origins. <br/><br/><strong>Marinova</strong> use a unique, water-based extraction process without harsh chemicals to preserve the fucoidan's integrity.​</p><p>*Maritech® is a registered trademark of Marinova Pty Ltd​</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "video_RhgncQ",
+        "text_6J4x4N"
+      ],
+      "name": "Custom content custom",
+      "settings": {
+        "tab_content_html": "",
+        "product_list": [
+          "max-biocare-maxucosa"
+        ],
+        "template_product": "<p>Health_Supplement-product-profile</p>",
+        "container": "fixed",
+        "color_scheme": "scheme-3",
+        "enable_sticky_column": false,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "large",
+        "row_gap": "large",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "header_alignment_collapsible": "left",
+        "section_header_alignment_mobile_collapsible": "inherit",
+        "subheading_collapsible": "",
+        "heading_collapsible": "Collapsible tabs",
+        "highlight_style_collapsible": "none",
+        "highlight_font_style_collapsible": "italic",
+        "highlight_style_color_collapsible": "",
+        "highlight_text_color_collapsible": "",
+        "heading_size_collapsible": "h1",
+        "description_collapsible": "",
+        "text_size_collapsible": "text-base",
+        "button_label_collapsible": "",
+        "button_link_collapsible": "",
+        "button_style_collapsible": "btn--primary",
+        "button_icon_collapsible": "none",
+        "item_style": "standard",
+        "item_color_scheme_collapsible": "",
+        "item_heading_font_collapsible": "heading",
+        "item_heading_size_collapsible": "h4",
+        "item_icon_size_collapsible": "extra-large",
+        "section_header_alignment_testimonial": "center",
+        "section_header_alignment_mobile_testimonial": "inherit",
+        "subheading_testimonial": "",
+        "heading_testimonial": "Testimonials",
+        "highlight_style_testimonial": "none",
+        "highlight_font_style_testimonial": "italic",
+        "highlight_style_color_testimonial": "",
+        "highlight_text_color_testimonial": "",
+        "heading_size_testimonial": "h1",
+        "description_testimonial": "",
+        "text_size_testimonial": "text-base",
+        "layout": "focused",
+        "card_color_scheme": "",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "h1",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": true,
+        "columns_desktop": 3,
+        "column_gap_testimonial": "medium",
+        "row_gap_testimonial": "medium",
+        "enable_slider_testimonial": true,
+        "columns_mobile_testimonial": "1",
+        "swipe_on_mobile_testimonial": true,
+        "show_progress_bar": true
+      }
+    },
+    "multicolumn_icon_fc73BH": {
+      "type": "multicolumn-icon",
+      "blocks": {
+        "column_TtYCcJ": {
+          "type": "column",
+          "settings": {
+            "icon": "chat",
+            "image": "shopify://shop_images/GoWshop_MBC_icon1.webp",
+            "max_width": 100,
+            "max_width_mb": 100,
+            "image_link": "",
+            "title": "Australian Made​",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h5",
+            "heading_font": "heading",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_iLNyyF": {
+          "type": "column",
+          "settings": {
+            "icon": "chat",
+            "image": "shopify://shop_images/GoWshop_MBC_icon2.webp",
+            "max_width": 100,
+            "max_width_mb": 100,
+            "image_link": "",
+            "title": "Trusted Brand Globally",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h5",
+            "heading_font": "heading",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_8UpkVd": {
+          "type": "column",
+          "settings": {
+            "icon": "chat",
+            "image": "shopify://shop_images/GoWshop_MBC_icon3.webp",
+            "max_width": 100,
+            "max_width_mb": 100,
+            "image_link": "",
+            "title": "Pharmaceutical Grade Natural Ingredients",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h5",
+            "heading_font": "heading",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_7Gy6ki": {
+          "type": "column",
+          "settings": {
+            "icon": "chat",
+            "image": "shopify://shop_images/GoWshop_MBC_icon4.webp",
+            "max_width": 100,
+            "max_width_mb": 100,
+            "image_link": "",
+            "title": "Ethical & Sustainable",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h5",
+            "heading_font": "heading",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "column_TtYCcJ",
+        "column_iLNyyF",
+        "column_8UpkVd",
+        "column_7Gy6ki"
+      ],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-12",
+        "header_layout": "standing-column",
+        "section_header_alignment": "left",
+        "image_margin_left": 20,
+        "section_header_alignment_mobile": "center",
+        "subheading": "",
+        "heading": "Why MAX BIOCARE?",
+        "highlight_style": "hand_drawn_circle",
+        "highlight_font_style": "normal",
+        "highlight_style_color": "#1ca758",
+        "highlight_text_color": "rgba(0,0,0,0)",
+        "heading_size": "h2",
+        "description": "<p>Max Biocare has been a trusted Australian brand for over 225+years, creating quality, natural health solutions for the wholefamily. We have always invested into research and innovation,ensuring our products deliver what we claim. Our commitmentto leaving a legacy for future generations inspires oursustainability framework.​</p>",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "enable_sticky": false,
+        "card_color_scheme": "scheme-12",
+        "content_alignment": "center",
+        "image_position": "top",
+        "icon_color": "#84e797",
+        "columns_desktop": 4,
+        "column_gap": "large",
+        "row_gap": "inherit",
+        "show_divider_col": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
+    },
+    "custom_content_FYrdyy": {
+      "type": "custom-content",
+      "blocks": {
+        "collapsible_BT9BW4": {
+          "type": "collapsible",
+          "settings": {
+            "icon": "none",
+            "width": "50%",
+            "alignment": "center",
+            "heading": "",
+            "content": "",
+            "custom_liquid": "",
+            "page": "",
+            "open": false,
+            "use_subtext_color": false
+          }
+        },
+        "collapsible_QCqwQj": {
+          "type": "collapsible",
+          "settings": {
+            "icon": "none",
+            "width": "50%",
+            "alignment": "start",
+            "heading": "{{ product.metafields.custom.section_product_details.value.product_details_2_heading.value }}",
+            "content": "{{ product.metafields.custom.section_product_details.value.product_detail_rich_2_text | metafield_tag }}",
+            "custom_liquid": "",
+            "page": "",
+            "open": false,
+            "use_subtext_color": false
+          }
+        },
+        "collapsible_NnGiqy": {
+          "type": "collapsible",
+          "settings": {
+            "icon": "none",
+            "width": "50%",
+            "alignment": "start",
+            "heading": "{{ product.metafields.custom.section_product_details.value.product_details_3_heading.value }}",
+            "content": "{{ product.metafields.custom.section_product_details.value.product_detail_rich_3_text | metafield_tag }}",
+            "custom_liquid": "",
+            "page": "",
+            "open": false,
+            "use_subtext_color": false
+          }
+        },
+        "collapsible_zzGgck": {
+          "type": "collapsible",
+          "settings": {
+            "icon": "none",
+            "width": "50%",
+            "alignment": "start",
+            "heading": "{{ product.metafields.custom.section_product_details.value.product_details_4_heading.value }}",
+            "content": "{{ product.metafields.custom.section_product_details.value.product_detail_rich_4_text | metafield_tag }}",
+            "custom_liquid": "",
+            "page": "",
+            "open": false,
+            "use_subtext_color": false
+          }
+        },
+        "collapsible_iKE6wL": {
+          "type": "collapsible",
+          "settings": {
+            "icon": "none",
+            "width": "50%",
+            "alignment": "center",
+            "heading": "{{ product.metafields.custom.section_product_details.value.product_details_5_heading.value }}",
+            "content": "{{ product.metafields.custom.section_product_details.value.product_detail_rich_5_text | metafield_tag }}",
+            "custom_liquid": "",
+            "page": "",
+            "open": false,
+            "use_subtext_color": false
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_BT9BW4",
+        "collapsible_QCqwQj",
+        "collapsible_NnGiqy",
+        "collapsible_zzGgck",
+        "collapsible_iKE6wL"
+      ],
+      "name": "t:sections.custom-content.name",
+      "settings": {
+        "tab_content_html": "{{ product.metafields.custom.section_product_details.value }}",
+        "product_list": [],
+        "template_product": "",
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "enable_sticky_column": false,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "small",
+        "row_gap": "inherit",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "header_alignment_collapsible": "left",
+        "section_header_alignment_mobile_collapsible": "inherit",
+        "subheading_collapsible": "",
+        "heading_collapsible": "",
+        "highlight_style_collapsible": "none",
+        "highlight_font_style_collapsible": "italic",
+        "highlight_style_color_collapsible": "",
+        "highlight_text_color_collapsible": "",
+        "heading_size_collapsible": "h1",
+        "description_collapsible": "",
+        "text_size_collapsible": "text-base",
+        "button_label_collapsible": "",
+        "button_link_collapsible": "",
+        "button_style_collapsible": "btn--primary",
+        "button_icon_collapsible": "none",
+        "item_style": "card",
+        "item_color_scheme_collapsible": "scheme-11",
+        "item_heading_font_collapsible": "heading",
+        "item_heading_size_collapsible": "h4",
+        "item_icon_size_collapsible": "extra-large",
+        "section_header_alignment_testimonial": "center",
+        "section_header_alignment_mobile_testimonial": "inherit",
+        "subheading_testimonial": "",
+        "heading_testimonial": "Testimonials",
+        "highlight_style_testimonial": "none",
+        "highlight_font_style_testimonial": "italic",
+        "highlight_style_color_testimonial": "",
+        "highlight_text_color_testimonial": "",
+        "heading_size_testimonial": "h1",
+        "description_testimonial": "",
+        "text_size_testimonial": "text-base",
+        "layout": "focused",
+        "card_color_scheme": "scheme-11",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "h1",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": true,
+        "columns_desktop": 3,
+        "column_gap_testimonial": "medium",
+        "row_gap_testimonial": "inherit",
+        "enable_slider_testimonial": true,
+        "columns_mobile_testimonial": "1",
+        "swipe_on_mobile_testimonial": true,
+        "show_progress_bar": true
+      }
+    },
+    "recently_viewed_products_jqebfK": {
+      "type": "recently-viewed-products",
+      "name": "t:sections.recently-viewed-products.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Recently viewed products",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "limit": 12,
+        "columns": 5,
+        "column_gap": "extra-small",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 50,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs",
+    "main",
+    "custom_content_WW3MYD",
+    "collapsible_tabs_BYP3VQ",
+    "custom_content_gePjib",
+    "section_ingredients_RUkB8L",
+    "image_with_text_3VQ6He",
+    "custom_content_g8NVwM",
+    "multicolumn_icon_fc73BH",
+    "custom_content_FYrdyy",
+    "recently_viewed_products_jqebfK"
+  ]
+}
