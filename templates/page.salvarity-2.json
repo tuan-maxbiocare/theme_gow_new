@@ -522,7 +522,7 @@
             "button_style": "btn--primary",
             "button_icon": "none",
             "product_color_scheme": "",
-            "product": "primed-ready-mattifying-serum"
+            "product": "salvarity-primed-ready-mattifying-serum"
           }
         }
       },
@@ -1496,7 +1496,7 @@
         "product_AmVRa6": {
           "type": "product",
           "settings": {
-            "product": "hydra-purify-facial-cleanser",
+            "product": "salvarity-hydra-purify-facial-cleanser",
             "color_scheme": "",
             "horizontal_position": 30,
             "vertical_position": 32,
@@ -1507,7 +1507,7 @@
         "product_aWELQV": {
           "type": "product",
           "settings": {
-            "product": "primed-ready-mattifying-serum",
+            "product": "salvarity-primed-ready-mattifying-serum",
             "color_scheme": "",
             "horizontal_position": 38,
             "vertical_position": 60,
@@ -1518,7 +1518,7 @@
         "product_8aRpE8": {
           "type": "product",
           "settings": {
-            "product": "back-to-basics-mattifying-moisturizer",
+            "product": "salvarity-back-to-basics-mattifying-moisturiser",
             "color_scheme": "",
             "horizontal_position": 65,
             "vertical_position": 45,

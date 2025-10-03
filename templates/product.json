@@ -892,7 +892,7 @@
         "product_g7GmQq": {
           "type": "product",
           "settings": {
-            "product": "hydra-purify-facial-cleanser",
+            "product": "salvarity-hydra-purify-facial-cleanser",
             "color_scheme": "",
             "horizontal_position": 22,
             "vertical_position": 32,
@@ -903,7 +903,7 @@
         "product_w8QYKh": {
           "type": "product",
           "settings": {
-            "product": "primed-ready-mattifying-serum",
+            "product": "salvarity-primed-ready-mattifying-serum",
             "color_scheme": "",
             "horizontal_position": 36,
             "vertical_position": 60,
@@ -914,7 +914,7 @@
         "product_cWCHNM": {
           "type": "product",
           "settings": {
-            "product": "back-to-basics-mattifying-moisturizer",
+            "product": "salvarity-back-to-basics-mattifying-moisturiser",
             "color_scheme": "",
             "horizontal_position": 60,
             "vertical_position": 80,
@@ -925,7 +925,7 @@
         "product_XQTH44": {
           "type": "product",
           "settings": {
-            "product": "back-in-balance-clarifying-moisturizer",
+            "product": "salvarity-back-in-balance-clarifying-moisturiser",
             "color_scheme": "",
             "horizontal_position": 82,
             "vertical_position": 72,
@@ -1095,7 +1095,7 @@
             "icon_color": "light",
             "image": "shopify://shop_images/Salvarity_Our-skincare-cheat-code_1_2400x1350_2481a032-ade0-41a9-a4f6-af689d1bbaab.webp",
             "image_ratio": "adapt",
-            "product_1": "hydra-purify-facial-cleanser",
+            "product_1": "salvarity-hydra-purify-facial-cleanser",
             "top_1": 43,
             "left_1": 43,
             "product_2": "turn-table",

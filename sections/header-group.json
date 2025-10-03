@@ -324,7 +324,7 @@
             "button_label": "buy now",
             "button_style": "btn--secondary",
             "button_icon": "none",
-            "product": "back-in-balance-clarifying-moisturizer",
+            "product": "salvarity-back-in-balance-clarifying-moisturiser",
             "width": "50%",
             "alignment": "center",
             "block_custom_class": ""
@@ -376,7 +376,7 @@
             "number_of_columns": 3,
             "product_list": [
               "max-biocare-auscalmax",
-              "back-in-balance-clarifying-moisturizer",
+              "salvarity-back-in-balance-clarifying-moisturiser",
               "belmarita-r",
               "max-biocare-belle-dame",
               "bonlutin-r",
