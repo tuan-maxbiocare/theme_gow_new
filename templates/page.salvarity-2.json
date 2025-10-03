@@ -70,7 +70,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Face Cleanser​",
-            "button_link": "shopify://pages/face-cleanser",
+            "button_link": "shopify://pages/salvarity-face-cleanser",
             "icon": "arrow-right"
           }
         },
@@ -78,7 +78,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Serum",
-            "button_link": "shopify://pages/serum",
+            "button_link": "shopify://pages/salvarity-serum",
             "icon": "arrow-right"
           }
         },
@@ -86,7 +86,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Moisturiser",
-            "button_link": "shopify://pages/moisturiser",
+            "button_link": "shopify://pages/salvarity-moisturiser",
             "icon": "arrow-right"
           }
         },
@@ -701,7 +701,7 @@
             "content_alignment": "left",
             "content_spacing": "extra-small",
             "content_gap": "tight",
-            "card_link": "shopify://pages/face-cleanser",
+            "card_link": "shopify://pages/salvarity-face-cleanser",
             "subheading": "",
             "subheading_style": "border",
             "heading": "Face Cleanser",
@@ -739,7 +739,7 @@
             "content_alignment": "left",
             "content_spacing": "extra-small",
             "content_gap": "tight",
-            "card_link": "shopify://pages/serum",
+            "card_link": "shopify://pages/salvarity-serum",
             "subheading": "",
             "subheading_style": "border",
             "heading": "Serum",
@@ -777,7 +777,7 @@
             "content_alignment": "left",
             "content_spacing": "extra-small",
             "content_gap": "tight",
-            "card_link": "shopify://pages/moisturiser",
+            "card_link": "shopify://pages/salvarity-moisturiser",
             "subheading": "",
             "subheading_style": "border",
             "heading": "Moisturiser",
@@ -1204,7 +1204,7 @@
             "content_alignment": "left",
             "content_spacing": "medium",
             "content_gap": "fitted",
-            "card_link": "shopify://products/back-in-balance-clarifying-moisturizer",
+            "card_link": "shopify://products/salvarity-back-in-balance-clarifying-moisturiser",
             "subheading": "",
             "subheading_style": "",
             "heading": "​",

@@ -70,7 +70,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Milk Formula",
-            "button_link": "shopify://pages/milk-formula",
+            "button_link": "shopify://pages/little-etoile-milk-formula",
             "icon": "arrow-right"
           }
         },
@@ -78,7 +78,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Organic Food",
-            "button_link": "shopify://pages/organic-food",
+            "button_link": "shopify://pages/little-etoile-organic-food",
             "icon": "arrow-right"
           }
         },
@@ -86,7 +86,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Topical Care",
-            "button_link": "shopify://pages/topical-care",
+            "button_link": "shopify://pages/little-etoile-topical-care",
             "icon": "arrow-right"
           }
         },
@@ -94,7 +94,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Mother's Care",
-            "button_link": "shopify://pages/mothers-care",
+            "button_link": "shopify://pages/little-etoile-mothers-care",
             "icon": "arrow-right"
           }
         },
@@ -139,7 +139,7 @@
         "custom_image": "shopify://shop_images/GoWshop_LE_LOGO_700x282-02.webp",
         "custom_image_width": 250,
         "custom_image_margin_right": 170,
-        "custom_image_link": "shopify://pages/our-brands"
+        "custom_image_link": "shopify://pages/little-etoile"
       }
     },
     "tabs_content_bqhbby": {
@@ -769,7 +769,7 @@
             "content_alignment": "left",
             "content_spacing": "extra-small",
             "content_gap": "tight",
-            "card_link": "shopify://pages/milk-formula",
+            "card_link": "shopify://pages/little-etoile-milk-formula",
             "subheading": "",
             "subheading_style": "border",
             "heading": "Milk Formula",
@@ -807,7 +807,7 @@
             "content_alignment": "left",
             "content_spacing": "extra-small",
             "content_gap": "tight",
-            "card_link": "shopify://pages/organic-food",
+            "card_link": "shopify://pages/little-etoile-organic-food",
             "subheading": "",
             "subheading_style": "border",
             "heading": "Organic Food",
@@ -845,7 +845,7 @@
             "content_alignment": "left",
             "content_spacing": "extra-small",
             "content_gap": "tight",
-            "card_link": "shopify://pages/topical-care",
+            "card_link": "shopify://pages/little-etoile-topical-care",
             "subheading": "",
             "subheading_style": "border",
             "heading": "Topical Care",
@@ -883,7 +883,7 @@
             "content_alignment": "left",
             "content_spacing": "extra-small",
             "content_gap": "tight",
-            "card_link": "shopify://pages/mothers-care",
+            "card_link": "shopify://pages/little-etoile-mothers-care",
             "subheading": "",
             "subheading_style": "border",
             "heading": "Mother's Care",
@@ -1217,7 +1217,7 @@
             "title": "",
             "show_banner": true,
             "color_scheme": "scheme-inverse",
-            "card_link": "shopify://pages/milk-formula",
+            "card_link": "shopify://pages/little-etoile-milk-formula",
             "banner_image": "shopify://shop_images/GoWshop_Little-Etoile_2000x2000_cf408a46-83b9-4ce9-b38c-37971103154c.webp",
             "image_overlay_opacity": 20,
             "content_position": "bottom-center",
@@ -1246,7 +1246,7 @@
             "title": "",
             "show_banner": true,
             "color_scheme": "scheme-13",
-            "card_link": "shopify://pages/topical-care",
+            "card_link": "shopify://pages/little-etoile-topical-care",
             "banner_image": "shopify://shop_images/little-etoile-NOURISHING-LOTION-_0_-MONTHS_-970x970-10.webp",
             "image_overlay_opacity": 16,
             "content_position": "bottom-center",
@@ -1446,7 +1446,7 @@
             "description": "",
             "description_size": "text-inherit",
             "button_label": "Learn more",
-            "button_link": "shopify://pages/topical-care",
+            "button_link": "shopify://pages/little-etoile-topical-care",
             "button_style": "btn--underline",
             "button_icon": "caret-right",
             "product_color_scheme": "scheme-11",
