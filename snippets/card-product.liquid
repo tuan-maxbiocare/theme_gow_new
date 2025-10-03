@@ -255,6 +255,7 @@
           <span class="reversed-link__text">{{- product.title -}}</span>
         </a>
       </h3>
+      <div class="klaviyo-star-rating-widget" data-id="{{product.id}}" data-product-title="{{product.title}}" data-product-type="{{product.type}}"></div>
       {%- if show_price -%}
         {% render 'price',
           product: product,
