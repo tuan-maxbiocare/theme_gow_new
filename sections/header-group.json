@@ -201,7 +201,7 @@
               "belmarita-r"
             ],
             "custom_titles_list_2": "Apple, Banana & Pear\nPear, Mango & Banana\nChicken, Veggies & Brown Rice\nMango, Peach & Chia seed Custard\nDelicious Organic Baby Food\nDelicious Organic Baby Food",
-            "button_link": "shopify://collections/organic-baby-food",
+            "button_link": "shopify://collections/organic-baby-food-pouches",
             "percent-menu-left": 55,
             "height-banner-menu": 522,
             "color_scheme": "scheme-13",
@@ -334,10 +334,10 @@
           "type": "pet_custom",
           "settings": {
             "menu_title_child": "Pet Care",
-            "collection_1": "shopify://collections/dog",
+            "collection_1": "shopify://collections/dog-care",
             "collection_title_1": "Dog",
             "collection_image_1": "shopify://shop_images/GoWshop_Megamenu_tabs_7.webp",
-            "collection_2": "shopify://collections/cat",
+            "collection_2": "shopify://collections/cat-care",
             "collection_title_2": "Cat",
             "collection_image_2": "shopify://shop_images/GoWshop_Megamenu_tabs_8.webp",
             "percent-menu-left": 35,

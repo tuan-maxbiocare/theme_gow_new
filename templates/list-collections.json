@@ -148,7 +148,7 @@
         "featured_collection_tCirzw": {
           "type": "featured_collection",
           "settings": {
-            "collection": "cat",
+            "collection": "cat-care",
             "title": "Cat"
           }
         },
@@ -170,7 +170,7 @@
         "featured_collection_8YdgYJ": {
           "type": "featured_collection",
           "settings": {
-            "collection": "dog",
+            "collection": "dog-care",
             "title": "Dog"
           }
         },
@@ -268,14 +268,14 @@
         "featured_collection_8M9RmV": {
           "type": "featured_collection",
           "settings": {
-            "collection": "cat",
+            "collection": "cat-care",
             "title": "Cat"
           }
         },
         "featured_collection_MjK88X": {
           "type": "featured_collection",
           "settings": {
-            "collection": "dog",
+            "collection": "dog-care",
             "title": "Dog"
           }
         },

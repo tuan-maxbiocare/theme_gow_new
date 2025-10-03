@@ -409,7 +409,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Pet Care",
-            "button_link": "shopify://collections/pet-care",
+            "button_link": "shopify://collections/pet-care-products",
             "icon": "none"
           }
         }
@@ -564,7 +564,7 @@
         "featured_collection_KeWFrC": {
           "type": "featured_collection",
           "settings": {
-            "collection": "pet-care",
+            "collection": "pet-care-products",
             "image": "shopify://shop_images/GoWshop_adog.webp",
             "title": ""
           }
