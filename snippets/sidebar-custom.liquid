@@ -21,11 +21,18 @@
       <summary
         class="menu-sidebar__toggle blocks-radius-sm flex items-center justify-end gap-1{% if forloop.first %} is-visible{% endif %}"
       >
-        <h6>{{ childlink.title | escape }}</h6>
-        {%- if childlink.links != blank -%}
-          {%- render 'icon-caret-right', size: 'small' -%}
-        {%- endif -%}
-      </summary>
+        <a
+          href="{{ childlink.url }}"
+          onclick="event.stopPropagation();"
+        >
+          <h6>{{ childlink.title | escape }}</h6>
+        </a>
+        {% if childlink.links != blank %}
+          {%- if childlink.links != blank -%}
+            {%- render 'icon-caret-right', size: 'small' -%}
+          {%- endif -%}
+        {% endif %}
+      </summary> 
 
       {%- liquid
         assign block_type = null
