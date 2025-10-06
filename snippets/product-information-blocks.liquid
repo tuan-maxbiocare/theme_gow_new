@@ -2,6 +2,24 @@
   assign default_form_id = 'product-form-' | append: section.id
   assign product_form_id = product_form_id | default: default_form_id
 -%}
+
+{% assign vendor_handle = product.vendor | downcase | strip %}
+
+{% case vendor_handle %}
+  {% when "max biocare" %}
+    {% assign brand_page_url = "/pages/max-biocare" %}
+  {% when "little étoile" %}
+    {% assign brand_page_url = "/pages/little-etoile" %}
+  {% when "garden of wellness" %}
+    {% assign brand_page_url = "/pages/garden-of-wellness" %}
+  {% when "salvarity" %}
+    {% assign brand_page_url = "/pages/salvarity" %}
+  {% when "pawlavie" %}
+    {% assign brand_page_url = "/pages/pawlavie" %}
+  {% else %}
+    {% assign brand_page_url = product.vendor | url_for_vendor %}
+{% endcase %}
+
 <div
   id="ProductInfo-{{ section.id }}"
   data-section="{{ section.id }}"
@@ -195,7 +213,7 @@
                 >
                   <span>Brand:</span>
                   <a
-                    href="{{ product.vendor | url_for_vendor }}"
+                    href="{{ brand_page_url }}"
                     class="btn--link font-body-bolder text-body"
                   >
                     {{- product.vendor -}}
