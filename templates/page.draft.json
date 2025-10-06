@@ -1,1 +1,140 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{"container":"fixed","text_alignment":"center","padding_top":28,"padding_bottom":28}},"scrolling_banner_LgV7Ez":{"type":"scrolling-banner","blocks":{"slide_xEytPx":{"type":"slide","settings":{"color_scheme":"scheme-1","background":"shopify:\/\/shop_images\/MBC_banner_test.webp","image_overlay_opacity":0,"content_position":"middle-right","text_alignment":"left","subheading":"","title":"CARING FOR EVERY STEP","highlight_style":"hand_drawn_circle","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","description":"<p><strong>OF YOU LITTLE  ONE'S JOURNEY<\/strong><\/p>","description_size":"text-inherit","button_label":"Learn more","button_link":"","button_style":"btn--primary","button_icon":"none","product_color_scheme":"scheme-11","product":""}}},"block_order":["slide_xEytPx"],"name":"t:sections.scrolling-banner.name","settings":{"container":"full","slide_height":"large","content_position_mobile":"middle-center","text_alignment_mobile":"center","enable_zoom":true,"enable_parallax":false}},"tabs_navigation_rcUtDw":{"type":"tabs-navigation","blocks":{"button_item_HcUmqf":{"type":"button_item","settings":{"button_label":"Face Cleanser​","button_link":"shopify:\/\/pages\/milk-formula","icon":"none"}},"button_item_RXx6YF":{"type":"button_item","settings":{"button_label":"Serum","button_link":"shopify:\/\/pages\/organic-food","icon":"none"}},"button_item_CU3Kiq":{"type":"button_item","settings":{"button_label":"Moisturiser","button_link":"shopify:\/\/pages\/topical-care","icon":"none"}},"button_item_FDJMdC":{"type":"button_item","settings":{"button_label":"About Us","button_link":"https:\/\/salvarity.com.au\/","icon":"globe"}}},"block_order":["button_item_HcUmqf","button_item_RXx6YF","button_item_CU3Kiq","button_item_FDJMdC"],"name":"Tabs Navigation","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","item_alignment":"left","item_button_style":"btn--icon","item_button_font":"button","enable_slider":false,"swipe_on_mobile":true,"show_section_divider":false,"divider_width":"fixed","padding_top":50,"padding_bottom":50,"custom_image":"shopify:\/\/shop_images\/max_biocare_Logo-01.png","custom_image_width":250,"custom_image_margin_right":200,"custom_image_link":"shopify:\/\/pages\/max-biocare"}}},"order":["main","scrolling_banner_LgV7Ez","tabs_navigation_rcUtDw"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "center",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "scrolling_banner_LgV7Ez": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "slide_xEytPx": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "background": "shopify://shop_images/MBC_banner_test.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "middle-right",
+            "text_alignment": "left",
+            "subheading": "",
+            "title": "CARING FOR EVERY STEP",
+            "highlight_style": "hand_drawn_circle",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "description": "<p><strong>OF YOU LITTLE  ONE'S JOURNEY</strong></p>",
+            "description_size": "text-inherit",
+            "button_label": "Learn more",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "product_color_scheme": "scheme-11",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_xEytPx"
+      ],
+      "name": "t:sections.scrolling-banner.name",
+      "settings": {
+        "container": "full",
+        "slide_height": "large",
+        "content_position_mobile": "middle-center",
+        "text_alignment_mobile": "center",
+        "enable_zoom": true,
+        "enable_parallax": false
+      }
+    },
+    "tabs_navigation_rcUtDw": {
+      "type": "tabs-navigation",
+      "blocks": {
+        "button_item_HcUmqf": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Face Cleanser​",
+            "button_link": "shopify://pages/little-etoile-milk-formula",
+            "icon": "none"
+          }
+        },
+        "button_item_RXx6YF": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Serum",
+            "button_link": "shopify://pages/little-etoile-organic-food",
+            "icon": "none"
+          }
+        },
+        "button_item_CU3Kiq": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Moisturiser",
+            "button_link": "shopify://pages/little-etoile-topical-care",
+            "icon": "none"
+          }
+        },
+        "button_item_FDJMdC": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "About Us",
+            "button_link": "https://salvarity.com.au/",
+            "icon": "globe"
+          }
+        }
+      },
+      "block_order": [
+        "button_item_HcUmqf",
+        "button_item_RXx6YF",
+        "button_item_CU3Kiq",
+        "button_item_FDJMdC"
+      ],
+      "name": "Tabs Navigation",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "item_alignment": "left",
+        "item_button_style": "btn--icon",
+        "item_button_font": "button",
+        "enable_slider": false,
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_image": "shopify://shop_images/max_biocare_Logo-01.png",
+        "custom_image_width": 250,
+        "custom_image_margin_right": 200,
+        "custom_image_link": "shopify://pages/max-biocare"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "scrolling_banner_LgV7Ez",
+    "tabs_navigation_rcUtDw"
+  ]
+}
