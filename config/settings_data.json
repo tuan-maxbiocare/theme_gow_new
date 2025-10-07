@@ -1,21 +1,12 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "current": {
     "enable_rtl": false,
     "enable_back_to_top": true,
-    "logo": "shopify://shop_images/v2_GoW_shop_logo_white_1500x400_f51a026a-da3b-44e4-a084-d3d6edd9a4a2.webp",
+    "logo": "shopify:\/\/shop_images\/v2_GoW_shop_logo_white_1500x400_f51a026a-da3b-44e4-a084-d3d6edd9a4a2.webp",
     "logo_width": 175,
-    "logo_mobile": "shopify://shop_images/v2_GoW_shop_logo_white_1500x400_f51a026a-da3b-44e4-a084-d3d6edd9a4a2.webp",
+    "logo_mobile": "shopify:\/\/shop_images\/v2_GoW_shop_logo_white_1500x400_f51a026a-da3b-44e4-a084-d3d6edd9a4a2.webp",
     "logo_width_mobile": 120,
-    "favicon": "shopify://shop_images/GoWshop_favicon.svg",
+    "favicon": "shopify:\/\/shop_images\/GoWshop_favicon.svg",
     "color_badge_sale": "#ff4b2b",
     "color_badge_hot": "#ff4b2b",
     "color_badge_new": "#1ca758",
@@ -62,7 +53,7 @@
     "pcard_style": "standard",
     "pcard_title_line_limit": "2-lines",
     "pcard_color_scheme": "scheme-7",
-    "pcard_image_ratio": "1/1",
+    "pcard_image_ratio": "1\/1",
     "pcard_show_second_img": false,
     "pcard_show_vendor": false,
     "pcard_show_type": false,
@@ -84,11 +75,11 @@
     "pcard_image_radius": 12,
     "pcard_image_bg": "#f9fafb",
     "pcard_title_font_size": 2.2,
-    "f_price_item_sale": 2.1,
+    "f_price_item_sale": 1.9,
     "f_add_to_card": 1.6,
     "border_product_card_custom": "#dddddd",
     "border_product_card_custom_hover": "#000000",
-    "blog_cards_image_ratio": "4/3",
+    "blog_cards_image_ratio": "4\/3",
     "enable_product_compare": false,
     "max_products_in_compare": 4,
     "compare_show_image_border": false,
@@ -102,9 +93,9 @@
     "cart_empty_message": "",
     "collection_list": [],
     "collection_card_color_scheme": "scheme-7",
-    "collection_image_ratio": "1/1",
-    "social_facebook_link": "https://www.facebook.com/share/1DEVqJTffG/?mibextid=wwXIfr",
-    "social_instagram_link": "https://www.instagram.com/gardenofwellness.shop/",
+    "collection_image_ratio": "1\/1",
+    "social_facebook_link": "https:\/\/www.facebook.com\/share\/1DEVqJTffG\/?mibextid=wwXIfr",
+    "social_instagram_link": "https:\/\/www.instagram.com\/gardenofwellness.shop\/",
     "social_snapchat_link": "",
     "social_pinterest_link": "",
     "social_tumblr_link": "",
@@ -149,8 +140,20 @@
     "content_for_index": [],
     "blocks": {
       "855628211100114053": {
-        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
+        "settings": {}
+      },
+      "3300017149626794902": {
+        "type": "shopify:\/\/apps\/xboost-bundle\/blocks\/core_script\/8707ef23-ba0e-4d63-a83a-1460e9bac021",
+        "disabled": false,
+        "settings": {
+          "customScript": ""
+        }
+      },
+      "22230382528836309": {
+        "type": "shopify:\/\/apps\/xb-cart-upsell\/blocks\/core_script\/e9179814-5d2a-40d0-a03d-245bcb819e73",
+        "disabled": true,
         "settings": {}
       }
     },
@@ -160,7 +163,7 @@
           "primary_accent": "#000000",
           "border": "#e5e5e5",
           "text": "#000000",
-          "subtext": "#4d4d4d",
+          "subtext": "#1d1d1d",
           "background": "#ffffff",
           "secondary_background": "#e5e5e5",
           "button": "#000000",
@@ -329,12 +332,12 @@
       "scheme-9": {
         "settings": {
           "primary_accent": "#a9edc3",
-          "border": "#ffffff",
-          "text": "#0d8756",
-          "subtext": "#0d8756",
+          "border": "#1ca758",
+          "text": "#1ca758",
+          "subtext": "#1ca758",
           "background": "#e7fff1",
           "secondary_background": "#ffffff",
-          "button": "#03321f",
+          "button": "#1ca758",
           "button_label": "#ffffff",
           "secondary_button": "#ff4b2b",
           "secondary_button_border": "rgba(0,0,0,0)",
@@ -426,7 +429,7 @@
           "primary_accent": "#ff4b2b",
           "border": "#e5e7eb",
           "text": "#000000",
-          "subtext": "#4d4d4d",
+          "subtext": "#1d1d1d",
           "background": "#f9fafb",
           "secondary_background": "#f9fafb",
           "button": "#ff4b2b",
@@ -601,8 +604,8 @@
       "cart_type": "drawer",
       "cart_icon": "shopping-bag",
       "free_shipping_minimum_amount": "500",
-      "cart_empty_message": "<p>Not sure where to start? Try these collections:</p>",
-      "collection_image_ratio": "4/3",
+      "cart_empty_message": "<p>Not sure where to start? Try these collections:<\/p>",
+      "collection_image_ratio": "4\/3",
       "social_snapchat_link": "",
       "social_pinterest_link": "",
       "social_tumblr_link": "",
@@ -972,7 +975,7 @@
       "cart_icon": "shopping-bag",
       "cart_style": "bordered",
       "free_shipping_minimum_amount": "120",
-      "cart_empty_message": "<p>Not sure where to start? Try these collections:</p>",
+      "cart_empty_message": "<p>Not sure where to start? Try these collections:<\/p>",
       "collection_card_color_scheme": "scheme-10",
       "collection_image_ratio": "adapt",
       "social_youtube_link": "",
@@ -1340,7 +1343,7 @@
       "pcard_style": "card",
       "pcard_title_line_limit": "2-lines",
       "pcard_color_scheme": "scheme-2",
-      "pcard_image_ratio": "1/1",
+      "pcard_image_ratio": "1\/1",
       "pcard_show_vendor": false,
       "pcard_show_type": false,
       "pcard_list_style": "card",
@@ -1358,9 +1361,9 @@
       "cart_icon": "shopping-bag",
       "cart_style": "solid",
       "free_shipping_minimum_amount": "120",
-      "cart_empty_message": "<p>Not sure where to start? Try these collections:</p>",
+      "cart_empty_message": "<p>Not sure where to start? Try these collections:<\/p>",
       "collection_card_color_scheme": "scheme-2",
-      "collection_image_ratio": "4/3",
+      "collection_image_ratio": "4\/3",
       "social_facebook_link": "",
       "social_instagram_link": "",
       "social_youtube_link": "",
@@ -1746,7 +1749,7 @@
       "cart_icon_color": "#000000",
       "cart_icon_background": "#FFFFFF",
       "free_shipping_minimum_amount": "120",
-      "cart_empty_message": "<p>Not sure where to start? Try these collections:</p>",
+      "cart_empty_message": "<p>Not sure where to start? Try these collections:<\/p>",
       "collection_card_color_scheme": "scheme-1",
       "collection_image_ratio": "adapt",
       "social_facebook_link": "",

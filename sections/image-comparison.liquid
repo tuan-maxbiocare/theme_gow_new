@@ -153,14 +153,14 @@
             {{ 'onboarding.no_script_alert' | t }}
           </div>
         </noscript>
-        {%- if section.settings.product != blank -%}
+        {% comment %} {%- if section.settings.product != blank -%}
           <div class="image-comparison__product flex flex-wrap items-center justify-between gap-y-2 gap-x-3">
             <a href="{{ section.settings.product.url }}" class="image-comparison__product-title btn--underline">
               {{- section.settings.product.title -}}
             </a>
             {% render 'price', product: section.settings.product %}
           </div>
-        {%- endif -%}
+        {%- endif -%} {% endcomment %}
       </div>
     </div>
   </div>
