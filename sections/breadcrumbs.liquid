@@ -13,8 +13,17 @@
     >
       <a href="{{ routes.root_url }}" title="Home" class="reversed-link">{{ 'general.breadcrumbs.home' | t }}</a>
       {%- if template contains 'page' -%}
+        {%- liquid
+          assign parent_page = page.metafields.custom.parent_page
+        -%}
         <span aria-hidden="true" class="breadcrumbs--sep"></span>
-        <span class="breadcrumbs--last text-subtext">{{ page.title }}</span>
+        {%- if parent_page != blank -%}
+          <a href="{{ parent_page.value.url }}" class="reversed-link">{{ parent_page.value.title }}</a>
+          <span aria-hidden="true" class="breadcrumbs--sep"></span>
+          <span class="breadcrumbs--last text-subtext">{{ page.title }}</span>
+        {%- else -%}
+          <span class="breadcrumbs--last text-subtext">{{ page.title }}</span>
+        {%- endif -%}
         {% comment %}
           {%- elsif template contains 'product' -%}
           {%- liquid
@@ -46,7 +55,7 @@
         {% comment %} link breadcrumbs new {% endcomment %}
       {%- elsif template contains 'product' -%}
         {%- liquid
-          assign main_collection_handles = 'health-supplement,food-nutrition,baby-care,pregnancy-breastfeeding-care,beauty-topical-care,pet-care' | split: ','
+          assign main_collection_handles = 'health-supplements,food-and-nutrition,baby-care-products,pregnancy-breastfeeding-care,beauty-products,pet-care-products' | split: ','
           assign parent_collection = ''
 
           for collection in product.collections
@@ -71,7 +80,7 @@
         <span class="breadcrumbs--last text-subtext">{{ product.title }}</span>
       {%- elsif template contains 'collection' and collection.handle -%}
         {%- liquid
-          assign main_collection_handles = 'health-supplement,food-nutrition,baby-care,pregnancy-breastfeeding-care,beauty-topical-care,pet-care' | split: ','
+          assign main_collection_handles = 'health-supplements,food-and-nutrition,baby-care-products,pregnancy-breastfeeding-care,beauty-products,pet-care-products' | split: ','
           assign is_main_collection = false
           if main_collection_handles contains collection.handle
             assign is_main_collection = true

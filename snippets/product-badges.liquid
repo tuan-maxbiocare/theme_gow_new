@@ -63,9 +63,9 @@
       case block.settings.sale_badge_type
         when 'percentage'
           if compare_at_price > price
-            assign amount = compare_at_price | minus: price | times: 100 | divided_by: compare_at_price | append: '%'
+            assign amount = compare_at_price | minus: price | times: 100 | divided_by: compare_at_price | round
           endif
-          assign sale_badge = 'products.product.price.save_price_html' | t: amount: amount
+          assign sale_badge = 'save ' | append: amount | append: ' %'
         when 'fixed_amount'
           if compare_at_price > price
             assign amount = compare_at_price | minus: price | money
