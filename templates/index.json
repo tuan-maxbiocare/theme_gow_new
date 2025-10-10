@@ -463,7 +463,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Pregnancy & Breastfeeding",
-            "button_link": "shopify://collections/pregnancy-breastfeeding",
+            "button_link": "shopify://collections/pregnancy-and-breastfeeding-supplements",
             "icon": "none"
           }
         },
@@ -917,7 +917,7 @@
         "collection_fJpzg3": {
           "type": "collection",
           "settings": {
-            "collection": "pregnancy-breastfeeding",
+            "collection": "pregnancy-and-breastfeeding-supplements",
             "title": "",
             "show_banner": true,
             "color_scheme": "scheme-inverse",
