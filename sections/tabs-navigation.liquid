@@ -190,7 +190,7 @@
           data-enable-slider="true"
         {% endif %}
       >
-        <div style="scroll-margin-top:120px;" id="pageNavigation" class="button-list__items flex{% if enable_slider %} swiper-wrapper{%  else %} flex-wrap justify-{{ section.settings.item_alignment | replace: 'left', 'start' | replace: 'right', 'end' }}{% endif %}{% if section.settings.swipe_on_mobile %} swipe-mobile__inner{% endif %}">
+        <div style="scroll-margin-top:120px;" data-section-branch ="pageNavigation" class="button-list__items flex{% if enable_slider %} swiper-wrapper{%  else %} flex-wrap justify-{{ section.settings.item_alignment | replace: 'left', 'start' | replace: 'right', 'end' }}{% endif %}{% if section.settings.swipe_on_mobile %} swipe-mobile__inner{% endif %}">
           {%- for block in section.blocks -%}
             <div class="button-list__item{% if enable_slider %} swiper-slide{% endif %}">
               {%- liquid
@@ -218,7 +218,8 @@
                     {% endif %}
                   "
                   {% if link != blank %}
-                    href="{{ link }}#pageNavigation"
+                   href="{{ link }}"
+                  onclick="localStorage.setItem('scrollTo', 'pageNavigation')"
                   {% endif %}
                 >
                   <span class="btn__text flex items-center gap-x-2">
@@ -283,6 +284,22 @@
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const target = localStorage.getItem('scrollTo');
+  if (target) {
+    const section = document.querySelector(`[data-section-branch="${target}"]`);
+    if (section) {
+      setTimeout(() => {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
+  }
+  localStorage.removeItem('scrollTo');
+});
+</script>
+
 
 {% schema %}
 {
