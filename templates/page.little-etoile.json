@@ -1223,11 +1223,11 @@
         "collection_iwf6M3": {
           "type": "collection",
           "settings": {
-            "collection": "milk-formula",
+            "collection": "formula-milk",
             "title": "Milk Formula",
             "show_banner": true,
             "color_scheme": "scheme-inverse",
-            "card_link": "shopify://collections/milk-formula",
+            "card_link": "shopify://collections/formula-milk",
             "banner_image": "shopify://shop_images/GoWshop_Little-Etoile_2000x2000_cf408a46-83b9-4ce9-b38c-37971103154c.webp",
             "image_overlay_opacity": 20,
             "content_position": "bottom-center",

@@ -487,7 +487,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Pet Care",
-            "button_link": "shopify://collections/pet-care",
+            "button_link": "shopify://collections/pet-care-products",
             "icon": "none"
           }
         }
