@@ -113,7 +113,7 @@
             "text_size": "text-base",
             "button_margin": 24,
             "button_label": "SHOP NOW",
-            "button_link": "shopify://collections/baby-swimming-care",
+            "button_link": "shopify://collections/baby-swimming-products",
             "button_style": "btn--primary",
             "button_icon": "none",
             "button_label_2": "",
