@@ -455,7 +455,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Food & Nutrition",
-            "button_link": "shopify://collections/food-nutrition",
+            "button_link": "shopify://collections/food-and-nutrition",
             "icon": "none"
           }
         },
@@ -479,7 +479,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Beauty & Topical Care",
-            "button_link": "shopify://collections/beauty-topical-care",
+            "button_link": "shopify://collections/beauty-products",
             "icon": "none"
           }
         },
@@ -773,7 +773,7 @@
         "collection_RTmMGB": {
           "type": "collection",
           "settings": {
-            "collection": "food-nutrition",
+            "collection": "food-and-nutrition",
             "title": "Baby nutrition​",
             "show_banner": true,
             "color_scheme": "scheme-inverse",
@@ -845,7 +845,7 @@
         "collection_9TDV6Y": {
           "type": "collection",
           "settings": {
-            "collection": "beauty-topical-care",
+            "collection": "beauty-products",
             "title": "",
             "show_banner": true,
             "color_scheme": "scheme-inverse",
