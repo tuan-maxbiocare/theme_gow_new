@@ -94,7 +94,7 @@
           </div>
         {%- when 'title' -%}
           <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
-            <h1 class="product__title {{ block.settings.heading_size }}">{{ product.title | escape }}</h1>
+            <h2 class="product__title {{ block.settings.heading_size }}">{{ product.title | escape }}</h2>
             <a href="{{ product.url }}" class="product__title">
               <h2 class="h1">
                 {{ product.title | escape }}
@@ -635,20 +635,22 @@
               <div class="product__payment-info flex md:flex-row flex-col gap-4">
                 <span class="visually-hidden">{{ 'general.payment.methods' | t }}</span>
                 <ul class="list flex flex-wrap" role="list">
-                  {% if shop.enabled_payment_types.size > 0 %}
-                    {%- for type in shop.enabled_payment_types -%}
-                      <li class="flex items-center">
-                        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                      </li>
-                    {%- endfor -%}
-                  {% else %}
-                    {% assign fake_payment_types = 'visa,master,american_express,paypal' | split: ',' %}
-                    {% for type in fake_payment_types %}
-                      <li class="flex items-center">
-                        {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                      </li>
-                    {% endfor %}
-                  {% endif %}
+                  {% comment %}
+                    {% if shop.enabled_payment_types.size > 0 %}
+                      {%- for type in shop.enabled_payment_types -%}
+                        <li class="flex items-center">
+                          {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                        </li>
+                      {%- endfor -%}
+                    {% else %}
+                  {% endcomment %}
+                  {% assign fake_payment_types = 'afterpay,paypal,apple_pay,google_pay' | split: ',' %}
+                  {% for type in fake_payment_types %}
+                    <li class="flex items-center">
+                      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                    </li>
+                  {% endfor %}
+                  {% comment %} {% endif %} {% endcomment %}
                 </ul>
               </div>
             </div>

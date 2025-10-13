@@ -1,4 +1,4 @@
-{%- if settings.pcard_show_flash_sale != blank and product.metafields.foxtheme.flash_sale_text.value != blank -%}
+{%- if settings.pcard_show_flash_sale != blank and product.metafields.custom.text_sale.value != blank -%}
   {%- liquid
     assign duration = 6.0
     assign speed = 0.8
@@ -14,7 +14,7 @@
       style="--v-spacing: 9px;--h-spacing: 8px; --h-spacing-mobile: 4px; --duration: {{ duration }}s;"
     >
       <div class="promotion">
-        {%- for item in product.metafields.foxtheme.flash_sale_text.value -%}
+        {%- for item in product.metafields.custom.text_sale.value -%}
           <div class="promotion__item flex items-center gap-2">
             {% render 'icon-lightning-fill', size: 'extra-small' %}
             <span class="font-body-bold text-sm-extra">{{ item }}</span>

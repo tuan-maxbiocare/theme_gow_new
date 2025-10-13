@@ -15,7 +15,7 @@
 <div class="cart section--padding{% if cart == empty %} is-empty{% endif %}">
   <div class="section__container page-width page-width--{{ section.settings.container }}">
     <div class="cart__header">
-      <h1 class="cart__title h1">
+      <h2 class="cart__title h1">
         <motion-element data-motion="fade-up" class="inline-flex gap-2">
           {{- 'sections.cart.title' | t }}
           <cart-count
@@ -35,7 +35,7 @@
             )</cart-count
           ></motion-element
         >
-      </h1>
+      </h2>
     </div>
     <div class="cart__empty text-center flex flex-col gap-10">
       <div class="grid gap-5 cart__empty-header">

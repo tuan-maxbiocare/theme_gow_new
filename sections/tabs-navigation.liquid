@@ -152,6 +152,9 @@
       font-size: 18px;  
     }
   }
+  html {
+  scroll-behavior: smooth;
+}
 {%- endstyle -%}
 <div
   class="section section-{{ section.id }} section--padding button-list color-{{ section.settings.color_scheme }}"
@@ -218,8 +221,8 @@
                     {% endif %}
                   "
                   {% if link != blank %}
-                   href="{{ link }}"
-                  onclick="localStorage.setItem('scrollTo', 'pageNavigation')"
+                    href="{{ link }}"
+                    onclick="localStorage.setItem('scrollTo', 'pageNavigation')"
                   {% endif %}
                 >
                   <span class="btn__text flex items-center gap-x-2">
@@ -299,7 +302,6 @@ document.addEventListener("DOMContentLoaded", function() {
   localStorage.removeItem('scrollTo');
 });
 </script>
-
 
 {% schema %}
 {

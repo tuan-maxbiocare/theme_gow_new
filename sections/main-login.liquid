@@ -9,9 +9,9 @@
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div class="section__wrapper">
-    <h1 id="recover" tabindex="-1" class="text-center h2">
+    <h2 id="recover" tabindex="-1" class="text-center h2">
       {{- 'customer.recover_password.title' | t -}}
-    </h1>
+    </h2>
     <div>
       <p class="text-center text-subtext">
         {{- 'customer.recover_password.subtext' | t -}}
@@ -58,9 +58,9 @@
       {%- endform -%}
     </div>
 
-    <h1 id="login" tabindex="-1" class="text-center h2">
+    <h2 id="login" tabindex="-1" class="text-center h2">
       {{- 'customer.login_page.title' | t -}}
-    </h1>
+    </h2>
     <div>
       <p class="text-center text-subtext">If you have an account with us, please log in.</p>
       {%- if recover_success == true -%}

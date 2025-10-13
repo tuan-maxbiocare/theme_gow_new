@@ -62,6 +62,19 @@
     margin-bottom: 30px;
    }
 }
+@media (max-width: 767px) {
+  .footer__payment ul.list {
+    display: grid ;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .footer__payment ul.list li .icon {
+    width: 65px ;
+    height: auto ;
+  }
 {% endstyle %}
 <footer class="footer color-{{ section.settings.color_scheme }} section-{{ section.id }}">
   {% render 'divider',
@@ -326,17 +339,22 @@
             {%- if section.settings.payment_enable -%}
               <div class="footer__payment">
                 <span class="visually-hidden">{{ 'general.payment.methods' | t }}</span>
-                <ul class="list list-payment" role="list">
+                <ul class="list flex flex-wrap gap-2" role="list">
                   {% if shop.enabled_payment_types.size > 0 %}
                     {%- for type in shop.enabled_payment_types -%}
-                      <li class="list-payment__item">
+                      <li class="flex items-center">
                         {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
                       </li>
                     {%- endfor -%}
+
+                    {%- comment -%} Thêm Afterpay icon {%- endcomment -%}
+                    <li class="flex items-center">
+                      {{ 'afterpay' | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                    </li>
                   {% else %}
-                    {% assign fake_payment_types = 'visa,master,american_express,paypal' | split: ',' %}
+                    {% assign fake_payment_types = 'visa,master,american_express,paypal,afterpay' | split: ',' %}
                     {% for type in fake_payment_types %}
-                      <li class="list-payment__item">
+                      <li class="flex items-center">
                         {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
                       </li>
                     {% endfor %}

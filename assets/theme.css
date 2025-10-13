@@ -4175,13 +4175,39 @@ input:is([type=radio])::after {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    padding: 3px;
+    aspect-ratio: 1 / 1;
+    padding: 0.8em;
+    font-family: "Anek Tamil", sans-serif;
     text-align: center;
     font-weight: 700;
+    line-height: 0.9;
 }
+.badge-circle span:first-child {
+  font-size: clamp(17px, 2.2vw, 25px);
+  font-weight: 700;
+}
+
+.badge-circle span:last-child {
+  font-size: clamp(9px, 2vw, 13px);
+  font-weight: 700;
+}
+.f-badge--soldout.badge-circle span:first-child {
+  font-size: clamp(15px, 2.2vw, 18px);
+  font-weight: 700;
+}
+.f-badge--soldout.badge-circle {
+  padding: 1.5em;
+}
+
+.f-badge--soldout.badge-circle span:last-child {
+  font-size: clamp(13px, 2.2vw, 18px);
+  font-weight: 700;
+}
+
+/* .f-badge--sale.badge-circle span:last-child {
+  font-size: clamp(13px, 2.2vw, 19px);
+  font-weight: 700;
+} */
 .badge-position--top-left {
   top: 1.5rem;
   left: 1.5rem;
@@ -4267,9 +4293,10 @@ input:is([type=radio])::after {
     padding: 1.2rem;
   }
   .badge-circle{
-    width: 45px;
-    height: 45px;
-    font-size: 1rem;
+    padding: 0.6em;
+  }
+  .f-badge--soldout.badge-circle {
+    padding: 0.8em;
   }
 }
 .product-card-style-boxed .product-card__image-wrapper {

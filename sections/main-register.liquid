@@ -5,9 +5,9 @@
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div class="section__wrapper">
-    <h1 class="text-center h2">
+    <h2 class="text-center h2">
       {{ 'customer.register.title' | t }}
-    </h1>
+    </h2>
     {%- form 'create_customer', class: 'flex flex-col' -%}
       {%- if form.errors -%}
         <div class="form-error alert alert--error blocks-radius">

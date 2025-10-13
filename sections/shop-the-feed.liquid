@@ -63,6 +63,7 @@
         <shop-the-feed
           class="shop-the-feed__inner block relative{% if enable_slider %} swiper swiper-equal-height overflow-visible f-grid--gap-{{ section.settings.column_gap }}{% endif %}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ columns_mobile }}-cols{% endif %}"
           data-section-id="{{ section.id }}"
+          {% if section.settings.enable_video_autoplay %}data-autoplay{% endif %}
           {% if enable_slider %}
             data-enable-slider="true"
             data-items="{{ columns_desktop }}"
@@ -175,7 +176,7 @@
                       {%- render 'video',
                         video: video,
                         muted: true,
-                        autoplay: false,
+                        autoplay: section.settings.enable_video_autoplay,
                         controls: false,
                         loop: true,
                         show_play_button: false,
@@ -334,6 +335,16 @@
       "id": "color_scheme",
       "label": "t:general.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:general.video.name"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_autoplay",
+      "label": "t:general.video.enable_video_autoplay.label",
+      "default": false
     },
     {
       "type": "header",

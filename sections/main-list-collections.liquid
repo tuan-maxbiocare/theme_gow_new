@@ -41,7 +41,7 @@
 >
   {%- if section.settings.title != blank -%}
     <div class="section__header s__header md:text-{{ header_alignment }} text-{{ header_alignment_mobile }}">
-      <h1 class="inline-richtext {{ section.settings.heading_size }}">
+      <h2 class="inline-richtext {{ section.settings.heading_size }}">
         {% render 'highlight-text',
           hl_text: section.settings.title,
           hl_style: section.settings.highlight_style,
@@ -49,7 +49,7 @@
           hl_style_color: section.settings.highlight_style_color,
           hl_text_color: section.settings.highlight_text_color
         %}
-      </h1>
+      </h2>
     </div>
   {%- endif -%}
   {%- paginate collections by section.settings.collections_per_page -%}

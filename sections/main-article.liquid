@@ -55,7 +55,7 @@
                     {%- endfor -%}
                   </span>
                 {%- endif -%}
-                <h1 class="article__title rich-text__heading {{ block.settings.heading_size }}">{{ article.title }}</h1>
+                <h2 class="article__title rich-text__heading {{ block.settings.heading_size }}">{{ article.title }}</h2>
                 {% if block.settings.show_author or block.settings.show_date %}
                   <div class="article__metas rich-text__text inline-flex items-center justify-center flex gap-2 text-subtext">
                     {% if block.settings.show_date %}

@@ -38,9 +38,9 @@
   %}
   <div class="main-blog section section--padding section-{{ section.id }}">
     <div class="section__container page-width page-width--{{ section.settings.container }}">
-      <h1 class="section__heading text-{{ heading_block.settings.content_alignment }} {{ heading_block.settings.heading_size }}{% if blog.articles_count > 0 %} visually-hidden{% endif %}">
+      <h2 class="section__heading text-{{ heading_block.settings.content_alignment }} {{ heading_block.settings.heading_size }}{% if blog.articles_count > 0 %} visually-hidden{% endif %}">
         {{- blog.title | escape -}}
-      </h1>
+      </h2>
       {%- if blog.articles_count > 0 -%}
         {%- for block in section.blocks -%}
           {%- liquid

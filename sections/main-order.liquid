@@ -6,7 +6,7 @@
 >
   <div class="page-width">
     <header class="customer__header flex flex-col items-center md:items-start gap-y-3">
-      <h1 class="customer__title h2">{{ 'customer.order.title' | t: name: order.name }}</h1>
+      <h2 class="customer__title h2">{{ 'customer.order.title' | t: name: order.name }}</h2>
       <a href="{{ routes.account_url }}" class="text-subtext reversed-link inline-flex items-center gap-x-2">
         {% render 'icon-caret-left', size: 'small' %}
         {{- 'customer.account.return' | t -}}

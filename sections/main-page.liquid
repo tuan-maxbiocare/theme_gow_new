@@ -6,11 +6,11 @@
 </style>
 <div class="page-width page-width--{{ section.settings.container }} section--padding">
   <div class="rich-text rich-text--standard">
-    <h1 class="page__title h1 rich-text__heading text-{{ section.settings.text_alignment }}">
+    <h2 class="page__title h1 rich-text__heading text-{{ section.settings.text_alignment }}">
       <motion-element class="inline-flex" data-motion="fade-up">
         {{ page.title | escape }}
       </motion-element>
-    </h1>
+    </h2>
     {%- unless page.content == blank -%}
       <div class="page__content rich-text__text rte text-subtext">
         {{ page.content }}

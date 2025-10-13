@@ -145,7 +145,7 @@
             {% if product != blank %}
               <td>
                 <div class="rte text-limit-{{ section.settings.text_line_limit }}">
-                  {% render 'price', product: product %}
+                  {% render 'price', product: product, use_variant: true %}
                 </div>
               </td>
             {% endif %}

@@ -10,19 +10,36 @@ if (!customElements.get('stf-card')) {
         return this.querySelector('video-element');
       }
 
+      get shouldAutoPlay() {
+        return this.closest('shop-the-feed').hasAttribute('data-autoplay');
+      }
+
       connectedCallback() {
         if (!this.video) return;
 
+        // Auto play if enabled without needing hover
+        if (this.shouldAutoPlay) {
+          this.video.play();
+          this.classList.add('is-hovering'); 
+          return;
+        }
+
+        // Only add hover listeners if autoplay is disabled
         this.addEventListener('mouseleave', this.handleMouseInteraction.bind(this, 'leave'));
         this.addEventListener('mouseenter', this.handleMouseInteraction.bind(this, 'enter'));
       }
 
       disconnectedCallback() {
-        this.removeEventListener('mouseleave');
-        this.removeEventListener('mouseenter');
+        if (!this.shouldAutoPlay) {
+          this.removeEventListener('mouseleave');
+          this.removeEventListener('mouseenter');
+        }
       }
 
       handleMouseInteraction(type, event) {
+        // Skip if autoplay is enabled
+        if (this.shouldAutoPlay) return;
+
         if (type === 'enter') {
           this.classList.add('is-hovering');
           this.video.play();

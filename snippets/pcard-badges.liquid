@@ -19,35 +19,68 @@
 {%- if product.available == false or on_sale or product.tags.size > 0 -%}
   <div class="product-card__badge">
     {%- if product.available == false and show_soldout -%}
-      <span class="f-badge f-badge--soldout badge-{{ badge_style }} badge-position--{{ badge_position }}" aria-hidden="true">
-        {{- 'products.product.sold_out' | t -}}
-      </span>
+      {%- if badge_style == 'circle' -%}
+        <span
+          class="f-badge f-badge--soldout badge-circle badge-position--{{ badge_position }}"
+          aria-hidden="true"
+        >
+          <span>Sold</span>
+          <span>Out</span>
+        </span>
+      {%- else -%}
+        <span
+          class="f-badge f-badge--soldout badge-{{ badge_style }} badge-position--{{ badge_position }}"
+          aria-hidden="true"
+        >
+          {{- 'products.product.sold_out' | t -}}
+        </span>
+      {%- endif -%}
     {%- endif -%}
     {%- if show_on_sale_badge and product.available -%}
       {%- liquid
         assign sale_badge = ''
         assign amount = 0
-        case settings.pcard_sale_badge_type
-          when 'show_percentage'
-            if compare_at_price > price
-              assign amount = compare_at_price | minus: price | times: 100 | divided_by: compare_at_price
-            endif
-            assign sale_badge = amount | times: -1 | append: '%'
-          when 'show_amount'
-            if compare_at_price > price
-              assign amount = compare_at_price | minus: price | money
-            endif
-            assign sale_badge = 'products.product.price.save_price_html' | t: amount: amount
-          else
-            assign sale_badge = 'products.product.on_sale' | t
-        endcase
       -%}
-      <span
-        class="f-badge f-badge--sale badge-{{ badge_style }} badge-position--{{ badge_position }}"
-        aria-hidden="true"
-      >
-        {{- sale_badge -}}
-      </span>
+
+      {%- case settings.pcard_sale_badge_type -%}
+        {%- when 'show_percentage' -%}
+          {%- if compare_at_price > price -%}
+            {%- assign amount = compare_at_price | minus: price | times: 100 | divided_by: compare_at_price | round -%}
+          {%- endif -%}
+
+          {%- if badge_style == 'circle' -%}
+            <span class="f-badge f-badge--sale badge-circle badge-position--{{ badge_position }}" aria-hidden="true">
+              <span>{{ amount }}%</span>
+              <span>OFF RRP</span>
+            </span>
+          {%- else -%}
+            <span
+              class="f-badge f-badge--sale badge-{{ badge_style }} badge-position--{{ badge_position }}"
+              aria-hidden="true"
+            >
+              {{ amount }}% OFF RRP
+            </span>
+          {%- endif -%}
+
+        {%- when 'show_amount' -%}
+          {%- if compare_at_price > price -%}
+            {%- assign amount = compare_at_price | minus: price | money -%}
+          {%- endif -%}
+          <span
+            class="f-badge f-badge--sale badge-{{ badge_style }} badge-position--{{ badge_position }}"
+            aria-hidden="true"
+          >
+            {{ 'products.product.price.save_price_html' | t: amount: amount }}
+          </span>
+
+        {%- else -%}
+          <span
+            class="f-badge f-badge--sale badge-{{ badge_style }} badge-position--{{ badge_position }}"
+            aria-hidden="true"
+          >
+            {{ 'products.product.on_sale' | t }}
+          </span>
+      {%- endcase -%}
     {%- endif -%}
     {%- liquid
       assign new_tags_list = settings.product_new_tags | newline_to_br | strip_newlines | split: '<br />'

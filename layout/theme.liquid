@@ -36,7 +36,20 @@
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
-
+{% comment %} code cũ meta tag SEO cũ {% endcomment %}
+    {% comment %} <title>
+      {{- page_title -}}
+      {%- if current_tags -%}
+        {%- assign meta_tags = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+      {%- endif -%}
+      {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif -%}
+      {%- if template == 'password' -%}
+        {{- shop.name -}}
+      {%- else -%}
+        {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- endif -%}
+    </title> {% endcomment %}
+    {% comment %} mới {% endcomment %}
     <title>
       {{- page_title -}}
       {%- if current_tags -%}
@@ -45,6 +58,7 @@
       {%- if current_page != 1 %} &ndash; {{ 'general.meta.page' | t: page: current_page }}{% endif -%}
       {%- if template == 'password' -%}
         {{- shop.name -}}
+      {%- elsif template == 'article' or template == 'blog' -%}
       {%- else -%}
         {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
       {%- endif -%}
@@ -102,6 +116,7 @@
     class="{{ request.page_type }}-template {{ template.suffix }} blocks-corner--{{ settings.blocks_corner_radius }}{% if request.design_mode %} shopify-design-mode{% endif %}"
     data-initializing
   >
+    <h1 style="display: none;">{{- page_title -}} </h1>
     {% comment %} Custom metafield for body tag like GTag tracking {% endcomment %}
     {{ shop.metafields.foxtheme.code_body.value }}
     {% comment %} End custom metafield for body tab like GTag tracking {% endcomment %}

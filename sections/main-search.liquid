@@ -55,7 +55,7 @@
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div data-motion="fade-up" class="template-search__header grid gap-6">
-    <h1 class="h2 text-center" tabindex="-1">
+    <h2 class="h2 text-center" tabindex="-1">
       <motion-element class="block" data-motion="fade-up">
         {%- if search.performed -%}
           {{- 'templates.search.title' | t -}}
@@ -63,7 +63,7 @@
           {{- 'general.search.search' | t -}}
         {%- endif -%}
       </motion-element>
-    </h1>
+    </h2>
     <div class="template-search__search flex items-center justify-center relative">
       {%- render 'predictive-search', context: 'page' -%}
     </div>
