@@ -11,6 +11,22 @@
   {% liquid
     assign variant = product.selected_or_first_available_variant
 
+    # Common inventory logic
+    assign variant_in_stock = true
+    assign button_disabled = false
+    assign button_text = 'products.product.add_to_cart' | t
+
+    if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0
+      assign variant_in_stock = false
+    endif
+
+    if variant_in_stock == false and variant.inventory_policy != 'continue'
+      assign button_disabled = true
+      assign button_text = 'products.product.sold_out' | t
+    elsif variant_in_stock == false and variant.inventory_policy == 'continue'
+      assign button_text = 'products.product.pre_order' | t
+    endif
+
     assign first_media_type = product.media.first.media_type
 
     assign product_thumbnail = product.featured_media
@@ -159,13 +175,6 @@
               {% render 'icon-cart', name: settings.cart_icon, size: 'medium' %}
             </{{ atc_button_tag }}>
           {%- else -%}
-            {%- liquid
-              if variant.available
-                assign button_label = 'products.product.add_to_cart' | t
-              else
-                assign button_label = 'products.product.sold_out' | t
-              endif
-            -%}
             {%- form 'product',
               product,
               id: product_form_id,
@@ -179,20 +188,15 @@
                 name="id"
                 value="{{- variant.id -}}"
                 class="product-variant-id"
-                {% if variant.available == false %}
-                  disabled
-                {% endif %}
+                {% if button_disabled %}disabled{% endif %}
               >
               <button
                 id="{{ product_form_id }}-submit"
                 type="submit"
                 name="add"
-                {% if variant.available == false %}
-                  disabled
-                {% endif %}
-                aria-label="{{ 'products.product.add_to_cart' | t }}"
+                {% if button_disabled %}disabled{% endif %}
+                aria-label="{{ button_text }}"
                 class="pcard__atc btn btn--icon-circle btn--secondary"
-                aria-label="{{ button_label }}"
               >
                 {% render 'icon-cart', name: settings.cart_icon, size: 'medium' %}
                 {% render 'loading-spinner' %}

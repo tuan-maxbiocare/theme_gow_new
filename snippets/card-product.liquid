@@ -11,6 +11,25 @@
     assign variant = product.selected_or_first_available_variant
   endif
 
+   # Common inventory logic
+  assign variant_in_stock = true
+  assign button_disabled = false
+  assign button_text = 'products.product.add_to_cart' | t
+  assign button_text_short = 'products.product.add_to_cart_short' | t
+
+  if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0
+    assign variant_in_stock = false
+  endif
+
+  if variant_in_stock == false and variant.inventory_policy != 'continue'
+    assign button_disabled = true
+    assign button_text = 'products.product.sold_out' | t
+    assign button_text_short = 'products.product.sold_out' | t
+  elsif variant_in_stock == false and variant.inventory_policy == 'continue'
+    assign button_text = 'products.product.pre_order' | t
+    assign button_text_short = 'products.product.pre_order' | t
+  endif
+
   assign show_color_swatches = settings.pcard_enable_color_swatches
 
   if show_vendor == null
@@ -165,30 +184,22 @@
           name="id"
           value="{{ variant.id }}"
           class="product-variant-id"
-          {% unless variant.available %}
-            disabled
-          {% endunless %}
+          {% if button_disabled %}disabled{% endif %}
         >
         <button
           id="{{ product_form_id }}-submit"
           type="submit"
           name="add"
-          {% unless variant.available %}
-            disabled
-          {% endunless %}
-          aria-label="{{ 'products.product.add_to_cart' | t }}"
+          {% if button_disabled %}disabled{% endif %}
+          aria-label="{{ button_text }}"
           class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
         >
           <div class="btn__text flex gap-1 items-center">
             <span class="product-card__atc-text product-card__action-text">
-              {%- if variant.available -%}
-                {%- if use_short_text_for_atc_button -%}
-                  {{ 'products.product.add_to_cart_short' | t }}
-                {%- else -%}
-                  {{ 'products.product.add_to_cart' | t }}
-                {%- endif -%}
+              {%- if use_short_text_for_atc_button -%}
+                {{- button_text_short -}}
               {%- else -%}
-                {{ 'products.product.sold_out' | t }}
+                {{- button_text -}}
               {%- endif -%}
             </span>
           </div>

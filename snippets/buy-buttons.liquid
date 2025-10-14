@@ -21,6 +21,21 @@
       assign show_dynamic_checkout = true
     endif
   -%}
+
+  <style>
+    .restock-message {
+      font-size: 15px;
+      color: #1e3a8a;
+      background-color: #eff6ff;
+      padding: 10px 14px;
+      border-left: 3px solid #3b82f6;
+      border-radius: 6px;
+      line-height: 1.6;
+      font-weight: 500;
+      font: small-caption !important;
+    }
+  </style>
+
   <div
     class="product-form"
     data-hide-errors="{{ gift_card_recipient_feature_active }}"
@@ -336,21 +351,45 @@
             </quantity-input>
           </div>
         {%- endif -%}
+
+        {%- liquid
+          assign variant = product.selected_or_first_available_variant
+          assign button_disabled = false
+          assign variant_in_stock = true
+          assign pre_order = false
+          if variant == null
+            assign button_disabled = true
+          else
+            if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0
+              assign variant_in_stock = false
+            endif
+            if variant_in_stock == false and variant.inventory_policy != 'continue'
+              assign button_disabled = true
+            endif
+            if quantity_rule_soldout
+              assign button_disabled = true
+            endif
+          endif
+          if variant_in_stock == false and variant.inventory_policy == 'continue'
+            assign pre_order = true
+          endif
+        -%}
+
         <button
           id="ProductSubmitButton-{{ section_id }}"
           type="submit"
           name="add"
           class="product-form__submit btn{% if show_dynamic_checkout %} btn--secondary{% else %} btn--primary{% endif %}"
-          {% if product.selected_or_first_available_variant.available == false or quantity_rule_soldout or product.selected_or_first_available_variant == nil %}
+          {% if button_disabled %}
             disabled
           {% endif %}
         >
           <span class="btn__text">
-            {%- if product.selected_or_first_available_variant == nil -%}
+            {%- if variant == null -%}
               {{ 'products.product.unavailable' | t }}
-            {%- elsif product.selected_or_first_available_variant.available == false
-              or quantity_rule_soldout
-            -%}
+            {%- elsif pre_order -%}
+              {{ 'products.product.pre_order' | t }}
+            {%- elsif variant_in_stock == false or quantity_rule_soldout -%}
               {{ 'products.product.sold_out' | t }}
             {%- else -%}
               {{ 'products.product.add_to_cart' | t }}
@@ -361,6 +400,30 @@
         {%- if show_dynamic_checkout -%}
           {{ form | payment_button }}
         {%- endif -%}
+      </div>
+      <div class="pre-order-content">
+        {% if pre_order %}
+          {% assign pre_order_date = product.selected_or_first_available_variant.metafields.custom.pre_order_date
+            | date: '%s'
+            | plus: 0
+          %}
+          {% assign today = 'now' | date: '%s' | plus: 0 %}
+
+          {% if pre_order_date < today %}
+            <div class="restock-message">Available for pre-order</div>
+            <input type="hidden" name="properties[_pre_order_note]" value="Available for pre-order">
+          {% else %}
+            <input
+              type="hidden"
+              name="properties[_pre_order_note]"
+              value="This item is on pre-order. Estimated availability: {{ product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: "%B %d, %Y" }}."
+            >
+            <div class="restock-message">
+              Available on
+              {{ product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: '%B %d, %Y' }}
+            </div>
+          {% endif %}
+        {% endif %}
       </div>
       <div class="product-form__error-message blocks-radius-md alert alert--error" role="alert" hidden></div>
     {%- endform -%}

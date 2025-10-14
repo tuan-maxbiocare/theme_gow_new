@@ -71,9 +71,28 @@
     if size_chart_content == blank and block.settings.size_chart_from_page != blank
       assign size_chart_content = pages[block.settings.size_chart_from_page].content
     endif
+
+    if product.selected_or_first_available_variant.inventory_quantity <= 0 and product.selected_or_first_available_variant.inventory_policy == 'continue'
+      assign pre_order = true
+      assign today = 'now' | date: '%s' | plus: 0
+      assign pre_order_date = product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: '%s' | plus: 0 
+      if pre_order_date < today
+        assign text_customer_pre_order = 'Available for pre-order'
+        assign text_admin_pre_order = 'Available for pre-order'
+      else
+        assign pre_order_date_formatted = product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: "%B %d, %Y" 
+        assign text_customer_pre_order = 'Available on ' | append: pre_order_date_formatted
+        assign text_admin_pre_order = 'This item is on pre-order. Estimated availability: ' | append: pre_order_date_formatted 
+      endif
+    else
+      assign pre_order = false
+    endif
   %}
   <script src="{{ 'variant-selects.js' | asset_url }}" defer="defer"></script>
   <variant-selects
+    data-pre-order={{ pre_order }}  
+    data-text-customer-pre-order="{{ text_customer_pre_order }}"
+    data-text-admin-pre-order="{{ text_admin_pre_order }}"
     id="variant-selects-{{ section.id }}"
     data-section="{{ section.id }}"
     data-url="{{ product.url }}"

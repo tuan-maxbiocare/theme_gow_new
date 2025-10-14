@@ -297,12 +297,29 @@ if (!customElements.get('product-info')) {
         const addButtonText = productForm.querySelector('[name="add"] > span');
         if (!addButton) return;
 
+        const preOrderWrapper = document.querySelector('.pre-order-content');
+        if (preOrderWrapper) preOrderWrapper.innerHTML = '';
+
         if (disable) {
           addButton.setAttribute('disabled', 'disabled');
           if (text) addButtonText.textContent = text;
         } else {
           addButton.removeAttribute('disabled');
-          addButtonText.innerHTML = FoxTheme.variantStrings.addToCart;
+          const variantSelect = document.querySelector('variant-selects[data-section]');
+          if (variantSelect?.dataset.preOrder === 'true') {
+            const restockMessage = document.createElement('div');
+            restockMessage.classList.add('restock-message');
+            restockMessage.innerHTML = `${variantSelect?.dataset.textCustomerPreOrder}.`
+            const restockMessageWrapper = document.querySelector('.pre-order-content');
+            restockMessageWrapper?.appendChild(restockMessage);
+            restockMessageWrapper.insertAdjacentHTML(
+              'beforeend',
+              `<input type="hidden" name="properties[_pre_order_note]" value="${variantSelect.dataset.textAdminPreOrder}">`
+            );
+            addButtonText.innerHTML = 'Pre-Order';
+          } else {
+            addButtonText.innerHTML = FoxTheme.variantStrings.addToCart;
+          }
         }
 
         if (!modifyClass) return;

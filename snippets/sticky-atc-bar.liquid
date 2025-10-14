@@ -3,6 +3,26 @@
     assign wrap_class = ''
     assign visibility = block.settings.visibility
     assign style = block.settings.style
+
+    # Common inventory logic
+    assign variant = product.selected_or_first_available_variant
+    assign variant_in_stock = true
+    assign button_disabled = false
+    assign button_text = 'products.product.add_to_cart' | t
+    assign button_text_short = 'products.product.add_to_cart_short' | t
+
+    if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0
+      assign variant_in_stock = false
+    endif
+
+    if variant_in_stock == false and variant.inventory_policy != 'continue'
+      assign button_disabled = true
+      assign button_text = 'products.product.sold_out' | t
+      assign button_text_short = 'products.product.sold_out' | t
+    elsif variant_in_stock == false and variant.inventory_policy == 'continue'
+      assign button_text = 'products.product.pre_order' | t
+      assign button_text_short = 'products.product.pre_order' | t
+    endif
   -%}
   {%- if style == 'minimalist' -%}
     {%- liquid
@@ -55,12 +75,10 @@
           name="add"
           form="{{ product_form_id }}"
           class="product-form__submit btn btn--primary btn--small w-full"
-          {% if product.selected_or_first_available_variant.available == false %}
-            disabled
-          {% endif %}
+           {% if button_disabled %}disabled{% endif %}
         >
           <span class="btn__text">
-            {{ 'products.product.add_to_cart_short' | t }}
+            {{- button_text_short -}}
           </span>
           {% render 'loading-spinner' %}
         </button>
@@ -200,16 +218,10 @@
                 type="submit"
                 name="add"
                 class="product-form__submit btn {% if show_dynamic_checkout_buttons and product.selling_plan_groups == empty %}btn--secondary{% else %}btn--primary{% endif %} w-full"
-                {% if product.selected_or_first_available_variant.available == false %}
-                  disabled
-                {% endif %}
+                {% if button_disabled %}disabled{% endif %}
               >
                 <span class="btn__text">
-                  {%- if product.selected_or_first_available_variant.available -%}
-                    {{ 'products.product.add_to_cart' | t }}
-                  {%- else -%}
-                    {{ 'products.product.sold_out' | t }}
-                  {%- endif -%}
+                  {{- button_text -}}
                 </span>
                 {% render 'loading-spinner' %}
               </button>
