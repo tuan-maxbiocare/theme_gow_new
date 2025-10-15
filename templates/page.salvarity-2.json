@@ -858,7 +858,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "NORMAL SKIN",
-            "button_link": "shopify://collections/normal-skin",
+            "button_link": "shopify://collections/skincare-for-normal-skin",
             "icon": "none"
           }
         },
@@ -866,7 +866,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "DRY SKIN",
-            "button_link": "shopify://collections/dry-skin",
+            "button_link": "shopify://collections/skin-products-for-dry-skin",
             "icon": "none"
           }
         },
@@ -874,7 +874,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "OILY SKIN",
-            "button_link": "shopify://collections/oily-skin",
+            "button_link": "shopify://collections/skin-products-for-oily-skin",
             "icon": "none"
           }
         }

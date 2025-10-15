@@ -473,7 +473,7 @@
         "featured_collection_EpwEDJ": {
           "type": "featured_collection",
           "settings": {
-            "collection": "memory-learning",
+            "collection": "memory-health-supplements",
             "image": "shopify://shop_images/GoWshop_Website_MBC-Brain_Cardiovascular_Health_category.webp",
             "title": ""
           }
@@ -489,7 +489,7 @@
         "featured_collection_diW9UJ": {
           "type": "featured_collection",
           "settings": {
-            "collection": "brain-vision",
+            "collection": "brain-and-cognitive-supplement",
             "image": "shopify://shop_images/GoWshop_Website_MBC-Eye_Health_category_Category2.webp",
             "title": ""
           }
@@ -497,7 +497,7 @@
         "featured_collection_VHMx8n": {
           "type": "featured_collection",
           "settings": {
-            "collection": "metabolic-health",
+            "collection": "metabolism-booster-supplements",
             "image": "shopify://shop_images/GoWshop_Website_MBC-Metabolic_category.webp",
             "title": ""
           }
@@ -965,7 +965,7 @@
           "settings": {
             "collection_list": [
               "women-supplements",
-              "max-biocare-mothers-care"
+              "sciene-backed-mothers-care"
             ],
             "custom_titles_collection": "Women's Health​ ||\nPregnancy and Breastfeeding​",
             "product_limit": 12,
