@@ -24,7 +24,7 @@
           {%- endif -%}
         {%- when 'heading' -%}
           {%- if block.settings.heading != blank -%}
-            <h2
+            <span
               class="rich-text__heading {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}
             >
@@ -37,7 +37,7 @@
                   hl_text_color: block.settings.highlight_text_color
                 %}
               </motion-element>
-            </h2>
+            </span>
             {%- assign motion_delay = motion_delay | plus: 50 -%}
           {%- endif -%}
         {%- when 'text' -%}

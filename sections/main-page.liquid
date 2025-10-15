@@ -11,44 +11,11 @@
         {{ page.title | escape }}
       </motion-element>
     </h2>
-
-    <input type="file" id="upload" multiple accept="image/*">
-<div id="preview"></div>
-
-<script>
-document.getElementById('upload').addEventListener('change', function(event) {
-  const files = event.target.files;
-  let previewArea = document.getElementById('preview');
-  previewArea.innerHTML = ""; // clear previous images
-
-  Array.from(files).forEach(file => {
-    let img = document.createElement("img");
-    img.src = URL.createObjectURL(file);
-    img.style.maxWidth = "120px";
-    img.style.margin = "5px";
-    previewArea.appendChild(img);
-  });
-});
-</script>
-
-
-
-
-
-    <form action="#" method="post" id="formGeneratorForm">
-      <input class="form-control " aria-required="false" name="Order ID (Optional)" id="form_input_0" type="text" aria-placeholder placeholder>
-    </form>
-
-    sadasds222
-<div style="margin:0 auto;" class="pxFormGenerator" id="R5phv_tvQ5eeLJFpe0jITQ"></div>
-{% comment %} 
-    {%- unless page.content == blank -%} {% endcomment %}
+    {%- unless page.content == blank -%}
       <div class="page__content rich-text__text rte text-subtext">
-        0239848324
-        <div style="margin:0 auto;" class="pxFormGenerator" id="R5phv_tvQ5eeLJFpe0jITQ"></div>
         {{ page.content }}
       </div>
-    {% comment %} {%- endunless -%} {% endcomment %}
+    {%- endunless -%}
   </div>
 </div>
 {% schema %}

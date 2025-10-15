@@ -229,7 +229,7 @@
                       {%- assign motion_delay = motion_delay | plus: 50 -%}
                     {%- endunless -%}
                     {%- unless block.settings.heading == blank -%}
-                      <h2
+                      <span
                         class="{{ block.settings.heading_size }} rich-text__heading"
                         style="line-height: {{ block.settings.heading_line_height }}px;"
                       >
@@ -247,7 +247,7 @@
                             hl_text_color: block.settings.highlight_text_color
                           %}
                         </motion-element>
-                      </h2>
+                      </span>
                       {%- assign motion_delay = motion_delay | plus: 50 -%}
                     {%- endunless -%}
                     {%- unless block.settings.text == blank -%}

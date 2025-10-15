@@ -73,17 +73,32 @@
         {%- assign motion_delay = motion_delay | plus: 50 -%}
       {%- endif -%}
       {%- if section_settings.heading != blank -%}
-        <h2 class="section__heading rich-text__heading{% if section_settings.heading_size %} {{ section_settings.heading_size }}{% endif %}">
-          <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
-            {% render 'highlight-text',
-              hl_text: section_settings.heading,
-              hl_style: section_settings.highlight_style,
-              hl_font_style: section_settings.highlight_font_style,
-              hl_style_color: section_settings.highlight_style_color,
-              hl_text_color: section_settings.highlight_text_color
-            %}
-          </motion-element>
-        </h2>
+        {% comment %} Check if this is a related products block {% endcomment %}
+        {%- if block_type == 'related_products' -%}
+          <span class="section__heading rich-text__heading{% if section_settings.heading_size %} {{ section_settings.heading_size }}{% endif %}">
+            <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
+              {% render 'highlight-text',
+                hl_text: section_settings.heading,
+                hl_style: section_settings.highlight_style,
+                hl_font_style: section_settings.highlight_font_style,
+                hl_style_color: section_settings.highlight_style_color,
+                hl_text_color: section_settings.highlight_text_color
+              %}
+            </motion-element>
+          </span>
+        {%- else -%}
+          <h2 class="section__heading rich-text__heading{% if section_settings.heading_size %} {{ section_settings.heading_size }}{% endif %}">
+            <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
+              {% render 'highlight-text',
+                hl_text: section_settings.heading,
+                hl_style: section_settings.highlight_style,
+                hl_font_style: section_settings.highlight_font_style,
+                hl_style_color: section_settings.highlight_style_color,
+                hl_text_color: section_settings.highlight_text_color
+              %}
+            </motion-element>
+          </h2>
+        {%- endif -%}
         {%- assign motion_delay = motion_delay | plus: 50 -%}
       {%- endif -%}
       {%- if description != blank -%}

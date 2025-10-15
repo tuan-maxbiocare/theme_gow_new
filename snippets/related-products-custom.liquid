@@ -54,7 +54,7 @@
       assign enable_swipe_mobile = true
     endif
   -%}
-  {% render 'section-heading', section_settings: section.settings %}
+  {% render 'section-heading', section_settings: section.settings, block_type: 'related_products' %}
   <product-slider
     class="block{% if navigation_position == 'middle' %} swiper-show-nav-on-hover relative{% endif %}"
     data-section-id="{{ section.id }}"

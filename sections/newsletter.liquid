@@ -109,7 +109,7 @@
             {%- assign motion_delay = motion_delay | plus: 50 -%}
           {% endif %}
           {% if section.settings.heading != blank %}
-            <h2 class="rich-text__heading {{ section.settings.heading_size }}">
+            <span class="rich-text__heading {{ section.settings.heading_size }}">
               <motion-element
                 data-motion="fade-up"
                 data-motion-delay="{{ motion_delay }}"
@@ -123,7 +123,7 @@
                   hl_text_color: section.settings.highlight_text_color
                 %}
               </motion-element>
-            </h2>
+            </span>
             {%- assign motion_delay = motion_delay | plus: 50 -%}
           {% endif %}
           {% if section.settings.description != blank %}

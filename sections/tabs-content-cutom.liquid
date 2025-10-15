@@ -84,12 +84,12 @@
                   assign tab_number = tab_number | plus: 1
                 -%}
                 <button class="{{ nav_button_class }}" role="tab" id="{{- block.id -}}" {{ block.shopify_attributes }}>
-                  <span
+                  <h2
                     class="{{ nav_button_text_class }}"
                     style="--navigation-font-size: {{ section.settings.navigation_font_size}}px"
                   >
                     {{- tab_name -}}
-                  </span>
+                  </h2>
                 </button>
               {%- endfor -%}
             </div>

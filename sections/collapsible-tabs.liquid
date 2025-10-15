@@ -162,12 +162,12 @@
                               {% if block.settings.icon_text != 'none' %}
                                 {% render 'icons', icon: block.settings.icon_text, size: item_icon_size %}
                               {%- endif -%}
-                              <h2
+                              <span
                                 class="inline-richtext"
                                 style="font-size: {{ block.settings.heading_font_size }}px; font-weight: {{ block.settings.heading_font_weight }};"
                               >
                                 {{ block.settings.text }}
-                              </h2>
+                              </span>
                             </div>
                           </summary>
                         </details>

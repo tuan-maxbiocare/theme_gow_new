@@ -112,9 +112,9 @@
         <div class="product__info-container{% if enable_sticky_info %} sticky-element{% endif %}">
           <div class="product__blocks">
             <div class="product__block product__block--title">
-              <h2 class="product__title h1">
+              <span class="product__title h1">
                 {{- 'onboarding.product_title' | t -}}
-              </h2>
+              </span>
             </div>
             <div class="product__block product__block--price">
               {% render 'price', price_class: 'f-price--large' %}

@@ -167,7 +167,7 @@
                 </motion-element>
                 {%- assign motion_delay = motion_delay | plus: 50 -%}
               {%- when 'heading' -%}
-                <h2
+                <h3
                   class="rich-text__heading {{ block.settings.heading_size }}"
                   {{ block.shopify_attributes }}
                 >
@@ -180,7 +180,7 @@
                       hl_text_color: block.settings.highlight_text_color
                     %}
                   </motion-element>
-                </h2>
+                </h3>
                 {%- assign motion_delay = motion_delay | plus: 50 -%}
               {%- when 'text' -%}
                 <motion-element

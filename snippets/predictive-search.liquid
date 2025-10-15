@@ -135,9 +135,9 @@
         <div class="search_box search__recommendations flex flex-col md:flex-row gap-y-6">
           {% if settings.products_recommendations != blank %}
             <div class="search__products-recommendation search__box-products flex flex-col flex-grow gap-5 lg:gap-6 order-last md:order-first">
-              <h2 class="h4">
+              <span class="h4">
                 {{- 'templates.search.most_searched_products' | t -}}
-              </h2>
+              </span>
               <div class="swipe-mobile swipe-mobile--2-cols">
                 <div class="f-grid f-grid-column-suggest-custom f-grid--gap-{{ settings.search_products_column_gap }} f-grid--row-gap-{{ settings.search_products_row_gap }} swipe-mobile__inner">
                   {%- for product in settings.products_recommendations limit: 4 -%}
@@ -173,7 +173,7 @@
               assign keywords = settings.most_searched_keyworkds | split: ','
             -%}
             <div class="search__most-searched-keywords search__box-others flex flex-col gap-3{% if settings.products_recommendations == blank %} no-products{% endif %}">
-              <h4 class="h6">{{ 'templates.search.most_searched_keywords' | t }}</h4>
+              <span class="h6">{{ 'templates.search.most_searched_keywords' | t }}</span>
               <ul class="flex flex-col flex-wrap gap-y-2 text-subtext">
                 {%- for keyword in keywords -%}
                   <li>

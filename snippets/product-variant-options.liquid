@@ -158,9 +158,14 @@
       {% endif %}
       {{ input_dataset }}
     >
-    <label for="{{ input_id }}">
-      {{ value -}}
+    <label for="{{ input_id }}" class="product-variant-options-variant-label-sale relative block">
+      {{ value }}
       {{ label_unavailable }}
+      {%- if forloop.index > 1 and value.variant.compare_at_price and value.variant.compare_at_price > value.variant.price -%}
+        {%- assign discount_amount = value.variant.compare_at_price | minus: value.variant.price -%}
+        {%- assign discount_percent = discount_amount | times: 100 | divided_by: value.variant.compare_at_price -%}
+        <span class="product-variant-options-sale-badge"> {{ discount_percent | round }}% off </span>
+      {%- endif -%}
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option

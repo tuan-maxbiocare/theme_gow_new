@@ -9,9 +9,9 @@
 >
   {%- if block.settings.heading != blank -%}
     <summary class="accordion-details__summary flex items-center justify-between gap-2">
-      <h3 class="footer-block__heading inline-richtext {{ block.settings.heading_size }}">
+      <span class="footer-block__heading inline-richtext {{ block.settings.heading_size }}">
         {{- block.settings.heading -}}
-      </h3>
+      </span>
       <span class="flex items-center lg:hidden">
         {%- render 'icon-plus-toggle', size: 'small' -%}
       </span>

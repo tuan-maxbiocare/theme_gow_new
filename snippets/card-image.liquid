@@ -185,13 +185,15 @@
               style="--custom-heading-size: {{ heading_size_custom | divided_by: 10.0 }}rem;"
             {% endif %}
           >
-            {% render 'highlight-text',
-              hl_text: heading,
-              hl_style: highlight_style,
-              hl_font_style: highlight_font_style,
-              hl_style_color: highlight_style_color,
-              hl_text_color: highlight_text_color
-            %}
+            <h2>
+              {% render 'highlight-text',
+                hl_text: heading,
+                hl_style: highlight_style,
+                hl_font_style: highlight_font_style,
+                hl_style_color: highlight_style_color,
+                hl_text_color: highlight_text_color
+              %}
+            </h2>
           </motion-element>
           {%- assign motion_delay = motion_delay | plus: 50 -%}
         {%- endif -%}

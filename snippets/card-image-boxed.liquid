@@ -87,44 +87,46 @@
     <div class="card-media__content card-media__content--{{ content_alignment }}">
       <div class="card-media__content-wrapper rich-text rich-text--{{ rich_text_size }} text-{{ content_alignment_mobile }} md:text-{{ content_alignment }}">
         {%- if heading != blank or description != blank or subheading != blank -%}
-        <div class="card-media__content-inner">
-          {%- if subheading != blank -%}
-            <motion-element
-              class="block rich-text__subheading text-subheading"
-              data-motion="fade-up"
-              data-motion-delay="{{ motion_delay }}"
-            >
-              {{- subheading -}}
-            </motion-element>
-            {%- assign motion_delay = motion_delay | plus: 50 -%}
-          {%- endif -%}
-          {%- if heading != blank -%}
-            <motion-element
-              class="block card-media__heading rich-text__heading {{ heading_size }}"
-              data-motion="fade-up"
-              data-motion-delay="{{ motion_delay }}"
-            >
-              {% render 'highlight-text',
-                hl_text: heading,
-                hl_style: highlight_style,
-                hl_font_style: highlight_font_style,
-                hl_style_color: highlight_style_color,
-                hl_text_color: highlight_text_color
-              %}
-            </motion-element>
-            {%- assign motion_delay = motion_delay | plus: 50 -%}
-          {%- endif -%}
-          {%- if description != blank -%}
-            <motion-element
-              class="block card-media__description rich-text__text rte text-subtext {{ description_size }}{% if text_limit %} text-limit-{{ text_limit }}{% endif %}"
-              data-motion="fade-up"
-              data-motion-delay="{{ motion_delay }}"
-            >
-              {{- description -}}
-            </motion-element>
-            {%- assign motion_delay = motion_delay | plus: 50 -%}
-          {%- endif -%}
-        </div>
+          <div class="card-media__content-inner">
+            {%- if subheading != blank -%}
+              <motion-element
+                class="block rich-text__subheading text-subheading"
+                data-motion="fade-up"
+                data-motion-delay="{{ motion_delay }}"
+              >
+                {{- subheading -}}
+              </motion-element>
+              {%- assign motion_delay = motion_delay | plus: 50 -%}
+            {%- endif -%}
+            {%- if heading != blank -%}
+              <motion-element
+                class="block card-media__heading rich-text__heading {{ heading_size }}"
+                data-motion="fade-up"
+                data-motion-delay="{{ motion_delay }}"
+              >
+                <h2>
+                  {% render 'highlight-text',
+                    hl_text: heading,
+                    hl_style: highlight_style,
+                    hl_font_style: highlight_font_style,
+                    hl_style_color: highlight_style_color,
+                    hl_text_color: highlight_text_color
+                  %}
+                </h2>
+              </motion-element>
+              {%- assign motion_delay = motion_delay | plus: 50 -%}
+            {%- endif -%}
+            {%- if description != blank -%}
+              <motion-element
+                class="block card-media__description rich-text__text rte text-subtext {{ description_size }}{% if text_limit %} text-limit-{{ text_limit }}{% endif %}"
+                data-motion="fade-up"
+                data-motion-delay="{{ motion_delay }}"
+              >
+                {{- description -}}
+              </motion-element>
+              {%- assign motion_delay = motion_delay | plus: 50 -%}
+            {%- endif -%}
+          </div>
         {%- endif -%}
         {%- if button_label != blank -%}
           {% liquid

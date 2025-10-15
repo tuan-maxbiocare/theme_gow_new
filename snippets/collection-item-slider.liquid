@@ -47,9 +47,9 @@
       data-motion="fade-up"
     >
       {% if custom_title %}
-        <h2 class="h2 flex-grow">{{ custom_title }}</h2>
+        <span class="h2 flex-grow">{{ custom_title }}</span>
       {% else %}
-        <h2 class="h2 flex-grow">{{ collection_title }}</h2>
+        <span class="h2 flex-grow">{{ collection_title }}</span>
       {% endif %}
       {%- if enable_slider or enable_slider_mobile -%}
         <div class="slider-controls--group{% if enable_slider_desktop == true and enable_slider_mobile == false %} hidden md:block{% elsif enable_slider_desktop == false and enable_slider_mobile == true %} md:hidden{% endif %}">

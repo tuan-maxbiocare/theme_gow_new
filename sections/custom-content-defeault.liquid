@@ -78,7 +78,7 @@
                     {%- assign motion_delay = motion_delay | plus: 50 -%}
                   {%- endif -%}
                   {%- if block.settings.heading != blank -%}
-                    <h2 class="rich-text__heading inline-richtext {{ block.settings.heading_size }}">
+                    <h3 class="rich-text__heading inline-richtext {{ block.settings.heading_size }}">
                       <motion-element class="block" data-motion="fade-up" data-motion-delay="{{ motion_delay }}">
                         {% render 'highlight-text',
                           hl_text: block.settings.heading,
@@ -88,7 +88,7 @@
                           hl_text_color: block.settings.highlight_text_color
                         %}
                       </motion-element>
-                    </h2>
+                    </h3>
                     {%- assign motion_delay = motion_delay | plus: 50 -%}
                   {%- endif -%}
                   {%- if block.settings.description != blank -%}

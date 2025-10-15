@@ -156,7 +156,8 @@
     style="padding-right:20px; padding-left:20px"
   >
     <div class="menu-food-nutrition-custom__col">
-      <h3 class="menu-food-nutrition-custom__title">{{ block.settings.heading_title_1 }}</h3>
+      <span class="menu-food-nutrition-custom__title h3">{{ block.settings.heading_title_1 }}</span>
+      
       <div open>
         {%- if product_list_1 != blank -%}
           <menu-product-list class="block w-full" data-columns="4" data-calc-button-position="true">
@@ -226,7 +227,7 @@
 
     <div class="menu-food-nutrition-custom__col">
       <div style="display: flex; justify-content: space-between;align-items:center; padding-bottom:8px">
-        <h3 class="menu-food-nutrition-custom__title">{{ block.settings.heading_title_2 }}</h3>
+        <span class="menu-food-nutrition-custom__title h3">{{ block.settings.heading_title_2 }}</span>
         <div>
           <button style="z-index: 10;" type="button" class="btn--plain">
             <a href="{{ block.settings.button_link }}" class="btn__text">

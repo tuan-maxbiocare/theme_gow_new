@@ -38,7 +38,7 @@
             </div>
           {%- endif -%}
           <div class="drawer__header-inner cart-drawer__header flex items-center justify-between gap-3">
-            <h2 class="drawer__heading h4">
+            <span class="drawer__heading h4">
               <span>{{ 'general.cart.title' | t }}</span>
               <cart-count
                 class="cart-count cart-count--blank"
@@ -56,7 +56,7 @@
                 {%- endif -%}
                 )
               </cart-count>
-            </h2>
+            </span>
             <button
               class="drawer__close-btn z-1 static"
               aria-controls="CartDrawer"
@@ -564,7 +564,7 @@
                         {%- render 'icon-close' -%}
                       </button>
                       <div class="drawer__content cart-addons-drawer__content grid gap-5">
-                        <h5>{{ 'general.cart.note.title' | t }}</h5>
+                        <span>{{ 'general.cart.note.title' | t }}</span>
                         <cart-note class="flex flex-col items-start gap-5">
                           <div class="form-field w-full">
                             <textarea
@@ -724,7 +724,7 @@
                         {%- render 'icon-close' -%}
                       </button>
                       <div class="drawer__content cart-addons-drawer__content grid gap-5">
-                        <h5>{{ 'general.cart.coupon.title' | t }}</h5>
+                        <span>{{ 'general.cart.coupon.title' | t }}</span>
                         <form
                           is="cart-discount"
                           class="cart-discount__form flex flex-col items-start gap-5"

@@ -25,7 +25,7 @@
           href="{{ childlink.url }}"
           onclick="event.stopPropagation();"
         >
-          <h6>{{ childlink.title | escape }}</h6>
+          <span>{{ childlink.title | escape }}</span>
         </a>
         {% if childlink.links != blank %}
           {%- if childlink.links != blank -%}

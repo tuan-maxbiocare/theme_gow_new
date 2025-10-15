@@ -96,7 +96,7 @@
           {% assign motion_delay = motion_delay | plus: 50 %}
         {% endif %}
         {% if heading != blank %}
-          <h3 class="pr-img-card__contents-heading rich-text__heading inline-richtext {{ heading_size }}">
+          <span class="pr-img-card__contents-heading rich-text__heading inline-richtext {{ heading_size }}">
             <motion-element
               class="block"
               data-motion="fade-up"
@@ -110,7 +110,7 @@
                 hl_text_color: highlight_text_color
               %}
             </motion-element>
-          </h3>
+          </span>
           {% assign motion_delay = motion_delay | plus: 50 %}
         {% endif %}
         {%- if description != blank -%}

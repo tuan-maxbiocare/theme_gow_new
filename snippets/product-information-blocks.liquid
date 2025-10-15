@@ -94,11 +94,11 @@
           </div>
         {%- when 'title' -%}
           <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
-            <h2 class="product__title {{ block.settings.heading_size }}">{{ product.title | escape }}</h2>
+            <span class="product__title {{ block.settings.heading_size }}">{{ product.title | escape }}</span>
             <a href="{{ product.url }}" class="product__title">
-              <h2 class="h1">
+              <span class="h1">
                 {{ product.title | escape }}
-              </h2>
+              </span>
             </a>
           </div>
         {%- when 'price' -%}
