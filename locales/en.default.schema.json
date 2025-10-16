@@ -411,7 +411,10 @@
       },
       "options__5": {
         "label": "5 lines"
-      }
+        },
+        "options__6": {
+          "label": "6 lines"
+        }
     },
     "show_view_more_button": {
       "label": "Show view more button",
