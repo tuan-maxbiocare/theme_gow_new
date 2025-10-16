@@ -5383,7 +5383,9 @@ show-more .read-more__content {
 .text-limit-5-lines {
   --line-clamp: 5;
 }
-
+.text-limit-6-lines {
+  --line-clamp: 6;
+}
 .z--1 {
   z-index: -1;
 }
