@@ -1,0 +1,158 @@
+<div class="page-width page-width--fixed section--padding">
+  <div class="two-column-layout">
+    <div class="left-content">
+      {% if section.settings.banner_image %}
+        <div class="promo-banner">
+          <img src="{{ section.settings.banner_image | img_url: 'master' }}" alt="Banner">
+        </div>
+      {% endif %}
+
+      {% if page.content != blank %}
+        <div class="page__content rich-text__text rte text-subtext">
+          {{ page.content }}
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="right-sticky">
+      {% if section.settings.enable_review_buttons %}
+        <div class="review-checker">
+          <p class="review-checker__title">
+            Have you already left a review on the platform where you purchased the product? <br>
+            If not yet, please leave a review, take a screenshot, and fill out the form to join the program.
+          </p>
+          <div class="review-buttons">
+            {% if section.settings.link_cw != blank %}
+              <button class="review-btn" data-link="{{ section.settings.link_cw }}">CW</button>
+            {% endif %}
+            {% if section.settings.link_shopify != blank %}
+              <button class="review-btn" data-link="{{ section.settings.link_shopify }}">Shopify</button>
+            {% endif %}
+            {% if section.settings.link_aws != blank %}
+              <button class="review-btn" data-link="{{ section.settings.link_aws }}">AWS</button>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="custom-form-wrapper">
+        {{ section.settings.form_embed_code }}
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .two-column-layout {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+  }
+  .left-content {
+    width: 60%;
+  }
+  .right-sticky {
+    width: 40%;
+    position: sticky;
+    top: 20px;
+  }
+  .promo-banner img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .review-checker {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .review-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  .review-btn {
+    padding: 10px 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 6px;
+    background: #ececec;
+    transition: 0.2s;
+  }
+  .review-btn:hover {
+    transform: translateY(-2px);
+  }
+  .custom-form-wrapper {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (max-width: 900px) {
+  .two-column-layout {
+    flex-direction: column-reverse;
+  }
+  .left-content,
+  .right-sticky {
+    width: 100%;
+    position: relative;
+  }
+}
+</style>
+
+<script>
+  document.querySelectorAll('.review-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      window.open(btn.getAttribute('data-link'), '_blank');
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Page review and rewward",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_review_buttons",
+      "label": "Show Review Buttons",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "link_cw",
+      "label": "Link CW"
+    },
+    {
+      "type": "url",
+      "id": "link_shopify",
+      "label": "Link Shopify"
+    },
+    {
+      "type": "url",
+      "id": "link_aws",
+      "label": "Link AWS"
+    },
+    {
+      "type": "textarea",
+      "id": "form_embed_code",
+      "label": "Form Embed Code (paste full script/div)",
+      "default": "<div>Paste form code here</div>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page review and rewward",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
