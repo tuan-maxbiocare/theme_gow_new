@@ -20,6 +20,14 @@
   show_divider: section.settings.show_section_divider,
   divider_width: section.settings.divider_width
 -%}
+
+{% capture show_section %}
+  {% render 'check-product-visibility',
+    product: product,
+    product_list: section.settings.product_list,
+    template_product: section.settings.template_product %}
+{% endcapture %}
+
 <style>
   .comparison-table-custom .rte {
     text-align: center;
@@ -30,9 +38,37 @@
   .comparison-table-custom .blocks-radius {
     text-align: center;
   }
+  .quick-comparison-table-custom {
+    table-layout: auto;
+  }
+  .quick-comparison-table-custom .reversed-link__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .quick-comparison-table-custom .td-label {
+    background-color: rgb(249, 250, 251);
+  }
+  .note-comparison-table-custom {
+    background-color: rgb(28, 167, 88);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+  }
+  @media (max-width: 768px) {
+    .quick-comparison-table-custom {
+      table-layout: fixed;
+    }
+  }
 </style>
 <div
-  class="section section--padding page-width page-width--{{ section.settings.container }}  section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }} comparison-table-custom"
+  class="
+    section section--padding page-width page-width--{{ section.settings.container }}  section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }}
+    comparison-table-custom {% if show_section contains 'hide' %} hide-section-product-profile {% endif %}
+  "
   style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <comparison-table class="block comparison-table quick-comparison-table-container">
@@ -49,7 +85,7 @@
       -%}
     </div>
     <div class="comparison-table__content h-scrollable relative z-0">
-      <table class="quick-comparison-table text-subtext">
+      <table class="quick-comparison-table text-subtext quick-comparison-table-custom">
         {% comment %} Row with Product Images {% endcomment %}
         <tr>
           {% assign product_show_compare = 0 %}
@@ -254,6 +290,9 @@
         {% endfor %}
       </table>
     </div>
+    {% if section.settings.note_comparison_table_custom != blank %}
+      <div class="note-comparison-table-custom">{{ section.settings.note_comparison_table_custom }}</div>
+    {% endif %}
   </comparison-table>
 </div>
 {% schema %}
@@ -266,6 +305,16 @@
     {
       "type": "header",
       "content": "t:general.general.name"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Show  section in product"
+    },
+    {
+      "type": "richtext",
+      "id": "template_product",
+      "label": "Show section in product template Enter templates (separate with ||)"
     },
     {
       "type": "select",
@@ -496,6 +545,11 @@
       "label": "t:general.button.button_link.label"
     },
     {
+      "type": "text",
+      "id": "note_comparison_table_custom",
+      "label": "Note Comparison Table"
+    },
+    {
       "type": "select",
       "id": "button_style",
       "label": "t:general.button.button_style.label",
@@ -662,6 +716,10 @@
         {
           "value": "5-lines",
           "label": "t:general.text_line_limit.options__5.label"
+        },
+        {
+          "value": "6-lines",
+          "label": "t:general.text_line_limit.options__6.label"
         }
       ]
     },
