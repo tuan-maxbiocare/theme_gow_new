@@ -191,7 +191,13 @@
             <span class="reversed-link__text hidden sm:block lg:hidden xl:block whitespace-nowrap">
               {%- liquid
                 if customer
-                  echo 'customer.account_fallback' | t
+                  if customer.email
+                    echo 'Hi, ' | append: customer.email | split: '@' | first
+                  elsif customer.phone
+                    echo 'Hi, ' | append: customer.phone
+                  else
+                    echo 'Hi, ' | append: ('customer.account_fallback')
+                  endif
                 else
                   echo 'customer.account_action' | t
                 endif
