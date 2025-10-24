@@ -132,7 +132,7 @@
   <div class="mega-menu__col-list mega-menu-custom-left">
     <div>
       <div class="mega-menu__section">
-        <span class="mega-menu__title h3">{{ block.settings['heading-title'] }}</span>
+        <p class="mega-menu__title h3">{{ block.settings['heading-title'] }}</p>
         <div class="mega-menu__tags">
           <button type="button" class="btn--primary btn btn--secondary btn--small product-card__btn">
             <a href="{{ block.settings.static_link_1_url }}" class="btn__text">
@@ -161,7 +161,7 @@
       </div>
 
       <div class="mega-menu__section">
-        <span class="mega-menu__title h3">{{ block.settings['heading-title-sub'] }}</span>
+        <p class="mega-menu__title h3">{{ block.settings['heading-title-sub'] }}</p>
         <div class="mega-menu__columns">
           <ul class="mega-menu__col" style="column-count: 2;">
             {% for item in block.settings.child_categories.links %}

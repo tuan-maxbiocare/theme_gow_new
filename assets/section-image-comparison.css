@@ -267,3 +267,30 @@
     --hero-height: 42rem;
   }
 }
+/* thêm style hover */
+
+.image-comparison {
+  cursor: col-resize;
+}
+
+.image-comparison:not(.is-dragging) .image-comparison__after {
+  transition: clip-path 0.3s ease-out;
+}
+
+.image-comparison:not(.is-dragging) .image-comparison__button {
+  transition: all 0.3s ease-out;
+}
+
+.image-comparison__button:hover {
+  transform: scale(1.1);
+}
+
+/* Thêm style mới cho trạng thái mặc định */
+.image-comparison:not(:hover):not(.is-dragging) {
+  --percent: 50%;
+}
+
+.image-comparison:not(:hover):not(.is-dragging) .image-comparison__after,
+.image-comparison:not(:hover):not(.is-dragging) .image-comparison__button {
+  transition: all 0.5s ease-out;
+}

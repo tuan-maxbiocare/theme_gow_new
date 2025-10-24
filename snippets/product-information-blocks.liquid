@@ -565,67 +565,79 @@
             </div>
           </div>
         {%- when 'text_with_buttons' -%}
-          <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
-            <div class="text-buttons-wrapper" style="display: flex;">
-              {%- if block.settings.heading != blank -%}
-                <h2 class="{{ block.settings.heading_size }} text-{{ block.settings.text_alignment }}">
-                  {{ block.settings.heading }}
-                </h2>
-              {%- endif -%}
+          {% liquid
+            assign cw_link = product.metafields.custom.cw_link.value
+            assign amazon_link = product.metafields.custom.amazon_link.value
+          %}
 
-              {%- if block.settings.text != blank -%}
-                <div class="text-content rte text-{{ block.settings.text_alignment }}">
-                  {{ block.settings.text }}
+          {% if cw_link and amazon_link %}
+            <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
+              <div class="text-buttons-wrapper" style="display: flex;">
+                {%- if block.settings.heading != blank -%}
+                  <h2 class="{{ block.settings.heading_size }} text-{{ block.settings.text_alignment }}">
+                    {{ block.settings.heading }}
+                  </h2>
+                {%- endif -%}
+
+                {%- if block.settings.text != blank -%}
+                  <div class="text-content rte text-{{ block.settings.text_alignment }}">
+                    {{ block.settings.text }}
+                  </div>
+                {%- endif -%}
+                <div class="buttons-wrapper">
+                  {% if cw_link %}
+                    <a
+                      target="_blank"
+                      href="{{ product.metafields.custom.cw_link.value }}"
+                      data-tooltip
+                    >
+                      <span class="tooltip pointer-events-none">
+                        {{ block.settings.share_twitter_tooltip }}
+                      </span>
+                      <span class="btn btn--icon btn--icon-pill">
+                        {% if block.settings.share_twitter_icon != blank %}
+                          <img
+                            src="{{ block.settings.share_twitter_icon | img_url: '128x128' }}"
+                            alt="Chemist Warehouse"
+                            loading="lazy"
+                            width="{{ block.settings.share_icon_size }}px"
+                            height="{{ block.settings.share_icon_size }}px"
+                          >
+                        {% else %}
+                          {% render 'icon-twitter', size: 'large' %}
+                        {% endif %}
+                      </span>
+                    </a>
+                  {% endif %}
+
+                  {% if amazon_link %}
+                    <a
+                      target="_blank"
+                      href="{{ product.metafields.custom.amazon_link.value }}"
+                      data-tooltip
+                    >
+                      <span class="tooltip pointer-events-none">
+                        {{ block.settings.share_facebook_tooltip }}
+                      </span>
+                      <span class="btn btn--icon btn--icon-pill">
+                        {% if block.settings.share_facebook_icon != blank %}
+                          <img
+                            src="{{ block.settings.share_facebook_icon | img_url: '128x128' }}"
+                            alt="Amazon"
+                            loading="lazy"
+                            width="{{ block.settings.share_icon_size }}px"
+                            height="{{ block.settings.share_icon_size }}px"
+                          >
+                        {% else %}
+                          {% render 'icon-twitter', size: 'large' %}
+                        {% endif %}
+                      </span>
+                    </a>
+                  {% endif %}
                 </div>
-              {%- endif -%}
-              <div class="buttons-wrapper">
-                <a
-                  target="_blank"
-                  href="{{ block.settings.twitter_url }}?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: url }}"
-                  data-tooltip
-                >
-                  <span class="tooltip pointer-events-none">
-                    {{ block.settings.share_twitter_tooltip }}
-                  </span>
-                  <span class="btn btn--icon btn--icon-pill">
-                    {% if block.settings.share_twitter_icon != blank %}
-                      <img
-                        src="{{ block.settings.share_twitter_icon | img_url: '128x128' }}"
-                        alt="Twitter"
-                        loading="lazy"
-                        width="{{ block.settings.share_icon_size }}px"
-                        height="{{ block.settings.share_icon_size }}px"
-                      >
-                    {% else %}
-                      {% render 'icon-twitter', size: 'large' %}
-                    {% endif %}
-                  </span>
-                </a>
-                <a
-                  target="_blank"
-                  href="{{ block.settings.facebook_url }}?u={{ shop.url | append: url }}"
-                  data-tooltip
-                >
-                  <span class="tooltip pointer-events-none">
-                    {{ block.settings.share_facebook_tooltip }}
-                  </span>
-                  <span class="btn btn--icon btn--icon-pill">
-                    {% if block.settings.share_facebook_icon != blank %}
-                      <img
-                        src="{{ block.settings.share_facebook_icon | img_url: '128x128' }}"
-                        alt="Twitter"
-                        loading="lazy"
-                        width="{{ block.settings.share_icon_size }}px"
-                        height="{{ block.settings.share_icon_size }}px"
-                      >
-                    {% else %}
-                      {% render 'icon-twitter', size: 'large' %}
-                    {% endif %}
-                  </span>
-                </a>
               </div>
             </div>
-          </div>
+          {% endif %}
         {%- when 'payment_social' -%}
           <div class="{{ block_classes }} payment-social-wrapper" {{ block.shopify_attributes }}>
             <div class="payment-social-container flex flex-col gap-6 md:flex-row md:justify-between md:items-center">

@@ -1,79 +1,92 @@
 <div class="page-width page-width--fixed section--padding">
-  <div class="two-column-layout">
-    <div class="left-content">
+  <div class="page-review-reward">
+    <div class="page-review-reward__left">
       {% if section.settings.banner_image %}
-        <div class="promo-banner">
+        <div class="page-review-reward__banner">
           <img src="{{ section.settings.banner_image | img_url: 'master' }}" alt="Banner">
         </div>
       {% endif %}
 
       {% if page.content != blank %}
-        <div class="page__content rich-text__text rte text-subtext">
+        <div class="page__content rich-text__text rte text-subtext page-review-reward__content--desktop">
           {{ page.content }}
         </div>
       {% endif %}
     </div>
 
-    <div class="right-sticky">
+    <div class="page-review-reward__right">
       {% if section.settings.enable_review_buttons %}
-        <div class="review-checker">
-          <p class="review-checker__title">
+        <div class="page-review-reward__checker">
+          <p class="page-review-reward__checker-title">
             Have you already left a review on the platform where you purchased the product? <br>
             If not yet, please leave a review, take a screenshot, and fill out the form to join the program.
           </p>
-          <div class="review-buttons">
-            {% if section.settings.link_cw != blank %}
-              <button class="review-btn" data-link="{{ section.settings.link_cw }}">CW</button>
-            {% endif %}
+          <div class="page-review-reward__buttons">
             {% if section.settings.link_shopify != blank %}
-              <button class="review-btn" data-link="{{ section.settings.link_shopify }}">Shopify</button>
+              <button class="page-review-reward__button" data-link="{{ section.settings.link_shopify }}">
+                <img src="{{ section.settings.image_shopify | image_url }}" alt="Garden of Wellness e-shop">
+              </button>
+            {% endif %}
+            {% if section.settings.link_cw != blank %}
+              <button class="page-review-reward__button" data-link="{{ section.settings.link_cw }}">
+                <img src="{{ section.settings.image_cw | image_url }}" alt="Chemist Warehouse">
+              </button>
             {% endif %}
             {% if section.settings.link_aws != blank %}
-              <button class="review-btn" data-link="{{ section.settings.link_aws }}">AWS</button>
+              <button class="page-review-reward__button" data-link="{{ section.settings.link_aws }}">
+                <img src="{{ section.settings.image_aws | image_url }}" alt="Amazon AU">
+              </button>
             {% endif %}
           </div>
         </div>
       {% endif %}
 
-      <div class="custom-form-wrapper">
+      <div class="page-review-reward__form">
         {{ section.settings.form_embed_code }}
       </div>
+
+      {% if page.content != blank %}
+        <div class="page__content rich-text__text rte text-subtext page-review-reward__content--mobile">
+          {{ page.content }}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
+
 <style>
-  .two-column-layout {
+  .page-review-reward {
     display: flex;
     gap: 30px;
     align-items: flex-start;
   }
-  .left-content {
+  .page-review-reward__left {
     width: 60%;
   }
-  .right-sticky {
+  .page-review-reward__right {
     width: 40%;
     position: sticky;
     top: 20px;
   }
-  .promo-banner img {
+  .page-review-reward__banner img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 20px;
   }
-  .review-checker {
+  .page-review-reward__checker {
     background: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
     text-align: center;
   }
-  .review-buttons {
+  .page-review-reward__buttons {
     display: flex;
     gap: 10px;
     justify-content: center;
   }
-  .review-btn {
-    padding: 10px 16px;
+  .page-review-reward__button {
+    padding: 30px;
     border: none;
     cursor: pointer;
     font-weight: 600;
@@ -81,30 +94,52 @@
     background: #ececec;
     transition: 0.2s;
   }
-  .review-btn:hover {
-    transform: translateY(-2px);
+  .page-review-reward__button:hover {
+    background: #e2e2e2;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
-  .custom-form-wrapper {
+  .page-review-reward__button img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+  }
+  .page-review-reward__form {
     background: #fff;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 
+  .page-review-reward__content--mobile {
+    display: none;
+  }
+
   @media (max-width: 900px) {
-  .two-column-layout {
-    flex-direction: column-reverse;
+    .page-review-reward {
+      display: block;
+    }
+    .page-review-reward__left,
+    .page-review-reward__right {
+      width: 100%;
+      position: relative;
+      top: auto;
+    }
+    .page-review-reward__content--desktop {
+      display: none;
+    }
+    .page-review-reward__content--mobile {
+      display: block;
+      margin-top: 15px;
+    }
+    .page-review-reward__button {
+     padding: 20px;
+    }
   }
-  .left-content,
-  .right-sticky {
-    width: 100%;
-    position: relative;
-  }
-}
 </style>
 
 <script>
-  document.querySelectorAll('.review-btn').forEach((btn) => {
+  document.querySelectorAll('.page-review-reward__button').forEach((btn) => {
     btn.addEventListener('click', () => {
       window.open(btn.getAttribute('data-link'), '_blank');
     });
@@ -127,14 +162,29 @@
       "default": true
     },
     {
+      "type": "image_picker",
+      "id": "image_cw",
+      "label": "Image CW"
+    },
+    {
       "type": "url",
       "id": "link_cw",
       "label": "Link CW"
     },
     {
+      "type": "image_picker",
+      "id": "image_shopify",
+      "label": "Image Shopify"
+    },
+    {
       "type": "url",
       "id": "link_shopify",
       "label": "Link Shopify"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_aws",
+      "label": "Image AWS"
     },
     {
       "type": "url",

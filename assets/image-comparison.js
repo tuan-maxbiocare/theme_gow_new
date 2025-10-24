@@ -8,9 +8,14 @@ if (!customElements.get('image-comparison')) {
         this.button = this.querySelector('button');
         this.isHorizontal = this.dataset.direction === 'horizontal';
 
+        // thêm style hover 
+        this.beforeSection = this.querySelector('.image-comparison__before');
+        this.afterSection = this.querySelector('.image-comparison__after');
+
         this.startDrag = this.onStartDrag.bind(this);
         this.drag = this.onDrag.bind(this);
         this.stopDrag = this.onStopDrag.bind(this);
+        this.handleHover = this.onHover.bind(this);
 
         this.init();
 
@@ -25,6 +30,24 @@ if (!customElements.get('image-comparison')) {
 
         this.button.addEventListener('touchstart', this.startDrag);
         this.button.addEventListener('mousedown', this.startDrag);
+
+        // Thêm event listeners cho hover
+        this.addEventListener('mousemove', this.handleHover);
+        this.addEventListener('mouseleave', this.resetPosition);
+        
+      }
+      onHover(e) {
+        if (this.classList.contains('is-dragging')) return;
+        
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const width = rect.width;
+        const percent = (x * 100) / width;
+
+        // Chỉ cập nhật khi mouse hover
+        if (e.type === 'mousemove') {
+          this.style.setProperty('--percent', percent + '%');
+        }
       }
 
       animation() {
@@ -33,6 +56,13 @@ if (!customElements.get('image-comparison')) {
         setTimeout(() => {
           this.classList.remove('is-animating');
         }, 1e3);
+      }
+
+      // Thêm method mới để reset position
+      resetPosition() {
+        if (!this.classList.contains('is-dragging')) {
+          this.style.setProperty('--percent', '50%');
+        }
       }
 
       onStartDrag(e) {
