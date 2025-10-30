@@ -1,0 +1,270 @@
+[33mcommit bcdb737369a8af727737301c1839f1d507a57812[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Wed Jul 30 17:45:10 2025 +0700
+
+    first commit
+
+[33mcommit a7ed2c0d63b9b276c44421f1697ab1e4da2cf6ed[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Wed Aug 13 08:25:20 2025 +0700
+
+    feature/menu
+
+[33mcommit d001ce506536284ef354095a81907f494f78f541[m[33m ([m[1;31morigin/feature/menu[m[33m, [m[1;32mfeature/menu[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Wed Aug 13 10:52:15 2025 +0700
+
+    fix menu
+
+[33mcommit 2925b78d138d0ee51100d5b8afab3446c08205a2[m[33m ([m[1;31morigin/custom/menu-page[m[33m, [m[1;32mcustom/menu-page[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 14 17:52:22 2025 +0700
+
+    custom-menu-page
+
+[33mcommit 4c6b17563f477ebcf5f5e6d1e24524b4c603caab[m[33m ([m[1;31morigin/related-product-section-custom-for-product-info[m[33m, [m[1;32mrelated-product-section-custom-for-product-info[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Fri Aug 15 16:36:24 2025 +0700
+
+    related-product-section-custom-for-product-info
+
+[33mcommit cc59682a812a22a37b873088c899f062521e91a6[m
+Merge: bcdb737 4c6b175
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Sat Aug 16 08:10:53 2025 +0700
+
+    Merge pull request #1 from tuan-maxbiocare/related-product-section-custom-for-product-info
+    
+    related-product-section-custom-for-product-info
+
+[33mcommit eca4c881033007e2854d22922d169438e3c3f53e[m
+Merge: cc59682 2925b78
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Sat Aug 16 08:11:19 2025 +0700
+
+    Merge pull request #2 from tuan-maxbiocare/custom/menu-page
+    
+    custom-menu-page
+
+[33mcommit cd4bf48e596fcc58c9e2442b8cccb73a6b45e0da[m
+Merge: eca4c88 d001ce5
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Sat Aug 16 08:12:34 2025 +0700
+
+    Merge pull request #3 from tuan-maxbiocare/feature/menu
+    
+    Feature/menu
+
+[33mcommit b3783e2167712c4d99cafb03ac2ac05897b24d45[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Mon Aug 18 18:29:40 2025 +0700
+
+    setting card product
+
+[33mcommit cc8a59decbee77e3c23eca4043691f73ec4be80f[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Tue Aug 19 09:11:08 2025 +0700
+
+    fix
+
+[33mcommit 96443d441506f2b954facc484fd1bff574bbd618[m[33m ([m[1;31morigin/setting-card-product[m[33m, [m[1;32msetting-card-product[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 21 17:42:29 2025 +0700
+
+    setting product card
+
+[33mcommit d04f4a6650d96ddd2a5bcea64b65a1970eec8347[m[33m ([m[1;31morigin/dev[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mdev[m[33m)[m
+Merge: cd4bf48 96443d4
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Sat Aug 23 09:35:52 2025 +0700
+
+    Merge pull request #4 from tuan-maxbiocare/setting-card-product
+    
+    Setting card product
+
+[33mcommit 401c839a0aa3c74a299f70314fa7164c2e6aa892[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Mon Aug 25 08:40:58 2025 +0700
+
+    theme_new
+
+[33mcommit f7c3f5d7deafc1843933570aec32ed6fcabd36db[m[33m ([m[1;31morigin/fixmenu[m[33m, [m[1;32mfixmenu[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Tue Aug 26 09:15:51 2025 +0700
+
+    fix-menu
+
+[33mcommit 934d9906e5d9278825a43995bd9b54efde1b88af[m
+Merge: 401c839 f7c3f5d
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Tue Aug 26 09:16:44 2025 +0700
+
+    Merge pull request #5 from tuan-maxbiocare/fixmenu
+    
+    fix-menu
+
+[33mcommit 3472e140aed7d21796d20ff05076a3049fe32916[m[33m ([m[1;31morigin/custom-card[m[33m, [m[1;32mcustom-card[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Tue Aug 26 10:48:32 2025 +0700
+
+    aaa
+
+[33mcommit 8b78622b5efc12109ecb787db2e24ae52dd31a24[m
+Merge: 934d990 3472e14
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Wed Aug 27 08:12:32 2025 +0700
+
+    Merge pull request #6 from tuan-maxbiocare/custom-card
+    
+    aaa
+
+[33mcommit 5275df5fa0655e1c11ecd8dbadd191fc0fd085c9[m[33m ([m[1;31morigin/fix/menuu[m[33m, [m[1;32mfix/menuu[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 28 10:56:25 2025 +0700
+
+    fix/menuuu
+
+[33mcommit f5519c74307ed90c5d7786a9280c5e6d54759800[m
+Merge: 8b78622 5275df5
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 28 10:57:21 2025 +0700
+
+    Merge pull request #7 from tuan-maxbiocare/fix/menuu
+    
+    fix/menuuu
+
+[33mcommit ec2b95849ab8721ebc422de6482bf3dc605776f0[m[33m ([m[1;32mfix/meuu[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 28 11:19:53 2025 +0700
+
+    fix/menuu
+
+[33mcommit 01d34c64c480bf4908af1735715f90dcc066b859[m
+Merge: f5519c7 ec2b958
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 28 11:20:49 2025 +0700
+
+    Merge pull request #8 from tuan-maxbiocare/fix/meuu
+    
+    fix/menuu
+
+[33mcommit 93128178ba8ad29ffd937eee02d7c103c966ea30[m[33m ([m[1;32mfix/menuuu[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 28 15:09:58 2025 +0700
+
+    aaaa
+
+[33mcommit b862175a3234607aa440376dc2a99b7dee7f1126[m
+Merge: 01d34c6 9312817
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 28 15:12:08 2025 +0700
+
+    Merge pull request #9 from tuan-maxbiocare/fix/menuuu
+    
+    aaaa
+
+[33mcommit 403d8a5680dcd1d819f580198199fe2158fd54f2[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 28 17:54:08 2025 +0700
+
+    asdasd
+
+[33mcommit 2f8d12aa42c91da93629df9292a194eacfa77a85[m
+Merge: b862175 403d8a5
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Thu Aug 28 17:54:48 2025 +0700
+
+    Merge pull request #10 from tuan-maxbiocare/meniasd
+    
+    asdasd
+
+[33mcommit 47c738d110678df534ce53bf9ad69c8bc758b418[m[33m ([m[1;32mmeniasd[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Fri Aug 29 17:03:52 2025 +0700
+
+    a
+
+[33mcommit eedd3231db0dec3a39cbc2e59766651747683677[m
+Merge: 2f8d12a 47c738d
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Fri Aug 29 17:04:35 2025 +0700
+
+    Merge pull request #11 from tuan-maxbiocare/meniasd
+    
+    a
+
+[33mcommit 066134cd5081753cb84a319e2979f46617d86b26[m[33m ([m[1;32mjsada[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Wed Sep 3 09:33:21 2025 +0700
+
+    123123
+
+[33mcommit a816402bcbb0a5e97310a005a92d32e0e788a967[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Wed Sep 3 09:37:29 2025 +0700
+
+    theme
+
+[33mcommit 8e0ee750ad04d55afe267b1bd393a3a42c12109c[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Wed Sep 3 13:54:23 2025 +0700
+
+    fix-menua
+
+[33mcommit 1ff3a8e590721c742e6b7801a6c9d3a28ecef3fa[m
+Merge: a816402 8e0ee75
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Wed Sep 3 13:56:09 2025 +0700
+
+    Merge pull request #12 from tuan-maxbiocare/fix/meua
+    
+    fix-menua
+
+[33mcommit 3874e147f865f70ff2957271b2759c41adf442fe[m[33m ([m[1;32mfix/meua[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Thu Sep 4 10:36:57 2025 +0700
+
+    23423
+
+[33mcommit a7e0806739a08285b63dbd2501ccf5aa2b4dcbbe[m
+Merge: 1ff3a8e 3874e14
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Thu Sep 4 10:37:40 2025 +0700
+
+    Merge pull request #13 from tuan-maxbiocare/fix/meua
+    
+    23423
+
+[33mcommit 941fa0c6b4e3c43128cde83ecb7b6fd1ee8f2a02[m[33m ([m[1;32mfix/custom-content-title[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Fri Sep 5 13:51:43 2025 +0700
+
+    aaa
+
+[33mcommit 0519ccf27ca3347816f6923c86ad71cf8318e0b0[m
+Merge: a7e0806 941fa0c
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Fri Sep 5 13:59:29 2025 +0700
+
+    Merge pull request #14 from tuan-maxbiocare/fix/custom-content-title
+    
+    aaa
+
+[33mcommit f5d375901290fe8aa2dd4a78793d9021d81f195c[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Fri Sep 5 17:18:25 2025 +0700
+
+    fix section banner
+
+[33mcommit a180158e44982c176e19b1e8476429b28921558e[m[33m ([m[1;32mfix/section-banner[m[33m)[m
+Author: tuan <tuan.ho@maxbiocare.com>
+Date:   Sat Sep 6 08:46:42 2025 +0700
+
+    fixxx
+
+[33mcommit 815d148f18c831ad615bfb94f97db173307b3dc7[m
+Merge: 0519ccf a180158
+Author: tuan-maxbiocare <tuan.ho@maxbiocare.com>
+Date:   Sat Sep 6 08:47:33 2025 +0700
+
+    Merge pull request #15 from tu
