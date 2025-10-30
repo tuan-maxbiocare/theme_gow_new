@@ -1,0 +1,421 @@
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+<style>
+
+#register,
+#register + div {
+  display: none;
+}
+
+#register:target {
+  display: block;
+}
+
+#register:target + div {
+  display: block;
+}
+
+#register:target ~ #login,
+#register:target ~ #login + div {
+  display: none;
+}
+
+#register,
+#login {
+  scroll-margin-top: 20rem;
+}
+
+#register {
+  margin-bottom: 0;
+}
+
+</style>
+{%- if section.settings.enable_shop_login_button == false -%}
+  {%- assign hide_shop_login_button = true -%}
+{%- endif -%}
+
+<div
+  class="customer login section section--padding"
+  style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="section__wrapper">
+    <h2 id="recover" tabindex="-1" class="text-center h2">
+      {{- 'customer.recover_password.title' | t -}}
+    </h2>
+    <div>
+      <p class="text-center text-subtext">
+        {{- 'customer.recover_password.subtext' | t -}}
+      </p>
+
+      {%- form 'recover_customer_password', class: 'flex flex-col' -%}
+        {% assign recover_success = form.posted_successfully? %}
+        <div class="form-field">
+          <label for="RecoverEmail" class="form-label">
+            {{ 'customer.login_page.email' | t }}
+          </label>
+          <input
+            required
+            type="email"
+            value=""
+            name="email"
+            id="RecoverEmail"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}
+              aria-invalid="true"
+              aria-describedby="RecoverEmail-email-error"
+              autofocus
+            {% endif %}
+            placeholder="{{ 'customer.login_page.email' | t }}"
+            class="form-control"
+          >
+          {%- if form.errors -%}
+            <span id="RecoverEmail-email-error" class="form-message form-message--small form-message--error">
+              {% render 'icon-error', size: 'small' %}
+              {{ form.errors.messages.form }}
+            </span>
+          {%- endif -%}
+        </div>
+
+        <button class="btn btn--primary w-full" type="submit">
+          <span class="btn__text">{{ 'customer.login_page.submit' | t }}</span>
+        </button>
+
+        <a href="#login" class="btn btn--underline self-center">
+          {{ 'customer.login_page.cancel' | t }}
+        </a>
+      {%- endform -%}
+    </div>
+
+
+
+    <h2 id="register" class="text-center h2">
+      {{ 'customer.register.title' | t }}
+    </h2>
+    <div>
+    {%- form 'create_customer', class: 'flex flex-col' -%}
+      <input type="hidden" name="return_to" value="/account">
+      {%- if form.errors -%}
+        <div class="form-error alert alert--error blocks-radius">
+          <h2 class="form-message form-message--error h6 m-0" tabindex="-1" autofocus>
+            {% render 'icon-error', size: 'small' %}
+            {{ 'templates.contact.form.error_heading' | t }}
+          </h2>
+          <ul>
+            {%- for field in form.errors -%}
+              <li>
+                {%- if field == 'form' -%}
+                  {{ form.errors.messages[field] }}
+                {%- else -%}
+                  <a href="#RegisterForm-{{ field }}">
+                    {{ form.errors.translated_fields[field] | capitalize }}
+                    {{ form.errors.messages[field] }}
+                  </a>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+      <div class="form-field">
+        <label for="RegisterForm-FirstName" class="form-label">
+          {{ 'customer.register.first_name' | t }}
+        </label>
+        <input
+          type="text"
+          name="customer[first_name]"
+          id="RegisterForm-FirstName"
+          {% if form.first_name %}
+            value="{{ form.first_name }}"
+          {% endif %}
+          autocomplete="given-name"
+          placeholder="{{ 'customer.register.first_name' | t }}"
+          class="form-control"
+        >
+      </div>
+      <div class="form-field">
+        <label for="RegisterForm-LastName" class="form-label">
+          {{ 'customer.register.last_name' | t }}
+        </label>
+        <input
+          type="text"
+          name="customer[last_name]"
+          id="RegisterForm-LastName"
+          {% if form.last_name %}
+            value="{{ form.last_name }}"
+          {% endif %}
+          autocomplete="family-name"
+          placeholder="{{ 'customer.register.last_name' | t }}"
+          class="form-control"
+        >
+      </div>
+      <div class="form-field">
+        <label for="RegisterForm-email" class="form-label">
+          {{ 'customer.register.email' | t }}
+        </label>
+        <input
+          required
+          type="email"
+          name="customer[email]"
+          id="RegisterForm-email"
+          {% if form.email %}
+            value="{{ form.email }}"
+          {% endif %}
+          spellcheck="false"
+          autocapitalize="off"
+          autocomplete="email"
+          aria-required="true"
+          {% if form.errors contains 'email' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-email-error"
+          {% endif %}
+          placeholder="{{ 'customer.register.email' | t }}"
+          class="form-control"
+        >
+        {%- if form.errors contains 'email' -%}
+          <span id="RegisterForm-email-error" class="form-message form-message--small form-message--error">
+            {% render 'icon-error', size: 'small' %}
+            {{ form.errors.translated_fields.email | capitalize }}
+            {{ form.errors.messages.email }}.
+          </span>
+        {%- endif -%}
+      </div>
+      <div class="form-field">
+        <label for="RegisterForm-password" class="form-label">
+          {{ 'customer.register.password' | t }}
+        </label>
+        <input
+          required
+          type="password"
+          name="customer[password]"
+          id="RegisterForm-password"
+          aria-required="true"
+          {% if form.errors contains 'password' %}
+            aria-invalid="true"
+            aria-describedby="RegisterForm-password-error"
+          {% endif %}
+          placeholder="{{ 'customer.register.password' | t }}"
+          class="form-control"
+        >
+        {%- if form.errors contains 'password' -%}
+          <span id="RegisterForm-password-error" class="form-message form-message--small form-message--error">
+            {% render 'icon-error', size: 'small' %}
+            {{ form.errors.translated_fields.password | capitalize }}
+            {{ form.errors.messages.password }}.
+          </span>
+        {%- endif -%}
+      </div>
+      <button class="btn btn--primary w-full">
+        <span class="btn__text">{{ 'customer.register.submit' | t }}</span>
+      </button>
+      <a href="#login" class="btn btn--underline self-center">
+        {{ 'customer.login_page.sign_in' | t }}
+      </a>
+    {%- endform -%}
+    </div>
+
+
+
+
+
+    <h2 id="login" tabindex="-1" class="text-center h2">
+      {{- 'customer.login_page.title' | t -}}
+    </h2>
+    <div>
+      <p class="text-center text-subtext">If you have an account with us, please log in.</p>
+      {%- if recover_success == true -%}
+        <p class="form-message m-0 alert alert--success blocks-radius" tabindex="-1" autofocus>
+          {% render 'icon-success', size: 'small' %}
+          {{ 'customer.recover_password.success' | t }}
+        </p>
+      {%- endif -%}
+      {%- form 'customer_login', class: 'flex flex-col' -%}
+        {%- if form.errors -%}
+          <div class="form-error alert alert--error blocks-radius">
+            <h2 class="form-message form-message--error h6 m-0" tabindex="-1" autofocus>
+              <span class="visually-hidden">{{ 'accessibility.error' | t }} </span>
+              {% render 'icon-error', size: 'small' %}
+              {{ 'templates.contact.form.error_heading' | t }}
+            </h2>
+            {{ form.errors | default_errors }}
+          </div>
+        {%- endif -%}
+
+        {%- if shop.features.login_with_shop_classic_customer_accounts? -%}
+          <section name="sign-in-with-shop-provider" class="form-field">
+            {{ shop | login_button: hide_button: hide_shop_login_button }}
+
+            {%- unless hide_shop_login_button -%}
+              <p class="text-center">
+                {{ 'customer.login_page.alternate_provider_separator' | t }}
+              </p>
+            {%- endunless -%}
+          </section>
+        {%- endif -%}
+
+        <div class="form-field">
+          <label for="CustomerEmail" class="form-label">
+            {{ 'customer.login_page.email' | t }}
+          </label>
+          <input
+            required
+            type="email"
+            name="customer[email]"
+            id="CustomerEmail"
+            autocomplete="email"
+            autocorrect="off"
+            autocapitalize="off"
+            {% if form.errors contains 'form' %}
+              aria-invalid="true"
+            {% endif %}
+            placeholder="{{ 'customer.login_page.email' | t }}"
+            class="form-control"
+          >
+        </div>
+
+        {%- if form.password_needed -%}
+          <div class="form-field">
+            <label for="CustomerPassword" class="form-label">
+              {{ 'customer.login_page.password' | t }}
+            </label>
+            <input
+              required
+              type="password"
+              value=""
+              name="customer[password]"
+              id="CustomerPassword"
+              autocomplete="current-password"
+              {% if form.errors contains 'form' %}
+                aria-invalid="true"
+              {% endif %}
+              placeholder="{{ 'customer.login_page.password' | t }}"
+              class="form-control"
+            >
+          </div>
+
+          <a href="#recover" class="btn--link self-start text-subtext">
+            {{ 'customer.login_page.forgot_password' | t }}
+          </a>
+        {%- endif -%}
+
+        <button class="btn btn--primary w-full" type="submit">
+          <span class="btn__text">{{ 'customer.login_page.sign_in' | t }}</span>
+        </button>
+
+        <a href="#register" class="btn btn--underline self-center">
+          {{ 'customer.login_page.create_account' | t }}
+        </a>
+
+
+      {%- endform -%}
+
+      <div id="social-login-container"></div>
+    </div>
+
+    {%- if shop.checkout.guest_login -%}
+      <div>
+        <hr>
+        <h2>{{ 'customer.login_page.guest_title' | t }}</h2>
+
+        {%- form 'guest_login' -%}
+          <button class="btn btn--primary w-full">
+            <span class="btn__text">{{ 'customer.login_page.guest_continue' | t }}</span>
+          </button>
+        {%- endform -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Lấy pathname hiện tại
+  const currentPath = window.location.pathname;
+
+  // Kiểm tra xem người dùng có đang ở trang /pages/max-biocare không
+  if (currentPath === "/pages/max-biocare") {
+
+    const key = "customer-tag-swimcare-campain";
+    const value = "swimcare-campain";
+    const ttl = 24 * 60 * 60 * 1000; // thời gian sống: 1 ngày (ms)
+    const now = new Date().getTime();
+
+    // Lưu giá trị và thời gian hết hạn vào localStorage
+    const data = {
+      value: value,
+      expiry: now + ttl
+    };
+    localStorage.setItem(key, JSON.stringify(data));
+  }
+
+  // Hàm kiểm tra xem key còn hạn không
+  function getLocalStorageWithExpiry(key) {
+    const itemStr = localStorage.getItem(key);
+    if (!itemStr) return null;
+
+    try {
+      const item = JSON.parse(itemStr);
+      const now = new Date().getTime();
+      if (now > item.expiry) {
+        // Hết hạn → xóa luôn
+        localStorage.removeItem(key);
+        return null;
+      }
+      return item.value;
+    } catch (e) {
+      localStorage.removeItem(key);
+      return null;
+    }
+  }
+
+  // Gọi hàm để dọn rác nếu quá hạn
+  getLocalStorageWithExpiry("customer-tag-swimcare-campain");
+});
+</script>
+
+
+
+{% schema %}
+{
+  "name": "Login page for LE Capain",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_shop_login_button",
+      "label": "t:sections.main-login.shop_login_button.enable",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:general.padding.section_heading.content"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:general.padding.top.label",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "t:general.padding.bottom.label",
+      "default": 100
+    }
+  ],
+    "presets": [
+    {
+      "name": "Login page for LE Capain",
+      "category": "Customer"
+    }
+  ]
+}
+{% endschema %}
