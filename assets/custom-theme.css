@@ -1,15 +1,15 @@
 /* card-product.liquid */
 .product-card-custom {
     background: #fff;
-    border: 1px solid #dddddd;
+    border: 1px solid #ffffff;
     border-radius: 12px;
     padding: 16px;
     transition: border-color 0.4s ease;
 }
 
 .product-card-custom:hover {
-    border-color: #000000;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    /* border-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); */
 }
 
 .product-card__title {
@@ -26,6 +26,34 @@
 
 .button-add-cart-custom {
     margin-top : 10px;
+}
+
+.mega-menu__column-logo-brand-custom .mega-menu__column {
+  padding-inline : 1rem;
+}
+
+.mega-menu__list.menu-logo-brand .mega-menu__column:first-child {
+  padding-inline-start: 5px;
+}
+.mega-menu__list.menu-logo-brand .mega-menu__column {
+  padding-block-start: 4rem;
+  padding-inline: 0.5rem;
+}
+
+
+/* overwrite */
+.product-card-style-card {
+  height: auto;
+}
+
+.product-card-style-card .product-card__info {
+  padding: 1.2rem 0 0;
+}
+
+@media (min-width: 768px) {
+  .product-card-style-card .product-card__info {
+    padding: 1.2rem 0 0;
+  }
 }
 
 
@@ -54,7 +82,7 @@
 /* price.liquid */
 .product-card .f-price__regular-custom,
 .sticky-atc-bar__product-info .f-price__regular-custom {
-    font-size: 2.2rem;
+    font-size: 1.9rem;
 }
 
 .product-card .f-price-item--sale,

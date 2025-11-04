@@ -32,9 +32,12 @@
         </div>
       {% endif %}
       {% if show_button %}
-        <button class="btn btn--underline article-card__button">
-          {{- 'blogs.article.article_button_label' | t -}}
-        </button>
+        {% render 'button',
+          button_style: section.settings.card_button_style,
+          button_link: '#',
+          button_label: section.settings.card_button_label,
+          button_icon: section.settings.card_button_icon
+        %}
       {% endif %}
     </div>
   </div>

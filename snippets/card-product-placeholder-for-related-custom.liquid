@@ -37,7 +37,7 @@
   }
 </style>
 <a href="{{ product.url }}">
-  <div class="product-card product-card-style-{{ pcard_style }}{% if pcard_style == 'card' %} color-{{ pcard_color_scheme }}{% endif %} {{ custom_class }}{% if color_inherit %} color-inherit{% endif %} card-product-placeholder-custom">
+  <div class="product-card product-card-style-{{ pcard_style }}  color-{{ parent_color_scheme }} {{ custom_class }} card-product-placeholder-custom">
     <div class="product-card__wrapper{% if horizontal_layout %} flex items-center gap-x-3{% endif %}">
       <div
         class="product-card__image-wrapper"

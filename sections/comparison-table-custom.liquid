@@ -29,19 +29,19 @@
 {% endcapture %}
 
 <style>
-    .comparison-table-custom .rte {
-      text-align: center;
-    }
-    .comparison-table-custom .comparison-table__content {
-      padding: 0;
-    }
-    .comparison-table-custom .blocks-radius {
-      text-align: center;
-    }
-    .quick-comparison-table-custom {
-      table-layout: auto;
-    }
-    .quick-comparison-table-custom .reversed-link__text {
+  .comparison-table-custom .rte {
+    text-align: center;
+  }
+  .comparison-table-custom .comparison-table__content {
+    padding: 0;
+  }
+  .comparison-table-custom .blocks-radius {
+    text-align: center;
+  }
+  .quick-comparison-table-custom {
+    table-layout: auto;
+  }
+  .quick-comparison-table-custom .reversed-link__text {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -50,21 +50,19 @@
     line-height: 1.4em;
     min-height: calc(1.4em * 3);
   }
-    .quick-comparison-table-custom .td-label {
-      background-color: rgb(249, 250, 251);
+  .quick-comparison-table-custom .td-label {
+    background-color: rgb(249, 250, 251);
+  }
+  .note-comparison-table-custom {
+    background-color: #006343 !important;
+    color: white;
+    text-align: center !important;
+  }
+  @media (max-width: 768px) {
+    .quick-comparison-table-custom {
+      table-layout: fixed;
     }
-    .note-comparison-table-custom {
-      background-color: rgb(28, 167, 88);
-      padding: 10px;
-      border-radius: 10px;
-      color: white;
-      text-align: center;
-    }
-    @media (max-width: 768px) {
-      .quick-comparison-table-custom {
-        table-layout: fixed;
-      }
-    }
+  }
 </style>
 <div
   class="
@@ -292,11 +290,18 @@
             </tr>
           {% endif %}
         {% endfor %}
+        {% if section.settings.note_comparison_table_custom != blank %}
+          <tr>
+            {% assign total_columns = product_show_compare | plus: 1 %}
+            <td class="td-label text-body note-comparison-table-custom text-center" colspan="{{ total_columns }}">
+              <div>
+                {{ section.settings.note_comparison_table_custom }}
+              </div>
+            </td>
+          </tr>
+        {% endif %}
       </table>
     </div>
-    {% if section.settings.note_comparison_table_custom != blank %}
-      <div class="note-comparison-table-custom">{{ section.settings.note_comparison_table_custom }}</div>
-    {% endif %}
   </comparison-table>
 </div>
 {% schema %}

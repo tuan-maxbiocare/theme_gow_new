@@ -33,7 +33,7 @@
     --grid-auto-rows: 30rem;
   }
   .grid-banner .f-grid-auto-rows--large {
-    --grid-auto-rows: 35rem;
+    --grid-auto-rows: 63.3rem;
   }
 }
 @media (max-width: 767.98px) {

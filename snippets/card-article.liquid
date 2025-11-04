@@ -112,11 +112,12 @@
         {%- endif -%}
 
         {% if show_button %}
-          <a href="{{ article.url }}" class="btn {{ button_style }} article-card__button">
-            <span class="btn__text">
-              {{- 'blogs.article.article_button_label' | t -}}
-            </span>
-          </a>
+          {% render 'button',
+            button_style: section.settings.card_button_style,
+            button_link: article.url,
+            button_label: section.settings.card_button_label,
+            button_icon: section.settings.card_button_icon
+          %}
         {% endif %}
       </div>
     </div>

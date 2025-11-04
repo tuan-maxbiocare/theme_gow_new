@@ -152,6 +152,12 @@
     stroke-dashoffset: 0;
   }
 }
+/* Màu nền khi chọn văn bản */
+::selection {
+  background-color: #87C2A5 !important;
+  color: #fff;
+}
+
 .site-wrapper {
   overflow: clip;
 }
