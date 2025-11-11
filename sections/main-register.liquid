@@ -5,6 +5,17 @@
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
   <div class="section__wrapper">
+    {% if section.settings.register_image %}
+      <div class="flex justify-center mb-4">
+        <img
+          src="{{ section.settings.register_image | image_url: width: section.settings.register_image_width }}"
+          alt="Register image"
+          width="{{ section.settings.register_image_width }}"
+          height="{{ section.settings.register_image_width | divided_by: section.settings.register_image.aspect_ratio | round }}"
+          style="width: {{ section.settings.register_image_width }}px; height: auto;"
+        >
+      </div>
+    {% endif %}
     <h2 class="text-center h2">
       {{ 'customer.register.title' | t }}
     </h2>
@@ -33,9 +44,10 @@
       {%- endif -%}
       <div class="form-field">
         <label for="RegisterForm-FirstName" class="form-label">
-          {{ 'customer.register.first_name' | t }}
+          {{ 'customer.register._first_name' | t }}
         </label>
         <input
+          required
           type="text"
           name="customer[first_name]"
           id="RegisterForm-FirstName"
@@ -49,9 +61,10 @@
       </div>
       <div class="form-field">
         <label for="RegisterForm-LastName" class="form-label">
-          {{ 'customer.register.last_name' | t }}
+          {{ 'customer.register._last_name' | t }}
         </label>
         <input
+          required
           type="text"
           name="customer[last_name]"
           id="RegisterForm-LastName"
@@ -65,7 +78,7 @@
       </div>
       <div class="form-field">
         <label for="RegisterForm-email" class="form-label">
-          {{ 'customer.register.email' | t }}
+          {{ 'customer.register._email' | t }}
         </label>
         <input
           required
@@ -96,7 +109,7 @@
       </div>
       <div class="form-field">
         <label for="RegisterForm-password" class="form-label">
-          {{ 'customer.register.password' | t }}
+          {{ 'customer.register._password' | t }}
         </label>
         <input
           required
@@ -119,6 +132,20 @@
           </span>
         {%- endif -%}
       </div>
+      <div class="form-field flex items-center gap-2 mt-2">
+        <input type="checkbox" id="remember-me" name="remember_me">
+        <label for="remember-me">Remember Me</label>
+      </div>
+
+      <div class="form-field flex items-start gap-2 mt-3">
+        <input type="checkbox" id="accept-terms" name="accept_terms" required>
+        <label for="accept-terms" class="leading-tight">
+          I confirm that I have read and accepted the
+          <a href="/policies/terms-of-service" target="_blank" class="policy-link">Terms and Conditions</a>
+          and
+          <a href="/policies/privacy-policy" target="_blank" class="policy-link">Privacy Policy</a>.
+        </label>
+      </div>
       <button class="btn btn--primary w-full">
         <span class="btn__text">{{ 'customer.register.submit' | t }}</span>
       </button>
@@ -126,6 +153,7 @@
         {{ 'customer.login_page.sign_in' | t }}
       </a>
     {%- endform -%}
+    <div id="social-login-container"></div>
   </div>
 </div>
 
@@ -133,6 +161,24 @@
 {
   "name": "t:sections.main-register.name",
   "settings": [
+    {
+      "type": "header",
+      "content": "Setting Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "register_image",
+      "label": "image for register page"
+    },
+    {
+      "type": "range",
+      "id": "register_image_width",
+      "label": "Image width (px)",
+      "min": 50,
+      "max": 400,
+      "step": 10,
+      "default": 150
+    },
     {
       "type": "header",
       "content": "t:general.padding.section_heading.content"

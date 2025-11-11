@@ -538,12 +538,17 @@
       "success": "We've sent you an email with a link to update your password."
     },
     "register": {
-      "title": "Create account",
+      "title": "Create your account",
       "first_name": "First name",
       "last_name": "Last name",
       "email": "Email",
       "password": "Password",
-      "submit": "Create"
+      "submit": "Sign Up",
+      "_first_name": "First name *",
+      "_last_name": "Last name *",
+      "_email": "Email *",
+      "_password": "Password *",
+      
     },
     "reset_password": {
       "title": "Reset account password",

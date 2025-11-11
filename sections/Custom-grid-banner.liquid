@@ -44,7 +44,15 @@
     .section__left{
         margin-bottom: 0.6em;
     }
+    .section__left .multicolumn__slider .content-overlay {
+    padding-bottom: 3rem;
+  }
  }
+ @media (min-width: 1024px) {
+  .section__left .multicolumn__slider .content-overlay {
+    padding-bottom: 4.5rem;
+  }
+}
 {% endstyle %}
 {% render 'divider',
   show_divider: section.settings.show_section_divider,
@@ -79,7 +87,11 @@
       data-type= {{ block.type }}
       data-color-scheme="color-{{ block.settings.color_scheme }}"
     >
-      <div class="slide__item-wrap h-full">
+      <div 
+        class="slide__item-wrap h-full" 
+        onclick="window.location.href='{{ block.settings.button_link | escape }}'" 
+        style="cursor: pointer;"
+      >
         <div class="slide__media blocks-radius">
           <motion-element class="block h-full" data-motion="zoom-out-sm">
             <picture

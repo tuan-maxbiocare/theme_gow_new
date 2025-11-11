@@ -1,0 +1,446 @@
+{%- liquid
+  assign modal_id = 'SignUpLoginModal'
+  assign overlay_bg = 'rgba(0, 0, 0, 0.5)'
+  assign green_color = '#006343'
+  assign text_color = '#ffffff'
+-%}
+
+<style>
+    .custom-popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: {{ overlay_bg }};
+      z-index: 99999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .custom-popup-container {
+      position: relative;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      height: auto;
+      overflow: hidden;
+    }
+
+  .popup-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #CCF0DE;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 999;
+    border: 1px solid #CCF0DE;
+  }
+
+  .popup-close-btn:hover {
+    transform: scale(1.05);
+  }
+
+    .feature-item {
+      align-items: center;
+      line-height: 1.4;
+    }
+
+    /* Icon trong cột trái */
+    .feature-icon {
+      font-size: 45px; /* Kích thước Icon/Emoji */
+      text-align: center;
+      line-height: 1.5;
+      color: {{ text_color }}; /* Đảm bảo màu icon là trắng */
+    }
+      .feature-icon-img {
+        width: 60px;
+    }
+
+    .feature-text {
+      font-size: 14px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Cột Phải: Form (Khoảng 60% chiều rộng) */
+    .right-form-wrapper {
+      padding: 40px 40px 30px 40px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .form-title {
+       text-decoration: underline;
+      font-size: 40px;
+      font-weight: bold;
+      color: {{ green_color }}; /* Màu tiêu đề xanh lá */
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    /* Input Fields */
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px dashed #ccc; /* Viền nét đứt */
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    /* Continue Button (Nền xanh) */
+    .continue-btn {
+      background-color: green;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 4px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-bottom: 20px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* Các tùy chọn Social Login */
+    .social-login-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .social-btn {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .social-btn img {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+    }
+
+    .divider {
+      text-align: center;
+      color: #888;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    .terms-note {
+      text-align: center;
+    }
+    .terms-note a {
+        color: {{ green_color }};
+        text-decoration: none;
+    }
+    .form-popup-login-custom .form-control {
+      background-color: #fff;
+      border: 1px solid;
+    }
+    .form-popup-login-custom .btn--primary {
+      background-color: #CCF0DE;
+      border: 1px solid #CCF0DE;
+      color: #006343;
+    }
+    .form-popup-login-custom .btn--primary:hover {
+      background-color: #fff;
+      color: #006343;
+    }
+
+    .left-content, .right-form-wrapper {
+        width: 100%;
+      }
+      /* Show left-content above the form on mobile */
+      .left-content {
+        background-color: #006343;
+        display: flex;
+        order: -1; /* move to top */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        flex-direction: unset;
+        justify-content: space-around;
+      }
+      .feature-icon-img {
+        width: 50px;
+      }
+      .popup-login-link {
+        text-align: center;
+        margin-top: 25px;
+      }
+
+      .feature-text span:nth-child(1) {
+        font-size: 1.8rem;
+      }
+
+    /* MEDIA QUERIES */
+    @media (max-width: 900px) {
+      .form-title {
+        font-size: 30px;
+        margin-top: 30px;
+      }
+      .custom-popup-container {
+        max-width: 350px;
+      }
+      .left-content, .right-form-wrapper {
+        padding: 20px;
+      }
+      .feature-icon {
+        font-size: 25px;
+      }
+      .feature-icon-img {
+        width: 30px;
+      }
+      ..feature-text {
+        font-size: 12px;
+      }
+       .feature-text span:nth-child(1) {
+        font-size: 12px;
+      }
+       .popup-span-2 {
+        font-size: 10px;
+      }
+    }
+</style>
+
+<div class="custom-popup-overlay" id="{{ modal_id }}">
+  <div class="custom-popup-container">
+    <button
+      class="popup-close-btn btn drawer__close-btn z-2 drawer__close-btn--fill-mobile{% if is_top_image %} drawer__close-btn--fill{% endif %} get-discount-button"
+      aria-controls="{{ modal_id }}"
+      aria-label="{{ 'accessibility.close' | t }}"
+    >
+      {% render 'icon-close', size: 'large' %}
+    </button>
+
+    <div class="right-form-wrapper">
+      <h2 class="form-title">Register Now</h2>
+      {{ 'customer.css' | asset_url | stylesheet_tag }}
+
+      {%- if section.settings.enable_shop_login_button == false -%}
+        {%- assign hide_shop_login_button = true -%}
+      {%- endif -%}
+
+      <div
+        style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+      >
+        <div class="section__wrapper form-popup-login-custom">
+          <h2 id="recover" tabindex="-1" class="text-center h2">
+            {{- 'customer.recover_password.title' | t -}}
+          </h2>
+
+          {%- form 'create_customer', class: 'flex flex-col' -%}
+            <input type="hidden" name="return_to" value="/account">
+
+            {%- if form.errors -%}
+              <div class="form-error alert alert--error blocks-radius">
+                <h2 class="form-message form-message--error h6 m-0" tabindex="-1" autofocus>
+                  {% render 'icon-error', size: 'small' %}
+                  {{ 'templates.contact.form.error_heading' | t }}
+                </h2>
+                <ul>
+                  {%- for field in form.errors -%}
+                    <li>
+                      {%- if field == 'form' -%}
+                        {{ form.errors.messages[field] }}
+                      {%- else -%}
+                        <a href="#RegisterForm-{{ field }}">
+                          {{ form.errors.translated_fields[field] | capitalize }}
+                          {{ form.errors.messages[field] }}
+                        </a>
+                      {%- endif -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </div>
+            {%- endif -%}
+
+            <div class="form-field">
+              <input
+                required
+                type="email"
+                name="customer[email]"
+                id="RegisterForm-email"
+                {% if form.email %}
+                  value="{{ form.email }}"
+                {% endif %}
+                spellcheck="false"
+                autocapitalize="off"
+                autocomplete="email"
+                aria-required="true"
+                {% if form.errors contains 'email' %}
+                  aria-invalid="true"
+                  aria-describedby="RegisterForm-email-error"
+                {% endif %}
+                placeholder="{{ 'customer.register.email' | t }}"
+                class="form-control"
+              >
+              {%- if form.errors contains 'email' -%}
+                <span id="RegisterForm-email-error" class="form-message form-message--small form-message--error">
+                  {% render 'icon-error', size: 'small' %}
+                  {{ form.errors.translated_fields.email | capitalize }}
+                  {{ form.errors.messages.email }}.
+                </span>
+              {%- endif -%}
+            </div>
+            <div class="form-field">
+              <input
+                required
+                type="password"
+                name="customer[password]"
+                id="RegisterForm-password"
+                aria-required="true"
+                {% if form.errors contains 'password' %}
+                  aria-invalid="true"
+                  aria-describedby="RegisterForm-password-error"
+                {% endif %}
+                placeholder="{{ 'customer.register.password' | t }}"
+                class="form-control"
+              >
+              {%- if form.errors contains 'password' -%}
+                <span id="RegisterForm-password-error" class="form-message form-message--small form-message--error">
+                  {% render 'icon-error', size: 'small' %}
+                  {{ form.errors.translated_fields.password | capitalize }}
+                  {{ form.errors.messages.password }}.
+                </span>
+              {%- endif -%}
+            </div>
+
+            <button class="btn btn--primary w-full form-field">
+              <span class="btn__text">Create your account</span>
+            </button>
+          {%- endform -%}
+
+          <div class="popup-login-link">
+            <a href="/account/login" class="btn--link self-start text-subtext">
+              If you have an account with us, please log in.
+            </a>
+          </div>
+
+          {%- form 'customer_login', class: 'flex flex-col' -%}
+            <input
+              hidden
+              required
+              type="email"
+              name="customer[email]"
+              id="CustomerEmail"
+              autocomplete="email"
+              autocorrect="off"
+              autocapitalize="off"
+              {% if form.errors contains 'form' %}
+                aria-invalid="true"
+              {% endif %}
+              placeholder="{{ 'customer.login_page.email' | t }}"
+              class="form-control"
+            >
+            {%- if form.password_needed -%}
+              <input
+                hidden
+                required.left-content,
+                .right-form-wrapper
+                type="password"
+                value=""
+                name="customer[password]"
+                id="CustomerPassword"
+                autocomplete="current-password"
+                {% if form.errors contains 'form' %}
+                  aria-invalid="true"
+                {% endif %}
+                placeholder="{{ 'customer.login_page.password' | t }}"
+                class="form-control"
+              >
+            {%- endif -%}
+            <div id="social-login-container"></div>
+          {%- endform -%}
+
+          {% comment %}
+            {%- form 'customer_login', class: 'flex flex-col' -%}
+              <div id="social-login-container"></div>
+            {%- endform -%}
+          {% endcomment %}
+        </div>
+      </div>
+
+      <p class="terms-note">
+        By continuing, you agree to our
+        <a href="https://gardenofwellnessshop.com.au/policies/privacy-policy" target="_blank" rel="noopener noreferrer"
+          >Privacy & Cookie Policy</a
+        >
+        and
+        <a
+          href="https://gardenofwellnessshop.com.au/policies/terms-of-service"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Terms & Conditions</a
+        >.
+      </p>
+    </div>
+
+    <div class="left-content">
+      <div class="feature-item">
+        <div class="feature-icon" style="margin-top:7.2px">
+          <img
+            class="feature-icon-img"
+            src="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/icon-popup-new-register-1.png?v=1760927952"
+          >
+        </div>
+        <div class="feature-text" style="margin-top: -7px;">
+          <span><strong>EXTRA 30% OFF</strong></span
+          ><br>
+          <span class="popup-span-2">with no min</span>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <img
+            class="feature-icon-img"
+            src="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/icon-popup-new-register-2.png?v=1761009432"
+          >
+        </div>
+        <div class="feature-text">
+          <span><strong>FREE SHIPPING</strong></span
+          ><br>
+          <span class="popup-span-2">with fast dispatch</span>
+        </div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-icon">
+          <img
+            class="feature-icon-img"
+            src="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/icon-popup-new-register-3.png?v=1761009431"
+          >
+        </div>
+        <div class="feature-text">
+          <span><strong>FREE RETURNS</strong></span
+          ><br>
+          <span class="popup-span-2">within 30 days</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
