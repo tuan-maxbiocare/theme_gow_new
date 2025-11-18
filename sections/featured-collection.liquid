@@ -262,7 +262,8 @@ calc(100vw / {{ columns_desktop }})
                         image_sizes: image_sizes,
                         image_ratio: section.settings.pcard_image_ratio,
                         section_index: section.index,
-                        index: forloop.index
+                        index: forloop.index,
+                        use_highest_discount_variant: section.settings.use_highest_discount_variant
                       -%}
                     </div>
                   {%- else -%}
@@ -786,6 +787,13 @@ calc(100vw / {{ columns_desktop }})
     {
       "type": "header",
       "content": "t:general.header__product_cards.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_highest_discount_variant",
+      "label": "Use variant with highest discount",
+      "info": "Show variant with highest discount instead of first available variant",
+      "default": false
     },
     {
       "type": "select",

@@ -157,16 +157,27 @@
                   data-motion="zoom-out-sm"
                   style="--aspect-ratio: 1/1;"
                 >
-                  <picture class="card-media__media media-wrapper">
-                    <img
-                      width="auto"
-                      height="auto"
-                      src="https://cdn.shopify.com/s/files/1/0767/7139/3751/files/GoWshop_miniicon.svg?v=1758161303"
-                      alt="GoWshop mini icon"
-                      loading="lazy"
-                      class="motion-reduce absolute inset-0 w-full h-full"
-                    >
-                  </picture>
+                {% assign icon = heading_block.settings['icon-1'] %}
+                {% assign image = heading_block.settings['image-1'] %}
+                {% if image %}
+                    {% assign alt = image.alt | default: title | escape %}
+                    <picture class="card-media__media media-wrapper">
+                      {{
+                        image
+                        | image_url: width: 1100
+                        | image_tag:
+                          loading: 'lazy',
+                          class: 'motion-reduce absolute inset-0 w-full h-full',
+                          widths: '165, 360, 535, 750, 940, 1100',
+                          is: 'image-lazy',
+                          alt: alt
+                      }}
+                    </picture>
+                  {% elsif icon != 'none' %}
+                    {% render 'icons', icon: icon %}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg blocks-radius-sm' }}
+                  {% endif %}
                 </motion-element>
               </div>
 

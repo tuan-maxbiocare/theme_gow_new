@@ -1,10 +1,15 @@
 {%- liquid
-  assign selected_variant = product.selected_or_first_available_variant
+  if selected_variant
+    assign target_variant = selected_variant
+  else
+    assign target_variant = product.selected_or_first_available_variant
+  endif
   assign compare_at_price = selected_variant.compare_at_price
   assign price = selected_variant.price
   assign on_sale = false
   assign badge_style = settings.badges_corner_radius
   assign badge_position = settings.badges_position
+  assign tag_badge_position = settings.tag_badges_position | default: badge_position
   if compare_at_price > price
     assign on_sale = true
   endif
@@ -51,14 +56,14 @@
           {%- if badge_style == 'circle' -%}
             <span class="f-badge f-badge--sale badge-circle badge-position--{{ badge_position }}" aria-hidden="true">
               <span>{{ amount }}%</span>
-              <span>OFF RRP</span>
+              <span>OFF</span>
             </span>
           {%- else -%}
             <span
               class="f-badge f-badge--sale badge-{{ badge_style }} badge-position--{{ badge_position }}"
               aria-hidden="true"
             >
-              {{ amount }}% OFF RRP
+              {{ amount }}% OFF
             </span>
           {%- endif -%}
 
@@ -120,8 +125,126 @@
           continue
         endif
       -%}
-      <span class="f-badge f-badge--{{ badge_type }}">{{ tag }}</span>
+      <span class="f-badge f-badge--{{ badge_type }} badge-position--{{ tag_badge_position }}">{{ tag }}</span>
     {%- endfor -%}
   </div>
 {%- endif -%}
 
+<style>
+    .f-badge--new,
+    .f-badge--hot,
+    .f-badge--coming {
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+    }
+
+    .f-badge--sale,
+    .f-badge--soldout {
+      top: auto;
+      left: auto;
+      right: auto;
+      bottom: auto;
+    }
+
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .f-badge--sale,
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .f-badge--soldout {
+      top: 1.5rem;
+      left: auto;
+      right: 1.5rem;
+      bottom: auto;
+    }
+
+    .f-badge--new,
+    .f-badge--hot,
+    .f-badge--coming {
+      position: absolute;
+      z-index: 2;
+    }
+
+    .f-badge--sale,
+    .f-badge--soldout {
+      position: absolute;
+      z-index: 1;
+    }
+
+    /* Offset for multiple badges at same position */
+    .badge-position--top-right.f-badge--new,
+    .badge-position--top-right.f-badge--hot,
+    .badge-position--top-right.f-badge--coming {
+      top: 0;
+      right: 1.5rem;
+    }
+
+    .badge-position--top-right.f-badge--sale,
+    .badge-position--top-right.f-badge--soldout {
+      top: 3rem; /* Offset below tag badge */
+      right: 1.5rem;
+    }
+
+    /* If no tag badges, move sale/soldout to tag position */
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .badge-position--top-right.f-badge--sale,
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .badge-position--top-right.f-badge--soldout {
+      top: 0;
+    }
+
+    .badge-position--top-left.f-badge--new,
+    .badge-position--top-left.f-badge--hot,
+    .badge-position--top-left.f-badge--coming {
+      top: 1.5rem;
+      left: 1.5rem;
+    }
+
+    .badge-position--top-left.f-badge--sale,
+    .badge-position--top-left.f-badge--soldout {
+      top: 4.5rem;
+      left: 1.5rem;
+    }
+
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .badge-position--top-left.f-badge--sale,
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .badge-position--top-left.f-badge--soldout {
+      top: 1.5rem;
+    }
+
+    .badge-position--bottom-right.f-badge--new,
+    .badge-position--bottom-right.f-badge--hot,
+    .badge-position--bottom-right.f-badge--coming {
+      bottom: 3rem;
+      right: 1.5rem;
+    }
+
+    .badge-position--bottom-right.f-badge--sale,
+    .badge-position--bottom-right.f-badge--soldout {
+      bottom: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .badge-position--bottom-right.f-badge--sale,
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .badge-position--bottom-right.f-badge--soldout {
+      bottom: 3rem;
+    }
+
+    .badge-position--bottom-left.f-badge--new,
+    .badge-position--bottom-left.f-badge--hot,
+    .badge-position--bottom-left.f-badge--coming {
+      bottom: 3rem;
+      left: 0;
+    }
+
+    .badge-position--bottom-left.f-badge--sale,
+    .badge-position--bottom-left.f-badge--soldout {
+      bottom: 1.5rem;
+      left: 0;
+    }
+
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .badge-position--bottom-left.f-badge--sale,
+    .product-card__badge:not(:has(.f-badge--new, .f-badge--hot, .f-badge--coming)) .badge-position--bottom-left.f-badge--soldout {
+      bottom: 3rem;
+    }
+  @media(max-width: 768px ){
+    .f-badge{
+      font-size:calc(var(--font-body-size) * .7);
+    }
+  }
+</style>

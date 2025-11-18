@@ -36,7 +36,7 @@
     gap: 0.6em;
   }
 
-  @media (max-width: 767.98px) {
+  @media (max-width: 1024px) {
     .section__inner {
         display: block;
         padding: 0 16px;
@@ -89,8 +89,8 @@
     >
       <div 
         class="slide__item-wrap h-full" 
-        onclick="window.location.href='{{ block.settings.button_link | escape }}'" 
-        style="cursor: pointer;"
+        {% comment %} onclick="window.location.href='{{ block.settings.button_link | escape }}'" 
+        style="cursor: pointer;" {% endcomment %}
       >
         <div class="slide__media blocks-radius">
           <motion-element class="block h-full" data-motion="zoom-out-sm">
@@ -227,7 +227,7 @@
   <div class="section__inner two-column-layout">
     <!-- Khối bên trái: slide -->
     <div class="section__left">
-      <multicolumn-slider
+      <div
         class="multicolumn-slider f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}"
 
         data-id="{{ section.id }}"
@@ -262,7 +262,7 @@
             {%- endif -%}
           </div>
         </div>
-      </multicolumn-slider>
+      </div>
     </div>
 
     <!-- Khối bên phải: banner card -->

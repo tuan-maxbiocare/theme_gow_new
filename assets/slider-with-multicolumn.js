@@ -9,13 +9,19 @@ if (!customElements.get('multicolumn-slider')) {
         this.swiper = this.querySelector('.swiper');
         this.sliderControls = this.querySelector('.swiper-controls');
         this.sliderPagination = this.querySelector('.swiper-pagination');
+
+        if (!this.swiper) {
+          console.warn('Swiper element not found');
+          return;
+        }
+
         this.enableSlider = this.swiper.dataset.enableSlider === 'true';
-
         this.selectedIndex = this.selectedIndex;
+        if (!this.enableSlider) return;
 
-        if (!this.enableSlider);
         this.initSlider();
       }
+
 
       static get observedAttributes() {
         return ['selected-index'];

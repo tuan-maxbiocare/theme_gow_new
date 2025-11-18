@@ -230,7 +230,8 @@
                   image_sizes: image_sizes,
                   section_id: section.id,
                   section_index: 2,
-                  index: forloop.index
+                  index: forloop.index,
+                  use_highest_discount_variant: section.settings.use_highest_discount_variant
                 -%}
                 {% assign current_position = current_position | plus: 1 %}
               </div>
@@ -307,6 +308,13 @@
       "id": "color_scheme",
       "label": "t:general.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_highest_discount_variant",
+      "label": "Use variant with highest discount",
+      "info": "Show variant with highest discount instead of first available variant",
+      "default": false
     },
     {
       "type": "range",

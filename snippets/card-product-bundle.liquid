@@ -170,7 +170,7 @@
           {%- endif -%}
         </motion-element>
       </a>
-      {%- render 'pcard-badges', product: product -%}
+      {%- render 'pcard-badges', product: product, selected_variant: selected_variant, use_variant: true -%}
       {%- render 'pcard-flash-sale', product: product -%}
       {%- if enable_quick_view -%}
         <button
@@ -235,7 +235,12 @@
       </span>
       {%- if show_price -%}
         <div id="Price-{{ block_id }}">
-          {% render 'price', product: product, alignment: settings.pcard_content_alignment %}
+          {% render 'price',
+          product: product,
+          use_variant: true,
+          alignment: settings.pcard_content_alignment,
+          selected_variant: variant,
+        %}
         </div>
       {%- endif -%}
 
