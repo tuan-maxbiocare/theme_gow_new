@@ -177,53 +177,61 @@
                 data-list-class="color-{{ settings.pcard_color_scheme }}"
               {% endif %}
             >
-              {%- for item in search.results -%}
-                {%- case item.object_type -%}
-                  {%- when 'product' -%}
-                    {% unless item.vendor == "Chemist Warehouse" or item.title contains "CW -" %}
-                    <div class="f-column card">
-                      {%- render 'card-product',
-                        product: item,
-                        parent_color_scheme: section.settings.color_scheme,
-                        image_sizes: image_sizes,
-                        section_id: section.id,
-                        section_index: section.index,
-                        index: forloop.index
-                      -%}
-                    </div>
-                    {% endunless %}
-                  {%- when 'article' -%}
-                    <div class="f-column card">
-                      <div
-                        class="product-card product-card-style-{{ settings.pcard_style }}{% if settings.pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}"
-                      >
-                        {%- render 'card-article',
-                          article: item,
-                          title_size: 'text-pcard-title',
-                          show_tags: section.settings.show_tags,
-                          show_author: section.settings.show_author,
-                          show_date: section.settings.show_date,
-                          show_excerpt: section.settings.show_excerpt,
-                          show_button: section.settings.show_button
-                        -%}
+              {%- assign card_index = 0 -%}
+              {%- assign ordered_types = 'product,article,page' | split: ',' -%}
+              {%- for target_type in ordered_types -%}
+                {%- for item in search.results -%}
+                  {%- if item.object_type == target_type -%}
+                    {%- if target_type == 'product' -%}
+                      {% unless item.vendor == "Chemist Warehouse" or item.title contains "CW -" %}
+                        {%- assign card_index = card_index | plus: 1 -%}
+                        <div class="f-column card">
+                          {%- render 'card-product',
+                            product: item,
+                            parent_color_scheme: section.settings.color_scheme,
+                            image_sizes: image_sizes,
+                            section_id: section.id,
+                            section_index: section.index,
+                            index: card_index
+                          -%}
+                        </div>
+                      {% endunless %}
+                    {%- elsif target_type == 'article' -%}
+                      {%- assign card_index = card_index | plus: 1 -%}
+                      <div class="f-column card">
+                        <div
+                          class="product-card product-card-style-{{ settings.pcard_style }}{% if settings.pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}"
+                        >
+                          {%- render 'card-article',
+                            article: item,
+                            title_size: 'text-pcard-title',
+                            show_tags: section.settings.show_tags,
+                            show_author: section.settings.show_author,
+                            show_date: section.settings.show_date,
+                            show_excerpt: section.settings.show_excerpt,
+                            show_button: section.settings.show_button
+                          -%}
+                        </div>
                       </div>
-                    </div>
-                  {%- when 'page' -%}
-                    <div class="f-column card">
-                      <div
-                        class="product-card product-card-style-{{ settings.pcard_style }}{% if settings.pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}"
-                      >
-                        <div class="product-card__wrapper h-full">
-                          <a href="{{ item.url }}" class="full-width-link product-card__link">
-                            <span class="visually-hidden">{{- item.title -}}</span>
-                          </a>
-                          <div class="product-card__info text-{{ settings.pcard_content_alignment }} h-full">
-                            <span class="product-card__title text-pcard-title">{{- item.title -}}</span>
+                    {%- elsif target_type == 'page' -%}
+                      {%- assign card_index = card_index | plus: 1 -%}
+                      <div class="f-column card">
+                        <div
+                          class="product-card product-card-style-{{ settings.pcard_style }}{% if settings.pcard_style == 'card' %} color-{{ settings.pcard_color_scheme }}{% endif %}"
+                        >
+                          <div class="product-card__wrapper h-full">
+                            <a href="{{ item.url }}" class="full-width-link product-card__link">
+                              <span class="visually-hidden">{{- item.title -}}</span>
+                            </a>
+                            <div class="product-card__info text-{{ settings.pcard_content_alignment }} h-full">
+                              <span class="product-card__title text-pcard-title">{{- item.title -}}</span>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                {%- endcase -%}
+                    {%- endif -%}
+                  {%- endif -%}
+                {%- endfor -%}
               {%- endfor -%}
             </div>
           {%- endif -%}

@@ -46,12 +46,22 @@
     {%- liquid
       assign valid_product_count = 0
       assign valid_product_handles = ''
+
       for p in collection.products
-        unless p.vendor == 'Chemist Warehouse' or p.title contains 'CW -'
+        #assign has_free_variant = false
+
+        #for v in p.variants
+          #if v.price == 0
+            #assign has_free_variant = true
+          #endif
+        #endfor
+
+        unless  p.vendor == 'Chemist Warehouse' or p.title contains 'CW -'
           assign valid_product_count = valid_product_count | plus: 1
           assign valid_product_handles = valid_product_handles | append: p.handle | append: '|'
         endunless
       endfor
+
       assign valid_product_handle_list = valid_product_handles | split: '|'
       assign valid_product_handle_list = valid_product_handle_list | compact
     -%}
@@ -66,7 +76,7 @@
                   if collection.results_count
                     echo 'products.facets.filters_selected' | t: terms: collection.terms, count: valid_product_count
                   elsif collection.products_count == collection.all_products_count
-                    echo 'products.facets.product_count_simple' | t: count: valid_product_count
+                    echo 'products.facets.product_count_simple' | t: count: collection.all_products_count
                   else
                     echo 'products.facets.product_count' | t: product_count: valid_product_count, count: collection.all_products_count
                   endif

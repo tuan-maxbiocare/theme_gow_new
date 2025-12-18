@@ -4168,7 +4168,6 @@ input:is([type=radio])::after {
   text-transform: uppercase;
   font-weight: var(--font-body-weight-bold);
 }
-
 .product-card__badge {
   position: absolute;
   inset-inline: 1rem auto;
@@ -4228,13 +4227,13 @@ input:is([type=radio])::after {
   bottom: auto;
 }
 
-/* .badge-position--top-right {
+.badge-position--top-right {
   position: absolute;
   top: 0;
   right: 1.5rem;
   left: auto;
   bottom: auto;
-} */
+}
 
 .badge-position--bottom-left {
   position: absolute;

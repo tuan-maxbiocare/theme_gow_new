@@ -35,6 +35,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 0.6em;
   }
+  @media (min-width: 768px) and (max-width: 1783px) {
+    .section__inner {
+        grid-template-columns: 1fr;
+    }
+  }
 
   @media (max-width: 1024px) {
     .section__inner {
@@ -73,9 +78,9 @@
       assign background_default_alt = background_default.alt | default: shop.name | escape
 
       assign loading = 'lazy'
-      assign fetchpriority = 'low'
+      assign fetchpriority = 'higt'
       if forloop.index == 1 and section.index < 2
-        assign loading = 'eager'
+        assign loading = 'lazy'
         assign fetchpriority = 'high'
       endif
     -%}
@@ -89,8 +94,8 @@
     >
       <div 
         class="slide__item-wrap h-full" 
-        {% comment %} onclick="window.location.href='{{ block.settings.button_link | escape }}'" 
-        style="cursor: pointer;" {% endcomment %}
+        onclick="window.location.href='{{ block.settings.button_link | escape }}'" 
+        style="cursor: pointer;"
       >
         <div class="slide__media blocks-radius">
           <motion-element class="block h-full" data-motion="zoom-out-sm">
