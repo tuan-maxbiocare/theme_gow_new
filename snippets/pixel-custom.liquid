@@ -1,4 +1,4 @@
-<!-- Google Tag Manager - Defer to avoid blocking render -->
+{% comment %} <!-- Google Tag Manager - Defer to avoid blocking render -->
 <script>
   // Defer GTM loading until after page load
   window.addEventListener('load', function() {
@@ -64,8 +64,11 @@
     // Also load on first scroll
     window.addEventListener('scroll', loadClarity, { once: true, passive: true });
   })();
-</script>
+</script> {% endcomment %}
     
+
+
+
     
     <!-- Google tag (gtag.js) -->
     {% comment %} <script async src="https://www.googletagmanager.com/gtag/js?id=AW-340370259">
