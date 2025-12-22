@@ -88,7 +88,15 @@
     -%}
 
     {{ content_for_header }}
+
+    {%- comment -%} Preload LCP image for homepage to improve performance {%- endcomment -%}
+    {%- if template.name == 'index' -%}
+      <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/garden-of-wellness-shop-xmas2025-homepage-banner-desktop-2200x1555.webp" media="(min-width: 768px)" fetchpriority="high">
+      <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/garden-of-wellness-shop-xmas2025-homepage-banner-mobile-1000x1505.webp" media="(max-width: 767px)" fetchpriority="high">
+    {%- endif -%}
+
     {% render 'pixel-custom' %}
+
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 

@@ -16,32 +16,44 @@ if ( !customElements.get('scrolling-banner') ) {
       this.zoom = this.dataset.zoom === 'true';
       this.parallax = this.dataset.parallax === 'true';
       this.header = document.querySelector('header');
-      this.headerHeight = Math.round(this.header.offsetHeight);
-      this.isHeaderSticky = this.header.isAlwaysSticky;
       this.borderRadius = this.dataset.borderRadius;
 
       this.slideRequestAnimationFrame = true;
 
+      // Debounce resize events to avoid excessive recalculations
+      let resizeTimeout;
       this.onScrollHandler = (() => {
         if (this.slideRequestAnimationFrame) {
           this.slideRequestAnimationFrame = false;
-          requestAnimationFrame(this.handleSlideAnimation.bind(this));
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            requestAnimationFrame(this.handleSlideAnimation.bind(this));
+          }, 100);
         }
       }).bind(this);
 
       window.addEventListener("resize", this.onScrollHandler, { passive: true });
 
-      this.onScrollHandler();
+      // Defer initial calculation to avoid blocking initial render
+      requestIdleCallback ? requestIdleCallback(() => this.onScrollHandler()) : setTimeout(() => this.onScrollHandler(), 100);
     }
     handleSlideAnimation() {
-      const segmentLength = 1 / this.items.length;
-      const itemHeight = this.items[0].offsetHeight;
-      const windowHeight = this.isHeaderSticky ? window.innerHeight - this.headerHeight : window.innerHeight;
+      // BATCH ALL DOM READS FIRST to prevent forced reflow
+      const headerHeight = this.header ? Math.round(this.header.offsetHeight) : 0;
+      const isHeaderSticky = this.header?.isAlwaysSticky || false;
+      const windowHeight = isHeaderSticky ? window.innerHeight - headerHeight : window.innerHeight;
+
+      const itemsArray = [...this.items];
+      const segmentLength = 1 / itemsArray.length;
+      const itemHeight = itemsArray[0]?.offsetHeight || 0;
       const translateY = Math.min(250, (itemHeight * 0.3));
       const endpoint = Math.min((itemHeight / windowHeight), 1);
       const cardZoom = 4;
 
-      [...this.items].forEach((item, i) => {
+      // Pre-calculate all values before DOM writes
+      const headerRatio = isHeaderSticky ? headerHeight/window.innerHeight : 0;
+
+      itemsArray.forEach((item, i) => {
         const index = i + 1;
         const content = item.querySelector('.slide__content');
         const product = item.querySelector('.slide__product');
@@ -135,19 +147,19 @@ if ( !customElements.get('scrolling-banner') ) {
               }
             );
 
-            if (i < this.items.length - 1 ) {
+            if (i < itemsArray.length - 1 ) {
               FoxTheme.Motion.scroll(
                 FoxTheme.Motion.animate(
                   cardMediaChild,
                   { transform: [`translateY(0)`, `translateY(${-translateY}px)`], transformOrigin: ['top', 'top'] },
                   { easing: "ease-out" }
                 ),
-                { 
-                  target: this, 
+                {
+                  target: this,
                   offset: [
-                    [i * segmentLength, this.isHeaderSticky ? this.headerHeight/window.innerHeight : 0],
-                    [index * segmentLength, this.isHeaderSticky ? this.headerHeight/window.innerHeight : 0]
-                  ] 
+                    [i * segmentLength, headerRatio],
+                    [index * segmentLength, headerRatio]
+                  ]
                 }
               );
             }

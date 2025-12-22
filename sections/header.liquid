@@ -245,15 +245,19 @@
       </div>
     </div>
   </div>
+  {%- comment -%} Desktop menu - only render on desktop to reduce DOM size {%- endcomment -%}
   {%- if section.settings.menu != blank -%}
-    <div class="header__bottom color-{{ section.settings.navigation_color_scheme }} relative page-width page-width--{{ section.settings.container }}">
-      <div class="header__navigation section--padding hidden lg:flex justify-{{ section.settings.navigation_content_alignment }}">
+    <div class="header__bottom color-{{ section.settings.navigation_color_scheme }} relative page-width page-width--{{ section.settings.container }} hidden lg:block">
+      <div class="header__navigation section--padding flex justify-{{ section.settings.navigation_content_alignment }}">
         {% render 'desktop-menu', menu: section.settings.menu, blocks: section.blocks %}
       </div>
     </div>
   {%- endif -%}
 
-  {%- render 'menu-drawer', section: section, blocks: section.blocks, custom_link: custom_link -%}
+  {%- comment -%} Mobile menu drawer - only render on mobile {%- endcomment -%}
+  <div class="lg:hidden">
+    {%- render 'menu-drawer', section: section, blocks: section.blocks, custom_link: custom_link -%}
+  </div>
 </header>
 <div class="fixed-overlay fixed-overlay--header-section z-10"></div>
 

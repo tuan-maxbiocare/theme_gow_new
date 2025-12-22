@@ -22,10 +22,13 @@ class BasicHeader extends HTMLElement {
   connectedCallback() {
     this.init();
     if (window.ResizeObserver) {
-      new ResizeObserver(this.setHeight.bind(this)).observe(this);
+      // Debounce ResizeObserver to avoid excessive recalculations
+      let resizeTimer;
+      new ResizeObserver(() => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => this.setHeight(), 50);
+      }).observe(this);
     }
-
-    // window.addEventListener('resize', this.setMenuHeight.bind(this));
 
     if (Shopify.designMode) {
       const section = this.closest('.shopify-section');
@@ -43,30 +46,26 @@ class BasicHeader extends HTMLElement {
     }
   }
 
-  calculateHeaderGroupHeight() {
-    const headerGroups = document.querySelectorAll('.shopify-section-group-header-group');
-    let totalHeight = 0;
-
-    headerGroups.forEach((section) => {
-      totalHeight += section.offsetHeight;
-    });
-
-    document.documentElement.style.setProperty('--header-group-height', `${totalHeight}px`);
-
-    return totalHeight;
-  }
+  // Removed - merged into setHeight() to avoid duplicate DOM reads
 
   setHeight() {
+    // Batch all DOM reads first, then all DOM writes to avoid forced reflow
     requestAnimationFrame(() => {
+      // READ phase - batch all measurements
       const offsetHeight = Math.round(this.offsetHeight);
       const offsetTop = Math.round(this.parentElement.offsetTop);
       const offsetNavigationHeight = Math.round(this.headerNavigation.offsetHeight);
 
-      document.documentElement.style.setProperty('--header-height', `${offsetHeight}px`);
-      document.documentElement.style.setProperty('--header-offset-top', `${offsetTop}px`);
-      document.documentElement.style.setProperty('--header-navigation-height', `${offsetNavigationHeight}px`);
+      const headerGroups = document.querySelectorAll('.shopify-section-group-header-group');
+      const groupHeights = Array.from(headerGroups).map(section => section.offsetHeight);
+      const totalHeight = groupHeights.reduce((sum, height) => sum + height, 0);
 
-      this.calculateHeaderGroupHeight();
+      // WRITE phase - batch all style updates
+      const docStyle = document.documentElement.style;
+      docStyle.setProperty('--header-height', `${offsetHeight}px`);
+      docStyle.setProperty('--header-offset-top', `${offsetTop}px`);
+      docStyle.setProperty('--header-navigation-height', `${offsetNavigationHeight}px`);
+      docStyle.setProperty('--header-group-height', `${totalHeight}px`);
     });
   }
 }
@@ -98,6 +97,9 @@ class StickyHeader extends BasicHeader {
     this.scrollThreshold = 200; // Minimum scroll amount before unpinning
     this.scrollDirection = 'none';
     this.scrollDistance = 0;
+
+    // Throttling flag for scroll optimization
+    this.ticking = false;
   }
 
   // Getters for easier property access
@@ -115,8 +117,10 @@ class StickyHeader extends BasicHeader {
     // Store initial scroll position
     this.firstScrollTop = window.scrollY;
 
-    // Cache header dimensions for performance optimization
-    this.headerBounds = this.headerSection.getBoundingClientRect();
+    // Cache header dimensions for performance optimization - defer to next frame
+    requestAnimationFrame(() => {
+      this.headerBounds = this.headerSection.getBoundingClientRect();
+    });
 
     // Initialize sticky header
     this.initStickyHeader();
@@ -158,20 +162,22 @@ class StickyHeader extends BasicHeader {
     }, 1000);
   }
 
-  // Handle scroll events
+  // Handle scroll events - optimized with throttling
   handleScroll() {
+    // Throttle scroll handler to run at most once per frame
+    if (this.ticking) return;
+
+    this.ticking = true;
     const scrollTop = window.scrollY;
-    const headerSection = this.headerSection;
 
-    // Avoid recalculating dimensions on each scroll
-    const headerBoundsTop = this.headerBounds.top + this.firstScrollTop;
-    const headerBoundsBottom = this.headerBounds.bottom + this.firstScrollTop;
-
-    // Update scroll direction and distance
-    this.updateScrollMetrics(scrollTop);
-
-    // Use requestAnimationFrame for performance optimization
     requestAnimationFrame(() => {
+      // Avoid recalculating dimensions on each scroll
+      const headerBoundsTop = this.headerBounds.top + this.firstScrollTop;
+      const headerBoundsBottom = this.headerBounds.bottom + this.firstScrollTop;
+
+      // Update scroll direction and distance
+      this.updateScrollMetrics(scrollTop);
+
       const isScrolledPastHeader = scrollTop > headerBoundsTop;
 
       // Handle different scroll positions
@@ -182,6 +188,7 @@ class StickyHeader extends BasicHeader {
       }
 
       this.currentScrollTop = scrollTop;
+      this.ticking = false;
     });
   }
 

@@ -47,6 +47,14 @@ if (!customElements.get('featured-collection')) {
 
       initSlider() {
         if (typeof this.sliderInstance === 'object') return;
+
+        // Check if FoxTheme libraries are loaded
+        if (!window.FoxTheme || !window.FoxTheme.Carousel || !window.FoxTheme.Swiper) {
+          // Retry after vendor.js is loaded
+          setTimeout(() => this.initSlider(), 100);
+          return;
+        }
+
         const columnGap = window.getComputedStyle(this.sliderWrapper).getPropertyValue('--f-column-gap');
         const spaceBetween = parseFloat(columnGap.replace('rem', '')) * 10;
 
@@ -84,15 +92,6 @@ if (!customElements.get('featured-collection')) {
 
         this.sliderInstance = new window.FoxTheme.Carousel(this, this.sliderOptions, [FoxTheme.Swiper.Mousewheel]);
         this.sliderInstance.init();
-
-        // const focusableElements = FoxTheme.a11y.getFocusableElements(this);
-
-        // focusableElements.forEach((element) => {
-        //   element.addEventListener('focusin', () => {
-        //     const slide = element.closest('.swiper-slide');
-        //     this.sliderInstance && this.sliderInstance.slider.slideTo(this.sliderInstance.slider.slides.indexOf(slide));
-        //   });
-        // });
 
         this.fixQuickviewDuplicate();
       }
