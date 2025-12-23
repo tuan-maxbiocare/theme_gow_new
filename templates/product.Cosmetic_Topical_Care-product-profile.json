@@ -1260,7 +1260,7 @@
         "product_list": [
           "little-etoile-care-hair-oil-0-months-200ml"
         ],
-        "template_product": "<p>Cosmetic_Topical_Care-product-profile || lebc007</p>",
+        "template_product": "<p>Cosmetic_Topical_Care-product-profile||lebc007</p>",
         "container": "fixed",
         "color_scheme": "scheme-1",
         "header_layout": "vertical",
