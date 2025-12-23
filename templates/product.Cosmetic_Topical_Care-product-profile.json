@@ -1266,7 +1266,7 @@
         "header_layout": "vertical",
         "section_header_alignment": "left",
         "section_header_alignment_mobile": "inherit",
-        "subheading": "",
+        "subheading": ",",
         "heading": "",
         "highlight_style": "none",
         "highlight_font_style": "italic",
