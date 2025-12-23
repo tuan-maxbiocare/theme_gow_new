@@ -178,9 +178,14 @@
         "disabled": true,
         "settings": {}
       },
+      "319724205969189013": {
+        "type": "shopify://apps/hulk-form-builder/blocks/app-embed/b6b8dd14-356b-4725-a4ed-77232212b3c3",
+        "disabled": true,
+        "settings": {}
+      },
       "3300017149626794902": {
         "type": "shopify://apps/xboost-bundle/blocks/core_script/8707ef23-ba0e-4d63-a83a-1460e9bac021",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "customScript": "",
           "showExampleQb": false,
@@ -191,11 +196,6 @@
           "showExampleRec": false,
           "showExampleMM": false
         }
-      },
-      "319724205969189013": {
-        "type": "shopify://apps/hulk-form-builder/blocks/app-embed/b6b8dd14-356b-4725-a4ed-77232212b3c3",
-        "disabled": true,
-        "settings": {}
       }
     },
     "color_schemes": {
