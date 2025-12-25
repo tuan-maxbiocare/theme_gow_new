@@ -650,7 +650,7 @@
             "link": "{{ product.metafields.custom.section_ugc.value.link_2.value }}",
             "author": "",
             "account": "@littleetoileofficial",
-            "icon": "instagram",
+            "icon": "tiktok",
             "product": "{{ product.metafields.custom.section_ugc.value.product_2.value }}"
           }
         },
