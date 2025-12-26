@@ -94,7 +94,7 @@
             "icon_3": "check",
             "heading_3": "{{ product.metafields.custom.section_benefits.value.short_benefit_3.value }}",
             "icon_4": "check",
-            "heading_4": "",
+            "heading_4": "Parfum-Free & Clinically Tested Skin-Safe",
             "icon_5": "check",
             "heading_5": ""
           }
