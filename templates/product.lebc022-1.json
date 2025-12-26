@@ -82,7 +82,7 @@
         "icon_with_text": {
           "type": "icon-with-text",
           "settings": {
-            "use_metafields": true,
+            "use_metafields": false,
             "layout": "vertical",
             "title_font": "body-bolder",
             "title_size": "text-sm",
