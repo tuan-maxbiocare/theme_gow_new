@@ -245,15 +245,76 @@
       </div>
     </div>
   </div>
+  {%- comment -%} Desktop menu - render on desktop via client insertion to keep mobile DOM small {%- endcomment -%}
   {%- if section.settings.menu != blank -%}
-    <div class="header__bottom color-{{ section.settings.navigation_color_scheme }} relative page-width page-width--{{ section.settings.container }}">
-      <div class="header__navigation section--padding hidden lg:flex justify-{{ section.settings.navigation_content_alignment }}">
-        {% render 'desktop-menu', menu: section.settings.menu, blocks: section.blocks %}
+    <template id="desktop-menu-template-{{ section.id }}">
+      <div class="header__bottom color-{{ section.settings.navigation_color_scheme }} relative page-width page-width--{{ section.settings.container }}">
+        <div class="header__navigation section--padding flex justify-{{ section.settings.navigation_content_alignment }}">
+          {% render 'desktop-menu', menu: section.settings.menu, blocks: section.blocks %}
+        </div>
       </div>
-    </div>
+    </template>
+
+    <div class="desktop-menu-insert-container"></div>
   {%- endif -%}
 
-  {%- render 'menu-drawer', section: section, blocks: section.blocks, custom_link: custom_link -%}
+  {%- comment -%} Mobile menu drawer - render on mobile via client insertion to keep desktop DOM small {%- endcomment -%}
+  {%- if menu_mobile != blank -%}
+    <template id="mobile-menu-template-{{ section.id }}">
+      <div class="lg:hidden">
+        {%- render 'menu-drawer', section: section, blocks: section.blocks, custom_link: custom_link -%}
+      </div>
+    </template>
+
+    <div class="mobile-menu-insert-container"></div>
+  {%- endif -%}
+
+  <script>
+    (function(){
+      function insertTemplate(id, containerSelector) {
+        var tpl = document.getElementById(id);
+        var container = document.querySelector(containerSelector);
+        if (!tpl || !container) return;
+        container.replaceWith(tpl.content.cloneNode(true));
+      }
+
+      if (typeof window !== 'undefined') {
+        var isDesktop = window.innerWidth >= 1024;
+        if (isDesktop) {
+          insertTemplate('desktop-menu-template-{{ section.id }}', '.desktop-menu-insert-container');
+        } else {
+          insertTemplate('mobile-menu-template-{{ section.id }}', '.mobile-menu-insert-container');
+        }
+
+        window.addEventListener('resize', function(){
+          // optional: handle orientation/resize changes by only initializing once
+        }, { passive: true });
+      }
+    })();
+  </script>
+
+  <noscript>
+    <style>
+      .noscript--desktop{display:none}
+      .noscript--mobile{display:none}
+      @media (min-width:1024px){ .noscript--desktop{display:block} }
+      @media (max-width:1023px){ .noscript--mobile{display:block} }
+    </style>
+
+    <div class="noscript--desktop">
+      <div class="header__bottom color-{{ section.settings.navigation_color_scheme }} relative page-width page-width--{{ section.settings.container }}">
+        <div class="header__navigation section--padding flex justify-{{ section.settings.navigation_content_alignment }}">
+          {% render 'desktop-menu', menu: section.settings.menu, blocks: section.blocks %}
+        </div>
+      </div>
+    </div>
+
+    <div class="noscript--mobile">
+      <div class="lg:hidden">
+        {%- render 'menu-drawer', section: section, blocks: section.blocks, custom_link: custom_link -%}
+      </div>
+    </div>
+  </noscript>
 </header>
 <div class="fixed-overlay fixed-overlay--header-section z-10"></div>
 

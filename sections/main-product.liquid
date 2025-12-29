@@ -65,13 +65,13 @@
       onload="this.media='all'"
     >
   {%- endif -%}
+  {%- comment -%} PhotoSwipe CSS - lazy loaded on demand {%- endcomment -%}
   {%- if enable_image_zoom -%}
     <link
       id="Photoswipe"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
       href="{{ 'photoswipe-component.css' | asset_url }}"
-      media="print"
-      onload="this.media='all'"
     >
   {%- endif -%}
 
@@ -107,8 +107,55 @@
     </div>
   </div>
   <product-recently-viewed data-product-id="{{ product.id }}" class="hidden"></product-recently-viewed>
+  {%- comment -%} PhotoSwipe - lazy load on first zoom click {%- endcomment -%}
   {%- if enable_image_zoom -%}
-    <script src="{{ 'photoswipe.js' | asset_url }}" defer="defer"></script>
+    <script>
+      (function() {
+        var photoswipeLoaded = false;
+        var photoswipeCSS = document.getElementById('Photoswipe');
+
+        function loadPhotoSwipe() {
+          if (photoswipeLoaded) return Promise.resolve();
+          photoswipeLoaded = true;
+
+          return new Promise(function(resolve) {
+            // Load CSS first
+            if (photoswipeCSS) {
+              photoswipeCSS.rel = 'stylesheet';
+            }
+
+            // Then load JS
+            var script = document.createElement('script');
+            script.src = '{{ 'photoswipe.js' | asset_url }}';
+            script.onload = function() {
+              // Initialize media gallery zoom after PhotoSwipe loads
+              var galleries = document.querySelectorAll('media-gallery[data-enable-image-zoom="true"]');
+              galleries.forEach(function(gallery) {
+                if (gallery.initImageZoom && typeof gallery.initImageZoom === 'function') {
+                  gallery.initImageZoom();
+                }
+              });
+              resolve();
+            };
+            document.head.appendChild(script);
+          });
+        }
+
+        // Load on first zoom click
+        document.addEventListener('click', function(e) {
+          if (e.target.closest('.js-photoswipe--zoom, [data-pswp-trigger]')) {
+            e.preventDefault();
+            var clickTarget = e.target;
+            loadPhotoSwipe().then(function() {
+              // Small delay to ensure PhotoSwipe is fully initialized
+              setTimeout(function() {
+                clickTarget.closest('.js-photoswipe--zoom, [data-pswp-trigger]').click();
+              }, 50);
+            });
+          }
+        }, { once: true, capture: true });
+      })();
+    </script>
   {%- endif -%}
 
   {%- if product.media.size > 0 -%}
