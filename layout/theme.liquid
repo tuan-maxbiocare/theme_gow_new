@@ -176,7 +176,33 @@
 
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-
+    <script data-src="{{ 'header.js' | asset_url }}" defer="defer" class="lazy-js"></script>
+    <script data-src="{{ 'footer.js' | asset_url }}" defer="defer" class="lazy-js"></script>
+    {%- if request.page_type contains 'customers/' -%}
+    <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    
+    <script>
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
+    </script>
+    
+    {%- if request.design_mode -%}
+    <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
+    
+    {%- render 'js-variables' -%}
+    
+    {% comment %} Custom metafield for head tag like GTag tracking {% endcomment %}
+    {{ shop.metafields.foxtheme.code_head.value }}
+    {% comment %} End custom metafield for head tag like GTag tracking {% endcomment %}
+    
+    {% if template == 'index' %}
+    <script data-src="{{ 'featured-collection.js' | asset_url }}" defer="defer" class="lazy-js"></script>
+    <script data-src="{{ 'scrolling-banner.js' | asset_url }}" defer="defer" class="lazy-js"></script>
+    {% endif %}
+    
     <script>
       (function() {
         'use strict';
@@ -277,9 +303,31 @@
 
     {%- render 'js-variables' -%}
 
-    {% comment %} Custom metafield for head tag like GTag tracking {% endcomment %}
-    {{ shop.metafields.foxtheme.code_head.value }}
-    {% comment %} End custom metafield for head tag like GTag tracking {% endcomment %}
+
+     <!-- Microsoft Clarity Tracking Code -->
+      <script>
+        (function() {
+          var clarityLoaded = false;
+          function loadClarity() {
+            if (clarityLoaded) return;
+            clarityLoaded = true;
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "tnwn5025c9");
+          }
+
+          window.addEventListener('load', function() {
+            setTimeout(loadClarity, 5000);
+          });
+
+          window.addEventListener('scroll', loadClarity, { once: true, passive: true });
+        })();
+      </script>
+      <!-- End Microsoft Clarity Tracking Code -->
+
+
   </head>
   <body
     class="{{ request.page_type }}-template {{ template.suffix }} blocks-corner--{{ settings.blocks_corner_radius }}{% if request.design_mode %} shopify-design-mode{% endif %}"
@@ -329,5 +377,20 @@
     {%- if settings.enable_product_compare -%}
       <script src="{{ 'compare.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+    <!-- Defer Klaviyo for better performance -->
+    <script>
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var klaviyoScript = document.createElement('script');
+          klaviyoScript.async = true;
+          klaviyoScript.src = 'https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TTMw4F';
+          document.head.appendChild(klaviyoScript);
+        }, 4000);
+      });
+    </script>
+    <!-- End  Klaviyo for better performance -->
+
+
   </body>
 </html>
