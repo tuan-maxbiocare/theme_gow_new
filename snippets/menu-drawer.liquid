@@ -142,6 +142,9 @@
                   </span>
                 </a>
               {%- endif -%}
+               <div class="dropdown-list mobile">
+        {%- render 'dropdown-language-mobile' -%}
+     </div>
               {%- if section.settings.enable_language_selector or section.settings.enable_country_selector -%}
                 <div class="menu-drawer__localization-form flex flex-wrap gap-x-6 gap-y-4">
                   {%- liquid

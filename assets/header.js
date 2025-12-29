@@ -22,13 +22,10 @@ class BasicHeader extends HTMLElement {
   connectedCallback() {
     this.init();
     if (window.ResizeObserver) {
-      // Debounce ResizeObserver to avoid excessive recalculations
-      let resizeTimer;
-      new ResizeObserver(() => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => this.setHeight(), 50);
-      }).observe(this);
+      new ResizeObserver(this.setHeight.bind(this)).observe(this);
     }
+
+    // window.addEventListener('resize', this.setMenuHeight.bind(this));
 
     if (Shopify.designMode) {
       const section = this.closest('.shopify-section');
@@ -46,26 +43,37 @@ class BasicHeader extends HTMLElement {
     }
   }
 
-  // Removed - merged into setHeight() to avoid duplicate DOM reads
+  calculateHeaderGroupHeight() {
+    const headerGroups = document.querySelectorAll('.shopify-section-group-header-group');
+    let totalHeight = 0;
+
+    headerGroups.forEach((section) => {
+      totalHeight += section.offsetHeight;
+    });
+
+    document.documentElement.style.setProperty('--header-group-height', `${totalHeight}px`);
+
+    return totalHeight;
+  }
 
   setHeight() {
-    // Batch all DOM reads first, then all DOM writes to avoid forced reflow
     requestAnimationFrame(() => {
-      // READ phase - batch all measurements
+      // Batch reads
       const offsetHeight = Math.round(this.offsetHeight);
       const offsetTop = Math.round(this.parentElement.offsetTop);
       const offsetNavigationHeight = Math.round(this.headerNavigation.offsetHeight);
-
+      
       const headerGroups = document.querySelectorAll('.shopify-section-group-header-group');
-      const groupHeights = Array.from(headerGroups).map(section => section.offsetHeight);
-      const totalHeight = groupHeights.reduce((sum, height) => sum + height, 0);
+      let headerGroupTotalHeight = 0;
+      headerGroups.forEach((section) => {
+        headerGroupTotalHeight += section.offsetHeight;
+      });
 
-      // WRITE phase - batch all style updates
-      const docStyle = document.documentElement.style;
-      docStyle.setProperty('--header-height', `${offsetHeight}px`);
-      docStyle.setProperty('--header-offset-top', `${offsetTop}px`);
-      docStyle.setProperty('--header-navigation-height', `${offsetNavigationHeight}px`);
-      docStyle.setProperty('--header-group-height', `${totalHeight}px`);
+      // Batch writes
+      document.documentElement.style.setProperty('--header-height', `${offsetHeight}px`);
+      document.documentElement.style.setProperty('--header-offset-top', `${offsetTop}px`);
+      document.documentElement.style.setProperty('--header-navigation-height', `${offsetNavigationHeight}px`);
+      document.documentElement.style.setProperty('--header-group-height', `${headerGroupTotalHeight}px`);
     });
   }
 }
@@ -97,9 +105,6 @@ class StickyHeader extends BasicHeader {
     this.scrollThreshold = 200; // Minimum scroll amount before unpinning
     this.scrollDirection = 'none';
     this.scrollDistance = 0;
-
-    // Throttling flag for scroll optimization
-    this.ticking = false;
   }
 
   // Getters for easier property access
@@ -117,25 +122,24 @@ class StickyHeader extends BasicHeader {
     // Store initial scroll position
     this.firstScrollTop = window.scrollY;
 
-    // Cache header dimensions for performance optimization - defer to next frame
-    requestAnimationFrame(() => {
-      this.headerBounds = this.headerSection.getBoundingClientRect();
-    });
+    // Cache header dimensions for performance optimization
+    this.headerBounds = this.headerSection.getBoundingClientRect();
 
     // Initialize sticky header
     this.initStickyHeader();
 
     // Register toggle button event if needed
     if (this.collapseOnScroll && this.navigationToggleButton) {
-      this.navigationToggleButton.addEventListener('click', this.handleNavigationToggle.bind(this));
+      this.navigationToggleButton.addEventListener('click', (e) => this.handleNavigationToggle && this.handleNavigationToggle(e));
     }
   }
 
-  // Initialize sticky header behavior
+  // Handle sticky header behavior
   initStickyHeader() {
     this.headerSection.classList.add(this.classes.headerSticky);
     this.headerSection.dataset.stickyType = this.dataset.stickyType;
-    window.addEventListener('scroll', this.handleScroll.bind(this), { passive: true });
+    this.ticking = false;
+    window.addEventListener('scroll', this.onScroll.bind(this), { passive: true });
   }
 
   // Handle navigation toggle button click
@@ -162,34 +166,37 @@ class StickyHeader extends BasicHeader {
     }, 1000);
   }
 
-  // Handle scroll events - optimized with throttling
-  handleScroll() {
-    // Throttle scroll handler to run at most once per frame
-    if (this.ticking) return;
+  onScroll() {
+    if (!this.ticking) {
+      requestAnimationFrame(() => {
+        this.handleScroll();
+        this.ticking = false;
+      });
+      this.ticking = true;
+    }
+  }
 
-    this.ticking = true;
+  // Handle scroll events
+  handleScroll() {
     const scrollTop = window.scrollY;
 
-    requestAnimationFrame(() => {
-      // Avoid recalculating dimensions on each scroll
-      const headerBoundsTop = this.headerBounds.top + this.firstScrollTop;
-      const headerBoundsBottom = this.headerBounds.bottom + this.firstScrollTop;
+    // Avoid recalculating dimensions on each scroll
+    const headerBoundsTop = this.headerBounds.top + this.firstScrollTop;
+    const headerBoundsBottom = this.headerBounds.bottom + this.firstScrollTop;
 
-      // Update scroll direction and distance
-      this.updateScrollMetrics(scrollTop);
+    // Update scroll direction and distance
+    this.updateScrollMetrics(scrollTop);
 
-      const isScrolledPastHeader = scrollTop > headerBoundsTop;
+    const isScrolledPastHeader = scrollTop > headerBoundsTop;
 
-      // Handle different scroll positions
-      if (isScrolledPastHeader) {
-        this.handleScrolledPastHeader(scrollTop, headerBoundsBottom);
-      } else {
-        this.handleScrolledBeforeHeader();
-      }
+    // Handle different scroll positions
+    if (isScrolledPastHeader) {
+      this.handleScrolledPastHeader(scrollTop, headerBoundsBottom);
+    } else {
+      this.handleScrolledBeforeHeader();
+    }
 
-      this.currentScrollTop = scrollTop;
-      this.ticking = false;
-    });
+    this.currentScrollTop = scrollTop;
   }
 
   // Update scroll direction and accumulated distance
@@ -515,10 +522,12 @@ class DetailsDropdown extends HTMLDetailsElement {
   }
 
   needsReverse() {
-    const totalWidth = this.contentElement.offsetLeft + this.contentElement.clientWidth * 2;
-    if (totalWidth > window.innerWidth) {
-      this.contentElement.classList.add('needs-reverse');
-    }
+    requestAnimationFrame(() => {
+      const totalWidth = this.contentElement.offsetLeft + this.contentElement.clientWidth * 2;
+      if (totalWidth > window.innerWidth) {
+        this.contentElement.classList.add('needs-reverse');
+      }
+    });
   }
 }
 
@@ -657,11 +666,17 @@ class MenuDrawer extends DrawerComponent {
       // this.animateMenuItems();
     }, 300);
 
-    document.documentElement.style.setProperty('--viewport-height', `${window.innerHeight}px`);
-    document.documentElement.style.setProperty(
-      '--header-bottom-position',
-      `${parseInt(this.header.getBoundingClientRect().bottom)}px`
-    );
+    // Batch reads then writes
+    const viewportHeight = window.innerHeight;
+    const headerBottom = parseInt(this.header.getBoundingClientRect().bottom);
+
+    requestAnimationFrame(() => {
+      document.documentElement.style.setProperty('--viewport-height', `${viewportHeight}px`);
+      document.documentElement.style.setProperty(
+        '--header-bottom-position',
+        `${headerBottom}px`
+      );
+    });
 
     document.dispatchEvent(new CustomEvent('menu-drawer:open', { bubbles: true }));
   }
@@ -750,7 +765,10 @@ class MenuProductList extends HTMLElement {
 
     const firstMedia = this.querySelector('.product-card__image-wrapper');
     if (firstMedia && firstMedia.clientHeight > 0) {
-      this.style.setProperty('--swiper-navigation-top-offset', parseInt(firstMedia.clientHeight) / 2 + 'px');
+      const height = parseInt(firstMedia.clientHeight);
+      requestAnimationFrame(() => {
+        this.style.setProperty('--swiper-navigation-top-offset', height / 2 + 'px');
+      });
     }
   }
 }

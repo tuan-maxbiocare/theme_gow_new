@@ -157,11 +157,6 @@
   background-color: #87C2A5 !important;
   color: #fff;
 }
-/* app klaviyo */
-.kl_reviews__button:hover {
-  background-color: #006343 !important;
-  color: #ffff !important;
-}
 
 .site-wrapper {
   overflow: clip;
@@ -2897,7 +2892,7 @@ input:is([type=radio])::after {
 
 .f-badge {
   display: inline-flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
@@ -2924,7 +2919,6 @@ input:is([type=radio])::after {
 .f-badge--hot {
   color: var(--color-badge-hot-text, #fff);
   background: var(--color-badge-hot, #c32b2b);
-  border: 1px solid #F74458;
 }
 .f-badge--new {
   color: var(--color-badge-new-text, #fff);
@@ -3796,8 +3790,8 @@ input:is([type=radio])::after {
 }
 @media (max-width: 767.98px) {
   .drawer__close-btn--fill-mobile {
-    top: 0rem;
-    inset-inline-end: 0rem;
+    top: 2rem;
+    inset-inline-end: 2rem;
     background: rgb(var(--color-background));
     box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15);
   }

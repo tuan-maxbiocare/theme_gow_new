@@ -4,13 +4,17 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
   }
 {%- endstyle -%}
+<script>
+  if (document.referrer) {
+    window.location.href = document.referrer;
+  } else {
+    window.location.href = "/";
+  }
+</script>
 {{ 'cart.css' | asset_url | stylesheet_tag }}
 {{ 'component-custom-card.css' | asset_url | stylesheet_tag }}
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
-{%- if section.settings.enable_free_gift -%}
-  <link rel="stylesheet" href="{{ 'free-gift-unlock.css' | asset_url }}" media="print" onload="this.media='all'">
-  <script src="{{ 'free-gift-unlock.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
+
 {%- if linklists['gift-wrapping'].links != blank and linklists['gift-wrapping'].links.first.type == 'product_link' -%}
   <script src="{{ 'gift-wrapping.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
@@ -38,7 +42,8 @@
             )</cart-count
           ></motion-element
         >
-      </h2>    </div>
+      </h2>
+    </div>
     <div class="cart__empty text-center flex flex-col gap-10">
       <div class="grid gap-5 cart__empty-header">
         <h2 class="h1">{{ 'sections.cart.empty' | t }}</h2>
@@ -108,17 +113,6 @@
       class="block md:flex items-stretch"
     >
       <div class="cart__inner flex-1">
-        {%- if section.settings.enable_free_gift -%}
-          {%- render 'free-gift-unlock',
-            section_id: section.id,
-            tier1_threshold: 5000,
-            #tier1_collection: 'gift-500',
-            tier2_threshold: 6999,
-            tier2_collection: 'gift-6999',
-            #tier3_threshold: 12000,
-            #tier3_collection: 'gift-1500'
-          -%}
-        {%- endif -%}
         <form
           class="cart__form{% unless cart.item_count > 0 %} hidden{% endunless %}"
           action="{{ routes.cart_url }}"
@@ -147,11 +141,6 @@
                     assign is_gift_wrap_item = false
                     if gift_wrap_id != null and item.id == gift_wrap_id
                       assign is_gift_wrap_item = true
-                    endif
-
-                    assign is_free_gift_item = false
-                    if item.properties._free_gift == 'true'
-                      assign is_free_gift_item = true
                     endif
 
                     assign has_qty_rules = false
@@ -236,7 +225,7 @@
                   {%- endif -%}
 
                   {%- capture cart_item -%}
-                      <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}"{% if is_free_gift_item %} data-free-gift="true"{% endif %}>
+                      <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                         <td class="cart-item__product">
                           <div class="flex items-start md:items-center gap-3 md:gap-6">
                             <a id="Loader-{{ section.id }}-{{ item.index | plus: 1 }}"{% unless is_gift_wrap_item %} is="cart-remove-item"{% else %} is="gift-wrap-remove-item"{% endunless %} class="items-center justify-center relative hidden md:flex btn-remove" href="{{ item.url_to_remove }}" data-index="{{ item.index | plus: 1 }}">
@@ -254,15 +243,7 @@
                                 <div class="grid gap-1 w-full">
                                   <div class="flex items-center justify-between gap-1 flex-wrap">
                                     <div class="block">
-                                      {% if item.final_line_price > 0 %}
-                                        <a href="{{ item.url }}" class="cart-item__title text-pcard-title reversed-link">
-                                          {{- item.product.title | escape -}}
-                                        </a>
-                                      {% else %}
-                                        <span class="cart-item__title text-pcard-title">
-                                          {{- item.product.title | escape -}}
-                                        </span>
-                                      {% endif %}
+                                      <a href="{{ item.url }}" class="cart-item__title text-pcard-title reversed-link">{{- item.product.title | escape -}}</a>
                                     </div>
                                   </div>
                                   {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != null -%}
@@ -708,7 +689,6 @@
               endif
             endfor
           -%}
-
           <div class="cart__footer-wrapper grid gap-6">
             {%- render 'gift-wrapping',
               section_id: section.id,
@@ -1016,16 +996,6 @@
     {
       "type": "header",
       "content": "t:general.general.name"
-    },
-    {
-      "type": "header",
-      "content": "Free Gift Settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_free_gift",
-      "label": "Enable free gift unlock",
-      "default": false
     },
     {
       "type": "select",

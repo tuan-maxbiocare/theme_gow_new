@@ -25,7 +25,7 @@ if (!customElements.get('collection-tabs')) {
       init() {
         this.handleTooltip(0);
         this.calculatePadding();
-        window.addEventListener('resize', this.calculatePadding.bind(this));
+        window.addEventListener('resize', FoxTheme.utils.throttle(this.calculatePadding.bind(this), 200));
       }
 
       handleTabChange(event) {
@@ -44,14 +44,19 @@ if (!customElements.get('collection-tabs')) {
 
         hoverEls.forEach((el) => {
           el.addEventListener('mousemove', (e) => {
-            const { target } = e;
-            const title = target.dataset.title;
+            requestAnimationFrame(() => {
+              const { target } = e;
+              const title = target.dataset.title;
 
-            this.tooltipEl.innerHTML = title;
+              if (this.tooltipEl.innerHTML !== title) {
+                 this.tooltipEl.innerHTML = title;
+              }
 
-            this.tooltipEl.style.opacity = '1';
-            this.tooltipEl.style.top = `${e.clientY - this.tooltipEl.offsetHeight - 5}px`;
-            this.tooltipEl.style.left = `${e.clientX}px`;
+              const tooltipHeight = this.tooltipEl.offsetHeight;
+              this.tooltipEl.style.opacity = '1';
+              this.tooltipEl.style.top = `${e.clientY - tooltipHeight - 5}px`;
+              this.tooltipEl.style.left = `${e.clientX}px`;
+            });
           });
 
           el.addEventListener('mouseleave', (e) => {
@@ -61,12 +66,14 @@ if (!customElements.get('collection-tabs')) {
       }
 
       calculatePadding() {
-        const contentHeight = this.contentWrapper.offsetHeight
-        const ImageHeight = this.imagesWrapper.offsetHeight
-        const diff = Math.abs(ImageHeight - contentHeight);
+        requestAnimationFrame(() => {
+          const contentHeight = this.contentWrapper.offsetHeight
+          const ImageHeight = this.imagesWrapper.offsetHeight
+          const diff = Math.abs(ImageHeight - contentHeight);
 
-        if ( this.alignItems === 'center' || diff < 0 ) return;
-        this.contentWrapper.style.marginTop = `${diff / 2}px`
+          if ( this.alignItems === 'center' || diff < 0 ) return;
+          this.contentWrapper.style.marginTop = `${diff / 2}px`
+        });
       }
     }
   );

@@ -508,12 +508,6 @@
                 heading_3: block.settings.heading_3,
                 image_3: block.settings.image_3,
                 icon_3: block.settings.icon_3,
-                heading_4: block.settings.heading_4,
-                image_4: block.settings.image_4,
-                icon_4: block.settings.icon_4,
-                heading_5: block.settings.heading_5,
-                image_5: block.settings.image_5,
-                icon_5: block.settings.icon_5,
                 icon_color: block.settings.icon_color,
                 block: block
               %}
@@ -571,79 +565,67 @@
             </div>
           </div>
         {%- when 'text_with_buttons' -%}
-          {% liquid
-            assign cw_link = product.metafields.custom.cw_link.value
-            assign amazon_link = product.metafields.custom.amazon_link.value
-          %}
+          <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
+            <div class="text-buttons-wrapper" style="display: flex;">
+              {%- if block.settings.heading != blank -%}
+                <h2 class="{{ block.settings.heading_size }} text-{{ block.settings.text_alignment }}">
+                  {{ block.settings.heading }}
+                </h2>
+              {%- endif -%}
 
-          {% if cw_link and amazon_link %}
-            <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
-              <div class="text-buttons-wrapper" style="display:flex; justify-content:space-between">
-                {%- if block.settings.heading != blank -%}
-                  <h2 class="{{ block.settings.heading_size }} text-{{ block.settings.text_alignment }}">
-                    {{ block.settings.heading }}
-                  </h2>
-                {%- endif -%}
-
-                {%- if block.settings.text != blank -%}
-                  <div class="text-content rte text-{{ block.settings.text_alignment }}">
-                    {{ block.settings.text }}
-                  </div>
-                {%- endif -%}
-                <div class="buttons-wrapper">
-                  {% if cw_link %}
-                    <a
-                      target="_blank"
-                      href="{{ product.metafields.custom.cw_link.value }}"
-                      data-tooltip
-                    >
-                      <span class="tooltip pointer-events-none">
-                        {{ block.settings.share_twitter_tooltip }}
-                      </span>
-                      <span class="btn btn--icon btn--icon-pill">
-                        {% if block.settings.share_twitter_icon != blank %}
-                          <img
-                            src="{{ block.settings.share_twitter_icon | img_url: '128x128' }}"
-                            alt="Chemist Warehouse"
-                            loading="lazy"
-                            width="{{ block.settings.share_icon_size }}px"
-                            height="{{ block.settings.share_icon_size }}px"
-                          >
-                        {% else %}
-                          {% render 'icon-twitter', size: 'large' %}
-                        {% endif %}
-                      </span>
-                    </a>
-                  {% endif %}
-
-                  {% if amazon_link %}
-                    <a
-                      target="_blank"
-                      href="{{ product.metafields.custom.amazon_link.value }}"
-                      data-tooltip
-                    >
-                      <span class="tooltip pointer-events-none">
-                        {{ block.settings.share_facebook_tooltip }}
-                      </span>
-                      <span class="btn btn--icon btn--icon-pill">
-                        {% if block.settings.share_facebook_icon != blank %}
-                          <img
-                            src="{{ block.settings.share_facebook_icon | img_url: '128x128' }}"
-                            alt="Amazon"
-                            loading="lazy"
-                            width="{{ block.settings.share_icon_size }}px"
-                            height="{{ block.settings.share_icon_size }}px"
-                          >
-                        {% else %}
-                          {% render 'icon-twitter', size: 'large' %}
-                        {% endif %}
-                      </span>
-                    </a>
-                  {% endif %}
+              {%- if block.settings.text != blank -%}
+                <div class="text-content rte text-{{ block.settings.text_alignment }}">
+                  {{ block.settings.text }}
                 </div>
+              {%- endif -%}
+              <div class="buttons-wrapper">
+                <a
+                  target="_blank"
+                  href="{{ block.settings.twitter_url }}?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: url }}"
+                  data-tooltip
+                >
+                  <span class="tooltip pointer-events-none">
+                    {{ block.settings.share_twitter_tooltip }}
+                  </span>
+                  <span class="btn btn--icon btn--icon-pill">
+                    {% if block.settings.share_twitter_icon != blank %}
+                      <img
+                        src="{{ block.settings.share_twitter_icon | img_url: '128x128' }}"
+                        alt="Twitter"
+                        loading="lazy"
+                        width="{{ block.settings.share_icon_size }}px"
+                        height="{{ block.settings.share_icon_size }}px"
+                      >
+                    {% else %}
+                      {% render 'icon-twitter', size: 'large' %}
+                    {% endif %}
+                  </span>
+                </a>
+                <a
+                  target="_blank"
+                  href="{{ block.settings.facebook_url }}?u={{ shop.url | append: url }}"
+                  data-tooltip
+                >
+                  <span class="tooltip pointer-events-none">
+                    {{ block.settings.share_facebook_tooltip }}
+                  </span>
+                  <span class="btn btn--icon btn--icon-pill">
+                    {% if block.settings.share_facebook_icon != blank %}
+                      <img
+                        src="{{ block.settings.share_facebook_icon | img_url: '128x128' }}"
+                        alt="Twitter"
+                        loading="lazy"
+                        width="{{ block.settings.share_icon_size }}px"
+                        height="{{ block.settings.share_icon_size }}px"
+                      >
+                    {% else %}
+                      {% render 'icon-twitter', size: 'large' %}
+                    {% endif %}
+                  </span>
+                </a>
               </div>
             </div>
-          {% endif %}
+          </div>
         {%- when 'payment_social' -%}
           <div class="{{ block_classes }} payment-social-wrapper" {{ block.shopify_attributes }}>
             <div class="payment-social-container flex flex-col gap-6 md:flex-row md:justify-between md:items-center">
@@ -725,4 +707,46 @@
     </div>
   {%- endif -%}
 </div>
+<style>
+  .text-buttons-wrapper {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    width: 59%;
+  }
+  .buttons-wrapper a {
+    flex: 1;
+    max-width: 100%;
+    text-decoration: none;
+  }
+  .buttons-wrapper .btn {
+    display: flex;
+    align-items: center
+    justify-content: center;
+    width: 100%;
+  }
+  .buttons-wrapper img{
+    object-fit: contain; 
+    image-rendering: -webkit-optimize-contrast; 
+    image-rendering: crisp-edges;
+  }
 
+  .product__blocks .btn--icon.btn--icon-pill,
+  .product__blocks .btn--icon.btn--icon-pill:hover,
+  .product__blocks .btn--icon.btn--icon-pill:focus,
+  .product__blocks .btn--icon.btn--icon-pill:active {
+    background-color: transparent !important;
+    color: currentColor !important;
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    --color-button: transparent !important;
+    --color-button-text: currentColor !important;
+    --color-button-hover: transparent !important;
+  }
+</style>

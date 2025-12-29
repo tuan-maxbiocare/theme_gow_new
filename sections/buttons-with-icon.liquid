@@ -1,6 +1,9 @@
-{{ 'section-buttons-with-icon.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'buttons-with-icon-list.js' | asset_url }}" defer="defer"></script>
 
+{% if template == 'index' %}
+{% else %}
+  {{ 'section-buttons-with-icon.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'buttons-with-icon-list.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 {%- liquid
   assign enable_slider = section.settings.enable_slider
 -%}

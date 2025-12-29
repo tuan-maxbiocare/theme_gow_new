@@ -4,7 +4,6 @@
   assign sizes = sizes | default: 'min(100vw, var(--page-width))'
   assign widths = '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200'
 
-  # Allow override video url type and id
   if video_url != blank
     assign video_url_type = video_url_type | default: video_url.type
     assign video_url_id = video_url_id | default: video_url.id
@@ -15,6 +14,7 @@
   assign video_id = video.id | default: video_url_id
   assign video_alt = video.alt | default: description
   assign alt = 'accessibility.load_video' | t: description: video_alt | escape
+
   if cover_image != blank
     assign preview_image = cover_image
   elsif video != blank
@@ -29,61 +29,128 @@
     endif
   endcapture
 -%}
+
 {%- if video != blank or video_url != blank -%}
   <video-element
     class="media-wrapper {{ classes }}"
-    {%- if video_url_type and video == blank %}
+    data-lazy-video="true"
+    {%- if autoplay %} data-autoplay="true" {% endif -%}
+    {%- if video_url_type and video == blank %} 
       source="{{ video_url_type }}"
     {% endif -%}
-    {%- if autoplay %}
-      autoplay
-    {% endif -%}
   >
-    {{- poster -}}
+    {{ poster }}
+
     <template>
       {%- if video != blank -%}
-        {{-
-          video
+        {{ video
           | video_tag:
             playsinline: true,
             muted: muted,
-            autoplay: true,
+            autoplay: autoplay,
             loop: loop,
             controls: controls,
             preload: 'none',
             image_size: '800x'
-        -}}
+        }}
       {%- else -%}
         {%- if video_url_type == 'youtube' -%}
           <iframe
-            src="https://www.youtube.com/embed/{{ video_url_id }}?playsinline=1{% if controls %}&controls=1{% else %}&controls=0{% endif %}{% if autoplay %}&autoplay=1{% endif %}{% if muted %}&mute=1{% endif %}{% if loop %}&loop=1{% endif %}&playlist={{ video_url_id }}&enablejsapi=1&rel=0&modestbranding=1&origin={{ 'https://' | append: request.host | url_encode }}"
+            src="https://www.youtube.com/embed/{{ video_url_id }}?playsinline=1{% if controls %}&controls=1{% else %}&controls=0{% endif %}{% if autoplay %}&autoplay=1{% endif %}{% if muted %}&mute=1{% endif %}{% if loop %}&loop=1{% endif %}&playlist={{ video_url_id }}&enablejsapi=1&rel=0&modestbranding=1"
             allow="autoplay; encrypted-media"
-            allowfullscreen="allowfullscreen"
+            allowfullscreen
           ></iframe>
+
         {%- elsif video_url_type == 'vimeo' -%}
           <iframe
-            src="https://player.vimeo.com/video/{{ video_url_id }}?autopause=1{% if controls %}&background=0{% else %}&background=1{% endif %}{% if autoplay %}&autoplay=1{% endif %}{% if muted %}&muted=1{% endif %}{% if loop %}&loop=1{% endif %}&transparent=0&responsive=1&portrait=0&title=0&byline=0"
-            allow="autoplay; encrypted-media;"
-            allowfullscreen="allowfullscreen"
+            src="https://player.vimeo.com/video/{{ video_url_id }}?autopause=1{% if autoplay %}&autoplay=1{% endif %}{% if muted %}&muted=1{% endif %}{% if loop %}&loop=1{% endif %}&transparent=0&title=0&byline=0&portrait=0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
           ></iframe>
         {%- endif -%}
       {%- endif -%}
     </template>
-    {%- if show_play_button -%}
-      <button
-        type="button"
-        id="DeferredPoster-{{ video_id }}"
-        class="media__poster absolute top-0 left-0 w-full h-full"
-        aria-label="{{ 'accessibility.play_video' | t | escape }}"
-      >
-        <span class="media__play-button absolute flex items-center justify-center rounded-full pointer-events-auto z-10 motion-reduce">
-          {%- render 'icon-play', size: '2xl' -%}
-        </span>
-      </button>
-    {%- endif -%}
+
   </video-element>
 {%- else -%}
   <div class="media-wrapper">
-    {{- poster -}}
+    {{ poster }}
   </div>
 {%- endif -%}
+
+
+<!-- ⭐ FULL LAZY LOAD + AUTO PAUSE / RESUME SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const lazyVideos = document.querySelectorAll("video-element[data-lazy-video]");
+
+  /* -------------------------
+     LAZY LOADING
+  ---------------------------- */
+  let ioLazy = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const wrapper = entry.target;
+        const template = wrapper.querySelector("template");
+        if (!template) return;
+
+        const content = template.content.cloneNode(true);
+        wrapper.innerHTML = "";
+        wrapper.appendChild(content);
+
+        const video = wrapper.querySelector("video");
+        const iframe = wrapper.querySelector("iframe");
+
+        // autoplay after lazy load
+        if (video && wrapper.dataset.autoplay === "true") {
+          video.muted = true;
+          video.play().catch(()=>{});
+        }
+
+        obs.unobserve(wrapper);
+      }
+    });
+  });
+
+  lazyVideos.forEach(v => ioLazy.observe(v));
+
+
+  /* -------------------------
+     AUTO PAUSE / RESUME
+  ---------------------------- */
+  let ioPlayPause = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const wrapper = entry.target;
+      const video = wrapper.querySelector("video");
+      const iframe = wrapper.querySelector("iframe");
+
+      if (entry.isIntersecting) {
+        // ▶ Resume normal video
+        if (video) video.play().catch(()=>{});
+
+        // ▶ Resume YouTube / Vimeo iframe
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"playVideo","args":""}',
+            "*"
+          );
+        }
+      } else {
+        // ⏸ Pause normal video
+        if (video) video.pause();
+
+        // ⏸ Pause iframe (YouTube / Vimeo)
+        if (iframe && iframe.contentWindow) {
+          iframe.contentWindow.postMessage(
+            '{"event":"command","func":"pauseVideo","args":""}',
+            "*"
+          );
+        }
+      }
+    });
+  }, { threshold: 0.25 });
+
+  lazyVideos.forEach(v => ioPlayPause.observe(v));
+
+});
+</script>

@@ -15,6 +15,7 @@
   endif
 -%}
 {% assign entry_metaobjects = metaobjects.product_details_section[section.settings.tab_content_html] %}
+
 {% render 'divider',
   show_divider: section.settings.show_section_divider,
   divider_width: section.settings.divider_width
@@ -28,7 +29,7 @@
 {% endcapture %}
 
 <div
-  class="section section-{{ section.id }} section--padding section--custom-content page-width page-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }} {{ section.index }} {% if show_section contains 'hide' %} hide-section-product-profile {% endif %}"
+  class="section section-{{ section.id }} section--padding section--custom-content page-width page-width--{{ section.settings.container }} color-{{ section.settings.color_scheme }} {{ section.index }} {% if show_section contains 'hide' %} hide-section-product-profile {% endif %} lazy-section"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >
@@ -165,7 +166,7 @@
                   </motion-element>
                 </div>
               {%- when 'image_card' -%}
-                {% render 'card-image',
+                {% render 'card-image-custom-img',
                   parent_color_scheme: section.settings.color_scheme,
                   color_scheme: block.settings.color_scheme,
                   color_scheme_mobile: block.settings.color_scheme_mobile,
@@ -323,8 +324,9 @@
                     }
                   </style>
                 {% endunless %}
-                {% assign key = 'product_detail_rich_text_' | append: forloop.index %}
+                {% assign key = 'product_detail_html_' | append: forloop.index %}
                 {% assign content_html = entry_metaobjects[key] %}
+               
                 {%- render 'collapsible-tabs-block', section: section, block: block, content_html: content_html -%}
             {%- endcase -%}
           </div>

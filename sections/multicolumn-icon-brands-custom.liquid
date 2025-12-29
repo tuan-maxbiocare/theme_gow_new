@@ -105,7 +105,7 @@
   }
 </style>
 
-<div class="section section-{{ section.id }} section--padding multicolumn-icon section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }} muticolumn-icon-brand-section">
+<div class="section section-{{ section.id }} section--padding multicolumn-icon section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }} muticolumn-icon-brand-section lazy-section">
   <div class="section__container page-width page-width--{{ section.settings.container }}{% unless section.settings.enable_sticky %} xl:items-center{% endunless %}">
     <div class="section__heading">
       {% render 'section-heading',

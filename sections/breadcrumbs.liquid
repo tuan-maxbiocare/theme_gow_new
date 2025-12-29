@@ -55,7 +55,7 @@
         {% comment %} link breadcrumbs new {% endcomment %}
       {%- elsif template contains 'product' -%}
         {%- liquid
-          assign main_collection_handles = 'health-supplements,food-and-nutrition,baby-care-products,mothers-care,beauty-products,pet-care-products' | split: ','
+          assign main_collection_handles = 'health-supplement,food-nutrition,baby-care,mothers-care,beauty-topical-care,pet-care' | split: ','
           assign parent_collection = ''
 
           for collection in product.collections

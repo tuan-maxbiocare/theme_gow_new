@@ -16,91 +16,55 @@ if ( !customElements.get('scrolling-banner') ) {
       this.zoom = this.dataset.zoom === 'true';
       this.parallax = this.dataset.parallax === 'true';
       this.header = document.querySelector('header');
+      this.headerHeight = Math.round(this.header.offsetHeight);
+      this.isHeaderSticky = this.header.isAlwaysSticky;
       this.borderRadius = this.dataset.borderRadius;
 
       this.slideRequestAnimationFrame = true;
 
-      // Debounce resize events to avoid excessive recalculations
-      let resizeTimeout;
       this.onScrollHandler = (() => {
         if (this.slideRequestAnimationFrame) {
           this.slideRequestAnimationFrame = false;
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(() => {
-            requestAnimationFrame(this.handleSlideAnimation.bind(this));
-          }, 100);
+          requestAnimationFrame(this.handleSlideAnimation.bind(this));
         }
       }).bind(this);
 
       window.addEventListener("resize", this.onScrollHandler, { passive: true });
 
-      // Defer initial calculation to avoid blocking initial render
-      requestIdleCallback ? requestIdleCallback(() => this.onScrollHandler()) : setTimeout(() => this.onScrollHandler(), 100);
+      this.onScrollHandler();
     }
     handleSlideAnimation() {
-      // BATCH ALL DOM READS FIRST to prevent forced reflow
-      const headerHeight = this.header ? Math.round(this.header.offsetHeight) : 0;
-      const isHeaderSticky = this.header?.isAlwaysSticky || false;
-      const windowHeight = isHeaderSticky ? window.innerHeight - headerHeight : window.innerHeight;
+      const items = [...this.items];
+      if (!items.length) return;
 
-      const itemsArray = [...this.items];
-      const segmentLength = 1 / itemsArray.length;
-      const itemHeight = itemsArray[0]?.offsetHeight || 0;
+      const segmentLength = 1 / items.length;
+      const itemHeight = items[0].offsetHeight;
+      const windowHeight = this.isHeaderSticky ? window.innerHeight - this.headerHeight : window.innerHeight;
       const translateY = Math.min(250, (itemHeight * 0.3));
       const endpoint = Math.min((itemHeight / windowHeight), 1);
       const cardZoom = 4;
+      const borderRadius = this.borderRadius;
+      const zoom = this.zoom;
+      const parallax = this.parallax;
+      const headerHeight = this.headerHeight;
+      const isHeaderSticky = this.isHeaderSticky;
 
-      // Pre-calculate all values before DOM writes
-      const headerRatio = isHeaderSticky ? headerHeight/window.innerHeight : 0;
+      requestAnimationFrame(() => {
+        items.forEach((item, i) => {
+          const index = i + 1;
+          const content = item.querySelector('.slide__content');
+          const product = item.querySelector('.slide__product');
+          const card = item.querySelector('.slide__card');
+          const cardMedia = card.querySelector('.media');
+          const cardMediaChild = cardMedia.children[0];
 
-      itemsArray.forEach((item, i) => {
-        const index = i + 1;
-        const content = item.querySelector('.slide__content');
-        const product = item.querySelector('.slide__product');
-        const card = item.querySelector('.slide__card');
-        const cardMedia = card.querySelector('.media');
-        const cardMediaChild = cardMedia.children[0];
-
-        // Zoom
-        if (this.zoom) {
-          FoxTheme.Motion.scroll(
-            FoxTheme.Motion.animate(
-              card,
-              {
-                clipPath: [`inset(0 round ${this.borderRadius}px)`, `inset(0 ${cardZoom}% round ${this.borderRadius}px)`],
-              }
-            ),
-            { 
-              target: this, 
-              offset: [
-                [(index * segmentLength) + 0.012, endpoint],
-                [(index + 1) * segmentLength, endpoint]
-              ] 
-            }
-          );
-
-          FoxTheme.Motion.scroll(
-            FoxTheme.Motion.animate(
-              content,
-              {
-                transform: [`scale(1)`, `scale(${100 - cardZoom * 2 }%)`],
-              }
-            ),
-            { 
-              target: this, 
-              offset: [
-                [(index * segmentLength) + 0.012, endpoint],
-                [(index + 1) * segmentLength, endpoint]
-              ] 
-            }
-          );
-
-          if (product) {
+          // Zoom
+          if (zoom) {
             FoxTheme.Motion.scroll(
               FoxTheme.Motion.animate(
-                product,
+                card,
                 {
-                  transform: [`translateY(0)`, `translateY(${itemHeight / 100 * 4}px)`],
+                  clipPath: [`inset(0 round ${borderRadius}px)`, `inset(0 ${cardZoom}% round ${borderRadius}px)`],
                 }
               ),
               { 
@@ -111,60 +75,94 @@ if ( !customElements.get('scrolling-banner') ) {
                 ] 
               }
             );
-          }
-        }
 
-        // Parallax
-        if (this.parallax) {
-          if ( i == 0 ) {
             FoxTheme.Motion.scroll(
               FoxTheme.Motion.animate(
-                cardMedia,
-                { transform: [`translateY(0)`, `translateY(${-translateY}px)`], transformOrigin: ['top', 'top'] },
-                { easing: "ease-out" }
+                content,
+                {
+                  transform: [`scale(1)`, `scale(${100 - cardZoom * 2 }%)`],
+                }
               ),
               { 
                 target: this, 
                 offset: [
-                  [(index * segmentLength), endpoint],
+                  [(index * segmentLength) + 0.012, endpoint],
                   [(index + 1) * segmentLength, endpoint]
                 ] 
               }
             );
-          } else {
-            FoxTheme.Motion.scroll(
-              FoxTheme.Motion.animate(
-                cardMedia,
-                { transform: [`translateY(${-translateY}px)`, `translateY(0)`], transformOrigin: ['bottom', 'bottom'] },
-                { easing: "ease-out" }
-              ),
-              { 
-                target: this, 
-                offset: [
-                  [i * segmentLength, 1],
-                  [index * segmentLength, 1]
-                ] 
-              }
-            );
 
-            if (i < itemsArray.length - 1 ) {
+            if (product) {
               FoxTheme.Motion.scroll(
                 FoxTheme.Motion.animate(
-                  cardMediaChild,
-                  { transform: [`translateY(0)`, `translateY(${-translateY}px)`], transformOrigin: ['top', 'top'] },
-                  { easing: "ease-out" }
+                  product,
+                  {
+                    transform: [`translateY(0)`, `translateY(${itemHeight / 100 * 4}px)`],
+                  }
                 ),
-                {
-                  target: this,
+                { 
+                  target: this, 
                   offset: [
-                    [i * segmentLength, headerRatio],
-                    [index * segmentLength, headerRatio]
-                  ]
+                    [(index * segmentLength) + 0.012, endpoint],
+                    [(index + 1) * segmentLength, endpoint]
+                  ] 
                 }
               );
             }
           }
-        }
+
+          // Parallax
+          if (parallax) {
+            if ( i == 0 ) {
+              FoxTheme.Motion.scroll(
+                FoxTheme.Motion.animate(
+                  cardMedia,
+                  { transform: [`translateY(0)`, `translateY(${-translateY}px)`], transformOrigin: ['top', 'top'] },
+                  { easing: "ease-out" }
+                ),
+                { 
+                  target: this, 
+                  offset: [
+                    [(index * segmentLength), endpoint],
+                    [(index + 1) * segmentLength, endpoint]
+                  ] 
+                }
+              );
+            } else {
+              FoxTheme.Motion.scroll(
+                FoxTheme.Motion.animate(
+                  cardMedia,
+                  { transform: [`translateY(${-translateY}px)`, `translateY(0)`], transformOrigin: ['bottom', 'bottom'] },
+                  { easing: "ease-out" }
+                ),
+                { 
+                  target: this, 
+                  offset: [
+                    [i * segmentLength, 1],
+                    [index * segmentLength, 1]
+                  ] 
+                }
+              );
+
+              if (i < items.length - 1 ) {
+                FoxTheme.Motion.scroll(
+                  FoxTheme.Motion.animate(
+                    cardMediaChild,
+                    { transform: [`translateY(0)`, `translateY(${-translateY}px)`], transformOrigin: ['top', 'top'] },
+                    { easing: "ease-out" }
+                  ),
+                  { 
+                    target: this, 
+                    offset: [
+                      [i * segmentLength, isHeaderSticky ? headerHeight/windowHeight : 0],
+                      [index * segmentLength, isHeaderSticky ? headerHeight/windowHeight : 0]
+                    ] 
+                  }
+                );
+              }
+            }
+          }
+        });
       });
 
       this.slideRequestAnimationFrame = true;

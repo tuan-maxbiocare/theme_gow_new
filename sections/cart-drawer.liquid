@@ -11,18 +11,63 @@
     >
   {%- endif -%}
   <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
-  {%- if section.settings.enable_free_gift -%}
-    <link rel="stylesheet" href="{{ 'free-gift-unlock.css' | asset_url }}" media="print" onload="this.media='all'">
-    <script src="{{ 'free-gift-unlock.js' | asset_url }}" defer="defer"></script>
-  {%- endif -%}
   {%- if linklists['gift-wrapping'].links != blank and linklists['gift-wrapping'].links.first.type == 'product_link' -%}
     <script src="{{ 'gift-wrapping.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
   {% style %}
     @media (max-width: 678px) {
-      #CartDrawer .cart-drawer__addons .btn:not(.btn--plain, .btn--underline, .btn--link, .btn--inherit) .btn__text {
+      #CartDrawer .cart-drawer__addons .btn:not(.btn--plain,.btn--underline,.btn--link,.btn--inherit) .btn__text {
         font-size: 12px;
       }
+    }
+    .cart-item.flex-col.freegift-item {
+        order: 2;
+        border-top: 1px solid #e5e5e5;
+        padding-top: 2.4rem;
+    }
+    progress-bar.progress-bar {
+        overflow: visible;
+        margin: 15px 0px;
+    }
+    span.free-ship {
+        position: absolute;
+        top: -15px;
+        z-index: 2;
+        width: 35px;
+        height: 35px;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        left: 2%;
+    }
+    span.free-gift img{
+      max-width:20px;
+      width:100%;
+    }
+    span.free-gift {
+        display: flex;
+        width: 35px;
+        height: 35px;
+        justify-content: center;
+        align-items: center;
+        top: -15px;
+        position: absolute;
+        right: -15px;
+        background: #fff;
+        border-radius: 100%;
+    }
+    .text-free-wrap {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+    }
+    span.gift-text {
+        margin-right: -8px;
+    }
+    free-shipping-goal.free-shipping-goal.grid.gap-2.w-full.no-js-hidden {
+        margin-bottom: 45px;
     }
   {% endstyle %}
   <cart-drawer
@@ -44,7 +89,6 @@
           <div class="drawer__header-inner cart-drawer__header flex items-center justify-between gap-3">
             <span class="drawer__heading h4">
               <span>{{ 'general.cart.title' | t }}</span>
-
               <cart-count
                 class="cart-count cart-count--blank"
                 aria-label="{{ 'general.cart.cart_count' | t: count: cart.item_count | escape }}"
@@ -62,7 +106,6 @@
                 )
               </cart-count>
             </span>
-            
             <button
               class="drawer__close-btn z-1 static"
               aria-controls="CartDrawer"
@@ -132,22 +175,6 @@
               render 'free-shipping-goal', minimum_amount: minimum_amount, classes: 'w-full'
             endif
           -%}
-
-          {%- comment -%} Free Gift Unlock Feature {%- endcomment -%}
-          {%- if section.settings.enable_free_gift -%}
-            {%- liquid
-            -%}
-            {%- render 'free-gift-unlock',
-              section_id: section.id,
-              tier1_threshold: 5000,
-              #tier1_collection: 'gift-500',
-              tier2_threshold: 6999,
-              tier2_collection: 'gift-6999',
-              #tier3_threshold: 12000,
-              #tier3_collection: 'gift-1500'
-            -%}
-          {%- endif -%}
-
           <div
             id="CartDrawerBody-{{ section.id }}"
             class="flex flex-col gap-6 flex-grow{% if cart == empty %} hidden{% endif %}"
@@ -180,21 +207,40 @@
                       assign is_gift_wrap_item = true
                     endif
                   -%}
+                  {% assign freegift = 'cart-item' %}
+                  {% if item.title contains 'Free Gift' %}
+                    {% assign freegift = 'freegift-item' %}
+                  {% endif %}
                   {%- capture cart_item -%}
-                  <li id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item flex flex-col" data-variant-id="{{ item.variant_id }}" data-handle="{{ item.product.handle }}" data-quantity="{{ item.quantity }}" data-price="{{ item.original_price }}"
-  {% if item.properties['_free_gift'] == 'true' %}data-free-gift="true"{% endif %}>
+                  <li id="CartDrawer-Item-{{ item.index | plus: 1 }}" class="cart-item flex flex-col {{ freegift }}" data-variant-id="{{ item.variant_id }}" data-handle="{{ item.product.handle }}" data-quantity="{{ item.quantity }}" data-price="{{ item.original_price }}">
                     <div class="cart-item__product flex items-start gap-3">
                       {%- if item.image -%}
-                        <a class="cart-item__media blocks-radius media-wrapper" href="{{ item.url }}" tabindex="-1" aria-label="{{ item.title }}">
-                          {{- item.image 
-                            | image_url: width: item.image.width
-                            | image_tag:
-                            loading: 'lazy',
-                            widths: '80, 100, 160, 200',
-                            sizes: '(max-width: 767px) 80px, 100px',
-                            is: 'image-lazy' 
-                          -}}
-                        </a>
+                        {% if item.final_line_price > 0 %}
+                          <a class="cart-item__media blocks-radius media-wrapper"
+                            href="{{ item.url }}"
+                            tabindex="-1"
+                            aria-label="{{ item.title }}">
+                            {{- item.image 
+                              | image_url: width: item.image.width
+                              | image_tag:
+                                loading: 'lazy',
+                                widths: '80, 100, 160, 200',
+                                sizes: '(max-width: 767px) 80px, 100px',
+                                is: 'image-lazy' 
+                            -}}
+                          </a>
+                        {% else %}
+                          <div class="cart-item__media blocks-radius media-wrapper">
+                            {{- item.image 
+                              | image_url: width: item.image.width
+                              | image_tag:
+                                loading: 'lazy',
+                                widths: '80, 100, 160, 200',
+                                sizes: '(max-width: 767px) 80px, 100px',
+                                is: 'image-lazy' 
+                            -}}
+                          </div>
+                        {% endif %}
                       {%- endif -%}
                       <div class="cart-item__details flex-grow flex flex-col gap-3">
                         <div class="flex justify-between gap-3">
@@ -244,12 +290,15 @@
                               </div>
                             {%- endif -%}
                           </div>
+                          {% if item.title contains 'Free Gift'%}
+{% else %}
                           <a id="Loader-{{ section.id }}-{{ item.index | plus: 1 }}"{% unless is_gift_wrap_item %} is="cart-remove-item"{% else %} is="gift-wrap-remove-item"{% endunless %} class="cart-item__remove flex items-center justify-center relative btn-remove" href="{{ item.url_to_remove }}" data-index="{{ item.index | plus: 1 }}" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                             <span class="flex">
                               {%- render 'icon-close', size: 'small' -%}
                             </span>
                             {% render 'loading-spinner' %}
                           </a>
+                        {% endif %}
                         </div>
                         <div class="cart-item__action cart-item__action flex items-center justify-between gap-3">
                           {%- liquid 
@@ -266,6 +315,8 @@
 
                           {%- if has_qty_rules or has_vol_pricing -%}
                             {%- capture qty_rules_vol_pricing -%}
+                              {% if item.title contains 'Free Gift'%}
+{% else %}
                               {%- if has_qty_rules -%}
                                 <div
                                   class="quantity__rules text-sm"
@@ -296,6 +347,8 @@
                                   {%- endif -%}
                                 </div>
                               {%- endif -%}
+
+                            {% endif %}
                               {%- if has_vol_pricing -%}
                                 {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
                                 <volume-pricing class="block parent-display blocks-radius-md" id="Volume-{{ section.id }}">
@@ -335,6 +388,8 @@
                           {%- endif -%}
                           <div class="flex items-center gap-2">
                             {%- unless is_gift_wrap_item -%}
+                              {% if item.title contains 'Free Gift'%}
+{% else %}
                               <quantity-input class="cart-quantity quantity self-end">
                                 <label class="visually-hidden" for="Quantity-{{ section.id }}-{{ item.index | plus: 1 }}">{{ 'products.product.quantity.label' | t }}</label>
                                 <button type="button" name="minus" class="quantity__button" aria-label="{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}">
@@ -404,6 +459,7 @@
                                   </svg>
                                 </button>
                               </div>
+                            {% endif %}
                             {%- endunless -%}
                             {% if has_qty_rules or has_vol_pricing %}
                               <button class="btn btn--plain volume-pricing-toggle" aria-controls="VolumnPricing-{{ section.id }}-{{ item.key }}">
@@ -893,9 +949,6 @@
                 </div>
               </div>
               <form action="{{ routes.cart_url }}" method="POST" novalidate class="drawer__footer-buttons flex gap-2">
-                <a href="{{ routes.cart_url }}" class="btn btn--secondary">
-                  <span class="btn__text">{{ 'general.cart.view_empty_cart' | t }}</span>
-                </a>
                 <button class="btn btn--primary flex-grow" type="submit" name="checkout">
                   <span class="btn__text">{{ 'sections.cart.checkout' | t }}</span>
                 </button>
@@ -912,16 +965,6 @@
 {
   "name": "t:sections.cart-drawer.name",
   "settings": [
-    {
-      "type": "header",
-      "content": "Free Gift Settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_free_gift",
-      "label": "Enable free gift unlock",
-      "default": false
-    },
     {
       "type": "header",
       "content": "t:general.general.name"

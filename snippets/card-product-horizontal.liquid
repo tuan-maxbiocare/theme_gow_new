@@ -137,20 +137,42 @@
         {% render 'price', product: product, alignment: 'left' %}
       {%- endif -%}
     </div>
+
     <div class="product-card__list-actions">
-      <a
-        href="{{- product_url -}}"
-        class="product-card__btn btn{% if button_type == 'icon' %} btn--icon-circle btn--icon btn--extra-small{% else %} btn--secondary btn--small{% endif %}"
-        aria-label="{{- 'products.product.view_details' | t -}}"
-      >
-        <span class="btn__text flex">
-          {% if button_type == 'icon' %}
-            {% render 'icon-caret-right', size: 'extra-small' %}
-          {% else %}
-            {{- 'products.product.shop' | t -}}
-          {% endif %}
-        </span>
-      </a>
+      
+{% assign product_form_id = 'quick-add-' | append: section.id | append: product.id %}
+      {%- form 'product',
+        product,
+        id: product_form_id,
+        class: 'button-add-cart-custom',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form',
+        is: 'product-form'
+      -%}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ product.selected_or_first_available_variant.id }}"
+          class="product-variant-id"
+          {% if button_disabled %}disabled{% endif %}
+        >
+        <button
+          id="{{ product_form_id }}-submit"
+          type="submit"
+          name="add"
+          {% if button_disabled %}disabled{% endif %}
+          aria-label="{{ button_text }}"
+          class="product-card__atc product-card__action-button btn {{ settings.pcard_button_style }}"
+        >
+          <div class="btn__text flex gap-1 items-center">
+            <span class="product-card__atc-text product-card__action-text">
+              Shop
+            </span>
+          </div>
+          {% render 'loading-spinner' %}
+        </button>
+      {%- endform -%}
+      
     </div>
   </div>
 </div>

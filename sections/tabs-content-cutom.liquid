@@ -267,7 +267,7 @@
                     <div class="page__content rte text-subtext">
                       {% if entry_metaobjects %}
                         {%- assign field_index = forloop.index0 | plus: 1 -%}
-                        {%- assign field_name = 'product_detail_rich_text_' | append: field_index -%}
+                        {%- assign field_name = 'product_detail_html_' | append: field_index -%}
 
                         {%- assign content = entry_metaobjects[field_name] -%}
 

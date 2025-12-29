@@ -1,0 +1,30 @@
+{{ 'collection-dropdown-new.css' | asset_url | stylesheet_tag }}
+<div class="custom-dropdown-header dropdown-mobile-custom">
+  <div class="dropdown-btn-header dropdown-mobile"><img src="https://cdn.shopify.com/s/files/1/0706/1536/7829/files/Mask_group_43.png?v=1744713255" class="sg-flag"> <span>MY</span> {% render 'icon-caret' %}</div>
+  <ul class="dropdown-list-header mobile-list-header">
+    
+   <li class="dropdown-item-header"><a href="https://gardenofwellness.com.sg/"><img src="https://cdn.shopify.com/s/files/1/0706/1536/7829/files/Mask_group_44.png?v=1744713255" class="sg-flag"> SG</a></li>
+    <li class="dropdown-item-header"><a href="https://gardenofwellness.com.my"><img src="https://cdn.shopify.com/s/files/1/0706/1536/7829/files/Mask_group_43.png?v=1744713255" class="sg-flag"> MY </a></li>
+     <li class="dropdown-item-header"><a href="https://gardenofwellnessshop.com.au"><img src="https://cdn.shopify.com/s/files/1/0706/1536/7829/files/Group_1_1.png?v=1744713255" class="sg-flag"> AU</a></li>
+      
+  </ul>
+</div>
+
+<script>
+  // Get the dropdown button and the dropdown list
+  const dropdownBtnsm = document.querySelector('.dropdown-mobile');
+  const dropdownListsm = document.querySelector('.mobile-list-header');
+  const dropdownsm = document.querySelector('.dropdown-mobile-custom');
+
+  // Toggle the dropdown visibility on click
+  dropdownBtnsm.addEventListener('click', function() {
+    dropdownsm.classList.toggle('active');
+  });
+
+  // Close the dropdown if clicked outside
+  document.addEventListener('click', function(event) {
+    if (!dropdownsm.contains(event.target)) {
+      dropdownsm.classList.remove('active');
+    }
+  });
+</script>

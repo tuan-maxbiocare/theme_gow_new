@@ -1,4 +1,9 @@
+
+{% if template == 'index' %}
+
+{% else %}
 {{ 'section-featured-collection.css' | asset_url | stylesheet_tag }}
+{% endif %}
 
 {%- liquid
   assign button_style = section.settings.button_style
@@ -54,7 +59,7 @@ calc(100vw / {{ columns_desktop }})
   divider_width: section.settings.divider_width
 %}
 <div
-  class="section section-{{ section.id }} featured-collection section--padding color-{{ section.settings.color_scheme }}"
+  class="section section-{{ section.id }} featured-collection section--padding color-{{ section.settings.color_scheme }} lazy-section"
   data-id="{{ section.id }}"
 >
   <div class="section__container page-width page-width--{{ section.settings.container }}">
@@ -225,7 +230,7 @@ calc(100vw / {{ columns_desktop }})
               <div class="featured-collection__items products-list f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_slider %} swiper-wrapper{% endif %}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
                 {% if show_banner %}
                   <div class="f-column{% if enable_slider %} swiper-slide{% endif %}">
-                    {% render 'card-image',
+                    {% render 'card-image-custom',
                       color_scheme: block.settings.color_scheme,
                       content_spacing: 'extra-small',
                       link: block.settings.card_link,
@@ -262,8 +267,7 @@ calc(100vw / {{ columns_desktop }})
                         image_sizes: image_sizes,
                         image_ratio: section.settings.pcard_image_ratio,
                         section_index: section.index,
-                        index: forloop.index,
-                        use_highest_discount_variant: section.settings.use_highest_discount_variant
+                        index: forloop.index
                       -%}
                     </div>
                   {%- else -%}
@@ -314,8 +318,12 @@ calc(100vw / {{ columns_desktop }})
     </div>
   </div>
 </div>
+{% if template == 'index' %}
+
+{% else %}
 <script src="{{ 'featured-collection.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'product-tabs.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 {% schema %}
 {
   "name": "t:sections.featured-collection.name",
@@ -787,13 +795,6 @@ calc(100vw / {{ columns_desktop }})
     {
       "type": "header",
       "content": "t:general.header__product_cards.content"
-    },
-    {
-      "type": "checkbox",
-      "id": "use_highest_discount_variant",
-      "label": "Use variant with highest discount",
-      "info": "Show variant with highest discount instead of first available variant",
-      "default": false
     },
     {
       "type": "select",

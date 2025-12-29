@@ -75,7 +75,7 @@
         {%- endif -%}
         <div class="section__content">
           <shop-the-feed
-            class="shop-the-feed__inner block relative{% if enable_slider %} swiper swiper-equal-height {% comment %} tạm bỏ cái này tránh thừa hiển thị videooverflow-visible {% endcomment %} f-grid--gap-{{ section.settings.column_gap }}{% endif %}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ columns_mobile }}-cols{% endif %}"
+            class="shop-the-feed__inner block relative{% if enable_slider %} swiper swiper-equal-height overflow-visible f-grid--gap-{{ section.settings.column_gap }}{% endif %}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ columns_mobile }}-cols{% endif %}"
             data-section-id="{{ section.id }}"
             {% if section.settings.enable_video_autoplay %}
               data-autoplay

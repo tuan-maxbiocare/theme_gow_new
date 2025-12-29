@@ -1761,19 +1761,16 @@ class SelectElement extends HTMLElement {
     const style = window.getComputedStyle(this);
     const value = this.select.options[this.select.selectedIndex].text;
 
-    const text = document.createElement('span');
-    text.style.fontFamily = style.fontFamily;
-    text.style.fontSize = style.fontSize;
-    text.style.fontWeight = style.fontWeight;
-    text.style.visibility = 'hidden';
-    text.style.position = 'absolute';
-    text.innerHTML = value;
-
-    document.body.appendChild(text);
-    const width = text.clientWidth;
+    // Use Canvas API for measuring text width without DOM manipulation
+    if (!this.canvas) {
+      this.canvas = document.createElement('canvas');
+    }
+    const context = this.canvas.getContext('2d');
+    context.font = `${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+    const metrics = context.measureText(value);
+    const width = Math.ceil(metrics.width);
 
     this.style.setProperty('--width', `${width}px`);
-    text.remove();
   }
 
   handleSelectChange() {
@@ -2859,12 +2856,14 @@ class ScrollProgressBar extends HTMLElement {
     const scrolled = factor * this.targetScrollLeft;
     const maxScroll = this.totalWidth - viewportWidth;
 
-    const scrollProgress = (scrolled / maxScroll) * (100 - this.initialProgress);
-    const totalProgress = this.initialProgress + scrollProgress;
+    requestAnimationFrame(() => {
+      const scrollProgress = (scrolled / maxScroll) * (100 - this.initialProgress);
+      const totalProgress = this.initialProgress + scrollProgress;
 
-    const clampedProgress = Math.min(100, Math.max(this.initialProgress, totalProgress));
+      const clampedProgress = Math.min(100, Math.max(this.initialProgress, totalProgress));
 
-    this.progressBar.style.width = `${clampedProgress}%`;
+      this.progressBar.style.width = `${clampedProgress}%`;
+    });
   }
 }
 
@@ -2924,8 +2923,11 @@ class ScrollPagination extends ScrollProgressBar {
   }
 
   updateProgress() {
-    const current = Math.round(this.targetScrollLeft / this.columnWidth) + 1;
-    this.querySelector('.scroll-pagination__current').innerText = current;
+    const scrollLeft = this.targetScrollLeft;
+    requestAnimationFrame(() => {
+      const current = Math.round(scrollLeft / this.columnWidth) + 1;
+      this.querySelector('.scroll-pagination__current').innerText = current;
+    });
   }
 }
 
@@ -2975,20 +2977,43 @@ class MasonryLayout extends HTMLElement {
 
   calculatePositioning() {
     this.disable();
-    if (this.columnNumber <= 1) return;
-    Array.from(this.gridItems)
-      .slice(this.columnNumber)
-      .forEach((col, i) => {
-        const prevItem = this.gridItems[i].children[0];
-        const currentItem = col.children[0];
+    const columnNumber = parseInt(this.columnNumber);
+    if (columnNumber <= 1) return;
 
-        const prevItemPos = prevItem.getBoundingClientRect().bottom;
-        const currentItemPos = currentItem.getBoundingClientRect().top;
+    const gridItems = Array.from(this.gridItems);
+    const rowGap = this.rowGap;
+    
+    // Use an array to keep track of the current bottom position of each column
+    // Initialize with the bottom position of the first row of items
+    const columnBottoms = [];
+    
+    // First, read all necessary initial positions to avoid thrashing
+    const itemRects = gridItems.map(item => {
+      const child = item.children[0];
+      return child ? child.getBoundingClientRect() : null;
+    });
 
-        const offsetTop = prevItemPos - currentItemPos + this.rowGap;
+    gridItems.forEach((col, i) => {
+      const rect = itemRects[i];
+      if (!rect) return;
 
+      if (i < columnNumber) {
+        // First row items
+        columnBottoms[i] = rect.bottom;
+      } else {
+        // Subsequent items
+        const columnIndex = i % columnNumber;
+        const prevBottom = columnBottoms[columnIndex];
+        const currentTop = rect.top;
+
+        const offsetTop = prevBottom - currentTop + rowGap;
         col.style.setProperty('--offset-top', `${offsetTop}px`);
-      });
+        
+        // Update the bottom position for this column for the next item in it
+        // We add the offsetTop to the original bottom to get the new bottom
+        columnBottoms[columnIndex] = rect.bottom + offsetTop;
+      }
+    });
   }
 }
 customElements.define('masonry-layout', MasonryLayout);
@@ -3067,3 +3092,170 @@ class HighlightText extends HTMLElement {
   }
 }
 customElements.define('highlight-text', HighlightText, { extends: 'em' });
+
+
+(() => {
+  const FREE_GIFT_VARIANT_ID = 46549796225173; // 🔁 your gift variant ID
+  const MIN_CART_TOTAL = 50 * 100; // $50 in cents
+
+  let syncing = false;
+  let internalUpdate = false;
+
+  /* -----------------------------
+    Helpers
+  ----------------------------- */
+
+  async function getCart() {
+    return fetch('/cart.js').then(r => r.json());
+  }
+
+  /* -----------------------------
+    Hyper / Fox UI Safe Update
+  ----------------------------- */
+
+  async function updateHyperUI(cart) {
+    if (!cart) cart = await getCart();
+    internalUpdate = true;
+
+    // Prevent Hyper crash
+    if (!cart.sections) cart.sections = {};
+
+    const drawer = document.querySelector('cart-drawer');
+    if (drawer) cart.sections['cart-drawer'] = drawer.innerHTML;
+
+    // Header / cart badge update
+    if (window.FoxTheme?.pubsub) {
+      FoxTheme.pubsub.publish(
+        FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
+        { cart }
+      );
+    }
+
+    // ❌ DO NOT FORCE OPEN DRAWER
+    document.dispatchEvent(
+      new CustomEvent('cart:refresh', { bubbles: true })
+    );
+
+    setTimeout(() => { internalUpdate = false; }, 300);
+  }
+
+  /* -----------------------------
+    Cart Actions
+  ----------------------------- */
+
+  async function addGift() {
+    await fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: FREE_GIFT_VARIANT_ID,
+        quantity: 1,
+        properties: { _free_gift: 'true' }
+      })
+    });
+
+    await updateHyperUI();
+  }
+
+  async function changeGift(key, qty) {
+    await fetch('/cart/change.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: key, quantity: qty })
+    });
+
+    await updateHyperUI();
+  }
+
+  /* -----------------------------
+    Main Sync Logic
+  ----------------------------- */
+
+  async function syncGift() {
+    if (syncing || internalUpdate) return;
+    syncing = true;
+
+    const cart = await getCart();
+
+    const giftItem = cart.items.find(
+      i => i.variant_id === FREE_GIFT_VARIANT_ID || i.properties?._free_gift
+    );
+
+    const totalWithoutGift = cart.items.reduce((sum, i) => {
+      return i.variant_id !== FREE_GIFT_VARIANT_ID
+        ? sum + i.final_line_price
+        : sum;
+    }, 0);
+
+    if (totalWithoutGift >= MIN_CART_TOTAL) {
+      if (!giftItem) {
+        await addGift();
+      } else if (giftItem.quantity > 1) {
+        await changeGift(giftItem.key, 1);
+      } else {
+        await updateHyperUI(cart);
+      }
+    } else {
+      if (giftItem) {
+        await changeGift(giftItem.key, 0);
+      } else {
+        await updateHyperUI(cart);
+      }
+    }
+
+    syncing = false;
+  }
+
+  /* -----------------------------
+    Triggers
+  ----------------------------- */
+
+  // Add to cart (AJAX)
+  document.addEventListener('product-ajax:added', (event) => {
+    setTimeout(() => {
+      syncGift();
+      openCartDrawer(); // Open the cart drawer after adding to cart
+    }, 250);
+  });
+
+  // Manually open cart drawer after AJAX add
+  function openCartDrawer() {
+    const drawer = document.querySelector('cart-drawer');
+    if (drawer && !drawer.open) {
+      drawer.show(); // Force the drawer to open
+    }
+  }
+
+  // Cart refresh (drawer / page)
+  document.addEventListener('cart:refresh', () => {
+    if (!internalUpdate) setTimeout(syncGift, 250);
+  });
+
+  // Quantity change / remove
+  if (window.FoxTheme?.pubsub) {
+    FoxTheme.pubsub.subscribe(
+      FoxTheme.pubsub.PUB_SUB_EVENTS.cartUpdate,
+      () => {
+        if (!internalUpdate) setTimeout(syncGift, 250);
+      }
+    );
+  }
+
+  // Page load (NO drawer open)
+  document.addEventListener('DOMContentLoaded', () =>
+    setTimeout(syncGift, 500)
+  );
+
+  /* -----------------------------
+    Drawer Close Button Fix
+  ----------------------------- */
+
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.drawer__close-btn');
+    if (!btn) return;
+
+    const drawer = document.querySelector('cart-drawer');
+    if (drawer?.open) drawer.hide();
+  });
+
+})();

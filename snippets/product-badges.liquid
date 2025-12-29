@@ -65,7 +65,7 @@
           if compare_at_price > price
             assign amount = compare_at_price | minus: price | times: 100 | divided_by: compare_at_price | round
           endif
-          assign sale_badge = 'save ' | append: amount | append: ' %'
+          assign sale_badge = 'Save ' | append: amount | append: ' %'
         when 'fixed_amount'
           if compare_at_price > price
             assign amount = compare_at_price | minus: price | money

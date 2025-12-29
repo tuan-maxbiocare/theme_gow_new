@@ -35,13 +35,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 0.6em;
   }
-  @media (min-width: 768px) and (max-width: 1783px) {
-    .section__inner {
-        grid-template-columns: 1fr;
-    }
-  }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 767.98px) {
     .section__inner {
         display: block;
         padding: 0 16px;
@@ -78,9 +73,9 @@
       assign background_default_alt = background_default.alt | default: shop.name | escape
 
       assign loading = 'lazy'
-      assign fetchpriority = 'higt'
-      if forloop.index == 1 and section.index < 2
-        assign loading = 'lazy'
+      assign fetchpriority = 'low'
+      if forloop.index == 1 and section.index < 3
+        assign loading = 'eager'
         assign fetchpriority = 'high'
       endif
     -%}
@@ -232,7 +227,7 @@
   <div class="section__inner two-column-layout">
     <!-- Khối bên trái: slide -->
     <div class="section__left">
-      <div
+      <multicolumn-slider
         class="multicolumn-slider f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}"
 
         data-id="{{ section.id }}"
@@ -267,7 +262,7 @@
             {%- endif -%}
           </div>
         </div>
-      </div>
+      </multicolumn-slider>
     </div>
 
     <!-- Khối bên phải: banner card -->

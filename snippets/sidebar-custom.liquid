@@ -16,8 +16,137 @@
 <menu-sidebar
   class="block menu-sidebar relative w-full mega-menu__item color-{{ block-sidebar-custom.settings.color_scheme }}"
 >
+  <style>
+  .mega-menu__inner-custom_health {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: {{ block.settings.percent-menu-left }}% calc(100% - {{ block.settings.percent-menu-left }}%);
+  }
+
+  .mega-menu__col-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mega-menu__section {
+    padding-bottom: 20px;
+    width: 90%;
+  }
+
+  /* .mega-menu__section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  } */
+
+  .mega-menu__title {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .mega-menu__tags {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .mega-menu__tag {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #2a3d45;
+    background-color: #f5f7fa;
+    border: 1px solid #e0e6eb;
+    border-radius: 999px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+  }
+
+  .mega-menu__tag:hover {
+    background-color: black;
+    color: white;
+    border-color: black;
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.2);
+  }
+
+
+  .mega-menu__columns {
+    display: flex;
+    gap: 80px;
+  }
+
+  .mega-menu__col {
+    list-style: none;
+    flex: 1;
+  }
+
+  .mega-menu__col li+li {
+    margin-top: 18px;
+  }
+
+  .mega-menu__col a {
+    position: relative;
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+  }
+
+  .mega-menu__col a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+  }
+
+  .mega-menu__col a:hover::after {
+    width: 100%;
+  }
+
+  .mega-menu__col a:hover {
+    color: black;
+  }
+
+  .mega-menu__col-banner {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .height_banner_health {
+    {% if block.settings.height-banner-menu %}
+      height: {{ block.settings.height-banner-menu }}px;
+    {% endif %}
+  }
+
+  .promo-banner-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .promo-banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+  }
+  .mega-menu__inner-custom_health .product-card__btn {
+    overflow: clip;
+  }
+</style>
   {%- for childlink in link.links -%}
-    <details class="menu-sidebar__item" open>
+    <details class="menu-sidebar__item" open {% if childlink.title == 'Health Supplement'  %} style="display:none;" {% endif %}>
       <summary
         class="menu-sidebar__toggle blocks-radius-sm flex items-center justify-end gap-1{% if forloop.first %} is-visible{% endif %}"
       >
@@ -49,8 +178,7 @@
       {%- if block_type -%}
         <div class="menu-sidebar__content no-empty">
           {%- case block_type -%}
-            {%- when 'health_supplement' -%}
-              {% render 'menu-health-supplement-custom', block: matched_block %}
+           
             {%- when 'food_nutrition' -%}
               {% render 'menu-food-nutrition-custom', block: matched_block %}
             {%- when 'baby_custom' -%}

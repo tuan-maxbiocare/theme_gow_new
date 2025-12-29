@@ -1463,30 +1463,6 @@
         "content": "t:settings_schema.product_badges.new_badge.content"
       },
       {
-        "type": "select",
-        "id": "tag_badges_position",
-        "label": "Tag Position",
-        "options": [
-          {
-            "value": "top-left",
-            "label": "Top Left"
-          },
-          {
-            "value": "top-right",
-            "label": "Top Right"
-          },
-          {
-            "value": "bottom-left",
-            "label": "Bottom Left"
-          },
-          {
-            "value": "bottom-right",
-            "label": "Bottom Right"
-          }
-        ],
-        "default": "bottom-right"
-      },
-      {
         "type": "textarea",
         "id": "product_new_tags",
         "label": "t:settings_schema.product_badges.tags.label",

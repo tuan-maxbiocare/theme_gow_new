@@ -79,8 +79,8 @@
         "apply_error_message": "The discount code cannot be applied to your cart."
       },
       "free_shipping": {
-        "remaining_html": "Spend {{ remaining_amount }} more to reach free shipping!",
-        "congratulations_html": "You are eligible for free shipping."
+        "remaining_html": "Yay! FREE Shipping unlocked. You're only {{ remaining_amount }} away from getting a FREE Bubbly Wash! ",
+        "congratulations_html": "Yay! You've unlocked your FREE Bubbly Wash – shipping’s on us too!"
       },
       "shipping_calculator": {
         "title": "Estimate Shipping",

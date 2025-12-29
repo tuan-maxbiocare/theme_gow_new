@@ -1,44 +1,12 @@
 {%- liquid
-  # Khởi tạo biến variant rỗng
   assign variant = ''
-  
-  # Kiểm tra nếu setting use_highest_discount_variant = true
-  if use_highest_discount_variant
-    # Tìm variant có % giảm giá cao nhất
-    assign highest_discount = 0
-    for v in product.variants
-      if v.available and v.compare_at_price > 0 and v.price > 0
-        # Tính % giảm giá: (compare_at_price - price) / compare_at_price * 100
-        assign discount_percent = v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price
-        
-        # So sánh và lưu variant có % giảm cao nhất
-        if discount_percent > highest_discount
-          assign highest_discount = discount_percent
-          assign variant = v
-        endif
-      endif
-    endfor
-    
-    # Nếu không tìm thấy variant có giảm giá, lấy variant available đầu tiên
-    if variant == ''
-      for v in product.variants
-        if v.available and v.price > 0
-          assign variant = v
-          break
-        endif
-      endfor
+  for v in product.variants
+    if v.available and v.price > 0
+      assign variant = v
+      break
     endif
-  else
-    # Logic cũ: nếu setting = false, lấy variant available đầu tiên
-    for v in product.variants
-      if v.available and v.price > 0
-        assign variant = v
-        break
-      endif
-    endfor
-  endif
+  endfor
 
-  # Fallback: nếu vẫn không có variant, dùng variant mặc định
   if variant == ''
     assign variant = product.selected_or_first_available_variant
   endif
@@ -275,8 +243,7 @@
                     widths: first_image_widths,
                     sizes: image_sizes,
                     is: 'image-lazy',
-                    style: image_style,
-                    decoding: 'async'
+                    style: image_style
                 }}
               </div>
               {%- unless second_image == blank -%}
@@ -293,8 +260,7 @@
                       class: 'motion-reduce',
                       widths: second_image_widths,
                       sizes: image_sizes,
-                      is: 'image-lazy',
-                      decoding: 'async'
+                      is: 'image-lazy'
                   }}
                 </div>
               {%- endunless -%}
@@ -317,7 +283,7 @@
           {%- endif -%}
         </motion-element>
       </a>
-      {%- render 'pcard-badges', product: product, selected_variant: variant -%}
+      {%- render 'pcard-badges', product: product -%}
       {%- render 'pcard-flash-sale', product: product -%}
       {%- if enable_quick_view -%}
         <button
@@ -387,15 +353,13 @@
         data-product-type="{{product.type}}"
         data-url="{{ product.url }}"
         onclick="location=this.dataset.url+'#go-to-product-page-review'"
-        loading="lazy"
-        data-lazy-load="true"
       ></div>
       {%- if show_price -%}
         {% render 'price',
           product: product,
           use_variant: true,
-          alignment: settings.pcard_content_alignment,
-          selected_variant: variant,
+          variant: variant,
+          alignment: settings.pcard_content_alignment
         %}
       {%- endif -%}
       {%- if show_color_swatches -%}
@@ -429,3 +393,9 @@
     {% render 'quick-view-modal', modal_id: quick_view_modal_id, product: product %}
   {%- endif -%}
 </div>
+
+<style>
+ span.reversed-link__text.product-card__title.product-card__title-menu-custom {
+    max-height: 4.2rem;
+}
+</style>

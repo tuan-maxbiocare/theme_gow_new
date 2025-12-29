@@ -99,48 +99,4 @@
       </span>
     </li>
   {%- endif -%}
-  {%- if heading_4 != blank -%}
-    <li class="icon-with-text__item">
-      {%- if image_4 != blank -%}
-        <img
-          src="{{ image_4 | image_url }}"
-          {% if image_4.alt != blank %}
-            alt="{{ image_4.alt | escape }}"
-          {% else %}
-            role="presentation"
-          {% endif %}
-          height="auto"
-          width="auto"
-          loading="lazy"
-        >
-      {%- else -%}
-        {%- render 'icons', icon: icon_4 -%}
-      {%- endif -%}
-      <span class="inline-richtext {{ heading_css_class }}">
-        {{- heading_4 -}}
-      </span>
-    </li>
-  {%- endif -%}
-  {%- if heading_5 != blank -%}
-    <li class="icon-with-text__item">
-      {%- if image_5 != blank -%}
-        <img
-          src="{{ image_5 | image_url }}"
-          {% if image_5.alt != blank %}
-            alt="{{ image_5.alt | escape }}"
-          {% else %}
-            role="presentation"
-          {% endif %}
-          height="auto"
-          width="auto"
-          loading="lazy"
-        >
-      {%- else -%}
-        {%- render 'icons', icon: icon_5 -%}
-      {%- endif -%}
-      <span class="inline-richtext {{ heading_css_class }}">
-        {{- heading_5 -}}
-      </span>
-    </li>
-  {%- endif -%}
 </ul>

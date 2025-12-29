@@ -7,21 +7,16 @@ if (!customElements.get('multicolumn-slider')) {
       }
       connectedCallback() {
         this.swiper = this.querySelector('.swiper');
+        if (!this.swiper) return;
         this.sliderControls = this.querySelector('.swiper-controls');
         this.sliderPagination = this.querySelector('.swiper-pagination');
-
-        if (!this.swiper) {
-          console.warn('Swiper element not found');
-          return;
-        }
-
         this.enableSlider = this.swiper.dataset.enableSlider === 'true';
-        this.selectedIndex = this.selectedIndex;
-        if (!this.enableSlider) return;
 
+        this.selectedIndex = this.selectedIndex;
+
+        if (!this.enableSlider) return;
         this.initSlider();
       }
-
 
       static get observedAttributes() {
         return ['selected-index'];
@@ -45,8 +40,8 @@ if (!customElements.get('multicolumn-slider')) {
             crossFade: true,
           },
           navigation: {
-            nextEl: this.sliderControls.querySelector('.swiper-button-next'),
-            prevEl: this.sliderControls.querySelector('.swiper-button-prev'),
+            nextEl: this.sliderControls ? this.sliderControls.querySelector('.swiper-button-next') : null,
+            prevEl: this.sliderControls ? this.sliderControls.querySelector('.swiper-button-prev') : null,
           },
           pagination: {
             el: this.sliderPagination,

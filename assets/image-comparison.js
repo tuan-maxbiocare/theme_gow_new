@@ -39,9 +39,11 @@ if (!customElements.get('image-comparison')) {
       onHover(e) {
         if (this.classList.contains('is-dragging')) return;
         
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const width = rect.width;
+        if (!this.rect) {
+          this.rect = this.getBoundingClientRect();
+        }
+        const x = e.clientX - this.rect.left;
+        const width = this.rect.width;
         const percent = (x * 100) / width;
 
         // Chỉ cập nhật khi mouse hover
@@ -60,6 +62,7 @@ if (!customElements.get('image-comparison')) {
 
       // Thêm method mới để reset position
       resetPosition() {
+        this.rect = null; // Clear cached rect
         if (!this.classList.contains('is-dragging')) {
           this.style.setProperty('--percent', '50%');
         }
@@ -69,6 +72,7 @@ if (!customElements.get('image-comparison')) {
         e.preventDefault();
         document.body.classList.add('body-no-scrollbar');
         this.classList.add('is-dragging');
+        this.rect = this.getBoundingClientRect(); // Cache rect on start drag
 
         if (e.type === 'mousedown') {
           document.addEventListener('mousemove', this.drag);
@@ -82,6 +86,7 @@ if (!customElements.get('image-comparison')) {
       onStopDrag() {
         document.body.classList.remove('body-no-scrollbar');
         this.classList.remove('is-dragging');
+        this.rect = null; // Clear cached rect
 
         document.removeEventListener('mousemove', this.drag);
         document.removeEventListener('mouseup', this.stopDrag);
@@ -92,17 +97,20 @@ if (!customElements.get('image-comparison')) {
 
       onDrag(e) {
         const event = (e.touches && e.touches[0]) || e;
+        if (!this.rect) {
+          this.rect = this.getBoundingClientRect();
+        }
         let x, distance;
         if (this.isHorizontal) {
-          x = event.pageX - this.offsetLeft;
-          distance = this.clientWidth;
+          x = event.pageX - (this.rect.left + window.scrollX);
+          distance = this.rect.width;
 
           if (FoxTheme.config.isRTL) {
             x = distance - x; // Reverse the x position for RTL
           }
         } else {
-          x = event.pageY - this.offsetTop;
-          distance = this.clientHeight;
+          x = event.pageY - (this.rect.top + window.scrollY);
+          distance = this.rect.height;
         }
 
         const max = distance - this.offset;

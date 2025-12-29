@@ -1,0 +1,30 @@
+{{ 'collection-dropdown-new.css' | asset_url | stylesheet_tag }}
+<div class="custom-dropdown-header btn-desktop-header">
+  <div class="dropdown-btn-header btn-header-desktop"><img src="https://cdn.shopify.com/s/files/1/0706/1536/7829/files/Mask_group_44.png?v=1744713255" class="sg-flag"> <span>SG</span> {% render 'icon-caret' %}</div>
+  <ul class="dropdown-list-header dropdown-list-desktop">
+    
+    <li class="dropdown-item-header"><a href="https://gardenofwellness.com.sg/"><img src="https://cdn.shopify.com/s/files/1/0706/1536/7829/files/Mask_group_44.png?v=1744713255" class="sg-flag"> SG</a></li>
+    <li class="dropdown-item-header"><a href="https://gardenofwellness.com.my"><img src="https://cdn.shopify.com/s/files/1/0706/1536/7829/files/Mask_group_43.png?v=1744713255" class="sg-flag"> MY </a></li>
+     <li class="dropdown-item-header"><a href="https://gardenofwellnessshop.com.au"><img src="https://cdn.shopify.com/s/files/1/0706/1536/7829/files/Group_1_1.png?v=1744713255" class="sg-flag"> AU</a></li>
+    
+  </ul>
+</div>
+
+<script>
+  // Get the dropdown button and the dropdown list
+  const dropdownBtns = document.querySelector('.btn-header-desktop');
+  const dropdownLists = document.querySelector('.dropdown-list-desktop');
+  const dropdowns = document.querySelector('.btn-desktop-header');
+
+  // Toggle the dropdown visibility on click
+  dropdownBtns.addEventListener('click', function() {
+    dropdowns.classList.toggle('active');
+  });
+
+  // Close the dropdown if clicked outside
+  document.addEventListener('click', function(event) {
+    if (!dropdowns.contains(event.target)) {
+      dropdowns.classList.remove('active');
+    }
+  });
+</script>

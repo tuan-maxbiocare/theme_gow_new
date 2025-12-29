@@ -133,7 +133,7 @@
           >
             <div
               class="media-wrapper{% if featured_media == blank %} bg-none{% endif %}"
-              style="--aspect-ratio: {{ pcard_thumbnail_ratio }}; background-color: #fff;"
+              style="--aspect-ratio: {{ pcard_thumbnail_ratio }};"
             >
               {%- if featured_media != blank -%}
                 {% assign alt = featured_media.alt | default: product.title | escape %}

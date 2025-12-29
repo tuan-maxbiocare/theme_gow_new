@@ -48,7 +48,7 @@
       --f-grid-columns: 1;
     }
   }
-  .predictive-search-custom .f-price-item--sale-custom {
+  .predictive-search-custom .f-price-item--sale-custom { 
     font-size: 18px;
   }
 {% endstyle %}
@@ -258,18 +258,16 @@
                         class="predictive-search-result__list flex flex-col gap-y-2 text-subtext"
                       >
                         {%- for collection in predictive_search.resources.collections -%}
-                          {% unless collection.handle == 'gift-6999' %}
-                            <li
-                              id="predictive-search-option-collection-{{ forloop.index }}"
-                              class="predictive-search__list-item flex"
-                              role="option"
-                              aria-selected="false"
-                            >
-                              <a href="{{ collection.url }}" class="reversed-link">
-                                {{ collection.title | escape }}
-                              </a>
-                            </li>
-                          {% endunless %}
+                          <li
+                            id="predictive-search-option-collection-{{ forloop.index }}"
+                            class="predictive-search__list-item flex"
+                            role="option"
+                            aria-selected="false"
+                          >
+                            <a href="{{ collection.url }}" class="reversed-link">
+                              {{ collection.title | escape }}
+                            </a>
+                          </li>
                         {%- endfor -%}
                       </ul>
                     </div>
@@ -327,16 +325,7 @@
                           class="f-grid f-grid-column-search-custom f-grid--gap-{{ settings.search_products_column_gap }} f-grid--row-gap-{{ settings.search_products_row_gap }} swipe-mobile__inner"
                         >
                           {%- for product in predictive_search.resources.products limit: 3 -%}
-                            {% assign has_free_variant = false %}
-                            {% comment %} {% for v in product.variants %}
-                              {% if v.price == 0 %}
-                                {% assign has_free_variant = true %}
-                              {% endif %}
-                            {% endfor %} {% endcomment %}
-                            {% unless has_free_variant
-                              or product.vendor == 'Chemist Warehouse'
-                              or product.title contains 'CW -'
-                            %}
+                            {% unless product.vendor == 'Chemist Warehouse' or product.title contains 'CW -' %}
                               {% render 'card-product-placeholder-for-related-custom',
                                 product: product,
                                 image_ratio: section.settings.pcard_image_ratio,

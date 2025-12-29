@@ -1,34 +1,37 @@
-<!-- Defer Klaviyo for better performance - Load after 3 seconds -->
+<!-- Google tag (gtag.js) high-performance optimization -->
 <script>
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      var klaviyoScript = document.createElement('script');
-      klaviyoScript.async = true;
-      klaviyoScript.src = 'https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=TTMw4F';
-      document.head.appendChild(klaviyoScript);
-    }, 3000);
-  });
-</script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!-- Defer Clarity Analytics - Load after 4 seconds or on scroll -->
-<script>
   (function() {
-    var clarityLoaded = false;
-    function loadClarity() {
-      if (clarityLoaded) return;
-      clarityLoaded = true;
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "tnwn5025c9");
+    var gtmLoaded = false;
+    function loadGTM(e) {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      
+      // Cleanup event listeners
+      ['scroll', 'mousemove', 'touchstart'].forEach(function(evt) {
+        window.removeEventListener(evt, loadGTM);
+      });
+
+      var script = document.createElement('script');
+      script.src = "https://www.googletagmanager.com/gtag/js?id=GT-TQKZ8HLF";
+      script.async = true;
+      document.head.appendChild(script);
+      gtag('config', 'GT-TQKZ8HLF');
     }
 
-    window.addEventListener('load', function() {
-      setTimeout(loadClarity, 4000);
+    // Load on interaction
+    ['scroll', 'mousemove', 'touchstart'].forEach(function(evt) {
+      window.addEventListener(evt, loadGTM, { once: true, passive: true });
     });
 
-    // Also load on first scroll
-    window.addEventListener('scroll', loadClarity, { once: true, passive: true });
+    // Lazy fallback
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(function() { setTimeout(loadGTM, 3000); });
+    } else {
+      setTimeout(loadGTM, 4000);
+    }
   })();
 </script>

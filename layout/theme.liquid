@@ -21,7 +21,7 @@
   {% endif %}
 >
   <head>
-    
+    {% render 'pixel-custom' %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -50,6 +50,7 @@
       {%- endif -%}
     </title> {% endcomment %}
     {% comment %} mới {% endcomment %}
+     {% comment %}
     <title>
       {{- page_title -}}
       {%- if current_tags -%}
@@ -63,11 +64,45 @@
         {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
       {%- endif -%}
     </title>
+{% endcomment %}
+{%- if template == 'index' -%}
+   <title> {{ shop.name }} - For Your Beauty, Health & Wellness </title>
 
+    {%- elsif template contains 'product' -%}
+  <title>
+    Shop {{ product.vendor }} {{ product.title }}
+  </title>
+
+{%- elsif template contains 'collection' -%}
+  <title>
+    Shop {{ collection.title }} at {{ shop.name }}
+  </title>
+
+{%- else -%}
+  <title>
+    {{ page_title }} - {{ shop.name }}
+  </title>
+{%- endif -%}
+
+
+{%- if template == 'index' -%}
+   <meta name="description" content="Your trusted Australian wellness store for natural health, beauty & family care products. Quality solutions for everyday wellbeing. Shop now.">
+
+    {%- elsif template contains 'product' -%}
+  <meta name="description" content="Shop {{ product.title }} at {{ shop.name }}. Trusted quality and available at the best price.">
+
+{%- elsif template contains 'collection' -%}
+  <meta name="description" content="Shop {{ collection.title }} at {{ shop.name }}: High-quality, evidence-based wellness solutions for every family member — shop now for the best price!">
+
+{%- else -%}
+  <meta name="description" content="Explore how {{ page_title }} supports your family's wellbeing. Explore trusted, evidence-based health products at {{ shop.name }}.">
+{%- endif -%}
+
+{% comment %}
     {% if page_description %}
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
-
+{% endcomment %}
     {%- liquid
       render 'meta-tags'
       render 'css-variables'
@@ -86,20 +121,77 @@
         echo 'rtl.css' | asset_url | stylesheet_tag: preload: true
       endif
     -%}
-
-    {{ content_for_header }}
-
-    {%- comment -%} Preload LCP image for homepage to improve performance {%- endcomment -%}
-    {%- if template.name == 'index' -%}
-      <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/garden-of-wellness-shop-xmas2025-homepage-banner-desktop-2200x1555.webp" media="(min-width: 768px)" fetchpriority="high">
-      <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/garden-of-wellness-shop-xmas2025-homepage-banner-mobile-1000x1505.webp" media="(max-width: 767px)" fetchpriority="high">
-    {%- endif -%}
-
-    {% render 'pixel-custom' %}
+<style>
+  @media only screen and (max-width:750px){
+  .product-card-title-card-with-product {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+  }
+}
+  .product-variant-options-sale-badge {
+ 
+  padding: 2px 4px;
+ 
+}
+.lazy-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px; /* Estimated height for lazy loaded sections */
+}
+</style>
+   
+ {%- if template == 'index' -%}
+  <!-- content_for_header disabled on homepage -->
+    <script>
+      var Shopify = Shopify || {};
+      Shopify.shop = "{{ shop.permanent_domain }}";
+      Shopify.locale = "{{ request.locale.iso_code }}";
+      Shopify.currency = {
+        active: "{{ cart.currency.iso_code }}",
+        rate: "{{ cart.currency.rate_to_default_currency }}"
+      };
+      Shopify.theme = {
+        name: "{{ theme.name }}",
+        id: {{ theme.id }},
+        role: "main"
+      };
+      Shopify.routes = {
+        root: "{{ routes.root_url }}"
+      };
+      Shopify.designMode = false;
+      Shopify.loadFeatures = function(features, callback) {
+        if (typeof callback === 'function') {
+          callback(null, Shopify.customerPrivacy);
+        }
+      };
+      Shopify.autoloadFeatures = function(features, callback) {
+        if (typeof callback === 'function') {
+          callback(null, Shopify.customerPrivacy);
+        }
+      };
+      Shopify.customerPrivacy = {
+        marketingAllowed: function() { return true; },
+        analyticsProcessingAllowed: function() { return true; },
+        preferencesProcessingAllowed: function() { return true; },
+        saleOfDataAllowed: function() { return true; },
+        firstPartyMarketingAllowed: function() { return true; },
+        thirdPartyMarketingAllowed: function() { return true; },
+        setTrackingConsent: function() {},
+        getTrackingConsent: function() { return "accepted"; },
+        shouldShowBanner: function() { return false; },
+        userCanBeTracked: function() { return true; }
+      };
+    </script>
+    
+{%- else -%}
+  {{ content_for_header }}
+{%- endif -%}
 
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
-
+<script data-src="{{ 'header.js' | asset_url }}" defer="defer" class="lazy-js"></script>
+<script data-src="{{ 'footer.js' | asset_url }}" defer="defer" class="lazy-js"></script>
     {%- if request.page_type contains 'customers/' -%}
       <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
     {%- endif -%}
@@ -119,7 +211,47 @@
     {% comment %} Custom metafield for head tag like GTag tracking {% endcomment %}
     {{ shop.metafields.foxtheme.code_head.value }}
     {% comment %} End custom metafield for head tag like GTag tracking {% endcomment %}
+
+    {% if template == 'index' %}
+
+      <!-- Featured Collection -->
+<!-- Featured Collection -->
+<link rel="preload" as="style" href="{{ 'home-page.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'home-page.css' | asset_url }}" media="print" onload="this.media='all'">
+<script data-src="{{ 'featured-collection.js' | asset_url }}" defer="defer" class="lazy-js"></script>
+<script data-src="{{ 'scrolling-banner.js' | asset_url }}" defer="defer" class="lazy-js"></script>
+{% endif %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll("script[data-src]").forEach(function(tag) {
+    tag.src = tag.getAttribute("data-src");
+    tag.removeAttribute("data-src");
+  });
+});
+</script>
+
+  <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+      window.addEventListener('DOMContentLoaded', function() {
+        var clarityLoaded = false;
+        function loadClarity() {
+          if (clarityLoaded) return;
+          clarityLoaded = true;
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "tqgireh4m7");
+        }
+        ['mouseover', 'mousemove', 'keydown', 'touchstart', 'scroll'].forEach(function(event) {
+          window.addEventListener(event, loadClarity, { once: true, passive: true });
+        });
+        setTimeout(loadClarity, 5000);
+      });
+    </script>
+    <!-- End Microsoft Clarity Tracking Code -->
   </head>
+
   <body
     class="{{ request.page_type }}-template {{ template.suffix }} blocks-corner--{{ settings.blocks_corner_radius }}{% if request.design_mode %} shopify-design-mode{% endif %}"
     data-initializing
@@ -168,5 +300,69 @@
     {%- if settings.enable_product_compare -%}
       <script src="{{ 'compare.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+  var klaviyoLoaded = false;
+  function loadKlaviyo() {
+    if (klaviyoLoaded) return;
+    klaviyoLoaded = true;
+    var s = document.createElement("script");
+    s.src = "https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=SUMfeq";
+    s.async = true;
+    document.body.appendChild(s);
+  }
+  // Load on user interaction or delay
+  window.addEventListener('scroll', loadKlaviyo, { once: true, passive: true });
+  window.addEventListener('mousemove', loadKlaviyo, { once: true, passive: true });
+  window.addEventListener('touchstart', loadKlaviyo, { once: true, passive: true });
+  setTimeout(loadKlaviyo, 4000); // Fallback load after 4 seconds
+});
+</script>
+<script type="text/plain" data-lazy-script>
+  if (typeof window.fbq === 'undefined') {
+    window.fbq = function() {};
+  }
+  window.fbq('init', '1273926720264895');
+  window.fbq('track', 'PageView');
+</script>
+
+<script>
+window.addEventListener("load", function () {
+  document.querySelectorAll("[data-lazy-script]").forEach(function(el) {
+    var s = document.createElement("script");
+    s.innerHTML = el.innerHTML;
+    document.body.appendChild(s);
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  var lazyHtmlSections = [].slice.call(document.querySelectorAll(".lazy-html"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyHtmlObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let container = entry.target;
+          let template = container.querySelector("template");
+          if (template) {
+            container.innerHTML = template.innerHTML;
+            // Trigger a resize event to help any JS sliders/layouts adjust
+            window.dispatchEvent(new Event('resize'));
+          }
+          container.classList.remove("lazy-html");
+          container.classList.add("lazy-html--loaded");
+          lazyHtmlObserver.unobserve(container);
+        }
+      });
+    }, { rootMargin: "0px 0px 400px 0px" }); // Load 400px before it enters viewport
+
+    lazyHtmlSections.forEach(function(section) {
+      lazyHtmlObserver.observe(section);
+    });
+  }
+});
+</script>
   </body>
 </html>
