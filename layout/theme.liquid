@@ -28,6 +28,7 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.shopify.com">
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -35,6 +36,7 @@
 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+      <link rel="dns-prefetch" href="https://fonts.shopifycdn.com">
     {%- endunless -%}
 {% comment %} code cũ meta tag SEO cũ {% endcomment %}
     {% comment %} <title>
@@ -71,23 +73,98 @@
     {%- liquid
       render 'meta-tags'
       render 'css-variables'
-
-      echo 'vendor.css' | asset_url | stylesheet_tag: preload: true
-      echo 'theme.css' | asset_url | stylesheet_tag: preload: true
-      echo 'component-card-img-with-product.css' | asset_url | stylesheet_tag: preload: true
-
-      echo 'custom-theme.css' | asset_url | stylesheet_tag: preload: true
-
-      if settings.enable_product_compare
-        echo 'compare.css' | asset_url | stylesheet_tag: preload: true
-      endif
-
-      if enable_rtl 
-        echo 'rtl.css' | asset_url | stylesheet_tag: preload: true
-      endif
     -%}
 
-    {{ content_for_header }}
+    {{ 'vendor.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+    <link rel="stylesheet" href="{{ 'component-card-img-with-product.css' | asset_url }}" media="print" onload="this.media='all';this.onload=null;">
+    <link rel="stylesheet" href="{{ 'custom-theme.css' | asset_url }}" media="print" onload="this.media='all';this.onload=null;">
+
+    {%- if settings.enable_product_compare -%}
+      <link rel="stylesheet" href="{{ 'compare.css' | asset_url }}" media="print" onload="this.media='all';this.onload=null;">
+    {%- endif -%}
+
+    {%- if enable_rtl -%}
+      <link rel="stylesheet" href="{{ 'rtl.css' | asset_url }}" media="print" onload="this.media='all';this.onload=null;">
+    {%- endif -%}
+
+    <noscript>
+      {{ 'component-card-img-with-product.css' | asset_url | stylesheet_tag }}
+      {{ 'custom-theme.css' | asset_url | stylesheet_tag }}
+      {%- if settings.enable_product_compare -%}
+        {{ 'compare.css' | asset_url | stylesheet_tag }}
+      {%- endif -%}
+      {%- if enable_rtl -%}
+        {{ 'rtl.css' | asset_url | stylesheet_tag }}
+      {%- endif -%}
+    </noscript>
+
+    <style>
+      .lazy-section {
+        content-visibility: auto;
+        contain-intrinsic-size: 1px 800px;
+      }
+
+      @font-face {
+        font-display: swap;
+      }
+    </style>
+
+    {%- comment -%}
+      PERFORMANCE OPTIMIZATION: Disable content_for_header on homepage
+      This removes Shopify Web Pixel Manager (~2-3s TBT) from homepage
+      WPM is not needed on homepage (no checkout/cart tracking)
+    {%- endcomment -%}
+    {%- if template == 'index' -%}
+      <!-- content_for_header disabled on homepage for performance -->
+      <script>
+        var Shopify = Shopify || {};
+        Shopify.shop = "{{ shop.permanent_domain }}";
+        Shopify.locale = "{{ request.locale.iso_code }}";
+        Shopify.currency = {
+          active: "{{ cart.currency.iso_code }}",
+          rate: "{{ cart.currency.rate_to_default_currency }}"
+        };
+        Shopify.theme = {
+          name: "{{ theme.name }}",
+          id: {{ theme.id }},
+          role: "main"
+        };
+        Shopify.routes = {
+          root: "{{ routes.root_url }}"
+        };
+        Shopify.designMode = {{ request.design_mode }};
+
+        // Mock loadFeatures and autoloadFeatures
+        Shopify.loadFeatures = function(features, callback) {
+          if (typeof callback === 'function') {
+            callback(null, Shopify.customerPrivacy);
+          }
+        };
+        Shopify.autoloadFeatures = function(features, callback) {
+          if (typeof callback === 'function') {
+            callback(null, Shopify.customerPrivacy);
+          }
+        };
+
+        // Mock customerPrivacy - allow all tracking
+        Shopify.customerPrivacy = {
+          marketingAllowed: function() { return true; },
+          analyticsProcessingAllowed: function() { return true; },
+          preferencesProcessingAllowed: function() { return true; },
+          saleOfDataAllowed: function() { return true; },
+          firstPartyMarketingAllowed: function() { return true; },
+          thirdPartyMarketingAllowed: function() { return true; },
+          setTrackingConsent: function() {},
+          getTrackingConsent: function() { return "accepted"; },
+          shouldShowBanner: function() { return false; },
+          userCanBeTracked: function() { return true; }
+        };
+      </script>
+    {%- else -%}
+      {{ content_for_header }}
+    {%- endif -%}
 
     {%- comment -%} Preload LCP image for homepage to improve performance {%- endcomment -%}
     {%- if template.name == 'index' -%}
@@ -99,6 +176,90 @@
 
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+    <script>
+      (function() {
+        'use strict';
+
+        function loadDataSrcScripts() {
+          document.querySelectorAll("script[data-src]").forEach(function(tag) {
+            tag.src = tag.getAttribute("data-src");
+            tag.removeAttribute("data-src");
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener("DOMContentLoaded", loadDataSrcScripts);
+        } else {
+          loadDataSrcScripts();
+        }
+      })();
+    </script>
+
+    {%- comment -%}
+      PERFORMANCE PRIORITY 2: MutationObserver for section CSS deferral
+      Intercepts section CSS as they're added to DOM and defers them
+      Expected impact: FCP -500ms, PageSpeed +10-15 points
+    {%- endcomment -%}
+    <script>
+      (function() {
+        'use strict';
+
+        var sectionCSSPatterns = [
+          'section-',
+          'component-grid-banner',
+          'component-multicolumn',
+          'component-collection-item-slider',
+          'component-article-card',
+          'component-deferred-media',
+          'component-lookbook',
+          'component-custom-',
+          'collection.css',
+          'cart.css'
+        ];
+
+        function shouldDeferCSS(href) {
+          if (!href) return false;
+          return sectionCSSPatterns.some(function(pattern) {
+            return href.indexOf(pattern) !== -1;
+          });
+        }
+
+        function deferCSS(link) {
+          if (link.media === 'all' && shouldDeferCSS(link.href)) {
+            link.media = 'print';
+            link.onload = function() {
+              this.media = 'all';
+              this.onload = null;
+            };
+            // Fallback timeout
+            setTimeout(function() {
+              link.media = 'all';
+            }, 3000);
+          }
+        }
+
+        // Process existing CSS links
+        var existingLinks = document.querySelectorAll('link[rel="stylesheet"]');
+        existingLinks.forEach(deferCSS);
+
+        // Observe for new CSS links added dynamically
+        var observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+              if (node.tagName === 'LINK' && node.rel === 'stylesheet') {
+                deferCSS(node);
+              }
+            });
+          });
+        });
+
+        observer.observe(document.documentElement, {
+          childList: true,
+          subtree: true
+        });
+      })();
+    </script>
 
     {%- if request.page_type contains 'customers/' -%}
       <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>

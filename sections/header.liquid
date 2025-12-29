@@ -5,9 +5,17 @@
   fetchpriority="low"
   onload="this.media='all'"
 >
-<script src="{{ 'header.js' | asset_url }}" defer="defer"></script>
+{%- if template == 'index' -%}
+  <script data-src="{{ 'header.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+  <script src="{{ 'header.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 {%- if request.page_type != 'search' -%}
-  <script src="{{ 'search.js' | asset_url }}" defer="defer"></script>
+  {%- if template == 'index' -%}
+    <script data-src="{{ 'search.js' | asset_url }}" defer="defer"></script>
+  {%- else -%}
+    <script src="{{ 'search.js' | asset_url }}" defer="defer"></script>
+  {%- endif -%}
 {%- endif -%}
 {%- liquid
   assign header_layout = section.settings.header_layout

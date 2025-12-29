@@ -31,7 +31,7 @@
 >
   <div class="section__container page-width page-width--{{ section.settings.container }}">
     <div class="section__wrapper{% if text_blocks_size > 0 %} f-grid f-grid--gap-extra-large{% endif %}" style="--f-columns-mobile: 1; --f-columns-lg: 2;">
-      <div class="section__sidebar f-column{% if text_blocks_size > 0 %} flex flex-col justify-center order-last lg:{% if image_position == 'right' %}order-first{%else%}order-last{% endif %}{% endif %}">
+      <div class="section__sidebar f-column{% if text_blocks_size > 0 %} flex flex-col justify-center order-last lg:{% if image_position == 'right' %}order-first{% else %}order-last{% endif %}{% endif %}">
         {% render 'section-heading',
           section_settings: section.settings,
           description_size: section.settings.description_size,
@@ -66,7 +66,7 @@
           </motion-element>
         {% endfor %}
       </div>
-      <div class="section__content f-column{% if text_blocks_size > 0 %} order-first lg:{% if image_position == 'right' %}order-last{%else%}order-first{% endif %}{% endif %}">
+      <div class="section__content f-column{% if text_blocks_size > 0 %} order-first lg:{% if image_position == 'right' %}order-last{% else %}order-first{% endif %}{% endif %}">
         <image-comparison
           class="image-comparison image-comparison__heading-style--{{ section.settings.image_heading_style }} blocks-radius no-js-hidden relative block overflow-hidden"
           data-direction="{{ section.settings.direction }}"

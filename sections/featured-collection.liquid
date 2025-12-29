@@ -314,8 +314,13 @@ calc(100vw / {{ columns_desktop }})
     </div>
   </div>
 </div>
-<script src="{{ 'featured-collection.js' | asset_url }}" defer="defer"></script>
-<script src="{{ 'product-tabs.js' | asset_url }}" defer="defer"></script>
+{%- if template == 'index' -%}
+  <script data-src="{{ 'featured-collection.js' | asset_url }}" defer="defer"></script>
+  <script data-src="{{ 'product-tabs.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+  <script src="{{ 'featured-collection.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'product-tabs.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 {% schema %}
 {
   "name": "t:sections.featured-collection.name",

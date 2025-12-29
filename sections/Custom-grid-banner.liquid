@@ -1,6 +1,6 @@
 {{ 'component-grid-banner.css' | asset_url | stylesheet_tag }}
 {{ 'section-slider-with-multicolumn.css' | asset_url | stylesheet_tag }}
-<script src="{{ 'slider-with-multicolumn.js' | asset_url }}" defer="defer"></script>
+<script data-src="{{ 'slider-with-multicolumn.js' | asset_url }}" defer="defer"></script>
 {%- liquid
   assign slider_blocks = section.blocks | where: 'type', 'slide'
   assign image_card_blocks = section.blocks | where: 'type', 'image-card'
@@ -78,9 +78,9 @@
       assign background_default_alt = background_default.alt | default: shop.name | escape
 
       assign loading = 'lazy'
-      assign fetchpriority = 'higt'
+      assign fetchpriority = 'auto'
       if forloop.index == 1 and section.index < 2
-        assign loading = 'lazy'
+        assign loading = 'eager'
         assign fetchpriority = 'high'
       endif
     -%}
