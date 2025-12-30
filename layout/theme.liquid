@@ -167,12 +167,6 @@
       {{ content_for_header }}
     {%- endif -%}
 
-    {%- comment -%} Preload LCP image for homepage to improve performance {%- endcomment -%}
-    {%- if template.name == 'index' -%}
-      <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/garden-of-wellness-shop-xmas2025-homepage-banner-desktop-2200x1555.webp" media="(min-width: 768px)" fetchpriority="high">
-      <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/garden-of-wellness-shop-xmas2025-homepage-banner-mobile-1000x1505.webp" media="(max-width: 767px)" fetchpriority="high">
-    {%- endif -%}
-
     {% render 'pixel-custom' %}
 
     <script src="{{ 'vendor.js' | asset_url }}" defer="defer"></script>
@@ -305,28 +299,26 @@
     {%- render 'js-variables' -%}
 
 
-     <!-- Microsoft Clarity Tracking Code -->
-      <script>
-        (function() {
-          var clarityLoaded = false;
-          function loadClarity() {
-            if (clarityLoaded) return;
-            clarityLoaded = true;
-            (function(c,l,a,r,i,t,y){
+      <!-- Microsoft Clarity Tracking Code -->
+    <script type="text/javascript">
+      window.addEventListener('DOMContentLoaded', function() {
+        var clarityLoaded = false;
+        function loadClarity() {
+          if (clarityLoaded) return;
+          clarityLoaded = true;
+          (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
               t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "tnwn5025c9");
-          }
-
-          window.addEventListener('load', function() {
-            setTimeout(loadClarity, 5000);
-          });
-
-          window.addEventListener('scroll', loadClarity, { once: true, passive: true });
-        })();
-      </script>
-      <!-- End Microsoft Clarity Tracking Code -->
+          })(window, document, "clarity", "script", "tnwn5025c9");
+        }
+        ['mouseover', 'mousemove', 'keydown', 'touchstart', 'scroll'].forEach(function(event) {
+          window.addEventListener(event, loadClarity, { once: true, passive: true });
+        });
+        setTimeout(loadClarity, 5000);
+      });
+    </script>
+    <!-- End Microsoft Clarity Tracking Code -->
 
 
   </head>

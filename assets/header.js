@@ -53,8 +53,8 @@ class BasicHeader extends HTMLElement {
     requestAnimationFrame(() => {
       // READ phase - batch all measurements
       const offsetHeight = Math.round(this.offsetHeight);
-      const offsetTop = Math.round(this.parentElement.offsetTop);
-      const offsetNavigationHeight = Math.round(this.headerNavigation.offsetHeight);
+      const offsetTop = Math.round(this.parentElement?.offsetTop || 0);
+      const offsetNavigationHeight = Math.round(this.headerNavigation?.offsetHeight || 0);
 
       const headerGroups = document.querySelectorAll('.shopify-section-group-header-group');
       const groupHeights = Array.from(headerGroups).map(section => section.offsetHeight);
@@ -142,6 +142,8 @@ class StickyHeader extends BasicHeader {
   handleNavigationToggle(event) {
     event.preventDefault();
 
+    if (!this.headerNavigation) return;
+
     this.navigationManuallyToggled = true;
     const isHidden = this.headerNavigation.classList.contains(this.classes.hide);
 
@@ -154,7 +156,7 @@ class StickyHeader extends BasicHeader {
     );
     this.headerNavigation.classList.toggle(this.classes.hide, !isHidden);
     this.headerNavigation.classList.toggle(this.classes.show, isHidden);
-    this.navigationToggleButton.setAttribute('aria-expanded', isHidden);
+    this.navigationToggleButton?.setAttribute('aria-expanded', isHidden);
 
     // Reset toggle state after delay
     setTimeout(() => {
@@ -212,8 +214,8 @@ class StickyHeader extends BasicHeader {
     this.headerSection.classList.add(this.classes.headerScrolled);
 
     // Handle collapse on scroll behavior
-    if (this.collapseOnScroll) {
-      this.navigationToggleButton.classList.add(this.classes.show);
+    if (this.collapseOnScroll && this.headerNavigation) {
+      this.navigationToggleButton?.classList.add(this.classes.show);
       if (!this.navigationManuallyToggled && !this.headerNavigation.classList.contains(this.classes.show)) {
         this.headerNavigation.classList.add(this.classes.hide);
         document.body.classList.add(this.classes.isHideNav);
@@ -242,14 +244,14 @@ class StickyHeader extends BasicHeader {
   handleScrolledBeforeHeader() {
     this.headerSection.classList.remove(this.classes.headerScrolled);
 
-    if (this.collapseOnScroll) {
+    if (this.collapseOnScroll && this.headerNavigation) {
       if (!this.navigationManuallyToggled) {
         document.body.classList.remove(this.classes.isHideNav);
         this.headerNavigation.classList.remove(this.classes.hide);
         this.headerNavigation.classList.remove(this.classes.show);
-        this.navigationToggleButton.setAttribute('aria-expanded', false);
+        this.navigationToggleButton?.setAttribute('aria-expanded', false);
       }
-      this.navigationToggleButton.classList.remove(this.classes.show);
+      this.navigationToggleButton?.classList.remove(this.classes.show);
     }
 
     if (this.isAlwaysSticky) {
