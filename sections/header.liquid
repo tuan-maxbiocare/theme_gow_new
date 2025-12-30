@@ -5,11 +5,6 @@
   fetchpriority="low"
   onload="this.media='all'"
 >
-{%- if template == 'index' -%}
-  <script data-src="{{ 'header.js' | asset_url }}" defer="defer"></script>
-{%- else -%}
-  <script src="{{ 'header.js' | asset_url }}" defer="defer"></script>
-{%- endif -%}
 {%- if request.page_type != 'search' -%}
   {%- if template == 'index' -%}
     <script data-src="{{ 'search.js' | asset_url }}" defer="defer"></script>

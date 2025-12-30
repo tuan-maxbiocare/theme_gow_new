@@ -36,7 +36,6 @@
 
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-      <link rel="dns-prefetch" href="https://fonts.shopifycdn.com">
     {%- endunless -%}
 {% comment %} code cũ meta tag SEO cũ {% endcomment %}
     {% comment %} <title>
@@ -73,41 +72,43 @@
     {%- liquid
       render 'meta-tags'
       render 'css-variables'
+
+      echo 'vendor.css' | asset_url | stylesheet_tag: preload: true
+      echo 'theme.css' | asset_url | stylesheet_tag: preload: true
+      echo 'component-card-img-with-product.css' | asset_url | stylesheet_tag: preload: true
+
+      echo 'custom-theme.css' | asset_url | stylesheet_tag: preload: true
+
+      if settings.enable_product_compare
+        echo 'compare.css' | asset_url | stylesheet_tag: preload: true
+      endif
+
+      if enable_rtl 
+        echo 'rtl.css' | asset_url | stylesheet_tag: preload: true
+      endif
     -%}
 
-    {{ 'vendor.css' | asset_url | stylesheet_tag }}
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
-
-    <link rel="stylesheet" href="{{ 'component-card-img-with-product.css' | asset_url }}" media="print" onload="this.media='all';this.onload=null;">
-    <link rel="stylesheet" href="{{ 'custom-theme.css' | asset_url }}" media="print" onload="this.media='all';this.onload=null;">
-
-    {%- if settings.enable_product_compare -%}
-      <link rel="stylesheet" href="{{ 'compare.css' | asset_url }}" media="print" onload="this.media='all';this.onload=null;">
-    {%- endif -%}
-
-    {%- if enable_rtl -%}
-      <link rel="stylesheet" href="{{ 'rtl.css' | asset_url }}" media="print" onload="this.media='all';this.onload=null;">
-    {%- endif -%}
-
-    <noscript>
-      {{ 'component-card-img-with-product.css' | asset_url | stylesheet_tag }}
-      {{ 'custom-theme.css' | asset_url | stylesheet_tag }}
-      {%- if settings.enable_product_compare -%}
-        {{ 'compare.css' | asset_url | stylesheet_tag }}
-      {%- endif -%}
-      {%- if enable_rtl -%}
-        {{ 'rtl.css' | asset_url | stylesheet_tag }}
-      {%- endif -%}
-    </noscript>
-
     <style>
+      {%- comment -%} PERFORMANCE: Lazy section optimization {%- endcomment -%}
       .lazy-section {
         content-visibility: auto;
         contain-intrinsic-size: 1px 800px;
       }
 
-      @font-face {
-        font-display: swap;
+
+      {%- comment -%}
+        CRITICAL FIX: Override theme's data-initializing behavior
+        Theme.css hides sections during initialization causing 2750ms render delay
+        Force display sections immediately for better LCP
+      {%- endcomment -%}
+      [data-initializing] #MainContent .shopify-section,
+      [data-initializing] #MainContent .shopify-section + .shopify-section ~ .shopify-section,
+      .shopify-design-mode[data-initializing] #MainContent .shopify-section + .shopify-section ~ .shopify-section,
+      .no-js [data-initializing] #MainContent .shopify-section + .shopify-section ~ .shopify-section,
+      .no-touch [data-initializing] #MainContent .shopify-section + .shopify-section ~ .shopify-section {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
       }
     </style>
 
@@ -331,7 +332,6 @@
   </head>
   <body
     class="{{ request.page_type }}-template {{ template.suffix }} blocks-corner--{{ settings.blocks_corner_radius }}{% if request.design_mode %} shopify-design-mode{% endif %}"
-    data-initializing
   >
     <h1 style="display: none;">{{- page_title -}} </h1>
     {% comment %} Custom metafield for body tag like GTag tracking {% endcomment %}
