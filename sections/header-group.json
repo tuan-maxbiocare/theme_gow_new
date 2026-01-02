@@ -17,21 +17,21 @@
         "text_6hGFK9": {
           "type": "text",
           "settings": {
-            "text": "Please note that delivery times may take longer during holidays.",
+            "text": "Welcome to Garden of Wellness Shop!",
             "position": "left"
           }
         },
         "text_Ahn3nP": {
           "type": "text",
           "settings": {
-            "text": "Spend $69.99+ to receive free surprise gifts!",
+            "text": "Clearance Sale | Up to 50% OFF",
             "position": "center"
           }
         },
         "text_3xphKE": {
           "type": "text",
           "settings": {
-            "text": "Free Delivery on Orders over $50",
+            "text": "Afterpay Available",
             "position": "right"
           }
         },
@@ -57,10 +57,9 @@
         "text_3xphKE",
         "social_links_bUFCpU"
       ],
-      "disabled": true,
       "settings": {
         "container": "full",
-        "color_scheme": "scheme-9b7da926-b76d-4e5c-9a28-ebe141f244b5",
+        "color_scheme": "scheme-inverse",
         "show_separator_line": false,
         "padding_top": 6,
         "padding_bottom": 6
