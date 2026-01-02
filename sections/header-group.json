@@ -14,18 +14,18 @@
     "topbar_3YD96h": {
       "type": "topbar",
       "blocks": {
-        "text_6hGFK9": {
-          "type": "text",
-          "settings": {
-            "text": "Welcome to Garden of Wellness Shop!",
-            "position": "left"
-          }
-        },
         "text_Ahn3nP": {
           "type": "text",
           "settings": {
             "text": "Clearance Sale | Up to 50% OFF",
             "position": "center"
+          }
+        },
+        "text_6hGFK9": {
+          "type": "text",
+          "settings": {
+            "text": "Welcome to Garden of Wellness Shop!",
+            "position": "left"
           }
         },
         "text_3xphKE": {
@@ -52,8 +52,8 @@
         }
       },
       "block_order": [
-        "text_6hGFK9",
         "text_Ahn3nP",
+        "text_6hGFK9",
         "text_3xphKE",
         "social_links_bUFCpU"
       ],
