@@ -902,7 +902,7 @@
         "enable_slider": true,
         "content_overflow": false,
         "navigation_position": "bottom",
-        "use_highest_discount_variant": true,
+        "use_highest_discount_variant": false,
         "pcard_image_ratio": "",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
