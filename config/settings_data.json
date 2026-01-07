@@ -170,12 +170,12 @@
       },
       "2567389343055140935": {
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       },
       "3300017149626794902": {
         "type": "shopify://apps/xboost-bundle/blocks/core_script/8707ef23-ba0e-4d63-a83a-1460e9bac021",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "customScript": "",
           "showExampleQb": false,
@@ -189,12 +189,12 @@
       },
       "14327677521557774844": {
         "type": "shopify://apps/simprosys-google-shopping-feed/blocks/core_settings_block/1f0b859e-9fa6-4007-97e8-4513aff5ff3b",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       },
       "855628211100114053": {
         "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       }
     },
