@@ -1,1 +1,1589 @@
-{"sections":{"buttons_with_icon_f6P63z":{"type":"buttons-with-icon","blocks":{"button_item_DBJUz7":{"type":"button_item","settings":{"button_label":"30% OFF on Little Étoile Hair Oil","button_link":"shopify:\/\/products\/little-etoile-care-hair-oil-0-months-200ml","icon":"tag"}},"button_item_h9zX6i":{"type":"button_item","settings":{"button_label":"50% OFF Clearance Bulk Savings","button_link":"shopify:\/\/collections\/clearance","icon":"tag"}},"button_item_VkBiNV":{"type":"button_item","settings":{"button_label":"Review & Reward","button_link":"shopify:\/\/pages\/review-and-reward","icon":"currency-circle-dollar"}},"button_item_XHJamQ":{"type":"button_item","disabled":true,"settings":{"button_label":"20% OFF SITEWIDE","button_link":"shopify:\/\/collections\/all-products","icon":"gift"}}},"block_order":["button_item_DBJUz7","button_item_h9zX6i","button_item_VkBiNV","button_item_XHJamQ"],"disabled":true,"custom_css":[],"name":"t:sections.buttons-with-icon.name","settings":{"max_width":1800,"color_scheme":"scheme-97fc96ee-bbaf-4cdf-94ce-349c632aa15d","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","item_alignment":"left","item_button_style":"btn--primary","item_button_font":"button","enable_slider":false,"swipe_on_mobile":true,"show_section_divider":false,"divider_width":"fixed","padding_top":50,"padding_bottom":10}},"custom_grid_banner_AVm7Ca":{"type":"Custom-grid-banner","blocks":{"slide_zz9PAk":{"type":"slide","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/garden-of-wellness-shop-xmas2025-homepage-banner-desktop-2200x1555.webp","image_mobile":"shopify:\/\/shop_images\/garden-of-wellness-shop-xmas2025-homepage-banner-mobile-1000x1505.webp","image_overlay_opacity":0,"content_position":"bottom-right","content_alignment":"left","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","text":"","button_label":"","button_link":"shopify:\/\/collections\/all-products","button_style":"btn--underline","button_icon":"none"}},"banner_card_tA8wND":{"type":"banner-card","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/gow-shop-mid-age-couple.webp","image_overlay_opacity":0,"column_span":2,"row_span":1,"content_spacing":"medium","content_gap":"standard","content_position":"bottom-center","content_alignment":"center","content_position_mobile":"bottom-center","content_alignment_mobile":"center","card_link":"shopify:\/\/collections\/women-supplements","subheading":"","subheading_style":"","heading":"Wellness starts from within.","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"text":"","text_size":"text-base","button_label":"shop now","button_style":"btn--underline","button_icon":"none","button_size":"btn--medium","block_custom_class":"","enable_preload_image":false}},"banner_card_zGAgUU":{"type":"banner-card","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/gow-shop-a-little-girl-hoding-hair-oil-bottle.webp","image_overlay_opacity":0,"column_span":2,"row_span":1,"content_spacing":"medium","content_gap":"standard","content_position":"bottom-center","content_alignment":"center","content_position_mobile":"bottom-center","content_alignment_mobile":"center","card_link":"shopify:\/\/pages\/little-etoile","subheading":"","subheading_style":"","heading":"Christmas gifts for your little ones","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"text":"","text_size":"text-base","button_label":"shop now","button_style":"btn--underline","button_icon":"none","button_size":"btn--medium","block_custom_class":"","enable_preload_image":false}}},"block_order":["slide_zz9PAk","banner_card_tA8wND","banner_card_zGAgUU"],"custom_css":[],"name":"Custom grid banner","settings":{"max_width":1800,"color_scheme":"","autoplay":false,"autoplay_delay":3,"section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","description_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","columns":4,"banner_height":"large","gap":"2xs","enable_swiper_mobile":false,"show_section_divider":false,"divider_width":"fixed","padding_top":30,"padding_bottom":0}},"grid_banner_pGTR68":{"type":"grid-banner","blocks":{"banner_card_KbRLbR":{"type":"banner-card","settings":{"color_scheme":"scheme-13","image_overlay_opacity":10,"column_span":2,"row_span":2,"content_spacing":"medium","content_gap":"standard","content_position":"bottom-left","content_alignment":"left","content_position_mobile":"bottom-center","content_alignment_mobile":"center","card_link":"shopify:\/\/products\/little-etoile-care-swimprotect-2-in-1-shampoo-body-wash-chlorine-removal-for-2-years","subheading":"","subheading_style":"thick-border","heading":"SALE 20% off sitewide","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","heading_size_mobile":"inherit","heading_size_custom":18,"text":"","text_size":"text-base","button_label":"shop now","button_style":"btn--secondary","button_icon":"none","button_size":"btn--medium","block_custom_class":"","enable_preload_image":false}},"banner_card_HYCJmx":{"type":"banner-card","settings":{"color_scheme":"scheme-13","image_overlay_opacity":0,"column_span":1,"row_span":2,"content_spacing":"medium","content_gap":"standard","content_position":"bottom-center","content_alignment":"center","content_position_mobile":"bottom-center","content_alignment_mobile":"center","card_link":"shopify:\/\/collections\/garden-of-wellness-nourishing-body-oil","subheading":"","subheading_style":"","heading":"Revive your skin, awaken your senses","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"text":"<p>Nourishing body oils<\/p>","text_size":"text-base","button_label":"20% OFF SITEWIDE","button_style":"btn--secondary","button_icon":"none","button_size":"btn--medium","block_custom_class":"","enable_preload_image":false}},"banner_card_mN9wCz":{"type":"banner-card","settings":{"color_scheme":"scheme-13","image_overlay_opacity":0,"column_span":1,"row_span":2,"content_spacing":"medium","content_gap":"standard","content_position":"bottom-center","content_alignment":"center","content_position_mobile":"bottom-center","content_alignment_mobile":"center","card_link":"","subheading":"","subheading_style":"","heading":"Essential care for Little Swimmers.","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"text":"<p>Little Étoile<\/p>","text_size":"text-base","button_label":"20% OFF SITEWIDE","button_style":"btn--secondary","button_icon":"none","button_size":"btn--medium","block_custom_class":"","enable_preload_image":false}}},"block_order":["banner_card_KbRLbR","banner_card_HYCJmx","banner_card_mN9wCz"],"disabled":true,"name":"t:sections.grid-banner.presets__1.name","settings":{"container":"full","color_scheme":"scheme-13","section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","description_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","columns":4,"banner_height":"large","gap":"2xs","enable_swiper_mobile":false,"show_section_divider":false,"divider_width":"fixed","padding_top":0,"padding_bottom":0}},"buttons_with_icon_b6Ha9e":{"type":"buttons-with-icon","blocks":{"button_item_ctXgDH":{"type":"button_item","settings":{"button_label":"Health Supplement","button_link":"shopify:\/\/collections\/health-supplements","icon":"none"}},"button_item_F6RQWd":{"type":"button_item","settings":{"button_label":"Food & Nutrition","button_link":"shopify:\/\/collections\/food-and-nutrition","icon":"none"}},"button_item_ftKLgH":{"type":"button_item","settings":{"button_label":"Pregnancy & Breastfeeding","button_link":"shopify:\/\/collections\/mothers-care","icon":"none"}},"button_item_PHpAXi":{"type":"button_item","settings":{"button_label":"Baby Care","button_link":"shopify:\/\/collections\/baby-care-products","icon":"none"}},"button_item_TpBJLm":{"type":"button_item","settings":{"button_label":"Beauty & Topical Care","button_link":"shopify:\/\/collections\/beauty-products","icon":"none"}},"button_item_EQAB4t":{"type":"button_item","settings":{"button_label":"Pet Care","button_link":"shopify:\/\/collections\/pet-care-products","icon":"none"}}},"block_order":["button_item_ctXgDH","button_item_F6RQWd","button_item_ftKLgH","button_item_PHpAXi","button_item_TpBJLm","button_item_EQAB4t"],"name":"t:sections.buttons-with-icon.name","settings":{"max_width":1800,"color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","item_alignment":"left","item_button_style":"btn--secondary","item_button_font":"button","enable_slider":false,"swipe_on_mobile":true,"show_section_divider":false,"divider_width":"fixed","padding_top":30,"padding_bottom":30}},"rich_text_FxgKyg":{"type":"rich-text","blocks":{"heading_kBwNeY":{"type":"heading","settings":{"heading":"<strong>This Christmas and Boxing Day,<\/strong>","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h3"}},"text_jxKBLU":{"type":"text","settings":{"text":"<p>allow us to elevate your celebrations with thoughtful gifts chosen just for you. For a limited time, enjoy <strong>free shipping on orders over $50<\/strong>, and receive <strong>complimentary gifts<\/strong> from our curated collection with purchases over <strong>$69.99<\/strong>.<strong> Happy Holidays!<\/strong><\/p>","text_size":"text-base","text_line_limit":"none","button_style":"btn--underline","button_icon":"none"}}},"block_order":["heading_kBwNeY","text_jxKBLU"],"custom_css":[],"settings":{"container":"full","color_scheme":"scheme-9b7da926-b76d-4e5c-9a28-ebe141f244b5","use_color_scheme_in_container":false,"content_spacing":"standard","content_alignment":"center","padding_top":30,"padding_bottom":30,"show_section_divider":false,"divider_width":"fixed"}},"featured_collection_ncXTzD":{"type":"featured-collection","blocks":{"collection_KXieEW":{"type":"collection","settings":{"collection":"clearance-sale","title":"","show_banner":false,"color_scheme":"scheme-inverse","card_link":"","image_overlay_opacity":10,"content_position":"bottom-center","content_alignment":"left","subheading":"","subheading_style":"","heading":"BEST DEALS","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"#ffffff","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"","button_style":"btn--primary","button_icon":"none"}}},"block_order":["collection_KXieEW"],"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"scheme-12","section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"","heading":"Best Deals","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"#ffffff","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","limit":6,"columns":4,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":true,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"collection_list_4BPtwK":{"type":"collection-list","blocks":{"featured_collection_qWzrwb":{"type":"featured_collection","settings":{"collection":"health-supplements","image":"shopify:\/\/shop_images\/GoWshop_health-supplement_2000x2000_fbf6ff38-a74d-4b92-921e-3e795cc66545.webp","title":""}},"featured_collection_4edxVP":{"type":"featured_collection","settings":{"collection":"food-and-nutrition","image":"shopify:\/\/shop_images\/Little-Etoile-Organic-Creamy-Risotto-Vegetables-Brown-Rice-with-DHA-_-6_-Months-120g-800x800-4.webp","title":""}},"featured_collection_f6JVDP":{"type":"featured_collection","settings":{"collection":"pregnancy-and-breastfeeding-supplements","image":"shopify:\/\/shop_images\/GoWshop_pregnantwoman_2000x2000_b3c1f5e8-6c6d-47ae-a8e0-ff757666da6a.webp","title":""}},"featured_collection_cAMnBV":{"type":"featured_collection","settings":{"collection":"baby-care-products","image":"shopify:\/\/shop_images\/GoWshop_Kidwithhisfather.webp","title":""}},"featured_collection_E64fLt":{"type":"featured_collection","settings":{"collection":"beauty-products","image":"shopify:\/\/shop_images\/Garden-of-Wellness-Nourishing-Body-Oil-Sage-Clarity-800x799-4.webp","title":""}},"featured_collection_KeWFrC":{"type":"featured_collection","settings":{"collection":"pet-care-products","image":"shopify:\/\/shop_images\/GoWshop_adog.webp","title":""}}},"block_order":["featured_collection_qWzrwb","featured_collection_4edxVP","featured_collection_f6JVDP","featured_collection_cAMnBV","featured_collection_E64fLt","featured_collection_KeWFrC"],"disabled":true,"name":"t:sections.collection-list.name","settings":{"container":"fixed","color_scheme":"scheme-11","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Shop by Categories ​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","card_color_scheme":"","card_style":"card","card_heading_size":"text-base","card_image_ratio":"1\/1","card_image_width":"full","rounded_card_image":false,"card_show_border":false,"columns_desktop":6,"column_gap":"small","row_gap":"inherit","grid_bordered":false,"columns_mobile":"2","swipe_on_mobile":true,"padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"featured_collection_rLVnzY":{"type":"featured-collection","blocks":{"collection_NLirnd":{"type":"collection","settings":{"collection":"health-supplements","title":"","show_banner":true,"color_scheme":"scheme-13","card_link":"shopify:\/\/collections\/health-supplements","banner_image":"shopify:\/\/shop_images\/GoWshop_health-supplement_2000x2000_fbf6ff38-a74d-4b92-921e-3e795cc66545.webp","image_overlay_opacity":16,"content_position":"bottom-left","content_alignment":"left","subheading":"","subheading_style":"","heading":"Health Supplement​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"#ffffff","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"view more","button_style":"btn--underline","button_icon":"caret-right"}}},"block_order":["collection_NLirnd"],"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","limit":10,"columns":5,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":false,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":70,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"scrolling_banner_NwEcTT":{"type":"scrolling-banner","blocks":{"slide_iJmjA6":{"type":"slide","settings":{"color_scheme":"scheme-13","background":"shopify:\/\/shop_images\/gow-shop-our-research-park.webp","image_overlay_opacity":0,"content_position":"middle-left","text_alignment":"left","subheading":"","title":"Our Research Parks","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","description":"<p>All Images seen on this page are taken on our research park.<\/p>","description_size":"text-base","button_label":"","button_link":"","banner_link":"","button_style":"btn--primary","button_icon":"none","product_color_scheme":"","product":""}}},"block_order":["slide_iJmjA6"],"name":"t:sections.scrolling-banner.name","settings":{"container":"fixed","slide_height":"adapt","content_position_mobile":"top-center","text_alignment_mobile":"center","enable_zoom":true,"enable_parallax":true}},"featured_collection_XYeEAH":{"type":"featured-collection","blocks":{"collection_RTmMGB":{"type":"collection","settings":{"collection":"food-and-nutrition","title":"Baby Nutrition​","show_banner":true,"color_scheme":"scheme-13","card_link":"shopify:\/\/collections\/food-and-nutrition","banner_image":"shopify:\/\/shop_images\/Little-Etoile-Organic-Sweet-Potato-Pumpkin-Corn-_-6_-Months-120g-800x800-6.webp","image_overlay_opacity":16,"content_position":"bottom-left","content_alignment":"left","subheading":"","subheading_style":"","heading":"Baby Nutrition​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"#ffffff","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"view more","button_style":"btn--underline","button_icon":"caret-right"}}},"block_order":["collection_RTmMGB"],"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","limit":6,"columns":5,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":false,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"featured_collection_zLXcAf":{"type":"featured-collection","blocks":{"collection_9TDV6Y":{"type":"collection","settings":{"collection":"beauty-products","title":"","show_banner":true,"color_scheme":"scheme-13","card_link":"shopify:\/\/collections\/beauty-products","banner_image":"shopify:\/\/shop_images\/Garden-of-Wellness-Nourishing-Body-Oil-Sage-Clarity-800x799-4.webp","image_overlay_opacity":10,"content_position":"bottom-left","content_alignment":"left","subheading":"","subheading_style":"","heading":"Beauty & Topical Care​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"#ffffff","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"view more","button_style":"btn--underline","button_icon":"caret-right"}}},"block_order":["collection_9TDV6Y"],"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","limit":10,"columns":5,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":true,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":0,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"featured_collection_Mb7qdM":{"type":"featured-collection","blocks":{"collection_fJpzg3":{"type":"collection","settings":{"collection":"mothers-care","title":"","show_banner":true,"color_scheme":"scheme-13","card_link":"shopify:\/\/collections\/mothers-care","banner_image":"shopify:\/\/shop_images\/GoWshop_pregnantwoman_2000x2000_b3c1f5e8-6c6d-47ae-a8e0-ff757666da6a.webp","image_overlay_opacity":10,"content_position":"bottom-left","content_alignment":"left","subheading":"","subheading_style":"","heading":"Mothers' Care","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"#ffffff","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"view more","button_style":"btn--underline","button_icon":"caret-right"}}},"block_order":["collection_fJpzg3"],"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","limit":7,"columns":5,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":false,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":0,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"custom_content_KTbGdy":{"type":"custom-content","blocks":{"text_Fd6aA6":{"type":"text","settings":{"content_alignment":"left","subheading":"","heading":"<em>Australian Certified Organic Fucoidan<\/em>","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"#87c2a5","highlight_text_color":"rgba(0,0,0,0)","heading_size":"h1","description":"<p>Contains a clinical dose of 500mg of organic fucoidan to help antioxidant and support immune system health.​<br\/><\/p>","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","width":"33%","alignment":"center","block_custom_class":""}},"image_card_UUzUGe":{"type":"image_card","disabled":true,"settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/Undaria.webp","image_ratio":"adapt","image_overlay_opacity":0,"content_position":"bottom-right","content_alignment":"right","content_spacing":"medium","content_gap":"fitted","card_link":"shopify:\/\/pages\/max-biocare","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"","button_style":"btn--primary","button_icon":"none","show_badge":false,"badge_color_scheme":"scheme-1","badge_shape":"circle","badge_position":"top-right","badge_subtext":"Save","badge_text":"99$","color_scheme_mobile":"scheme-1","show_text_below":false,"content_alignment_mobile":"center","width":"66%","alignment":"center","block_custom_class":"","enable_preload_image":false}},"image_card_with_product_BL7UrG":{"type":"image_card_with_product","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/GoWshop_maxucosa_duo.webp","image_ratio":"adapt","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","button_label":"SHOP NOW","button_style":"btn--secondary","button_icon":"none","product":"max-biocare-maxucosa","width":"66%","alignment":"center","block_custom_class":""}}},"block_order":["text_Fd6aA6","image_card_UUzUGe","image_card_with_product_BL7UrG"],"custom_css":[".btn {opacity: 100%;}"],"name":"t:sections.custom-content.name","settings":{"tab_content_html":"","product_list":[],"template_product":"","container":"fixed","color_scheme":"scheme-3","enable_sticky_column":false,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"large","row_gap":"large","swipe_on_mobile":false,"columns_mobile":"1","padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed","header_alignment_collapsible":"left","section_header_alignment_mobile_collapsible":"inherit","subheading_collapsible":"","heading_collapsible":"Collapsible tabs","highlight_style_collapsible":"none","highlight_font_style_collapsible":"italic","highlight_style_color_collapsible":"","highlight_text_color_collapsible":"","heading_size_collapsible":"h1","description_collapsible":"","text_size_collapsible":"text-base","button_label_collapsible":"","button_link_collapsible":"","button_style_collapsible":"btn--primary","button_icon_collapsible":"none","item_style":"standard","item_color_scheme_collapsible":"","item_heading_font_collapsible":"heading","item_heading_size_collapsible":"h4","item_icon_size_collapsible":"extra-large","section_header_alignment_testimonial":"center","section_header_alignment_mobile_testimonial":"inherit","subheading_testimonial":"","heading_testimonial":"Testimonials","highlight_style_testimonial":"none","highlight_font_style_testimonial":"italic","highlight_style_color_testimonial":"","highlight_text_color_testimonial":"","heading_size_testimonial":"h1","description_testimonial":"","text_size_testimonial":"text-base","layout":"focused","card_color_scheme":"","card_content_color_scheme":"","card_image_ratio":"adapt","card_heading_size":"h4","card_text_size":"h1","author_info_layout":"vertical","card_trigger_behavior":"click","show_image":true,"show_author_image":true,"columns_desktop":3,"column_gap_testimonial":"medium","row_gap_testimonial":"medium","enable_slider_testimonial":true,"columns_mobile_testimonial":"1","swipe_on_mobile_testimonial":true,"show_progress_bar":true}},"custom_content_rwqbBF":{"type":"custom-content","blocks":{"image_card_43NYbn":{"type":"image_card","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/gow-shop-best-sellers-banner.webp","image_ratio":"3\/4","image_overlay_opacity":0,"content_position":"bottom-left","content_alignment":"left","content_spacing":"medium","content_gap":"fitted","card_link":"shopify:\/\/collections\/best-sellers","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"","button_style":"btn--primary","button_icon":"none","show_badge":false,"badge_color_scheme":"scheme-4","badge_shape":"circle","badge_position":"top-right","badge_subtext":"Save","badge_text":"99$","color_scheme_mobile":"scheme-13","show_text_below":false,"content_alignment_mobile":"center","width":"41%","alignment":"start","block_custom_class":"","enable_preload_image":false}},"collections_aQKWxU":{"type":"collections","settings":{"collection_list":["best-sellers"],"custom_titles_collection":"","product_limit":6,"columns_desktop":3,"column_gap":"extra-small","row_gap":"inherit","enable_slider":false,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"width":"58%","alignment":"start","block_custom_class":""}}},"block_order":["image_card_43NYbn","collections_aQKWxU"],"name":"t:sections.custom-content.name","settings":{"tab_content_html":"","product_list":[],"template_product":"","container":"fixed","color_scheme":"scheme-7","enable_sticky_column":true,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"medium","row_gap":"medium","swipe_on_mobile":false,"columns_mobile":"1","padding_top":100,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed","header_alignment_collapsible":"left","section_header_alignment_mobile_collapsible":"inherit","subheading_collapsible":"","heading_collapsible":"Collapsible tabs","highlight_style_collapsible":"none","highlight_font_style_collapsible":"italic","highlight_style_color_collapsible":"","highlight_text_color_collapsible":"","heading_size_collapsible":"h1","description_collapsible":"","text_size_collapsible":"text-base","button_label_collapsible":"","button_link_collapsible":"","button_style_collapsible":"btn--primary","button_icon_collapsible":"none","item_style":"standard","item_color_scheme_collapsible":"","item_heading_font_collapsible":"heading","item_heading_size_collapsible":"h4","item_icon_size_collapsible":"extra-large","section_header_alignment_testimonial":"center","section_header_alignment_mobile_testimonial":"inherit","subheading_testimonial":"","heading_testimonial":"Testimonials","highlight_style_testimonial":"none","highlight_font_style_testimonial":"italic","highlight_style_color_testimonial":"","highlight_text_color_testimonial":"","heading_size_testimonial":"h1","description_testimonial":"","text_size_testimonial":"text-base","layout":"focused","card_color_scheme":"","card_content_color_scheme":"","card_image_ratio":"adapt","card_heading_size":"h4","card_text_size":"h1","author_info_layout":"vertical","card_trigger_behavior":"click","show_image":true,"show_author_image":true,"columns_desktop":3,"column_gap_testimonial":"medium","row_gap_testimonial":"medium","enable_slider_testimonial":true,"columns_mobile_testimonial":"1","swipe_on_mobile_testimonial":true,"show_progress_bar":true}},"multicolumn_icon_brands_custom_c4Jgan":{"type":"multicolumn-icon-brands-custom","blocks":{"column_Xykz6P":{"type":"column","settings":{"icon":"none","image":"shopify:\/\/shop_images\/GoWshop_MBC_LOGO_700x282_b2dfb5f6-dd31-49eb-9df8-9839b8f6c4fd.webp","image_hover":"shopify:\/\/shop_images\/GoWshop_Website_MBC_LOGO_700x282-04.webp","max_width":200,"max_width_mb":200,"image_link":"shopify:\/\/pages\/max-biocare","title":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h6","heading_font":"heading","text":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}},"column_f43T33":{"type":"column","settings":{"icon":"none","image":"shopify:\/\/shop_images\/GoWshop_LE_LOGO_700x282_e2d0abdb-b2ac-4340-afc3-7882b069949f.webp","image_hover":"shopify:\/\/shop_images\/GoWshop_Website_LE_LOGO_700x282-02.webp","max_width":200,"max_width_mb":200,"image_link":"shopify:\/\/pages\/little-etoile","title":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h6","heading_font":"heading","text":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}},"column_dzja9f":{"type":"column","settings":{"icon":"none","image":"shopify:\/\/shop_images\/GoWshop_GOW_LOGO_700x282_47bfd5e2-d2c3-432d-80c3-c11431f701a6.webp","image_hover":"shopify:\/\/shop_images\/GoWshop_GOW_LOGO_700x282_47bfd5e2-d2c3-432d-80c3-c11431f701a6.webp","max_width":200,"max_width_mb":200,"image_link":"shopify:\/\/pages\/garden-of-wellness","title":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h6","heading_font":"heading","text":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}},"column_4VMj93":{"type":"column","settings":{"icon":"none","image":"shopify:\/\/shop_images\/GoWshop_SAL_LOGO_700x282_58ea0e94-f199-4d2d-a49c-98a1bc5291f2.webp","image_hover":"shopify:\/\/shop_images\/GoWshop_Website_SAL_LOGO_700x282-03.webp","max_width":200,"max_width_mb":200,"image_link":"shopify:\/\/pages\/salvarity","title":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h6","heading_font":"heading","text":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}},"column_JwEwmE":{"type":"column","settings":{"icon":"none","image":"shopify:\/\/shop_images\/GoWshop_PAWLAVIE_LOGO_700x282_11003149-a098-4305-857a-29cd5a0bebd3.webp","image_hover":"shopify:\/\/shop_images\/GoWshop_PAWLAVIE_LOGO_700x282_11003149-a098-4305-857a-29cd5a0bebd3.webp","max_width":200,"max_width_mb":200,"image_link":"shopify:\/\/pages\/pawlavie","title":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h6","heading_font":"heading","text":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}}},"block_order":["column_Xykz6P","column_f43T33","column_dzja9f","column_4VMj93","column_JwEwmE"],"custom_css":[".multicolumn-card--image-icon {--icon-size: calc(100% - 2px);}"],"name":"Section Icon Brands","settings":{"container":"fixed","color_scheme":"","header_layout":"standing-column","section_header_alignment":"left","image_margin_left":-150,"section_header_alignment_mobile":"inherit","subheading":"","heading":"Our Brands","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","enable_sticky":false,"card_color_scheme":"","content_alignment":"center","image_position":"left","icon_color":"#1d349a","columns_desktop":5,"column_gap":"extra-small","row_gap":"inherit","show_divider_col":false,"columns_mobile":"2","swipe_on_mobile":false,"show_section_divider":true,"divider_width":"fixed","padding_top":50,"padding_bottom":50}},"scrolling_banner_jt94NV":{"type":"scrolling-banner","blocks":{"slide_4mjyw3":{"type":"slide","settings":{"color_scheme":"","background":"shopify:\/\/shop_images\/garden-of-wellness-shop_review-and-rewards-banner-1400x500_2.webp","background_mobile":"shopify:\/\/shop_images\/garden-of-wellness-shop_review-and-rewards-banner-850x650_2.webp","image_overlay_opacity":0,"content_position":"middle-center","text_alignment":"center","subheading":"","title":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd1","description":"","description_size":"text-base","button_label":"","button_link":"","banner_link":"shopify:\/\/pages\/review-and-reward","button_style":"btn--primary","button_icon":"none","product_color_scheme":"","product":""}}},"block_order":["slide_4mjyw3"],"name":"t:sections.scrolling-banner.name","settings":{"container":"fixed","slide_height":"adapt","content_position_mobile":"top-center","text_alignment_mobile":"center","enable_zoom":true,"enable_parallax":true}},"featured_blog_EGLdpH":{"type":"featured-blog","name":"t:sections.featured-blog.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Featured Blogs​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"<p>Discover our new blog – for your health, beauty, and wellness. ​<\/p>","text_size":"text-base","button_label":"view all blogs","button_link":"shopify:\/\/blogs\/wellness-hub","button_style":"btn--underline","button_icon":"none","blog":"wellness-hub","post_limit":3,"columns_desktop":3,"column_gap":"medium","row_gap":"inherit","columns_mobile":"1","swipe_on_mobile":true,"card_title_size":"h4","show_tags":false,"show_excerpt":true,"show_date":false,"show_author":false,"show_button":true,"card_button_style":"btn--underline","card_button_icon":"none","card_button_label":"Read more","padding_top":50,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}}},"order":["buttons_with_icon_f6P63z","custom_grid_banner_AVm7Ca","grid_banner_pGTR68","buttons_with_icon_b6Ha9e","rich_text_FxgKyg","featured_collection_ncXTzD","collection_list_4BPtwK","featured_collection_rLVnzY","scrolling_banner_NwEcTT","featured_collection_XYeEAH","featured_collection_zLXcAf","featured_collection_Mb7qdM","custom_content_KTbGdy","custom_content_rwqbBF","multicolumn_icon_brands_custom_c4Jgan","scrolling_banner_jt94NV","featured_blog_EGLdpH"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "buttons_with_icon_f6P63z": {
+      "type": "buttons-with-icon",
+      "blocks": {
+        "button_item_DBJUz7": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "30% OFF on Little Étoile Hair Oil",
+            "button_link": "shopify://products/little-etoile-care-hair-oil-0-months-200ml",
+            "icon": "tag"
+          }
+        },
+        "button_item_h9zX6i": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "50% OFF Clearance Bulk Savings",
+            "button_link": "shopify://collections/clearance",
+            "icon": "tag"
+          }
+        },
+        "button_item_VkBiNV": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Review & Reward",
+            "button_link": "shopify://pages/review-and-reward",
+            "icon": "currency-circle-dollar"
+          }
+        },
+        "button_item_XHJamQ": {
+          "type": "button_item",
+          "disabled": true,
+          "settings": {
+            "button_label": "20% OFF SITEWIDE",
+            "button_link": "shopify://collections/all-products",
+            "icon": "gift"
+          }
+        }
+      },
+      "block_order": [
+        "button_item_DBJUz7",
+        "button_item_h9zX6i",
+        "button_item_VkBiNV",
+        "button_item_XHJamQ"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "name": "t:sections.buttons-with-icon.name",
+      "settings": {
+        "max_width": 1800,
+        "color_scheme": "scheme-97fc96ee-bbaf-4cdf-94ce-349c632aa15d",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "item_alignment": "left",
+        "item_button_style": "btn--primary",
+        "item_button_font": "button",
+        "enable_slider": false,
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 50,
+        "padding_bottom": 10
+      }
+    },
+    "custom_grid_banner_AVm7Ca": {
+      "type": "Custom-grid-banner",
+      "blocks": {
+        "slide_zz9PAk": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/garden-of-wellness-shop-xmas2025-homepage-banner-desktop-2200x1555.webp",
+            "image_mobile": "shopify://shop_images/garden-of-wellness-shop-xmas2025-homepage-banner-mobile-1000x1505.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-right",
+            "content_alignment": "left",
+            "subheading": "",
+            "heading": "<span style=\"\"> aaaaaaa</span>",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "text": "",
+            "button_label": "",
+            "button_link": "shopify://collections/all-products",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "banner_card_tA8wND": {
+          "type": "banner-card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/gow-shop-mid-age-couple.webp",
+            "image_overlay_opacity": 0,
+            "column_span": 2,
+            "row_span": 1,
+            "content_spacing": "medium",
+            "content_gap": "standard",
+            "content_position": "bottom-center",
+            "content_alignment": "center",
+            "content_position_mobile": "bottom-center",
+            "content_alignment_mobile": "center",
+            "card_link": "shopify://collections/women-supplements",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Wellness starts from within.",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "shop now",
+            "button_style": "btn--underline",
+            "button_icon": "none",
+            "button_size": "btn--medium",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "banner_card_zGAgUU": {
+          "type": "banner-card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/gow-shop-a-little-girl-hoding-hair-oil-bottle.webp",
+            "image_overlay_opacity": 0,
+            "column_span": 2,
+            "row_span": 1,
+            "content_spacing": "medium",
+            "content_gap": "standard",
+            "content_position": "bottom-center",
+            "content_alignment": "center",
+            "content_position_mobile": "bottom-center",
+            "content_alignment_mobile": "center",
+            "card_link": "shopify://pages/little-etoile",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Christmas gifts for your little ones",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "shop now",
+            "button_style": "btn--underline",
+            "button_icon": "none",
+            "button_size": "btn--medium",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "slide_zz9PAk",
+        "banner_card_tA8wND",
+        "banner_card_zGAgUU"
+      ],
+      "custom_css": [],
+      "name": "Custom grid banner",
+      "settings": {
+        "max_width": 1800,
+        "color_scheme": "",
+        "autoplay": false,
+        "autoplay_delay": 3,
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "description_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--primary",
+        "button_icon": "none",
+        "columns": 4,
+        "banner_height": "large",
+        "gap": "2xs",
+        "enable_swiper_mobile": false,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 30,
+        "padding_bottom": 0
+      }
+    },
+    "grid_banner_pGTR68": {
+      "type": "grid-banner",
+      "blocks": {
+        "banner_card_KbRLbR": {
+          "type": "banner-card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image_overlay_opacity": 10,
+            "column_span": 2,
+            "row_span": 2,
+            "content_spacing": "medium",
+            "content_gap": "standard",
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "content_position_mobile": "bottom-center",
+            "content_alignment_mobile": "center",
+            "card_link": "shopify://products/little-etoile-care-swimprotect-2-in-1-shampoo-body-wash-chlorine-removal-for-2-years",
+            "subheading": "",
+            "subheading_style": "thick-border",
+            "heading": "SALE 20% off sitewide",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "shop now",
+            "button_style": "btn--secondary",
+            "button_icon": "none",
+            "button_size": "btn--medium",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "banner_card_HYCJmx": {
+          "type": "banner-card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image_overlay_opacity": 0,
+            "column_span": 1,
+            "row_span": 2,
+            "content_spacing": "medium",
+            "content_gap": "standard",
+            "content_position": "bottom-center",
+            "content_alignment": "center",
+            "content_position_mobile": "bottom-center",
+            "content_alignment_mobile": "center",
+            "card_link": "shopify://collections/garden-of-wellness-nourishing-body-oil",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Revive your skin, awaken your senses",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "text": "<p>Nourishing body oils</p>",
+            "text_size": "text-base",
+            "button_label": "20% OFF SITEWIDE",
+            "button_style": "btn--secondary",
+            "button_icon": "none",
+            "button_size": "btn--medium",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "banner_card_mN9wCz": {
+          "type": "banner-card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image_overlay_opacity": 0,
+            "column_span": 1,
+            "row_span": 2,
+            "content_spacing": "medium",
+            "content_gap": "standard",
+            "content_position": "bottom-center",
+            "content_alignment": "center",
+            "content_position_mobile": "bottom-center",
+            "content_alignment_mobile": "center",
+            "card_link": "",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Essential care for Little Swimmers.",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "text": "<p>Little Étoile</p>",
+            "text_size": "text-base",
+            "button_label": "20% OFF SITEWIDE",
+            "button_style": "btn--secondary",
+            "button_icon": "none",
+            "button_size": "btn--medium",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "banner_card_KbRLbR",
+        "banner_card_HYCJmx",
+        "banner_card_mN9wCz"
+      ],
+      "disabled": true,
+      "name": "t:sections.grid-banner.presets__1.name",
+      "settings": {
+        "container": "full",
+        "color_scheme": "scheme-13",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "description_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--primary",
+        "button_icon": "none",
+        "columns": 4,
+        "banner_height": "large",
+        "gap": "2xs",
+        "enable_swiper_mobile": false,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "buttons_with_icon_b6Ha9e": {
+      "type": "buttons-with-icon",
+      "blocks": {
+        "button_item_ctXgDH": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Health Supplement",
+            "button_link": "shopify://collections/health-supplements",
+            "icon": "none"
+          }
+        },
+        "button_item_F6RQWd": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Food & Nutrition",
+            "button_link": "shopify://collections/food-and-nutrition",
+            "icon": "none"
+          }
+        },
+        "button_item_ftKLgH": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Pregnancy & Breastfeeding",
+            "button_link": "shopify://collections/mothers-care",
+            "icon": "none"
+          }
+        },
+        "button_item_PHpAXi": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Baby Care",
+            "button_link": "shopify://collections/baby-care-products",
+            "icon": "none"
+          }
+        },
+        "button_item_TpBJLm": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Beauty & Topical Care",
+            "button_link": "shopify://collections/beauty-products",
+            "icon": "none"
+          }
+        },
+        "button_item_EQAB4t": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Pet Care",
+            "button_link": "shopify://collections/pet-care-products",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "button_item_ctXgDH",
+        "button_item_F6RQWd",
+        "button_item_ftKLgH",
+        "button_item_PHpAXi",
+        "button_item_TpBJLm",
+        "button_item_EQAB4t"
+      ],
+      "name": "t:sections.buttons-with-icon.name",
+      "settings": {
+        "max_width": 1800,
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "item_alignment": "left",
+        "item_button_style": "btn--secondary",
+        "item_button_font": "button",
+        "enable_slider": false,
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
+    "rich_text_FxgKyg": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_kBwNeY": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>This Christmas and Boxing Day,</strong>",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h3"
+          }
+        },
+        "text_jxKBLU": {
+          "type": "text",
+          "settings": {
+            "text": "<p>allow us to elevate your celebrations with thoughtful gifts chosen just for you. For a limited time, enjoy <strong>free shipping on orders over $50</strong>, and receive <strong>complimentary gifts</strong> from our curated collection with purchases over <strong>$69.99</strong>.<strong> Happy Holidays!</strong></p>",
+            "text_size": "text-base",
+            "text_line_limit": "none",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "heading_kBwNeY",
+        "text_jxKBLU"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "full",
+        "color_scheme": "scheme-9b7da926-b76d-4e5c-9a28-ebe141f244b5",
+        "use_color_scheme_in_container": false,
+        "content_spacing": "standard",
+        "content_alignment": "center",
+        "padding_top": 30,
+        "padding_bottom": 30,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "featured_collection_ncXTzD": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_KXieEW": {
+          "type": "collection",
+          "settings": {
+            "collection": "clearance-sale",
+            "title": "",
+            "show_banner": false,
+            "color_scheme": "scheme-inverse",
+            "card_link": "",
+            "image_overlay_opacity": 10,
+            "content_position": "bottom-center",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "BEST DEALS",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "#ffffff",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_KXieEW"
+      ],
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-12",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Best Deals",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "#ffffff",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 6,
+        "columns": 4,
+        "column_gap": "extra-small",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": true,
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "collection_list_4BPtwK": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_qWzrwb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "health-supplements",
+            "image": "shopify://shop_images/GoWshop_health-supplement_2000x2000_fbf6ff38-a74d-4b92-921e-3e795cc66545.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_4edxVP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "food-and-nutrition",
+            "image": "shopify://shop_images/Little-Etoile-Organic-Creamy-Risotto-Vegetables-Brown-Rice-with-DHA-_-6_-Months-120g-800x800-4.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_f6JVDP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "pregnancy-and-breastfeeding-supplements",
+            "image": "shopify://shop_images/GoWshop_pregnantwoman_2000x2000_b3c1f5e8-6c6d-47ae-a8e0-ff757666da6a.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_cAMnBV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "baby-care-products",
+            "image": "shopify://shop_images/GoWshop_Kidwithhisfather.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_E64fLt": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "beauty-products",
+            "image": "shopify://shop_images/Garden-of-Wellness-Nourishing-Body-Oil-Sage-Clarity-800x799-4.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_KeWFrC": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "pet-care-products",
+            "image": "shopify://shop_images/GoWshop_adog.webp",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_qWzrwb",
+        "featured_collection_4edxVP",
+        "featured_collection_f6JVDP",
+        "featured_collection_cAMnBV",
+        "featured_collection_E64fLt",
+        "featured_collection_KeWFrC"
+      ],
+      "disabled": true,
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-11",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Shop by Categories ​",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "card_color_scheme": "",
+        "card_style": "card",
+        "card_heading_size": "text-base",
+        "card_image_ratio": "1/1",
+        "card_image_width": "full",
+        "rounded_card_image": false,
+        "card_show_border": false,
+        "columns_desktop": 6,
+        "column_gap": "small",
+        "row_gap": "inherit",
+        "grid_bordered": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "featured_collection_rLVnzY": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_NLirnd": {
+          "type": "collection",
+          "settings": {
+            "collection": "health-supplements",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-13",
+            "card_link": "shopify://collections/health-supplements",
+            "banner_image": "shopify://shop_images/GoWshop_health-supplement_2000x2000_fbf6ff38-a74d-4b92-921e-3e795cc66545.webp",
+            "image_overlay_opacity": 16,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Health Supplement​",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "#ffffff",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "view more",
+            "button_style": "btn--underline",
+            "button_icon": "caret-right"
+          }
+        }
+      },
+      "block_order": [
+        "collection_NLirnd"
+      ],
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 10,
+        "columns": 5,
+        "column_gap": "extra-small",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": false,
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 70,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "scrolling_banner_NwEcTT": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "slide_iJmjA6": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "background": "shopify://shop_images/gow-shop-our-research-park.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "subheading": "",
+            "title": "Our Research Parks",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "description": "<p>All Images seen on this page are taken on our research park.</p>",
+            "description_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "banner_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "product_color_scheme": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_iJmjA6"
+      ],
+      "name": "t:sections.scrolling-banner.name",
+      "settings": {
+        "container": "fixed",
+        "slide_height": "adapt",
+        "content_position_mobile": "top-center",
+        "text_alignment_mobile": "center",
+        "enable_zoom": true,
+        "enable_parallax": true
+      }
+    },
+    "featured_collection_XYeEAH": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_RTmMGB": {
+          "type": "collection",
+          "settings": {
+            "collection": "food-and-nutrition",
+            "title": "Baby Nutrition​",
+            "show_banner": true,
+            "color_scheme": "scheme-13",
+            "card_link": "shopify://collections/food-and-nutrition",
+            "banner_image": "shopify://shop_images/Little-Etoile-Organic-Sweet-Potato-Pumpkin-Corn-_-6_-Months-120g-800x800-6.webp",
+            "image_overlay_opacity": 16,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Baby Nutrition​",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "#ffffff",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "view more",
+            "button_style": "btn--underline",
+            "button_icon": "caret-right"
+          }
+        }
+      },
+      "block_order": [
+        "collection_RTmMGB"
+      ],
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 6,
+        "columns": 5,
+        "column_gap": "extra-small",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": false,
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "featured_collection_zLXcAf": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_9TDV6Y": {
+          "type": "collection",
+          "settings": {
+            "collection": "beauty-products",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-13",
+            "card_link": "shopify://collections/beauty-products",
+            "banner_image": "shopify://shop_images/Garden-of-Wellness-Nourishing-Body-Oil-Sage-Clarity-800x799-4.webp",
+            "image_overlay_opacity": 10,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Beauty & Topical Care​",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "#ffffff",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "view more",
+            "button_style": "btn--underline",
+            "button_icon": "caret-right"
+          }
+        }
+      },
+      "block_order": [
+        "collection_9TDV6Y"
+      ],
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 10,
+        "columns": 5,
+        "column_gap": "extra-small",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": true,
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 0,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "featured_collection_Mb7qdM": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_fJpzg3": {
+          "type": "collection",
+          "settings": {
+            "collection": "mothers-care",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-13",
+            "card_link": "shopify://collections/mothers-care",
+            "banner_image": "shopify://shop_images/GoWshop_pregnantwoman_2000x2000_b3c1f5e8-6c6d-47ae-a8e0-ff757666da6a.webp",
+            "image_overlay_opacity": 10,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Mothers' Care",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "#ffffff",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "view more",
+            "button_style": "btn--underline",
+            "button_icon": "caret-right"
+          }
+        }
+      },
+      "block_order": [
+        "collection_fJpzg3"
+      ],
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 7,
+        "columns": 5,
+        "column_gap": "extra-small",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": false,
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "custom_content_KTbGdy": {
+      "type": "custom-content",
+      "blocks": {
+        "text_Fd6aA6": {
+          "type": "text",
+          "settings": {
+            "content_alignment": "left",
+            "subheading": "",
+            "heading": "<em>Australian Certified Organic Fucoidan</em>",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "#87c2a5",
+            "highlight_text_color": "rgba(0,0,0,0)",
+            "heading_size": "h1",
+            "description": "<p>Contains a clinical dose of 500mg of organic fucoidan to help antioxidant and support immune system health.​<br/></p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "width": "33%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "image_card_UUzUGe": {
+          "type": "image_card",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/Undaria.webp",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-right",
+            "content_alignment": "right",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "shopify://pages/max-biocare",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "show_badge": false,
+            "badge_color_scheme": "scheme-1",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "99$",
+            "color_scheme_mobile": "scheme-1",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "width": "66%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "image_card_with_product_BL7UrG": {
+          "type": "image_card_with_product",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/GoWshop_maxucosa_duo.webp",
+            "image_ratio": "adapt",
+            "subheading": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "description": "",
+            "button_label": "SHOP NOW",
+            "button_style": "btn--secondary",
+            "button_icon": "none",
+            "product": "max-biocare-maxucosa",
+            "width": "66%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_Fd6aA6",
+        "image_card_UUzUGe",
+        "image_card_with_product_BL7UrG"
+      ],
+      "custom_css": [
+        ".btn {opacity: 100%;}"
+      ],
+      "name": "t:sections.custom-content.name",
+      "settings": {
+        "tab_content_html": "",
+        "product_list": [],
+        "template_product": "",
+        "container": "fixed",
+        "color_scheme": "scheme-3",
+        "enable_sticky_column": false,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "large",
+        "row_gap": "large",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "header_alignment_collapsible": "left",
+        "section_header_alignment_mobile_collapsible": "inherit",
+        "subheading_collapsible": "",
+        "heading_collapsible": "Collapsible tabs",
+        "highlight_style_collapsible": "none",
+        "highlight_font_style_collapsible": "italic",
+        "highlight_style_color_collapsible": "",
+        "highlight_text_color_collapsible": "",
+        "heading_size_collapsible": "h1",
+        "description_collapsible": "",
+        "text_size_collapsible": "text-base",
+        "button_label_collapsible": "",
+        "button_link_collapsible": "",
+        "button_style_collapsible": "btn--primary",
+        "button_icon_collapsible": "none",
+        "item_style": "standard",
+        "item_color_scheme_collapsible": "",
+        "item_heading_font_collapsible": "heading",
+        "item_heading_size_collapsible": "h4",
+        "item_icon_size_collapsible": "extra-large",
+        "section_header_alignment_testimonial": "center",
+        "section_header_alignment_mobile_testimonial": "inherit",
+        "subheading_testimonial": "",
+        "heading_testimonial": "Testimonials",
+        "highlight_style_testimonial": "none",
+        "highlight_font_style_testimonial": "italic",
+        "highlight_style_color_testimonial": "",
+        "highlight_text_color_testimonial": "",
+        "heading_size_testimonial": "h1",
+        "description_testimonial": "",
+        "text_size_testimonial": "text-base",
+        "layout": "focused",
+        "card_color_scheme": "",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "h1",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": true,
+        "columns_desktop": 3,
+        "column_gap_testimonial": "medium",
+        "row_gap_testimonial": "medium",
+        "enable_slider_testimonial": true,
+        "columns_mobile_testimonial": "1",
+        "swipe_on_mobile_testimonial": true,
+        "show_progress_bar": true
+      }
+    },
+    "custom_content_rwqbBF": {
+      "type": "custom-content",
+      "blocks": {
+        "image_card_43NYbn": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/gow-shop-best-sellers-banner.webp",
+            "image_ratio": "3/4",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "shopify://collections/best-sellers",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "show_badge": false,
+            "badge_color_scheme": "scheme-4",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "99$",
+            "color_scheme_mobile": "scheme-13",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "width": "41%",
+            "alignment": "start",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "collections_aQKWxU": {
+          "type": "collections",
+          "settings": {
+            "collection_list": [
+              "best-sellers"
+            ],
+            "custom_titles_collection": "",
+            "product_limit": 6,
+            "columns_desktop": 3,
+            "column_gap": "extra-small",
+            "row_gap": "inherit",
+            "enable_slider": false,
+            "pcard_image_ratio": "",
+            "columns_mobile": "2",
+            "swipe_on_mobile": true,
+            "width": "58%",
+            "alignment": "start",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_43NYbn",
+        "collections_aQKWxU"
+      ],
+      "name": "t:sections.custom-content.name",
+      "settings": {
+        "tab_content_html": "",
+        "product_list": [],
+        "template_product": "",
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "enable_sticky_column": true,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "medium",
+        "row_gap": "medium",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "header_alignment_collapsible": "left",
+        "section_header_alignment_mobile_collapsible": "inherit",
+        "subheading_collapsible": "",
+        "heading_collapsible": "Collapsible tabs",
+        "highlight_style_collapsible": "none",
+        "highlight_font_style_collapsible": "italic",
+        "highlight_style_color_collapsible": "",
+        "highlight_text_color_collapsible": "",
+        "heading_size_collapsible": "h1",
+        "description_collapsible": "",
+        "text_size_collapsible": "text-base",
+        "button_label_collapsible": "",
+        "button_link_collapsible": "",
+        "button_style_collapsible": "btn--primary",
+        "button_icon_collapsible": "none",
+        "item_style": "standard",
+        "item_color_scheme_collapsible": "",
+        "item_heading_font_collapsible": "heading",
+        "item_heading_size_collapsible": "h4",
+        "item_icon_size_collapsible": "extra-large",
+        "section_header_alignment_testimonial": "center",
+        "section_header_alignment_mobile_testimonial": "inherit",
+        "subheading_testimonial": "",
+        "heading_testimonial": "Testimonials",
+        "highlight_style_testimonial": "none",
+        "highlight_font_style_testimonial": "italic",
+        "highlight_style_color_testimonial": "",
+        "highlight_text_color_testimonial": "",
+        "heading_size_testimonial": "h1",
+        "description_testimonial": "",
+        "text_size_testimonial": "text-base",
+        "layout": "focused",
+        "card_color_scheme": "",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "h1",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": true,
+        "columns_desktop": 3,
+        "column_gap_testimonial": "medium",
+        "row_gap_testimonial": "medium",
+        "enable_slider_testimonial": true,
+        "columns_mobile_testimonial": "1",
+        "swipe_on_mobile_testimonial": true,
+        "show_progress_bar": true
+      }
+    },
+    "multicolumn_icon_brands_custom_c4Jgan": {
+      "type": "multicolumn-icon-brands-custom",
+      "blocks": {
+        "column_Xykz6P": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "image": "shopify://shop_images/GoWshop_MBC_LOGO_700x282_b2dfb5f6-dd31-49eb-9df8-9839b8f6c4fd.webp",
+            "image_hover": "shopify://shop_images/GoWshop_Website_MBC_LOGO_700x282-04.webp",
+            "max_width": 200,
+            "max_width_mb": 200,
+            "image_link": "shopify://pages/max-biocare",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h6",
+            "heading_font": "heading",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_f43T33": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "image": "shopify://shop_images/GoWshop_LE_LOGO_700x282_e2d0abdb-b2ac-4340-afc3-7882b069949f.webp",
+            "image_hover": "shopify://shop_images/GoWshop_Website_LE_LOGO_700x282-02.webp",
+            "max_width": 200,
+            "max_width_mb": 200,
+            "image_link": "shopify://pages/little-etoile",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h6",
+            "heading_font": "heading",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_dzja9f": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "image": "shopify://shop_images/GoWshop_GOW_LOGO_700x282_47bfd5e2-d2c3-432d-80c3-c11431f701a6.webp",
+            "image_hover": "shopify://shop_images/GoWshop_GOW_LOGO_700x282_47bfd5e2-d2c3-432d-80c3-c11431f701a6.webp",
+            "max_width": 200,
+            "max_width_mb": 200,
+            "image_link": "shopify://pages/garden-of-wellness",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h6",
+            "heading_font": "heading",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_4VMj93": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "image": "shopify://shop_images/GoWshop_SAL_LOGO_700x282_58ea0e94-f199-4d2d-a49c-98a1bc5291f2.webp",
+            "image_hover": "shopify://shop_images/GoWshop_Website_SAL_LOGO_700x282-03.webp",
+            "max_width": 200,
+            "max_width_mb": 200,
+            "image_link": "shopify://pages/salvarity",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h6",
+            "heading_font": "heading",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_JwEwmE": {
+          "type": "column",
+          "settings": {
+            "icon": "none",
+            "image": "shopify://shop_images/GoWshop_PAWLAVIE_LOGO_700x282_11003149-a098-4305-857a-29cd5a0bebd3.webp",
+            "image_hover": "shopify://shop_images/GoWshop_PAWLAVIE_LOGO_700x282_11003149-a098-4305-857a-29cd5a0bebd3.webp",
+            "max_width": 200,
+            "max_width_mb": 200,
+            "image_link": "shopify://pages/pawlavie",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h6",
+            "heading_font": "heading",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "column_Xykz6P",
+        "column_f43T33",
+        "column_dzja9f",
+        "column_4VMj93",
+        "column_JwEwmE"
+      ],
+      "custom_css": [
+        ".multicolumn-card--image-icon {--icon-size: calc(100% - 2px);}"
+      ],
+      "name": "Section Icon Brands",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "header_layout": "standing-column",
+        "section_header_alignment": "left",
+        "image_margin_left": -150,
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Our Brands",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "enable_sticky": false,
+        "card_color_scheme": "",
+        "content_alignment": "center",
+        "image_position": "left",
+        "icon_color": "#1d349a",
+        "columns_desktop": 5,
+        "column_gap": "extra-small",
+        "row_gap": "inherit",
+        "show_divider_col": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "show_section_divider": true,
+        "divider_width": "fixed",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "scrolling_banner_jt94NV": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "slide_4mjyw3": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "background": "shopify://shop_images/garden-of-wellness-shop_review-and-rewards-banner-1400x500_2.webp",
+            "background_mobile": "shopify://shop_images/garden-of-wellness-shop_review-and-rewards-banner-850x650_2.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "middle-center",
+            "text_alignment": "center",
+            "subheading": "",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1",
+            "description": "",
+            "description_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "banner_link": "shopify://pages/review-and-reward",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "product_color_scheme": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_4mjyw3"
+      ],
+      "name": "t:sections.scrolling-banner.name",
+      "settings": {
+        "container": "fixed",
+        "slide_height": "adapt",
+        "content_position_mobile": "top-center",
+        "text_alignment_mobile": "center",
+        "enable_zoom": true,
+        "enable_parallax": true
+      }
+    },
+    "featured_blog_EGLdpH": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Featured Blogs​",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "<p>Discover our new blog – for your health, beauty, and wellness. ​</p>",
+        "text_size": "text-base",
+        "button_label": "view all blogs",
+        "button_link": "shopify://blogs/wellness-hub",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "blog": "wellness-hub",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "card_title_size": "h4",
+        "show_tags": false,
+        "show_excerpt": true,
+        "show_date": false,
+        "show_author": false,
+        "show_button": true,
+        "card_button_style": "btn--underline",
+        "card_button_icon": "none",
+        "card_button_label": "Read more",
+        "padding_top": 50,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    }
+  },
+  "order": [
+    "buttons_with_icon_f6P63z",
+    "custom_grid_banner_AVm7Ca",
+    "grid_banner_pGTR68",
+    "buttons_with_icon_b6Ha9e",
+    "rich_text_FxgKyg",
+    "featured_collection_ncXTzD",
+    "collection_list_4BPtwK",
+    "featured_collection_rLVnzY",
+    "scrolling_banner_NwEcTT",
+    "featured_collection_XYeEAH",
+    "featured_collection_zLXcAf",
+    "featured_collection_Mb7qdM",
+    "custom_content_KTbGdy",
+    "custom_content_rwqbBF",
+    "multicolumn_icon_brands_custom_c4Jgan",
+    "scrolling_banner_jt94NV",
+    "featured_blog_EGLdpH"
+  ]
+}
