@@ -112,8 +112,8 @@
           "type": "banner-card",
           "settings": {
             "color_scheme": "scheme-13",
-            "image": "shopify://shop_images/20260108_GOW-shop-Homepage-Banner-2.webp",
-            "image_mobile": "shopify://shop_images/20260108_GOW-shop-Homepage-Banner_Mobile-2.webp",
+            "image": "shopify://shop_images/20260108_GOW-shop-Homepage-Banner_Mobile-2.webp",
+            "image_mobile": "shopify://shop_images/20260108_GOW-shop-Homepage-Banner-2.webp",
             "image_overlay_opacity": 0,
             "column_span": 2,
             "row_span": 1,
@@ -148,8 +148,8 @@
           "type": "banner-card",
           "settings": {
             "color_scheme": "scheme-13",
-            "image": "shopify://shop_images/20260108_GOW-shop-Homepage-Banner-3.webp",
-            "image_mobile": "shopify://shop_images/20260108_GOW-shop-Homepage-Banner_Mobile-3.webp",
+            "image": "shopify://shop_images/20260108_GOW-shop-Homepage-Banner_Mobile-3.webp",
+            "image_mobile": "shopify://shop_images/20260108_GOW-shop-Homepage-Banner-3.webp",
             "image_overlay_opacity": 0,
             "column_span": 2,
             "row_span": 1,
