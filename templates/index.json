@@ -93,7 +93,7 @@
             "subheading": "",
             "heading_type": "html",
             "heading": "",
-            "heading_html": "<span> Your family's <span style=\"color:#ccf0de\">wellness</span>, <br>\nall in one place</span>",
+            "heading_html": "<span style=\"font-family:'figtree-custom', sans-serif;\">\n  Your family's \n  <span style=\"font-family:'playfair-custom', serif; color:#ccf0de;\">\n    wellness\n  </span>, <br>\n  all in one place\n</span>",
             "highlight_style": "none",
             "highlight_font_style": "italic",
             "highlight_style_color": "",
