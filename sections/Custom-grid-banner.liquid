@@ -52,11 +52,8 @@
     .section__left .multicolumn__slider .content-overlay {
     padding-bottom: 3rem;
   }
- }
- @media (min-width: 1024px) {
-  .section__left .multicolumn__slider .content-overlay {
-    padding-bottom: 4.5rem;
-  }
+
+  /* Mobile: Button always centered below content */
   .slide__button-custom {
     position: static !important;
     margin-top: 1rem;
@@ -66,6 +63,11 @@
 
   .slide__text {
     width: 100%;
+  }
+ }
+ @media (min-width: 1024px) {
+  .section__left .multicolumn__slider .content-overlay {
+    padding-bottom: 4.5rem;
   }
 }
 {% endstyle %}
