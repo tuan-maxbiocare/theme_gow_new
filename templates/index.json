@@ -187,7 +187,8 @@
         "banner_card_zGAgUU"
       ],
       "custom_css": [
-        "h2 {line-height: 1;}"
+        "h2 {line-height: 1;}",
+        ".card-media__description {line-height: 1;}"
       ],
       "name": "Custom grid banner",
       "settings": {
