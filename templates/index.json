@@ -93,7 +93,7 @@
             "subheading": "",
             "heading_type": "html",
             "heading": "",
-            "heading_html": "<span> Your Family's <span style=\"color:#ccf0de\">wellness</span>, <br>\nall in one place</span>",
+            "heading_html": "<span> Your family's <span style=\"color:#ccf0de\">wellness</span>, <br>\nall in one place</span>",
             "highlight_style": "none",
             "highlight_font_style": "italic",
             "highlight_style_color": "",
@@ -187,7 +187,7 @@
         "banner_card_zGAgUU"
       ],
       "custom_css": [
-        "h2 {line-height: 1}"
+        "h2 {line-height: 1;}"
       ],
       "name": "Custom grid banner",
       "settings": {
