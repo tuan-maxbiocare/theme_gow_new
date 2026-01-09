@@ -154,7 +154,7 @@
                   </motion-element>
                 {%- assign motion_delay = motion_delay | plus: 50 -%}
               {%- endunless -%}
-              {%- unless block.settings.heading == blank -%}
+              {%- unless block.settings.heading == blank and block.settings.heading_html == blank -%}
                 <h2 class="slide__title {{ block.settings.heading_size }} rich-text__heading">
                   <motion-element
                     data-motion="fade-up"
@@ -163,13 +163,17 @@
                     hold
                     class="block"
                   >
-                    {% render 'highlight-text',
-                      hl_text: block.settings.heading,
-                      hl_style: block.settings.highlight_style,
-                      hl_font_style: block.settings.highlight_font_style,
-                      hl_style_color: block.settings.highlight_style_color,
-                      hl_text_color: block.settings.highlight_text_color
-                    %}
+                    {%- if block.settings.heading_type == 'html' -%}
+                      {{ block.settings.heading_html }}
+                    {%- else -%}
+                      {% render 'highlight-text',
+                        hl_text: block.settings.heading,
+                        hl_style: block.settings.highlight_style,
+                        hl_font_style: block.settings.highlight_font_style,
+                        hl_style_color: block.settings.highlight_style_color,
+                        hl_text_color: block.settings.highlight_text_color
+                      %}
+                    {%- endif -%}
                   </motion-element>
                 </h2>
                 {%- assign motion_delay = motion_delay | plus: 50 -%}
@@ -187,23 +191,46 @@
                 {%- assign motion_delay = motion_delay | plus: 50 -%}
               {%- endunless -%}
               {%- unless block.settings.button_label == blank -%}
-                <motion-element
-                  data-motion="fade-up"
-                  data-motion-delay="{{ motion_delay }}"
-                  data-text
-                  hold
-                  class="block slide__buttons rich-text__button"
-                >
-                  {% render 'button',
-                    button_style: block.settings.button_style,
-                    button_link: block.settings.button_link,
-                    button_label: block.settings.button_label,
-                    button_icon: block.settings.button_icon
-                  %}
-                </motion-element>
-                {%- assign motion_delay = motion_delay | plus: 50 -%}
+                {%- if block.settings.button_position_type == 'inline' -%}
+                  <motion-element
+                    data-motion="fade-up"
+                    data-motion-delay="{{ motion_delay }}"
+                    data-text
+                    hold
+                    class="block slide__buttons rich-text__button"
+                  >
+                    {% render 'button',
+                      button_style: block.settings.button_style,
+                      button_link: block.settings.button_link,
+                      button_label: block.settings.button_label,
+                      button_icon: block.settings.button_icon
+                    %}
+                  </motion-element>
+                  {%- assign motion_delay = motion_delay | plus: 50 -%}
+                {%- endif -%}
               {%- endunless -%}
             </div>
+            {%- unless block.settings.button_label == blank -%}
+              {%- if block.settings.button_position_type == 'custom' -%}
+                <div class="slide__button-custom content-overlay content-overlay--{{ block.settings.button_custom_position }} flex bg-none" style="position: absolute; inset: 0; pointer-events: none;">
+                  <motion-element
+                    data-motion="fade-up"
+                    data-motion-delay="{{ motion_delay }}"
+                    data-text
+                    hold
+                    class="block slide__buttons rich-text__button"
+                    style="pointer-events: auto;"
+                  >
+                    {% render 'button',
+                      button_style: block.settings.button_style,
+                      button_link: block.settings.button_link,
+                      button_label: block.settings.button_label,
+                      button_icon: block.settings.button_icon
+                    %}
+                  </motion-element>
+                </div>
+              {%- endif -%}
+            {%- endunless -%}
           </div>
       {% endif %}
       </div>
@@ -924,11 +951,35 @@
           "default": "Add a tagline"
         },
         {
+          "type": "select",
+          "id": "heading_type",
+          "label": "Heading Type",
+          "options": [
+            {
+              "value": "text",
+              "label": "Text (with highlight)"
+            },
+            {
+              "value": "html",
+              "label": "HTML (custom code)"
+            }
+          ],
+          "default": "text"
+        },
+        {
           "type": "inline_richtext",
           "id": "heading",
           "label": "t:general.heading.label",
           "default": "Slide item",
-          "info": "t:general.heading.info"
+          "info": "t:general.heading.info",
+          "visible_if": "{{ block.settings.heading_type == 'text' }}"
+        },
+        {
+          "type": "html",
+          "id": "heading_html",
+          "label": "Heading HTML",
+          "info": "Custom HTML code for heading",
+          "visible_if": "{{ block.settings.heading_type == 'html' }}"
         },
         {
           "type": "select",
@@ -1154,6 +1205,72 @@
             }
           ],
           "default": "none"
+        },
+        {
+          "type": "header",
+          "content": "Button Position Settings"
+        },
+        {
+          "type": "select",
+          "id": "button_position_type",
+          "label": "Button Position",
+          "options": [
+            {
+              "value": "inline",
+              "label": "Inline with content (default)"
+            },
+            {
+              "value": "custom",
+              "label": "Custom position (independent)"
+            }
+          ],
+          "default": "inline",
+          "info": "Choose whether button follows content alignment or has its own position"
+        },
+        {
+          "type": "select",
+          "id": "button_custom_position",
+          "label": "Button Custom Position",
+          "options": [
+            {
+              "value": "bottom-left",
+              "label": "Bottom Left"
+            },
+            {
+              "value": "bottom-center",
+              "label": "Bottom Center"
+            },
+            {
+              "value": "bottom-right",
+              "label": "Bottom Right"
+            },
+            {
+              "value": "top-left",
+              "label": "Top Left"
+            },
+            {
+              "value": "top-center",
+              "label": "Top Center"
+            },
+            {
+              "value": "top-right",
+              "label": "Top Right"
+            },
+            {
+              "value": "middle-left",
+              "label": "Middle Left"
+            },
+            {
+              "value": "middle-center",
+              "label": "Middle Center"
+            },
+            {
+              "value": "middle-right",
+              "label": "Middle Right"
+            }
+          ],
+          "default": "bottom-right",
+          "visible_if": "{{ block.settings.button_position_type == 'custom' }}"
         }
       ]
     },
