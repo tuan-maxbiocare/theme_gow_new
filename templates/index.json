@@ -186,7 +186,9 @@
         "banner_card_tA8wND",
         "banner_card_zGAgUU"
       ],
-      "custom_css": [],
+      "custom_css": [
+        "h2 {line-height: 1}"
+      ],
       "name": "Custom grid banner",
       "settings": {
         "max_width": 1800,
