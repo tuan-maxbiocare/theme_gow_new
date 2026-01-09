@@ -188,6 +188,7 @@
       ],
       "custom_css": [
         "h2 {line-height: 1;}",
+        "@media (max-width: 900px) {h2 {font-size: 28px; }}",
         ".card-media__description {line-height: 1;}"
       ],
       "name": "Custom grid banner",
