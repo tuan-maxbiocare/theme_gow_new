@@ -167,6 +167,7 @@
         <span class="product-variant-options-sale-badge"> {{ discount_percent | round }}% off </span>
       {%- endif -%}
     </label>
+
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option
       id="{{ input_id }}"
