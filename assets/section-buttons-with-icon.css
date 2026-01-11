@@ -59,14 +59,19 @@
   }
 }
 .button-list__item {
-  width: auto;
+  /* width: auto; */
+   flex: 1 1 0%;       
+  max-width: 100%; 
 }
 
 .button-item__inner {
-  box-sizing: border-box;
+  /* box-sizing: border-box;
   min-height: var(--buttons-height);
   height: auto;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 2rem; */
+  width: 100%;        /* Nút chiếm đủ chiều rộng của item */
+  justify-content: center;
+  text-align: center;
 }
 .button-item__icon {
   width: var(--icon-size);

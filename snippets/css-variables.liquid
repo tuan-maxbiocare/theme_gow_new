@@ -38,6 +38,7 @@
       assign buttons_radius = 10
     when 'round'
       assign buttons_radius = 100
+    
   endcase
 
   case settings.inputs_corner_radius
@@ -85,6 +86,8 @@
       assign badges_radius = 5
     when 'round'
       assign badges_radius = 40
+    when 'circle' 
+      assign badges_radius = 100
   endcase
 %}
 {% style %}

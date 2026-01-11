@@ -51,6 +51,11 @@
     --f-columns-xl: {{ f_columns_xl }};
     --icon-color: {{ section.settings.icon_color }};
   }
+  @media screen and (min-width: 767px) {
+    .section-{{ section.id }} .section__content {
+      margin-left: {{ section.settings.image_margin_left }}px;
+    }
+  }
 {% endstyle %}
 
 <div class="section section-{{ section.id }} section--padding multicolumn-icon section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }}">
@@ -72,7 +77,9 @@
       class="section__content block f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ section.settings.columns_mobile }}-cols{% endif %}"
       data-section-id="{{ section.id }}"
     >
-      <div class="multicolumn__items f-grid{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
+      <div
+        class="multicolumn__items f-grid{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}"
+      >
         {%- for block in section.blocks -%}
           <div
             class="f-column relative multicolumn-card-wrapper"
@@ -93,20 +100,31 @@
                     {%- liquid
                       assign alt = block.settings.image.alt | default: block.settings.title | escape
                     -%}
-                    {%- capture image_sizes -%}(min-width: 768px) {{ block.settings.max_width }}px, {{ block.settings.max_width_mb }}px{%- endcapture -%}
-                    <picture class="card-media__media media-wrapper">
+                    {%- capture image_sizes -%}
+                      (min-width: 768px) {{ block.settings.max_width }}px, {{ block.settings.max_width_mb }}px
+                    {%- endcapture -%}
+
+                    {%- if block.settings.image_link != blank -%}
+                      <a href="{{ block.settings.image_link }}" class="block relative">
+                    {%- endif -%}
+
+                    <picture class="card-media__media">
                       {{
                         block.settings.image
                         | image_url: width: 1100
                         | image_tag:
                           loading: 'lazy',
-                          class: 'motion-reduce absolute inset-0 w-full h-full',
+                          class: 'motion-reduce absolute inset-0 w-full h-full object-cover',
                           widths: '40, 60, 80, 120, 165, 360, 535, 750, 940, 1100',
                           is: 'image-lazy',
                           sizes: image_sizes,
                           alt: alt
                       }}
                     </picture>
+
+                    {%- if block.settings.image_link != blank -%}
+                      </a>
+                    {%- endif -%}
                   {%- elsif block.settings.icon != 'none' -%}
                     {%- render 'icons', icon: block.settings.icon -%}
                   {%- else -%}
@@ -246,6 +264,12 @@
           "label": "t:general.text_alignment.options__3.label"
         }
       ]
+    },
+    {
+      "type": "number",
+      "id": "image_margin_left",
+      "label": "Heading to image spacing",
+      "default": 0
     },
     {
       "id": "section_header_alignment_mobile",
@@ -934,6 +958,11 @@
           "unit": "px",
           "label": "t:sections.multicolumn-with-icon.blocks.column.max_width_mb.label",
           "default": 28
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "Image link"
         },
         {
           "type": "header",

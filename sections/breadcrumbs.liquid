@@ -15,30 +15,47 @@
       {%- if template contains 'page' -%}
         <span aria-hidden="true" class="breadcrumbs--sep"></span>
         <span class="breadcrumbs--last text-subtext">{{ page.title }}</span>
+        {% comment %}
+          {%- elsif template contains 'product' -%}
+          {%- liquid
+            assign primary_collection = product.metafields.breadcrumb.primary_collection
+          -%}
+          {%- if collection.url != blank -%}
+            <span aria-hidden="true" class="breadcrumbs--sep"></span>
+            {%- if primary_collection != blank -%}
+              {{ primary_collection.value.title | link_to: primary_collection.value.url, class: 'reversed-link' }}
+            {%- else -%}
+              {{ collection.title | link_to: collection.url, class: 'reversed-link' }}
+            {%- endif -%}
+          {%- else -%}
+            {% assign current_collection = product.collections | first %}
+            <span aria-hidden="true" class="breadcrumbs--sep"></span>
+            {%- if primary_collection != blank -%}
+              <a href="{{ primary_collection.value.url }}" class="reversed-link">{{ primary_collection.value.title }}</a>
+            {%- elsif current_collection != blank -%}
+              <a href="{{ current_collection.url }}" class="reversed-link">{{ current_collection.title }}</a>
+            {%- else -%}
+              <a href="{{ routes.all_products_collection_url }}" class="reversed-link">
+                {{- 'general.breadcrumbs.collections' | t -}}
+              </a>
+            {%- endif -%}
+          {%- endif -%}
+          <span aria-hidden="true" class="breadcrumbs--sep breadcrumbs--sep-last"></span>
+          <span class="breadcrumbs--last text-subtext">{{ product.title }}</span>
+        {% endcomment %}
+      {% comment %} link breadcrumbs new {% endcomment %}
       {%- elsif template contains 'product' -%}
         {%- liquid
           assign primary_collection = product.metafields.breadcrumb.primary_collection
         -%}
-        {%- if collection.url != blank -%}
+
+        {%- if primary_collection != blank -%}
           <span aria-hidden="true" class="breadcrumbs--sep"></span>
-          {%- if primary_collection != blank -%}
-            {{ primary_collection.value.title | link_to: primary_collection.value.url, class: 'reversed-link' }}
-          {%- else -%}
-            {{ collection.title | link_to: collection.url, class: 'reversed-link' }}
-          {%- endif -%}
-        {%- else -%}
-          {% assign current_collection = product.collections | first %}
-          <span aria-hidden="true" class="breadcrumbs--sep"></span>
-          {%- if primary_collection != blank -%}
-            <a href="{{ primary_collection.value.url }}" class="reversed-link">{{ primary_collection.value.title }}</a>
-          {%- elsif current_collection != blank -%}
-            <a href="{{ current_collection.url }}" class="reversed-link">{{ current_collection.title }}</a>
-          {%- else -%}
-            <a href="{{ routes.all_products_collection_url }}" class="reversed-link">
-              {{- 'general.breadcrumbs.collections' | t -}}
-            </a>
-          {%- endif -%}
+          <a href="{{ primary_collection.value.url }}" class="reversed-link">
+            {{ primary_collection.value.title }}
+          </a>
         {%- endif -%}
+
         <span aria-hidden="true" class="breadcrumbs--sep breadcrumbs--sep-last"></span>
         <span class="breadcrumbs--last text-subtext">{{ product.title }}</span>
       {%- elsif template contains 'collection' and collection.handle -%}

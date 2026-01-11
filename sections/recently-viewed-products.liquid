@@ -44,7 +44,7 @@
   {%- for parsed_term in parsed_terms -%}
     {%- assign id = parsed_term | split: 'id:' | last | times: 1 -%}
     {%- for product in search.results -%}
-      {%- if product.id == id -%}
+      {%- if product.id == id and product.vendor != "Chemist Warehouse" -%}
         {%- assign products_to_display  = products_to_display | plus: 1 -%}
         <div class="f-column swiper-slide {{ search.results.count }}">
           {% render 'card-product',
@@ -85,7 +85,12 @@
       data-pagination-type="{{ pagination_type }}"
     >
       <div
-        class="products-grid-wrap{% if enable_slider %} swiper swiper-equal-height overflow-visible{% endif %}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ columns_mobile }}-cols{% endif %}"
+        class="
+          products-grid-wrap
+          {% if enable_slider %} swiper swiper-equal-height{% endif %}
+          {% if section.settings.content_overflow %} overflow-visible{% endif %}
+          {% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ columns_mobile }}-cols{% endif %}
+        "
         id="product-list-{{ section.id }}"
       >
         <div
@@ -406,6 +411,13 @@
       "id": "enable_slider",
       "label": "t:general.carousel.enable_carousel.label",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "content_overflow",
+      "label": "t:general.carousel.content_overflow.label",
+      "default": true,
+      "visible_if": "{{ section.settings.enable_slider == true }}"
     },
     {
       "type": "select",

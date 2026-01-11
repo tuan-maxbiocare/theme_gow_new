@@ -170,11 +170,11 @@
   "products": {
     "product": {
       "add_to_cart": "Add to cart",
-      "add_to_cart_short": "Add",
+      "add_to_cart_short": "Add to cart",
       "add_all_to_cart": "Add all to cart",
       "buy_it_now": "Buy it now",
-      "choose_options": "Choose options",
-      "choose_options_short": "View",
+      "choose_options": "Add to cart",
+      "choose_options_short": "Add to cart",
       "quick_view": "Quick view",
       "quick_view_title": "Choose your option",
       "shop": "Shop",
@@ -248,6 +248,7 @@
         "success_message": "Thanks for contacting us. We'll get back to you as soon as possible."
       },
       "sold_out": "Sold out",
+      "pre_order": "Pre-order",
       "unavailable": "Unavailable",
       "sku": "SKU",
       "barcode": "Barcode",

@@ -1,0 +1,246 @@
+<style>
+    .mega-menu__inner-custom_baby {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: {{ block.settings.percent-menu-left }}% calc(100% - {{ block.settings.percent-menu-left }}%);
+  }
+  .baby-custom-mega-menu__inner {
+    justify-content: space-between;
+  }
+
+  .baby-custom-mega-menu__col-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .baby-custom-mega-menu__section {
+    position: relative;
+    z-index: 2;
+    padding-bottom: 20px;
+  }
+
+  .baby-custom-mega-menu__section:last-child {
+    border-bottom: none;
+    /* padding-bottom: 0; */
+  }
+
+  .baby-custom-mega-menu__title {
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .baby-custom-mega-menu__tags {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   gap: 12px;
+
+  }
+
+  .baby-custom-mega-menu__tag {
+    padding: 14px 28px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .baby-custom-mega-menu__tag:hover {
+    color: #007aff;
+  }
+
+  .baby-custom-mega-menu__columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  .baby-custom-mega-menu__col {
+    flex: 1;
+    columns: 2;
+    column-gap: 48px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .baby-custom-mega-menu__col li + li {
+    margin-top: 18px;
+  }
+
+  .baby-custom-mega-menu__col a {
+    font-size: 15px;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .baby-custom-mega-menu__col-icon {
+    object-fit: contain;
+    flex-shrink: 0;
+    width: 80px;
+  }
+
+    .mega-menu__col-banner {
+    align-items: center;
+    justify-content: center;
+  }
+  .height-menu-baby {
+    {% if block.settings.height-banner-menu %}
+      height: {{ block.settings.height-banner-menu }}px;
+    {% endif %}
+  }
+
+  .baby-custom-mega-menu__col-banner {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .baby-custom-mega-menu__banner-img {
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+  .img-menu-baby-care {
+    width: 65px;
+    border-radius: 10px;
+  }
+
+  .baby-custom-mega-menu__col-icon {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  .baby-custom-mega-menu__col-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #007aff;
+    transition: width 0.3s ease;
+  }
+
+  .baby-custom-mega-menu__col-icon::after {
+    width: 100%;
+  }
+
+  .baby-custom-mega-menu__col a .link-text {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+  }
+
+  .baby-custom-mega-menu__col a:hover .link-text::after {
+    width: 100%;
+  }
+
+  .promo-product-img {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    transform-origin: center center;
+    transition: transform 0.6s ease-out;
+  }
+
+  .promo-product-img:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+  .baby-custom-mega-menu__section .hover-wrapper {
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+  }
+
+  .baby-custom-mega-menu__section .hover-wrapper:hover {
+    background-color: #f0f0f0;
+  }
+  .mega-menu__inner-custom_baby .btn--icon-circle {
+   width: 25px;
+   height: 25px;
+   margin-right: 20px;
+  }
+</style>
+
+<div class="baby-custom-mega-menu__inner mega-menu__inner-custom_baby">
+  <div class="baby-custom-mega-menu__col-list mega-menu-custom-left" style="width: 92%;">
+    <div class="baby-custom-mega-menu__section">
+      <h3 class="baby-custom-mega-menu__title">{{ block.settings['heading-title'] }}</h3>
+      <div class="baby-custom-mega-menu__tags">
+        <button type="button" class="btn--primary btn btn--secondary btn--small product-card__btn">
+          <a href="{{ block.settings.static_link_1_url }}" class="btn__text">
+            <span class="btn__text">{{ block.settings.static_link_1_text }}</span>
+          </a>
+        </button>
+
+        <button type="button" class="btn--primary btn btn--secondary btn--small product-card__btn">
+          <a href="{{ block.settings.static_link_2_url }}" class="btn__text">
+            <span class="btn__text">{{ block.settings.static_link_2_text }}</span>
+          </a>
+        </button>
+
+        <button type="button" class="btn--primary btn btn--secondary btn--small product-card__btn">
+          <a href="{{ block.settings.static_link_3_url }}" class="btn__text">
+            <span class="btn__text">{{ block.settings.static_link_3_text }}</span>
+          </a>
+        </button>
+      </div>
+    </div>
+
+    <div class="baby-custom-mega-menu__section">
+      <h3 class="baby-custom-mega-menu__title">{{ block.settings['heading-title-sub'] }}</h3>
+      <div class="baby-custom-mega-menu__columns">
+        <ul class="baby-custom-mega-menu__col">
+          {% for i in (1..6) %}
+            {% assign collection_key = 'collection_' | append: i %}
+            {% assign collection_image_key = 'collection_image_' | append: i %}
+            {% assign collection_title_key = 'collection_title_' | append: i %}
+
+            {% assign collection_link = block.settings[collection_key] %}
+            {% assign collection_image = block.settings[collection_image_key] %}
+            {% assign collection_title = block.settings[collection_title_key] %}
+
+            {% if collection_link != blank %}
+              <li class="hover-wrapper">
+                <a href="{{ collection_link }}">
+                  <img
+                    class="img-menu-baby-care"
+                    src="{{ collection_image | image_url }}"
+                    alt="{{ collection_title }}"
+                  >
+                  <span class="link-text">{{ collection_title }}</span>
+
+                  <button
+                    class="collection-card__btn btn btn--icon-circle btn--icon focus-none"
+                    tabindex="-1"
+                  >
+                    <span class="btn__text flex">
+                      {% render 'icon-caret-right', size: 'extra-small' %}
+                    </span>
+                  </button>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mega-menu__col-banner height-menu-baby">
+    {% render 'banner-menu-custom', block: block %}
+  </div>
+</div>

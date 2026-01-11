@@ -1,6 +1,25 @@
 {%- liquid
   assign variant = product.selected_or_first_available_variant
 
+  # Common inventory logic for both forms
+  assign variant_in_stock = true
+  assign button_disabled = false
+  assign button_text = 'products.product.add_to_cart' | t
+  assign button_text_short = 'products.product.add_to_cart_short' | t
+  
+  if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0
+    assign variant_in_stock = false
+  endif
+  
+  if variant_in_stock == false and variant.inventory_policy != 'continue'
+    assign button_disabled = true
+    assign button_text = 'products.product.sold_out' | t
+    assign button_text_short = 'products.product.sold_out' | t
+  elsif variant_in_stock == false and variant.inventory_policy == 'continue'
+    assign button_text = 'products.product.pre_order' | t
+    assign button_text_short = 'products.product.pre_order' | t
+  endif
+
   if show_vendor == null
     assign show_vendor = settings.pcard_show_vendor
   endif
@@ -154,18 +173,14 @@
               name="id"
               value="{{- variant.id -}}"
               class="product-variant-id"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
+              {% if button_disabled %}disabled{% endif %}
             >
             <button
               id="{{ product_form_id }}-submit"
               type="submit"
               name="add"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
-              aria-label="{% if variant.available %}{{ 'products.product.add_to_cart' | t }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}"
+              {% if button_disabled %}disabled{% endif %}
+              aria-label="{{ button_text }}"
               class="product-card__action-button product-card__atc btn btn--white btn--small"
             >
               <span class="product-card__atc-icon inline-flex">
@@ -242,25 +257,17 @@
               name="id"
               value="{{- variant.id -}}"
               class="product-variant-id"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
+              {% if button_disabled %}disabled{% endif %}
             >
             <button
               id="{{ product_form_id }}-submit"
               type="submit"
               name="add"
-              {% if variant.available == false %}
-                disabled
-              {% endif %}
+              {% if button_disabled %}disabled{% endif %}
               class="product-card__action-button product-card__atc btn btn--primary btn--small"
             >
               <span class="btn__text">
-                {%- if variant.available -%}
-                  {{- 'products.product.add_to_cart_short' | t -}}
-                {%- else -%}
-                  {{- 'products.product.sold_out' | t -}}
-                {%- endif -%}
+                {{- button_text_short -}}
               </span>
               {% render 'loading-spinner' %}
             </button>

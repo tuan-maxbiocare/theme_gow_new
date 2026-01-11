@@ -41,8 +41,15 @@
   divider_width: section.settings.divider_width
 %}
 
+{% capture show_section %}
+  {% render 'check-product-visibility',
+    product: product,
+    product_list: section.settings.product_list,
+    template_product: section.settings.template_product %}
+{% endcapture %}
+
 <div
-  class="section section-{{ section.id }} section--padding section--collapsible-tabs section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }}{{ section_css_class }}"
+  class="section section-{{ section.id }} section--padding section--collapsible-tabs section-header-{{ section.settings.header_layout }} color-{{ section.settings.color_scheme }}{{ section_css_class }} {% if show_section contains 'hide' %} hide-section-product-profile {% endif %}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
   data-id="{{ section.id }}"
 >
@@ -138,6 +145,32 @@
                         </div>
                       </details>
                     </div>
+                  {%- when 'text' -%}
+                    {% if block.settings.text != blank %}
+                      <div
+                        class="accordion-item accordion-{{ block.settings.text_style }}{% if block.settings.text_style == 'card' %} blocks-radius{% endif %}"
+                        {{ block.shopify_attributes }}
+                        style="background-color: {{ block.settings.text_background_color }};"
+                      >
+                        <details
+                          class="accordion-details"
+                        >
+                          <summary class="accordion-details__summary flex items-center justify-between focus-inset gap-2">
+                            <div class="flex gap-2">
+                              {% if block.settings.icon_text != 'none' %}
+                                {% render 'icons', icon: block.settings.icon_text, size: item_icon_size %}
+                              {%- endif -%}
+                              <h2
+                                class="inline-richtext"
+                                style="font-size: {{ block.settings.heading_font_size }}px; font-weight: {{ block.settings.heading_font_weight }};"
+                              >
+                                {{ block.settings.text }}
+                              </h2>
+                            </div>
+                          </summary>
+                        </details>
+                      </div>
+                    {% endif %}
                   {%- when 'heading' -%}
                     {%- if block.settings.sub_heading != blank or block.settings.heading != blank -%}
                       <div class="block-heading rich-text" {{ block.shopify_attributes }}>
@@ -152,7 +185,7 @@
                             %}
                           </h2>
                         {%- endif -%}
-                      {%- comment -%} Đảo vị trí subheading xuống dưới heading - Lương sửa{%- endcomment -%}
+                        {%- comment -%} Đảo vị trí subheading xuống dưới heading - Lương sửa{%- endcomment -%}
                         {%- if block.settings.sub_heading != blank -%}
                           <div class="rich-text__subheading text-subheading">{{ block.settings.sub_heading }}</div>
                         {%- endif -%}
@@ -178,6 +211,27 @@
       "type": "header",
       "content": "t:general.general.name"
     },
+
+    {
+      "type": "header",
+      "content": "Show section template product"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list",
+      "label": "Show  section in product"
+    },
+    {
+      "type": "richtext",
+      "id": "template_product",
+      "label": "Show section in product template Enter templates (separate with ||)"
+    },
+
+    {
+      "type": "header",
+      "content": "Config section"
+    },
+
     {
       "type": "select",
       "id": "container",
@@ -924,6 +978,219 @@
           "type": "checkbox",
           "id": "use_subtext_color",
           "label": "t:general.use_subtext_color.label"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "Collapsible tabs",
+          "info": "t:general.heading.info"
+        },
+        {
+          "type": "select",
+          "id": "icon_text",
+          "label": "t:general.icon.label",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:general.icon.options__1.label"
+            },
+            {
+              "value": "car-simple",
+              "label": "t:general.icon.options__2.label"
+            },
+            {
+              "value": "truck",
+              "label": "t:general.icon.options__3.label"
+            },
+            {
+              "value": "package",
+              "label": "t:general.icon.options__4.label"
+            },
+            {
+              "value": "currency-circle-dollar",
+              "label": "t:general.icon.options__5.label"
+            },
+            {
+              "value": "gift",
+              "label": "t:general.icon.options__6.label"
+            },
+            {
+              "value": "heart",
+              "label": "t:general.icon.options__7.label"
+            },
+            {
+              "value": "globe",
+              "label": "t:general.icon.options__8.label"
+            },
+            {
+              "value": "check",
+              "label": "t:general.icon.options__9.label"
+            },
+            {
+              "value": "arrow-up-left",
+              "label": "t:general.icon.options__10.label"
+            },
+            {
+              "value": "lightning",
+              "label": "t:general.icon.options__11.label"
+            },
+            {
+              "value": "calendar-blank",
+              "label": "t:general.icon.options__12.label"
+            },
+            {
+              "value": "bell-ringing",
+              "label": "t:general.icon.options__13.label"
+            },
+            {
+              "value": "location",
+              "label": "t:general.icon.options__14.label"
+            },
+            {
+              "value": "tag",
+              "label": "t:general.icon.options__15.label"
+            },
+            {
+              "value": "map-pin",
+              "label": "t:general.icon.options__16.label"
+            },
+            {
+              "value": "smiley",
+              "label": "t:general.icon.options__17.label"
+            },
+            {
+              "value": "stool",
+              "label": "t:general.icon.options__18.label"
+            },
+            {
+              "value": "clock",
+              "label": "t:general.icon.options__19.label"
+            },
+            {
+              "value": "phone",
+              "label": "t:general.icon.options__20.label"
+            },
+            {
+              "value": "chat",
+              "label": "t:general.icon.options__21.label"
+            },
+            {
+              "value": "paperplane",
+              "label": "t:general.icon.options__22.label"
+            },
+            {
+              "value": "sliders",
+              "label": "t:general.icon.options__23.label"
+            },
+            {
+              "value": "sound",
+              "label": "t:general.icon.options__24.label"
+            },
+            {
+              "value": "music",
+              "label": "t:general.icon.options__25.label"
+            },
+            {
+              "value": "airplane",
+              "label": "t:general.icon.options__26.label"
+            },
+            {
+              "value": "alarm",
+              "label": "t:general.icon.options__27.label"
+            },
+            {
+              "value": "play-list",
+              "label": "t:general.icon.options__28.label"
+            },
+            {
+              "value": "drop-slash",
+              "label": "t:general.icon.options__29.label"
+            },
+            {
+              "value": "pause-circle",
+              "label": "t:general.icon.options__30.label"
+            },
+            {
+              "value": "acorn",
+              "label": "t:general.icon.options__34.label"
+            },
+            {
+              "value": "leaf",
+              "label": "t:general.icon.options__35.label"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "label": "t:sections.collapsible-tabs.settings.item_style.label",
+          "default": "standard",
+          "options": [
+            {
+              "value": "standard",
+              "label": "t:sections.collapsible-tabs.settings.item_style.options__1.label"
+            },
+            {
+              "value": "card",
+              "label": "t:sections.collapsible-tabs.settings.item_style.options__2.label"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "text_background_color",
+          "label": "Color Background",
+          "default": "#ffffff"
+        },
+        {
+          "type": "range",
+          "id": "heading_font_size",
+          "label": "Font size",
+          "min": 12,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "default": 18
+        },
+        {
+          "type": "select",
+          "id": "heading_font_weight",
+          "label": "Font weight",
+          "default": "400",
+          "options": [
+            {
+              "value": "300",
+              "label": "Light"
+            },
+            {
+              "value": "400",
+              "label": "Normal"
+            },
+            {
+              "value": "500",
+              "label": "Medium"
+            },
+            {
+              "value": "600",
+              "label": "Semibold"
+            },
+            {
+              "value": "700",
+              "label": "Bold"
+            },
+            {
+              "value": "800",
+              "label": "Extra Bold"
+            }
+          ]
         }
       ]
     },

@@ -3,6 +3,8 @@
   assign compare_at_price = selected_variant.compare_at_price
   assign price = selected_variant.price
   assign on_sale = false
+  assign badge_style = settings.badges_corner_radius
+  assign badge_position = settings.badges_position
   if compare_at_price > price
     assign on_sale = true
   endif
@@ -17,7 +19,7 @@
 {%- if product.available == false or on_sale or product.tags.size > 0 -%}
   <div class="product-card__badge">
     {%- if product.available == false and show_soldout -%}
-      <span class="f-badge f-badge--soldout" aria-hidden="true">
+      <span class="f-badge f-badge--soldout badge-{{ badge_style }} badge-position--{{ badge_position }}" aria-hidden="true">
         {{- 'products.product.sold_out' | t -}}
       </span>
     {%- endif -%}
@@ -40,7 +42,12 @@
             assign sale_badge = 'products.product.on_sale' | t
         endcase
       -%}
-      <span class="f-badge f-badge--sale" aria-hidden="true">{{- sale_badge -}}</span>
+      <span
+        class="f-badge f-badge--sale badge-{{ badge_style }} badge-position--{{ badge_position }}"
+        aria-hidden="true"
+      >
+        {{- sale_badge -}}
+      </span>
     {%- endif -%}
     {%- liquid
       assign new_tags_list = settings.product_new_tags | newline_to_br | strip_newlines | split: '<br />'
@@ -84,3 +91,4 @@
     {%- endfor -%}
   </div>
 {%- endif -%}
+

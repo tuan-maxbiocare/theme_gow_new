@@ -257,6 +257,7 @@
                     >
                       {% if products != blank %}
                         {% for _product in products %}
+                          {% unless _product.vendor == "Chemist Warehouse" or _product.title contains "CW -" %}
                           {% liquid
                             assign block_id = block.id | append: '-' | append: forloop.index
                           %}
@@ -280,6 +281,7 @@
                               -%}
                             </product-bundle-variant-selector>
                           </div>
+                          {% endunless %}
                         {% endfor %}
                       {% else %}
                         {% for i in (1..2) %}

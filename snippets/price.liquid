@@ -35,7 +35,13 @@
       endfor
     endunless
   endif
+  assign price_size = block.settings.price_size | default: '16px'
+  
+  if price_size_section
+    assign price_size = price_size_section
+  endif
 
+  assign price_color = block.settings.price_color
   assign available = target.available | default: false
   assign money_price = price | money
   assign money_price_min = price_min | money
@@ -45,9 +51,9 @@
     assign money_price_min = price_min | money_with_currency
     assign money_price_max = price_max | money_with_currency
   endif
-  if target == product and product.price_varies
-    assign money_price = 'products.product.price.from_price_html' | t: price: money_price
-  endif
+ #  if target == product and product.price_varies
+    #  assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+  # endif
 -%}
 <div
   class="
@@ -58,13 +64,14 @@
     {%- if compare_at_price > price %} f-price--on-sale {% endif -%}
     {%- if target.price_varies == false and target.compare_at_price_varies %} f-price--no-compare{% endif -%}
   "
+  {% if price_color %}style="color: {{ price_color }};"{% endif %}
 >
   {%- comment -%}
     Explanation of description list:
       - div.price__regular: Displayed when there are no variants on sale
       - div.price__sale: Displayed when a variant is a sale
   {%- endcomment -%}
-  <div class="f-price__regular{% if price_regular_class %} {{ price_regular_class }}{% endif %}">
+  <div class="f-price__regular{% if price_regular_class %} {{ price_regular_class }}{% endif %} f-price__regular-custom">
     {%- if product.quantity_price_breaks_configured? and price_min != price_max -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       <span class="f-price-item f-price-item--regular">
@@ -72,29 +79,36 @@
       </span>
     {%- else -%}
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-      <span class="f-price-item f-price-item--regular">
+      <span class="f-price-item f-price-item--regular"{% if price_size %}style="font-size: {{ price_size }}px;"{% endif %}>
         {{ money_price }}
       </span>
     {%- endif -%}
   </div>
   <div class="f-price__sale{% if price_sale_class %} {{ price_sale_class }}{% endif %}">
-    <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.sale_price' | t }}</span>
-    <span class="f-price-item f-price-item--sale">
-      {{ money_price }}
+  <span class="visually-hidden visually-hidden--inline">
+    {{ 'products.product.price.sale_price' | t }}
+  </span>
+
+  <span class="f-price-item f-price-item--sale f-price-item--sale-custom"{% if price_size %}style="font-size: {{ price_size }}px;"{% endif %}>
+    {{ money_price }}
+  </span>
+
+  {%- unless target.price_varies == false and target.compare_at_price_varies -%}
+    <span class="visually-hidden visually-hidden--inline">
+      {{ 'products.product.price.regular_price' | t }}
     </span>
-    {%- unless target.price_varies == false and target.compare_at_price_varies %}
-      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-      <span class="f-price-item f-price-item--regular">
-        <s>
-          {% if settings.currency_code_enabled %}
-            {{ compare_at_price | money_with_currency }}
-          {% else %}
-            {{ compare_at_price | money }}
-          {% endif %}
-        </s>
-      </span>
-    {%- endunless -%}
-  </div>
+    <span class="f-price-item f-price-item--regular f-price-item--regular-compare-at-price">
+      <s>
+        {% if settings.currency_code_enabled %}
+          {{ compare_at_price | money_with_currency }}
+        {% else %}
+          {{ compare_at_price | money }}
+        {% endif %}
+      </s>
+    </span>
+  {%- endunless -%}
+</div>
+
   <div class="f-price__unit-wrapper{% if selected_variant.unit_price_measurement == nil %} hidden{% endif %}">
     <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
     <div class="f-price__unit">

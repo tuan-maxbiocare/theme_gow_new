@@ -1,0 +1,166 @@
+<style>
+  .breadcrumb-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .breadcrumb-logo {
+    max-height: 50px;
+    height: auto;
+  }
+
+  .breadcrumbs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .section-breadcrumb-pages-custom {
+      margin-top: {{ section.settings.margin_top }}px;
+      margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+
+  @media (max-width: 767px) {
+    .breadcrumb-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .breadcrumbs {
+      justify-content: center;
+      gap: 6px;
+    }
+  }
+</style>
+{%- unless template == 'index' -%}
+  {%- liquid
+    assign justify = section.settings.text_alignment | default: 'start'
+  -%}
+  <div
+    class="section-breadcrumb page-width page-width--{{ section.settings.container }} section--padding section-breadcrumb-pages-custom"
+    style="--section-padding-top: {{ section.settings.padding_top }}px; --section-padding-bottom: {{ section.settings.padding_bottom }}px;"
+  >
+    <div class="breadcrumb-container">
+      {%- if section.settings.image_picker_menu != blank -%}
+        <a href="{{ routes.root_url }}">
+          <img src="{{ section.settings.image_picker_menu | img_url: '300x' }}" alt="Logo" class="breadcrumb-logo">
+        </a>
+      {%- endif -%}
+
+      <nav class="breadcrumbs flex items-center justify-end" role="navigation" aria-label="breadcrumbs">
+        {%- for i in (1..6) -%}
+          {%- assign menu_key = 'menu_' | append: i -%}
+          {%- assign url_key = 'url_menu_' | append: i -%}
+          {%- assign title = section.settings[menu_key] -%}
+          {%- assign url = section.settings[url_key] -%}
+
+          {%- if title != blank and url != blank -%}
+            <a href="{{ url }}" title="{{ title }}" class="reversed-link">{{ title }}</a>
+            {%- unless forloop.last -%}
+              <span aria-hidden="true" class="breadcrumbs--sep"></span>
+            {%- endunless -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </nav>
+    </div>
+  </div>
+{%- endunless -%}
+
+{% schema %}
+{
+  "name": "Custom Menu Page",
+  "disabled_on": {
+    "groups": ["header", "footer"],
+    "templates": ["index"]
+  },
+  "limit": 1,
+  "settings": [
+    {
+      "type": "number",
+      "id": "margin_top",
+      "label": "Margin Top (px)",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "margin_bottom",
+      "label": "Margin Bottom (px)",
+      "default": 0
+    },
+    {
+      "label": "Choose Image",
+      "type": "image_picker",
+      "id": "image_picker_menu"
+    },
+    {
+      "type": "text",
+      "id": "menu_1",
+      "label": "title menu 1"
+    },
+    {
+      "type": "url",
+      "id": "url_menu_1",
+      "label": "link menu 1"
+    },
+    {
+      "type": "text",
+      "id": "menu_2",
+      "label": "title menu 2"
+    },
+    {
+      "type": "url",
+      "id": "url_menu_2",
+      "label": "link menu 2"
+    },
+    {
+      "type": "text",
+      "id": "menu_3",
+      "label": "title menu 3"
+    },
+    {
+      "type": "url",
+      "id": "url_menu_3",
+      "label": "link menu 3"
+    },
+    {
+      "type": "text",
+      "id": "menu_4",
+      "label": "title menu 4"
+    },
+    {
+      "type": "url",
+      "id": "url_menu_4",
+      "label": "link menu 4"
+    },
+    {
+      "type": "text",
+      "id": "menu_5",
+      "label": "title menu 5"
+    },
+    {
+      "type": "url",
+      "id": "url_menu_5",
+      "label": "link menu 5"
+    },
+    {
+      "type": "text",
+      "id": "menu_6",
+      "label": "title menu 6"
+    },
+    {
+      "type": "url",
+      "id": "url_menu_6",
+      "label": "link menu 6"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabs Navigation"
+    }
+  ]
+}
+{% endschema %}

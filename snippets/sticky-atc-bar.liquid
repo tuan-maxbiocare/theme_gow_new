@@ -1,5 +1,26 @@
 {%- if block.settings.visibility != 'hide' -%}
   {%- liquid
+    # Common inventory logic
+    assign variant = product.selected_or_first_available_variant
+    assign variant_in_stock = true
+    assign button_disabled = false
+    assign button_text = 'products.product.add_to_cart' | t
+    assign button_text_short = 'products.product.add_to_cart_short' | t
+    
+    if variant.inventory_management == 'shopify' and variant.inventory_quantity <= 0
+      assign variant_in_stock = false
+    endif
+    
+    if variant_in_stock == false and variant.inventory_policy != 'continue'
+      assign button_disabled = true
+      assign button_text = 'products.product.sold_out' | t
+      assign button_text_short = 'products.product.sold_out' | t
+    elsif variant_in_stock == false and variant.inventory_policy == 'continue'
+      assign button_text = 'products.product.pre_order' | t
+      assign button_text_short = 'products.product.pre_order' | t
+    endif
+  -%}
+  {%- liquid
     assign wrap_class = ''
     assign visibility = block.settings.visibility
     assign style = block.settings.style
@@ -17,7 +38,7 @@
     <link rel="stylesheet" href="{{ 'section-sticky-atc-bar-minimalist.css' | asset_url }}">
     <script src="{{ 'sticky-atc-bar-minimalist.js' | asset_url }}" defer="defer"></script>
     <sticky-atc-bar-minimalist
-      class="sticky-atc-bar blocks-radius items-center justify-between gap-2{{ wrap_class }}"
+      class="sticky-atc-bar blocks-radius items-center justify-between gap-2{{ wrap_class }} color-{{ section.settings.color_scheme }}"
       data-product-id="{{ product.id }}"
       data-section="{{ section.id }}"
     >
@@ -55,12 +76,10 @@
           name="add"
           form="{{ product_form_id }}"
           class="product-form__submit btn btn--primary btn--small w-full"
-          {% if product.selected_or_first_available_variant.available == false %}
-            disabled
-          {% endif %}
+          {% if button_disabled %}disabled{% endif %}
         >
           <span class="btn__text">
-            {{ 'products.product.add_to_cart_short' | t }}
+            {{- button_text_short -}}
           </span>
           {% render 'loading-spinner' %}
         </button>
@@ -78,7 +97,7 @@
     -%}
     <link rel="stylesheet" href="{{ 'section-sticky-atc-bar.css' | asset_url }}">
     <script src="{{ 'sticky-atc-bar.js' | asset_url }}" defer="defer"></script>
-    <div class="sticky-atc-bar{{ wrap_class }}{% if show_dynamic_checkout_buttons %} sticky-atc-bar--with-dynamic-buttons{% endif %} page-width page-width--{{ block.settings.container }}">
+    <div class="sticky-atc-bar{{ wrap_class }}{% if show_dynamic_checkout_buttons %} sticky-atc-bar--with-dynamic-buttons{% endif %} page-width page-width--{{ block.settings.container }} color-{{ section.settings.color_scheme }}">
       <sticky-atc-bar
         class="sticky-atc-bar__inner flex items-center justify-between"
         data-product-id="{{ product.id }}"
@@ -200,16 +219,10 @@
                 type="submit"
                 name="add"
                 class="product-form__submit btn {% if show_dynamic_checkout_buttons and product.selling_plan_groups == empty %}btn--secondary{% else %}btn--primary{% endif %} w-full"
-                {% if product.selected_or_first_available_variant.available == false %}
-                  disabled
-                {% endif %}
+                {% if button_disabled %}disabled{% endif %}
               >
                 <span class="btn__text">
-                  {%- if product.selected_or_first_available_variant.available -%}
-                    {{ 'products.product.add_to_cart' | t }}
-                  {%- else -%}
-                    {{ 'products.product.sold_out' | t }}
-                  {%- endif -%}
+                  {{- button_text -}}
                 </span>
                 {% render 'loading-spinner' %}
               </button>
