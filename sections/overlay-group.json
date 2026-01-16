@@ -291,7 +291,7 @@
         "enable": true,
         "show_for_homepage_only": false,
         "show_for_visitors_only": true,
-        "trigger_open": "immediately",
+        "trigger_open": "delay",
         "repeat_open": "every_day",
         "alignment": "center",
         "width": 700,
