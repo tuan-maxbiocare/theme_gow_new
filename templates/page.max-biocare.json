@@ -1,1 +1,1759 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"custom_css":[],"settings":{"container":"fixed","text_alignment":"left","padding_top":28,"padding_bottom":28}},"breadcrumbs_NaRFU7":{"type":"breadcrumbs","name":"t:sections.breadcrumbs.name","settings":{"container":"fixed","text_alignment":"start","padding_top":16,"padding_bottom":20}},"scrolling_banner_RcrmQb":{"type":"scrolling-banner","blocks":{"slide_fheEmc":{"type":"slide","settings":{"color_scheme":"scheme-13","background":"{{ page.metafields.custom.brand_page_top_banner.value.banner_background_image.value }}","background_mobile":"{{ page.metafields.custom.brand_page_top_banner.value.mobile_main_banner_background_image.value }}","image_overlay_opacity":0,"content_position":"middle-right","text_alignment":"right","subheading":"","title":"","highlight_style":"hand_drawn_circle","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","description":"","description_size":"text-inherit","button_label":"","button_link":"","banner_link":"","button_style":"btn--secondary","button_icon":"none","product_color_scheme":"scheme-11","product":""}}},"block_order":["slide_fheEmc"],"name":"t:sections.scrolling-banner.name","settings":{"container":"full","slide_height":"adapt","content_position_mobile":"top-center","text_alignment_mobile":"left","enable_zoom":true,"enable_parallax":false}},"tabs_navigation_K9jgQH":{"type":"tabs-navigation","blocks":{"button_item_N87ipq":{"type":"button_item","settings":{"open_in_new_tab":false,"button_label":"For Women","button_link":"shopify:\/\/pages\/max-biocare-for-women","icon":"arrow-right"}},"button_item_qMjUjM":{"type":"button_item","settings":{"open_in_new_tab":false,"button_label":"For Men","button_link":"shopify:\/\/pages\/max-biocare-for-men","icon":"arrow-right"}},"button_item_DVNMjM":{"type":"button_item","settings":{"open_in_new_tab":false,"button_label":"For Children","button_link":"shopify:\/\/pages\/max-biocare-for-kids","icon":"arrow-right"}},"button_item_fmF3zz":{"type":"button_item","settings":{"open_in_new_tab":false,"button_label":"Mothers' Care","button_link":"shopify:\/\/pages\/max-biocare-mothers-care","icon":"arrow-right"}},"button_item_TqeMqX":{"type":"button_item","settings":{"open_in_new_tab":true,"button_label":"About Us","button_link":"https:\/\/www.maxbiocare.com\/","icon":"arrow-right"}}},"block_order":["button_item_N87ipq","button_item_qMjUjM","button_item_DVNMjM","button_item_fmF3zz","button_item_TqeMqX"],"name":"Tabs Navigation","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","item_alignment":"left","item_button_style":"btn--icon","item_button_font":"button","enable_slider":false,"swipe_on_mobile":true,"show_section_divider":false,"divider_width":"fixed","padding_top":20,"padding_bottom":20,"custom_image":"shopify:\/\/shop_images\/max_biocare_Logo-01.png","custom_image_width":250,"custom_image_margin_right":170,"custom_image_link":"shopify:\/\/pages\/max-biocare"}},"tabs_content_y3PPGh":{"type":"tabs-content","blocks":{"image_with_text_zJ9Qmg":{"type":"image_with_text","settings":{"navigation_title":"About Max Biocare​","image":"shopify:\/\/shop_images\/Salvarity_sustain_test.webp","desktop_image_position":"left","image_aspect_ratio":"1\/1","heading":"Trusted Australian brand for more than 25 years","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","subheading":"","description":"<p><strong>Max Biocare — Trusted Australian Brand for Over 25 Years<\/strong>​<\/p><p>At Max Biocare, science and care go hand in hand. For more than two decades, we’ve been dedicated to developing evidence-based health solutions that people can truly rely on. Every product is grounded in rigorous research, many with their own clinical trials, and guided by leading health professionals worldwide.​<\/p><p>Our commitment is simple: to deliver safe, effective, and high-quality products that make a real difference in everyday health and wellbeing. With Max Biocare, you can feel confident that your health is supported by expertise, integrity, and innovation.​<\/p>","description_size":"text-sm","enable_collapsible":true,"collapsible_heading":"Collapsible row","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":"","button_label":"Learn more","button_link":"https:\/\/www.maxbiocare.com\/","button_style":"btn--secondary","button_icon":"none"}},"tab_zHqhU3":{"type":"tab","settings":{"navigation_title":"Innovation & Science​","tab_content":"<h4><strong>Innovation & Science<\/strong><\/h4><p>We believe science and innovation should make a real difference to people’s lives. Through the Max Biocare Institute, we lead clinical research and global collaborations to ensure our products are safe, effective, and evidence-based.​<\/p><p>Our studies meet the highest ethical and regulatory standards, with findings published in peer-reviewed journals — helping to share knowledge and improve public health worldwide.​<\/p><p>To learn more, visit: <a href=\"https:\/\/www.maxbiocare.com\/innovation-science\/\" target=\"_blank\"><span style=\"text-decoration:underline\">https:\/\/www.maxbiocare.com\/innovation-science\/<\/span><\/a><\/p>","custom_liquid":"","tab_page":"","enable_collapsible_tab":false,"collapsible_heading":"","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":""}},"tab_NM6yLa":{"type":"tab","settings":{"navigation_title":"Clinical Trials","tab_content":"<h4><strong>Clinical Trials<\/strong>​<\/h4><p>Many of our products have been evaluated in clinical studies across a wide range of health areas. Each trial is conducted to the highest clinical and regulatory standards, led by experienced researchers to ensure outcomes are not only reliable, but also meaningful for real-world health and wellbeing.​<\/p><p>For more information on our ongoing clinical trials, visit: <a href=\"https:\/\/www.maxbiocare.com\/clinical-trials\/\" target=\"_blank\"><span style=\"text-decoration:underline\">https:\/\/www.maxbiocare.com\/clinical-trials\/<\/span><\/a><\/p>","custom_liquid":"","tab_page":"","enable_collapsible_tab":false,"collapsible_heading":"","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":""}},"tab_4kbKR7":{"type":"tab","settings":{"navigation_title":"Sustainability","tab_content":"<h4><strong>Max Biocare Research Parks & Sustainability<\/strong><\/h4><p>​Where science and nature come together. With two dedicated sites in regional Victoria, our Research Parks pioneer natural ingredient innovation and development. Guided by a circular economy approach, we recycle resources, minimise waste, and regenerate ecosystems — ensuring that every initiative supports sustainability, while creating products that care for both people and the planet.​<\/p><p>Read more about our Research Parks here: <a href=\"https:\/\/www.maxbiocare.com\/max-biocare-research-parks\/\" target=\"_blank\"><span style=\"text-decoration:underline\">https:\/\/www.maxbiocare.com\/max-biocare-research-parks\/<\/span><\/a><\/p>","custom_liquid":"","tab_page":"","enable_collapsible_tab":false,"collapsible_heading":"","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":""}}},"block_order":["image_with_text_zJ9Qmg","tab_zHqhU3","tab_NM6yLa","tab_4kbKR7"],"custom_css":[],"name":"t:sections.tabs-content.name","settings":{"container":"fixed","color_scheme":"scheme-3","navigation_style":"headings","navigation_alignment":"center","navigation_font_size":24,"padding_top":70,"padding_bottom":100,"content_width":80,"show_section_divider":false,"divider_width":"full","enable_collapsible_all":false,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Multicolumn","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","content_alignment":"left","show_col_count":false,"show_image":true,"columns_desktop":4,"column_gap":"large","row_gap":"inherit","columns_mobile":"1","swipe_on_mobile":true}},"buttons_with_icon_TzxFpV":{"type":"buttons-with-icon","blocks":{"button_item_CyaVHh":{"type":"button_item","settings":{"button_label":"Brain & Cardiovascular Health","button_link":"shopify:\/\/collections\/brain-health-supplements","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_qnU9WN":{"type":"button_item","settings":{"button_label":"Eye Health","button_link":"shopify:\/\/collections\/eye-supplements","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_nHmdkX":{"type":"button_item","settings":{"button_label":"Gastrointestinal Health","button_link":"shopify:\/\/collections\/digestive-supplements","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_cmEgYN":{"type":"button_item","settings":{"button_label":"General Health & Well-being","button_link":"shopify:\/\/collections\/health-and-wellbeing","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_9j4yEh":{"type":"button_item","settings":{"button_label":"Immune Health","button_link":"shopify:\/\/collections\/immune-support-supplement","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_tnMALp":{"type":"button_item","settings":{"button_label":"Metabolic","button_link":"shopify:\/\/collections\/metabolic","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_BXhNR8":{"type":"button_item","settings":{"button_label":"Muscular & Skeletal Health","button_link":"shopify:\/\/collections\/bone-and-joint-supplements","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_AUtijf":{"type":"button_item","settings":{"button_label":"PMS & Menopause","button_link":"shopify:\/\/collections\/menopause-supplements","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_8t7CQM":{"type":"button_item","settings":{"button_label":"Pregnancy & Breastfeeding","button_link":"shopify:\/\/collections\/pregnancy-breastfeeding-care","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_LHHhXz":{"type":"button_item","settings":{"button_label":"Respiratory Health","button_link":"shopify:\/\/collections\/respiratory-health","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}},"button_item_7HBzXF":{"type":"button_item","settings":{"button_label":"Sexual & Reproductive Health","button_link":"shopify:\/\/collections\/sexual-and-reproductive-health-care","icon":"none","icon_img":"shopify:\/\/shop_images\/GoWshop_Website_Category1.webp"}}},"block_order":["button_item_CyaVHh","button_item_qnU9WN","button_item_nHmdkX","button_item_cmEgYN","button_item_9j4yEh","button_item_tnMALp","button_item_BXhNR8","button_item_AUtijf","button_item_8t7CQM","button_item_LHHhXz","button_item_7HBzXF"],"disabled":true,"name":"t:sections.buttons-with-icon.name","settings":{"max_width":1400,"color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","item_alignment":"left","item_button_style":"btn--icon","item_button_font":"button","enable_slider":true,"swipe_on_mobile":true,"show_section_divider":false,"divider_width":"fixed","padding_top":100,"padding_bottom":100}},"collection_list_7wGrWa":{"type":"collection-list","blocks":{"featured_collection_CRRH9x":{"type":"featured_collection","settings":{"collection":"menopause-supplements","image":"shopify:\/\/shop_images\/GOW-the-emporium_PMS_Menopause.webp","title":""}},"featured_collection_qnicg4":{"type":"featured_collection","settings":{"collection":"sexual-and-reproductive-health-care","image":"shopify:\/\/shop_images\/GOW-the-emporium_Sexual_Reproductive_Health.webp","title":""}},"featured_collection_Byi6rU":{"type":"featured_collection","settings":{"collection":"bone-and-joint-supplements","image":"shopify:\/\/shop_images\/GOW-the-emporium_Bone_Joint_Health.webp","title":""}},"featured_collection_rDfPqU":{"type":"featured_collection","settings":{"collection":"digestive-supplements","image":"shopify:\/\/shop_images\/GOW-the-emporium_Detox_Digestion.webp","title":""}},"featured_collection_DH7EwG":{"type":"featured_collection","settings":{"collection":"immune-support-supplement","image":"shopify:\/\/shop_images\/GOW-the-emporium_Immune_Health.webp","title":""}},"featured_collection_qVctyQ":{"type":"featured_collection","settings":{"collection":"pregnancy-and-breastfeeding-supplements","image":"shopify:\/\/shop_images\/GOW-the-emporium_Pregnancy_Breastfeeding.webp","title":""}},"featured_collection_EpwEDJ":{"type":"featured_collection","settings":{"collection":"memory-health-supplements","image":"shopify:\/\/shop_images\/GOW-the-emporium_Memory_Learning.webp","title":""}},"featured_collection_JjVTfr":{"type":"featured_collection","settings":{"collection":"supplements-for-cardiovascular-health","image":"shopify:\/\/shop_images\/GOW-the-emporium_Cardiovascular_Health.webp","title":""}},"featured_collection_diW9UJ":{"type":"featured_collection","settings":{"collection":"brain-and-cognitive-supplement","image":"shopify:\/\/shop_images\/GOW-the-emporium_Brain_Vision.webp","title":""}},"featured_collection_VHMx8n":{"type":"featured_collection","settings":{"collection":"metabolism-booster-supplements","image":"shopify:\/\/shop_images\/GOW-the-emporium_Metabolic_Health.webp","title":""}},"featured_collection_a6frJq":{"type":"featured_collection","disabled":true,"settings":{"collection":"respiratory-health","image":"shopify:\/\/shop_images\/GoWshop_Website_MBC-Respiratory_Health_category.webp","title":"Respiratory Health"}}},"block_order":["featured_collection_CRRH9x","featured_collection_qnicg4","featured_collection_Byi6rU","featured_collection_rDfPqU","featured_collection_DH7EwG","featured_collection_qVctyQ","featured_collection_EpwEDJ","featured_collection_JjVTfr","featured_collection_diW9UJ","featured_collection_VHMx8n","featured_collection_a6frJq"],"name":"t:sections.collection-list.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Shop by Categories ​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","card_color_scheme":"","card_style":"standard","card_heading_size":"text-base","card_image_ratio":"1\/1","card_image_width":"large","rounded_card_image":true,"card_show_border":false,"columns_desktop":5,"column_gap":"2xs","row_gap":"inherit","grid_bordered":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"image_cards_Kbfi39":{"type":"image-cards","blocks":{"image_card_AFtJPN":{"type":"image_card","settings":{"color_scheme":"","image":"{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_1.value }}","image_ratio":"adapt","image_overlay_opacity":0,"content_position":"bottom-left","content_alignment":"center","content_spacing":"extra-small","content_gap":"tight","card_link":"shopify:\/\/collections\/all","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"","button_style":"btn--primary","button_icon":"none","show_badge":false,"badge_color_scheme":"scheme-inverse","badge_shape":"circle","badge_position":"top-left","badge_subtext":"Save up to","badge_text":"<strong>50%<\/strong>","color_scheme_mobile":"","show_text_below":false,"content_alignment_mobile":"center","enable_preload_image":false}},"image_card_j7GakB":{"type":"image_card","settings":{"color_scheme":"","image":"{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_2.value }}","image_ratio":"adapt","image_overlay_opacity":0,"content_position":"bottom-left","content_alignment":"center","content_spacing":"extra-small","content_gap":"tight","card_link":"shopify:\/\/collections\/all","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"","button_style":"btn--primary","button_icon":"none","show_badge":false,"badge_color_scheme":"scheme-inverse","badge_shape":"circle","badge_position":"top-left","badge_subtext":"Save up to","badge_text":"<strong>50%<\/strong>","color_scheme_mobile":"","show_text_below":false,"content_alignment_mobile":"center","enable_preload_image":false}},"image_card_Crieb4":{"type":"image_card","settings":{"color_scheme":"","image":"{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_3.value }}","image_ratio":"adapt","image_overlay_opacity":0,"content_position":"bottom-left","content_alignment":"center","content_spacing":"extra-small","content_gap":"tight","card_link":"{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].link_image_3.value }}","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"","button_style":"btn--primary","button_icon":"none","show_badge":false,"badge_color_scheme":"scheme-inverse","badge_shape":"circle","badge_position":"top-left","badge_subtext":"Save up to","badge_text":"<strong>50%<\/strong>","color_scheme_mobile":"","show_text_below":false,"content_alignment_mobile":"center","enable_preload_image":false}}},"block_order":["image_card_AFtJPN","image_card_j7GakB","image_card_Crieb4"],"name":"t:sections.image-cards.name","settings":{"container":"fixed","color_scheme":"scheme-1","section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"hand_drawn_circle","highlight_font_style":"normal","highlight_style_color":"#1ca758","highlight_text_color":"","heading_size":"h1","description":"","description_size":"text-lg","columns_desktop":2,"column_gap":"small","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"middle","columns_mobile":"1","swipe_on_mobile":false,"show_progress_bar":false,"padding_top":0,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"custom_content_UEPWi7":{"type":"custom-content","blocks":{"collections_z3NEgX":{"type":"collections","settings":{"collection_list":["max-biocare"],"custom_titles_collection":"","product_limit":6,"columns_desktop":3,"column_gap":"extra-small","row_gap":"inherit","enable_slider":false,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"width":"50%","alignment":"start","block_custom_class":""}},"lookbook_card_hotspot_gJdUbr":{"type":"lookbook_card_hotspot","disabled":true,"settings":{"icon_style":"dot","icon_color":"light","image":"shopify:\/\/shop_images\/maxucosa_test.webp","image_ratio":"1\/1","product_1":"","top_1":45,"left_1":30,"product_2":"","top_2":50,"left_2":70,"product_3":"","top_3":62,"left_3":43,"product_4":"","top_4":9,"left_4":63,"width":"50%","alignment":"start","block_custom_class":""}},"image_card_B9DGjJ":{"type":"image_card","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/GoWshop_maxucosa_800x800_b6d80cf5-8136-4f4b-bb13-d28462448cef.webp","image_ratio":"1\/1","image_overlay_opacity":0,"content_position":"top-left","content_alignment":"left","content_spacing":"medium","content_gap":"fitted","card_link":"shopify:\/\/collections\/max-biocare","subheading":"","subheading_style":"","heading":"​Best Sellers","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"View more","button_style":"btn--underline","button_icon":"caret-right","show_badge":false,"badge_color_scheme":"scheme-4","badge_shape":"circle","badge_position":"top-right","badge_subtext":"Save","badge_text":"99$","color_scheme_mobile":"scheme-13","show_text_below":false,"content_alignment_mobile":"center","width":"50%","alignment":"start","block_custom_class":"","enable_preload_image":false}}},"block_order":["collections_z3NEgX","lookbook_card_hotspot_gJdUbr","image_card_B9DGjJ"],"name":"t:sections.custom-content.name","settings":{"tab_content_html":"","product_list":[],"template_product":"","container":"fixed","color_scheme":"scheme-7","enable_sticky_column":true,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"medium","row_gap":"large","swipe_on_mobile":false,"columns_mobile":"1","padding_top":20,"padding_bottom":20,"show_section_divider":false,"divider_width":"fixed","header_alignment_collapsible":"left","section_header_alignment_mobile_collapsible":"inherit","subheading_collapsible":"","heading_collapsible":"Collapsible tabs","highlight_style_collapsible":"none","highlight_font_style_collapsible":"italic","highlight_style_color_collapsible":"","highlight_text_color_collapsible":"","heading_size_collapsible":"h1","description_collapsible":"","text_size_collapsible":"text-base","button_label_collapsible":"","button_link_collapsible":"","button_style_collapsible":"btn--primary","button_icon_collapsible":"none","item_style":"standard","item_color_scheme_collapsible":"","item_heading_font_collapsible":"heading","item_heading_size_collapsible":"h4","item_icon_size_collapsible":"extra-large","section_header_alignment_testimonial":"center","section_header_alignment_mobile_testimonial":"inherit","subheading_testimonial":"","heading_testimonial":"Testimonials","highlight_style_testimonial":"none","highlight_font_style_testimonial":"italic","highlight_style_color_testimonial":"","highlight_text_color_testimonial":"","heading_size_testimonial":"h1","description_testimonial":"","text_size_testimonial":"text-base","layout":"focused","card_color_scheme":"","card_content_color_scheme":"","card_image_ratio":"adapt","card_heading_size":"h4","card_text_size":"h1","author_info_layout":"vertical","card_trigger_behavior":"click","show_image":true,"show_author_image":true,"columns_desktop":3,"column_gap_testimonial":"medium","row_gap_testimonial":"medium","enable_slider_testimonial":true,"columns_mobile_testimonial":"2","swipe_on_mobile_testimonial":true,"show_progress_bar":true}},"scrolling_banner_mDqX7j":{"type":"scrolling-banner","blocks":{"slide_PHUzLz":{"type":"slide","settings":{"color_scheme":"scheme-1","image_overlay_opacity":0,"content_position":"middle-right","text_alignment":"right","subheading":"","title":"","highlight_style":"hand_drawn_circle","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","description":"","description_size":"text-inherit","button_label":"","button_link":"","banner_link":"","button_style":"btn--primary","button_icon":"none","product_color_scheme":"scheme-7","product":"max-biocare-belle-dame"}}},"block_order":["slide_PHUzLz"],"disabled":true,"name":"t:sections.scrolling-banner.name","settings":{"container":"fixed","slide_height":"large","content_position_mobile":"middle-center","text_alignment_mobile":"center","enable_zoom":true,"enable_parallax":false}},"scrolling_banner_4RKW9L":{"type":"scrolling-banner","blocks":{"slide_GUbeTi":{"type":"slide","settings":{"color_scheme":"","background":"shopify:\/\/shop_images\/garden-of-wellness-shop_review-and-rewards-banner-1400x500.webp","image_overlay_opacity":0,"content_position":"middle-center","text_alignment":"center","subheading":"","title":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd1","description":"","description_size":"text-base","button_label":"","button_link":"","banner_link":"shopify:\/\/pages\/review-and-reward","button_style":"btn--primary","button_icon":"none","product_color_scheme":"","product":""}}},"block_order":["slide_GUbeTi"],"disabled":true,"name":"t:sections.scrolling-banner.name","settings":{"container":"fixed","slide_height":"adapt","content_position_mobile":"top-center","text_alignment_mobile":"center","enable_zoom":true,"enable_parallax":true}},"custom_content_DFkyEp":{"type":"custom-content","blocks":{"image_card_tYJT8U":{"type":"image_card","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/GoWshop_attractive-woman_2000x2000_db95b0a1-da64-4067-af6e-2280efac5e41.webp","image_ratio":"adapt","image_overlay_opacity":10,"content_position":"bottom-right","content_alignment":"left","content_spacing":"medium","content_gap":"fitted","card_link":"shopify:\/\/pages\/max-biocare-for-women","subheading":"","subheading_style":"","heading":"Women's Health","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"<p>Women’s health supplements and cosmetics, specially formulated to support her unique needs.​<\/p>","button_label":"View More","button_style":"btn--underline","button_icon":"none","show_badge":false,"badge_color_scheme":"scheme-13","badge_shape":"circle","badge_position":"top-right","badge_subtext":"Save","badge_text":"99$","color_scheme_mobile":"scheme-13","show_text_below":false,"content_alignment_mobile":"left","width":"50%","alignment":"start","block_custom_class":"","enable_preload_image":false}},"image_card_with_product_KHLMnK":{"type":"image_card_with_product","disabled":true,"settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/GoWshop_attractive-woman_2000x2000_db95b0a1-da64-4067-af6e-2280efac5e41.webp","image_ratio":"1\/1","subheading":"","heading":"Women's Health","highlight_style":"hand_drawn_circle","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"<p>Women’s health supplements and cosmetics, specially formulated to support her unique needs.​<\/p>","button_label":"BUY NOW","button_style":"btn--secondary","button_icon":"none","product":"max-biocare-belle-dame","width":"50%","alignment":"start","block_custom_class":""}},"collections_cjnhrD":{"type":"collections","settings":{"collection_list":["women-supplements","sciene-backed-mothers-care"],"custom_titles_collection":"Women's Health​ ||\nPregnancy and Breastfeeding​","product_limit":12,"columns_desktop":3,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"width":"50%","alignment":"center","block_custom_class":""}}},"block_order":["image_card_tYJT8U","image_card_with_product_KHLMnK","collections_cjnhrD"],"name":"t:sections.custom-content.name","settings":{"tab_content_html":"","product_list":[],"template_product":"","container":"fixed","color_scheme":"scheme-7","enable_sticky_column":true,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"normal","highlight_style_color":"#1ca758","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-lg","column_gap":"medium","row_gap":"large","swipe_on_mobile":false,"columns_mobile":"1","padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed","header_alignment_collapsible":"left","section_header_alignment_mobile_collapsible":"inherit","subheading_collapsible":"","heading_collapsible":"Collapsible tabs","highlight_style_collapsible":"none","highlight_font_style_collapsible":"italic","highlight_style_color_collapsible":"","highlight_text_color_collapsible":"","heading_size_collapsible":"h1","description_collapsible":"","text_size_collapsible":"text-base","button_label_collapsible":"","button_link_collapsible":"","button_style_collapsible":"btn--primary","button_icon_collapsible":"none","item_style":"standard","item_color_scheme_collapsible":"","item_heading_font_collapsible":"heading","item_heading_size_collapsible":"h4","item_icon_size_collapsible":"extra-large","section_header_alignment_testimonial":"center","section_header_alignment_mobile_testimonial":"inherit","subheading_testimonial":"","heading_testimonial":"Testimonials","highlight_style_testimonial":"none","highlight_font_style_testimonial":"italic","highlight_style_color_testimonial":"","highlight_text_color_testimonial":"","heading_size_testimonial":"h1","description_testimonial":"","text_size_testimonial":"text-base","layout":"focused","card_color_scheme":"","card_content_color_scheme":"","card_image_ratio":"adapt","card_heading_size":"h4","card_text_size":"h1","author_info_layout":"vertical","card_trigger_behavior":"click","show_image":true,"show_author_image":true,"columns_desktop":3,"column_gap_testimonial":"medium","row_gap_testimonial":"medium","enable_slider_testimonial":true,"columns_mobile_testimonial":"2","swipe_on_mobile_testimonial":true,"show_progress_bar":true}},"featured_collection_GcRFeU":{"type":"featured-collection","blocks":{"collection_i9mGcd":{"type":"collection","settings":{"collection":"women-supplements","title":"","show_banner":true,"color_scheme":"scheme-13","card_link":"","banner_image":"shopify:\/\/shop_images\/Salvarity_sustain_test.webp","image_overlay_opacity":0,"content_position":"bottom-left","content_alignment":"left","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h3","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"","button_style":"btn--primary","button_icon":"none"}}},"block_order":["collection_i9mGcd"],"disabled":true,"custom_css":[".btn {opacity: 100%;}"],"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"<em>WOMEN's<\/em>  Health","highlight_style":"hand_drawn_circle","highlight_font_style":"italic","highlight_style_color":"#1ca758","highlight_text_color":"","heading_size":"h1","description":"<p>Women’s health supplements and cosmetics, specially formulated to support her unique needs.​<\/p>","text_size":"text-lg","button_label":"Shop All Women’s","button_link":"","button_style":"btn--primary","button_icon":"none","limit":8,"columns":4,"column_gap":"medium","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":false,"pcard_image_ratio":"","columns_mobile":"1","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"featured_collection_DcPFTz":{"type":"featured-collection","blocks":{"collection_jQQQTX":{"type":"collection","settings":{"collection":"pregnancy-and-breastfeeding-supplements","title":"","show_banner":true,"color_scheme":"scheme-13","card_link":"","banner_image":"shopify:\/\/shop_images\/Salvarity_sustain_test.webp","image_overlay_opacity":0,"content_position":"bottom-left","content_alignment":"left","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h3","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"","button_style":"btn--primary","button_icon":"none"}}},"block_order":["collection_jQQQTX"],"disabled":true,"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"<em>PREGNANCY <\/em>  & Breastfeeding","highlight_style":"hand_drawn_circle","highlight_font_style":"normal","highlight_style_color":"#1ca758","highlight_text_color":"","heading_size":"h1","description":"<p>Discover women's health supplements. Specially formulated to support women's health<\/p>","text_size":"text-base","button_label":"view more","button_link":"","button_style":"btn--secondary","button_icon":"none","limit":8,"columns":4,"column_gap":"medium","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":false,"pcard_image_ratio":"","columns_mobile":"1","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"products_bundle_qJQMBP":{"type":"products-bundle","blocks":{"product_e7eeKW":{"type":"product","settings":{"product":"h-regulator-r","color_scheme":"","horizontal_position":20,"vertical_position":60,"horizontal_position_mobile":30,"vertical_position_mobile":32}},"product_QVpLMz":{"type":"product","settings":{"product":"max-biocare-belle-dame","color_scheme":"","horizontal_position":50,"vertical_position":60,"horizontal_position_mobile":38,"vertical_position_mobile":60}},"product_etjJPf":{"type":"product","settings":{"product":"red-life-for-women-r","color_scheme":"","horizontal_position":80,"vertical_position":60,"horizontal_position_mobile":65,"vertical_position_mobile":45}}},"block_order":["product_e7eeKW","product_QVpLMz","product_etjJPf"],"disabled":true,"name":"t:sections.products-bundle.name","settings":{"container":"fixed","color_scheme":"scheme-1","image":"shopify:\/\/shop_images\/mbc_test.webp","image_position":"right","image_ratio":"full","show_hotspot":true,"subheading":"","heading":"WOMEN'S HEALTH","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","columns":3,"column_gap":"medium","pcard_image_ratio":"","columns_mobile":"1","padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"featured_collection_C6tEdV":{"type":"featured-collection","blocks":{"collection_G4trd9":{"type":"collection","settings":{"collection":"mens-supplements","title":"","show_banner":true,"color_scheme":"scheme-13","card_link":"shopify:\/\/pages\/max-biocare-for-men","banner_image":"shopify:\/\/shop_images\/GoWshop_Max-biocare_subbanner2_500x830_56a906d1-8960-4202-a2b7-e7e7f0d0931a.webp","image_overlay_opacity":16,"content_position":"split-bottom-button","content_alignment":"center","subheading":"","subheading_style":"","heading":"Men's Health","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"description":"<p>Tailored to meet the health needs of men.​<\/p>","text_size":"text-base","button_label":"View More","button_style":"btn--underline","button_icon":"none"}}},"block_order":["collection_G4trd9"],"custom_css":[".btn {opacity: 100%;}"],"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"normal","highlight_style_color":"#1ca758","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-lg","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","limit":8,"columns":5,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":false,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":0,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"featured_collection_zdHhmy":{"type":"featured-collection","blocks":{"collection_pGEWU3":{"type":"collection","settings":{"collection":"kids-supplements","title":"","show_banner":true,"color_scheme":"scheme-13","card_link":"shopify:\/\/pages\/max-biocare-for-kids","banner_image":"shopify:\/\/shop_images\/GoWshop_Max-biocare_subbanner3_500x830_40a82533-ed2a-4c6e-8e36-2bbb4bab9ebf.webp","image_overlay_opacity":16,"content_position":"split-bottom-button","content_alignment":"center","subheading":"","subheading_style":"","heading":"Children's Health","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"View More","button_style":"btn--underline","button_icon":"none"}}},"block_order":["collection_pGEWU3"],"custom_css":[".btn {opacity: 100%;}"],"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"scheme-7","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"normal","highlight_style_color":"#1ca758","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-lg","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none","limit":8,"columns":5,"column_gap":"extra-small","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":false,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":0,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"featured_collection_g6e7Ef":{"type":"featured-collection","blocks":{"collection_eRmhQe":{"type":"collection","settings":{"collection":"baby-skin-care","title":"","show_banner":true,"color_scheme":"scheme-inverse","card_link":"","banner_image":"shopify:\/\/shop_images\/Salvarity_Product-profile-images_5_1000x1000_61f5e5ae-f888-454d-a4ef-60ddb97b392c.webp","image_overlay_opacity":16,"content_position":"middle-center","content_alignment":"center","subheading":"","subheading_style":"","heading":"DAILY CARE COLLECTION","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"#ffffff","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"<p>Daily essentials for every step: cleanse, moisturize and nourish<\/p>","text_size":"text-base","button_label":"","button_style":"btn--primary","button_icon":"none"}}},"block_order":["collection_eRmhQe"],"disabled":true,"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","limit":8,"columns":5,"column_gap":"large","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","use_highest_discount_variant":false,"pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"scrolling_promotion_8AMGhF":{"type":"scrolling-promotion","blocks":{"text_ryrfwX":{"type":"text","settings":{"text_link":"","text":"Fast Delivery","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_QGW6YH":{"type":"text","settings":{"text_link":"","text":"30 Days Free Returns","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_ebqXRG":{"type":"text","settings":{"text_link":"","text":"Secure Payment","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_HjE4ND":{"type":"text","settings":{"text_link":"","text":"Fast Delivery","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_zLGDgm":{"type":"text","settings":{"text_link":"","text":"30 Days Free Returns","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_KDwKRi":{"type":"text","settings":{"text_link":"","text":"Secure Payment","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}}},"block_order":["text_ryrfwX","text_QGW6YH","text_ebqXRG","text_HjE4ND","text_zLGDgm","text_KDwKRi"],"disabled":true,"settings":{"color_scheme":"scheme-inverse","direction":"left","pause_on_hover":true,"speed":0.2,"h_spacing":80,"show_section_divider":false,"padding_top":16,"padding_bottom":16}},"featured_blog_Q8ExDT":{"type":"featured-blog","disabled":true,"name":"t:sections.featured-blog.name","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Blog posts","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","blog":"","post_limit":3,"columns_desktop":3,"column_gap":"medium","row_gap":"large","columns_mobile":"1","swipe_on_mobile":true,"card_title_size":"h4","show_tags":true,"show_excerpt":true,"show_date":true,"show_author":true,"show_button":false,"card_button_style":"btn--underline","card_button_icon":"none","card_button_label":"Read more","padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}}},"order":["main","breadcrumbs_NaRFU7","scrolling_banner_RcrmQb","tabs_navigation_K9jgQH","tabs_content_y3PPGh","buttons_with_icon_TzxFpV","collection_list_7wGrWa","image_cards_Kbfi39","custom_content_UEPWi7","scrolling_banner_mDqX7j","scrolling_banner_4RKW9L","custom_content_DFkyEp","featured_collection_GcRFeU","featured_collection_DcPFTz","products_bundle_qJQMBP","featured_collection_C6tEdV","featured_collection_zdHhmy","featured_collection_g6e7Ef","scrolling_promotion_8AMGhF","featured_blog_Q8ExDT"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "left",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "breadcrumbs_NaRFU7": {
+      "type": "breadcrumbs",
+      "name": "t:sections.breadcrumbs.name",
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "start",
+        "padding_top": 16,
+        "padding_bottom": 20
+      }
+    },
+    "scrolling_banner_RcrmQb": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "slide_fheEmc": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "background": "{{ page.metafields.custom.brand_page_top_banner.value.banner_background_image.value }}",
+            "background_mobile": "{{ page.metafields.custom.brand_page_top_banner.value.mobile_main_banner_background_image.value }}",
+            "image_overlay_opacity": 0,
+            "content_position": "middle-right",
+            "text_alignment": "right",
+            "subheading": "",
+            "title": "",
+            "highlight_style": "hand_drawn_circle",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "description": "",
+            "description_size": "text-inherit",
+            "button_label": "",
+            "button_link": "",
+            "banner_link": "",
+            "button_style": "btn--secondary",
+            "button_icon": "none",
+            "product_color_scheme": "scheme-11",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_fheEmc"
+      ],
+      "name": "t:sections.scrolling-banner.name",
+      "settings": {
+        "container": "full",
+        "slide_height": "adapt",
+        "content_position_mobile": "top-center",
+        "text_alignment_mobile": "left",
+        "enable_zoom": true,
+        "enable_parallax": false
+      }
+    },
+    "tabs_navigation_K9jgQH": {
+      "type": "tabs-navigation",
+      "blocks": {
+        "button_item_N87ipq": {
+          "type": "button_item",
+          "settings": {
+            "open_in_new_tab": false,
+            "button_label": "For Women",
+            "button_link": "shopify://pages/max-biocare-for-women",
+            "icon": "arrow-right"
+          }
+        },
+        "button_item_qMjUjM": {
+          "type": "button_item",
+          "settings": {
+            "open_in_new_tab": false,
+            "button_label": "For Men",
+            "button_link": "shopify://pages/max-biocare-for-men",
+            "icon": "arrow-right"
+          }
+        },
+        "button_item_DVNMjM": {
+          "type": "button_item",
+          "settings": {
+            "open_in_new_tab": false,
+            "button_label": "For Children",
+            "button_link": "shopify://pages/max-biocare-for-kids",
+            "icon": "arrow-right"
+          }
+        },
+        "button_item_fmF3zz": {
+          "type": "button_item",
+          "settings": {
+            "open_in_new_tab": false,
+            "button_label": "Mothers' Care",
+            "button_link": "shopify://pages/max-biocare-mothers-care",
+            "icon": "arrow-right"
+          }
+        },
+        "button_item_TqeMqX": {
+          "type": "button_item",
+          "settings": {
+            "open_in_new_tab": true,
+            "button_label": "About Us",
+            "button_link": "https://www.maxbiocare.com/",
+            "icon": "arrow-right"
+          }
+        }
+      },
+      "block_order": [
+        "button_item_N87ipq",
+        "button_item_qMjUjM",
+        "button_item_DVNMjM",
+        "button_item_fmF3zz",
+        "button_item_TqeMqX"
+      ],
+      "name": "Tabs Navigation",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "item_alignment": "left",
+        "item_button_style": "btn--icon",
+        "item_button_font": "button",
+        "enable_slider": false,
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "custom_image": "shopify://shop_images/max_biocare_Logo-01.png",
+        "custom_image_width": 250,
+        "custom_image_margin_right": 170,
+        "custom_image_link": "shopify://pages/max-biocare"
+      }
+    },
+    "tabs_content_y3PPGh": {
+      "type": "tabs-content",
+      "blocks": {
+        "image_with_text_zJ9Qmg": {
+          "type": "image_with_text",
+          "settings": {
+            "navigation_title": "About Max Biocare​",
+            "image": "shopify://shop_images/Salvarity_sustain_test.webp",
+            "desktop_image_position": "left",
+            "image_aspect_ratio": "1/1",
+            "heading": "Trusted Australian brand for more than 25 years",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "subheading": "",
+            "description": "<p><strong>Max Biocare — Trusted Australian Brand for Over 25 Years</strong>​</p><p>At Max Biocare, science and care go hand in hand. For more than two decades, we’ve been dedicated to developing evidence-based health solutions that people can truly rely on. Every product is grounded in rigorous research, many with their own clinical trials, and guided by leading health professionals worldwide.​</p><p>Our commitment is simple: to deliver safe, effective, and high-quality products that make a real difference in everyday health and wellbeing. With Max Biocare, you can feel confident that your health is supported by expertise, integrity, and innovation.​</p>",
+            "description_size": "text-sm",
+            "enable_collapsible": true,
+            "collapsible_heading": "Collapsible row",
+            "collapsible_heading_size": "h4",
+            "icon": "check",
+            "page": "",
+            "default_open": false,
+            "table_html": "",
+            "button_label": "Learn more",
+            "button_link": "https://www.maxbiocare.com/",
+            "button_style": "btn--secondary",
+            "button_icon": "none"
+          }
+        },
+        "tab_zHqhU3": {
+          "type": "tab",
+          "settings": {
+            "navigation_title": "Innovation & Science​",
+            "tab_content": "<h4><strong>Innovation & Science</strong></h4><p>We believe science and innovation should make a real difference to people’s lives. Through the Max Biocare Institute, we lead clinical research and global collaborations to ensure our products are safe, effective, and evidence-based.​</p><p>Our studies meet the highest ethical and regulatory standards, with findings published in peer-reviewed journals — helping to share knowledge and improve public health worldwide.​</p><p>To learn more, visit: <a href=\"https://www.maxbiocare.com/innovation-science/\" target=\"_blank\"><span style=\"text-decoration:underline\">https://www.maxbiocare.com/innovation-science/</span></a></p>",
+            "custom_liquid": "",
+            "tab_page": "",
+            "enable_collapsible_tab": false,
+            "collapsible_heading": "",
+            "collapsible_heading_size": "h4",
+            "icon": "check",
+            "page": "",
+            "default_open": false,
+            "table_html": ""
+          }
+        },
+        "tab_NM6yLa": {
+          "type": "tab",
+          "settings": {
+            "navigation_title": "Clinical Trials",
+            "tab_content": "<h4><strong>Clinical Trials</strong>​</h4><p>Many of our products have been evaluated in clinical studies across a wide range of health areas. Each trial is conducted to the highest clinical and regulatory standards, led by experienced researchers to ensure outcomes are not only reliable, but also meaningful for real-world health and wellbeing.​</p><p>For more information on our ongoing clinical trials, visit: <a href=\"https://www.maxbiocare.com/clinical-trials/\" target=\"_blank\"><span style=\"text-decoration:underline\">https://www.maxbiocare.com/clinical-trials/</span></a></p>",
+            "custom_liquid": "",
+            "tab_page": "",
+            "enable_collapsible_tab": false,
+            "collapsible_heading": "",
+            "collapsible_heading_size": "h4",
+            "icon": "check",
+            "page": "",
+            "default_open": false,
+            "table_html": ""
+          }
+        },
+        "tab_4kbKR7": {
+          "type": "tab",
+          "settings": {
+            "navigation_title": "Sustainability",
+            "tab_content": "<h4><strong>Max Biocare Research Parks & Sustainability</strong></h4><p>​Where science and nature come together. With two dedicated sites in regional Victoria, our Research Parks pioneer natural ingredient innovation and development. Guided by a circular economy approach, we recycle resources, minimise waste, and regenerate ecosystems — ensuring that every initiative supports sustainability, while creating products that care for both people and the planet.​</p><p>Read more about our Research Parks here: <a href=\"https://www.maxbiocare.com/max-biocare-research-parks/\" target=\"_blank\"><span style=\"text-decoration:underline\">https://www.maxbiocare.com/max-biocare-research-parks/</span></a></p>",
+            "custom_liquid": "",
+            "tab_page": "",
+            "enable_collapsible_tab": false,
+            "collapsible_heading": "",
+            "collapsible_heading_size": "h4",
+            "icon": "check",
+            "page": "",
+            "default_open": false,
+            "table_html": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_zJ9Qmg",
+        "tab_zHqhU3",
+        "tab_NM6yLa",
+        "tab_4kbKR7"
+      ],
+      "custom_css": [],
+      "name": "t:sections.tabs-content.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-3",
+        "navigation_style": "headings",
+        "navigation_alignment": "center",
+        "navigation_font_size": 24,
+        "padding_top": 70,
+        "padding_bottom": 100,
+        "content_width": 80,
+        "show_section_divider": false,
+        "divider_width": "full",
+        "enable_collapsible_all": false,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Multicolumn",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h4",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "content_alignment": "left",
+        "show_col_count": false,
+        "show_image": true,
+        "columns_desktop": 4,
+        "column_gap": "large",
+        "row_gap": "inherit",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true
+      }
+    },
+    "buttons_with_icon_TzxFpV": {
+      "type": "buttons-with-icon",
+      "blocks": {
+        "button_item_CyaVHh": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Brain & Cardiovascular Health",
+            "button_link": "shopify://collections/brain-health-supplements",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_qnU9WN": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Eye Health",
+            "button_link": "shopify://collections/eye-supplements",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_nHmdkX": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Gastrointestinal Health",
+            "button_link": "shopify://collections/digestive-supplements",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_cmEgYN": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "General Health & Well-being",
+            "button_link": "shopify://collections/health-and-wellbeing",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_9j4yEh": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Immune Health",
+            "button_link": "shopify://collections/immune-support-supplement",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_tnMALp": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Metabolic",
+            "button_link": "shopify://collections/metabolic",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_BXhNR8": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Muscular & Skeletal Health",
+            "button_link": "shopify://collections/bone-and-joint-supplements",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_AUtijf": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "PMS & Menopause",
+            "button_link": "shopify://collections/menopause-supplements",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_8t7CQM": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Pregnancy & Breastfeeding",
+            "button_link": "shopify://collections/pregnancy-breastfeeding-care",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_LHHhXz": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Respiratory Health",
+            "button_link": "shopify://collections/respiratory-health",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        },
+        "button_item_7HBzXF": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Sexual & Reproductive Health",
+            "button_link": "shopify://collections/sexual-and-reproductive-health-care",
+            "icon": "none",
+            "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
+          }
+        }
+      },
+      "block_order": [
+        "button_item_CyaVHh",
+        "button_item_qnU9WN",
+        "button_item_nHmdkX",
+        "button_item_cmEgYN",
+        "button_item_9j4yEh",
+        "button_item_tnMALp",
+        "button_item_BXhNR8",
+        "button_item_AUtijf",
+        "button_item_8t7CQM",
+        "button_item_LHHhXz",
+        "button_item_7HBzXF"
+      ],
+      "disabled": true,
+      "name": "t:sections.buttons-with-icon.name",
+      "settings": {
+        "max_width": 1400,
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "item_alignment": "left",
+        "item_button_style": "btn--icon",
+        "item_button_font": "button",
+        "enable_slider": true,
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "collection_list_7wGrWa": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_CRRH9x": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "menopause-supplements",
+            "image": "shopify://shop_images/GOW-the-emporium_PMS_Menopause.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_qnicg4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sexual-and-reproductive-health-care",
+            "image": "shopify://shop_images/GOW-the-emporium_Sexual_Reproductive_Health.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_Byi6rU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "bone-and-joint-supplements",
+            "image": "shopify://shop_images/GOW-the-emporium_Bone_Joint_Health.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_rDfPqU": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "digestive-supplements",
+            "image": "shopify://shop_images/GOW-the-emporium_Detox_Digestion.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_DH7EwG": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "immune-support-supplement",
+            "image": "shopify://shop_images/GOW-the-emporium_Immune_Health.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_qVctyQ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "pregnancy-and-breastfeeding-supplements",
+            "image": "shopify://shop_images/GOW-the-emporium_Pregnancy_Breastfeeding.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_EpwEDJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "memory-health-supplements",
+            "image": "shopify://shop_images/GOW-the-emporium_Memory_Learning.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_JjVTfr": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "supplements-for-cardiovascular-health",
+            "image": "shopify://shop_images/GOW-the-emporium_Cardiovascular_Health.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_diW9UJ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "brain-and-cognitive-supplement",
+            "image": "shopify://shop_images/GOW-the-emporium_Brain_Vision.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_VHMx8n": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "metabolism-booster-supplements",
+            "image": "shopify://shop_images/GOW-the-emporium_Metabolic_Health.webp",
+            "title": ""
+          }
+        },
+        "featured_collection_a6frJq": {
+          "type": "featured_collection",
+          "disabled": true,
+          "settings": {
+            "collection": "respiratory-health",
+            "image": "shopify://shop_images/GoWshop_Website_MBC-Respiratory_Health_category.webp",
+            "title": "Respiratory Health"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_CRRH9x",
+        "featured_collection_qnicg4",
+        "featured_collection_Byi6rU",
+        "featured_collection_rDfPqU",
+        "featured_collection_DH7EwG",
+        "featured_collection_qVctyQ",
+        "featured_collection_EpwEDJ",
+        "featured_collection_JjVTfr",
+        "featured_collection_diW9UJ",
+        "featured_collection_VHMx8n",
+        "featured_collection_a6frJq"
+      ],
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Shop by Categories ​",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "card_color_scheme": "",
+        "card_style": "standard",
+        "card_heading_size": "text-base",
+        "card_image_ratio": "1/1",
+        "card_image_width": "large",
+        "rounded_card_image": true,
+        "card_show_border": false,
+        "columns_desktop": 5,
+        "column_gap": "2xs",
+        "row_gap": "inherit",
+        "grid_bordered": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "image_cards_Kbfi39": {
+      "type": "image-cards",
+      "blocks": {
+        "image_card_AFtJPN": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "",
+            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_1.value }}",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-left",
+            "content_alignment": "center",
+            "content_spacing": "extra-small",
+            "content_gap": "tight",
+            "card_link": "shopify://collections/all",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "show_badge": false,
+            "badge_color_scheme": "scheme-inverse",
+            "badge_shape": "circle",
+            "badge_position": "top-left",
+            "badge_subtext": "Save up to",
+            "badge_text": "<strong>50%</strong>",
+            "color_scheme_mobile": "",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "enable_preload_image": false
+          }
+        },
+        "image_card_j7GakB": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "",
+            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_2.value }}",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-left",
+            "content_alignment": "center",
+            "content_spacing": "extra-small",
+            "content_gap": "tight",
+            "card_link": "shopify://collections/all",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "show_badge": false,
+            "badge_color_scheme": "scheme-inverse",
+            "badge_shape": "circle",
+            "badge_position": "top-left",
+            "badge_subtext": "Save up to",
+            "badge_text": "<strong>50%</strong>",
+            "color_scheme_mobile": "",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "enable_preload_image": false
+          }
+        },
+        "image_card_Crieb4": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "",
+            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_3.value }}",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-left",
+            "content_alignment": "center",
+            "content_spacing": "extra-small",
+            "content_gap": "tight",
+            "card_link": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].link_image_3.value }}",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "show_badge": false,
+            "badge_color_scheme": "scheme-inverse",
+            "badge_shape": "circle",
+            "badge_position": "top-left",
+            "badge_subtext": "Save up to",
+            "badge_text": "<strong>50%</strong>",
+            "color_scheme_mobile": "",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_card_AFtJPN",
+        "image_card_j7GakB",
+        "image_card_Crieb4"
+      ],
+      "name": "t:sections.image-cards.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "hand_drawn_circle",
+        "highlight_font_style": "normal",
+        "highlight_style_color": "#1ca758",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "description_size": "text-lg",
+        "columns_desktop": 2,
+        "column_gap": "small",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "middle",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "show_progress_bar": false,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "custom_content_UEPWi7": {
+      "type": "custom-content",
+      "blocks": {
+        "collections_z3NEgX": {
+          "type": "collections",
+          "settings": {
+            "collection_list": [
+              "max-biocare"
+            ],
+            "custom_titles_collection": "",
+            "product_limit": 6,
+            "columns_desktop": 3,
+            "column_gap": "extra-small",
+            "row_gap": "inherit",
+            "enable_slider": false,
+            "pcard_image_ratio": "",
+            "columns_mobile": "2",
+            "swipe_on_mobile": true,
+            "width": "50%",
+            "alignment": "start",
+            "block_custom_class": ""
+          }
+        },
+        "lookbook_card_hotspot_gJdUbr": {
+          "type": "lookbook_card_hotspot",
+          "disabled": true,
+          "settings": {
+            "icon_style": "dot",
+            "icon_color": "light",
+            "image": "shopify://shop_images/maxucosa_test.webp",
+            "image_ratio": "1/1",
+            "product_1": "",
+            "top_1": 45,
+            "left_1": 30,
+            "product_2": "",
+            "top_2": 50,
+            "left_2": 70,
+            "product_3": "",
+            "top_3": 62,
+            "left_3": 43,
+            "product_4": "",
+            "top_4": 9,
+            "left_4": 63,
+            "width": "50%",
+            "alignment": "start",
+            "block_custom_class": ""
+          }
+        },
+        "image_card_B9DGjJ": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/GoWshop_maxucosa_800x800_b6d80cf5-8136-4f4b-bb13-d28462448cef.webp",
+            "image_ratio": "1/1",
+            "image_overlay_opacity": 0,
+            "content_position": "top-left",
+            "content_alignment": "left",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "shopify://collections/max-biocare",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "​Best Sellers",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "View more",
+            "button_style": "btn--underline",
+            "button_icon": "caret-right",
+            "show_badge": false,
+            "badge_color_scheme": "scheme-4",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "99$",
+            "color_scheme_mobile": "scheme-13",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "width": "50%",
+            "alignment": "start",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "collections_z3NEgX",
+        "lookbook_card_hotspot_gJdUbr",
+        "image_card_B9DGjJ"
+      ],
+      "name": "t:sections.custom-content.name",
+      "settings": {
+        "tab_content_html": "",
+        "product_list": [],
+        "template_product": "",
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "enable_sticky_column": true,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "medium",
+        "row_gap": "large",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "header_alignment_collapsible": "left",
+        "section_header_alignment_mobile_collapsible": "inherit",
+        "subheading_collapsible": "",
+        "heading_collapsible": "Collapsible tabs",
+        "highlight_style_collapsible": "none",
+        "highlight_font_style_collapsible": "italic",
+        "highlight_style_color_collapsible": "",
+        "highlight_text_color_collapsible": "",
+        "heading_size_collapsible": "h1",
+        "description_collapsible": "",
+        "text_size_collapsible": "text-base",
+        "button_label_collapsible": "",
+        "button_link_collapsible": "",
+        "button_style_collapsible": "btn--primary",
+        "button_icon_collapsible": "none",
+        "item_style": "standard",
+        "item_color_scheme_collapsible": "",
+        "item_heading_font_collapsible": "heading",
+        "item_heading_size_collapsible": "h4",
+        "item_icon_size_collapsible": "extra-large",
+        "section_header_alignment_testimonial": "center",
+        "section_header_alignment_mobile_testimonial": "inherit",
+        "subheading_testimonial": "",
+        "heading_testimonial": "Testimonials",
+        "highlight_style_testimonial": "none",
+        "highlight_font_style_testimonial": "italic",
+        "highlight_style_color_testimonial": "",
+        "highlight_text_color_testimonial": "",
+        "heading_size_testimonial": "h1",
+        "description_testimonial": "",
+        "text_size_testimonial": "text-base",
+        "layout": "focused",
+        "card_color_scheme": "",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "h1",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": true,
+        "columns_desktop": 3,
+        "column_gap_testimonial": "medium",
+        "row_gap_testimonial": "medium",
+        "enable_slider_testimonial": true,
+        "columns_mobile_testimonial": "2",
+        "swipe_on_mobile_testimonial": true,
+        "show_progress_bar": true
+      }
+    },
+    "scrolling_banner_mDqX7j": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "slide_PHUzLz": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-1",
+            "image_overlay_opacity": 0,
+            "content_position": "middle-right",
+            "text_alignment": "right",
+            "subheading": "",
+            "title": "",
+            "highlight_style": "hand_drawn_circle",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "description": "",
+            "description_size": "text-inherit",
+            "button_label": "",
+            "button_link": "",
+            "banner_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "product_color_scheme": "scheme-7",
+            "product": "max-biocare-belle-dame"
+          }
+        }
+      },
+      "block_order": [
+        "slide_PHUzLz"
+      ],
+      "disabled": true,
+      "name": "t:sections.scrolling-banner.name",
+      "settings": {
+        "container": "fixed",
+        "slide_height": "large",
+        "content_position_mobile": "middle-center",
+        "text_alignment_mobile": "center",
+        "enable_zoom": true,
+        "enable_parallax": false
+      }
+    },
+    "scrolling_banner_4RKW9L": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "slide_GUbeTi": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "",
+            "background": "shopify://shop_images/garden-of-wellness-shop_review-and-rewards-banner-1400x500.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "middle-center",
+            "text_alignment": "center",
+            "subheading": "",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1",
+            "description": "",
+            "description_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "banner_link": "shopify://pages/review-and-reward",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "product_color_scheme": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_GUbeTi"
+      ],
+      "disabled": true,
+      "name": "t:sections.scrolling-banner.name",
+      "settings": {
+        "container": "fixed",
+        "slide_height": "adapt",
+        "content_position_mobile": "top-center",
+        "text_alignment_mobile": "center",
+        "enable_zoom": true,
+        "enable_parallax": true
+      }
+    },
+    "custom_content_DFkyEp": {
+      "type": "custom-content",
+      "blocks": {
+        "image_card_tYJT8U": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/GoWshop_attractive-woman_2000x2000_db95b0a1-da64-4067-af6e-2280efac5e41.webp",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 10,
+            "content_position": "bottom-right",
+            "content_alignment": "left",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "shopify://pages/max-biocare-for-women",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Women's Health",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "<p>Women’s health supplements and cosmetics, specially formulated to support her unique needs.​</p>",
+            "button_label": "View More",
+            "button_style": "btn--underline",
+            "button_icon": "none",
+            "show_badge": false,
+            "badge_color_scheme": "scheme-13",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "99$",
+            "color_scheme_mobile": "scheme-13",
+            "show_text_below": false,
+            "content_alignment_mobile": "left",
+            "width": "50%",
+            "alignment": "start",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "image_card_with_product_KHLMnK": {
+          "type": "image_card_with_product",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/GoWshop_attractive-woman_2000x2000_db95b0a1-da64-4067-af6e-2280efac5e41.webp",
+            "image_ratio": "1/1",
+            "subheading": "",
+            "heading": "Women's Health",
+            "highlight_style": "hand_drawn_circle",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "description": "<p>Women’s health supplements and cosmetics, specially formulated to support her unique needs.​</p>",
+            "button_label": "BUY NOW",
+            "button_style": "btn--secondary",
+            "button_icon": "none",
+            "product": "max-biocare-belle-dame",
+            "width": "50%",
+            "alignment": "start",
+            "block_custom_class": ""
+          }
+        },
+        "collections_cjnhrD": {
+          "type": "collections",
+          "settings": {
+            "collection_list": [
+              "women-supplements",
+              "sciene-backed-mothers-care"
+            ],
+            "custom_titles_collection": "Women's Health​ ||\nPregnancy and Breastfeeding​",
+            "product_limit": 12,
+            "columns_desktop": 3,
+            "column_gap": "extra-small",
+            "row_gap": "inherit",
+            "enable_slider": true,
+            "pcard_image_ratio": "",
+            "columns_mobile": "2",
+            "swipe_on_mobile": true,
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_tYJT8U",
+        "image_card_with_product_KHLMnK",
+        "collections_cjnhrD"
+      ],
+      "name": "t:sections.custom-content.name",
+      "settings": {
+        "tab_content_html": "",
+        "product_list": [],
+        "template_product": "",
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "enable_sticky_column": true,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "normal",
+        "highlight_style_color": "#1ca758",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-lg",
+        "column_gap": "medium",
+        "row_gap": "large",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "header_alignment_collapsible": "left",
+        "section_header_alignment_mobile_collapsible": "inherit",
+        "subheading_collapsible": "",
+        "heading_collapsible": "Collapsible tabs",
+        "highlight_style_collapsible": "none",
+        "highlight_font_style_collapsible": "italic",
+        "highlight_style_color_collapsible": "",
+        "highlight_text_color_collapsible": "",
+        "heading_size_collapsible": "h1",
+        "description_collapsible": "",
+        "text_size_collapsible": "text-base",
+        "button_label_collapsible": "",
+        "button_link_collapsible": "",
+        "button_style_collapsible": "btn--primary",
+        "button_icon_collapsible": "none",
+        "item_style": "standard",
+        "item_color_scheme_collapsible": "",
+        "item_heading_font_collapsible": "heading",
+        "item_heading_size_collapsible": "h4",
+        "item_icon_size_collapsible": "extra-large",
+        "section_header_alignment_testimonial": "center",
+        "section_header_alignment_mobile_testimonial": "inherit",
+        "subheading_testimonial": "",
+        "heading_testimonial": "Testimonials",
+        "highlight_style_testimonial": "none",
+        "highlight_font_style_testimonial": "italic",
+        "highlight_style_color_testimonial": "",
+        "highlight_text_color_testimonial": "",
+        "heading_size_testimonial": "h1",
+        "description_testimonial": "",
+        "text_size_testimonial": "text-base",
+        "layout": "focused",
+        "card_color_scheme": "",
+        "card_content_color_scheme": "",
+        "card_image_ratio": "adapt",
+        "card_heading_size": "h4",
+        "card_text_size": "h1",
+        "author_info_layout": "vertical",
+        "card_trigger_behavior": "click",
+        "show_image": true,
+        "show_author_image": true,
+        "columns_desktop": 3,
+        "column_gap_testimonial": "medium",
+        "row_gap_testimonial": "medium",
+        "enable_slider_testimonial": true,
+        "columns_mobile_testimonial": "2",
+        "swipe_on_mobile_testimonial": true,
+        "show_progress_bar": true
+      }
+    },
+    "featured_collection_GcRFeU": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_i9mGcd": {
+          "type": "collection",
+          "settings": {
+            "collection": "women-supplements",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-13",
+            "card_link": "",
+            "banner_image": "shopify://shop_images/Salvarity_sustain_test.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h3",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_i9mGcd"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".btn {opacity: 100%;}"
+      ],
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "<em>WOMEN's</em>  Health",
+        "highlight_style": "hand_drawn_circle",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "#1ca758",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "<p>Women’s health supplements and cosmetics, specially formulated to support her unique needs.​</p>",
+        "text_size": "text-lg",
+        "button_label": "Shop All Women’s",
+        "button_link": "",
+        "button_style": "btn--primary",
+        "button_icon": "none",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": false,
+        "pcard_image_ratio": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "featured_collection_DcPFTz": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_jQQQTX": {
+          "type": "collection",
+          "settings": {
+            "collection": "pregnancy-and-breastfeeding-supplements",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-13",
+            "card_link": "",
+            "banner_image": "shopify://shop_images/Salvarity_sustain_test.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h3",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_jQQQTX"
+      ],
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "<em>PREGNANCY </em>  & Breastfeeding",
+        "highlight_style": "hand_drawn_circle",
+        "highlight_font_style": "normal",
+        "highlight_style_color": "#1ca758",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "<p>Discover women's health supplements. Specially formulated to support women's health</p>",
+        "text_size": "text-base",
+        "button_label": "view more",
+        "button_link": "",
+        "button_style": "btn--secondary",
+        "button_icon": "none",
+        "limit": 8,
+        "columns": 4,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": false,
+        "pcard_image_ratio": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "products_bundle_qJQMBP": {
+      "type": "products-bundle",
+      "blocks": {
+        "product_e7eeKW": {
+          "type": "product",
+          "settings": {
+            "product": "h-regulator-r",
+            "color_scheme": "",
+            "horizontal_position": 20,
+            "vertical_position": 60,
+            "horizontal_position_mobile": 30,
+            "vertical_position_mobile": 32
+          }
+        },
+        "product_QVpLMz": {
+          "type": "product",
+          "settings": {
+            "product": "max-biocare-belle-dame",
+            "color_scheme": "",
+            "horizontal_position": 50,
+            "vertical_position": 60,
+            "horizontal_position_mobile": 38,
+            "vertical_position_mobile": 60
+          }
+        },
+        "product_etjJPf": {
+          "type": "product",
+          "settings": {
+            "product": "red-life-for-women-r",
+            "color_scheme": "",
+            "horizontal_position": 80,
+            "vertical_position": 60,
+            "horizontal_position_mobile": 65,
+            "vertical_position_mobile": 45
+          }
+        }
+      },
+      "block_order": [
+        "product_e7eeKW",
+        "product_QVpLMz",
+        "product_etjJPf"
+      ],
+      "disabled": true,
+      "name": "t:sections.products-bundle.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "image": "shopify://shop_images/mbc_test.webp",
+        "image_position": "right",
+        "image_ratio": "full",
+        "show_hotspot": true,
+        "subheading": "",
+        "heading": "WOMEN'S HEALTH",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "columns": 3,
+        "column_gap": "medium",
+        "pcard_image_ratio": "",
+        "columns_mobile": "1",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "featured_collection_C6tEdV": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_G4trd9": {
+          "type": "collection",
+          "settings": {
+            "collection": "mens-supplements",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-13",
+            "card_link": "shopify://pages/max-biocare-for-men",
+            "banner_image": "shopify://shop_images/GoWshop_Max-biocare_subbanner2_500x830_56a906d1-8960-4202-a2b7-e7e7f0d0931a.webp",
+            "image_overlay_opacity": 16,
+            "content_position": "split-bottom-button",
+            "content_alignment": "center",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Men's Health",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "<p>Tailored to meet the health needs of men.​</p>",
+            "text_size": "text-base",
+            "button_label": "View More",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_G4trd9"
+      ],
+      "custom_css": [
+        ".btn {opacity: 100%;}"
+      ],
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "normal",
+        "highlight_style_color": "#1ca758",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-lg",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--primary",
+        "button_icon": "none",
+        "limit": 8,
+        "columns": 5,
+        "column_gap": "extra-small",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": false,
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "featured_collection_zdHhmy": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_pGEWU3": {
+          "type": "collection",
+          "settings": {
+            "collection": "kids-supplements",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-13",
+            "card_link": "shopify://pages/max-biocare-for-kids",
+            "banner_image": "shopify://shop_images/GoWshop_Max-biocare_subbanner3_500x830_40a82533-ed2a-4c6e-8e36-2bbb4bab9ebf.webp",
+            "image_overlay_opacity": 16,
+            "content_position": "split-bottom-button",
+            "content_alignment": "center",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Children's Health",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "View More",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_pGEWU3"
+      ],
+      "custom_css": [
+        ".btn {opacity: 100%;}"
+      ],
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-7",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "normal",
+        "highlight_style_color": "#1ca758",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-lg",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--primary",
+        "button_icon": "none",
+        "limit": 8,
+        "columns": 5,
+        "column_gap": "extra-small",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": false,
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "featured_collection_g6e7Ef": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_eRmhQe": {
+          "type": "collection",
+          "settings": {
+            "collection": "baby-skin-care",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-inverse",
+            "card_link": "",
+            "banner_image": "shopify://shop_images/Salvarity_Product-profile-images_5_1000x1000_61f5e5ae-f888-454d-a4ef-60ddb97b392c.webp",
+            "image_overlay_opacity": 16,
+            "content_position": "middle-center",
+            "content_alignment": "center",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "DAILY CARE COLLECTION",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "#ffffff",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "<p>Daily essentials for every step: cleanse, moisturize and nourish</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_eRmhQe"
+      ],
+      "disabled": true,
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 8,
+        "columns": 5,
+        "column_gap": "large",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "use_highest_discount_variant": false,
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "scrolling_promotion_8AMGhF": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "text_ryrfwX": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "Fast Delivery",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        },
+        "text_QGW6YH": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "30 Days Free Returns",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        },
+        "text_ebqXRG": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "Secure Payment",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        },
+        "text_HjE4ND": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "Fast Delivery",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        },
+        "text_zLGDgm": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "30 Days Free Returns",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        },
+        "text_KDwKRi": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "Secure Payment",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "text_ryrfwX",
+        "text_QGW6YH",
+        "text_ebqXRG",
+        "text_HjE4ND",
+        "text_zLGDgm",
+        "text_KDwKRi"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_scheme": "scheme-inverse",
+        "direction": "left",
+        "pause_on_hover": true,
+        "speed": 0.2,
+        "h_spacing": 80,
+        "show_section_divider": false,
+        "padding_top": 16,
+        "padding_bottom": 16
+      }
+    },
+    "featured_blog_Q8ExDT": {
+      "type": "featured-blog",
+      "disabled": true,
+      "name": "t:sections.featured-blog.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Blog posts",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "blog": "",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "column_gap": "medium",
+        "row_gap": "large",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "card_title_size": "h4",
+        "show_tags": true,
+        "show_excerpt": true,
+        "show_date": true,
+        "show_author": true,
+        "show_button": false,
+        "card_button_style": "btn--underline",
+        "card_button_icon": "none",
+        "card_button_label": "Read more",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "breadcrumbs_NaRFU7",
+    "scrolling_banner_RcrmQb",
+    "tabs_navigation_K9jgQH",
+    "tabs_content_y3PPGh",
+    "buttons_with_icon_TzxFpV",
+    "collection_list_7wGrWa",
+    "image_cards_Kbfi39",
+    "custom_content_UEPWi7",
+    "scrolling_banner_mDqX7j",
+    "scrolling_banner_4RKW9L",
+    "custom_content_DFkyEp",
+    "featured_collection_GcRFeU",
+    "featured_collection_DcPFTz",
+    "products_bundle_qJQMBP",
+    "featured_collection_C6tEdV",
+    "featured_collection_zdHhmy",
+    "featured_collection_g6e7Ef",
+    "scrolling_promotion_8AMGhF",
+    "featured_blog_Q8ExDT"
+  ]
+}

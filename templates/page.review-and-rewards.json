@@ -1,1 +1,67 @@
-{"sections":{"spacer_Yz9kii":{"type":"spacer","name":"t:sections.spacer.name","settings":{"show_section_divider":false,"divider_width":"fixed","padding_top":20,"padding_bottom":20,"padding_top_mobile":10,"padding_bottom_mobile":10}},"main":{"type":"main-page","disabled":true,"settings":{"container":"fixed","text_alignment":"center","padding_top":28,"padding_bottom":28}},"section_review_and_rewards_page_U7NePT":{"type":"section-review-and-rewards-page","name":"Page review and rewward","settings":{"banner_image":"shopify:\/\/shop_images\/garden-of-wellness-shop_review-and-rewards-banner-1400x500_2.webp","enable_review_buttons":false,"image_cw":"shopify:\/\/shop_images\/chemist-warehouse-logo-1914FA0C63-seeklogo.com.png","link_cw":"https:\/\/www.chemistwarehouse.com.au\/","image_shopify":"shopify:\/\/shop_images\/garden-of-wellness-shop-logo-1500x400.png","link_shopify":"http:\/\/gardenofwellness.com.au\/","image_aws":"shopify:\/\/shop_images\/Amazon_logo_svg.png","link_aws":"https:\/\/www.amazon.com.au\/"}},"spacer_JYeNAi":{"type":"spacer","name":"t:sections.spacer.name","settings":{"show_section_divider":false,"divider_width":"fixed","padding_top":20,"padding_bottom":100,"padding_top_mobile":10,"padding_bottom_mobile":10}}},"order":["spacer_Yz9kii","main","section_review_and_rewards_page_U7NePT","spacer_JYeNAi"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "spacer_Yz9kii": {
+      "type": "spacer",
+      "name": "t:sections.spacer.name",
+      "settings": {
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_top_mobile": 10,
+        "padding_bottom_mobile": 10
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "center",
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "section_review_and_rewards_page_U7NePT": {
+      "type": "section-review-and-rewards-page",
+      "name": "Page review and rewward",
+      "settings": {
+        "banner_image": "shopify://shop_images/garden-of-wellness-shop_review-and-rewards-banner-1400x500_2.webp",
+        "enable_review_buttons": false,
+        "image_cw": "shopify://shop_images/chemist-warehouse-logo-1914FA0C63-seeklogo.com.png",
+        "link_cw": "https://www.chemistwarehouse.com.au/",
+        "image_shopify": "shopify://shop_images/garden-of-wellness-shop-logo-1500x400.png",
+        "link_shopify": "http://gardenofwellness.com.au/",
+        "image_aws": "shopify://shop_images/Amazon_logo_svg.png",
+        "link_aws": "https://www.amazon.com.au/"
+      }
+    },
+    "spacer_JYeNAi": {
+      "type": "spacer",
+      "name": "t:sections.spacer.name",
+      "settings": {
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 20,
+        "padding_bottom": 100,
+        "padding_top_mobile": 10,
+        "padding_bottom_mobile": 10
+      }
+    }
+  },
+  "order": [
+    "spacer_Yz9kii",
+    "main",
+    "section_review_and_rewards_page_U7NePT",
+    "spacer_JYeNAi"
+  ]
+}

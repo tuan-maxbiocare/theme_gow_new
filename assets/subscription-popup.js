@@ -39,9 +39,11 @@ if (!customElements.get('subscription-popup')) {
 
         switch (this.triggerOpen) {
           case 'delay':
+            const isProductPage = window.location.pathname.includes('/products/');
+            const delayTime = isProductPage ? 30000 : 10000;
             setTimeout(() => {
               this.show();
-            }, 5000);
+            }, delayTime);
             break;
           case 'scroll_down':
             this.triggerAfterScroll(700, this.show.bind(this));

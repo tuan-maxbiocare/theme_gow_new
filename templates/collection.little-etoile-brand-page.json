@@ -1,1 +1,1475 @@
-{"sections":{"breadcrumbs_Gxg9wp":{"type":"breadcrumbs","settings":{"container":"fixed","text_alignment":"start","padding_top":16,"padding_bottom":20}},"scrolling_banner_cAF8cz":{"type":"scrolling-banner","blocks":{"slide_xU7TEU":{"type":"slide","settings":{"color_scheme":"scheme-13","background":"shopify:\/\/shop_images\/LE_banner_test.webp","image_overlay_opacity":0,"content_position":"middle-left","text_alignment":"left","subheading":"","title":"CARING FOR EVERY STEP","highlight_style":"hand_drawn_circle","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","description":"<p><strong>OF YOU LITTLE  ONE'S JOURNEY<\/strong><\/p>","description_size":"text-inherit","button_label":"Learn more","button_link":"","button_style":"btn--primary","button_icon":"none","product_color_scheme":"scheme-11","product":""}}},"block_order":["slide_xU7TEU"],"custom_css":[".btn {opacity: 100%;}","button,.button,.btn,.shopify-payment-button__button {background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 25px; color: var(--color-foreground); transition: 0.3s;}","button:hover,.button:hover,.btn:hover,.shopify-payment-button__button:hover {background: rgba(255, 255, 255, 0.2); color: var(--color-accent);}","a.btn.btn--primary:hover .btn__text {color: #000000 !important;}"],"name":"t:sections.scrolling-banner.name","settings":{"container":"fixed","slide_height":"large","content_position_mobile":"middle-center","text_alignment_mobile":"center","enable_zoom":true,"enable_parallax":false}},"custom_menu_page_VTPwHX":{"type":"custom-menu-page","name":"Tabs Navigation","settings":{"margin_top":20,"margin_bottom":0,"image_picker_menu":"shopify:\/\/shop_images\/chemist-warehouse-logo-1914FA0C63-seeklogo.com.png","menu_1":"asdasd","url_menu_1":"shopify:\/\/products\/salvarity-aquashine-gentle-facial-cleanser","menu_2":"sadasd","url_menu_2":"shopify:\/\/products\/belmarita-r","menu_3":"asdasd","url_menu_3":"shopify:\/\/products\/salvarity-aquashine-gentle-facial-cleanser","menu_4":"asdsad","url_menu_4":"shopify:\/\/products\/salvarity-back-in-balance-clarifying-moisturiser","menu_5":"","url_menu_5":"","menu_6":"213123asd","url_menu_6":"shopify:\/\/products\/ausfebis-r"}},"collection_cards_xHNtRx":{"type":"collection-cards","blocks":{"collection_wReVLc":{"type":"collection","settings":{"collection":"formula-milk","title":""}},"collection_eCX8fE":{"type":"collection","settings":{"collection":"organic-baby-food-pouches","title":""}},"collection_RK4Hxx":{"type":"collection","settings":{"collection":"baby-care-products","title":""}}},"block_order":["collection_wReVLc","collection_eCX8fE","collection_RK4Hxx"],"disabled":true,"name":"t:sections.collection-cards.presets","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Shop Collection​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","description":"","text_size":"text-sm","columns_desktop":4,"column_gap":"medium","row_gap":"inherit","enable_slider":true,"columns_mobile":"2","swipe_on_mobile":true,"card_color_scheme":"","image_ratio":"3\/4","show_product_count":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"multicolumn_KYt9CT":{"type":"multicolumn","blocks":{"column_GR6Hpk":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/le_banner_test_eczema.webp","title":"Considered design","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","text":"<p>Crafted with care and intention, this piece blends modern aesthetics with timeless comfort—perfect for any season.<\/p>","text_size":"text-base","button_label":"Explore Now","button_link":"","button_style":"btn--plain","button_icon":"caret-right"}},"column_nX96LC":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/le_banner_test_eczema.webp","title":"Considered design","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","text":"<p>Crafted with care and intention, this piece blends modern aesthetics with timeless comfort—perfect for any season.<\/p>","text_size":"text-base","button_label":"Explore Now","button_link":"shopify:\/\/collections\/baby-care-products","button_style":"btn--plain","button_icon":"caret-right"}},"column_XdPPYa":{"type":"column","settings":{"image":"shopify:\/\/shop_images\/le_banner_test_eczema.webp","title":"Considered design","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","text":"<p>Crafted with care and intention, this piece blends modern aesthetics with timeless comfort—perfect for any season.<\/p>","text_size":"text-base","button_label":"Explore Now","button_link":"","button_style":"btn--plain","button_icon":"caret-right"}}},"block_order":["column_GR6Hpk","column_nX96LC","column_XdPPYa"],"settings":{"container":"fixed","color_scheme":"","section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"","heading":"Shop <em>collection<\/em>","highlight_style":"thick_underline","highlight_font_style":"normal","highlight_style_color":"#ffe093","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","content_alignment":"left","show_col_count":false,"show_image":true,"columns_desktop":3,"column_gap":"large","row_gap":"inherit","columns_mobile":"1","swipe_on_mobile":true,"show_section_divider":false,"divider_width":"fixed","padding_top":60,"padding_bottom":0}},"collection_list_slider_mCHpzK":{"type":"collection-list-slider","blocks":{"featured_collection_7x464A":{"type":"featured_collection","settings":{"collection":"","title":""}},"featured_collection_x7xQkA":{"type":"featured_collection","settings":{"collection":"","title":""}},"featured_collection_B74iDc":{"type":"featured_collection","settings":{"collection":"","title":""}},"featured_collection_tGGhRi":{"type":"featured_collection","settings":{"collection":"","title":""}},"featured_collection_NEinCb":{"type":"featured_collection","settings":{"collection":"","title":""}},"featured_collection_gKdmci":{"type":"featured_collection","settings":{"collection":"","title":""}},"featured_collection_LnCPKN":{"type":"featured_collection","settings":{"collection":"","title":""}},"featured_collection_9yyzhc":{"type":"featured_collection","settings":{"collection":"","title":""}}},"block_order":["featured_collection_7x464A","featured_collection_x7xQkA","featured_collection_B74iDc","featured_collection_tGGhRi","featured_collection_NEinCb","featured_collection_gKdmci","featured_collection_LnCPKN","featured_collection_9yyzhc"],"name":"t:sections.collection-list-slider.name","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"center","section_header_alignment_mobile":"inherit","subheading":"","heading":"Collections","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","rounded_card_image":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"buttons_with_icon_NrQVFP":{"type":"buttons-with-icon","blocks":{"button_item_XXbeWc":{"type":"button_item","settings":{"button_label":"Living Room","button_link":"","icon":"check"}},"button_item_ePUyh8":{"type":"button_item","settings":{"button_label":"Planters","button_link":"","icon":"check"}},"button_item_za4jHe":{"type":"button_item","settings":{"button_label":"Gravel Rug","button_link":"","icon":"check"}},"button_item_tFiLqz":{"type":"button_item","settings":{"button_label":"Table Mirror","button_link":"","icon":"check"}}},"block_order":["button_item_XXbeWc","button_item_ePUyh8","button_item_za4jHe","button_item_tFiLqz"],"settings":{"color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"Current Deals","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","item_alignment":"left","item_button_style":"btn--icon","item_button_font":"button","enable_slider":true,"swipe_on_mobile":true,"show_section_divider":false,"divider_width":"fixed","padding_top":120,"padding_bottom":0}},"custom_content_LCdkNd":{"type":"custom-content","blocks":{"image_card_cXWM7N":{"type":"image_card","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/maxucosa_mockup_test.webp","image_ratio":"adapt","image_overlay_opacity":0,"content_position":"bottom-center","content_alignment":"center","content_spacing":"medium","content_gap":"fitted","card_link":"","subheading":"","subheading_style":"","heading":"Image card","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"Button label","button_style":"btn--secondary","button_icon":"none","show_badge":true,"badge_color_scheme":"scheme-1","badge_shape":"circle","badge_position":"top-right","badge_subtext":"Save","badge_text":"99$","color_scheme_mobile":"scheme-1","show_text_below":false,"content_alignment_mobile":"center","width":"50%","alignment":"center","block_custom_class":"","enable_preload_image":false}},"image_card_BYeDwP":{"type":"image_card","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/maxucosa_mockup_test.webp","image_ratio":"adapt","image_overlay_opacity":0,"content_position":"bottom-center","content_alignment":"center","content_spacing":"medium","content_gap":"fitted","card_link":"","subheading":"","subheading_style":"","heading":"Image card","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"Button label","button_style":"btn--secondary","button_icon":"none","show_badge":true,"badge_color_scheme":"scheme-1","badge_shape":"circle","badge_position":"top-right","badge_subtext":"Save","badge_text":"99$","color_scheme_mobile":"scheme-1","show_text_below":false,"content_alignment_mobile":"center","width":"50%","alignment":"center","block_custom_class":"","enable_preload_image":false}},"image_card_pLgWF8":{"type":"image_card","disabled":true,"settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/le_banner_test_eczema.webp","image_ratio":"4\/3","image_overlay_opacity":0,"content_position":"bottom-center","content_alignment":"center","content_spacing":"medium","content_gap":"fitted","card_link":"","subheading":"","subheading_style":"","heading":"Image card","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"Button label","button_style":"btn--secondary","button_icon":"none","show_badge":true,"badge_color_scheme":"scheme-1","badge_shape":"circle","badge_position":"top-right","badge_subtext":"Save","badge_text":"99$","color_scheme_mobile":"scheme-1","show_text_below":false,"content_alignment_mobile":"center","width":"33%","alignment":"center","block_custom_class":"","enable_preload_image":false}},"lookbook_card_hotspot_mUbxRG":{"type":"lookbook_card_hotspot","disabled":true,"settings":{"icon_style":"plus","icon_color":"light","image":"shopify:\/\/shop_images\/le_banner_test_4ea5bb02-e57e-469e-9f41-bda962f0e5ce.webp","image_ratio":"adapt","product_1":"little-etoile-premium-toddler-formula-stage-3-1-3-years","top_1":45,"left_1":30,"product_2":"","top_2":50,"left_2":70,"product_3":"","top_3":62,"left_3":43,"product_4":"","top_4":9,"left_4":63,"width":"100%","alignment":"center","block_custom_class":""}},"lookbook_card_ckCFFj":{"type":"lookbook_card","settings":{"product_list":["little-etoile-care-hair-oil-0-months-200ml","little-etoile-care-swimprotect-2-in-1-shampoo-body-wash-chlorine-removal-for-2-years","little-etoile-care-skin-recovery-cream-for-dry-eczema-prone-skin-0-months-170g","little-etoile-premium-toddler-formula-stage-3-1-3-years"],"pcard_image_ratio":"","image":"shopify:\/\/shop_images\/le_banner_test_4ea5bb02-e57e-469e-9f41-bda962f0e5ce.webp","image_ratio":"adapt","heading":"Shop this look","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h5","width":"100%","alignment":"center","block_custom_class":""}}},"block_order":["image_card_cXWM7N","image_card_BYeDwP","image_card_pLgWF8","lookbook_card_hotspot_mUbxRG","lookbook_card_ckCFFj"],"name":"t:sections.custom-content.name","settings":{"container":"fixed","color_scheme":"","enable_sticky_column":false,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"medium","row_gap":"large","swipe_on_mobile":false,"columns_mobile":"1","padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"scrolling_banner_WqT39L":{"type":"scrolling-banner","blocks":{"slide_iJDng6":{"type":"slide","settings":{"color_scheme":"scheme-13","background":"shopify:\/\/shop_images\/LE_banner_test.webp","image_overlay_opacity":0,"content_position":"middle-left","text_alignment":"left","subheading":"","title":"CARING FOR EVERY STEP","highlight_style":"hand_drawn_circle","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","description":"<p><strong>OF YOU LITTLE  ONE'S JOURNEY<\/strong><\/p>","description_size":"text-inherit","button_label":"Learn more","button_link":"","button_style":"btn--primary","button_icon":"none","product_color_scheme":"scheme-11","product":"little-etoile-premium-toddler-formula-stage-3-1-3-years"}}},"block_order":["slide_iJDng6"],"custom_css":[".btn {opacity: 100%;}","button,.button,.btn,.shopify-payment-button__button {background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 25px; color: var(--color-foreground); transition: 0.3s;}","button:hover,.button:hover,.btn:hover,.shopify-payment-button__button:hover {background: rgba(255, 255, 255, 0.2); color: var(--color-accent);}","a.btn.btn--primary:hover .btn__text {color: #000000 !important;}"],"name":"t:sections.scrolling-banner.name","settings":{"container":"fixed","slide_height":"small","content_position_mobile":"middle-center","text_alignment_mobile":"center","enable_zoom":true,"enable_parallax":false}},"slideshow_36Ecd4":{"type":"slideshow","blocks":{"slide_CPeyUW":{"type":"slide","settings":{"color_scheme":"scheme-13","background":"shopify:\/\/shop_images\/LE_banner_test.webp","image_overlay_opacity":0,"content_position":"middle-left","text_alignment":"left","subheading":"","title":"CARING FOR EVERY STEP of your Little One's journey","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","description":"","description_size":"text-base","button_label":"Button label","button_link":"","button_style":"btn--primary","button_icon":"none","enable_preload_image":true}}},"block_order":["slide_CPeyUW"],"disabled":true,"name":"t:sections.slideshow.name","settings":{"container":"fixed","slide_height":"large","show_controls":true,"autoplay":false,"autoplay_delay":3,"show_text_below":false,"text_alignment_mobile":"center","accessibility_info":"Slideshow about our brand"}},"multicolumn_icon_eGKLkQ":{"type":"multicolumn-icon","blocks":{"column_3Bner4":{"type":"column","settings":{"icon":"chat","image":"shopify:\/\/shop_images\/favicon_test.svg","max_width":50,"max_width_mb":70,"title":"Organic Cotton","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","heading_font":"heading","text":"<p>Currently, 82% feature organic or recycled materials<\/p>","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}},"column_qRQL6w":{"type":"column","settings":{"icon":"chat","image":"shopify:\/\/shop_images\/favicon_test.svg","max_width":50,"max_width_mb":70,"title":"Organic Cotton","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","heading_font":"heading","text":"<p>Currently, 82% feature organic or recycled materials<\/p>","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}},"column_yFKELF":{"type":"column","settings":{"icon":"chat","image":"shopify:\/\/shop_images\/favicon_test.svg","max_width":50,"max_width_mb":70,"title":"Organic Cotton","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h4","heading_font":"heading","text":"<p>Currently, 82% feature organic or recycled materials<\/p>","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none"}}},"block_order":["column_3Bner4","column_qRQL6w","column_yFKELF"],"settings":{"container":"fixed","color_scheme":"scheme-1","header_layout":"vertical","section_header_alignment":"center","section_header_alignment_mobile":"center","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","enable_sticky":false,"card_color_scheme":"scheme-11","content_alignment":"left","image_position":"left","icon_color":"#ffffff","columns_desktop":3,"column_gap":"medium","row_gap":"inherit","show_divider_col":false,"columns_mobile":"1","swipe_on_mobile":true,"show_section_divider":false,"divider_width":"fixed","padding_top":50,"padding_bottom":50}},"featured_collection_37nmxd":{"type":"featured-collection","blocks":{"collection_iXWp3b":{"type":"collection","settings":{"collection":"formula-milk","title":"","show_banner":true,"color_scheme":"scheme-inverse","card_link":"","banner_image":"shopify:\/\/shop_images\/Little-Etoile-Organic-Mango-Peach-Chia-seed-Custard-_-6_-Months-120g-450x800-7.webp","image_overlay_opacity":0,"content_position":"split-bottom-button","content_alignment":"left","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"#ffffff","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"","button_style":"btn--primary","button_icon":"none"}},"collection_FmnfL6":{"type":"collection","settings":{"collection":"baby-skin-care","title":"","show_banner":false,"color_scheme":"","card_link":"","image_overlay_opacity":0,"content_position":"top-left","content_alignment":"left","subheading":"","subheading_style":"","heading":"Collections","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"Button label","button_style":"btn--primary","button_icon":"none"}},"collection_afzdbz":{"type":"collection","settings":{"collection":"organic-baby-food-pouches","title":"","show_banner":false,"color_scheme":"","card_link":"","image_overlay_opacity":0,"content_position":"top-left","content_alignment":"left","subheading":"","subheading_style":"","heading":"Collections","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h2","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"Button label","button_style":"btn--primary","button_icon":"none"}}},"block_order":["collection_iXWp3b","collection_FmnfL6","collection_afzdbz"],"name":"t:sections.featured-collection.presets__2.name","settings":{"container":"fixed","color_scheme":"","section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","button_label":"","button_link":"","button_style":"btn--underline","button_icon":"none","limit":8,"columns":5,"column_gap":"large","row_gap":"inherit","enable_slider":true,"content_overflow":false,"navigation_position":"bottom","pcard_image_ratio":"","columns_mobile":"2","swipe_on_mobile":true,"show_progress_bar":true,"padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"products_bundle_J8yTjP":{"type":"products-bundle","blocks":{"product_HVQnWf":{"type":"product","settings":{"product":"little-etoile-care-swimprotect-2-in-1-shampoo-body-wash-chlorine-removal-for-2-years","color_scheme":"","horizontal_position":20,"vertical_position":60,"horizontal_position_mobile":30,"vertical_position_mobile":32}},"product_DrVhnW":{"type":"product","settings":{"product":"little-etoile-care-hair-oil-0-months-200ml","color_scheme":"","horizontal_position":50,"vertical_position":60,"horizontal_position_mobile":38,"vertical_position_mobile":60}},"product_p6Gre6":{"type":"product","settings":{"product":"little-etoile-care-nourishing-lotion-0-months-250ml","color_scheme":"","horizontal_position":80,"vertical_position":60,"horizontal_position_mobile":65,"vertical_position_mobile":45}}},"block_order":["product_HVQnWf","product_DrVhnW","product_p6Gre6"],"name":"t:sections.products-bundle.name","settings":{"container":"fixed","color_scheme":"scheme-11","image":"shopify:\/\/shop_images\/le_banner_test_eczema.webp","image_position":"left","image_ratio":"full","show_hotspot":true,"subheading":"Must-Haves for Little Swimmers​","heading":"SWIMCARE CHECKLIST​","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","columns":3,"column_gap":"medium","pcard_image_ratio":"","columns_mobile":"2","padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"collection_tabs_Lcx3JN":{"type":"collection-tabs","blocks":{"collection_wgEDyz":{"type":"collection","settings":{"collection":"baby-body-care","image":"shopify:\/\/shop_images\/le_banner_test_eczema.webp","title":"DAILY CARE COLLECTION","text":"<p>Daily essentials for every step: cleanse, moisturise and nourish<\/p>","button_label":"shop now","button_style":"btn--primary","button_icon":"none"}},"collection_NnG8b6":{"type":"collection","settings":{"collection":"eczema-prone-skin-care","title":"ECZEMA-PRONE COLLECTION​","text":"","button_label":"Button label","button_style":"btn--primary","button_icon":"none"}}},"block_order":["collection_wgEDyz","collection_NnG8b6"],"name":"t:sections.collection-tabs.name","settings":{"container":"fixed","color_scheme":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h5","image_position":"right","image_ratio":"1\/1","collection_heading_size":"h1","padding_top":50,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"tabs_content_yFQyJf":{"type":"tabs-content","blocks":{"image_with_text_XXKmxa":{"type":"image_with_text","settings":{"navigation_title":"About Little Étoile​","image":"shopify:\/\/shop_images\/Gow_saftytesting.webp","desktop_image_position":"left","image_aspect_ratio":"4\/3","heading":"CARING FOR EVERY STEP OF your LITTLE ONE’S journey","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h3","subheading":"","description":"<p>Little Étoile is committed to partnering with parents and families at every step of the way on their special journey, from conception, through to pregnancy and early life. Through our premium ranges of nutritional and topical care products, along with educational resources designed to instill an appreciation for family, nature, and the environment, we aim to provide a complete and comprehensive level of care to support physical, functional, and emotional development.<\/p>","description_size":"text-base","collapsible_heading":"Collapsible row","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":"","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none"}},"image_with_text_7wK3nr":{"type":"image_with_text","settings":{"navigation_title":"Quality First​","image":"shopify:\/\/shop_images\/LEN2_test.webp","desktop_image_position":"right","image_aspect_ratio":"adapt","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","subheading":"","description":"<p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands<\/p><h2>How to prepare<\/h2><ul><li>Wash your hands, bottle, cap and teat before use.<\/li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.<\/li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.<\/li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.<\/li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.<\/li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.<\/li><li>Test temperature of the dissolved formula on wrist. Feed immediately.<\/li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.<\/li><\/ul>","description_size":"text-base","collapsible_heading":"Collapsible row","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":"<ul style=\"font-size: small;\">\n \t<li>Serving size: approximately 171mL per serve<\/li>\n \t<li>Servings per can: approximately 31 serves<\/li>\n<\/ul>\n<table class=\"gowTable\">\n<tbody>\n<tr>\n<th>Nutrients<\/th>\n<th>Average Quantity per Serve<\/th>\n<th>% RDI per serve<\/th>\n<th>Average Quantity per 100mL<\/th>\n<\/tr>\n<tr>\n\t<td>Energy<\/td>\n\t<td>529kJ<\/td>\n\t<td> <\/td>\n\t<td>309kJ<\/td>\n<\/tr>\n\n<tr>\n\t<td>Protein<\/td>\n\t<td>5.74g<\/td>\n\t<td> <\/td>\n\t<td>3.36g<\/td>\n<\/tr>\n<tr>\n\t<td>Fat, total\n\t\t<br>saturated\n\t\t<br>monounsaturated\n\t\t<br>polyunsaturated\n\t\t<br>omega-3:\n\t\t<br>α-Linolenic acid (ALA)\n\t\t<br>Docosahexaenoic acid (DHA)\n\t\t<br>Eicosapentaenoic acid (EPA)\n\t\t<br>omega-6:\n\t\t<br>Linolenic acid (LA)\n\t\t<br>trans<\/td>\n\t<td>\n    \t<br>5.87g\n\t\t<br>2.12g\n\t\t<br>2.27g\n\t\t<br><br>117mg\n        <br>20.0mg\n\t\t<br>5.13mg\n\t\t<br><br>1,060mg\n\t\t<br>0.04g<\/td>\n\t<td> <\/td>\n\t<td>\n    \t<br>3.43g\n\t\t<br>1.24g\n\t\t<br>1.33g\n\t\t<br><br>68.6mg\n        <br>11.7mg\n\t\t<br>3.00mg\n\t\t<br><br>620mg\n\t\t<br>0.02g<\/td>\n<\/tr>\n<tr>\n\t<td>Carbohydrate\n\t\t<br>sugars<\/td>\n\t<td>12.0g\n\t\t<br>12.0g<\/td>\n    <td> <\/td>\n\t<td>7.05g\n\t\t<br>7.05g<\/td>\n<\/tr>\n<tr>\n\t<td>Fibre (Prebiotics)\n    \t<br>Galactooligosaccharides (GOS)<\/td>\n\t<td>1.20g<\/td>\n\t<td> <\/td>\n\t<td>0.70g<\/td>\n<\/tr>\n<tr>\n\t<td class=\"bold\" colspan=\"4\">Vitamins<\/td>\n<\/tr>\n<tr>\n\t<td>Vitamin A<\/td>\n\t<td>105mcg RE<\/td>\n    <td>35<\/td>\n\t<td>61.4mcg RE<\/td>\n<\/tr>\n<tr>\n\t<td>Betacarotene<\/td>\n\t<td>47.7mcg RE<\/td>\n    <td> <\/td>\n\t<td>27.9mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Vitamin B6<\/td>\n\t\t<td>120mcg<\/td>\n        <td>17<\/td>\n\t\t<td>70.0mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Vitamin B12<\/td>\n\t<td>0.50mcg<\/td>\n    <td>50<\/td>\n\t<td>0.29mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Vitamin C<\/td>\n\t<td>15.0mg<\/td>\n    <td>50<\/td>\n\t<td>8.77mg<\/td>\n<\/tr>\n<tr>\n\t<td>Vitamin D<\/td>\n\t<td>2.06mcg<\/td>\n    <td>41<\/td>\n\t<td>1.20mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Vitamin E<\/td>\n\t<td>2.50mg α-TE<\/td>\n    <td>50<\/td>\n\t<td>1.46mg α-TE<\/td>\n<\/tr>\n<tr>\n\t<td>Vitamin K<\/td>\n\t<td>15.4mcg<\/td>\n    <td><\/td>\n\t<td>8.99mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Biotin (vitamin H)<\/td>\n\t<td>9.64mcg<\/td>\n    <td> <\/td>\n\t<td>5.64mg<\/td>\n<\/tr>\n<tr>\n\t<td>Niacin (vitamin B3)<\/td>\n\t<td>1.07mg<\/td>\n    <td>21<\/td>\n\t<td>0.62mg<\/td>\n<\/tr>\n<tr>\n\t<td>Folate<\/td>\n\t<td>18.8mcg<\/td>\n    <td>19<\/td>\n\t<td>11.0mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Pantothenic acid<\/td>\n\t<td>0.89mg<\/td>\n    <td> <\/td>\n\t<td>0.52mg<\/td>\n<\/tr>\n<tr>\n\t<td>Riboflavin (vitamin B2)<\/td>\n\t<td>278mcg<\/td>\n    <td>35<\/td>\n\t<td>163mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Thiamin (vitamin B1)<\/td>\n\t<td>145mcg<\/td>\n    <td>29<\/td>\n\t<td>85.0mcg<\/td>\n<\/tr>\n<tr>\n\t<td class=\"bold\" colspan=\"4\">Minerals<\/td>\n<\/tr>\n<tr>\n\t<td>Calcium<\/td>\n\t<td>159mg<\/td>\n    <td>23<\/td>\n\t<td>93.2mg<\/td>\n<\/tr>\n<tr>\n\t<td>Phosphorus<\/td>\n\t<td>106mg<\/td>\n    <td>21<\/td>\n\t<td>62.0mg<\/td>\n<\/tr>\n<tr>\n\t<td>Copper<\/td>\n\t<td>77.5mcg<\/td>\n    <td> <\/td>\n\t<td>45.3mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Iodine<\/td>\n\t<td>33.0mcg<\/td>\n    <td>47<\/td>\n\t<td>19.3mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Iron<\/td>\n\t<td>1.91mg<\/td>\n    <td>32<\/td>\n\t<td>1.12mg<\/td>\n<\/tr>\n<tr>\n\t<td>Magnesium<\/td>\n\t<td>13.8mg<\/td>\n    <td>17<\/td>\n\t<td>8.05mg<\/td>\n<\/tr>\n<tr>\n\t<td>Manganese<\/td>\n\t<td>76.5mcg<\/td>\n    <td> <\/td>\n\t<td>44.7mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Selenium<\/td>\n\t<td>6.64mcg<\/td>\n    <td> <\/td>\n\t<td>3.88mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Zinc<\/td>\n\t<td>1.10mg<\/td>\n    <td>24<\/td>\n\t<td>0.64mg<\/td>\n<\/tr>\n<tr>\n\t<td>Chloride<\/td>\n\t<td>153mg<\/td>\n    <td> <\/td>\n\t<td>89.2mg<\/td>\n<\/tr>\n<tr>\n\t<td>Potassium<\/td>\n\t<td>235mg<\/td>\n    \n    <td> <\/td>\n\t<td>137mg<\/td>\n<\/tr>\n<tr>\n\t<td>Sodium<\/td>\n\t<td>48.5mg<\/td>\n    <td> <\/td>\n\t<td>28.3mg<\/td>\n<\/tr>\n<tr>\n\t<td class=\"bold\" colspan=\"4\">Others<\/td>\n<\/tr>\n<tr>\n\t<td>Lactoferrin<\/td>\n\t<td>10.0mg<\/td>\n    <td> <\/td>\n\t<td>5.85mg<\/td>\n<\/tr>\n<tr>\n\t<td>Beta-glucan*<\/td>\n\t<td>8.75mg<\/td>\n    <td> <\/td>\n\t<td>5.12mg<\/td>\n<\/tr>\n<tr>\n\t<td>Lutein<\/td>\n\t<td>50.0mcg<\/td>\n    <td> <\/td>\n\t<td>29.2mcg<\/td>\n<\/tr>\n<tr>\n\t<td>Taurine<\/td>\n\t<td>9.21mg<\/td>\n    <td> <\/td>\n\t<td>5.39mg<\/td>\n<\/tr>\n<tr>\n\t<td>Choline<\/td>\n\t<td>30.9mg<\/td>\n    <td> <\/td>\n\t<td>18.0mg<\/td>\n<\/tr>\n<tr>\n\t<td>Carnitine<\/td>\n\t<td>3.06mg<\/td>\n    <td> <\/td>\n\t<td>1.79mg<\/td>\n<\/tr>\n<\/tbody>\n<\/table>\n<p>% RDI = % Recommended Daily Intake for Children aged 1-3 years<\/p>","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none"}},"image_with_text_aWXH8m":{"type":"image_with_text","settings":{"navigation_title":"Voluntary Testing​","image":"shopify:\/\/shop_images\/LEN2_test.webp","desktop_image_position":"left","image_aspect_ratio":"adapt","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"hd2","subheading":"","description":"<p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands<\/p><h2>How to prepare<\/h2><ul><li>Wash your hands, bottle, cap and teat before use.<\/li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.<\/li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.<\/li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.<\/li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.<\/li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.<\/li><li>Test temperature of the dissolved formula on wrist. Feed immediately.<\/li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.<\/li><\/ul>","description_size":"text-base","collapsible_heading":"Collapsible row","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":"","button_label":"","button_link":"","button_style":"btn--primary","button_icon":"none"}},"tab_pb6gP8":{"type":"tab","settings":{"navigation_title":"Sustanable Approach​","tab_content":"<p>Fill in the text content of the collapsible item here. You can provide details and explanation for the question here.<\/p>","custom_liquid":"","tab_page":"","collapsible_heading":"Collapsible row","collapsible_heading_size":"h4","icon":"check","page":"","default_open":false,"table_html":""}}},"block_order":["image_with_text_XXKmxa","image_with_text_7wK3nr","image_with_text_aWXH8m","tab_pb6gP8"],"name":"t:sections.tabs-content.name","settings":{"container":"fixed","color_scheme":"scheme-11","navigation_style":"buttons","navigation_alignment":"center","padding_top":60,"padding_bottom":50,"show_section_divider":false,"divider_width":"fixed"}},"custom_content_Mqw4PE":{"type":"custom-content","blocks":{"collections_ExjKtm":{"type":"collections","settings":{"collection_list":["eczema-prone-skin-care"],"product_limit":2,"columns_desktop":2,"column_gap":"medium","row_gap":"inherit","enable_slider":false,"pcard_image_ratio":"","columns_mobile":"1","swipe_on_mobile":true,"width":"58%","alignment":"start","block_custom_class":""}},"image_card_UW78Bw":{"type":"image_card","settings":{"color_scheme":"scheme-13","image":"shopify:\/\/shop_images\/little-etoile-Optimum-Growing-Up-Formula-Stage-4-2-6-Years-970x970-8.webp","image_ratio":"adapt","image_overlay_opacity":0,"content_position":"bottom-left","content_alignment":"left","content_spacing":"medium","content_gap":"fitted","card_link":"","subheading":"","subheading_style":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","button_label":"","button_style":"btn--primary","button_icon":"none","show_badge":true,"badge_color_scheme":"scheme-4","badge_shape":"circle","badge_position":"top-right","badge_subtext":"Save","badge_text":"99$","color_scheme_mobile":"scheme-1","show_text_below":false,"content_alignment_mobile":"center","width":"41%","alignment":"start","block_custom_class":"","enable_preload_image":false}}},"block_order":["collections_ExjKtm","image_card_UW78Bw"],"disabled":true,"name":"t:sections.custom-content.name","settings":{"container":"fixed","color_scheme":"","enable_sticky_column":true,"section_header_alignment":"left","section_header_alignment_mobile":"inherit","subheading":"","heading":"","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h1","description":"","text_size":"text-base","column_gap":"medium","row_gap":"large","swipe_on_mobile":false,"columns_mobile":"1","padding_top":100,"padding_bottom":100,"show_section_divider":false,"divider_width":"fixed"}},"banner":{"type":"main-collection-banner","blocks":{"collection_info_zUNyKV":{"type":"collection_info","settings":{"heading_size":"h1","heading_tag":"h1","show_description":true,"padding_top":0,"padding_bottom":0}}},"block_order":["collection_info_zUNyKV"],"disabled":true,"custom_css":[],"settings":{"container":"fixed","color_scheme":"scheme-inverse","text_alignment":"center","show_collection_image":true,"image_overlay_opacity":30,"image_position":"as-bg","image_height":"extra-small","enable_parallax":true,"parallax_direction":"vertical","image_height_mobile":"auto","padding_top":0,"padding_bottom":0}},"product-grid":{"type":"main-collection-product-grid","blocks":{"image_card_mwkyJy":{"type":"image_card","settings":{"color_scheme":"scheme-inverse","image_position":1,"image_ratio":"adapt","image_overlay_opacity":10,"content_position":"split-bottom-button","content_alignment":"center","content_spacing":"small","content_gap":"fitted","card_link":"","subheading":"Home & Decor","subheading_style":"","heading":"Saving $30 for Lighting","highlight_style":"none","highlight_font_style":"italic","highlight_style_color":"","highlight_text_color":"","heading_size":"h3","heading_size_mobile":"inherit","heading_size_custom":18,"description":"","text_size":"text-base","button_label":"Shop Now","button_style":"btn--primary","button_icon":"none","order_first":false,"enable_preload_image":false}}},"block_order":["image_card_mwkyJy"],"custom_css":[],"settings":{"container":"fixed","color_scheme":"scheme-1","products_per_page":20,"columns_desktop":4,"column_gap":"medium","row_gap":"large","pagination":"number","enable_filtering":true,"enable_color_swatch":true,"filter_type":"drawer","expand_filter_groups":"Availability, Price, Color, Size, Category","enable_sorting":true,"enable_layout_switching":true,"columns_mobile":"2","padding_top":28,"padding_bottom":60,"show_section_divider":false,"divider_width":"fixed"}},"scrolling_promotion_Fy9Yhn":{"type":"scrolling-promotion","blocks":{"text_gijz7Q":{"type":"text","settings":{"text_link":"","text":"Fast Delivery","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_3TVCPg":{"type":"text","settings":{"text_link":"","text":"30 Days Free Returns","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_iD6689":{"type":"text","settings":{"text_link":"","text":"Secure Payment","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_CtJBtL":{"type":"text","settings":{"text_link":"","text":"24\/7 Customer Support","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}},"text_dGmg9m":{"type":"text","settings":{"text_link":"","text":"Sustainable Materials","text_size":"h4","text_opacity":100,"use_custom_color":false,"custom_color":"#000000"}}},"block_order":["text_gijz7Q","text_3TVCPg","text_iD6689","text_CtJBtL","text_dGmg9m"],"settings":{"color_scheme":"scheme-9b7da926-b76d-4e5c-9a28-ebe141f244b5","direction":"left","pause_on_hover":true,"speed":0.2,"h_spacing":80,"show_section_divider":false,"padding_top":22,"padding_bottom":22}}},"order":["breadcrumbs_Gxg9wp","scrolling_banner_cAF8cz","custom_menu_page_VTPwHX","collection_cards_xHNtRx","multicolumn_KYt9CT","collection_list_slider_mCHpzK","buttons_with_icon_NrQVFP","custom_content_LCdkNd","scrolling_banner_WqT39L","slideshow_36Ecd4","multicolumn_icon_eGKLkQ","featured_collection_37nmxd","products_bundle_J8yTjP","collection_tabs_Lcx3JN","tabs_content_yFQyJf","custom_content_Mqw4PE","banner","product-grid","scrolling_promotion_Fy9Yhn"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "breadcrumbs_Gxg9wp": {
+      "type": "breadcrumbs",
+      "settings": {
+        "container": "fixed",
+        "text_alignment": "start",
+        "padding_top": 16,
+        "padding_bottom": 20
+      }
+    },
+    "scrolling_banner_cAF8cz": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "slide_xU7TEU": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "background": "shopify://shop_images/LE_banner_test.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "subheading": "",
+            "title": "CARING FOR EVERY STEP",
+            "highlight_style": "hand_drawn_circle",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "description": "<p><strong>OF YOU LITTLE  ONE'S JOURNEY</strong></p>",
+            "description_size": "text-inherit",
+            "button_label": "Learn more",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "product_color_scheme": "scheme-11",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_xU7TEU"
+      ],
+      "custom_css": [
+        ".btn {opacity: 100%;}",
+        "button,.button,.btn,.shopify-payment-button__button {background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 25px; color: var(--color-foreground); transition: 0.3s;}",
+        "button:hover,.button:hover,.btn:hover,.shopify-payment-button__button:hover {background: rgba(255, 255, 255, 0.2); color: var(--color-accent);}",
+        "a.btn.btn--primary:hover .btn__text {color: #000000 !important;}"
+      ],
+      "name": "t:sections.scrolling-banner.name",
+      "settings": {
+        "container": "fixed",
+        "slide_height": "large",
+        "content_position_mobile": "middle-center",
+        "text_alignment_mobile": "center",
+        "enable_zoom": true,
+        "enable_parallax": false
+      }
+    },
+    "custom_menu_page_VTPwHX": {
+      "type": "custom-menu-page",
+      "name": "Tabs Navigation",
+      "settings": {
+        "margin_top": 20,
+        "margin_bottom": 0,
+        "image_picker_menu": "shopify://shop_images/chemist-warehouse-logo-1914FA0C63-seeklogo.com.png",
+        "menu_1": "asdasd",
+        "url_menu_1": "shopify://products/salvarity-aquashine-gentle-facial-cleanser",
+        "menu_2": "sadasd",
+        "url_menu_2": "shopify://products/belmarita-r",
+        "menu_3": "asdasd",
+        "url_menu_3": "shopify://products/salvarity-aquashine-gentle-facial-cleanser",
+        "menu_4": "asdsad",
+        "url_menu_4": "shopify://products/salvarity-back-in-balance-clarifying-moisturiser",
+        "menu_5": "",
+        "url_menu_5": "",
+        "menu_6": "213123asd",
+        "url_menu_6": "shopify://products/ausfebis-r"
+      }
+    },
+    "collection_cards_xHNtRx": {
+      "type": "collection-cards",
+      "blocks": {
+        "collection_wReVLc": {
+          "type": "collection",
+          "settings": {
+            "collection": "formula-milk",
+            "title": ""
+          }
+        },
+        "collection_eCX8fE": {
+          "type": "collection",
+          "settings": {
+            "collection": "organic-baby-food-pouches",
+            "title": ""
+          }
+        },
+        "collection_RK4Hxx": {
+          "type": "collection",
+          "settings": {
+            "collection": "baby-care-products",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_wReVLc",
+        "collection_eCX8fE",
+        "collection_RK4Hxx"
+      ],
+      "disabled": true,
+      "name": "t:sections.collection-cards.presets",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Shop Collection​",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "description": "",
+        "text_size": "text-sm",
+        "columns_desktop": 4,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "card_color_scheme": "",
+        "image_ratio": "3/4",
+        "show_product_count": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "multicolumn_KYt9CT": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_GR6Hpk": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/le_banner_test_eczema.webp",
+            "title": "Considered design",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Crafted with care and intention, this piece blends modern aesthetics with timeless comfort—perfect for any season.</p>",
+            "text_size": "text-base",
+            "button_label": "Explore Now",
+            "button_link": "",
+            "button_style": "btn--plain",
+            "button_icon": "caret-right"
+          }
+        },
+        "column_nX96LC": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/le_banner_test_eczema.webp",
+            "title": "Considered design",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Crafted with care and intention, this piece blends modern aesthetics with timeless comfort—perfect for any season.</p>",
+            "text_size": "text-base",
+            "button_label": "Explore Now",
+            "button_link": "shopify://collections/baby-care-products",
+            "button_style": "btn--plain",
+            "button_icon": "caret-right"
+          }
+        },
+        "column_XdPPYa": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/le_banner_test_eczema.webp",
+            "title": "Considered design",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "<p>Crafted with care and intention, this piece blends modern aesthetics with timeless comfort—perfect for any season.</p>",
+            "text_size": "text-base",
+            "button_label": "Explore Now",
+            "button_link": "",
+            "button_style": "btn--plain",
+            "button_icon": "caret-right"
+          }
+        }
+      },
+      "block_order": [
+        "column_GR6Hpk",
+        "column_nX96LC",
+        "column_XdPPYa"
+      ],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Shop <em>collection</em>",
+        "highlight_style": "thick_underline",
+        "highlight_font_style": "normal",
+        "highlight_style_color": "#ffe093",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "content_alignment": "left",
+        "show_col_count": false,
+        "show_image": true,
+        "columns_desktop": 3,
+        "column_gap": "large",
+        "row_gap": "inherit",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 60,
+        "padding_bottom": 0
+      }
+    },
+    "collection_list_slider_mCHpzK": {
+      "type": "collection-list-slider",
+      "blocks": {
+        "featured_collection_7x464A": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_x7xQkA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_B74iDc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_tGGhRi": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_NEinCb": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_gKdmci": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_LnCPKN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        },
+        "featured_collection_9yyzhc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "",
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_7x464A",
+        "featured_collection_x7xQkA",
+        "featured_collection_B74iDc",
+        "featured_collection_tGGhRi",
+        "featured_collection_NEinCb",
+        "featured_collection_gKdmci",
+        "featured_collection_LnCPKN",
+        "featured_collection_9yyzhc"
+      ],
+      "name": "t:sections.collection-list-slider.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Collections",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "rounded_card_image": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "buttons_with_icon_NrQVFP": {
+      "type": "buttons-with-icon",
+      "blocks": {
+        "button_item_XXbeWc": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Living Room",
+            "button_link": "",
+            "icon": "check"
+          }
+        },
+        "button_item_ePUyh8": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Planters",
+            "button_link": "",
+            "icon": "check"
+          }
+        },
+        "button_item_za4jHe": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Gravel Rug",
+            "button_link": "",
+            "icon": "check"
+          }
+        },
+        "button_item_tFiLqz": {
+          "type": "button_item",
+          "settings": {
+            "button_label": "Table Mirror",
+            "button_link": "",
+            "icon": "check"
+          }
+        }
+      },
+      "block_order": [
+        "button_item_XXbeWc",
+        "button_item_ePUyh8",
+        "button_item_za4jHe",
+        "button_item_tFiLqz"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "Current Deals",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h2",
+        "item_alignment": "left",
+        "item_button_style": "btn--icon",
+        "item_button_font": "button",
+        "enable_slider": true,
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 120,
+        "padding_bottom": 0
+      }
+    },
+    "custom_content_LCdkNd": {
+      "type": "custom-content",
+      "blocks": {
+        "image_card_cXWM7N": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/maxucosa_mockup_test.webp",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-center",
+            "content_alignment": "center",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Image card",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "Button label",
+            "button_style": "btn--secondary",
+            "button_icon": "none",
+            "show_badge": true,
+            "badge_color_scheme": "scheme-1",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "99$",
+            "color_scheme_mobile": "scheme-1",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "image_card_BYeDwP": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/maxucosa_mockup_test.webp",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-center",
+            "content_alignment": "center",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Image card",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "Button label",
+            "button_style": "btn--secondary",
+            "button_icon": "none",
+            "show_badge": true,
+            "badge_color_scheme": "scheme-1",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "99$",
+            "color_scheme_mobile": "scheme-1",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "width": "50%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "image_card_pLgWF8": {
+          "type": "image_card",
+          "disabled": true,
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/le_banner_test_eczema.webp",
+            "image_ratio": "4/3",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-center",
+            "content_alignment": "center",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Image card",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "Button label",
+            "button_style": "btn--secondary",
+            "button_icon": "none",
+            "show_badge": true,
+            "badge_color_scheme": "scheme-1",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "99$",
+            "color_scheme_mobile": "scheme-1",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "width": "33%",
+            "alignment": "center",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        },
+        "lookbook_card_hotspot_mUbxRG": {
+          "type": "lookbook_card_hotspot",
+          "disabled": true,
+          "settings": {
+            "icon_style": "plus",
+            "icon_color": "light",
+            "image": "shopify://shop_images/le_banner_test_4ea5bb02-e57e-469e-9f41-bda962f0e5ce.webp",
+            "image_ratio": "adapt",
+            "product_1": "little-etoile-premium-toddler-formula-stage-3-1-3-years",
+            "top_1": 45,
+            "left_1": 30,
+            "product_2": "",
+            "top_2": 50,
+            "left_2": 70,
+            "product_3": "",
+            "top_3": 62,
+            "left_3": 43,
+            "product_4": "",
+            "top_4": 9,
+            "left_4": 63,
+            "width": "100%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        },
+        "lookbook_card_ckCFFj": {
+          "type": "lookbook_card",
+          "settings": {
+            "product_list": [
+              "little-etoile-care-hair-oil-0-months-200ml",
+              "little-etoile-care-swimprotect-2-in-1-shampoo-body-wash-chlorine-removal-for-2-years",
+              "little-etoile-care-skin-recovery-cream-for-dry-eczema-prone-skin-0-months-170g",
+              "little-etoile-premium-toddler-formula-stage-3-1-3-years"
+            ],
+            "pcard_image_ratio": "",
+            "image": "shopify://shop_images/le_banner_test_4ea5bb02-e57e-469e-9f41-bda962f0e5ce.webp",
+            "image_ratio": "adapt",
+            "heading": "Shop this look",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h5",
+            "width": "100%",
+            "alignment": "center",
+            "block_custom_class": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_card_cXWM7N",
+        "image_card_BYeDwP",
+        "image_card_pLgWF8",
+        "lookbook_card_hotspot_mUbxRG",
+        "lookbook_card_ckCFFj"
+      ],
+      "name": "t:sections.custom-content.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "enable_sticky_column": false,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "medium",
+        "row_gap": "large",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "scrolling_banner_WqT39L": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "slide_iJDng6": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "background": "shopify://shop_images/LE_banner_test.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "subheading": "",
+            "title": "CARING FOR EVERY STEP",
+            "highlight_style": "hand_drawn_circle",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "description": "<p><strong>OF YOU LITTLE  ONE'S JOURNEY</strong></p>",
+            "description_size": "text-inherit",
+            "button_label": "Learn more",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "product_color_scheme": "scheme-11",
+            "product": "little-etoile-premium-toddler-formula-stage-3-1-3-years"
+          }
+        }
+      },
+      "block_order": [
+        "slide_iJDng6"
+      ],
+      "custom_css": [
+        ".btn {opacity: 100%;}",
+        "button,.button,.btn,.shopify-payment-button__button {background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 25px; color: var(--color-foreground); transition: 0.3s;}",
+        "button:hover,.button:hover,.btn:hover,.shopify-payment-button__button:hover {background: rgba(255, 255, 255, 0.2); color: var(--color-accent);}",
+        "a.btn.btn--primary:hover .btn__text {color: #000000 !important;}"
+      ],
+      "name": "t:sections.scrolling-banner.name",
+      "settings": {
+        "container": "fixed",
+        "slide_height": "small",
+        "content_position_mobile": "middle-center",
+        "text_alignment_mobile": "center",
+        "enable_zoom": true,
+        "enable_parallax": false
+      }
+    },
+    "slideshow_36Ecd4": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_CPeyUW": {
+          "type": "slide",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "background": "shopify://shop_images/LE_banner_test.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "subheading": "",
+            "title": "CARING FOR EVERY STEP of your Little One's journey",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "description": "",
+            "description_size": "text-base",
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "enable_preload_image": true
+          }
+        }
+      },
+      "block_order": [
+        "slide_CPeyUW"
+      ],
+      "disabled": true,
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "container": "fixed",
+        "slide_height": "large",
+        "show_controls": true,
+        "autoplay": false,
+        "autoplay_delay": 3,
+        "show_text_below": false,
+        "text_alignment_mobile": "center",
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "multicolumn_icon_eGKLkQ": {
+      "type": "multicolumn-icon",
+      "blocks": {
+        "column_3Bner4": {
+          "type": "column",
+          "settings": {
+            "icon": "chat",
+            "image": "shopify://shop_images/favicon_test.svg",
+            "max_width": 50,
+            "max_width_mb": 70,
+            "title": "Organic Cotton",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "heading_font": "heading",
+            "text": "<p>Currently, 82% feature organic or recycled materials</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_qRQL6w": {
+          "type": "column",
+          "settings": {
+            "icon": "chat",
+            "image": "shopify://shop_images/favicon_test.svg",
+            "max_width": 50,
+            "max_width_mb": 70,
+            "title": "Organic Cotton",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "heading_font": "heading",
+            "text": "<p>Currently, 82% feature organic or recycled materials</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
+        "column_yFKELF": {
+          "type": "column",
+          "settings": {
+            "icon": "chat",
+            "image": "shopify://shop_images/favicon_test.svg",
+            "max_width": 50,
+            "max_width_mb": 70,
+            "title": "Organic Cotton",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "heading_font": "heading",
+            "text": "<p>Currently, 82% feature organic or recycled materials</p>",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "column_3Bner4",
+        "column_qRQL6w",
+        "column_yFKELF"
+      ],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "header_layout": "vertical",
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "center",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "enable_sticky": false,
+        "card_color_scheme": "scheme-11",
+        "content_alignment": "left",
+        "image_position": "left",
+        "icon_color": "#ffffff",
+        "columns_desktop": 3,
+        "column_gap": "medium",
+        "row_gap": "inherit",
+        "show_divider_col": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    },
+    "featured_collection_37nmxd": {
+      "type": "featured-collection",
+      "blocks": {
+        "collection_iXWp3b": {
+          "type": "collection",
+          "settings": {
+            "collection": "formula-milk",
+            "title": "",
+            "show_banner": true,
+            "color_scheme": "scheme-inverse",
+            "card_link": "",
+            "banner_image": "shopify://shop_images/Little-Etoile-Organic-Mango-Peach-Chia-seed-Custard-_-6_-Months-120g-450x800-7.webp",
+            "image_overlay_opacity": 0,
+            "content_position": "split-bottom-button",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "#ffffff",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "collection_FmnfL6": {
+          "type": "collection",
+          "settings": {
+            "collection": "baby-skin-care",
+            "title": "",
+            "show_banner": false,
+            "color_scheme": "",
+            "card_link": "",
+            "image_overlay_opacity": 0,
+            "content_position": "top-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Collections",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "Button label",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "collection_afzdbz": {
+          "type": "collection",
+          "settings": {
+            "collection": "organic-baby-food-pouches",
+            "title": "",
+            "show_banner": false,
+            "color_scheme": "",
+            "card_link": "",
+            "image_overlay_opacity": 0,
+            "content_position": "top-left",
+            "content_alignment": "left",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "Collections",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h2",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "Button label",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_iXWp3b",
+        "collection_FmnfL6",
+        "collection_afzdbz"
+      ],
+      "name": "t:sections.featured-collection.presets__2.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "limit": 8,
+        "columns": 5,
+        "column_gap": "large",
+        "row_gap": "inherit",
+        "enable_slider": true,
+        "content_overflow": false,
+        "navigation_position": "bottom",
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_progress_bar": true,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "products_bundle_J8yTjP": {
+      "type": "products-bundle",
+      "blocks": {
+        "product_HVQnWf": {
+          "type": "product",
+          "settings": {
+            "product": "little-etoile-care-swimprotect-2-in-1-shampoo-body-wash-chlorine-removal-for-2-years",
+            "color_scheme": "",
+            "horizontal_position": 20,
+            "vertical_position": 60,
+            "horizontal_position_mobile": 30,
+            "vertical_position_mobile": 32
+          }
+        },
+        "product_DrVhnW": {
+          "type": "product",
+          "settings": {
+            "product": "little-etoile-care-hair-oil-0-months-200ml",
+            "color_scheme": "",
+            "horizontal_position": 50,
+            "vertical_position": 60,
+            "horizontal_position_mobile": 38,
+            "vertical_position_mobile": 60
+          }
+        },
+        "product_p6Gre6": {
+          "type": "product",
+          "settings": {
+            "product": "little-etoile-care-nourishing-lotion-0-months-250ml",
+            "color_scheme": "",
+            "horizontal_position": 80,
+            "vertical_position": 60,
+            "horizontal_position_mobile": 65,
+            "vertical_position_mobile": 45
+          }
+        }
+      },
+      "block_order": [
+        "product_HVQnWf",
+        "product_DrVhnW",
+        "product_p6Gre6"
+      ],
+      "name": "t:sections.products-bundle.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-11",
+        "image": "shopify://shop_images/le_banner_test_eczema.webp",
+        "image_position": "left",
+        "image_ratio": "full",
+        "show_hotspot": true,
+        "subheading": "Must-Haves for Little Swimmers​",
+        "heading": "SWIMCARE CHECKLIST​",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "columns": 3,
+        "column_gap": "medium",
+        "pcard_image_ratio": "",
+        "columns_mobile": "2",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "collection_tabs_Lcx3JN": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_wgEDyz": {
+          "type": "collection",
+          "settings": {
+            "collection": "baby-body-care",
+            "image": "shopify://shop_images/le_banner_test_eczema.webp",
+            "title": "DAILY CARE COLLECTION",
+            "text": "<p>Daily essentials for every step: cleanse, moisturise and nourish</p>",
+            "button_label": "shop now",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "collection_NnG8b6": {
+          "type": "collection",
+          "settings": {
+            "collection": "eczema-prone-skin-care",
+            "title": "ECZEMA-PRONE COLLECTION​",
+            "text": "",
+            "button_label": "Button label",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collection_wgEDyz",
+        "collection_NnG8b6"
+      ],
+      "name": "t:sections.collection-tabs.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h5",
+        "image_position": "right",
+        "image_ratio": "1/1",
+        "collection_heading_size": "h1",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "tabs_content_yFQyJf": {
+      "type": "tabs-content",
+      "blocks": {
+        "image_with_text_XXKmxa": {
+          "type": "image_with_text",
+          "settings": {
+            "navigation_title": "About Little Étoile​",
+            "image": "shopify://shop_images/Gow_saftytesting.webp",
+            "desktop_image_position": "left",
+            "image_aspect_ratio": "4/3",
+            "heading": "CARING FOR EVERY STEP OF your LITTLE ONE’S journey",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h3",
+            "subheading": "",
+            "description": "<p>Little Étoile is committed to partnering with parents and families at every step of the way on their special journey, from conception, through to pregnancy and early life. Through our premium ranges of nutritional and topical care products, along with educational resources designed to instill an appreciation for family, nature, and the environment, we aim to provide a complete and comprehensive level of care to support physical, functional, and emotional development.</p>",
+            "description_size": "text-base",
+            "collapsible_heading": "Collapsible row",
+            "collapsible_heading_size": "h4",
+            "icon": "check",
+            "page": "",
+            "default_open": false,
+            "table_html": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "image_with_text_7wK3nr": {
+          "type": "image_with_text",
+          "settings": {
+            "navigation_title": "Quality First​",
+            "image": "shopify://shop_images/LEN2_test.webp",
+            "desktop_image_position": "right",
+            "image_aspect_ratio": "adapt",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "subheading": "",
+            "description": "<p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands</p><h2>How to prepare</h2><ul><li>Wash your hands, bottle, cap and teat before use.</li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.</li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.</li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.</li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.</li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.</li><li>Test temperature of the dissolved formula on wrist. Feed immediately.</li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.</li></ul>",
+            "description_size": "text-base",
+            "collapsible_heading": "Collapsible row",
+            "collapsible_heading_size": "h4",
+            "icon": "check",
+            "page": "",
+            "default_open": false,
+            "table_html": "<ul style=\"font-size: small;\">\n \t<li>Serving size: approximately 171mL per serve</li>\n \t<li>Servings per can: approximately 31 serves</li>\n</ul>\n<table class=\"gowTable\">\n<tbody>\n<tr>\n<th>Nutrients</th>\n<th>Average Quantity per Serve</th>\n<th>% RDI per serve</th>\n<th>Average Quantity per 100mL</th>\n</tr>\n<tr>\n\t<td>Energy</td>\n\t<td>529kJ</td>\n\t<td> </td>\n\t<td>309kJ</td>\n</tr>\n\n<tr>\n\t<td>Protein</td>\n\t<td>5.74g</td>\n\t<td> </td>\n\t<td>3.36g</td>\n</tr>\n<tr>\n\t<td>Fat, total\n\t\t<br>saturated\n\t\t<br>monounsaturated\n\t\t<br>polyunsaturated\n\t\t<br>omega-3:\n\t\t<br>α-Linolenic acid (ALA)\n\t\t<br>Docosahexaenoic acid (DHA)\n\t\t<br>Eicosapentaenoic acid (EPA)\n\t\t<br>omega-6:\n\t\t<br>Linolenic acid (LA)\n\t\t<br>trans</td>\n\t<td>\n    \t<br>5.87g\n\t\t<br>2.12g\n\t\t<br>2.27g\n\t\t<br><br>117mg\n        <br>20.0mg\n\t\t<br>5.13mg\n\t\t<br><br>1,060mg\n\t\t<br>0.04g</td>\n\t<td> </td>\n\t<td>\n    \t<br>3.43g\n\t\t<br>1.24g\n\t\t<br>1.33g\n\t\t<br><br>68.6mg\n        <br>11.7mg\n\t\t<br>3.00mg\n\t\t<br><br>620mg\n\t\t<br>0.02g</td>\n</tr>\n<tr>\n\t<td>Carbohydrate\n\t\t<br>sugars</td>\n\t<td>12.0g\n\t\t<br>12.0g</td>\n    <td> </td>\n\t<td>7.05g\n\t\t<br>7.05g</td>\n</tr>\n<tr>\n\t<td>Fibre (Prebiotics)\n    \t<br>Galactooligosaccharides (GOS)</td>\n\t<td>1.20g</td>\n\t<td> </td>\n\t<td>0.70g</td>\n</tr>\n<tr>\n\t<td class=\"bold\" colspan=\"4\">Vitamins</td>\n</tr>\n<tr>\n\t<td>Vitamin A</td>\n\t<td>105mcg RE</td>\n    <td>35</td>\n\t<td>61.4mcg RE</td>\n</tr>\n<tr>\n\t<td>Betacarotene</td>\n\t<td>47.7mcg RE</td>\n    <td> </td>\n\t<td>27.9mcg</td>\n</tr>\n<tr>\n\t<td>Vitamin B6</td>\n\t\t<td>120mcg</td>\n        <td>17</td>\n\t\t<td>70.0mcg</td>\n</tr>\n<tr>\n\t<td>Vitamin B12</td>\n\t<td>0.50mcg</td>\n    <td>50</td>\n\t<td>0.29mcg</td>\n</tr>\n<tr>\n\t<td>Vitamin C</td>\n\t<td>15.0mg</td>\n    <td>50</td>\n\t<td>8.77mg</td>\n</tr>\n<tr>\n\t<td>Vitamin D</td>\n\t<td>2.06mcg</td>\n    <td>41</td>\n\t<td>1.20mcg</td>\n</tr>\n<tr>\n\t<td>Vitamin E</td>\n\t<td>2.50mg α-TE</td>\n    <td>50</td>\n\t<td>1.46mg α-TE</td>\n</tr>\n<tr>\n\t<td>Vitamin K</td>\n\t<td>15.4mcg</td>\n    <td></td>\n\t<td>8.99mcg</td>\n</tr>\n<tr>\n\t<td>Biotin (vitamin H)</td>\n\t<td>9.64mcg</td>\n    <td> </td>\n\t<td>5.64mg</td>\n</tr>\n<tr>\n\t<td>Niacin (vitamin B3)</td>\n\t<td>1.07mg</td>\n    <td>21</td>\n\t<td>0.62mg</td>\n</tr>\n<tr>\n\t<td>Folate</td>\n\t<td>18.8mcg</td>\n    <td>19</td>\n\t<td>11.0mcg</td>\n</tr>\n<tr>\n\t<td>Pantothenic acid</td>\n\t<td>0.89mg</td>\n    <td> </td>\n\t<td>0.52mg</td>\n</tr>\n<tr>\n\t<td>Riboflavin (vitamin B2)</td>\n\t<td>278mcg</td>\n    <td>35</td>\n\t<td>163mcg</td>\n</tr>\n<tr>\n\t<td>Thiamin (vitamin B1)</td>\n\t<td>145mcg</td>\n    <td>29</td>\n\t<td>85.0mcg</td>\n</tr>\n<tr>\n\t<td class=\"bold\" colspan=\"4\">Minerals</td>\n</tr>\n<tr>\n\t<td>Calcium</td>\n\t<td>159mg</td>\n    <td>23</td>\n\t<td>93.2mg</td>\n</tr>\n<tr>\n\t<td>Phosphorus</td>\n\t<td>106mg</td>\n    <td>21</td>\n\t<td>62.0mg</td>\n</tr>\n<tr>\n\t<td>Copper</td>\n\t<td>77.5mcg</td>\n    <td> </td>\n\t<td>45.3mcg</td>\n</tr>\n<tr>\n\t<td>Iodine</td>\n\t<td>33.0mcg</td>\n    <td>47</td>\n\t<td>19.3mcg</td>\n</tr>\n<tr>\n\t<td>Iron</td>\n\t<td>1.91mg</td>\n    <td>32</td>\n\t<td>1.12mg</td>\n</tr>\n<tr>\n\t<td>Magnesium</td>\n\t<td>13.8mg</td>\n    <td>17</td>\n\t<td>8.05mg</td>\n</tr>\n<tr>\n\t<td>Manganese</td>\n\t<td>76.5mcg</td>\n    <td> </td>\n\t<td>44.7mcg</td>\n</tr>\n<tr>\n\t<td>Selenium</td>\n\t<td>6.64mcg</td>\n    <td> </td>\n\t<td>3.88mcg</td>\n</tr>\n<tr>\n\t<td>Zinc</td>\n\t<td>1.10mg</td>\n    <td>24</td>\n\t<td>0.64mg</td>\n</tr>\n<tr>\n\t<td>Chloride</td>\n\t<td>153mg</td>\n    <td> </td>\n\t<td>89.2mg</td>\n</tr>\n<tr>\n\t<td>Potassium</td>\n\t<td>235mg</td>\n    \n    <td> </td>\n\t<td>137mg</td>\n</tr>\n<tr>\n\t<td>Sodium</td>\n\t<td>48.5mg</td>\n    <td> </td>\n\t<td>28.3mg</td>\n</tr>\n<tr>\n\t<td class=\"bold\" colspan=\"4\">Others</td>\n</tr>\n<tr>\n\t<td>Lactoferrin</td>\n\t<td>10.0mg</td>\n    <td> </td>\n\t<td>5.85mg</td>\n</tr>\n<tr>\n\t<td>Beta-glucan*</td>\n\t<td>8.75mg</td>\n    <td> </td>\n\t<td>5.12mg</td>\n</tr>\n<tr>\n\t<td>Lutein</td>\n\t<td>50.0mcg</td>\n    <td> </td>\n\t<td>29.2mcg</td>\n</tr>\n<tr>\n\t<td>Taurine</td>\n\t<td>9.21mg</td>\n    <td> </td>\n\t<td>5.39mg</td>\n</tr>\n<tr>\n\t<td>Choline</td>\n\t<td>30.9mg</td>\n    <td> </td>\n\t<td>18.0mg</td>\n</tr>\n<tr>\n\t<td>Carnitine</td>\n\t<td>3.06mg</td>\n    <td> </td>\n\t<td>1.79mg</td>\n</tr>\n</tbody>\n</table>\n<p>% RDI = % Recommended Daily Intake for Children aged 1-3 years</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "image_with_text_aWXH8m": {
+          "type": "image_with_text",
+          "settings": {
+            "navigation_title": "Voluntary Testing​",
+            "image": "shopify://shop_images/LEN2_test.webp",
+            "desktop_image_position": "left",
+            "image_aspect_ratio": "adapt",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd2",
+            "subheading": "",
+            "description": "<p>1 level scoop = 8.5g of powder. 1 scoop of powder added to 50mL of water gives approximately 50mL of formula. Formula should be prepared just before feeding or refrigerated for use within 24 hours. Use only the enclosed scoop. NOTE: This is a recommendation only, as actual feeding levels will depend on your baby’s demands</p><h2>How to prepare</h2><ul><li>Wash your hands, bottle, cap and teat before use.</li><li>Sterilise bottle, teat, and cap by boiling for at least 5 minutes or using an approved steriliser.</li><li>Boil fresh drinking water for 5 minutes. Allow to cool to feeding temperature.</li><li>Consult the FEEDING GUIDE. Measure out the required amount of water into the sterilised bottle.</li><li>Using only the scoop provided, ﬁll the scoop with powder, level off using the built-in leveller. Do not compact powder. Always add 1 level scoop of powder for each 60mL of water.</li><li>After combining the powder and water, cap the bottle and shake until powder is completely dissolved.</li><li>Test temperature of the dissolved formula on wrist. Feed immediately.</li><li>Always prepare each bottle separately and freshly. Discard unfinished feed.</li></ul>",
+            "description_size": "text-base",
+            "collapsible_heading": "Collapsible row",
+            "collapsible_heading_size": "h4",
+            "icon": "check",
+            "page": "",
+            "default_open": false,
+            "table_html": "",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--primary",
+            "button_icon": "none"
+          }
+        },
+        "tab_pb6gP8": {
+          "type": "tab",
+          "settings": {
+            "navigation_title": "Sustanable Approach​",
+            "tab_content": "<p>Fill in the text content of the collapsible item here. You can provide details and explanation for the question here.</p>",
+            "custom_liquid": "",
+            "tab_page": "",
+            "collapsible_heading": "Collapsible row",
+            "collapsible_heading_size": "h4",
+            "icon": "check",
+            "page": "",
+            "default_open": false,
+            "table_html": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_with_text_XXKmxa",
+        "image_with_text_7wK3nr",
+        "image_with_text_aWXH8m",
+        "tab_pb6gP8"
+      ],
+      "name": "t:sections.tabs-content.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-11",
+        "navigation_style": "buttons",
+        "navigation_alignment": "center",
+        "padding_top": 60,
+        "padding_bottom": 50,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "custom_content_Mqw4PE": {
+      "type": "custom-content",
+      "blocks": {
+        "collections_ExjKtm": {
+          "type": "collections",
+          "settings": {
+            "collection_list": [
+              "eczema-prone-skin-care"
+            ],
+            "product_limit": 2,
+            "columns_desktop": 2,
+            "column_gap": "medium",
+            "row_gap": "inherit",
+            "enable_slider": false,
+            "pcard_image_ratio": "",
+            "columns_mobile": "1",
+            "swipe_on_mobile": true,
+            "width": "58%",
+            "alignment": "start",
+            "block_custom_class": ""
+          }
+        },
+        "image_card_UW78Bw": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-13",
+            "image": "shopify://shop_images/little-etoile-Optimum-Growing-Up-Formula-Stage-4-2-6-Years-970x970-8.webp",
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 0,
+            "content_position": "bottom-left",
+            "content_alignment": "left",
+            "content_spacing": "medium",
+            "content_gap": "fitted",
+            "card_link": "",
+            "subheading": "",
+            "subheading_style": "",
+            "heading": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h1",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "button_label": "",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "show_badge": true,
+            "badge_color_scheme": "scheme-4",
+            "badge_shape": "circle",
+            "badge_position": "top-right",
+            "badge_subtext": "Save",
+            "badge_text": "99$",
+            "color_scheme_mobile": "scheme-1",
+            "show_text_below": false,
+            "content_alignment_mobile": "center",
+            "width": "41%",
+            "alignment": "start",
+            "block_custom_class": "",
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "collections_ExjKtm",
+        "image_card_UW78Bw"
+      ],
+      "disabled": true,
+      "name": "t:sections.custom-content.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "enable_sticky_column": true,
+        "section_header_alignment": "left",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "",
+        "text_size": "text-base",
+        "column_gap": "medium",
+        "row_gap": "large",
+        "swipe_on_mobile": false,
+        "columns_mobile": "1",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "collection_info_zUNyKV": {
+          "type": "collection_info",
+          "settings": {
+            "heading_size": "h1",
+            "heading_tag": "h1",
+            "show_description": true,
+            "padding_top": 0,
+            "padding_bottom": 0
+          }
+        }
+      },
+      "block_order": [
+        "collection_info_zUNyKV"
+      ],
+      "disabled": true,
+      "custom_css": [],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-inverse",
+        "text_alignment": "center",
+        "show_collection_image": true,
+        "image_overlay_opacity": 30,
+        "image_position": "as-bg",
+        "image_height": "extra-small",
+        "enable_parallax": true,
+        "parallax_direction": "vertical",
+        "image_height_mobile": "auto",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "image_card_mwkyJy": {
+          "type": "image_card",
+          "settings": {
+            "color_scheme": "scheme-inverse",
+            "image_position": 1,
+            "image_ratio": "adapt",
+            "image_overlay_opacity": 10,
+            "content_position": "split-bottom-button",
+            "content_alignment": "center",
+            "content_spacing": "small",
+            "content_gap": "fitted",
+            "card_link": "",
+            "subheading": "Home & Decor",
+            "subheading_style": "",
+            "heading": "Saving $30 for Lighting",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h3",
+            "heading_size_mobile": "inherit",
+            "heading_size_custom": 18,
+            "description": "",
+            "text_size": "text-base",
+            "button_label": "Shop Now",
+            "button_style": "btn--primary",
+            "button_icon": "none",
+            "order_first": false,
+            "enable_preload_image": false
+          }
+        }
+      },
+      "block_order": [
+        "image_card_mwkyJy"
+      ],
+      "custom_css": [],
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-1",
+        "products_per_page": 20,
+        "columns_desktop": 4,
+        "column_gap": "medium",
+        "row_gap": "large",
+        "pagination": "number",
+        "enable_filtering": true,
+        "enable_color_swatch": true,
+        "filter_type": "drawer",
+        "expand_filter_groups": "Availability, Price, Color, Size, Category",
+        "enable_sorting": true,
+        "enable_layout_switching": true,
+        "columns_mobile": "2",
+        "padding_top": 28,
+        "padding_bottom": 60,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
+    "scrolling_promotion_Fy9Yhn": {
+      "type": "scrolling-promotion",
+      "blocks": {
+        "text_gijz7Q": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "Fast Delivery",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        },
+        "text_3TVCPg": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "30 Days Free Returns",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        },
+        "text_iD6689": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "Secure Payment",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        },
+        "text_CtJBtL": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "24/7 Customer Support",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        },
+        "text_dGmg9m": {
+          "type": "text",
+          "settings": {
+            "text_link": "",
+            "text": "Sustainable Materials",
+            "text_size": "h4",
+            "text_opacity": 100,
+            "use_custom_color": false,
+            "custom_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "text_gijz7Q",
+        "text_3TVCPg",
+        "text_iD6689",
+        "text_CtJBtL",
+        "text_dGmg9m"
+      ],
+      "settings": {
+        "color_scheme": "scheme-9b7da926-b76d-4e5c-9a28-ebe141f244b5",
+        "direction": "left",
+        "pause_on_hover": true,
+        "speed": 0.2,
+        "h_spacing": 80,
+        "show_section_divider": false,
+        "padding_top": 22,
+        "padding_bottom": 22
+      }
+    }
+  },
+  "order": [
+    "breadcrumbs_Gxg9wp",
+    "scrolling_banner_cAF8cz",
+    "custom_menu_page_VTPwHX",
+    "collection_cards_xHNtRx",
+    "multicolumn_KYt9CT",
+    "collection_list_slider_mCHpzK",
+    "buttons_with_icon_NrQVFP",
+    "custom_content_LCdkNd",
+    "scrolling_banner_WqT39L",
+    "slideshow_36Ecd4",
+    "multicolumn_icon_eGKLkQ",
+    "featured_collection_37nmxd",
+    "products_bundle_J8yTjP",
+    "collection_tabs_Lcx3JN",
+    "tabs_content_yFQyJf",
+    "custom_content_Mqw4PE",
+    "banner",
+    "product-grid",
+    "scrolling_promotion_Fy9Yhn"
+  ]
+}

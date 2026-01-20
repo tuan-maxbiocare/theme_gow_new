@@ -1,1 +1,34 @@
-{"sections":{"main":{"type":"main-account","settings":{"padding_top":100,"padding_bottom":100}},"custom_liquid_DVFqfn":{"type":"custom-liquid","name":"t:sections.custom-liquid.name","settings":{"custom_liquid":"{% if customer %}\n  {% if customer.orders_count == 0 %}\n    <div id=\"discount-popup\" style=\"position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; z-index: 9999;\">\n      <div style=\"background: #fff; padding: 32px; border-radius: 14px; text-align: center; width: 420px; position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.1);\">\n        \n        <svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" style=\"width: 48px; height: 48px; margin: auto; color: #1CA758;\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"2\" stroke=\"currentColor\">\n          <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\" \/>\n        <\/svg>\n\n        <h2 style=\"color:#1CA758; font-weight: 700; margin-top: 12px;\">Welcome to Our Store!<\/h2>\n        <p style=\"margin: 10px 0 16px; color: #333;\">\n          We're excited to have you here. As a warm welcome, enjoy a special discount on your first purchase!\n        <\/p>\n\n        <div style=\"margin: 16px 0; background: #f5fff8; border: 1px dashed #1CA758; border-radius: 8px; padding: 12px;\">\n          <p style=\"margin: 0; font-weight: bold; color: #1CA758;\">Discount code: <span style=\"color:#0f8c4d;\">welcomegow<\/span><\/p>\n          <small style=\"color:#666;\">15% off automatically applies to orders over $20.<\/small>\n        <\/div>\n\n        <button onclick=\"closePopup()\" style=\"margin-top:20px; padding:12px 20px; background:#1CA758; color:#fff; border:none; border-radius:8px; cursor:pointer; width:100%; font-weight:600;\">\n          Start Shopping\n        <\/button>\n      <\/div>\n    <\/div>\n\n    <script>\n      function closePopup() {\n        document.getElementById('discount-popup').style.display = 'none';\n      }\n    <\/script>\n  {% endif %}\n{% endif %}","color_scheme":"","padding_top":50,"padding_bottom":50}}},"order":["main","custom_liquid_DVFqfn"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-account",
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "custom_liquid_DVFqfn": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "custom_liquid": "{% if customer %}\n  {% if customer.orders_count == 0 %}\n    <div id=\"discount-popup\" style=\"position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: center; justify-content: center; z-index: 9999;\">\n      <div style=\"background: #fff; padding: 32px; border-radius: 14px; text-align: center; width: 420px; position: relative; box-shadow: 0 8px 24px rgba(0,0,0,0.1);\">\n        \n        <svg xmlns=\"http://www.w3.org/2000/svg\" style=\"width: 48px; height: 48px; margin: auto; color: #1CA758;\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"2\" stroke=\"currentColor\">\n          <path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z\" />\n        </svg>\n\n        <h2 style=\"color:#1CA758; font-weight: 700; margin-top: 12px;\">Welcome to Our Store!</h2>\n        <p style=\"margin: 10px 0 16px; color: #333;\">\n          We're excited to have you here. As a warm welcome, enjoy a special discount on your first purchase!\n        </p>\n\n        <div style=\"margin: 16px 0; background: #f5fff8; border: 1px dashed #1CA758; border-radius: 8px; padding: 12px;\">\n          <p style=\"margin: 0; font-weight: bold; color: #1CA758;\">Discount code: <span style=\"color:#0f8c4d;\">welcomegow</span></p>\n          <small style=\"color:#666;\">15% off automatically applies to orders over $20.</small>\n        </div>\n\n        <button onclick=\"closePopup()\" style=\"margin-top:20px; padding:12px 20px; background:#1CA758; color:#fff; border:none; border-radius:8px; cursor:pointer; width:100%; font-weight:600;\">\n          Start Shopping\n        </button>\n      </div>\n    </div>\n\n    <script>\n      function closePopup() {\n        document.getElementById('discount-popup').style.display = 'none';\n      }\n    </script>\n  {% endif %}\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 50,
+        "padding_bottom": 50
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_DVFqfn"
+  ]
+}
