@@ -1,5 +1,8 @@
-{% comment %}theme-check-disable UndefinedObject{% endcomment %}
-<script src="{{ 'footer.js' | asset_url }}" defer="defer"></script>
+{%- if template == 'index' -%}
+  <script data-src="{{ 'footer.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+  <script src="{{ 'footer.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
 {%- liquid
   assign socials = 'facebook,instagram,youtube,tiktok,twitter,pinterest,snapchat,tumblr,vimeo'
   assign socials_arr = socials | split: ','

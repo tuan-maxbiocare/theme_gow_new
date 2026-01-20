@@ -14,13 +14,20 @@
   .section-{{ section.id }}:has(.swiper-button-lock) .button-list__items {
     justify-content: {{ section.settings.item_alignment | replace: 'left', 'flex-start' | replace: 'right', 'flex-end' }};
   }
+  @media (max-width: 768px) {
+    .section-{{ section.id }}.section--padding .section__container {
+      padding-left: 16px;
+    }
+}
 {%- endstyle -%}
 
 <div
   class="section section-{{ section.id }} section--padding button-list color-{{ section.settings.color_scheme }}"
   style="--section-padding-top: {{ section.settings.padding_top }}px;--section-padding-bottom: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="section__container page-width page-width--{{ section.settings.container }}">
+  <div class="section__container"
+    style="max-width: {{ section.settings.max_width }}px; margin: 0 auto;"
+  >
     {% render 'section-heading', section_settings: section.settings %}
     <div class="section__content swiper-show-nav-on-hover inline-flex relative{% if section.settings.swipe_on_mobile %} swipe-mobile swipe-mobile--auto-cols{% endif %}">
       <button-list
@@ -124,20 +131,14 @@
       "content": "t:general.general.name"
     },
     {
-      "type": "select",
-      "id": "container",
-      "options": [
-        {
-          "value": "fixed",
-          "label": "t:general.container.options__fixed.label"
-        },
-        {
-          "value": "full",
-          "label": "t:general.container.options__full.label"
-        }
-      ],
-      "default": "fixed",
-      "label": "t:general.divider.width.label"
+      "type": "range",
+      "id": "max_width",
+      "min": 1000,
+      "max": 2000,
+      "step": 50,
+      "unit": "px",
+      "label": "Section max width",
+      "default": 1400
     },
     {
       "type": "color_scheme",

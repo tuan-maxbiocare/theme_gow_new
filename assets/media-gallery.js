@@ -35,7 +35,12 @@ if (!customElements.get('media-gallery')) {
         this.updateMediaLayout();
 
         if (this.enableImageZoom) {
-          this.initImageZoom();
+          // Check if PhotoSwipe is loaded before initializing
+          if (window.FoxTheme && window.FoxTheme.PhotoSwipeLightbox) {
+            this.initImageZoom();
+          } else {
+            // PhotoSwipe will be lazy loaded on first zoom click
+          }
         }
       }
 
@@ -127,6 +132,12 @@ if (!customElements.get('media-gallery')) {
 
       initSlider() {
         if (typeof this.sliderInstance !== 'object') {
+          // Skip Swiper init if only 1 media item to save resources
+          const mediaCount = this.elements.mediaItems ? this.elements.mediaItems.length : 0;
+          if (mediaCount <= 1) {
+            return;
+          }
+
           if ((this.enableDesktopSlider || this.enableMobileThumbnails) && this.elements.thumbnails) {
             this.thumbsInstance = new window.FoxTheme.Carousel(this.elements.thumbnails, this.thumbsOptions);
             this.thumbsInstance.init();

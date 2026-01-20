@@ -38,7 +38,7 @@
   }
 </style>
 
-<div class="section section-{{ section.id }} scrolling-banner scrolling-banner--{{ slide_height }}">
+<div class="section section-{{ section.id }} scrolling-banner scrolling-banner--{{ slide_height }} lazy-section">
   <div class="section__container page-width page-width--{{ container }}">
     <scrolling-banner
       class="grid relative"
@@ -55,7 +55,13 @@
             assign fetchpriority = 'high'
           endif
         -%}
-        <div class="scrolling-banner__slide slide z-{{ forloop.index }}">
+        <div 
+          class="scrolling-banner__slide slide z-{{ forloop.index }}"
+          {% if block.settings.banner_link %}
+            onclick="window.location.href='{{ block.settings.banner_link }}'"
+            style="cursor: pointer;"
+          {% endif %}
+        >
           <div
             class="slide__card h-full w-full"
             {% if slide_height == 'adapt' %}
@@ -625,6 +631,11 @@
           "type": "url",
           "id": "button_link",
           "label": "t:general.button.button_link.label"
+        },
+        {
+          "type": "url",
+          "id": "banner_link",
+          "label": "banner link"
         },
         {
           "type": "select",

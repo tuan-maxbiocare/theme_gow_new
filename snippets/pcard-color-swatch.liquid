@@ -31,6 +31,7 @@
     class="product-card__swatches swatches swatches--product-card flex flex-wrap gap-2 items-center justify-{{ settings.pcard_content_alignment }}{% if settings.pcard_swatches_type == 'variant_image' %} swatches--variant-image{% endif %}"
   >
     {%- for variant in product.variants -%}
+      {%- if variant.price == 0 -%}{% continue %}{%- endif -%}
       {%- liquid
         assign value = variant.options[option_index]
       -%}

@@ -178,14 +178,14 @@
         {%- endif -%}
         {%- if heading != blank -%}
           <motion-element
-            class="block card-media__heading rich-text__heading {{ heading_size }}"
+            class="block card-media__heading rich-text__heading "
             data-motion="fade-up"
             data-motion-delay="{{ motion_delay }}"
             {% if heading_size_mobile == 'custom' %}
               style="--custom-heading-size: {{ heading_size_custom | divided_by: 10.0 }}rem;"
             {% endif %}
           >
-            <h2>
+            <h2 class="{{ heading_size }}">
               {% render 'highlight-text',
                 hl_text: heading,
                 hl_style: highlight_style,

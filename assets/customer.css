@@ -8,6 +8,7 @@
   padding: 0 1.5rem;
   margin: 0 auto;
 }
+
 .login p,
 .register p,
 .activate p,
@@ -189,4 +190,11 @@
   padding: 0;
   height: auto;
   line-height: normal;
+}
+.policy-link {
+  text-decoration: underline;
+}
+
+.policy-link:hover {
+  text-decoration-thickness: 2px;
 }

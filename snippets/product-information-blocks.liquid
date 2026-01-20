@@ -491,6 +491,9 @@
                 heading_3: benefits_obj.short_benefit_3 | default: block.settings.heading_3,
                 image_3: block.settings.image_3,
                 icon_3: block.settings.icon_3,
+                heading_4: benefits_obj.short_benefit_4 | default: block.settings.heading_4,
+                image_4: block.settings.image_4,
+                icon_4: block.settings.icon_4,
                 icon_color: block.settings.icon_color,
                 block: block
               %}
@@ -508,6 +511,12 @@
                 heading_3: block.settings.heading_3,
                 image_3: block.settings.image_3,
                 icon_3: block.settings.icon_3,
+                heading_4: block.settings.heading_4,
+                image_4: block.settings.image_4,
+                icon_4: block.settings.icon_4,
+                heading_5: block.settings.heading_5,
+                image_5: block.settings.image_5,
+                icon_5: block.settings.icon_5,
                 icon_color: block.settings.icon_color,
                 block: block
               %}
@@ -572,7 +581,7 @@
 
           {% if cw_link and amazon_link %}
             <div class="{{ block_classes }}" {{ block.shopify_attributes }}>
-              <div class="text-buttons-wrapper" style="display: flex;">
+              <div class="text-buttons-wrapper" style="display:flex; justify-content:space-between">
                 {%- if block.settings.heading != blank -%}
                   <h2 class="{{ block.settings.heading_size }} text-{{ block.settings.text_alignment }}">
                     {{ block.settings.heading }}
@@ -719,46 +728,4 @@
     </div>
   {%- endif -%}
 </div>
-<style>
-  .text-buttons-wrapper {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-  }
-  .buttons-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    width: 59%;
-  }
-  .buttons-wrapper a {
-    flex: 1;
-    max-width: 100%;
-    text-decoration: none;
-  }
-  .buttons-wrapper .btn {
-    display: flex;
-    align-items: center
-    justify-content: center;
-    width: 100%;
-  }
-  .buttons-wrapper img{
-    object-fit: contain; 
-    image-rendering: -webkit-optimize-contrast; 
-    image-rendering: crisp-edges;
-  }
 
-  .product__blocks .btn--icon.btn--icon-pill,
-  .product__blocks .btn--icon.btn--icon-pill:hover,
-  .product__blocks .btn--icon.btn--icon-pill:focus,
-  .product__blocks .btn--icon.btn--icon-pill:active {
-    background-color: transparent !important;
-    color: currentColor !important;
-    transform: none !important;
-    box-shadow: none !important;
-    opacity: 1 !important;
-    --color-button: transparent !important;
-    --color-button-text: currentColor !important;
-    --color-button-hover: transparent !important;
-  }
-</style>

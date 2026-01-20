@@ -168,13 +168,13 @@
                         {% if image != blank %}
                           <a href="{{ childlink.url }}" class="hover-wrapper">
                             <img width="100%" height="auto"
-                              src="{{ image | image_url: width: 200 }}"
+                              src="{{ image | image_url: width: 2000 }}"
                               alt="{{ childlink.title | escape }}"
                               class="banner-img-default"
                             >
                             {% if image_hover != blank %}
                               <img width="100%" height="auto"
-                                src="{{ image_hover | image_url: width: 200 }}"
+                                src="{{ image_hover | image_url: width: 2000 }}"
                                 alt="{{ childlink.title | escape }}"
                                 class="banner-img-hover"
                               >

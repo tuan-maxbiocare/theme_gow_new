@@ -416,11 +416,11 @@
             <input
               type="hidden"
               name="properties[_pre_order_note]"
-              value="This item is on pre-order. Estimated availability: {{ product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: "%B %d, %Y" }}."
+              value="This item is on pre-order. Estimated availability: {{ product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: "%B %Y" }}."
             >
             <div class="restock-message">
               Available on
-              {{ product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: '%B %d, %Y' }}
+              {{ product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: '%B %Y' }}
             </div>
           {% endif %}
         {% endif %}

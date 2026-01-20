@@ -1,3 +1,5 @@
+{{ 'section-review.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'review-rewards.js' | asset_url }}" defer></script>
 <div class="page-width page-width--fixed section--padding">
   <div class="page-review-reward">
     <div class="page-review-reward__left">
@@ -42,7 +44,37 @@
       {% endif %}
 
       <div class="page-review-reward__form">
-        {{ section.settings.form_embed_code }}
+        <h3 style="text-align: center;color: #006343;">Enter Now</h3>
+        <p class="page-review-reward__form-title">Which platform did you purchase the product from?</p>
+        <div id="platform-selection" class="platform-selection">
+          <button class="platform-btn" data-platform="gow">
+            <img src="{{ section.settings.image_shopify | image_url }}" alt="Garden of Wellness">
+            <span>Garden of Wellness</span>
+          </button>
+          <button class="platform-btn" data-platform="cw">
+            <img src="{{ section.settings.image_cw | image_url }}" alt="Chemist Warehouse">
+            <span>Chemist Warehouse</span>
+          </button>
+        </div>
+        <div id="gow-search-section" class="search-section" style="display: none;">
+          <button class="back-btn" id="back-to-selection">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back
+          </button>
+          <p class="search-section__title">Search Your Product</p>
+          <div class="page-review-reward__search">
+            <input
+              type="text"
+              id="product-search-input"
+              class="page-review-reward__search-input"
+              placeholder="Search for products..."
+              autocomplete="off"
+            >
+            <div id="search-results" class="page-review-reward__search-results" style="display: none;"></div>
+          </div>
+        </div>
       </div>
 
       {% if page.content != blank %}
@@ -53,102 +85,18 @@
     </div>
   </div>
 </div>
+<div id="review-popup" class="review-popup">
+  <div class="review-popup__overlay"></div>
+  <div class="review-popup__content">
+    <button class="review-popup__close">&times;</button>
+    <iframe id="review-iframe" src=""></iframe>
+  </div>
+</div>
 
-<style>
-  .page-review-reward {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-  }
-  .page-review-reward__left {
-    width: 60%;
-  }
-  .page-review-reward__right {
-    width: 40%;
-    position: sticky;
-    top: 20px;
-  }
-  .page-review-reward__banner img {
-    width: 100%;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  .page-review-reward__checker {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  .page-review-reward__buttons {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-  }
-  .page-review-reward__button {
-    padding: 30px;
-    border: none;
-    cursor: pointer;
-    font-weight: 600;
-    border-radius: 6px;
-    background: #ececec;
-    transition: 0.2s;
-  }
-  .page-review-reward__button:hover {
-    background: #e2e2e2;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  .page-review-reward__button img {
-    height: 50px;
-    width: auto;
-    object-fit: contain;
-  }
-  .page-review-reward__form {
-    background: #fff;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  }
-
-  .page-review-reward__content--mobile {
-    display: none;
-  }
-
-  @media (max-width: 900px) {
-    .page-review-reward {
-      display: block;
-    }
-    .page-review-reward__left,
-    .page-review-reward__right {
-      width: 100%;
-      position: relative;
-      top: auto;
-    }
-    .page-review-reward__content--desktop {
-      display: none;
-    }
-    .page-review-reward__content--mobile {
-      display: block;
-      margin-top: 15px;
-    }
-    .page-review-reward__button {
-     padding: 20px;
-    }
-  }
-</style>
-
-<script>
-  document.querySelectorAll('.page-review-reward__button').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      window.open(btn.getAttribute('data-link'), '_blank');
-    });
-  });
-</script>
 
 {% schema %}
 {
-  "name": "Page review and rewward",
+  "name": "Page review and reward",
   "settings": [
     {
       "type": "image_picker",
@@ -190,18 +138,11 @@
       "type": "url",
       "id": "link_aws",
       "label": "Link AWS"
-    },
-    {
-      "type": "textarea",
-      "id": "form_embed_code",
-      "label": "Form Embed Code (paste full script/div)",
-      "default": "<div>Paste form code here</div>"
     }
   ],
   "presets": [
     {
-      "name": "Page review and rewward",
-      "category": "Custom"
+      "name": "Page review and reward"
     }
   ]
 }

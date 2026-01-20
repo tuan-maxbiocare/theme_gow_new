@@ -27,6 +27,9 @@
       padding: 0 1.2rem;
       z-index: 29 !important;
     }
+    .subscription-popup__teaser:hover .close-x {
+      color: {{ section.settings.teaser_popup_bg }};
+    }
   {%- endstyle -%}
   <link rel="stylesheet" href="{{ 'subscription-popup.css' | asset_url }}" media="print" onload="this.media='all'">
   <noscript>{{ 'subscription-popup.css' | asset_url | stylesheet_tag }}</noscript>
@@ -67,9 +70,6 @@
   >
     <div class="fixed-overlay" aria-controls="{{ modal_id }}"></div>
 
-
-
-
     <div class="drawer__inner blocks-radius" style="background-color: transparent;">
       <button
         class="drawer__close-btn z-2 drawer__close-btn--fill-mobile{% if is_top_image %} drawer__close-btn--fill{% endif %} get-discount-button"
@@ -80,131 +80,223 @@
       </button>
       {%- render 'loading-spinner' -%}
 
-     
+      <style>
+        .popup-image-wrapper {
+          position: relative;
+          display: inline-block;
+        }
+        .popup-image-wrapper img {
+          margin-top: -115px;
+        }
 
+        .popup-content {
+          position: absolute;
+          top: 70%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: center;
+        }
 
+        .popup-content .btn {
+          background: #fff;
+          color: #006343;
+          border: none;
+          font-size: 3rem;
+          padding: 3rem 22rem;
+          border-radius: 6px;
+          cursor: pointer;
+        }
+
+        .popup-content div {
+          margin-top: 8px;
+          font-size: 14px;
+          color: #333;
+        }
+
+        .discount-banner-desktop {
+          display: block;
+        }
+        .discount-banner-mobile {
+          display: none;
+        }
+
+        .get-discount-button {
+          color: #fff;
+          background-color: transparent;
+          box-shadow: none;
+        }
+
+        .popup-content .get-discount-button:hover {
+          background: #006343;
+          color: #fff;
+          box-shadow: 0 6px 20px rgba(0, 99, 67, 0.4);
+        }
+
+        @media (max-width: 900px) {
+          .discount-banner-desktop {
+            display: none;
+          }
+          .discount-banner-mobile {
+            display: block;
+          }
+          .popup-content .btn {
+            font-size: 2rem;
+            padding: 2rem 11rem;
+          }
+          .popup-content {
+            top: 67%;
+          }
+          .popup-image-wrapper img {
+            margin-top: -67px;
+          }
+          .popup-content div {
+            margin-top: 2px;
+          }
+        }
+      </style>
 
       <div class="drawer__body v-scrollable h-full">
 
+      <!-- ================= DESKTOP ================= -->
+      <div class="discount-banner discount-banner-desktop">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/30_-hair-oil-pop-up-background-image_desktop.png?v=1763174372"
+          alt="discount"
+          width="1200"
+          height="600"
+          loading="lazy"
+          decoding="async"
+        >
 
+        <div class="popup-custom-info">
+          <div class="popup-image-wrapper">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/15_sign_in_pop_up-no_button-_desktop.webp?v=1762333756"
+              alt="popup"
+              width="1200"
+              height="600"
+              loading="lazy"
+              decoding="async"
+            >
 
+            <!-- Nội dung chồng lên ảnh -->
+            <div class="popup-content">
+              <a
+                href="https://gardenofwellnessshop.com.au/products/little-etoile-care-hair-oil-0-months-200ml"
+                class="btn get-discount-button"
+              >
+                Grab It Now
+              </a>
 
-        {% comment %} Discount Banner Section {% endcomment %}
-<style>
-.discount-banner { text-align:center; padding:40px 20px;  font-family: "Anek Tamil", sans-serif; }
-.discount-banner .green-box { background:#1CA758; padding:30px 20px; border-radius:20px; margin-top:-50px; }
-.discount-banner .green-box h3 { color:#fff; font-size:28px; font-weight:bold; margin:32px 0px 5px 0px; }
-.discount-banner .btn { background:#fff; border-radius:30px; font-weight:bold; color:#FF4B2B; text-decoration:none;padding: 15px 80px; }
-.discount-banner small { color:#fff; display:block; margin-top:10px; }
-  .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:flex;justify-content:center;align-items:center;z-index:9999;}
-  .popup {position:relative;}
-  .close-btn {position:absolute;top:-10px;right:-10px;background:#fff;width:30px;height:30px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:bold;cursor:pointer;}
-</style>
-<div class="discount-banner">
-
-
-    <style>
-    .discount-badge {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  background-color: #fff;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  transform: rotate(-10deg);
-  font-weight: 900;
-}
-
-.discount-badge__percent {
-  position: absolute;
-  top: 9px;
-  right: -25px;
-  background-color: #000;
-  color: #fff;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 58px;
-  font-weight: bold;
-  transform: rotate(10deg);
-}
-
-.discount-badge__text-top {
-  font-size: 30px;
-  margin-bottom: -5px;
-  color: #000;
-  letter-spacing: 2px;
-  font-weight: bold;
-}
-
-.discount-badge__number {
-  font-size: 189px;
-  color: #ff4136;
-  line-height: 1;
-  margin: -5px 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.discount-badge__text-bottom {
-  font-size: 30px;
-  color: #000;
-  letter-spacing: 1px;
-  margin-top: -5px;
-  font-weight: bold;
-}
-
-  </style>
-<div style="display: flex; justify-content: center;">
-  <div class="discount-badge">
-  <div class="discount-badge__percent">%</div>
-  <div class="discount-badge__text-top">ENJOY</div>
-  <div class="discount-badge__number">15</div>
-  <div class="discount-badge__text-bottom">OFF RRP</div>
-</div>
-</div>
-
-
-
-
-  <div class="green-box">
-    <h3>JUST FOR YOU!</h3>
-    <btn class="btn get-discount-button">GRAB IT NOW</btn>
-    <small>*applied for first order</small>
-  </div>
-</div>
-
-        
+              <div style="color: white;">
+                *applies to orders over $20
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- ================= MOBILE ================= -->
+      <div class="discount-banner discount-banner-mobile">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/30_-hair-oil-pop-up-background-image_mobile.png?v=1763174372"
+          alt="discount"
+          width="665"
+          height="631"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="popup-custom-info">
+          <div class="popup-image-wrapper">
+            <img
+              src="https://cdn.shopify.com/s/files/1/0677/1900/4417/files/15_sign_in_pop_up-no_button-mobile.webp?v=1762337004"
+              alt="popup"
+              width="665"
+              height="631"
+              loading="lazy"
+              decoding="async"
+            >
+
+            <!-- Nội dung chồng lên ảnh -->
+            <div class="popup-content">
+              <a
+                href="https://gardenofwellnessshop.com.au/products/little-etoile-care-hair-oil-0-months-200ml"
+                class="btn get-discount-button"
+              >
+                Grab It Now
+              </a>
+
+              <div style="color: white;">
+                *applies to orders over $20
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+      
     </div>
   </subscription-popup>
+
   {%- if show_teaser and teaser_button_text != blank -%}
-    <button
-      class="subscription-popup__teaser btn btn--primary no-js-hidden"
-      role="button"
-      aria-haspopup="dialog"
-      aria-controls="{{ modal_id }}"
-      style="--color-button: {{ section.settings.teaser_popup_bg.red }},{{ section.settings.teaser_popup_bg.green }},{{ section.settings.teaser_popup_bg.blue }};--color-button-text:{{ section.settings.teaser_popup_text.red }},{{ section.settings.teaser_popup_text.green }},{{ section.settings.teaser_popup_text.blue }};"
-    >
-      <span class="btn__text flex items-center gap-3">
-        {%- render 'icon-envelope-simple' %}
-        {{- teaser_button_text -}}
-      </span>
-    </button>
+    <div class="subscription-popup__teaser ">
+      <div>
+        <button
+          class="btn btn--primary no-js-hidden"
+
+          role="button"
+          aria-haspopup="dialog"
+          aria-controls="{{ modal_id }}"
+          style="
+            --color-button: {{ section.settings.teaser_popup_bg.red }},{{ section.settings.teaser_popup_bg.green }},{{ section.settings.teaser_popup_bg.blue }};--color-button-text:{{ section.settings.teaser_popup_text.red }},{{ section.settings.teaser_popup_text.green }},{{ section.settings.teaser_popup_text.blue }};
+            padding-right: 55px;border-radius: 0 0 5px 5px;
+          "
+        >
+          <span class="btn__text flex items-center gap-3 relative">
+            {%- render 'icon-envelope-simple' -%}
+            {{- teaser_button_text -}}
+          </span>
+        </button>
+
+        <button
+          class="close-x btn drawer__close-btn z-2 drawer__close-btn--fill-mobile{% if is_top_image %} drawer__close-btn--fill{% endif %} get-discount-button"
+          onclick="this.closest('.subscription-popup__teaser').style.display='none'"
+          aria-controls="{{ modal_id }}"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          {% render 'icon-close', size: 'small' %}
+        </button>
+      </div>
+    </div>
   {%- endif -%}
+
+  <style>
+    .close-x {
+      color: {{ section.settings.teaser_popup_text }};
+      font-size: 20px;
+      padding: 0px;
+      position: fixed;
+      top: 15%;
+      margin-left: 8px;
+      right: 36px;
+      border: none;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 100%;
+    }
+  </style>
+
   <script src="{{ 'subscription-popup.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
-
-
-
-
 
 <div id="popupStep2" style="display: none;">
   {% render 'popup-step2' %}
@@ -214,103 +306,91 @@
   {% render 'popup-step3' %}
 </div>
 
-
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const popupStep1 = document.getElementById('{{ modal_id }}');
-  const popupStep2 = document.getElementById('popupStep2');
-  const popupStep3 = document.getElementById('popupStep3');
+  document.addEventListener('DOMContentLoaded', () => {
+    const popupStep1 = document.getElementById('{{ modal_id }}');
+    const popupStep2 = document.getElementById('popupStep2');
+    const popupStep3 = document.getElementById('popupStep3');
 
-  const teaserBtn     = document.querySelector('.subscription-popup__teaser');
-  const btnToStep2    = document.querySelectorAll('.get-discount-button');   
-  const closeStep1Btn = document.querySelector(`#${'{{ modal_id }}'} .drawer__close-btn`);
-  const closeStep2Btn = document.querySelector('#popupStep2 .popup-close-btn');
-  const btnBackToStep2 = document.querySelector('#popupStep3 .step3-continue-btn');
-  const closeStep3Btn = document.querySelector('#popupStep3 .step3-close-btn');
+    const teaserBtn = document.querySelector('.subscription-popup__teaser');
+    const btnToStep2 = document.querySelectorAll('.get-discount-button');
+    const closeStep1Btn = document.querySelector(`#${'{{ modal_id }}'} .drawer__close-btn`);
+    const closeStep2Btn = document.querySelector('#popupStep2 .popup-close-btn');
+    const btnBackToStep2 = document.querySelector('#popupStep3 .step3-continue-btn');
+    const closeStep3Btn = document.querySelector('#popupStep3 .step3-close-btn');
 
-  const hideAllSteps = () => {
-    [popupStep1, popupStep2, popupStep3].forEach(el => {
-      if (el) {
-        el.style.display = 'none';
-        el.removeAttribute('open');
-        el.setAttribute('hidden', true);
+    const hideAllSteps = () => {
+      [popupStep1, popupStep2, popupStep3].forEach((el) => {
+        if (el) {
+          el.style.display = 'none';
+          el.removeAttribute('open');
+          el.setAttribute('hidden', true);
+        }
+      });
+    };
+
+    const showStep = (stepEl) => {
+      hideAllSteps();
+      if (stepEl) {
+        stepEl.style.display = 'flex';
+        stepEl.removeAttribute('hidden');
+        stepEl.setAttribute('open', true);
       }
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+    };
+
+    const lockScroll = () => {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    };
+
+    const unlockScroll = () => {
+      document.body.style.overflow = 'auto';
+      document.documentElement.style.overflow = 'auto';
+    };
+
+    teaserBtn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      popupStep1?.removeAttribute('hidden');
+      popupStep1?.setAttribute('open', true);
+      popupStep1.style.display = 'flex';
+      lockScroll();
     });
-  };
 
-  const showStep = (stepEl) => {
-    hideAllSteps();
-    if (stepEl) {
-      stepEl.style.display = 'flex';
-      stepEl.removeAttribute('hidden');
-      stepEl.setAttribute('open', true);
-    }
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
-  };
+    btnToStep2.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        popupStep1?.removeAttribute('open');
+        popupStep1?.setAttribute('hidden', true);
+        showStep(popupStep2);
+      });
+    });
 
-  const lockScroll = () => {
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-  };
-
-  const unlockScroll = () => {
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
-  };
-
-  teaserBtn?.addEventListener('click', e => {
-    e.preventDefault();
-    popupStep1?.removeAttribute('hidden');
-    popupStep1?.setAttribute('open', true);
-    popupStep1.style.display = 'flex';
-    lockScroll();
-  });
-
-  btnToStep2.forEach(btn => {
-    btn.addEventListener('click', e => {
+    closeStep1Btn?.addEventListener('click', (e) => {
       e.preventDefault();
       popupStep1?.removeAttribute('open');
       popupStep1?.setAttribute('hidden', true);
+      showStep(popupStep3);
+    });
+
+    closeStep2Btn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      showStep(popupStep3);
+    });
+
+    btnBackToStep2?.addEventListener('click', (e) => {
+      e.preventDefault();
       showStep(popupStep2);
     });
-  });
 
-  closeStep1Btn?.addEventListener('click', e => {
-    e.preventDefault();
-    popupStep1?.removeAttribute('open');
-    popupStep1?.setAttribute('hidden', true);
-    showStep(popupStep3);
+    closeStep3Btn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      hideAllSteps();
+      unlockScroll();
+    });
   });
-
-  closeStep2Btn?.addEventListener('click', e => {
-    e.preventDefault();
-    showStep(popupStep3);
-  });
-
-  btnBackToStep2?.addEventListener('click', e => {
-    e.preventDefault();
-    showStep(popupStep2);
-  });
-
-  closeStep3Btn?.addEventListener('click', e => {
-    e.preventDefault();
-    hideAllSteps();
-    unlockScroll();
-  });
-});
 </script>
-
-
-
-
-
-
-
-
-
-
-
 
 {% schema %}
 {

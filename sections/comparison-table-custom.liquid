@@ -29,19 +29,19 @@
 {% endcapture %}
 
 <style>
-    .comparison-table-custom .rte {
-      text-align: center;
-    }
-    .comparison-table-custom .comparison-table__content {
-      padding: 0;
-    }
-    .comparison-table-custom .blocks-radius {
-      text-align: center;
-    }
-    .quick-comparison-table-custom {
-      table-layout: auto;
-    }
-    .quick-comparison-table-custom .reversed-link__text {
+  .comparison-table-custom .rte {
+    text-align: center;
+  }
+  .comparison-table-custom .comparison-table__content {
+    padding: 0;
+  }
+  .comparison-table-custom .blocks-radius {
+    text-align: center;
+  }
+  .quick-comparison-table-custom {
+    table-layout: auto;
+  }
+  .quick-comparison-table-custom .reversed-link__text {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -50,21 +50,19 @@
     line-height: 1.4em;
     min-height: calc(1.4em * 3);
   }
-    .quick-comparison-table-custom .td-label {
-      background-color: rgb(249, 250, 251);
+  .quick-comparison-table-custom .td-label {
+    background-color: rgb(249, 250, 251);
+  }
+  .note-comparison-table-custom {
+    background-color: #006343 !important;
+    color: white;
+    text-align: center !important;
+  }
+  @media (max-width: 768px) {
+    .quick-comparison-table-custom {
+      table-layout: fixed;
     }
-    .note-comparison-table-custom {
-      background-color: rgb(28, 167, 88);
-      padding: 10px;
-      border-radius: 10px;
-      color: white;
-      text-align: center;
-    }
-    @media (max-width: 768px) {
-      .quick-comparison-table-custom {
-        table-layout: fixed;
-      }
-    }
+  }
 </style>
 <div
   class="
@@ -159,16 +157,27 @@
                   data-motion="zoom-out-sm"
                   style="--aspect-ratio: 1/1;"
                 >
-                  <picture class="card-media__media media-wrapper">
-                    <img
-                      width="auto"
-                      height="auto"
-                      src="https://cdn.shopify.com/s/files/1/0767/7139/3751/files/GoWshop_miniicon.svg?v=1758161303"
-                      alt="GoWshop mini icon"
-                      loading="lazy"
-                      class="motion-reduce absolute inset-0 w-full h-full"
-                    >
-                  </picture>
+                {% assign icon = heading_block.settings['icon-1'] %}
+                {% assign image = heading_block.settings['image-1'] %}
+                {% if image %}
+                    {% assign alt = image.alt | default: title | escape %}
+                    <picture class="card-media__media media-wrapper">
+                      {{
+                        image
+                        | image_url: width: 1100
+                        | image_tag:
+                          loading: 'lazy',
+                          class: 'motion-reduce absolute inset-0 w-full h-full',
+                          widths: '165, 360, 535, 750, 940, 1100',
+                          is: 'image-lazy',
+                          alt: alt
+                      }}
+                    </picture>
+                  {% elsif icon != 'none' %}
+                    {% render 'icons', icon: icon %}
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg blocks-radius-sm' }}
+                  {% endif %}
                 </motion-element>
               </div>
 
@@ -292,11 +301,18 @@
             </tr>
           {% endif %}
         {% endfor %}
+        {% if section.settings.note_comparison_table_custom != blank %}
+          <tr>
+            {% assign total_columns = product_show_compare | plus: 1 %}
+            <td class="td-label text-body note-comparison-table-custom text-center" colspan="{{ total_columns }}">
+              <div>
+                {{ section.settings.note_comparison_table_custom }}
+              </div>
+            </td>
+          </tr>
+        {% endif %}
       </table>
     </div>
-    {% if section.settings.note_comparison_table_custom != blank %}
-      <div class="note-comparison-table-custom">{{ section.settings.note_comparison_table_custom }}</div>
-    {% endif %}
   </comparison-table>
 </div>
 {% schema %}

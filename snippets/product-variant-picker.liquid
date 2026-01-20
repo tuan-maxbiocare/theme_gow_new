@@ -80,7 +80,7 @@
         assign text_customer_pre_order = 'Available for pre-order'
         assign text_admin_pre_order = 'Available for pre-order'
       else
-        assign pre_order_date_formatted = product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: "%B %d, %Y" 
+        assign pre_order_date_formatted = product.selected_or_first_available_variant.metafields.custom.pre_order_date | date: "%B %Y" 
         assign text_customer_pre_order = 'Available on ' | append: pre_order_date_formatted
         assign text_admin_pre_order = 'This item is on pre-order. Estimated availability: ' | append: pre_order_date_formatted 
       endif

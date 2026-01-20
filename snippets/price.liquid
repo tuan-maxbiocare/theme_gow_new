@@ -13,17 +13,55 @@
   {% render 'price', product: product %}
 {%- enddoc -%}
 {%- liquid
-  assign selected_variant = product.selected_or_first_available_variant
-  if use_variant
+  # Nếu có selected_variant được truyền vào, dùng nó
+  if selected_variant
     assign target = selected_variant
+  # Nếu không, kiểm tra use_variant
+  elsif use_variant
+    assign target = product.selected_or_first_available_variant
+  # Mặc định dùng product
   else
     assign target = product
+  endif
+  # lương thêm để tránh hiển thị variant 0$
+  assign paid_variant = nil
+  assign paid_price_min = nil
+  assign paid_price_max = nil
+
+  if product and product.variants_count > 0
+    for price_variant in product.variants
+      if price_variant.price > 0
+        if paid_variant == nil
+          assign paid_variant = price_variant
+        endif
+        if paid_price_min == nil or price_variant.price < paid_price_min
+          assign paid_price_min = price_variant.price
+        endif
+        if paid_price_max == nil or price_variant.price > paid_price_max
+          assign paid_price_max = price_variant.price
+        endif
+      endif
+    endfor
+  endif
+  # hết
+
+  if target and target.price == 0 and paid_variant
+    assign target = paid_variant
   endif
 
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
   assign price_min = product.price_min
   assign price_max = product.price_max
+
+  if paid_price_min
+    assign price_min = paid_price_min
+    assign price_max = paid_price_max | default: paid_price_min
+    if target == product or price == 0
+      assign price = paid_price_min
+      assign compare_at_price = paid_variant.compare_at_price
+    endif
+  endif
 
   if product.quantity_price_breaks_configured? and use_variant and selected_variant.quantity_price_breaks.size > 0
     assign price_min = selected_variant.price
@@ -55,19 +93,22 @@
     #  assign money_price = 'products.product.price.from_price_html' | t: price: money_price
   # endif
 -%}
-{% style  %}  
+{% style  %}
+.product__block--price, .product__block--price + .product__block--icon-with-text, .product__block--icon-with-text + .product__block--icon-with-text {
+  margin-top: 0px;
+}
 .f-price-item--regular{
   font-size: var(--font-size-regular);
 }
 .f-price-item--sale{
   font-size: var(--font-size-sale);
 }
-@media (max-width: 767.98px) {
+@media (max-width: 900px) {
   .f-price-item--sale{
-    font-size: 2rem;
+    font-size: var(--font-size-sale);
   }
   .f-price-item--regular{
-    font-size: 1.8rem;
+    font-size: var(--font-size-regular);
   }
 }
 {% endstyle %}
@@ -125,7 +166,7 @@
   {%- endunless -%}
 </div>
 
-  <div class="f-price__unit-wrapper{% if selected_variant.unit_price_measurement == nil %} hidden{% endif %}">
+  <div class="f-price__unit-wrapper{% if target.unit_price_measurement == nil %} hidden{% endif %}">
     <span class="visually-hidden">{{ 'products.product.price.unit_price' | t }}</span>
     <div class="f-price__unit">
       {%- capture unit_price_separator -%}
@@ -133,15 +174,15 @@
       {%- endcapture -%}
       {%- capture unit_price_base_unit -%}
         <span data-unit-price-base-unit>
-            {%- if selected_variant.unit_price_measurement -%}
-              {%- if selected_variant.unit_price_measurement.reference_value != 1 -%}
-                {{- selected_variant.unit_price_measurement.reference_value -}}
+            {%- if target.unit_price_measurement -%}
+              {%- if target.unit_price_measurement.reference_value != 1 -%}
+                {{- target.unit_price_measurement.reference_value -}}
               {%- endif -%}
-              {{ selected_variant.unit_price_measurement.reference_unit }}
+              {{ target.unit_price_measurement.reference_unit }}
             {%- endif -%}
           </span>
       {%- endcapture -%}
-      <span data-unit-price>{{ selected_variant.unit_price | money }}</span>
+      <span data-unit-price>{{ target.unit_price | money }}</span>
       {{- unit_price_separator -}}
       {{- unit_price_base_unit -}}
     </div>

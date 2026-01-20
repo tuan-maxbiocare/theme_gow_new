@@ -22,6 +22,10 @@
 -%}
 
 {%- for value in option.values -%}
+  {%- assign v = value.variant -%}
+  {%- if v and v.price == 0 -%}
+    {% continue %}
+  {%- endif -%}
   {%- liquid
     assign option_disabled = true
     if value.available
@@ -161,7 +165,7 @@
     <label for="{{ input_id }}" class="product-variant-options-variant-label-sale relative block">
       {{ value }}
       {{ label_unavailable }}
-      {%- if forloop.index > 1 and value.variant.compare_at_price and value.variant.compare_at_price > value.variant.price -%}
+      {%- if value.variant.compare_at_price and value.variant.compare_at_price > value.variant.price -%}
         {%- assign discount_amount = value.variant.compare_at_price | minus: value.variant.price -%}
         {%- assign discount_percent = discount_amount | times: 100 | divided_by: value.variant.compare_at_price -%}
         <span class="product-variant-options-sale-badge"> {{ discount_percent | round }}% off </span>

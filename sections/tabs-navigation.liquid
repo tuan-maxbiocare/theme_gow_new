@@ -222,6 +222,7 @@
                   "
                   {% if link != blank %}
                     href="{{ link }}"
+                    {% if block.settings.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
                     onclick="localStorage.setItem('scrollTo', 'pageNavigation')"
                   {% endif %}
                 >
@@ -657,6 +658,12 @@ document.addEventListener("DOMContentLoaded", function() {
         {
           "type": "header",
           "content": "t:general.general.name"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_in_new_tab",
+          "label": "Open in new tab",
+          "default": false
         },
         {
           "type": "text",
