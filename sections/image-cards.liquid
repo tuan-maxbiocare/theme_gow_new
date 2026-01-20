@@ -14,6 +14,13 @@
     assign enable_swipe_mobile = true
   endif
 
+  assign mobile_layout = section.settings.mobile_layout
+  assign enable_slider_mobile = false
+  if mobile_layout == 'slider' and section.blocks.size > 1
+    assign enable_slider_mobile = true
+    assign enable_swipe_mobile = false
+  endif
+
   if section.blocks.size <= columns_desktop
     assign enable_slider = false
   endif
@@ -34,6 +41,30 @@ calc( min(100vw, {{ settings.page_width }}px) / {{ columns_desktop }})
   --f-columns-md: {{ columns_tablet }};
   --f-columns-xl: {{ columns_desktop }};
   }
+  @media (max-width: 767px) {
+    .section-{{ section.id }} .section__content {
+      position: relative;
+    }
+    .section-{{ section.id }} .swiper-button-prev-mobile,
+    .section-{{ section.id }} .swiper-button-next-mobile {
+      position: absolute;
+      top: calc(50% + 20px);
+      transform: translateY(-50%) scale(0.7);
+      z-index: 10;
+    }
+    .section-{{ section.id }} .swiper-button-prev-mobile {
+      left: -20px;
+    }
+    .section-{{ section.id }} .swiper-button-next-mobile {
+      right: -20px;
+    }
+    .section-{{ section.id }} .swiper-pagination-mobile {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+  }
 {% endstyle %}
 
 {% render 'divider',
@@ -45,7 +76,7 @@ calc( min(100vw, {{ settings.page_width }}px) / {{ columns_desktop }})
   {%- render 'section-heading', section_settings: section.settings, description_size: section.settings.description_size -%}
   <div class="section__content relative{% if navigation_position == 'middle' %} swiper-show-nav-on-hover{% endif %}">
     <image-cards
-      class="block relative{% if enable_slider %} swiper swiper-equal-height{% if section.settings.content_overflow %} overflow-visible{% endif %}{% endif %}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ section.settings.columns_mobile }}-cols{% endif %}"
+      class="block relative{% if enable_slider %} swiper swiper-equal-height{% if section.settings.content_overflow %} overflow-visible{% endif %}{% endif %}{% if enable_swipe_mobile %} swipe-mobile swipe-mobile--{{ section.settings.columns_mobile }}-cols{% endif %}{% if enable_slider_mobile %} swiper-mobile-slider{% endif %}"
       id="image-cards-{{ section.id }}"
       data-section-id="{{ section.id }}"
       {% if enable_slider %}
@@ -53,6 +84,10 @@ calc( min(100vw, {{ settings.page_width }}px) / {{ columns_desktop }})
         data-items="{{ columns_desktop }}"
         data-tablet-items="{{ columns_tablet }}"
         data-pagination-type="{{ pagination_type }}"
+      {% endif %}
+      {% if enable_slider_mobile %}
+        data-enable-slider-mobile="true"
+        data-mobile-items="1"
       {% endif %}
     >
       <div class="image-cards__inner f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_slider %} swiper-wrapper{% endif %}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
@@ -135,6 +170,23 @@ calc( min(100vw, {{ settings.page_width }}px) / {{ columns_desktop }})
           <div class="progress-bar no-empty"></div>
         </div>
       </scroll-progress-bar>
+    {%- endif -%}
+    {%- if enable_slider_mobile -%}
+      <button
+        class="swiper-button swiper-button-prev-mobile btn swiper-button--drop-shadow md:hidden"
+        name="previous"
+        aria-label="{{ 'general.slider.previous_slide' | t }}"
+      >
+        <span class="btn__text">{% render 'icon-caret-left' %}</span>
+      </button>
+      <button
+        class="swiper-button swiper-button-next-mobile btn swiper-button--drop-shadow md:hidden"
+        name="next"
+        aria-label="{{ 'general.slider.next_slide' | t }}"
+      >
+        <span class="btn__text">{% render 'icon-caret-right' %}</span>
+      </button>
+      <div class="swiper-pagination swiper-pagination-mobile md:hidden"></div>
     {%- endif -%}
   </div>
 </div>
@@ -470,6 +522,22 @@ calc( min(100vw, {{ settings.page_width }}px) / {{ columns_desktop }})
     },
     {
       "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ],
+      "default": "grid"
+    },
+    {
+      "type": "select",
       "id": "columns_mobile",
       "options": [
         {
@@ -482,13 +550,15 @@ calc( min(100vw, {{ settings.page_width }}px) / {{ columns_desktop }})
         }
       ],
       "default": "1",
-      "label": "t:general.mobile.columns_mobile.label"
+      "label": "t:general.mobile.columns_mobile.label",
+      "visible_if": "{{ section.settings.mobile_layout == 'grid' }}"
     },
     {
       "type": "checkbox",
       "id": "swipe_on_mobile",
       "default": true,
-      "label": "t:general.mobile.swipe_on_mobile.label"
+      "label": "t:general.mobile.swipe_on_mobile.label",
+      "visible_if": "{{ section.settings.mobile_layout == 'grid' }}"
     },
     {
       "type": "checkbox",
