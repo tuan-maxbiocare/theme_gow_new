@@ -286,6 +286,7 @@
         "text",
         "socials"
       ],
+      "disabled": true,
       "custom_css": [],
       "settings": {
         "enable": true,
