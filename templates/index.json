@@ -17,6 +17,7 @@
           "settings": {
             "button_label": "30% OFF on Little Étoile Hair Oil",
             "button_link": "shopify://products/little-etoile-care-hair-oil-0-months-200ml",
+            "tag_text": "",
             "icon": "tag"
           }
         },
@@ -25,6 +26,7 @@
           "settings": {
             "button_label": "50% OFF Clearance Bulk Savings",
             "button_link": "shopify://collections/clearance",
+            "tag_text": "",
             "icon": "tag"
           }
         },
@@ -33,6 +35,7 @@
           "settings": {
             "button_label": "Review & Reward",
             "button_link": "shopify://pages/review-and-reward",
+            "tag_text": "",
             "icon": "currency-circle-dollar"
           }
         },
@@ -42,6 +45,7 @@
           "settings": {
             "button_label": "20% OFF SITEWIDE",
             "button_link": "shopify://collections/all-products",
+            "tag_text": "",
             "icon": "gift"
           }
         }
@@ -371,6 +375,7 @@
           "settings": {
             "button_label": "Health Supplement",
             "button_link": "shopify://collections/health-supplements",
+            "tag_text": "",
             "icon": "none"
           }
         },
@@ -379,6 +384,7 @@
           "settings": {
             "button_label": "Food & Nutrition",
             "button_link": "shopify://collections/food-and-nutrition",
+            "tag_text": "Bestselling",
             "icon": "none"
           }
         },
@@ -387,6 +393,7 @@
           "settings": {
             "button_label": "Pregnancy & Breastfeeding",
             "button_link": "shopify://collections/mothers-care",
+            "tag_text": "",
             "icon": "none"
           }
         },
@@ -395,6 +402,7 @@
           "settings": {
             "button_label": "Baby Care",
             "button_link": "shopify://collections/baby-care-products",
+            "tag_text": "Bestselling",
             "icon": "none"
           }
         },
@@ -403,6 +411,7 @@
           "settings": {
             "button_label": "Beauty & Topical Care",
             "button_link": "shopify://collections/beauty-products",
+            "tag_text": "",
             "icon": "none"
           }
         },
@@ -411,6 +420,7 @@
           "settings": {
             "button_label": "Pet Care",
             "button_link": "shopify://collections/pet-care-products",
+            "tag_text": "",
             "icon": "none"
           }
         }
@@ -555,6 +565,7 @@
         "pcard_image_ratio": "",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
+        "mobile_layout": "slider",
         "show_progress_bar": true,
         "padding_top": 50,
         "padding_bottom": 50,
@@ -727,6 +738,7 @@
         "pcard_image_ratio": "",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
+        "mobile_layout": "slider",
         "show_progress_bar": true,
         "padding_top": 70,
         "padding_bottom": 50,
@@ -843,6 +855,7 @@
         "pcard_image_ratio": "",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
+        "mobile_layout": "slider",
         "show_progress_bar": true,
         "padding_top": 50,
         "padding_bottom": 50,
@@ -916,6 +929,7 @@
         "pcard_image_ratio": "",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
+        "mobile_layout": "slider",
         "show_progress_bar": true,
         "padding_top": 0,
         "padding_bottom": 50,
@@ -989,6 +1003,7 @@
         "pcard_image_ratio": "",
         "columns_mobile": "2",
         "swipe_on_mobile": true,
+        "mobile_layout": "slider",
         "show_progress_bar": true,
         "padding_top": 0,
         "padding_bottom": 100,
