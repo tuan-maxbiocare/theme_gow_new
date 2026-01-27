@@ -18,7 +18,101 @@
     .section-{{ section.id }}.section--padding .section__container {
       padding-left: 16px;
     }
-}
+  }
+
+  /* Button Tag Badge Styles */
+  .section-{{ section.id }} .button-item {
+    position: relative;
+    overflow: visible;
+  }
+
+  .section-{{ section.id }} .button-tag-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 20;
+    box-shadow: 0 3px 12px rgba(255, 75, 43, 0.5), 0 0 0 2px rgba(255,255,255,0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transform: rotate(-12deg) translateY(-50%);
+    transform-origin: center center;
+    animation: tagShine 2s ease-in-out infinite;
+  }
+
+  .section-{{ section.id }} .button-tag-badge::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: tagSweep 2s ease-in-out infinite;
+  }
+
+  @keyframes tagShine {
+    0%, 100% {
+      transform: rotate(-12deg) translateY(-50%) scale(1);
+      box-shadow: 0 3px 12px rgba(255, 75, 43, 0.5), 0 0 0 2px rgba(255,255,255,0.9);
+    }
+    50% {
+      transform: rotate(-12deg) translateY(-50%) scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 75, 43, 0.7), 0 0 0 2px rgba(255,255,255,1), 0 0 15px rgba(255, 75, 43, 0.4);
+    }
+  }
+
+  @keyframes tagSweep {
+    0% {
+      left: -100%;
+    }
+    50%, 100% {
+      left: 100%;
+    }
+  }
+
+  /* Fix overflow - only for items, not swiper containers */
+  .section-{{ section.id }} .button-list__item,
+  .section-{{ section.id }} .swiper-slide {
+    overflow: visible !important;
+  }
+
+  .section-{{ section.id }} .section__content {
+    padding-top: 15px;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .section-{{ section.id }} .button-tag-badge {
+      top: -2px;
+      right: 0px;
+      font-size: 8px;
+      padding: 3px 7px;
+      transform: rotate(-10deg) translateY(-50%);
+      box-shadow: 0 2px 8px rgba(255, 75, 43, 0.5), 0 0 0 1.5px rgba(255,255,255,0.9);
+    }
+
+    .section-{{ section.id }} .section__content {
+      padding-top: 20px;
+    }
+
+    @keyframes tagShine {
+      0%, 100% {
+        transform: rotate(-10deg) translateY(-50%) scale(1);
+        box-shadow: 0 2px 8px rgba(255, 75, 43, 0.5), 0 0 0 1.5px rgba(255,255,255,0.9);
+      }
+      50% {
+        transform: rotate(-10deg) translateY(-50%) scale(1.06);
+        box-shadow: 0 3px 12px rgba(255, 75, 43, 0.7), 0 0 0 1.5px rgba(255,255,255,1);
+      }
+    }
+  }
 {%- endstyle -%}
 
 <div
@@ -52,6 +146,9 @@
                 data-index="{{ forloop.index0 }}"
                 {{ block.shopify_attributes }}
               >
+                {%- if block.settings.tag_text != blank -%}
+                  <span class="button-tag-badge">{{ block.settings.tag_text }}</span>
+                {%- endif -%}
                 <{{ tag }}
                   class="button-item__inner hover-wrapper btn {{ section.settings.item_button_style }}"
                   {% if block.settings.button_link != blank %}
@@ -448,6 +545,16 @@
           "type": "url",
           "id": "button_link",
           "label": "t:general.button.button_link.label"
+        },
+        {
+          "type": "header",
+          "content": "Promotion Tag"
+        },
+        {
+          "type": "text",
+          "id": "tag_text",
+          "label": "Tag text",
+          "info": "Leave blank to hide. E.g: 5% OFF, HOT, SALE, NEW"
         },
         {
           "type": "header",
