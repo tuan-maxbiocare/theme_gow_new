@@ -28,8 +28,8 @@
 
   .section-{{ section.id }} .button-tag-badge {
     position: absolute;
-    top: -4px;
-    right: -4px;
+    top: 0px;
+    right: -0px;
     background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
     color: #ffffff;
     font-size: 9px;
@@ -41,8 +41,7 @@
     box-shadow: 0 3px 12px rgba(255, 75, 43, 0.5), 0 0 0 2px rgba(255,255,255,0.9);
     text-transform: uppercase;
     letter-spacing: 0.8px;
-    transform: rotate(-12deg) translateY(-50%);
-    transform-origin: center center;
+    transform: translateY(-50%);
     animation: tagShine 2s ease-in-out infinite;
   }
 
@@ -59,11 +58,11 @@
 
   @keyframes tagShine {
     0%, 100% {
-      transform: rotate(-12deg) translateY(-50%) scale(1);
+      transform: translateY(-50%) scale(1);
       box-shadow: 0 3px 12px rgba(255, 75, 43, 0.5), 0 0 0 2px rgba(255,255,255,0.9);
     }
     50% {
-      transform: rotate(-12deg) translateY(-50%) scale(1.05);
+      transform: translateY(-50%) scale(1.05);
       box-shadow: 0 4px 20px rgba(255, 75, 43, 0.7), 0 0 0 2px rgba(255,255,255,1), 0 0 15px rgba(255, 75, 43, 0.4);
     }
   }
@@ -92,9 +91,9 @@
     .section-{{ section.id }} .button-tag-badge {
       top: -2px;
       right: 0px;
-      font-size: 8px;
+      font-size: 10px;
       padding: 3px 7px;
-      transform: rotate(-10deg) translateY(-50%);
+      transform: translateY(-50%);
       box-shadow: 0 2px 8px rgba(255, 75, 43, 0.5), 0 0 0 1.5px rgba(255,255,255,0.9);
     }
 
@@ -104,11 +103,11 @@
 
     @keyframes tagShine {
       0%, 100% {
-        transform: rotate(-10deg) translateY(-50%) scale(1);
+        transform: translateY(-50%) scale(1);
         box-shadow: 0 2px 8px rgba(255, 75, 43, 0.5), 0 0 0 1.5px rgba(255,255,255,0.9);
       }
       50% {
-        transform: rotate(-10deg) translateY(-50%) scale(1.06);
+        transform: translateY(-50%) scale(1.06);
         box-shadow: 0 3px 12px rgba(255, 75, 43, 0.7), 0 0 0 1.5px rgba(255,255,255,1);
       }
     }
