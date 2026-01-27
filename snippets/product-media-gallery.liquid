@@ -59,7 +59,26 @@
   style="--media-item-gap: {{ media_item_gap }}px; --media-item-gap-mobile: {{ media_item_gap_mobile }}px"
 >
   <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
+  {%- liquid
+    assign current_variant = product.selected_or_first_available_variant
+    assign compare_at_price = current_variant.compare_at_price
+    assign variant_price = current_variant.price
+    assign show_discount_tag = false
+    assign discount_percent = 0
+    if compare_at_price > variant_price
+      assign show_discount_tag = true
+      assign discount_percent = compare_at_price | minus: variant_price | times: 100 | divided_by: compare_at_price | round
+    endif
+  -%}
   <div class="product__media-gallery-viewer-wrap bg-white relative{{ slider_css_class }} {% if section.settings.show_image_border %}blocks-radius{% endif %}">
+    <div
+      class="product-gallery-discount-tag md:hidden"
+      data-discount-tag
+      data-product-id="{{ product.id }}"
+      {% unless show_discount_tag %}style="display: none;"{% endunless %}
+    >
+      <span class="discount-tag__text" data-discount-text>Save -{{ discount_percent }}%</span>
+    </div>
     <div
       id="GalleryViewer-{{ section.id }}"
       class="product__media-gallery-viewer blocks-radius swiper"
@@ -282,3 +301,100 @@ if (!customElements.get('media-gallery')) {
   transition: transform 0.3s ease-in-out;
 } {% endcomment %}
 </style> {% endcomment %}
+
+<style>
+  /* Product Gallery Discount Tag - Mobile Only */
+  .product-gallery-discount-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 800;
+    padding: 6px 12px;
+    border-radius: 4px;
+    box-shadow: 0 3px 12px rgba(255, 75, 43, 0.5), 0 0 0 2px rgba(255,255,255,0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    animation: discountTagShine 2s ease-in-out infinite;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .product-gallery-discount-tag.is-hidden {
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+  }
+
+  .product-gallery-discount-tag::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: discountTagSweep 2s ease-in-out infinite;
+    border-radius: 4px;
+  }
+
+  @keyframes discountTagShine {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 3px 12px rgba(255, 75, 43, 0.5), 0 0 0 2px rgba(255,255,255,0.9);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(255, 75, 43, 0.7), 0 0 0 2px rgba(255,255,255,1), 0 0 15px rgba(255, 75, 43, 0.4);
+    }
+  }
+
+  @keyframes discountTagSweep {
+    0% { left: -100%; }
+    50%, 100% { left: 100%; }
+  }
+</style>
+
+<script>
+  // Wait for DOM and FoxTheme to be ready
+  function initGalleryDiscountTag() {
+    function updateDiscountTag(variant) {
+      const discountTag = document.querySelector('[data-discount-tag]');
+      if (!discountTag) return;
+
+      const discountText = discountTag.querySelector('[data-discount-text]');
+      if (!discountText) return;
+
+      if (variant && variant.compare_at_price && variant.compare_at_price > variant.price) {
+        const discountPercent = Math.round((variant.compare_at_price - variant.price) * 100 / variant.compare_at_price);
+        discountText.textContent = 'Save -' + discountPercent + '%';
+        discountTag.style.display = '';
+      } else {
+        discountTag.style.display = 'none';
+      }
+    }
+
+    if (typeof FoxTheme !== 'undefined' && FoxTheme.pubsub && FoxTheme.pubsub.PUB_SUB_EVENTS) {
+      FoxTheme.pubsub.subscribe(FoxTheme.pubsub.PUB_SUB_EVENTS.variantChange, function(event) {
+        if (event && event.data && event.data.variant) {
+          updateDiscountTag(event.data.variant);
+        }
+      });
+    }
+
+    document.addEventListener('variant:changed', function(event) {
+      console.log('variant:changed event received', event);
+      if (event.detail && event.detail.variant) {
+        updateDiscountTag(event.detail.variant);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGalleryDiscountTag);
+  } else {
+    setTimeout(initGalleryDiscountTag, 100);
+  }
+</script>
