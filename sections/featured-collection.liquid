@@ -47,6 +47,17 @@ calc(100vw / {{ columns_desktop }})
     --f-columns-md: {{ columns_tablet }};
     --f-columns-xl: {{ columns_desktop }};
   }
+
+  @media (max-width: 767px) {
+    .section-{{ section.id }} .mobile-grid-2-cols {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--f-grid-gap, 15px);
+    }
+    .section-{{ section.id }} .mobile-grid-2-cols .f-column {
+      width: 100%;
+    }
+  }
 {% endstyle %}
 
 {% render 'divider',
@@ -191,8 +202,14 @@ calc(100vw / {{ columns_desktop }})
             endif
 
             assign enable_swipe_mobile = false
-            if section.settings.swipe_on_mobile and total_items > columns_mobile
+            assign mobile_layout = section.settings.mobile_layout
+            if section.settings.swipe_on_mobile and total_items > columns_mobile and mobile_layout == 'slider'
               assign enable_swipe_mobile = true
+            endif
+
+            assign mobile_grid_mode = false
+            if section.settings.swipe_on_mobile and mobile_layout == 'grid'
+              assign mobile_grid_mode = true
             endif
 
             assign enable_slider = false
@@ -222,7 +239,7 @@ calc(100vw / {{ columns_desktop }})
               {% endif %}
               id="product-list-{{ block.id }}"
             >
-              <div class="featured-collection__items products-list f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_slider %} swiper-wrapper{% endif %}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}">
+              <div class="featured-collection__items products-list f-grid f-grid--gap-{{ section.settings.column_gap }} f-grid--row-gap-{{ section.settings.row_gap }}{% if enable_slider %} swiper-wrapper{% endif %}{% if enable_swipe_mobile %} swipe-mobile__inner{% endif %}{% if mobile_grid_mode %} mobile-grid-2-cols{% endif %}">
                 {% if show_banner %}
                   <div class="f-column{% if enable_slider %} swiper-slide{% endif %}">
                     {% render 'card-image',
@@ -853,6 +870,23 @@ calc(100vw / {{ columns_desktop }})
       "id": "swipe_on_mobile",
       "default": true,
       "label": "t:general.mobile.swipe_on_mobile.label"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout style",
+      "default": "slider",
+      "options": [
+        {
+          "value": "slider",
+          "label": "Slider"
+        },
+        {
+          "value": "grid",
+          "label": "Grid (2 columns)"
+        }
+      ],
+      "visible_if": "{{ section.settings.swipe_on_mobile == true }}"
     },
     {
       "type": "checkbox",
