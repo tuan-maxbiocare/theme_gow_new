@@ -1,44 +1,11 @@
 {%- liquid
-  # Khởi tạo biến variant rỗng
   assign variant = ''
-  
-  # Kiểm tra nếu setting use_highest_discount_variant = true
-  if use_highest_discount_variant
-    # Tìm variant có % giảm giá cao nhất
-    assign highest_discount = 0
-    for v in product.variants
-      if v.available and v.compare_at_price > 0 and v.price > 0
-        # Tính % giảm giá: (compare_at_price - price) / compare_at_price * 100
-        assign discount_percent = v.compare_at_price | minus: v.price | times: 100 | divided_by: v.compare_at_price
-        
-        # So sánh và lưu variant có % giảm cao nhất
-        if discount_percent > highest_discount
-          assign highest_discount = discount_percent
-          assign variant = v
-        endif
-      endif
-    endfor
-    
-    # Nếu không tìm thấy variant có giảm giá, lấy variant available đầu tiên
-    if variant == ''
-      for v in product.variants
-        if v.available and v.price > 0
-          assign variant = v
-          break
-        endif
-      endfor
-    endif
-  else
-    # Logic cũ: nếu setting = false, lấy variant available đầu tiên
     for v in product.variants
       if v.available and v.price > 0
         assign variant = v
         break
       endif
     endfor
-  endif
-
-  # Fallback: nếu vẫn không có variant, dùng variant mặc định
   if variant == ''
     assign variant = product.selected_or_first_available_variant
   endif

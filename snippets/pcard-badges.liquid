@@ -4,15 +4,25 @@
   else
     assign target_variant = product.selected_or_first_available_variant
   endif
-  assign compare_at_price = selected_variant.compare_at_price
-  assign price = selected_variant.price
+
+  assign max_discount_percent = 0
   assign on_sale = false
+
+  for variant in product.variants
+    if variant.compare_at_price > variant.price
+      assign on_sale = true
+      assign variant_discount = variant.compare_at_price | minus: variant.price | times: 100.0 | divided_by: variant.compare_at_price | round
+      if variant_discount > max_discount_percent
+        assign max_discount_percent = variant_discount
+      endif
+    endif
+  endfor
+
+  assign compare_at_price = target_variant.compare_at_price
+  assign price = target_variant.price
   assign badge_style = settings.badges_corner_radius
   assign badge_position = settings.badges_position
   assign tag_badge_position = settings.tag_badges_position | default: badge_position
-  if compare_at_price > price
-    assign on_sale = true
-  endif
 
   assign show_soldout = settings.pcard_show_badge_soldout
   assign show_on_sale_badge = settings.pcard_show_sale_badge
@@ -49,21 +59,19 @@
 
       {%- case settings.pcard_sale_badge_type -%}
         {%- when 'show_percentage' -%}
-          {%- if compare_at_price > price -%}
-            {%- assign amount = compare_at_price | minus: price | times: 100 | divided_by: compare_at_price | round -%}
-          {%- endif -%}
+          {%- assign amount = max_discount_percent -%}
 
           {%- if badge_style == 'circle' -%}
             <span class="f-badge f-badge--sale badge-circle badge-position--{{ badge_position }}" aria-hidden="true">
-              <span>{{ amount }}%</span>
-              <span>OFF</span>
+              <span>Up to</span>
+              <span>{{ amount }}% OFF</span>
             </span>
           {%- else -%}
             <span
               class="f-badge f-badge--sale badge-{{ badge_style }} badge-position--{{ badge_position }}"
               aria-hidden="true"
             >
-              {{ amount }}% OFF
+              Up to {{ amount }}% OFF
             </span>
           {%- endif -%}
 
