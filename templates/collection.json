@@ -86,11 +86,11 @@
     "image_cards_tGLK6N": {
       "type": "image-cards",
       "blocks": {
-        "image_card_yeA8Fx": {
+        "image_card_QQdHeR": {
           "type": "image_card",
           "settings": {
             "color_scheme": "",
-            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_1.value }}",
+            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_2.value }}",
             "image_ratio": "adapt",
             "image_overlay_opacity": 0,
             "content_position": "bottom-left",
@@ -124,11 +124,11 @@
             "enable_preload_image": false
           }
         },
-        "image_card_QQdHeR": {
+        "image_card_yeA8Fx": {
           "type": "image_card",
           "settings": {
             "color_scheme": "",
-            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_2.value }}",
+            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_1.value }}",
             "image_ratio": "adapt",
             "image_overlay_opacity": 0,
             "content_position": "bottom-left",
@@ -202,8 +202,8 @@
         }
       },
       "block_order": [
-        "image_card_yeA8Fx",
         "image_card_QQdHeR",
+        "image_card_yeA8Fx",
         "image_card_fLmxrD"
       ],
       "name": "t:sections.image-cards.name",
@@ -444,6 +444,7 @@
           "settings": {
             "button_label": "Living Room",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         },
@@ -452,6 +453,7 @@
           "settings": {
             "button_label": "Planters",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         },
@@ -460,6 +462,7 @@
           "settings": {
             "button_label": "Gravel Rug",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         },
@@ -468,6 +471,7 @@
           "settings": {
             "button_label": "Table Mirror",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         },
@@ -476,6 +480,7 @@
           "settings": {
             "button_label": "Table Wears",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         },
@@ -484,6 +489,7 @@
           "settings": {
             "button_label": "Dining Decor",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         },
@@ -492,6 +498,7 @@
           "settings": {
             "button_label": "Ray Table Lamp",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         },
@@ -500,6 +507,7 @@
           "settings": {
             "button_label": "Chairs",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         },
@@ -508,6 +516,7 @@
           "settings": {
             "button_label": "Living Room",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         },
@@ -516,6 +525,7 @@
           "settings": {
             "button_label": "Planters",
             "button_link": "",
+            "tag_text": "",
             "icon": "check"
           }
         }
