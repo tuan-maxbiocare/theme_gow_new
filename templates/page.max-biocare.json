@@ -292,6 +292,7 @@
           "settings": {
             "button_label": "Brain & Cardiovascular Health",
             "button_link": "shopify://collections/brain-health-supplements",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -301,6 +302,7 @@
           "settings": {
             "button_label": "Eye Health",
             "button_link": "shopify://collections/eye-supplements",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -310,6 +312,7 @@
           "settings": {
             "button_label": "Gastrointestinal Health",
             "button_link": "shopify://collections/digestive-supplements",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -319,6 +322,7 @@
           "settings": {
             "button_label": "General Health & Well-being",
             "button_link": "shopify://collections/health-and-wellbeing",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -328,6 +332,7 @@
           "settings": {
             "button_label": "Immune Health",
             "button_link": "shopify://collections/immune-support-supplement",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -337,6 +342,7 @@
           "settings": {
             "button_label": "Metabolic",
             "button_link": "shopify://collections/metabolic",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -346,6 +352,7 @@
           "settings": {
             "button_label": "Muscular & Skeletal Health",
             "button_link": "shopify://collections/bone-and-joint-supplements",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -355,6 +362,7 @@
           "settings": {
             "button_label": "PMS & Menopause",
             "button_link": "shopify://collections/menopause-supplements",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -364,6 +372,7 @@
           "settings": {
             "button_label": "Pregnancy & Breastfeeding",
             "button_link": "shopify://collections/pregnancy-breastfeeding-care",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -373,6 +382,7 @@
           "settings": {
             "button_label": "Respiratory Health",
             "button_link": "shopify://collections/respiratory-health",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -382,6 +392,7 @@
           "settings": {
             "button_label": "Sexual & Reproductive Health",
             "button_link": "shopify://collections/sexual-and-reproductive-health-care",
+            "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
           }
@@ -572,11 +583,11 @@
     "image_cards_Kbfi39": {
       "type": "image-cards",
       "blocks": {
-        "image_card_AFtJPN": {
+        "image_card_j7GakB": {
           "type": "image_card",
           "settings": {
             "color_scheme": "",
-            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_1.value }}",
+            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_2.value }}",
             "image_ratio": "adapt",
             "image_overlay_opacity": 0,
             "content_position": "bottom-left",
@@ -610,11 +621,11 @@
             "enable_preload_image": false
           }
         },
-        "image_card_j7GakB": {
+        "image_card_AFtJPN": {
           "type": "image_card",
           "settings": {
             "color_scheme": "",
-            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_2.value }}",
+            "image": "{{ metaobjects.promotion_small_banner[\"promotion-small-banner\"].image_1.value }}",
             "image_ratio": "adapt",
             "image_overlay_opacity": 0,
             "content_position": "bottom-left",
@@ -688,8 +699,8 @@
         }
       },
       "block_order": [
-        "image_card_AFtJPN",
         "image_card_j7GakB",
+        "image_card_AFtJPN",
         "image_card_Crieb4"
       ],
       "name": "t:sections.image-cards.name",
