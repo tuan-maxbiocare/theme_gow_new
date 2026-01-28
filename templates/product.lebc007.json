@@ -1100,6 +1100,9 @@
         "collapsible_VKW69T",
         "testimonial_9aWEbm"
       ],
+      "custom_css": [
+        ".accordion-card .accordion-details {padding-inline: 2.1rem;}"
+      ],
       "name": "t:sections.custom-content.name",
       "settings": {
         "tab_content_html": "",
