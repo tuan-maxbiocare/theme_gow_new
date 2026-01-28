@@ -507,128 +507,6 @@
         "show_progress_bar": true
       }
     },
-    "comparison_table_custom_yqM7Wk": {
-      "type": "comparison-table-custom",
-      "blocks": {
-        "heading_Ag3wYB": {
-          "type": "heading",
-          "settings": {
-            "icon-1": "chat",
-            "image-1": "shopify://shop_images/GoWshop_miniicon.svg",
-            "title-1": "{{ product.metafields.custom.section_comparison_factors.value.heading_title_1.value }}",
-            "icon-2": "chat",
-            "image-2": "shopify://shop_images/GoWshop_miniicon.svg",
-            "title-2": "{{ product.metafields.custom.section_comparison_factors.value.heading_title_2.value }}",
-            "icon-3": "chat",
-            "image-3": "shopify://shop_images/GoWshop_miniicon.svg",
-            "title-3": "{{ product.metafields.custom.section_comparison_factors.value.heading_title_3.value }}",
-            "icon-4": "chat",
-            "image-4": "shopify://shop_images/GoWshop_miniicon.svg",
-            "title-4": "{{ product.metafields.custom.section_comparison_factors.value.heading_title_4.value }}",
-            "icon-5": "chat",
-            "image-5": "shopify://shop_images/GoWshop_miniicon.svg",
-            "title-5": "{{ product.metafields.custom.section_comparison_factors.value.heading_title_5.value }}",
-            "icon-6": "chat",
-            "image-6": "shopify://shop_images/GoWshop_miniicon.svg",
-            "title-6": "{{ product.metafields.custom.section_comparison_factors.value.heading_title_6.value }}",
-            "icon-7": "chat",
-            "title-7": "",
-            "icon-8": "chat",
-            "title-8": "",
-            "icon-9": "chat",
-            "title-9": "",
-            "icon-10": "chat",
-            "title-10": ""
-          }
-        },
-        "content_CFRcjm": {
-          "type": "content",
-          "settings": {
-            "product": "{{ product.metafields.custom.section_comparison_factors.value.product_1.value }}",
-            "text-1": "{{ product.metafields.custom.section_comparison_factors.value.content_1 | metafield_tag }}"
-          }
-        },
-        "content_J8F48h": {
-          "type": "content",
-          "settings": {
-            "product": "{{ product.metafields.custom.section_comparison_factors.value.product_2.value }}",
-            "text-1": "{{ product.metafields.custom.section_comparison_factors.value.content_2 | metafield_tag }}"
-          }
-        },
-        "content_aY4iBg": {
-          "type": "content",
-          "settings": {
-            "product": "{{ product.metafields.custom.section_comparison_factors.value.product_3.value }}",
-            "text-1": "{{ product.metafields.custom.section_comparison_factors.value.content_3 | metafield_tag }}"
-          }
-        },
-        "content_V9NP4K": {
-          "type": "content",
-          "settings": {
-            "product": "{{ product.metafields.custom.section_comparison_factors.value.product_4.value }}",
-            "text-1": "{{ product.metafields.custom.section_comparison_factors.value.content_4 | metafield_tag }}"
-          }
-        },
-        "content_8KGXd8": {
-          "type": "content",
-          "settings": {
-            "product": "{{ product.metafields.custom.section_comparison_factors.value.product_5.value }}",
-            "text-1": "{{ product.metafields.custom.section_comparison_factors.value.content_5 | metafield_tag }}"
-          }
-        },
-        "content_CQ9mmq": {
-          "type": "content",
-          "settings": {
-            "product": "{{ product.metafields.custom.section_comparison_factors.value.product_6.value }}",
-            "text-1": "<p>{{ product.metafields.custom.section_comparison_factors.value.content_6 | metafield_tag }}</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading_Ag3wYB",
-        "content_CFRcjm",
-        "content_J8F48h",
-        "content_aY4iBg",
-        "content_V9NP4K",
-        "content_8KGXd8",
-        "content_CQ9mmq"
-      ],
-      "name": "Comparison table Custom",
-      "settings": {
-        "product_list": [
-          "little-etoile-care-head-to-toe-wash-for-delicate-skin-0-month",
-          "little-etoile-care-head-to-toe-bubbly-wash-for-delicate-skin-0-months-250ml",
-          "little-etoile-care-nourishing-lotion-0-months-250ml"
-        ],
-        "template_product": "<p>product-w-o-rich-content</p>",
-        "container": "fixed",
-        "color_scheme": "scheme-7",
-        "header_layout": "horizontal",
-        "section_header_alignment": "left",
-        "section_header_alignment_mobile": "inherit",
-        "subheading": "",
-        "heading": "Find Your Perfect Match",
-        "highlight_style": "none",
-        "highlight_font_style": "italic",
-        "highlight_style_color": "",
-        "highlight_text_color": "",
-        "heading_size": "h1",
-        "description": "",
-        "text_size": "text-base",
-        "button_label": "",
-        "button_link": "",
-        "note_comparison_table_custom": "Non irritating, paraben free, hypoallergenic",
-        "button_style": "btn--primary",
-        "button_icon": "none",
-        "icon_size": 20,
-        "text_line_limit": "4-lines",
-        "show_view_more_button": false,
-        "show_section_divider": false,
-        "divider_width": "fixed",
-        "padding_top": 50,
-        "padding_bottom": 50
-      }
-    },
     "shop_the_feed_nmi6UQ": {
       "type": "shop-the-feed",
       "blocks": {
@@ -788,7 +666,6 @@
     "breadcrumbs",
     "main",
     "custom_content_wXYQgB",
-    "comparison_table_custom_yqM7Wk",
     "shop_the_feed_nmi6UQ",
     "recently_viewed_products_jqebfK",
     "redirect_product_review_fLXcEL",
