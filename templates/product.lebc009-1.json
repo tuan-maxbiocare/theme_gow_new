@@ -317,7 +317,7 @@
             "content": "{{ product.description }}",
             "custom_liquid": "",
             "page": "",
-            "open": true,
+            "open": false,
             "use_subtext_color": false
           }
         },
@@ -507,6 +507,103 @@
         "show_progress_bar": true
       }
     },
+    "multicolumn_LL68Ra": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_U748yn": {
+          "type": "column",
+          "settings": {
+            "image": "{{ product.metafields.custom.complete_the_routine_section.value.step_1_image.value }}",
+            "title": "{{ product.metafields.custom.complete_the_routine_section.value.step_1_heading.value }}",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "{{ product.metafields.custom.complete_the_routine_section.value.step_1_rich_text | metafield_tag }}",
+            "text_size": "text-base",
+            "button_label": "Shop now",
+            "button_link": "{{ product.metafields.custom.complete_the_routine_section.value.step_1_url.value }}",
+            "button_style": "btn--secondary",
+            "button_icon": "none"
+          }
+        },
+        "column_EQiYKq": {
+          "type": "column",
+          "settings": {
+            "image": "{{ product.metafields.custom.complete_the_routine_section.value.step_2_image.value }}",
+            "title": "{{ product.metafields.custom.complete_the_routine_section.value.step_2_heading.value }}",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "{{ product.metafields.custom.complete_the_routine_section.value.step_2_rich_text | metafield_tag }}",
+            "text_size": "text-base",
+            "button_label": "Shop now",
+            "button_link": "{{ product.metafields.custom.complete_the_routine_section.value.step_2_url.value }}",
+            "button_style": "btn--secondary",
+            "button_icon": "none"
+          }
+        },
+        "column_AexcTk": {
+          "type": "column",
+          "settings": {
+            "image": "{{ product.metafields.custom.complete_the_routine_section.value.step_3_image.value }}",
+            "title": "{{ product.metafields.custom.complete_the_routine_section.value.step_3_heading.value }}",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "{{ product.metafields.custom.complete_the_routine_section.value.step_3_rich_text | metafield_tag }}",
+            "text_size": "text-base",
+            "button_label": "Shop now",
+            "button_link": "{{ product.metafields.custom.complete_the_routine_section.value.step_3_url.value }}",
+            "button_style": "btn--secondary",
+            "button_icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "column_U748yn",
+        "column_EQiYKq",
+        "column_AexcTk"
+      ],
+      "name": "Complete the routine",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "scheme-ad0594a0-5177-4b6d-aa8d-d337831372dd",
+        "content_width": 100,
+        "section_header_alignment": "center",
+        "section_header_alignment_mobile": "inherit",
+        "subheading": "",
+        "heading": "{{ product.metafields.custom.complete_the_routine_section.value.routine_big_heading.value }}",
+        "highlight_style": "none",
+        "highlight_font_style": "italic",
+        "highlight_style_color": "",
+        "highlight_text_color": "",
+        "heading_size": "h1",
+        "description": "<p>{{ product.metafields.custom.complete_the_routine_section.value.routine_text_under_big_heading.value }}</p>",
+        "text_size": "text-lg",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "btn--underline",
+        "button_icon": "none",
+        "content_alignment": "center",
+        "show_col_count": false,
+        "show_image": true,
+        "columns_desktop": 3,
+        "column_gap": "large",
+        "row_gap": "inherit",
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "show_section_divider": false,
+        "divider_width": "fixed",
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
     "shop_the_feed_nmi6UQ": {
       "type": "shop-the-feed",
       "blocks": {
@@ -658,103 +755,6 @@
       "settings": {
         "include_margins": true,
         "padding_top": 0,
-        "padding_bottom": 0
-      }
-    },
-    "multicolumn_LL68Ra": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_U748yn": {
-          "type": "column",
-          "settings": {
-            "image": "{{ product.metafields.custom.complete_the_routine_section.value.step_1_image.value }}",
-            "title": "{{ product.metafields.custom.complete_the_routine_section.value.step_1_heading.value }}",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h4",
-            "text": "{{ product.metafields.custom.complete_the_routine_section.value.step_1_rich_text | metafield_tag }}",
-            "text_size": "text-base",
-            "button_label": "Shop now",
-            "button_link": "{{ product.metafields.custom.complete_the_routine_section.value.step_1_url.value }}",
-            "button_style": "btn--secondary",
-            "button_icon": "none"
-          }
-        },
-        "column_EQiYKq": {
-          "type": "column",
-          "settings": {
-            "image": "{{ product.metafields.custom.complete_the_routine_section.value.step_2_image.value }}",
-            "title": "{{ product.metafields.custom.complete_the_routine_section.value.step_2_heading.value }}",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h4",
-            "text": "{{ product.metafields.custom.complete_the_routine_section.value.step_2_rich_text | metafield_tag }}",
-            "text_size": "text-base",
-            "button_label": "Shop now",
-            "button_link": "{{ product.metafields.custom.complete_the_routine_section.value.step_2_url.value }}",
-            "button_style": "btn--secondary",
-            "button_icon": "none"
-          }
-        },
-        "column_AexcTk": {
-          "type": "column",
-          "settings": {
-            "image": "{{ product.metafields.custom.complete_the_routine_section.value.step_3_image.value }}",
-            "title": "{{ product.metafields.custom.complete_the_routine_section.value.step_3_heading.value }}",
-            "highlight_style": "none",
-            "highlight_font_style": "italic",
-            "highlight_style_color": "",
-            "highlight_text_color": "",
-            "heading_size": "h4",
-            "text": "{{ product.metafields.custom.complete_the_routine_section.value.step_3_rich_text | metafield_tag }}",
-            "text_size": "text-base",
-            "button_label": "Shop now",
-            "button_link": "{{ product.metafields.custom.complete_the_routine_section.value.step_3_url.value }}",
-            "button_style": "btn--secondary",
-            "button_icon": "none"
-          }
-        }
-      },
-      "block_order": [
-        "column_U748yn",
-        "column_EQiYKq",
-        "column_AexcTk"
-      ],
-      "name": "Complete the routine",
-      "settings": {
-        "container": "fixed",
-        "color_scheme": "scheme-ad0594a0-5177-4b6d-aa8d-d337831372dd",
-        "content_width": 100,
-        "section_header_alignment": "center",
-        "section_header_alignment_mobile": "inherit",
-        "subheading": "",
-        "heading": "{{ product.metafields.custom.complete_the_routine_section.value.routine_big_heading.value }}",
-        "highlight_style": "none",
-        "highlight_font_style": "italic",
-        "highlight_style_color": "",
-        "highlight_text_color": "",
-        "heading_size": "h1",
-        "description": "<p>{{ product.metafields.custom.complete_the_routine_section.value.routine_text_under_big_heading.value }}</p>",
-        "text_size": "text-lg",
-        "button_label": "",
-        "button_link": "",
-        "button_style": "btn--underline",
-        "button_icon": "none",
-        "content_alignment": "center",
-        "show_col_count": false,
-        "show_image": true,
-        "columns_desktop": 3,
-        "column_gap": "large",
-        "row_gap": "inherit",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "show_section_divider": false,
-        "divider_width": "fixed",
-        "padding_top": 100,
         "padding_bottom": 0
       }
     }
