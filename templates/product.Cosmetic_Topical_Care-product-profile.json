@@ -1038,7 +1038,7 @@
             "icon": "none",
             "width": "33%",
             "alignment": "start",
-            "heading": "Full Ingredients list",
+            "heading": "Full Ingredient List",
             "content": "{{ product.metafields.custom.custom_section_ingredients.value.full_ingredients_rich_text | metafield_tag }}",
             "custom_liquid": "",
             "page": "",
