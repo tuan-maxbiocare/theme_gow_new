@@ -85,7 +85,11 @@
             "icon_2": "check",
             "heading_2": "{{ product.metafields.custom.section_benefits.value.short_benefit_2.value }}",
             "icon_3": "check",
-            "heading_3": "{{ product.metafields.custom.section_benefits.value.short_benefit_3.value }}"
+            "heading_3": "{{ product.metafields.custom.section_benefits.value.short_benefit_3.value }}",
+            "icon_4": "check",
+            "heading_4": "",
+            "icon_5": "check",
+            "heading_5": ""
           }
         },
         "custom_image_yDEbTc": {
@@ -173,7 +177,11 @@
             "icon_2": "lightning",
             "heading_2": "<strong>Fast Dispatch​ |</strong> Leaves warehouse in <strong>1-2 business days</strong>​",
             "icon_3": "star-four",
-            "heading_3": ""
+            "heading_3": "",
+            "icon_4": "check",
+            "heading_4": "",
+            "icon_5": "check",
+            "heading_5": ""
           }
         },
         "complementary": {
@@ -329,7 +337,7 @@
             "content": "{{ product.description }}",
             "custom_liquid": "",
             "page": "",
-            "open": true,
+            "open": false,
             "use_subtext_color": false
           }
         }
