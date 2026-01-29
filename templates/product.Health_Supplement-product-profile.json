@@ -341,7 +341,7 @@
             "content": "{{ product.description }}",
             "custom_liquid": "",
             "page": "",
-            "open": true,
+            "open": false,
             "use_subtext_color": false
           }
         }
