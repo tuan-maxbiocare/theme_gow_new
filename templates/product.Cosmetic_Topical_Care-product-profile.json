@@ -167,7 +167,6 @@
         },
         "text_with_buttons_WPkFJn": {
           "type": "text_with_buttons",
-          "disabled": true,
           "settings": {
             "heading": "Also available on",
             "heading_size": "h4",
