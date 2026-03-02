@@ -1,5 +1,5 @@
-{{ 'component-card-img-with-product.css' | asset_url | stylesheet_tag }}
-{{ 'section-featured-products-tab.css' | asset_url | stylesheet_tag }}
+{{ 'component-card-img-with-product.css' | asset_url | stylesheet_tag: preload: true }}
+{{ 'section-featured-products-tab.css' | asset_url | stylesheet_tag: preload: true }}
 
 {%- style -%}
   .section-{{ section.id }} {

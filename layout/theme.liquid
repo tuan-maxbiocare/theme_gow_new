@@ -279,27 +279,15 @@
           childList: true,
           subtree: true
         });
+
+        // Disconnect after page load — no more dynamic CSS added
+        window.addEventListener('load', function() {
+          observer.disconnect();
+        }, { once: true });
       })();
     </script>
 
-    {%- if request.page_type contains 'customers/' -%}
-      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
-    {%- endif -%}
-
-    <script>
-      if (Shopify.designMode) {
-        document.documentElement.classList.add('shopify-design-mode');
-      }
-    </script>
-
-    {%- if request.design_mode -%}
-      <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
-    {%- endif -%}
-
-    {%- render 'js-variables' -%}
-
-
-      <!-- Microsoft Clarity Tracking Code -->
+    <!-- Microsoft Clarity Tracking Code -->
     <script type="text/javascript">
       window.addEventListener('DOMContentLoaded', function() {
         var clarityLoaded = false;

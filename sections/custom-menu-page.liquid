@@ -47,7 +47,15 @@
     <div class="breadcrumb-container">
       {%- if section.settings.image_picker_menu != blank -%}
         <a href="{{ routes.root_url }}">
-          <img src="{{ section.settings.image_picker_menu | img_url: '300x' }}" alt="Logo" class="breadcrumb-logo">
+          {{
+            section.settings.image_picker_menu
+            | image_url: width: 300
+            | image_tag:
+              loading: 'lazy',
+              width: 300,
+              alt: 'Logo',
+              class: 'breadcrumb-logo'
+          }}
         </a>
       {%- endif -%}
 

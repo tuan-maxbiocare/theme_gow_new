@@ -5,7 +5,15 @@
     <div class="page-review-reward__left">
       {% if section.settings.banner_image %}
         <div class="page-review-reward__banner">
-          <img src="{{ section.settings.banner_image | img_url: 'master' }}" alt="Banner">
+          {{
+            section.settings.banner_image
+            | image_url: width: 1200
+            | image_tag:
+              loading: 'lazy',
+              width: section.settings.banner_image.width,
+              height: section.settings.banner_image.height,
+              alt: 'Banner'
+          }}
         </div>
       {% endif %}
 
@@ -26,17 +34,38 @@
           <div class="page-review-reward__buttons">
             {% if section.settings.link_shopify != blank %}
               <button class="page-review-reward__button" data-link="{{ section.settings.link_shopify }}">
-                <img src="{{ section.settings.image_shopify | image_url }}" alt="Garden of Wellness e-shop">
+                {{
+                  section.settings.image_shopify
+                  | image_url: width: 200
+                  | image_tag:
+                    loading: 'lazy',
+                    width: 200,
+                    alt: 'Garden of Wellness e-shop'
+                }}
               </button>
             {% endif %}
             {% if section.settings.link_cw != blank %}
               <button class="page-review-reward__button" data-link="{{ section.settings.link_cw }}">
-                <img src="{{ section.settings.image_cw | image_url }}" alt="Chemist Warehouse">
+                {{
+                  section.settings.image_cw
+                  | image_url: width: 200
+                  | image_tag:
+                    loading: 'lazy',
+                    width: 200,
+                    alt: 'Chemist Warehouse'
+                }}
               </button>
             {% endif %}
             {% if section.settings.link_aws != blank %}
               <button class="page-review-reward__button" data-link="{{ section.settings.link_aws }}">
-                <img src="{{ section.settings.image_aws | image_url }}" alt="Amazon AU">
+                {{
+                  section.settings.image_aws
+                  | image_url: width: 200
+                  | image_tag:
+                    loading: 'lazy',
+                    width: 200,
+                    alt: 'Amazon AU'
+                }}
               </button>
             {% endif %}
           </div>
@@ -48,11 +77,25 @@
         <p class="page-review-reward__form-title">Which platform did you purchase the product from?</p>
         <div id="platform-selection" class="platform-selection">
           <button class="platform-btn" data-platform="gow">
-            <img src="{{ section.settings.image_shopify | image_url }}" alt="Garden of Wellness">
+            {{
+              section.settings.image_shopify
+              | image_url: width: 200
+              | image_tag:
+                loading: 'lazy',
+                width: 200,
+                alt: 'Garden of Wellness'
+            }}
             <span>Garden of Wellness</span>
           </button>
           <button class="platform-btn" data-platform="cw">
-            <img src="{{ section.settings.image_cw | image_url }}" alt="Chemist Warehouse">
+            {{
+              section.settings.image_cw
+              | image_url: width: 200
+              | image_tag:
+                loading: 'lazy',
+                width: 200,
+                alt: 'Chemist Warehouse'
+            }}
             <span>Chemist Warehouse</span>
           </button>
         </div>

@@ -1,4 +1,4 @@
-{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag: preload: true }}
 {%- liquid
   assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   assign enable_swipe_mobile = false

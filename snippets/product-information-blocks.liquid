@@ -605,13 +605,15 @@
                       </span>
                       <span class="btn btn--icon btn--icon-pill">
                         {% if block.settings.share_twitter_icon != blank %}
-                          <img
-                            src="{{ block.settings.share_twitter_icon | img_url: '128x128' }}"
-                            alt="Chemist Warehouse"
-                            loading="lazy"
-                            width="{{ block.settings.share_icon_size }}px"
-                            height="{{ block.settings.share_icon_size }}px"
-                          >
+                          {{
+                            block.settings.share_twitter_icon
+                            | image_url: width: 128
+                            | image_tag:
+                              loading: 'lazy',
+                              width: block.settings.share_icon_size,
+                              height: block.settings.share_icon_size,
+                              alt: 'Chemist Warehouse'
+                          }}
                         {% else %}
                           {% render 'icon-twitter', size: 'large' %}
                         {% endif %}
@@ -630,13 +632,15 @@
                       </span>
                       <span class="btn btn--icon btn--icon-pill">
                         {% if block.settings.share_facebook_icon != blank %}
-                          <img
-                            src="{{ block.settings.share_facebook_icon | img_url: '128x128' }}"
-                            alt="Amazon"
-                            loading="lazy"
-                            width="{{ block.settings.share_icon_size }}px"
-                            height="{{ block.settings.share_icon_size }}px"
-                          >
+                          {{
+                            block.settings.share_facebook_icon
+                            | image_url: width: 128
+                            | image_tag:
+                              loading: 'lazy',
+                              width: block.settings.share_icon_size,
+                              height: block.settings.share_icon_size,
+                              alt: 'Amazon'
+                          }}
                         {% else %}
                           {% render 'icon-twitter', size: 'large' %}
                         {% endif %}

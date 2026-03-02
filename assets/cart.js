@@ -916,9 +916,14 @@ class FreeShippingGoal extends HTMLElement {
 
   connectedCallback() {
     this.updateShippingGloal(Number(this.dataset.cartTotal));
-    document.addEventListener('cart:updated', (event) => {
+    this._onCartUpdated = (event) => {
       this.updateShippingGloal(event.detail.cart.items_subtotal_price);
-    });
+    };
+    document.addEventListener('cart:updated', this._onCartUpdated);
+  }
+
+  disconnectedCallback() {
+    document.removeEventListener('cart:updated', this._onCartUpdated);
   }
 
   updateShippingGloal(amount) {

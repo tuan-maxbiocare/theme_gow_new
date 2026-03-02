@@ -127,7 +127,15 @@ class StickyHeader extends BasicHeader {
 
     // Register toggle button event if needed
     if (this.collapseOnScroll && this.navigationToggleButton) {
-      this.navigationToggleButton.addEventListener('click', this.handleNavigationToggle.bind(this));
+      this._handleNavigationToggle = this.handleNavigationToggle.bind(this);
+      this.navigationToggleButton.addEventListener('click', this._handleNavigationToggle);
+    }
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener('scroll', this._handleScroll);
+    if (this.collapseOnScroll && this.navigationToggleButton && this._handleNavigationToggle) {
+      this.navigationToggleButton.removeEventListener('click', this._handleNavigationToggle);
     }
   }
 
@@ -135,7 +143,8 @@ class StickyHeader extends BasicHeader {
   initStickyHeader() {
     this.headerSection.classList.add(this.classes.headerSticky);
     this.headerSection.dataset.stickyType = this.dataset.stickyType;
-    window.addEventListener('scroll', this.handleScroll.bind(this), { passive: true });
+    this._handleScroll = this.handleScroll.bind(this);
+    window.addEventListener('scroll', this._handleScroll, { passive: true });
   }
 
   // Handle navigation toggle button click

@@ -127,7 +127,7 @@
         {%- if image != blank -%}
           {%- liquid
             assign image_sizes = image_sizes | default: ''
-            assign image_widths = '165, 360, 535, 750, 940, 1100, 1300, 1500, 1780, 2000, 2200, 2400, 2600, 2800, 3000, ' | append: image.width
+            assign image_widths = '165, 360, 535, 750, 940, 1100, 1300, 1500, 1780, 2000, ' | append: image.width
           -%}
           {%- if image_mobile -%}
             <source
