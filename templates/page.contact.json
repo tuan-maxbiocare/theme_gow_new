@@ -1,9 +1,21 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "breadcrumbs_xYaBHj": {
       "type": "breadcrumbs",
       "settings": {
-        "text_alignment": "start"
+        "container": "fixed",
+        "text_alignment": "start",
+        "padding_top": 16,
+        "padding_bottom": 20
       }
     },
     "main": {
@@ -12,6 +24,7 @@
         ".rich-text {max-width: 67rem;}"
       ],
       "settings": {
+        "container": "fixed",
         "text_alignment": "left",
         "padding_top": 0,
         "padding_bottom": 40
@@ -49,7 +62,8 @@
             "icon_heading_size_3": "h5",
             "icon_text_3": "<p>Mon – Fri, 7:30 AM – 4:00 PM PT <br/>Sat, 8:00 AM – 1:00 PM PT <br/>Sun, Closed</p>",
             "icon_vertical_alignment_3": "start",
-            "button_label": "Find a Store",
+            "button_label": "",
+            "button_link": "",
             "button_style": "btn--primary",
             "button_icon": "none"
           }
@@ -105,6 +119,7 @@
       ],
       "custom_css": [],
       "settings": {
+        "container": "fixed",
         "section_color_scheme": "",
         "heading": "",
         "highlight_style": "none",
