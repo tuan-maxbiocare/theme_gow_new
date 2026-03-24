@@ -20,6 +20,7 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "custom_css": [
         ".rich-text {max-width: 67rem;}"
       ],
@@ -30,6 +31,37 @@
         "padding_bottom": 40
       }
     },
+    "rich_text_wDUGyJ": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_AmtbbK": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact Garden of Wellness",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "hd1"
+          }
+        }
+      },
+      "block_order": [
+        "heading_AmtbbK"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "container": "fixed",
+        "color_scheme": "",
+        "use_color_scheme_in_container": false,
+        "content_spacing": "standard",
+        "content_alignment": "center",
+        "padding_top": 50,
+        "padding_bottom": 80,
+        "show_section_divider": false,
+        "divider_width": "fixed"
+      }
+    },
     "form": {
       "type": "contact-form",
       "blocks": {
@@ -37,30 +69,30 @@
           "type": "sidebar",
           "settings": {
             "position": "right",
-            "heading": "Need Help?",
+            "heading": "",
             "heading_size": "h3",
-            "text": "<p>To us, design has a broader purpose and as you can read about on this website, we are on a mission. </p>",
+            "text": "",
             "text_size": "text-base",
             "icon_1": "map-pin",
             "icon_width_1": 32,
-            "icon_color_1": "#1d349a",
+            "icon_color_1": "#006343",
             "icon_heading_1": "General Office",
             "icon_heading_size_1": "h5",
-            "icon_text_1": "<p>382 NE 191st St # 87394 Miami</p>",
+            "icon_text_1": "<p>667 Chapel Street, Nam Yarra, Vic, 3141</p>",
             "icon_vertical_alignment_1": "start",
             "icon_2": "phone",
             "icon_width_2": 28,
             "icon_color_2": "#1d349a",
-            "icon_heading_2": "Call Us",
+            "icon_heading_2": "",
             "icon_heading_size_2": "h5",
-            "icon_text_2": "<p>+1 888-234-1234 (tool-free)</p>",
+            "icon_text_2": "",
             "icon_vertical_alignment_2": "start",
             "icon_3": "clock",
             "icon_width_3": 28,
             "icon_color_3": "#1d349a",
-            "icon_heading_3": "Working Hour",
+            "icon_heading_3": "",
             "icon_heading_size_3": "h5",
-            "icon_text_3": "<p>Mon – Fri, 7:30 AM – 4:00 PM PT <br/>Sat, 8:00 AM – 1:00 PM PT <br/>Sun, Closed</p>",
+            "icon_text_3": "",
             "icon_vertical_alignment_3": "start",
             "button_label": "",
             "button_link": "",
@@ -75,7 +107,7 @@
             "heading": "Phone Number",
             "placeholder": "Phone Number",
             "required": true,
-            "full_width": false,
+            "full_width": true,
             "select_options": "",
             "checkbox_checked_value": "Yes",
             "checkbox_uncheck_value": "No",
@@ -84,6 +116,7 @@
         },
         "custom_field_8mNKKQ": {
           "type": "custom_field",
+          "disabled": true,
           "settings": {
             "field_type": "text",
             "heading": "Order Number",
@@ -98,6 +131,7 @@
         },
         "custom_field_d63Kne": {
           "type": "custom_field",
+          "disabled": true,
           "settings": {
             "field_type": "select",
             "heading": "Country",
@@ -199,6 +233,7 @@
         "text_CtJBtL",
         "text_dGmg9m"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-3",
         "direction": "left",
@@ -214,6 +249,7 @@
   "order": [
     "breadcrumbs_xYaBHj",
     "main",
+    "rich_text_wDUGyJ",
     "form",
     "scrolling_promotion_Fy9Yhn"
   ]
