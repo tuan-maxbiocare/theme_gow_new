@@ -117,5 +117,18 @@
       </motion-element>
       {%- assign motion_delay = motion_delay | plus: 50 -%}
     {%- endif -%}
+    {%- if sidebar.settings.google_map_iframe != blank -%}
+      <motion-element
+        class="help-sidebar__map block"
+        data-motion="fade-up"
+        data-motion-delay="{{ motion_delay }}"
+        style="margin-top: 16px;"
+      >
+        <div class="help-sidebar__google-map" style="width: 100%; height: {{ sidebar.settings.map_height }}px; overflow: hidden; border-radius: var(--blocks-radius, 0);">
+          {{ sidebar.settings.google_map_iframe }}
+        </div>
+      </motion-element>
+      {%- assign motion_delay = motion_delay | plus: 50 -%}
+    {%- endif -%}
   </div>
 </div>
