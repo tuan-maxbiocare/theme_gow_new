@@ -320,7 +320,8 @@
       "custom_css": [
         "@media (min-width: 1024px) {.product__info-wrapper {border: 1px solid #e5e7eb; background: #ffffff; border-radius: 12px; padding: 2.5rem 2.5rem; }}",
         ".btn--icon-pill,.btn--icon.btn--icon-pill {border: 1px solid #e5e7eb;}",
-        ".btn--icon-circle {border: 1px solid #e5e7eb;}"
+        ".btn--icon-circle {border: 1px solid #e5e7eb;}",
+        ".flex.flex-wrap.gap-2 {gap: 4px !important;}"
       ],
       "settings": {
         "color_scheme": "scheme-11",
