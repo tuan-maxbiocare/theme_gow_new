@@ -505,6 +505,7 @@
         },
         "featured_collection_diW9UJ": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "collection": "brain-and-cognitive-supplement",
             "image": "shopify://shop_images/GOW-the-emporium_Brain_Vision.webp",
