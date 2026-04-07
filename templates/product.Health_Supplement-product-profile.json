@@ -118,7 +118,7 @@
         "text_YFHWBx": {
           "type": "text",
           "settings": {
-            "text": "<em>* Always read the label and follow the directions for use. If symptoms persist, talk to your health professional. Please refer to any health and product warnings below.</em>",
+            "text": "<em>Always read the label and follow the directions for use. If symptoms persist, talk to your health professional. Please refer to any health and product warnings below.</em>",
             "text_style": "body"
           }
         },
