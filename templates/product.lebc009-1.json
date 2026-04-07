@@ -96,7 +96,7 @@
           "type": "custom_image",
           "settings": {
             "custom_image": "{{ product.metafields.custom.section_benefits.value.selling_points_with_icon_image.value }}",
-            "image_width": 250
+            "image_width": 350
           }
         },
         "variant_picker": {
