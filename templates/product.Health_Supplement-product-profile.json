@@ -115,6 +115,13 @@
             "variant_button_checked_text_color": "#006343"
           }
         },
+        "text_YFHWBx": {
+          "type": "text",
+          "settings": {
+            "text": "Always read the label and follow the directions for use. If symptoms persist, talk to your health professional. Please refer to any health and product warnings below.",
+            "text_style": "body"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -294,6 +301,7 @@
         "gsc_countdown_timer_countdown_mADR34",
         "icon_with_text",
         "variant_picker",
+        "text_YFHWBx",
         "buy_buttons",
         "promotion_alert_ehRPKj",
         "timer_aDbfnn",
