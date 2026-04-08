@@ -118,7 +118,7 @@
         "text_YFHWBx": {
           "type": "text",
           "settings": {
-            "text": "<em>Always read the label and follow the directions for use. If symptoms persist, talk to your health professional. Please refer to any health and product warnings below.</em>",
+            "text": "<em>Always read the label and follow the directions for use. Please refer to any health and product warnings below.</em>",
             "text_style": "body"
           }
         },
@@ -896,7 +896,7 @@
         "text_dGfCih": {
           "type": "text",
           "settings": {
-            "text": "<p>Fucoidan is a type of dietary fibre​ extracted from marine seaweed.​​​​</p><p>Fucoidan from Undaria pinnatifida has been shown clinically to support immune system health.*</p>",
+            "text": "<p>Fucoidan is a type of dietary fibre​ extracted from marine seaweed.​​​​</p><p>Fucoidan from<em> Undaria pinnatifida</em> has been shown clinically to support immune system health.</p>",
             "subtext_color": true
           }
         },
