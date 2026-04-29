@@ -227,11 +227,19 @@
                   role="status"
                 >
                   <span>{{ 'products.product.type' | t }}:</span>
+                  {%- assign type_collection = product.metafields.custom.type_collection.value -%}
+                  {%- if type_collection -%}
+                    {%- assign type_url = type_collection.url -%}
+                    {%- assign type_label = type_collection.title -%}
+                  {%- else -%}
+                    {%- assign type_url = product.type | url_for_type -%}
+                    {%- assign type_label = product.type -%}
+                  {%- endif -%}
                   <a
-                    href="{{ product.type | url_for_type }}"
+                    href="{{ type_url }}"
                     class="btn--link font-body-bolder text-body"
                   >
-                    {{- product.type -}}
+                    {{ type_label }}
                   </a>
                 </p>
               {%- endif -%}
