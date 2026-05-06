@@ -129,6 +129,12 @@
         </button>
       </div>
     {%- endif -%}
+    {%- if enable_image_zoom -%}
+      <div class="product__media-icon-outer btn btn--white btn--small btn--icon btn--icon-circle" aria-hidden="true">
+        <span class="btn__text flex items-center">{%- render 'icon-zoom' -%}</span>
+      </div>
+    {%- endif -%}
+    {% render 'product-awards', product: product, context: 'detail', badge_size: 90 %}
   </div>
   {%- if media_count > 1 and media_layout contains 'carousel' or mobile_thumbnails == 'show' -%}
     {%- liquid

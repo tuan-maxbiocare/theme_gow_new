@@ -794,23 +794,57 @@ product-info.use-color-scheme-in-container > .product {
     color: Window;
   }
 }
-/* Award badges - product detail page */
+
+
+
+
+/* Create explicit stacking context on viewer-wrap so all z-indexes inside are isolated and predictable */
+.product__media-gallery-viewer-wrap {
+  isolation: isolate;
+}
+/* Award badges inside gallery viewer */
 .product-awards--detail {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  z-index: 3;
-  display: none;
+  z-index: 5;
+  display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.75rem;
+  pointer-events: none;
 }
 .product-awards--detail .product-awards__badge {
   width: 90px;
   height: 90px;
   object-fit: contain;
+  display: block;
 }
-@media (min-width: 750px) {
-  .product-awards--detail {
-    display: flex;
+/* Swiper buttons and outer zoom icon: z-index 10 — above awards (5) in same stacking context */
+.product__media-gallery-viewer-wrap .swiper-button {
+  z-index: 10;
+}
+.product__media-icon-outer {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity var(--duration-default);
+  pointer-events: none;
+}
+.product__media-gallery-viewer-wrap:hover .product__media-icon-outer {
+  opacity: 1;
+}
+/* Hide original zoom icon inside swiper to avoid duplicate */
+.product__media-gallery-viewer .product__media-icon {
+  display: none;
+}
+@media (max-width: 749px) {
+  .product-awards--detail .product-awards__badge {
+    width: 52px;
+    height: 52px;
+  }
+  .product__media-icon-outer {
+    display: none;
   }
 }
