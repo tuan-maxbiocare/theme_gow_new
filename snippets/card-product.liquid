@@ -286,6 +286,7 @@
       </a>
       {%- render 'pcard-badges', product: product, selected_variant: variant -%}
       {%- render 'pcard-flash-sale', product: product -%}
+      {%- render 'product-awards', product: product, context: 'card', badge_size: 62 -%}
       {%- if enable_quick_view -%}
         <button
           class="product-card__quickview btn btn--icon-circle {{ settings.quickview_button_style }} no-js-hidden"

@@ -1,0 +1,15 @@
+{%- assign award_images = product.metafields.custom.award_images.value -%}
+{%- if award_images != blank and award_images.size > 0 -%}
+  <div class="product-awards product-awards--{{ context | default: 'card' }}">
+    {%- for award in award_images -%}
+      <img
+        src="{{ award | image_url: width: 120 }}"
+        alt="{{ award.alt | default: 'Award badge' }}"
+        class="product-awards__badge"
+        loading="lazy"
+        width="{{ badge_size | default: 80 }}"
+        height="{{ badge_size | default: 80 }}"
+      >
+    {%- endfor -%}
+  </div>
+{%- endif -%}
