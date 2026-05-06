@@ -505,6 +505,24 @@
     "multicolumn_WKfFq6": {
       "type": "multicolumn",
       "blocks": {
+        "column_wWj9qn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/2026-Mum-Central-Awards-LOGO.png",
+            "title": "",
+            "highlight_style": "none",
+            "highlight_font_style": "italic",
+            "highlight_style_color": "",
+            "highlight_text_color": "",
+            "heading_size": "h4",
+            "text": "",
+            "text_size": "text-base",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "btn--underline",
+            "button_icon": "none"
+          }
+        },
         "column_i8Wcze": {
           "type": "column",
           "settings": {
@@ -597,6 +615,7 @@
         },
         "column_MBwUCj": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/LE_award_badges_4.webp",
             "title": "",
@@ -723,6 +742,7 @@
         }
       },
       "block_order": [
+        "column_wWj9qn",
         "column_i8Wcze",
         "column_paAyUV",
         "column_pbrwVL",
