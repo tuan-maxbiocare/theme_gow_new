@@ -839,6 +839,12 @@ product-info.use-color-scheme-in-container > .product {
 .product__media-gallery-viewer .product__media-icon {
   display: none;
 }
+/* Awards and zoom icon hidden when not on first slide */
+.product-awards--slide-hidden {
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s;
+}
 @media (max-width: 749px) {
   .product-awards--detail .product-awards__badge {
     width: 52px;
