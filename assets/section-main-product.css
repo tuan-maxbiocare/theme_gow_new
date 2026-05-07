@@ -805,8 +805,8 @@ product-info.use-color-scheme-in-container > .product {
 /* Award badges inside gallery viewer */
 .product-awards--detail {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 5rem;
+  right: 2rem;
   z-index: 5;
   display: flex;
   flex-direction: column;
