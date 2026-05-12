@@ -1207,6 +1207,9 @@
         "collections_dWtFP8",
         "image_card_mAhPnf"
       ],
+      "custom_css": [
+        ".product-awards--card .product-awards__badge {width: 40px; height: 40px; object-fit: contain;}"
+      ],
       "name": "t:sections.custom-content.name",
       "settings": {
         "tab_content_html": "",
