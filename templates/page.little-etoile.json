@@ -798,7 +798,7 @@
           "type": "image_card",
           "settings": {
             "color_scheme": "scheme-13",
-            "image": "shopify://shop_images/GoWshop_Little-Etoile_Category_1000x1000-2.webp",
+            "image": "shopify://shop_images/GoWshop_Little-Etoile_Category_1000x1000-v2.webp",
             "image_ratio": "1/1",
             "image_overlay_opacity": 10,
             "content_position": "split-bottom-button",
