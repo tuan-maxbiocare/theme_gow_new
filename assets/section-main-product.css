@@ -814,8 +814,8 @@ product-info.use-color-scheme-in-container > .product {
   pointer-events: none;
 }
 .product-awards--detail .product-awards__badge {
-  width: 90px;
-  height: 90px;
+  width: 150px;
+  height: 150px;
   object-fit: contain;
   display: block;
 }

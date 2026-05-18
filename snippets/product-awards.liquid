@@ -3,7 +3,7 @@
   <div class="product-awards product-awards--{{ context | default: 'card' }}">
     {%- for award in award_images -%}
       <img
-        src="{{ award | image_url: width: 120 }}"
+        src="{{ award | image_url: width: 300 }}"
         alt="{{ award.alt | default: 'Award badge' }}"
         class="product-awards__badge"
         loading="lazy"
