@@ -471,7 +471,7 @@
         "featured_collection_qVctyQ": {
           "type": "featured_collection",
           "settings": {
-            "collection": "pregnancy-and-breastfeeding-supplements",
+            "collection": "pregnancy-breastfeeding-supplements",
             "image": "shopify://shop_images/GOW-the-emporium_Pregnancy_Breastfeeding.webp",
             "title": ""
           }
@@ -1236,7 +1236,7 @@
         "collection_jQQQTX": {
           "type": "collection",
           "settings": {
-            "collection": "pregnancy-and-breastfeeding-supplements",
+            "collection": "pregnancy-breastfeeding-supplements",
             "title": "",
             "show_banner": true,
             "color_scheme": "scheme-13",
