@@ -331,7 +331,7 @@
           "type": "button_item",
           "settings": {
             "button_label": "Immune Health",
-            "button_link": "shopify://collections/immune-support-supplement",
+            "button_link": "shopify://collections/immune-support-supplements",
             "tag_text": "",
             "icon": "none",
             "icon_img": "shopify://shop_images/GoWshop_Website_Category1.webp"
@@ -474,7 +474,7 @@
         "featured_collection_DH7EwG": {
           "type": "featured_collection",
           "settings": {
-            "collection": "immune-support-supplement",
+            "collection": "immune-support-supplements",
             "image": "shopify://shop_images/GOW-the-emporium_Immune_Health.webp",
             "title": ""
           }
