@@ -151,6 +151,108 @@
   </div>
 </div>
 
+
+{% comment %} localStorage.removeItem("customer-tag-swimcare-campain"); {% endcomment %}
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+  const currentPath = window.location.pathname;
+  const key = "customer-tag-swimcare-campain";
+  
+  // Chỉ chạy trên trang /account
+  if (currentPath === "/account") {
+    // Lấy dữ liệu localStorage
+    const itemStr = localStorage.getItem(key);
+    if (!itemStr) return;
+
+    try {
+      const item = JSON.parse(itemStr);
+      const now = new Date().getTime();
+
+      // Kiểm tra hạn của localStorage (1 ngày)
+      if (now > item.expiry) {
+        localStorage.removeItem(key);
+        return;
+      }
+
+      const tagValue = item.value;
+      const customerId = "{{ customer.id | default: 0 }}"; // Lấy ID từ Liquid (nếu đã đăng nhập)
+      
+      // --- 1️⃣ HIỂN THỊ POPUP THÔNG BÁO GIẢM GIÁ ---
+      const popup = document.createElement("div");
+      popup.innerHTML = `
+        <div id="discount-popup" style="
+          position: fixed;
+          top: 0; left: 0;
+          width: 100%; height: 100%;
+          background: rgba(0,0,0,0.5);
+          display: flex; align-items: center; justify-content: center;
+          z-index: 9999;">
+          <div style="
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+            <h3>🎉 Bạn đã được giảm giá đặc biệt!</h3>
+            <p>Chiến dịch: <strong>${tagValue}</strong></p>
+            <p>Ưu đãi sẽ tự động áp dụng khi mua hàng.</p>
+            <button id="close-discount-popup" style="
+              background: #000;
+              color: #fff;
+              border: none;
+              padding: 0.6rem 1.2rem;
+              border-radius: 6px;
+              cursor: pointer;
+              margin-top: 1rem;">
+              OK
+            </button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(popup);
+      document.getElementById("close-discount-popup").addEventListener("click", function() {
+        document.getElementById("discount-popup").remove();
+      });
+
+      // --- 2️⃣ GỌI API VỀ SERVER ---
+      // ⚠️ Bạn cần thay URL này bằng endpoint thật của bạn (ví dụ: /apps/api/tag-campaign)
+      const apiUrl = "https://your-server-domain.com/api/customer-tag";
+      console.log(apiUrl, 'salkdalksd');
+
+      // Tạo signature (bảo mật nhẹ)
+      const secret = "{{ shop.domain | hmac_sha256: customer.id }}"; // Tạo HMAC đơn giản phía Liquid (Shopify)
+      
+      const payload = {
+        customer_id: customerId,
+        campaign: tagValue,
+        shop: "{{ shop.domain }}",
+        signature: secret
+      };
+
+      // Gửi request POST
+      const response = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        console.error("❌ Gửi API thất bại:", response.status);
+      } else {
+        console.log("✅ Gửi API thành công:", await response.json());
+      }
+
+    } catch (error) {
+      console.error("Lỗi xử lý localStorage:", error);
+    }
+  }
+});
+</script>
+
+
 {% schema %}
 {
   "name": "t:sections.main-account.name",
