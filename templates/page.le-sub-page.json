@@ -141,7 +141,7 @@
       ],
       "name": "Tabs Navigation",
       "settings": {
-        "container": "fixed",
+        "container": "full",
         "color_scheme": "",
         "section_header_alignment": "left",
         "section_header_alignment_mobile": "inherit",
