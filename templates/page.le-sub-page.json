@@ -139,9 +139,12 @@
         "button_item_gpkBLy",
         "button_item_9m67Lh"
       ],
+      "custom_css": [
+        ".btn {padding: 0;}"
+      ],
       "name": "Tabs Navigation",
       "settings": {
-        "container": "full",
+        "container": "fixed",
         "color_scheme": "",
         "section_header_alignment": "left",
         "section_header_alignment_mobile": "inherit",
@@ -163,7 +166,7 @@
         "padding_bottom": 20,
         "custom_image": "shopify://shop_images/GoWshop_LE_LOGO_700x282-02.webp",
         "custom_image_width": 250,
-        "custom_image_margin_right": 130,
+        "custom_image_margin_right": 0,
         "custom_image_link": "shopify://pages/little-etoile"
       }
     },
@@ -172,7 +175,7 @@
       "name": "t:sections.spacer.name",
       "settings": {
         "show_section_divider": true,
-        "divider_width": "full",
+        "divider_width": "fixed",
         "padding_top": 0,
         "padding_bottom": 50,
         "padding_top_mobile": 0,
