@@ -141,7 +141,7 @@
         "button_item_CpwREB"
       ],
       "custom_css": [
-        ".btn{padding: 0;}"
+        ".btn {padding: 0;}"
       ],
       "name": "Tabs Navigation",
       "settings": {
@@ -166,7 +166,7 @@
         "padding_top": 20,
         "padding_bottom": 20,
         "custom_image": "shopify://shop_images/GoWshop_LE_LOGO_700x282-02.webp",
-        "custom_image_width": 200,
+        "custom_image_width": 250,
         "custom_image_margin_right": 0,
         "custom_image_link": "shopify://pages/little-etoile"
       }
