@@ -115,7 +115,6 @@
         },
         "button_item_CMweqK": {
           "type": "button_item",
-          "disabled": true,
           "settings": {
             "open_in_new_tab": false,
             "button_label": "Swim Care",
