@@ -2085,7 +2085,7 @@ scroll-progress-bar .progress-bar,
 button,
 .btn {
   --buttons-transform-default: capitalize;
-  --buttons-padding: 3.2rem;
+  /* --buttons-padding: 3.2rem; */
   font-size: 100%;
   position: relative;
   display: inline-flex;
