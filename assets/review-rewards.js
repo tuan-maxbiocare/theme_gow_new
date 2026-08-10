@@ -199,12 +199,19 @@
 
     // Initialize review popup handlers
     function initReviewPopup() {
-        const closeBtn = document.querySelector('.review-popup__close');
-        const overlay = document.querySelector('.review-popup__overlay');
         const popup = document.getElementById('review-popup');
         const iframe = document.getElementById('review-iframe');
 
         if (!popup || !iframe) return;
+
+        // Move popup to be a direct child of <body> so its fixed positioning
+        // can't be clipped/trapped by ancestor wrappers (e.g. .site-wrapper's overflow: clip)
+        if (popup.parentElement !== document.body) {
+            document.body.appendChild(popup);
+        }
+
+        const closeBtn = popup.querySelector('.review-popup__close');
+        const overlay = popup.querySelector('.review-popup__overlay');
 
         const closePopup = () => {
             popup.classList.remove('active');
