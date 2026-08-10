@@ -275,9 +275,6 @@
 
 .review-popup {
     display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
 }
 
 .review-popup.active {
@@ -285,13 +282,19 @@
 }
 
 .review-popup__overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 99999;
 }
 
 .review-popup__content {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     width: 90%;
@@ -301,6 +304,7 @@
     background: white;
     border-radius: 10px;
     overflow: hidden;
+    z-index: 100000;
 }
 
 .review-popup__content iframe {
@@ -316,6 +320,7 @@
     font-size: 30px;
     background: none;
     border: none;
+    color: #fff;
     cursor: pointer;
     z-index: 10;
 }
