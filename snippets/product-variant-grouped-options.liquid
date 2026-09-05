@@ -1,0 +1,213 @@
+{% comment %}
+  Renders a product option as a two-step picker: parent → child.
+
+  Kích hoạt khi tên option chứa dấu '|' và các giá trị có dạng "Cha | Con",
+  ví dụ option "Package | Plus" với các giá trị "Package | 250mL x 1",
+  "Plus | 250mL x 2"...
+
+  Đây thuần tuý là lớp hiển thị: các input con vẫn là radio thật, giữ nguyên
+  data-option-value-id, nên luồng chọn variant của theme không thay đổi.
+  Các nút cha KHÔNG có thuộc tính form nên không bao giờ được submit.
+
+  Accepts:
+  - product: {Object} product object.
+  - option: {Object} current product_option object.
+  - block: {Object} block object.
+  - wrap_class: {String} class dùng chung với các option thường.
+  - attach_size_chart: {Boolean} có gắn nút size chart vào bước 2 không (optional).
+  - size_chart_modal_id: {String} id modal size chart (optional).
+
+  Usage:
+  {% render 'product-variant-grouped-options',
+    product: product,
+    option: option,
+    block: block,
+    wrap_class: wrap_class
+  %}
+{% endcomment %}
+{%- liquid
+  assign product_form_id = 'product-form-' | append: section.id
+  assign swatch_size = block.settings.swatch_size | default: 40
+  assign name_parts = option.name | split: '|'
+-%}
+
+{%- comment -%} Gom danh sách cha theo đúng thứ tự xuất hiện của option values {%- endcomment -%}
+{%- assign parent_keys = '|' -%}
+{%- assign parent_names = '' -%}
+{%- for value in option.values -%}
+  {%- capture value_string %}{{ value }}{% endcapture -%}
+  {%- assign value_string = value_string | strip -%}
+  {%- unless value_string contains '|' -%}
+    {%- continue -%}
+  {%- endunless -%}
+  {%- assign parent_name = value_string | split: '|' | first | strip -%}
+  {%- capture parent_key %}|{{ parent_name }}|{% endcapture -%}
+  {%- unless parent_keys contains parent_key -%}
+    {%- assign parent_keys = parent_keys | append: parent_name | append: '|' -%}
+    {%- if parent_names == '' -%}
+      {%- assign parent_names = parent_name -%}
+    {%- else -%}
+      {%- assign parent_names = parent_names | append: '~~' | append: parent_name -%}
+    {%- endif -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+{%- liquid
+  assign parent_list = parent_names | split: '~~'
+
+  # Tên option trùng đúng tập hợp các cha (vd "Package | Plus") => tên đó chỉ là
+  # cờ đánh dấu chứ không phải nhãn. So sánh không phụ thuộc thứ tự, để việc kéo
+  # thả lại thứ tự option value trong Admin không làm sai nhãn.
+  assign marker_mode = false
+  if name_parts.size == parent_list.size
+    assign marker_mode = true
+    for part in name_parts
+      assign part_trim = part | strip
+      assign part_key = '|' | append: part_trim | append: '|'
+      unless parent_keys contains part_key
+        assign marker_mode = false
+      endunless
+    endfor
+  endif
+
+  # Tách giá trị đang chọn thành cha / con
+  capture selected_string
+    echo option.selected_value
+  endcapture
+  assign selected_string = selected_string | strip
+  assign selected_parent = ''
+  assign selected_child = selected_string
+  if selected_string contains '|'
+    assign selected_parent = selected_string | split: '|' | first | strip
+    assign selected_child = selected_string | remove_first: selected_parent | remove_first: '|' | strip
+  endif
+
+  if marker_mode
+    assign step1_label = ''
+    assign step2_label = selected_parent | default: option.name
+  else
+    assign step1_label = name_parts[0] | strip
+    assign step2_label = name_parts[1] | default: option.name | strip
+  endif
+-%}
+
+{%- comment -%} Bước 1: chọn nhóm cha {%- endcomment -%}
+<div
+  class="{{ wrap_class }}"
+  role="radiogroup"
+  aria-label="{{ step1_label | default: option.name | escape }}"
+  data-variant-parents="{{ option.position }}"
+  data-marker-mode="{{ marker_mode }}"
+  style="--swatch-size: {{ swatch_size }}px;"
+>
+  {%- if step1_label != blank -%}
+    <div class="block w-full p-0">
+      <div class="form__label">
+        <div class="flex flex-wrap gap-2">
+          <span class="font-body-bolder">{{ step1_label }}:</span>
+          <span class="text-subtext" data-selected-parent-value>{{ selected_parent }}</span>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+  {%- for parent_name in parent_list -%}
+    {%- capture parent_input_id -%}
+      VariantParent-{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}
+    {%- endcapture -%}
+    <input
+      type="radio"
+      id="{{ parent_input_id }}"
+      name="VariantParentGroup-{{ section.id }}-{{ option.position }}"
+      value="{{ parent_name | escape }}"
+      data-parent-value="{{ parent_name | escape }}"
+      {% if parent_name == selected_parent %}
+        checked
+      {% endif %}
+    >
+    <label for="{{ parent_input_id }}" class="product-variant-options-variant-label-sale relative block">
+      {{ parent_name }}
+    </label>
+  {%- endfor -%}
+</div>
+
+{%- comment -%} Bước 2: chọn giá trị con của nhóm cha đang chọn {%- endcomment -%}
+<fieldset
+  class="{{ wrap_class }}"
+  data-option-position="{{ option.position }}"
+  data-option-name="{{ option.name | escape }}"
+  data-variant-children="{{ option.position }}"
+  style="--swatch-size: {{ swatch_size }}px;"
+>
+  <legend class="block w-full p-0">
+    <div class="form__label">
+      <div class="flex flex-wrap gap-2">
+        <span class="font-body-bolder" data-child-group-label>{{ step2_label }}:</span>
+        <span class="text-subtext" data-selected-swatch-value="{{ option.name }}">{{ selected_child }}</span>
+      </div>
+      {%- if attach_size_chart and size_chart_modal_id != blank -%}
+        <button
+          class="open-size-chart no-js-hidden btn--link tracking-normal"
+          aria-controls="{{ size_chart_modal_id }}"
+          aria-haspopup="dialog"
+        >
+          {{ 'products.product.open_size_chart' | t }}
+        </button>
+      {%- endif -%}
+    </div>
+  </legend>
+  {%- for value in option.values -%}
+    {%- assign v = value.variant -%}
+    {%- if v and v.price == 0 -%}
+      {%- continue -%}
+    {%- endif -%}
+    {%- liquid
+      assign option_disabled = true
+      if value.available
+        assign option_disabled = false
+      endif
+
+      capture value_string
+        echo value
+      endcapture
+      assign value_string = value_string | strip
+
+      assign value_parent = ''
+      assign value_child = value_string
+      if value_string contains '|'
+        assign value_parent = value_string | split: '|' | first | strip
+        assign value_child = value_string | remove_first: value_parent | remove_first: '|' | strip
+      endif
+    -%}
+    {%- capture input_id -%}
+      {{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}
+    {%- endcapture -%}
+    <input
+      type="radio"
+      id="{{ input_id }}"
+      name="{{ option.name | escape }}-{{ option.position }}"
+      value="{{ value | escape }}"
+      form="{{ product_form_id }}"
+      data-parent-value="{{ value_parent | escape }}"
+      data-child-value="{{ value_child | escape }}"
+      data-product-url="{{ value.product_url }}"
+      data-option-value-id="{{ value.id }}"
+      {% if value.selected %}
+        checked
+      {% endif %}
+      {% if option_disabled %}
+        class="disabled"
+      {% endif %}
+    >
+    <label for="{{ input_id }}" class="product-variant-options-variant-label-sale relative block">
+      {{ value_child }}
+      <span class="visually-hidden label-unavailable">
+        {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+      </span>
+      {%- if value.variant.compare_at_price and value.variant.compare_at_price > value.variant.price -%}
+        {%- assign discount_amount = value.variant.compare_at_price | minus: value.variant.price -%}
+        {%- assign discount_percent = discount_amount | times: 100 | divided_by: value.variant.compare_at_price -%}
+        <span class="product-variant-options-sale-badge"> {{ discount_percent | round }}% off </span>
+      {%- endif -%}
+    </label>
+  {%- endfor -%}
+</fieldset>
