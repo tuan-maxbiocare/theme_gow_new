@@ -83,6 +83,7 @@
         },
         "custom_liquid_CxKJbt": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "<p style=\"margin-bottom: -10px;\">Package</p>"
           }
