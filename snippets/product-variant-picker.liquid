@@ -60,7 +60,14 @@
       z-index: 0;
       background: linear-gradient(to bottom left, transparent calc(50% - var(--variant-pills-border-width)), var(--color-foreground-lighten-19) 50%, transparent calc(50% + var(--variant-pills-border-width))) no-repeat !important;
   }
-    
+
+  /* Giá trị option không tồn tại với lựa chọn hiện tại: ẩn hoàn toàn.
+     --hidden: do ma trận variant. --hidden-group: do chế độ chọn 2 bước. */
+  .product-form__input .variant-option--hidden,
+  .product-form__input .variant-option--hidden-group {
+      display: none !important;
+  }
+
 {% endstyle %}
 {%- unless product.has_only_default_variant -%}
   {% liquid
@@ -159,9 +166,44 @@
           assign tag_fieldset = 'div'
           assign tag_legend = 'label'
         endunless
+
+        # Chế độ chọn 2 bước (cha → con): bật khi tên option chứa '|'
+        # và có ít nhất một giá trị dạng "Cha | Con".
+        assign is_grouped_option = false
+        if picker_type == 'button' and option.name contains '|'
+          assign grouped_value_count = 0
+          for value in option.values
+            capture grouped_value_string
+              echo value
+            endcapture
+            if grouped_value_string contains '|'
+              assign grouped_value_count = grouped_value_count | plus: 1
+            endif
+          endfor
+          if grouped_value_count > 0
+            assign is_grouped_option = true
+          endif
+        endif
+
+        assign grouped_size_chart_id = ''
+        if size_chart_content != blank and attach_size_chart
+          assign grouped_size_chart_id = size_chart_modal_id
+        endif
       -%}
+      {%- if is_grouped_option -%}
+        {% render 'product-variant-grouped-options',
+          product: product,
+          option: option,
+          block: block,
+          wrap_class: wrap_class,
+          attach_size_chart: attach_size_chart,
+          size_chart_modal_id: grouped_size_chart_id
+        %}
+      {%- else -%}
       <{{ tag_fieldset }}
         class="{{ wrap_class }}"
+        data-option-position="{{ option.position }}"
+        data-option-name="{{ option.name | escape }}"
         {% if picker_type == 'color' %}
           data-swatch-type="{{ block.settings.swatch_type }}"
         {% endif %}
@@ -226,7 +268,29 @@
             </div>
         {%- endcase -%}
       </{{ tag_fieldset }}>
+      {%- endif -%}
     {%- endfor -%}
+    {%- comment -%}
+      Ma trận variant dùng để lọc option con theo option cha đứng trước.
+      Chỉ cần khi sản phẩm có từ 2 option trở lên — sản phẩm 1 option không
+      render gì thêm. Bỏ qua variant giá 0 để khớp với luật render trong
+      'product-variant-options'.
+    {%- endcomment -%}
+    {%- if product.options.size > 1 -%}
+      <script type="application/json" data-variant-matrix>
+        [
+          {%- assign matrix_first = true -%}
+          {%- for variant in product.variants -%}
+            {%- if variant.price == 0 -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- unless matrix_first %},{% endunless -%}
+            {%- assign matrix_first = false -%}
+            {"id":{{ variant.id }},"available":{{ variant.available }},"options":{{ variant.options | json }}}
+          {%- endfor -%}
+        ]
+      </script>
+    {%- endif -%}
     <script type="application/json" data-selected-variant>
       {{ product.selected_or_first_available_variant | json }}
     </script>
