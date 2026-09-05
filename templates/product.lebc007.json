@@ -81,11 +81,10 @@
             "heading_5": ""
           }
         },
-        "text_EyXcFT": {
-          "type": "text",
+        "custom_liquid_CxKJbt": {
+          "type": "custom_liquid",
           "settings": {
-            "text": "Package",
-            "text_style": "body"
+            "custom_liquid": "<p style=\"margin-bottom: -10px;\">Package</p>"
           }
         },
         "custom_image_3pgJGe": {
@@ -292,7 +291,7 @@
         "meta",
         "price",
         "icon_with_text",
-        "text_EyXcFT",
+        "custom_liquid_CxKJbt",
         "custom_image_3pgJGe",
         "variant_picker",
         "buy_buttons",
