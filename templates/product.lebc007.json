@@ -61,24 +61,6 @@
             "price_color": "#006343"
           }
         },
-        "timer_wLebeC": {
-          "type": "timer",
-          "disabled": true,
-          "settings": {
-            "text_color": "#f74458",
-            "type": "fixed_time",
-            "duration": "every_month",
-            "time": "2025/11/30 11:59 PM",
-            "text": "Last chance for another 5% off, your offer ends in"
-          }
-        },
-        "gsc_countdown_timer_countdown_KpzbaH": {
-          "type": "shopify://apps/gsc-countdown-timer/blocks/countdown/58dc5b1b-43d2-4209-b1f3-52aff31643ed",
-          "disabled": true,
-          "settings": {
-            "widget_id": "GSC-EMBED-eYLqjAqBnBFA"
-          }
-        },
         "icon_with_text": {
           "type": "icon-with-text",
           "settings": {
@@ -97,6 +79,13 @@
             "heading_4": "Moisturises & Soothes Skin",
             "icon_5": "check",
             "heading_5": ""
+          }
+        },
+        "text_EyXcFT": {
+          "type": "text",
+          "settings": {
+            "text": "Package",
+            "text_style": "body"
           }
         },
         "custom_image_3pgJGe": {
@@ -302,9 +291,8 @@
         "klaviyo_reviews_average_rating_ftpUxL",
         "meta",
         "price",
-        "timer_wLebeC",
-        "gsc_countdown_timer_countdown_KpzbaH",
         "icon_with_text",
+        "text_EyXcFT",
         "custom_image_3pgJGe",
         "variant_picker",
         "buy_buttons",
