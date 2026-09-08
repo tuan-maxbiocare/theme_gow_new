@@ -104,6 +104,15 @@
             "icon": "arrow-right"
           }
         },
+        "button_item_haXrec": {
+          "type": "button_item",
+          "settings": {
+            "open_in_new_tab": false,
+            "button_label": "Swim Care",
+            "button_link": "shopify://collections/swim-care",
+            "icon": "check"
+          }
+        },
         "button_item_TqeMqX": {
           "type": "button_item",
           "settings": {
@@ -118,6 +127,7 @@
         "button_item_N87ipq",
         "button_item_qMjUjM",
         "button_item_DVNMjM",
+        "button_item_haXrec",
         "button_item_TqeMqX"
       ],
       "name": "Tabs Navigation",
