@@ -144,7 +144,7 @@
         "padding_bottom": 20,
         "custom_image": "shopify://shop_images/GoWshop_GOW_LOGO_700x282-05.webp",
         "custom_image_width": 300,
-        "custom_image_margin_right": 250,
+        "custom_image_margin_right": 230,
         "custom_image_link": "shopify://pages/garden-of-wellness"
       }
     },
